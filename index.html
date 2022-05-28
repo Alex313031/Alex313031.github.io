@@ -2,6 +2,7 @@
 <!-- https://thorium.rocks/ main index.html -->
 <html lang="en-US">
 <head>
+	<!-- Header -->
 	<link rel="stylesheet" href="css/thorium.css">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -22,6 +23,7 @@
 		<script type="text/javascript" src="js/jquery-3.6.0.slim.min.js"></script>
 </head>
 <body>
+	<!-- Main Logo -->
 	<div id="spinner">
 		<img class="spin" src="imgs/thorium.svg" width="512" height="512" alt="Thorium Logo" title="Thorium Logo (Click Me!)">
     </div>
@@ -41,6 +43,7 @@
     <p>&ensp;This nets a <b><em>2-8%</em> performance</b> improvement, depending on the benchmark and OS. See <a title="List of Patches" href="https://github.com/Alex313031/Thorium/blob/main/PATCHES.md">PATCHES.md</a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability.</p>
     <h2><u>&#60;Links&#62;</u></h2>
     <p> <span title="Under Construction" style="color: #fbbc04;"><b><em>Website under construction.</em></b></span> <a rel="noopener" title="Under Construction" href="misc/Chicago_Under_Construction.png">Δ</a> Meanwhile, you can check out the main <a title="Thorium Source Code" rel="noopener" href="https://github.com/Alex313031/Thorium">repository</a>, read the <a title="alex313031.blogspot.com" rel="noopener" href="https://alex313031.blogspot.com/">developer blog,</a> or download releases for:</p>
+    <!-- Links List -->
     <ul title="Thorium Links">
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium/releases">Linux</a></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Special/releases">MacOS (ARM and x64)</a></li>
@@ -50,16 +53,20 @@
     </ul>
     <h2 class="h2"><u>Installation/Auto-Update</u></h2>
     <p>The repo can be used on any distribution that supports .deb packaging. <br> It is located at <a title="Thorium .deb Repo" rel="noopener" href="https://dl.thorium.rocks/">https://dl.thorium.rocks/</a>. To add to your system:</p>
+    <!-- Code Block -->
     <pre title="APT Sources Setup">wget https://dl.thorium.rocks/debian/dists/stable/thorium.list
 sudo mv thorium.list /etc/apt/sources.list.d/
 sudo apt update
 sudo apt install thorium-browser-unstable</pre>
+	<!-- Dark/Light Mode Button -->
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
 		<script type="text/javascript" src="js/button.js"></script>
     <p title="Thanks!"><em>Thanks for using Thorium!</em></p>
     <p title="Das Credits"><em>Credits: <a rel="noopener" title="humans.txt" href="humans.txt">HuMaNs</a></em></p>
     <img class="thor90" src="imgs/Thorium90_504.jpg" width="200" height="200" title="Element &numero; 90." alt="Thorium Element">
+    <!-- Custom 404 Landing Page (uses .haccess file) -->
     <p><em><a rel="noopener" title="Funny 404 Error Page" href="404.html">blah</a></em></p>
+    <!-- WebGL Cube Demo with Thorium Colours -->
     <canvas title="WebGL Cube Demo" class="glcube" id="glcube" width="384" height="256"></canvas>
     <script type="text/javascript" src="js/gl-matrix-min_3.4.1.js"></script>
     <script src="js/cube.js"></script>
