@@ -140,7 +140,7 @@
     /* Add WebGL Canvas Element */
     canvas.glcube {
 		border: 1px solid var(--border);
-		background: solid #ffffff;
+		max-midth: 100%;
 	}
 	/* No Auto-Play */
 	video {
