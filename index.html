@@ -3,11 +3,11 @@
 <html lang="en-US">
 <head>
 	<!-- Header -->
-	<link rel="stylesheet" href="css/thorium.css">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="fonts/noto-sans-v27-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
     <title>Thorium</title>
     <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
     <meta name="color-scheme" content="light dark">
@@ -19,16 +19,33 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#24292f">
     <meta name="theme-color" content="#ffffff">
-		<script type="text/javascript" src="js/dark.js"></script>
-		<script type="text/javascript" src="js/jquery-3.6.0.slim.min.js"></script>
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
 </head>
 <body>
 	<!-- Main Logo -->
 	<div id="spinner">
 		<img class="spin" src="imgs/thorium.svg" width="512" height="512" alt="Thorium Logo" title="Thorium Logo (Click Me!)">
     </div>
-		<script type="text/javascript" src="js/spin.js"></script>
-		<script type="text/javascript" src="js/spun.js"></script>
     <div class="d-flex">
         <h1><span class="title"><b><u>Thorium - </u></b></span><br> <small><b><em>The fastest browser on Earth.</em></b></small></h1>
         <img class="bubbles" src="imgs/thorium_bubbles.svg" width="128" height="128" alt="Thorium Bubbles" title="Thorium Bubbles">
@@ -60,15 +77,18 @@ sudo apt update
 sudo apt install thorium-browser-unstable</pre>
 	<!-- Dark/Light Mode Button -->
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
-		<script type="text/javascript" src="js/button.js"></script>
     <p title="Thanks!"><em>Thanks for using Thorium!</em></p>
     <p title="Das Credits"><em>Credits: <a rel="noopener" title="humans.txt" href="humans.txt">HuMaNs</a></em></p>
-    <img class="thor90" src="imgs/Thorium90_504.jpg" width="200" height="200" title="Element &numero; 90." alt="Thorium Element">
+    <img class="thor90" src="imgs/Thorium90_504.jpg" width="200" height="200" title="Element &numero; 90." loading="lazy" alt="Thorium Element">
     <!-- Custom 404 Landing Page (uses .haccess file) -->
     <p><em><a rel="noopener" title="Funny 404 Error Page" href="404.html">blah</a></em></p>
     <!-- WebGL Cube Demo with Thorium Colours -->
     <canvas title="WebGL Cube Demo" class="glcube" id="glcube" width="384" height="256"></canvas>
-    <script type="text/javascript" src="js/gl-matrix-min_3.4.1.js"></script>
-    <script src="js/cube.js"></script>
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin.js"></script>
+	<script defer src="js/spun.js"></script>
+    <script defer src="js/button.js"></script>
+    <script defer src="js/gl-matrix-min_3.4.1.js"></script>
+    <script defer src="js/cube.js"></script>
 </body>
 </html>
