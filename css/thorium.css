@@ -102,8 +102,10 @@
     /* Put box around intro/description */
     p.intro {
 		padding-left: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
 		border: 1px solid var(--border);
-		border-radius: 2px;
+		border-radius: 3px;
 		font-weight: 600;
     }
     /* Set link colours */
