@@ -1,4 +1,4 @@
-// thorium.rocks cube webgl demo.
+// thorium.rocks Cube WebDL Demo.
 
 // cuberotation base multiplicand
 var cubeRotation = 0.0;
