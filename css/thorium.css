@@ -104,6 +104,9 @@ hr.line {
   border: 1px solid var(--fontcolor);
 }
 /* Style headings */
+h1 {
+  text-shadow: 1px 1px 1px var(--shadow);
+}
 h2 {
   text-shadow: 1px 1px 1px var(--shadow);
 }
