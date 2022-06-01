@@ -5,13 +5,15 @@
 
 /* TEAM */
 	
+	Developer: Alexander Frick
+	Twitter: @alex313031
+	GitHub: @Alex313031
+	Email: alex313031@gmail.com
+	From: Oklahoma, US
+	
 	Web designer & Contributer: midzer
 	GitHub: @midzer
 	From: Munich, Germany
-
-	Developer: Alexander Frick
-	Twitter: @alex313031
-	From: Oklahoma, US
 	
 	Contributer: gz83
 	GitHub: @gz83
@@ -19,13 +21,14 @@
 	
 /* THANKS */
 	
-	Robert Richard
+	Robert Richmond
 	GitHub: @RobRich999
-	From: US
+	From: Florida, US
 	
 	Jerry
 	Website: https://chromium.woolyss.com/
-	From: 
+	GitHub: https://github.com/woolyss/
+	From: France
 	
 	The Chromium Authors
 	Website: https://www.chromium.org/
@@ -33,7 +36,7 @@
 
 /* SITE */
 
-	Last update: 2022/05/26
+	Last update: 2022/05/31
 	Language: English
-	Doctype: HTML5
+	Doctype: HTML5, CSS, XML, WebGL
 	IDE: VSCodium, Geany, Atom
