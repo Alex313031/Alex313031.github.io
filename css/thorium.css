@@ -6,29 +6,35 @@
   --fontcolor: #000000;
   --linkcolor: #0000ee;
   --visitedcolor: #551a8b;
-  --preformatted: #24292f;
+  --preformatted: #000000;
   --accent-bg: #aecbfa;
   --border: #000000;
+  --construction: #e51c23;
+  --shadow: #ffffff;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bgcolor: #24292f;
     --fontcolor: #ffffff;
-    --linkcolor: #5bf5bf;
-    --visitedcolor: #ae5ee0;
+    --linkcolor: #ae5ee0;
+    --visitedcolor: #5bf5bf;
     --preformatted: #ffffff;
     --accent-bg: #2b2b2b;
     --border: #ffffff;
+    --construction: #fbbc04;
+    --shadow: #000000;
   }
 }
 :root.dark {
   --bgcolor: #24292f;
   --fontcolor: #ffffff;
-  --linkcolor: #5bf5bf;
-  --visitedcolor: #ae5ee0;
+  --linkcolor: #ae5ee0;
+  --visitedcolor: #5bf5bf;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;
   --border: #ffffff;
+  --construction: #fbbc04;
+  --shadow: #000000;
 }
 /* Scrolling settings */
 html {
@@ -46,7 +52,7 @@ body {
 }
 /* Image autoconfig */
 img {
-  max-width: 100%;
+  max-width: auto;
   height: auto;
 }
 /* Image effects */
@@ -97,14 +103,20 @@ hr.line {
   margin-left: -1.0em;
   border: 1px solid var(--fontcolor);
 }
+/* Style headings */
+h2 {
+  text-shadow: 1px 1px 1px var(--shadow);
+}
 /* Put box around intro/description */
 p.intro {
-  padding-left: 10px;
+  box-shadow: 1px 1px 2px 0px var(--border);
+  padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px solid var(--border);
   border-radius: 3px;
   font-weight: 600;
+  text-shadow: 1px 1px 1px var(--shadow);
 }
 /* Set link colours */
 a:link{
@@ -113,6 +125,10 @@ a:link{
 a:visited,
 a:active {
   color: var(--visitedcolor);
+}
+/* Set under construction text colours */
+.construction {
+  color: var(--construction);
 }
 /* Adjust thorium_bubbles.svg */
 .d-flex {
@@ -128,10 +144,15 @@ pre {
   color: var(--preformatted);
   background: var(--accent-bg);
   border: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-right: 2px solid var(--border);
   border-radius: 5px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px var(--shadow);
 }
 /* Rounded Dark/Light Mode Button */
 button {
+  box-shadow: 1px 1px 2px 0px var(--border);
   border: 1px solid var(--border);
   border-radius: 5px;
 }
@@ -144,11 +165,11 @@ canvas.glcube {
 video {
   display: none;
 }
-/* Set Google Noto Sans */
+/* Set Google Roboto Sans */
 @font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  font-style: regular;
+  font-weight: 400;
   font-display: swap;
-  src: local("Noto Sans"),url(../fonts/noto-sans-v27-latin-regular.woff2) format("woff2"),url(../fonts/noto-sans-v27-latin-regular.woff) format("woff")
+  src: local("Noto Sans"),url(../fonts/roboto-v30-latin-regular.woff2) format("woff2"),url(../fonts/roboto-v30-latin-regular.woff) format("woff")
 }
