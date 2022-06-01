@@ -168,7 +168,7 @@ video {
 /* Set Google Roboto Sans */
 @font-face {
   font-family: 'Roboto', sans-serif;
-  font-style: regular;
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local("Noto Sans"),url(../fonts/roboto-v30-latin-regular.woff2) format("woff2"),url(../fonts/roboto-v30-latin-regular.woff) format("woff")
