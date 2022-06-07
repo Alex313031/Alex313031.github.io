@@ -219,6 +219,7 @@ canvas.glcube {
   max-width: 100%;
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
+/* Add Canvas2D Element */
 canvas.shadowcubes {
   border: 1px solid var(--border);
   max-width: 100%;
