@@ -44,20 +44,21 @@
 <body>
 	<!-- Main Logo -->
 	<div id="spinner">
-		<img class="spin" src="imgs/thorium.svg" width="512" height="512" alt="Thorium Logo" title="Thorium Logo (Click Me!)">
+		<img class="spin shadow" src="imgs/thorium.svg" width="512" height="512" alt="Thorium Logo" title="Thorium Logo (Click Me!)">
     </div>
     <div class="d-flex">
         <h1><span class="title"><b><u>Thorium - </u></b></span><br> <small><b><em>The fastest browser on Earth.</em></b></small></h1>
-        <img class="bubbles" src="imgs/thorium_bubbles.svg" width="128" height="128" alt="Thorium Bubbles" title="Thorium Bubbles">
+        <img class="bubbles shadow" src="imgs/thorium_bubbles.svg" width="128" height="128" alt="Thorium Bubbles" title="Thorium Bubbles">
     </div>
     <hr class="line">
-    <p class="intro" title="Description">Chromium fork for Linux, MacOS, Raspberry Pi, and Windows named after radioactive element No. 90.</p>
+    <p class="intro" title="Description"><a title="Chromium" rel="noopener" href="https://www.chromium.org/Home/">Chromium</a> fork for Linux, MacOS, Raspberry Pi, and Windows named after radioactive element No. 90.</p>
     <h2><u>Highlights</u></h2>
+    <img class="fly d-flex2" src="misc/flying_browser.png" width="128" title="Flying Thorium" alt="Flying Thorium">
     <ul>
         <li>Compiler modifications include SSE4.2, AVX, AES, and Cflags, thinLTO flags, and import_instr_limit flags set to /O3, 3, and 30 respectively.</li>
         <li>LLVM LOOP optimizations as -mllvm flags</li>
     </ul>
-    <p>&ensp;This nets a <b><em>2-8%</em> performance</b> improvement, depending on the benchmark and OS. See <a title="List of Patches" href="https://github.com/Alex313031/Thorium/blob/main/PATCHES.md">PATCHES.md</a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability.</p>
+    <p>&ensp;This nets a <b><em>2-8%</em> performance</b> improvement, depending on the benchmark and OS. See <a title="List of Patches" href="https://github.com/Alex313031/Thorium/blob/main/PATCHES.md">PATCHES.md</a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&ensp;See also: </b><a title="ThoriumOS" href=thoriumos.html>ThoriumOS</a></p>
     <h2><u>&#60;Links&#62;</u></h2>
     <p> <span title="Under Construction" class="construction"><b><em>Website under construction.</em></b></span> <a rel="noopener" title="Under Construction" alt="Windows Chicago Under Construction" href="misc/Chicago_Under_Construction.png">Δ</a> Meanwhile, you can check out the main <a title="Thorium Source Code" rel="noopener" href="https://github.com/Alex313031/Thorium">repository</a>, read the <a title="alex313031.blogspot.com" rel="noopener" href="https://alex313031.blogspot.com/">developer blog,</a> or download releases for:</p>
     <!-- Links List -->
@@ -67,6 +68,16 @@
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Special/releases">Raspberry Pi</a></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Win/releases">Windows</a></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-AVX2/releases">Windows AVX2</a></li>
+    </ul>
+    <p> I have also created some Chrome Extensions and Apps for use with Thorium/ThoriumOS:</p>
+    <!-- Extensions Links List -->
+    <ul title="Extension Links">
+        <li><a rel="noopener" href="https://github.com/Alex313031/cog-chromium/">COG</a> - System Monitor App for Thorium.</li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-ScrollBars/">Thorium Scrollbars</a> - Simple Scrollbar theme for Thorium.</li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/CrOS-Calc/">CrOS Calc</a> - Calculator App for ThoriumOS.</li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/Chromium-Vector-Icons/">Chromium Vector Icons</a> - Extension which draws vector .icon files.</li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/Thorium_Code_Search_Themer/">Thorium Code Search Themer</a> - Extension for themeing Chromium Code Search.</li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/Chromium-Dev-Editor/">Chromium Dev Editor</a> - Code/Text Editor App for Thorium.</li>
     </ul>
     <h2 class="h2"><u>Installation/Auto-Update</u></h2>
     <p>The repo can be used on any distribution that supports .deb packaging. <br> It is located at <a title="Thorium .deb Repo" rel="noopener" href="https://dl.thorium.rocks/">https://dl.thorium.rocks/</a>. To add to your system:</p>
@@ -82,13 +93,12 @@ sudo apt install thorium-browser-unstable</pre>
     <img class="thor90" src="imgs/Thorium90_504.jpg" width="200" height="200" title="Element &numero; 90." loading="lazy" alt="Thorium Element">
     <!-- Custom 404 Landing Page (uses .haccess file) -->
     <p><em><a rel="noopener" title="Funny 404 Error Page" href="404.html">blah</a></em></p>
-    <!-- WebGL Cube Demo with Thorium Colours -->
-    <canvas title="WebGL Cube Demo" alt="WebGL Cube Demo" class="glcube" id="glcube" width="384" height="256"></canvas>
+    <!-- Canvas2D Shadow Cubes Demo with Thorium Colours -->
+    <canvas title="Canvas2D Shadow Cubes Demo" alt="Canvas2D Shadow Demo" class="shadowcubes" id="shadowcubes" width="512" height="384"></canvas>
     <script defer src="js/jquery-3.6.0.slim.min.js"></script>
     <script defer src="js/spin.js"></script>
 	<script defer src="js/spun.js"></script>
     <script defer src="js/button.js"></script>
-    <script defer src="js/gl-matrix-min_3.4.1.js"></script>
-    <script defer src="js/cube.js"></script>
+    <script defer src="js/shadowcubes.js"></script>
 </body>
 </html>
