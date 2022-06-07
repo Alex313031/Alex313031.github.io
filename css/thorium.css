@@ -10,7 +10,9 @@
   --accent-bg: #aecbfa;
   --border: #000000;
   --construction: #e51c23;
+  --code: #000000;
   --shadow: #ffffff;
+  --imgshadow: #000000;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,7 +24,9 @@
     --accent-bg: #2b2b2b;
     --border: #ffffff;
     --construction: #fbbc04;
+    --code: #fbbc04;
     --shadow: #000000;
+    --imgshadow: #ffffff;
   }
 }
 :root.dark {
@@ -34,7 +38,9 @@
   --accent-bg: #2b2b2b;
   --border: #ffffff;
   --construction: #fbbc04;
+  --code: #fbbc04;
   --shadow: #000000;
+  --imgshadow: #ffffff;
 }
 /* Scrolling settings */
 html {
@@ -59,8 +65,28 @@ img {
 img.spin {
   transition: all .6s;
 }
+img.shadow {
+  filter: drop-shadow(1px 1px 2px var(--imgshadow));
+}
 img.thor90 {
   border: 1px solid var(--border);
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+img.thoros {
+  border: 1px solid var(--border);
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+.thoros:hover {
+  animation: jig 0.5s;
+  animation-iteration-count: infinite;
+}
+img.fly {
+  border: 1px solid var(--border);
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+.fly:hover {
+  animation: fly 1.0s;
+  animation-iteration-count: infinite;
 }
 .thor90:hover {
   animation: jig 0.2s;
@@ -68,21 +94,21 @@ img.thor90 {
 }
 img.bubbles:hover {
   padding-right: 12px;
-  animation: shake 3.0s;
+  animation: shake 4.0s;
   animation-iteration-count: infinite;
 }
 /* Animations */
 @keyframes shake {
   0% { transform: translate(3px, 2px) rotate(0deg); }
-  10% { transform: translate(-2px, -2px) rotate(-3deg); }
-  20% { transform: translate(-4px, 1px) rotate(1deg); }
-  30% { transform: translate(1px, 3px) rotate(0deg); }
-  40% { transform: translate(2px, -2px) rotate(1deg); }
-  50% { transform: translate(-1px, 3px) rotate(-2deg); }
+  10% { transform: translate(-3px, -2px) rotate(-3deg); }
+  20% { transform: translate(6px, 4px) rotate(1deg); }
+  30% { transform: translate(-6px, -4px) rotate(0deg); }
+  40% { transform: translate(-6px, 6px) rotate(-4deg); }
+  50% { transform: translate(8px, -3px) rotate(-2deg); }
   60% { transform: translate(-4px, 2px) rotate(0deg); }
-  70% { transform: translate(3px, 2px) rotate(-1deg); }
-  80% { transform: translate(-2px, -4px) rotate(2deg); }
-  90% { transform: translate(3px, 3px) rotate(0deg); }
+  70% { transform: translate(3px, 6px) rotate(-1deg); }
+  80% { transform: translate(3px, 4px) rotate(-4deg); }
+  90% { transform: translate(3px, -5px) rotate(6deg); }
   100% { transform: translate(3px, 2px) rotate(0deg); }
 }
 @keyframes jig {
@@ -92,6 +118,19 @@ img.bubbles:hover {
   60% { transform: rotate(1deg); }
   80% { transform: rotate(2deg); }
   100% { transform: rotate(0deg); }
+}
+@keyframes fly {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(2px, -2px) rotate(-1deg); }
+  20% { transform: translate(4px, -4px) rotate(-2deg); }
+  30% { transform: translate(6px, -6px) rotate(1deg); }
+  40% { transform: translate(8px, -8px) rotate(2deg); }
+  50% { transform: translate(8px, -8px) rotate(-1deg); }
+  60% { transform: translate(6px, -6px) rotate(-2deg); }
+  70% { transform: translate(4px, -4px) rotate(1deg); }
+  80% { transform: translate(3px, -3px) rotate(2deg); }
+  90% { transform: translate(2px, -2px) rotate(-1deg); }
+  100% { transform: translate(1px, -1px) rotate(0deg); }
 }
 /* Move title slightly */
 span.title {
@@ -108,6 +147,9 @@ h1 {
   text-shadow: 1px 1px 1px var(--shadow);
 }
 h2 {
+  text-shadow: 1px 1px 1px var(--shadow);
+}
+b {
   text-shadow: 1px 1px 1px var(--shadow);
 }
 /* Put box around intro/description */
@@ -133,11 +175,22 @@ a:active {
 .construction {
   color: var(--construction);
 }
+code {
+  color: var(--code);
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 1px var(--shadow);
+}
 /* Adjust thorium_bubbles.svg */
 .d-flex {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+/* Adjust flying_browser.png */
+.d-flex2 {
+  display: flex;
+  float: right;
 }
 /* Codeblock Styles */
 pre {
@@ -155,14 +208,21 @@ pre {
 }
 /* Rounded Dark/Light Mode Button */
 button {
-  box-shadow: 1px 1px 2px 0px var(--border);
+  box-shadow: 1px 1px 1px 0px var(--border);
   border: 1px solid var(--border);
   border-radius: 5px;
+  float: bottom;
 }
 /* Add WebGL Canvas Element */
 canvas.glcube {
   border: 1px solid var(--border);
   max-width: 100%;
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+canvas.shadowcubes {
+  border: 1px solid var(--border);
+  max-width: 100%;
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 /* No Auto-Play */
 video {
