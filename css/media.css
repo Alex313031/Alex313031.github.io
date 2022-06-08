@@ -56,34 +56,36 @@ audio::-webkit-media-controls-panel {
 audio::-webkit-media-controls-play-button {
   color: var(--fontcolor);
   border-radius: 50%;
+  margin-left: 1px;
+  margin-right: 1px
+}
+audio::-webkit-media-controls-play-button:hover {
+  background-color: var(--accent-fg);
 }
 audio::-webkit-media-controls-mute-button {
   color: var(--fontcolor);
   border-radius: 50%;
-}
-audio::-webkit-media-controls-volume-slider {
-  color: var(--fontcolor);
-  border-radius: 28px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-audio::-webkit-media-controls-play-button:hover {
-  background-color: var(--accent-fg);
+  margin-left: 1px;
+  margin-right: 1px
 }
 audio::-webkit-media-controls-mute-button:hover {
   background-color: var(--accent-fg);
 }
 audio::-webkit-media-controls-volume-slider {
   background-color: var(--accent-fg);
+  color: var(--fontcolor);
+  border-radius: 28px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 audio::-webkit-media-controls-current-time-display {
   color: var(--fontcolor);
 }
-audio::-webkit-media-controls-time-remaining-display {
-  color: var(--fontcolor);
-}
 audio::-webkit-media-controls-current-time-display:hover {
   color: var(--accent-fg);
+}
+audio::-webkit-media-controls-time-remaining-display {
+  color: var(--fontcolor);
 }
 audio::-webkit-media-controls-time-remaining-display:hover {
   color: var(--accent-fg);
@@ -92,17 +94,13 @@ audio::-webkit-media-controls-timeline {
   border-radius: 28px;
   color: var(--fontcolor);
   margin-left: 6px;
-  margin-right: 1px
+  margin-right: -12px
 }
 audio::-webkit-media-controls-timeline:hover {
   background-color: var(--accent-fg);
 }
 audio::-webkit-media-controls-timeline-container {
   color: var(--fontcolor);
-}
-audio::-webkit-media-controls-mute-button {
-  color: var(--fontcolor);
-  border-radius: 50%;
 }
 /* No Auto-Play */
 video {
