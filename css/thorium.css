@@ -8,6 +8,7 @@
   --visitedcolor: #551a8b;
   --preformatted: #000000;
   --accent-bg: #aecbfa;
+  --accent-fg: #24292f;
   --border: #000000;
   --construction: #e51c23;
   --code: #000000;
@@ -22,6 +23,7 @@
     --visitedcolor: #5bf5bf;
     --preformatted: #ffffff;
     --accent-bg: #2b2b2b;
+    --accent-fg: #aecbfa;
     --border: #ffffff;
     --construction: #fbbc04;
     --code: #fbbc04;
@@ -36,6 +38,7 @@
   --visitedcolor: #5bf5bf;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;
+  --accent-fg: #aecbfa;
   --border: #ffffff;
   --construction: #fbbc04;
   --code: #fbbc04;
@@ -256,6 +259,18 @@ canvas.shadowcubes {
 /* No Auto-Play */
 video {
   display: none;
+}
+audio.sound {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  float: right;
+}
+audio::-webkit-media-controls-panel {
+  background-color: var(--accent-bg);
+}
+audio::-webkit-media-controls-play-button {
+  background-color: var(--accent-fg);
+  border-radius: 50%;
 }
 /* roboto-regular - latin */
 @font-face {
