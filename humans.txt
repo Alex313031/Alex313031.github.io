@@ -6,37 +6,48 @@
 /* TEAM */
 	
 	Developer: Alexander Frick
+	Role: Main Thorium Developer
 	Twitter: @alex313031
 	GitHub: @Alex313031
 	Email: alex313031@gmail.com
 	From: Oklahoma, US
 	
 	Web Developer & Contributer: midzer
+	Role: Builder, Tester, Web Hoster
 	GitHub: @midzer
 	From: Munich, Germany
 	
 	Contributer: gz83
+	Role: Builder & Tester
 	GitHub: @gz83
 	From: Hong Kong, China
 	
 /* THANKS */
 	
 	Robert Richmond
+	Role: Helper
 	GitHub: @RobRich999
 	From: Florida, US
 	
-	Jerry
+	Jerry (Woolyss.com Admin)
+	Role: Distributer & Helper
 	Website: https://chromium.woolyss.com/
 	GitHub: https://github.com/woolyss/
 	From: France
 	
+	Daniel Frick (Dad)
+	Role: Tester & Inspirator
+	Website: https://www.rsu.edu/directory/dan-frick/
+	From: Oklahoma, US
+	
 	The Chromium Authors
+	Role: Upstream Developers
 	Website: https://www.chromium.org/
 	From: WorldWide
 
 /* SITE */
 
-	Last update: 2022/06/07
+	Last update: 2022/06/08
 	Language: English
-	Doctype: HTML5, CSS, XML, WebGL
-	IDE: VSCodium, Geany, Atom
+	Doctype: HTML5, CSS, XML, WebGL, Canvas2D
+	IDE: Geany, VSCodium, Atom
