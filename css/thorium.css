@@ -45,39 +45,6 @@
   --shadow: #000000;
   --imgshadow: #ffffff;
 }
-/* Scrolling settings */
-html {
-  overflow-x: scroll;
-  overflow-y: scroll;
-}
-/* Width & Height */
-::-webkit-scrollbar {
-  width: 11px;
-  height: auto;
-}
-/* Track*/
-body::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-/* Track Piece*/
-body::-webkit-scrollbar-track-piece {
-  background-color: transparent;
-  -webkit-border-radius: 5px;
-}
-/* Handle */
-body::-webkit-scrollbar-thumb { 
-  height: auto;
-  background-color: #24292f; 
-  -webkit-border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 1.0);
-}
-/* Handle on Hover */
-body::-webkit-scrollbar-thumb:hover {
-  height: auto;
-  background-color: #404040;
-  -webkit-border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 1.0);
-}
 /* General body settings */
 body {
   margin: 1em auto;
@@ -255,22 +222,6 @@ canvas.shadowcubes {
   border: 1px solid var(--border);
   max-width: 100%;
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
-}
-/* No Auto-Play */
-video {
-  display: none;
-}
-audio.sound {
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  float: right;
-}
-audio::-webkit-media-controls-panel {
-  background-color: var(--accent-bg);
-}
-audio::-webkit-media-controls-play-button {
-  background-color: var(--accent-fg);
-  border-radius: 50%;
 }
 /* roboto-regular - latin */
 @font-face {
