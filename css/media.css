@@ -46,6 +46,7 @@ audio.sound {
   border: 1px solid var(--border);
   border-radius: 28px;
   float: right;
+  box-shadow: 1px 1px 1px 0px var(--border);
 }
 audio::-webkit-media-controls {
   background-color: var(--accent-fg);
