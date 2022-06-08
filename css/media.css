@@ -1,0 +1,124 @@
+/* Thorium Website Media Cascading Style Sheet */
+
+/* Scrolling settings */
+html {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+body {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+/* Width & Height */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+/* Track Piece */
+body::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+  -webkit-border-radius: 5px;
+}
+/* Corner */
+body::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+/* Handle */
+body::-webkit-scrollbar-thumb { 
+  height: auto;
+  background-color: #24292f; 
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 1.0);
+}
+/* Handle on Hover */
+body::-webkit-scrollbar-thumb:hover {
+  height: auto;
+  background-color: #404040;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 1.0);
+}
+/* Media */
+audio.sound {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  float: right;
+}
+audio::-webkit-media-controls {
+  background-color: var(--accent-fg);
+}
+audio::-webkit-media-controls-panel {
+  background-color: var(--accent-bg);
+}
+audio::-webkit-media-controls-play-button {
+  color: var(--fontcolor);
+  border-radius: 50%;
+}
+audio::-webkit-media-controls-mute-button {
+  color: var(--fontcolor);
+  border-radius: 50%;
+}
+audio::-webkit-media-controls-volume-slider {
+  color: var(--fontcolor);
+  border-radius: 28px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+audio::-webkit-media-controls-play-button:hover {
+  background-color: var(--accent-fg);
+}
+audio::-webkit-media-controls-mute-button:hover {
+  background-color: var(--accent-fg);
+}
+audio::-webkit-media-controls-volume-slider {
+  background-color: var(--accent-fg);
+}
+audio::-webkit-media-controls-current-time-display {
+  color: var(--fontcolor);
+}
+audio::-webkit-media-controls-time-remaining-display {
+  color: var(--fontcolor);
+}
+audio::-webkit-media-controls-current-time-display:hover {
+  color: var(--accent-fg);
+}
+audio::-webkit-media-controls-time-remaining-display:hover {
+  color: var(--accent-fg);
+}
+audio::-webkit-media-controls-timeline {
+  border-radius: 28px;
+  color: var(--fontcolor);
+  margin-left: 6px;
+  margin-right: 1px
+}
+audio::-webkit-media-controls-timeline:hover {
+  background-color: var(--accent-fg);
+}
+audio::-webkit-media-controls-timeline-container {
+  color: var(--fontcolor);
+}
+audio::-webkit-media-controls-mute-button {
+  color: var(--fontcolor);
+  border-radius: 50%;
+}
+/* No Auto-Play */
+video {
+  display: none;
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'),
+       url('../fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
