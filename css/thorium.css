@@ -54,6 +54,22 @@ body {
   color: var(--fontcolor);
   background-color: var(--bgcolor);
 }
+/* General body settings */
+.body2 {
+  margin: 1em auto;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem;
+  color: var(--fontcolor);
+  background-color: var(--bgcolor);
+}
+/* Two image containers (use 25% for four, and 50% for two, etc) */
+.row {
+  display: flex;
+}
+.column {
+  flex: 25.00%;
+  padding: 5px;
+}
 /* Image autoconfig */
 img {
   max-width: auto;
@@ -79,8 +95,12 @@ img.thoros {
   animation-iteration-count: infinite;
 }
 img.fly {
+  margin-top: -16px;
   border: 1px solid var(--border);
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+img.crbook {
+  margin-top: 12px;
 }
 .fly:hover {
   animation: fly 1.0s;
@@ -91,7 +111,17 @@ img.fly {
   animation-iteration-count: infinite;
 }
 img.bubbles:hover {
-  padding-right: 12px;
+  animation: shake 4.0s;
+  animation-iteration-count: infinite;
+}
+img.bubbles2 {
+  display: flex;
+  float: right;
+  margin-top: -32px;
+  margin-right: 24px;
+  position: relative;
+}
+img.bubbles2:hover {
   animation: shake 4.0s;
   animation-iteration-count: infinite;
 }
@@ -136,8 +166,8 @@ span.title {
 }
 /* Adjust top horiz separator */
 hr.line {
-  width: 105.3%;
-  margin-left: -1.0em;
+  width: 106%;
+  margin-left: -0.9em;
   border: 1px solid var(--fontcolor);
 }
 /* Style headings */
@@ -190,6 +220,11 @@ code {
   display: flex;
   float: right;
 }
+.d-flex3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 /* Codeblock Styles */
 pre {
   padding: 1rem 1.5rem;
@@ -215,13 +250,20 @@ button {
 canvas.glcube {
   border: 1px solid var(--border);
   max-width: 100%;
+  float: center;
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 /* Add Canvas2D Element */
 canvas.shadowcubes {
   border: 1px solid var(--border);
   max-width: 100%;
+  float: center;
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+canvas {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  display: flex;
 }
 /* roboto-regular - latin */
 @font-face {
