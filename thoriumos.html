@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
     <title>Thorium</title>
     <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
     <meta name="color-scheme" content="light dark">
@@ -44,19 +45,18 @@
 <body>
 	<!-- Main Logo -->
 	<div id="spinner">
-		<img class="spin shadow" src="imgs/thoriumos_bootsplash.png" width="600" alt="ThoriumOS Logo" title="ThoriumOS Logo (Click Me!)">
+		<img class="spin shadow" style="float: center; margin-right: 10px; margin-bottom: 2px;" src="imgs/thoriumos_bootsplash.png" width="600" alt="ThoriumOS Logo" title="ThoriumOS Logo (Click Me!)">
     </div>
     <div class="d-flex">
         <h1><span class="title"><b><u>ThoriumOS - </u></b></span><br> <small><b><em>ChromiumOS for the masses.</em></b></small></h1>
-        <img class="bubbles shadow" src="imgs/thorium_bubbles.svg" width="128" height="128" alt="Thorium Bubbles" title="Thorium Bubbles">
+        <img class="crbook fly d-flex2" src="misc/crbook.jpg" width="128" title="Thoriumbook" alt="Chromebook">
     </div>
     <hr class="line">
     <p class="intro" title="Description"><a title="ChromiumOS" rel="noopener" href="https://www.chromium.org/chromium-os/">ChromiumOS</a> fork with Thorium Browser, x264/x265 codecs, Widevine, Kernel 5.15, Linux Firmware/Modules support, Nouveau, Intel/AMD microcode, and extra packages.</p>
     <!-- Dark/Light Mode Button -->
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
-    <img class="fly d-flex2" src="misc/ChromiumBook.png" width="128" title="ChromiumBook" alt="ChromiumBook">
-	<h2 class="h2"><u>Installation</u></h2>
-	<p>The repo hosts .7z files with a .bin file inside. <br> It is located at <a title="ThoriumOS Repo" rel="noopener" href="https://github.com/Alex313031/ChromiumOS/">https://github.com/Alex313031/ChromiumOS/</a> <br> <b>To install:</b> <br> - Flash the .bin file to a USB Flash Drive (8GB or larger). You can use <a title="CrOS DD" rel="noopener" href="misc/CrOS_DD.md">DD</a>, <a title="Balena Etcher" rel="noopener" href="https://etcher.io/">Etcher</a>, the <a title="CrOS Recovery Utility" rel="noopener" href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm">ChromeBook Recovery Utility</a>, <a title="Rufus" rel="noopener" href="https://rufus.ie/">Rufus</a>, or <a title="CrOS Flash" rel="noopener" href="https://chromium.googlesource.com/chromiumos/docs/+/HEAD/cros_flash.md#removable-device">cros_flash</a>. <br> - Install to your device by following <a title="CrOS Installation" rel="noopener" href="https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#Installing-your-ChromiumOS-image-to-your-hard-disk">CrOS Installation</a>. However when running <code>/usr/sbin/chromeos-install</code> append <code>--dst /dev/sdxx</code>, where <code><em>sdxx</em></code> is your hard drive i.e. <code>sda1</code>.</p>
+	<h2 class="h2"><u>Installation</u><img class="bubbles2 shadow" src="imgs/thorium_bubbles.svg" width="128" height="128" alt="Thorium Bubbles" title="Thorium Bubbles"></h2>
+	<p style="width: 100%;">The repo hosts .7z files with a .bin file inside. <br> It is located at <a title="ThoriumOS Repo" rel="noopener" href="https://github.com/Alex313031/ChromiumOS/">https://github.com/Alex313031/ChromiumOS/</a> <br> <b>To install:</b> <br> - Flash the .bin file to a USB Flash Drive (8GB or larger). You can use <a title="CrOS DD" rel="noopener" href="misc/CrOS_DD.md">DD</a>, <a title="Balena Etcher" rel="noopener" href="https://etcher.io/">Etcher</a>, the <a title="CrOS Recovery Utility" rel="noopener" href="https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm">ChromeBook Recovery Utility</a>, <a title="Rufus" rel="noopener" href="https://rufus.ie/">Rufus</a>, or <a title="CrOS Flash" rel="noopener" href="https://chromium.googlesource.com/chromiumos/docs/+/HEAD/cros_flash.md#removable-device">cros_flash</a>. <br> - Install to your device by following <a title="CrOS Installation" rel="noopener" href="https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#Installing-your-ChromiumOS-image-to-your-hard-disk">CrOS Installation</a>. However when running <code>/usr/sbin/chromeos-install</code> append <code>--dst /dev/sdxx</code>, where <code><em>sdxx</em></code> is your hard drive i.e. <code>sda1</code>.</p>
     <img class="thoros" src="imgs/os-install-success.svg" width="256" height="256" title="ThoriumOS Install" alt="ThoriumOS Install">
     <p title="Thanks!"><em>Thanks for using ThoriumOS!</em></p>
     <p title="Das Credits"><em>Credits: <a rel="noopener" title="humans.txt" href="humans.txt">HuMaNs</a></em></p>
