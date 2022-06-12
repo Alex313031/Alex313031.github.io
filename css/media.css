@@ -123,6 +123,54 @@ audio::-webkit-media-controls-timeline:hover {
 audio::-webkit-media-controls-timeline-container {
   color: var(--fontcolor);
 }
+/* Add WebGL Canvas Element */
+canvas.glcube {
+  border: 1px solid var(--border);
+  max-width: 100%;
+  float: center;
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+/* Add three.js Canvas Element */
+canvas.shards {
+  border: 1px solid #FFFFFF;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+div.shards {
+  margin-top: -8px;
+  margin-bottom: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+p.p3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+/* Add Canvas2D Element */
+canvas.shadowcubes {
+  border: 1px solid var(--border);
+  max-width: 100%;
+  float: center;
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+canvas {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  float: center;
+}
+canvas.canvas2 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
