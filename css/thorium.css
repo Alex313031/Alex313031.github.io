@@ -105,6 +105,12 @@ img.crbook {
 img.fav {
   margin-bottom: -3px;
 }
+img.fav2 {
+  margin-bottom: -8px;
+}
+img.fav3 {
+  margin-bottom: -9px;
+}
 .fly:hover {
   animation: fly 1.0s;
   animation-iteration-count: infinite;
@@ -186,12 +192,27 @@ b {
 /* Put box around intro/description */
 p.intro {
   box-shadow: 1px 1px 2px 0px var(--border);
-  padding-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   border: 1px solid var(--border);
   border-radius: 3px;
   font-weight: 600;
+  text-shadow: 1px 1px 1px var(--shadow);
+}
+p.p2 {
+  padding-left: 16px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 12px;
+  max-width: 100%;
+  overflow: auto;
+  color: var(--preformatted);
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  border-radius: 5px;
   text-shadow: 1px 1px 1px var(--shadow);
 }
 /* Set link colours */
