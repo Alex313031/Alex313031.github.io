@@ -56,19 +56,24 @@ body {
 }
 /* General body settings */
 .body2 {
-  margin: 1em auto;
+  margin: 1em 1em;
+  max-width: 100%;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
   background-color: var(--bgcolor);
 }
-/* Two image containers (use 25% for four, and 50% for two, etc) */
-.row {
-  display: flex;
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
+/* Two image containers (use 25% for four, and 50% for two, etc) */
 .column {
-  flex: 25.00%;
-  padding: 5px;
+  float: left;
+  width: 49%;
+  padding: 4px;
 }
 /* Image autoconfig */
 img {
@@ -87,6 +92,10 @@ img.thor90 {
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 img.thoros {
+  border: 1px solid var(--border);
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+}
+.comic {
   border: 1px solid var(--border);
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
