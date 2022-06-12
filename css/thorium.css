@@ -54,10 +54,17 @@ body {
   color: var(--fontcolor);
   background-color: var(--bgcolor);
 }
-/* General body settings */
 .body2 {
   margin: 0.8em 1.5em;
   max-width: 100%;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem;
+  color: var(--fontcolor);
+  background-color: var(--bgcolor);
+}
+.body3 {
+  margin: 0em auto;
+  max-width: 38em;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
@@ -239,6 +246,11 @@ p.p2 {
   border-radius: 5px;
   text-shadow: 1px 1px 1px var(--shadow);
 }
+div.p2 {
+  border: 1px solid #ffffff;
+  padding-left: 14px;
+  padding-right: 12px;
+}
 /* Set link colours */
 a:link{
   color: var(--linkcolor);
@@ -273,6 +285,13 @@ code {
   justify-content: space-between;
   align-items: flex-end;
 }
+.indented {
+  margin-left: 28px;
+}
+
+.indented label {
+  display: block;
+}
 /* Codeblock Styles */
 pre {
   padding: 1rem 1.5rem;
@@ -289,37 +308,15 @@ pre {
 }
 /* Rounded Dark/Light Mode Button */
 button {
+  font-family : inherit;
   box-shadow: 1px 1px 1px 0px var(--border);
   border: 1px solid var(--border);
   border-radius: 5px;
   float: bottom;
 }
-/* Add WebGL Canvas Element */
-canvas.glcube {
-  border: 1px solid var(--border);
-  max-width: 100%;
-  float: center;
-  filter: drop-shadow(1px 1px 1px var(--imgshadow));
-}
-/* Add Canvas2D Element */
-canvas.shadowcubes {
-  border: 1px solid var(--border);
-  max-width: 100%;
-  float: center;
-  filter: drop-shadow(1px 1px 1px var(--imgshadow));
-}
-canvas {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  float: center;
-}
-canvas.canvas2 {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  float: center;
+.checkbox {
+  font-family : inherit;
+  outline: 1px solid #000000;
 }
 /* roboto-regular - latin */
 @font-face {
