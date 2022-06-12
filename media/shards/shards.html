@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="../../humans.txt">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <title>Shards Three.js Demo</title>
+    <link rel="stylesheet" href="../../css/thorium.css">
+    <link rel="stylesheet" href="../../css/media.css">
+  </head>
+  <body class="body3" style="background-image: url('bg-dark.jpg');">
+    <header>
+      <section>
+        <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="Shards"><u>Lightmap Generation - "Shards"</u></h1>
+      </section>
+    </header>
+    <main>
+      <section>
+		  
+<div id="shader" class="shards" title="&quot;Shards&quot; - three.js Demo"></div>
+
+<div class="p2">
+<p class="p3">
+  &nbsp;&nbsp;This example, from <a title="https://madebyevan.com/webgl-path-tracing/" href="https://madebyevan.com/webgl-path-tracing/">here</a>, dynamically generates a combined ambient occlusion and direct illumination lightmap on the GPU.
+  Ambient occlusion refers to the shadows caused by a uniformly lit hemisphere enclosing the model, which approximates the light arriving from the sky.
+  Try turning off the accumulation across frames to see what the the instantaneous shadow test looks like:
+</p>
+<p class="indented p3">
+  <label>
+    <input id="accumulate" class="checkbox" title="Accumulate Across Frames" type="checkbox" checked>
+    <em>Accumulate Across Frames</em>
+  </label>
+</p>
+<p class="p3">
+  &nbsp;&nbsp;Lightmap generation is traditionally done by tracing thousands of rays per pixel, bouncing them around the scene, and accumulating the light contributed along each ray into a lightmap.
+  This is very hard to do on the GPU for anything other than <a title="https://madebyevan.com/webgl-path-tracing/" rel="noopener" href="https://madebyevan.com/webgl-path-tracing/">small special-cased scenes</a> because rays that bounce everywhere have very incoherent data access patterns that interact poorly with the GPU cache.
+</p>
+<p class="p3">
+  &nbsp;&nbsp;However, if the lightmap only needs to represent a single bounce of light, rasterization can be used to massively speed everything up.
+  Instead of picking a unique random direction direction for every ray, you can randomly pick one direction and test many parallel rays along that direction.
+  These two approaches average out to the same result in the long run but the parallel rays approach can be GPU-accelerated using orthographic rasterization.
+  That's what this demo does.
+</p>
+<p class="p3">
+  &nbsp;&nbsp;Both sides of every quad in the scene are assigned square patches in the lightmap texture.
+  The scene is rendered once every frame from a random direction into a shadow map using an orthographic camera.
+  That shadow map is then accumulated onto the lightmap.
+  The direction alternates between a direction near the primary light and a direction uniformly sampled from the sky hemisphere.
+  This alternation simulates both a soft direct light and a global ambient light.
+</p>
+<p class="p3">
+  &nbsp;&nbsp;This scene can't be multisampled even though it uses forward rendering because there will be leaking around the edges of quads due to extrapolation.
+  For more details see this article: <a title="https://www.opengl.org/pipeline/article/vol003_6/" rel="noopener" href="https://www.opengl.org/pipeline/article/vol003_6/">https://www.opengl.org/pipeline/article/vol003_6/</a>.
+  These artifacts can be avoided by using centroid sampling except it isn't supported by WebGL.
+</p>
+</div>
+    <script defer src="../../js/jquery-3.6.0.slim.min.js"></script>
+    <script src="lightgl.js"></script>
+    <script src="shards.js"></script>
+      </section>
+    </main>
+  </body>
+</html>
