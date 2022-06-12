@@ -54,7 +54,9 @@ video.video {
   border: 1px solid var(--border);
   filter: drop-shadow(1px 1px 4px var(--imgshadow));
   max-width: 100%;
-  display: flex;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   float: center;
   margin-top: 6px;
 }
