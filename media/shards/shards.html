@@ -5,8 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="../../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
-    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Three.js demo showcasing direct illumination lightmapping and ambient occlusion.">
     <link rel="author" href="../../humans.txt">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="theme-color" content="#ffffff">
@@ -17,7 +16,7 @@
   <body class="body3" style="background-image: url('bg-dark.jpg');">
     <header>
       <section>
-        <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="Shards"><u>Lightmap Generation - "Shards"</u></h1>
+        <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="Shards"><u>Lightmap Generation - <em>"Shards"</em></u></h1>
       </section>
     </header>
     <main>
@@ -27,14 +26,15 @@
 
 <div class="p2">
 <p class="p3">
-  &nbsp;&nbsp;This example, from <a title="https://madebyevan.com/webgl-path-tracing/" href="https://madebyevan.com/webgl-path-tracing/">here</a>, dynamically generates a combined ambient occlusion and direct illumination lightmap on the GPU.
+  <b>See also: </b>This other three.js demo > <a title="Blobs Demo" href="../metaballs/blobs.html">Blobs</a> <br> 
+  &nbsp;&nbsp;This <a title="threejs.org" rel="noopener" href="https://threejs.org/">three.js</a> demo, from <a title="https://madebyevan.com/webgl-path-tracing/" href="https://madebyevan.com/webgl-path-tracing/">here</a>, dynamically generates a combined ambient occlusion and direct illumination lightmap on the GPU.
   Ambient occlusion refers to the shadows caused by a uniformly lit hemisphere enclosing the model, which approximates the light arriving from the sky.
   Try turning off the accumulation across frames to see what the the instantaneous shadow test looks like:
 </p>
 <p class="indented p3">
   <label>
     <input id="accumulate" class="checkbox" title="Accumulate Across Frames" type="checkbox" checked>
-    <em>Accumulate Across Frames</em>
+    <b><em>Accumulate Across Frames</em></b>
   </label>
 </p>
 <p class="p3">
@@ -61,8 +61,8 @@
 </p>
 </div>
     <script defer src="../../js/jquery-3.6.0.slim.min.js"></script>
-    <script src="lightgl.js"></script>
-    <script src="shards.js"></script>
+    <script defer src="lightgl.js"></script>
+    <script defer src="shards.js"></script>
       </section>
     </main>
   </body>
