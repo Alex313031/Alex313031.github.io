@@ -47,7 +47,7 @@
 }
 /* General body settings */
 body {
-  margin: 1em auto;
+  margin: 0.5em auto;
   max-width: 36em;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
@@ -56,7 +56,7 @@ body {
 }
 /* General body settings */
 .body2 {
-  margin: 1em 1em;
+  margin: 0.8em 1.5em;
   max-width: 100%;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
@@ -64,16 +64,24 @@ body {
   background-color: var(--bgcolor);
 }
 /* Clear floats after image containers */
+.row {
+  float: center;
+}
 .row::after {
   content: "";
   clear: both;
-  display: table;
+  display: block;
 }
 /* Two image containers (use 25% for four, and 50% for two, etc) */
 .column {
-  float: left;
-  width: 49%;
+  float: right;
+  width: 1200em;
+  min-width: 40em;
+  max-width: 49%;
   padding: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* Image autoconfig */
 img {
@@ -83,6 +91,11 @@ img {
 /* Image effects */
 img.spin {
   transition: all .6s;
+}
+img.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 img.shadow {
   filter: drop-shadow(1px 1px 2px var(--imgshadow));
@@ -96,6 +109,8 @@ img.thoros {
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 .comic {
+  min-width: 40em;
+  max-width: 1200em;
   border: 1px solid var(--border);
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
