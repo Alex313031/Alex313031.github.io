@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <!-- https://thorium.rocks/ custom 404 landing page. -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en-US">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="author" href="/humans.txt">
+  <link rel="icon" type="image/png" sizes="32x32" href="/404-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/404-16x16.png">
+  <meta name="description" content="Funny Custom 404 Error Page">
   <title>Error! 404 (Not Found)</title>
   <style>
     *{margin:0;padding:0} html,code{font:15px/22px arial,sans-serif} html{background:#fff;color:#000000;padding-top:-500px} body{margin:4% auto 0;px;max-width:512px;max-height:512px} p.par{padding-top:8px} ins{color:#777;padding-top:10px;text-decoration:none} img.grey{padding-top:12px}*
   </style>
-  </head><body><img title="ohno!" src="/misc/robot_1024.png" width="512" height="512" alt="Error Robot"></a>
+  <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+  </script>
+  </head>
+  <body><img title="ohno!" src="/misc/robot_1024.png" width="512" height="512" alt="Error Robot"></a>
   <p class="par"><b>404.</b> <ins>That’s an error, my fine sir.</ins>
   </p><p>The requested URL <code></code> was not found on this server.  <ins>That’s all <a rel="noopener" href="misc/robot_1024.png">Mr. Robot</a> knows.</ins>
-  <ins><img title="Thorium Grey" class="grey" src="/misc/thorium_greyscale_1024.png" padding-top="100" width="128" height="128" alt="Grey Thorium Logo"></ins>
-</p></body></html>
+  <ins><img title="Thorium Grey" class="grey" src="/misc/thorium_greyscale_1024.png" padding-top="100" width="128" height="128" alt="Grey Thorium Logo"></ins></p>
+  </body></html>
