@@ -102,6 +102,9 @@ img.fly {
 img.crbook {
   margin-top: 12px;
 }
+img.fav {
+  margin-bottom: -3px;
+}
 .fly:hover {
   animation: fly 1.0s;
   animation-iteration-count: infinite;
