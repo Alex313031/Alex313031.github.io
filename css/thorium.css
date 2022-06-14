@@ -311,7 +311,7 @@ pre {
 }
 /* Rounded Dark/Light Mode Button */
 button {
-  font-family : inherit;
+  font-family: inherit;
   box-shadow: 1px 1px 1px 0px var(--border);
   border: 1px solid var(--border);
   border-radius: 5px;
