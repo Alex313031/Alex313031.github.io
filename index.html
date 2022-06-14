@@ -56,10 +56,13 @@
     <h2><u>Highlights</u>&nbsp;&nbsp;<img src="imgs/bulb.svg" width="28" title="Bulb" alt="Bulb Icon" class="spin"></h2>
     <a href="chromiumstory.html"><img class="fly d-flex2" src="misc/flying_browser.png" width="128" title="Flying Thorium (Click Me!)" alt="Flying Thorium"></a>
     <ul>
-        <li>Compiler modifications include SSE4.2, AVX, AES, and Cflags, thinLTO flags, and import_instr_limit flags set to /O3, 3, and 30 respectively.</li>
+        <li>Compiler modifications include SSE4.2, AVX, AES, and Cflags, thinLTO flags, and import_instr_limit flags set to /O3, 3, and 30 respectively, as well as other compiler flags.</li>
         <li>LLVM LOOP optimizations as -mllvm flags</li>
+        <li>UI Changes and Patches for Linux and Windows that fix bugs, enhance useability, and strengthen privacy/security.</li>
     </ul>
-    <p>&nbsp;&nbsp;This nets a <b><em>2-8%</em> performance</b> improvement, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" href="https://github.com/Alex313031/Thorium/blob/main/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&nbsp;&nbsp;See also: </b><a title="ThoriumOS" href="thoriumos.html">ThoriumOS</a> & <a title="CrOS TrImLy Script" rel="noopener" href="https://github.com/Alex313031/TrImLy">TrImLy</a>&nbsp;&nbsp;<img src="imgs/thorium.svg" width="21" title="ThoriumOS" alt="ThoriumOS Icon" class="spin fav"> <br> <b>&nbsp;&nbsp;See also: </b><a title="The Chromium Story" href="chromiumstory.html">The Chromium Story</a>&nbsp;&nbsp;<img src="imgs/chromium.svg" width="21" title="Chromium Story" alt="Chromium Story" class="spin fav"> <br> <b>&nbsp;&nbsp;See also: </b><a title="Web Pac-Man" href="games/pacman/pacman.htm">Web Pac-Man</a>&nbsp;&nbsp;<img src="games/pacman/icon/favicon.png" width="18" title="Pacman" alt="Web Pacman" class="spin fav"> <br> <b>&nbsp;&nbsp;See also: </b><a title="Shards" href="media/shards/shards.html">Shards Three.js Demo</a>&nbsp;&nbsp;<img src="media/shards/favicon.ico" width="18" title="Shards" alt="Shards Demo" class="spin fav"></a></p>
+    <!-- Dark/Light Mode Button -->
+    <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+    <p>&nbsp;&nbsp;This nets a <b><em>2-8%</em> performance</b> improvement, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" href="https://github.com/Alex313031/Thorium/blob/main/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="ThoriumOS" href="thoriumos.html">ThoriumOS</a> & <a title="CrOS TrImLy Script" rel="noopener" href="https://github.com/Alex313031/TrImLy">TrImLy</a>&nbsp;&nbsp;<img src="imgs/thorium.svg" width="21" title="ThoriumOS" alt="ThoriumOS Icon" class="spin fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="The Chromium Story" href="chromiumstory.html">The Chromium Story</a>&nbsp;&nbsp;<img src="imgs/chromium.svg" width="21" title="Chromium Story" alt="Chromium Story" class="spin fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Web Pac-Man" href="games/pacman/pacman.htm">Web Pac-Man</a>&nbsp;&nbsp;<img src="games/pacman/icon/favicon.png" width="18" title="Pacman" alt="Web Pacman" class="spin fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Shards" href="media/shards/shards.html">Shards Three.js Demo</a>&nbsp;&nbsp;<img src="media/shards/favicon.ico" width="18" title="Shards" alt="Shards Demo" class="spin fav"></a></p>
     <h2><u>&#60;Links&#62;</u></h2>
     <p> <span title="Under Construction" class="construction"><b><em>Website under construction.</em></b></span> <a title="Under Construction" alt="Windows Chicago Under Construction" href="misc/Chicago_Under_Construction.png">Δ</a> Meanwhile, you can check out the main <a title="Thorium Source Code" rel="noopener" href="https://github.com/Alex313031/Thorium">repository</a>, read the <a title="alex313031.blogspot.com" rel="noopener" href="https://alex313031.blogspot.com/">developer blog,</a> or download releases for:</p>
     <!-- Links List -->
@@ -69,14 +72,15 @@
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Special/releases">MacOS (ARM and x64)</a>&nbsp;<img src="imgs/apple.png" width="22" title="Apple" alt="Apple Logo" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Special/releases">Raspberry Pi</a>&nbsp;&nbsp;<img src="imgs/Raspberry_Pi_Logo.svg" width="18" title="Raspberry Pi" alt="Raspberry Pi Logo" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Win/releases">Windows</a>&nbsp;&nbsp;<img src="imgs/winflag_animated.gif" width="24" title="Windows" alt="Animated Windows Flag" class="spin fav"></li>
-        <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-AVX2/releases">Windows AVX2</a>&nbsp;&nbsp;<img src="imgs/AVX2.png" width="42" title="AVX2" alt="AVX2 Logo" class="spin fav"></li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-AVX2/releases">Windows AVX2</a>&nbsp;&nbsp;<img src="imgs/AVX2.png" width="41" title="AVX2" alt="AVX2 Logo" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/ChromiumOS/">ThoriumOS</a>&nbsp;&nbsp;<img src="imgs/thorium.svg" width="21" title="ThoriumOS" alt="ThoriumOS Icon" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Alex313031.github.io">Page Source Code</a>&nbsp;&nbsp;<img src="imgs/GitHub.png" width="22" title="alex313031.github.io" alt="GitHub Logo" class="spin fav"></li>
     </ul>
     <p> I have also created some Chrome Extensions and Apps for use with Thorium/ThoriumOS:</p>
     <!-- Extensions Links List -->
     <ul title="Extension Links">
-        <li><a rel="noopener" href="https://github.com/Alex313031/cog-chromium/">COG</a> - System Monitor App for Thorium.&nbsp;&nbsp;<img src="imgs/COG_Icon.svg" width="20" title="COG" alt="COG Logo" class="spin fav"></li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/cog-chromium/">COG</a> - System Monitor App for Thorium/Chromium.&nbsp;&nbsp;<img src="imgs/COG_Icon.svg" width="20" title="COG" alt="COG Logo" class="spin fav"></li>
+        <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-Theme/">Thorium Theme</a> - Material Design dark theme for Thorium.&nbsp;&nbsp;<img src="imgs/Thorium-Scrollbars.png" width="19" title="Scrollbars" alt="Thorium Scrollbars Logo" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Thorium-ScrollBars/">Thorium Scrollbars</a> - Simple Scrollbar theme for Thorium.&nbsp;&nbsp;<img src="imgs/Thorium-Scrollbars.png" width="19" title="Scrollbars" alt="Thorium Scrollbars Logo" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/CrOS-Calc/">CrOS Calc</a> - Calculator App for ThoriumOS.&nbsp;&nbsp;<img src="imgs/CrOS-Calc.png" width="22" title="Calculator" alt="CrOS Calculator Logo" class="spin fav"></li>
         <li><a rel="noopener" href="https://github.com/Alex313031/Chromium-Vector-Icons/">Chromium Vector Icons</a> - Extension which draws vector .icon files.&nbsp;&nbsp;<img src="imgs/Cr-Vector-Icons.png" width="20" title="Cr Vector Icons" alt="Chromium Vector Icons Logo" class="spin fav"></li>
@@ -90,8 +94,6 @@
 sudo mv thorium.list /etc/apt/sources.list.d/
 sudo apt update
 sudo apt install thorium-browser-unstable</pre>
-	<!-- Dark/Light Mode Button -->
-    <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
     <p title="Thanks!" style="font-weight: 600"><em>Thanks for using Thorium!</em></p>
     <!-- Credits & Custom 404 Landing Page (uses .haccess file) -->
     <p title="Das Credits"><img src="imgs/info.svg" width="20" title="Info" alt="Info Icon" class="spin fav">&nbsp;<em>Credits: <a title="humans.txt" href="humans.txt">HuMaNs</a></em>&nbsp;&#9895;<em title="Funny 404 Error Page">&nbsp;&nbsp;&nbsp;&nbsp;404 Test Page: </em><em><a title="404 Test" href="404.html">blah</a></em>&nbsp;&nbsp;<img src="misc/sadtab.svg" width="20" title="Sad Tab" alt="Sad Tab" class="spin fav"></p>
