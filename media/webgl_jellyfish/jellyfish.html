@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>WebGL Jellyfish</title>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="WebGL Jellyfish Demo">
+<link rel="author" href="/humans.txt">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/lib/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/lib/mjs.js"></script>
+
+<script type="text/javascript" src="js/initWin.js"></script>
+<script type="text/javascript" src="js/initUniforms.js"></script>
+<script type="text/javascript" src="js/initTextures.js"></script>
+<script type="text/javascript" src="js/initShaders.js"></script>
+<script type="text/javascript" src="js/initBuffers.js"></script>
+
+<script type="text/javascript" src="js/interact.js"></script>
+<script type="text/javascript" src="js/debug.js"></script>
+
+<script type="text/javascript" src="js/tick.js"></script>
+<script type="text/javascript" src="js/simulator.js"></script>
+<script type="text/javascript" src="js/drawJellyfish.js"></script>
+<script type="text/javascript" src="js/drawScene.js"></script>
+
+<style>
+body {
+  font-family:  'Arial', sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+</style>
+
+<script id="jellyfish-vs" type="x-shader/x-vertex">
+precision highp float;
+
+attribute vec3 aVertexPosition;
+attribute vec3 aVertexNormal;
+attribute vec3 aVertexColor;
+attribute vec3 aTextureCoord;
+attribute vec4 aSkinWeight;
+
+uniform mat4 uWorld;
+uniform mat4 uViewInv;
+uniform mat4 uWorldView;
+uniform mat4 uWorldViewProj;
+
+uniform mat4 uJoint0;
+uniform mat4 uJoint1;
+uniform mat4 uJoint2;
+uniform mat4 uJoint3;
+uniform mat4 uJoint0InvTranspose;
+
+uniform float uCurrentJellyfishTime;
+
+varying mediump vec4 vWorld;
+
+varying mediump vec3 vTextureCoord;
+varying mediump vec3 vDiffuse;
+varying mediump vec3 vFresnel;
+
+
+void main(void) {
+
+  //Vertex Animation
+  float dpi = 6.2831853;
+  float pi = 3.14159265;
+  float hpi = 1.570796325;
+  float time = mod(uCurrentJellyfishTime+aVertexPosition.y, dpi);
+
+  float offset = smoothstep(0.0,1.,max(0.,-aVertexPosition.y-0.8)/10.);
+
+  highp vec3 anim = (vec3(aVertexColor.x,aVertexColor.y,aVertexColor.z)/8.0*sin(time) * (1.-offset));
+  highp vec3 pos = aVertexPosition + anim;
+
+  //skinning
+  pos = vec3(uJoint0 * vec4(pos, 1.0))*aSkinWeight.x +
+				vec3(uJoint1 * vec4(pos, 1.0))*aSkinWeight.y +
+				vec3(uJoint2 * vec4(pos, 1.0))*aSkinWeight.z +
+				vec3(uJoint3 * vec4(pos, 1.0))*aSkinWeight.w;
+  vec3 nrm = vec3(uJoint0InvTranspose * vec4(aVertexNormal, 1.0));
+
+  //matrices
+  vWorld =               uWorld * vec4(pos, 1.0);
+  highp vec4 WorldViewProj =       uWorldViewProj * vec4(pos, 1.0);
+
+  //vertex normal
+  vec3 VertexNormal = normalize(nrm);
+
+  //vertex eye vector
+  vec3 WorldEyeVec = normalize(vWorld.xyz - uViewInv[3].xyz);
+
+  //diffuse
+  vec3 lightDir = vec3(0.0,1.0,0.0);
+  vec3 lightCol = vec3(0.6,0.4,0.1);
+  vec3 ambientCol = vec3(0.5,0.2,0.1);
+  float diffuseProduct = max(dot(normalize(VertexNormal.xyz), lightDir), 0.0);
+  vDiffuse = lightCol * vec3(diffuseProduct) + ambientCol;
+
+  //fresnel
+  vec3 fresnelColor = vec3(0.2,0.5,0.6);
+  float fresnelProduct = pow(1.0-max(abs(dot(VertexNormal, -WorldEyeVec)), 0.0), 2.0);
+  vFresnel = fresnelColor * vec3(fresnelProduct);
+
+	//texture coords
+  vTextureCoord = aTextureCoord;
+
+  gl_Position = WorldViewProj;
+}
+</script>
+
+<script id="jellyfish-fs" type="x-shader/x-fragment">
+precision mediump float;
+
+uniform sampler2D uSampler0;
+uniform sampler2D uSampler1;
+uniform sampler2D uSampler2;
+
+uniform float uCurrentTime;
+
+varying vec4 vWorld;
+
+varying vec3 vTextureCoord;
+varying vec3 vDiffuse;
+varying vec3 vFresnel;
+
+void main(void) {
+  vec3 caustics = texture2D(uSampler1, vec2((vWorld.x)/48.+uCurrentTime/12., (vWorld.z-vWorld.y)/95.)).rgb;
+  vec4 colorMap = texture2D(uSampler0, vec2(vTextureCoord.s, vTextureCoord.t));
+
+  gl_FragColor = vec4(((vDiffuse + caustics)*colorMap.rgb) + vFresnel, colorMap.a);
+}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  webGLStart();
+});
+</script>
+
+</head>
+<body>
+    </div>
+    <div id="console">
+       <div class="console-field" id="debugJellyfish">
+          <b>WebGL Jellyfish Console</b>
+            Frame rate: <span id="frameRate">NaN</span><br />
+
+            <span class="input-section">Count:</span>
+            <input type="text" class="textboxDebug" id="jCount" /><br />
+            <span class="input-section">Size:</span>
+            <input type="text" class="textboxDebug" id="jScale" />
+            <input type="text" class="textboxDebug" id="jScaleRandom"  /><br />
+            <span class="input-section">Turbulence:</span>
+            <input type="text" class="textboxDebug" id="jTurb" /><br />
+            <span class="input-section">Speed:</span>
+            <input type="text" class="textboxDebug" id="jSpeed" /><br />
+        </div>
+    </div>
+    <canvas id="webgl-canvas"></canvas>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68216254-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
