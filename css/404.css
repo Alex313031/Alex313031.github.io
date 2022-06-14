@@ -1,0 +1,91 @@
+/* Thorium 404 Cascading Style Sheet */
+*{
+  margin: 0;
+  padding: 0;
+  }
+html,code {
+  font: 15px/22px arial,sans-serif;
+  }
+:root, :root.light {
+  --border: #000000;
+  --imgshadow: #000000;
+  --insert: #777777;
+  --bg: #ffffff;
+  --color: #000000;
+  --error: #e51c23;
+  --linkcolor: #0000ee;
+  --visitedcolor: #551a8b;
+}
+html, html.light {
+  background: var(--bg);
+  color: var(--color);
+  padding-top: -500px;
+  }
+.ins {
+  color: var(--insert);
+  padding-top: 10px;
+  text-decoration: none;
+  }
+.error {
+  color: var(--error);
+}
+@media (prefers-color-scheme: dark) {
+:root, :root.dark {
+  --border: #ffffff;
+  --imgshadow: #ffffff;
+  --insert: #999999;
+  --bg: #24292f;
+  --color: #ffffff;
+  --error: #fbbc04;
+  --linkcolor: #ae5ee0;
+  --visitedcolor: #5bf5bf;
+}
+html, html.dark {
+  background: var(--bg);
+  color: var(--color);
+  padding-top: -500px;
+  }
+.ins {
+  color: var(--insert);
+  padding-top: 10px;
+  text-decoration: none;
+  }
+.error {
+  color: var(--error);
+}
+}
+body {
+  margin: 4% auto 0px;
+  max-width: 512px;
+  max-height: 512px;
+  }
+p.par {
+  padding-top: 8px;
+  }
+/* Set link colours */
+a:link{
+  color: var(--linkcolor);
+}
+a:visited,
+a:active {
+  color: var(--visitedcolor);
+}
+/* Set image styles */
+img.ohno {
+  border: 1px solid var(--border);
+}
+img.shadow {
+  filter: drop-shadow(1px 1px 0px var(--imgshadow));
+}
+img.grey {
+  padding-top:12px;
+}
+img.spin {
+  transition: all .6s;
+}
+/* Rounded Dark/Light Mode Button */
+button {
+  font-family: inherit;
+  border: 1px solid var(--border);
+  float: bottom;
+}*
