@@ -8,6 +8,7 @@ html,code {
   }
 :root, :root.light {
   --border: #000000;
+  --imgborder: #999999;
   --imgshadow: #000000;
   --insert: #777777;
   --bg: #ffffff;
@@ -32,6 +33,7 @@ html, html.light {
 @media (prefers-color-scheme: dark) {
 :root, :root.dark {
   --border: #ffffff;
+  --imgborder: #ffffff;
   --imgshadow: #ffffff;
   --insert: #999999;
   --bg: #24292f;
@@ -72,7 +74,8 @@ a:active {
 }
 /* Set image styles */
 img.ohno {
-  padding-bottom: 4px;
+  border: 1px solid var(--imgborder);
+  padding-bottom: 2px;
 }
 img.shadow {
   filter: drop-shadow(1px 1px 0px var(--imgshadow));
