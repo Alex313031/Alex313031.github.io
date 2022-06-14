@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<!--  Felix Faire 2014 -->
+<html>
+	<head>
+		<title>Bloom - Felix Faire</title>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="A minimalistic flower designer where the geometry and form of the petals are controlled with user defined parameters.">
+        <link rel="author" href="/humans.txt">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		
+			
+		<script src="js/three.min.js"></script>
+		<script src="js/Detector.js"></script>
+		<!-- https://github.com/mrdoob/stats.js -->
+		
+
+		<script src="js/OrbitControls.js"></script>
+
+		<script src='js/dat.gui.min.js'></script>
+
+		<script src="js/MTLLoader.js"></script>
+		<script src="js/OBJMTLLoader.js"></script>
+
+		<script src="js/THREEx.screenshot.js"></script>
+		<script src="js/THREEx.FullScreen.js"></script>
+		<script src="js/THREEx.WindowResize.js"></script>
+		<script src="js/threex.dragpancontrols.js"></script>
+
+		<link  href="css/bloom.css" rel="stylesheet"/>
+	</head>
+<body>
+	<!-- three.js container -->
+    	<div id="container"></div>
+	<!-- info on screen display -->
+	<div id="info">
+		<div class="top">
+			<a href="http://www.felixfaire.com" >Felix Faire Home</a>
+			
+		</div>
+		<div class="top2">
+			<a href="https://thorium.rocks/" >Thorium Rocks Home</a>
+			
+		</div>
+		<div class="bottom" id="inlineDoc" >
+			- <i>p</i> for screenshot
+		</div> 
+	</div> 
+
+	<script type="text/javascript">
+
+		// "Bloom"
+		// Created and designed
+		// by Felix Faire
+		// 2014
+
+		// with the help of the three.js community.
+		
+
+
+		// global variables
+		var stats, scene, renderer, composer;
+		var camera, cameraControls;
+
+		var petals = [];
+		var numPetals = 40;
+
+		var pointLight	= new THREE.PointLight( 0x3A8BAB );
+
+		var t = 0;
+
+		//GUI
+
+		var controls = new function() {
+            this.bloom = 0.05;
+			this.expand = 0.04;
+			this.growth = 0.02;
+			this.spin = 1.84;
+			this.spinOffset = 0.0;
+			this.colour = "#3A8BAB";
+        }
+
+        var gui = new dat.GUI();
+        gui.add(controls, 'bloom',-0.01,0.08).onChange(updateFlower);
+        gui.add(controls, 'expand',0,0.1).onChange(updateFlower);
+        gui.add(controls, 'growth',0,0.1).onChange(updateFlower);
+        gui.add(controls, 'spin',1.5,2.0).onChange(updateFlower);
+        gui.add(controls, 'spinOffset',0,0.06).onChange(updateFlower);
+        gui.addColor(controls, 'colour').onChange( function(value){
+        	pointLight.color.setHex( value.replace("#", "0x") );
+        });
+        
+
+
+		if( !init() )	animate(); render();
+
+		// init the scene
+		function init(){
+
+			if( Detector.webgl ){
+				renderer = new THREE.WebGLRenderer({
+					antialias		: true,	// to get smoother output
+					preserveDrawingBuffer	: true	// to allow screenshot
+				});
+				renderer.setClearColor( 0x1e1e1e );
+			}else{
+				renderer	= new THREE.CanvasRenderer();
+			}
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.getElementById('container').appendChild(renderer.domElement);
+
+			// create a scene
+			scene = new THREE.Scene();
+
+			// put a camera in the scene
+			camera	= new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 2000 );
+			camera.position.set(0,10,14);
+
+			scene.add(camera);
+
+			// create a camera contol
+			 cameraControls = new THREE.OrbitControls( camera , renderer.domElement);
+			cameraControls.damping = 0.2;
+			
+
+			// transparently support window resize
+			THREEx.WindowResize.bind(renderer, camera);
+			// allow 'p' to make screenshot
+			THREEx.Screenshot.bindKey(renderer);
+			// allow 'f' to go fullscreen where this feature is supported
+			if( THREEx.FullScreen.available() ){
+				THREEx.FullScreen.bindKey();		
+				document.getElementById('inlineDoc').innerHTML	+= "- <i>f</i> for fullscreen";
+			}
+
+			// add lights
+			var light	= new THREE.AmbientLight( 0xffffff );
+			scene.add( light );
+
+			// globally declared
+			pointLight.position.set( 5,20,20);
+			scene.add( pointLight );
+
+			var light	= new THREE.PointLight( 0xeeeeee );
+			light.position.set( -10,20,-20);
+			scene.add( light );
+
+			var light	= new THREE.PointLight( 0xdddddd );
+			light.position.set( 0,-10,3);
+			scene.add( light );
+
+
+			// create center bulb
+			var geometry = new THREE.SphereGeometry( 0.35, 32, 32 );
+
+			var material = new THREE.MeshBasicMaterial( {color: 0x222222} );
+
+			mesh = new THREE.Mesh( geometry, material );
+			mesh.position.y = 0.3;
+			scene.add( mesh );
+
+
+
+		 	var loader = new THREE.OBJMTLLoader();
+
+			loader.load( 'obj/petal.obj', 'obj/petal.mtl', function ( object ) {
+
+				for (var i = 0; i < numPetals; i++){
+
+				petals[i] = object.clone();
+
+				// the most ridiculous debug step ever
+				petals[i].rotation.order = 'YXZ'
+
+				petals[i].rotation.y = i*controls.spin;
+				petals[i].rotation.x = -i*controls.bloom + Math.sin(t+i*0.02)*0.01;
+				petals[i].rotation.z = 0.2;
+
+				petals[i].position.z = -i*controls.expand;
+				petals[i].position.y = 20*controls.growth - 20*(i/numPetals)*controls.growth;
+
+    			petals[i].position.applyEuler(new THREE.Euler( 0, (controls.spin+controls.spinOffset)*i, 0, 'XYZ' ));
+
+				scene.add( petals[i] );
+
+				}	
+				
+
+			} );
+
+
+			
+
+		}
+
+		function updateFlower(){
+			for (var i = 0; i < numPetals; i++){
+				petals[i].position = new THREE.Vector3(0,0,0);
+				petals[i].rotation.x = 0;
+				petals[i].rotation.y = 0;
+				petals[i].rotation.z = 0;
+
+				petals[i].rotation.x = -i*controls.bloom + Math.sin(t+i*0.02)*0.01;
+				petals[i].rotation.y = i*controls.spin;
+				petals[i].rotation.z = controls.spinOffset;
+				
+
+				petals[i].position.z = -i*controls.expand;
+				petals[i].position.y = 20*controls.growth - 20*(i/numPetals)*controls.growth;
+
+    			petals[i].position.applyEuler(new THREE.Euler( 0, (controls.spin+controls.spinOffset)*i, 0, 'XYZ' ));
+
+			}	
+		}
+
+		// animation loop
+		function animate() {
+
+			requestAnimationFrame( animate );
+
+			t+= 0.01;
+
+			for (var i = 0; i < petals.length; i++){
+				petals[i].rotation.x = -i*controls.bloom + Math.sin(t+i*0.02)*0.1;
+			}
+
+			cameraControls.update();
+
+			render();
+
+			if (t > 100*Math.PI) t = 0;
+
+			// update stats
+			//stats.update();
+		}
+
+		// render the scene
+		function render() {
+			// variable which is increase by Math.PI every seconds - usefull for animation
+			var PIseconds	= Date.now() * Math.PI;
+
+			// actually render the scene
+			renderer.render( scene, camera );
+		}
+
+
+	</script>
+</body>
+</html>
