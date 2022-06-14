@@ -6,14 +6,12 @@
   <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/css/404.css">
   <link rel="author" href="/humans.txt">
   <link rel="icon" type="image/png" sizes="32x32" href="/404-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/404-16x16.png">
   <meta name="description" content="Funny Custom 404 Error Page">
   <title>Error! 404 (Not Found)</title>
-  <style>
-    *{margin:0;padding:0} html,code{font:15px/22px arial,sans-serif} html{background:#fff;color:#000000;padding-top:-500px} body{margin:4% auto 0;px;max-width:512px;max-height:512px} p.par{padding-top:8px} ins{color:#777;padding-top:10px;text-decoration:none} img.grey{padding-top:12px}*
-  </style>
   <script>
     function toggleDarkMode(useDark) {
         if (useDark) {
@@ -36,8 +34,13 @@
     }
   </script>
   </head>
-  <body><img title="ohno!" src="/misc/robot_1024.png" width="512" height="512" alt="Error Robot"></a>
-  <p class="par"><b>404.</b> <ins>That’s an error, my fine sir.</ins>
-  </p><p>The requested URL <code></code> was not found on this server.  <ins>That’s all <a rel="noopener" href="/misc/robot_1024.png">Mr. Robot</a> knows.</ins>
-  <ins><img title="Thorium Grey" class="grey" src="/misc/thorium_greyscale_1024.png" padding-top="100" width="128" height="128" alt="Grey Thorium Logo"></ins></p>
+  <body><img title="ohno!" class="spin ohno" src="/misc/robot_1024.png" width="512" height="512" alt="Error Robot"></a>
+  <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+  <p class="par"><b class="error">404.</b> <ins class="ins">That’s an <a title="Tony" alt="Tony" href="/misc/Tony.png">error</a>, my fine sir.</ins></p>
+  <p>The requested URL <code></code> was not found on this server. <ins class="ins">That’s all <a title="Mr. Robot" alt="Error Robot" href="/misc/robot_1024.png">Mr. Robot</a> knows.</ins>
+  <ins class="ins"><img title="Thorium Grey" alt="Thorium Greyscale Logo" class="grey spin" src="/misc/thorium_greyscale_1024.png" padding-top="100" width="128" height="128" alt="Grey Thorium Logo"></ins></p>
+    <script defer src="/js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="/js/spin.js"></script>
+	<script defer src="/js/spun.js"></script>
+    <script defer src="/js/button.js"></script>
   </body></html>
