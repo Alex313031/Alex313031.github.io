@@ -7,7 +7,7 @@ html,code {
   font: 15px/22px arial,sans-serif;
   }
 :root, :root.light {
-  --border: #000000;
+  --border: #999999;
   --imgborder: #999999;
   --imgshadow: #000000;
   --insert: #777777;
@@ -75,7 +75,7 @@ a:active {
 /* Set image styles */
 img.ohno {
   border: 1px solid var(--imgborder);
-  padding-bottom: 2px;
+  margin-bottom: 2px;
 }
 img.shadow {
   filter: drop-shadow(1px 1px 0px var(--imgshadow));
