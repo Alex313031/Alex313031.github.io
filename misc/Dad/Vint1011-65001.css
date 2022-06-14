@@ -1,0 +1,1054 @@
+table.ms-toolbar,table.ms-viewtoolbar,.ms-toolbarContainer{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/toolgrad_vintage.gif");
+background-color:#d0dded;
+}
+table.ms-toolbar,.ms-toolbarContainer{
+border:1px solid #96aecc;
+}
+table.ms-viewtoolbar{
+border-top:1px solid #e8e3b7;
+border-bottom:1px solid #e8e3b7;
+}
+.ms-listheader{
+color:#d8d4a2;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/listheadergrad_vintage.gif");
+}
+.ms-menutoolbar{
+border-bottom:1px solid #8099b7;
+border-top:1px solid #8099b7;
+background:#cbd9eb url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/listheadergrad_vintage.gif") repeat-x;
+}
+.ms-menutoolbar td{
+border-top:solid 1px #e1eaf4;
+border-bottom:solid 1px #e1eaf4;
+}
+td.ms-menutoolbarheader{
+color:#d8d4a2;
+}
+.ms-menutoolbar td td.ms-viewselector,.ms-menutoolbar td td.ms-viewselectorhover,.ms-toolbar td td.ms-viewselector,.ms-toolbar td td.ms-viewselectorhover,.ms-authoringcontrols td td.ms-viewselector,.ms-authoringcontrols td td.ms-viewselectorhover,td.ms-viewselector{
+border:solid 1px #6b84a3;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif");
+background-color:#fffbd5;
+}
+.ms-bottompaging{
+background:#a5a07f;
+}
+.ms-bottompagingline1{
+background:#e8e3b7
+}
+.ms-paging{
+color:#d8d4a2;
+}
+TD.ms-rtetoolbarsel{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/rtebnsel_vintage.gif");
+}
+TD.ms-rtetoolbarhov {
+border:solid 1px #8099b7;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/rtebnhov_vintage.gif");
+}
+.ms-informationbar{
+background-color:#e1eaf4;
+border:1px solid #96aecc;
+}
+.ms-formbody{
+background:#efebc2;
+}
+.ms-formfieldlabel {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/globgrad_vintage.gif");
+}
+.ms-searchcorner{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/srchcrnr_vintage.gif");
+}
+.ms-bannerContainer{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/siteTitleBKGD_vintage.jpg");
+}
+.ms-globalbreadcrumb{
+background-color:#a5a07f;
+}
+.ms-globalbreadcrumb,.ms-globalbreadcrumb a{
+color:#ffffff;
+}
+.ms-pagebreadcrumb,.ms-pagebreadcrumb a{
+background-color:#f2edd2;
+}
+.ms-siteactionsmenu div div div{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/siteactionsmenugrad_vintage.gif");
+border-top:1px solid #576b84;
+border-left:1px solid #576b84;
+border-right:1px solid #576b84;
+background-color:#8b99aa;
+}
+.ms-siteactionsmenu div div div.ms-siteactionsmenuhover{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/siteactionsmenuhovergrad_vintage.gif");
+background-color:#db9a59;
+}
+.ms-actionbar{
+border:1px solid #e8e3b7;
+}
+.ms-actionsep{
+border-right:1px solid #e8e3b7;
+}
+.ms-topnavContainer{
+border-left:solid 1px #a2b9d6;
+}
+.ms-topnav{
+border:solid 1px #a2b9d6;
+border-left:solid 1px #ffffff;
+border-bottom-width:0px;
+background:#e1eaf4 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavunselected_vintage.gif");
+color:#7c7c7c;
+}
+.ms-topnavselected{
+background:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavselected_vintage.gif");
+border:solid 1px #8099b7;
+border-left:solid 1px #f7f3cd;
+border-bottom-width:0px;
+background-color:#e8e3b7;
+}
+.ms-topNavHover{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavhover_vintage.gif");
+background-color:#ffe59d;
+border:solid 1px #758ead;
+border-left:solid 1px #ffffff;
+border-bottom-width:0px;
+
+}
+.ms-topNavFlyOutsContainer {
+border:solid 1px #a2b9d6;
+}
+.ms-topNavFlyOuts{
+background-color:#fffbd8 !important;
+}
+.ms-topNavFlyOutsHover{
+background-color:#ffe6a0 !important;
+}
+.ms-quicklaunchnavsep{
+background-color:#e8e3b7;
+}
+.ms-quicklaunch table td{
+border-top:1px solid #ccc6a5;
+}
+.ms-quicklaunch table.ms-navheader td,.ms-navheader2 td,.ms-quicklaunch span.ms-navheader{
+background-color:#e8e3b7;
+border-top:solid 1px #fffbd8;
+border-left:solid 1px #fffbd8;
+}
+div.ms-treeviewouter div{
+border-top:solid 1px #efebc2;
+}
+.ms-quicklaunch span.ms-navheader{
+background-color:#e8e3b7;
+border-left:solid 1px #fffbd8;
+border-bottom:1px solid #efebc2;
+}
+.ms-quicklaunch table.ms-selectednav{
+border:solid 1px #8099b7;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif");
+background-color:#fffbd5;
+}
+.ms-quicklaunch table.ms-selectednav td{
+background:transparent url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednavbullet_vintage.gif") no-repeat;
+}
+.ms-quicklaunch table.ms-selectednavheader td{
+background-color:#fffbd5;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif");
+}
+table.ms-navitem td,span.ms-navitem{
+    background:#fffbd8 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/navBullet_vintage.gif") no-repeat;
+}
+.ms-treeviewouter td.ms-navitem {
+    border:none;
+    padding: 0px 4px;
+}
+.ms-navsubmenu1{
+background-color:#fffbd8;
+}
+.ms-navsubmenu2{
+background-color:#fffbd8;
+}
+table.ms-navselected,span.ms-navselected{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/SELECTEDNAV_vintage.GIF");
+background-color:#FFFBD5;
+background-repeat:repeat-x;
+}
+table.ms-navselected td{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/navBullet_vintage.gif");
+background-repeat:no-repeat;
+}
+.ms-quicklaunchouter{
+border-bottom:solid 1px #d8d4a2;
+border-right:solid 1px #d8d4a2;
+}
+.ms-tvselected{
+background-color:#8ba3c1;
+}
+table.ms-recyclebin td{
+background-color:#fffbd8;
+border-top:solid 1px #ffffff;
+border-left:solid 1px #ffffff;
+}
+.ms-quickLaunch{
+border:solid 1px #949172;
+background-color:#fffbd8;
+}
+.ms-quicklaunchheader{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/quickLaunchHeader_vintage.gif");
+background-color:#e8e3b7;
+border-left:solid 1px #fffbd8;
+}
+.ms-navwatermark{
+color:#96aecc;
+}
+.ms-unselectednav{
+border:1px solid #e8e3b7;
+}
+.ms-templatepickerunselected div{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/templatepickerunselected_vintage.gif");
+}
+.ms-templatepickerselected div{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/templatepickerselected_vintage.gif");
+border:solid 1px #758ead;
+}
+.ms-diffselected{
+background-color:#FFE6A0;
+border:1px solid #8099b7;
+}
+.ms-verticaldots{
+border-right:1px solid #e8e3b7;
+}
+.ms-globalTitleArea{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/siteTitleBKGD_vintage.jpg");
+}
+.ms-globalTitleAreaSeparator{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/siteTitleBKGD_vintage.jpg");
+}
+.ms-titlearea a {
+color:#003399;
+}
+.ms-titlearealeft {
+background-color:#e8e3b7;
+}
+TD.ms-titleareaframe,Div.ms-titleareaframe,.ms-pagetitleareaframe,.ms-mwspagetitleareaframe,.ms-consoletitleareaframe{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/pageTitleBKGD_vintage.gif");
+background-color:#e8e3b7;
+}
+.ms-pagetitleareaframe table{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topshape_vintage.jpg");
+}
+.ms-titlearealine{
+background-color:#e8e3b7;
+}
+.ms-consoletitleareaframebottom {
+background-color:#e8e3b7;
+}
+.ms-mwstitlearealine{
+background-color:#e8e3b7;
+}
+.ms-titleareaseparator{
+background-color:#e8e3b7;
+}
+.ms-titleareaseparator div{
+background-color:#e8e3b7;
+border-top:1px solid #e8e3b7;
+}
+.ms-areaseparatorcorner{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/framecornergrad_vintage.gif");
+border-right:1px solid #e8e3b7;
+}
+.ms-nav{
+background: #d8d4a4 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/navshape_vintage.jpg") no-repeat;
+}
+td.ms-areaseparatorleft{
+background:#e8e3b7 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/pageTitleBKGD_vintage.gif");
+border-right:1px solid #949172;
+}
+div.ms-areaseparatorleft{
+background:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/navshape_vintage.jpg");
+background-color:#d8d4a2;
+border-right:1px solid #949172;
+background-repeat:no-repeat;
+background-position:-142px 0px;
+height:100%;
+}
+div.ms-areaseparatorright {
+background:#d8d4a2 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/pagebackgrad_vintage.gif");
+background-repeat:repeat-x;
+border-left:1px solid #949172;
+}
+.ms-titlearearight .ms-areaseparatorright{
+background:#e8e3b7 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/pageTitleBKGD_vintage.gif");
+border-left:1px solid #949172;
+background-repeat:repeat-x;
+}
+.ms-areaseparator{
+background-color:#b1c5dd;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/formtitlegrad_vintage.gif");
+}
+.ms-pagemargin{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/navshape_vintage.jpg");
+background-position:-143px 0px;
+background-color:#d8d4a4;
+}
+td.ms-rightareacell div.ms-pagemargin{
+background-color:#d8d4a2;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/pagebackgrad_vintage.gif");
+background-repeat:repeat-x;
+border-left:1px solid #bebb94;
+}
+.ms-pagebottommargin,.ms-pagebottommarginleft,.ms-pagebottommarginright{
+background:#d8d4a4;
+}
+.ms-bodyareapagemargin{
+background:#d8d4a4;
+border-top:1px solid #949172;
+}
+.ms-bodyareaframe,.ms-viewareaframe{
+border-top:1px solid #bebb94;
+border-right:1px solid #949172;
+border-left:1px solid #bebb94;
+}
+.ms-selected {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/filedialogselected_vintage.gif");
+}
+.ms-menuimagecell{
+background:#fffbd5 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif") repeat-x;
+}
+.ms-separator {
+color:#6b84a3;
+}
+.ms-separator img {
+background:#8099b7;
+border-bottom:1px solid #e1eaf4;
+border-right:1px solid #e1eaf4;
+}
+.ms-authoringcontrols {
+background-color:#efebc2;
+}
+.ms-propertysheet th.ms-authoringcontrols {
+background-color:#efebc2;
+}
+td.ms-linksectionheader,th.ms-linksectionheader,table.ms-disc-bar {
+background-color:#a5a07f;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/linksectiongrad_vintage.gif");
+border:1px solid #d8d4a2;
+}
+.ms-partline {
+background-color:#efebc2;
+}
+table.ms-pageinformation{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/settingsgraphic_vintage.jpg");
+}
+table.ms-createpageinformation{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/creategraphic_vintage.jpg");
+}
+.ms-pageinformation th,.ms-createpageinformation th{
+color:#000;
+}
+.ms-storMeUsed,.ms-storMeFilterBar{
+background:#efebc2;
+}
+.ms-storMeEstimated{
+background-color:#e8e3b7;
+}
+.ms-informationtablehover{
+border:solid 1px #efebc2;
+}
+.ms-informationtablehover td,.ms-informationtablehover th{
+background-color:#f7f3cd;
+color:#7c7c7c;
+}
+.ms-informationtablestatic{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/settingsbkg_vintage.jpg");
+}
+.ms-listdescription{
+border-bottom:1px solid #f8f8f8;
+}
+.ms-gb{
+border-bottom:1px solid #efebc2;
+border-top:1px solid #fffbd8;
+}
+.ms-gb2{
+border-bottom:1px solid #f7f3cd;
+border-top:1px solid #fffbd8;
+}
+.ms-pb-selected{
+background-color:#b1c5dd;
+border-top:1px solid #b1c5dd;
+border-bottom:1px solid #b1c5dd;
+}
+img.thumbnail{
+border:solid #e8e3b7 3px;
+}
+.ms-imglibthumbnail {
+background-color:#d8d8d8;border:solid #e8e3b7 0px;
+}
+.ms-imglibmenuarea {
+background-color:#fffbd8;
+}
+.UserCaption {
+background-color:#e8e3b7;
+}
+.UserDottedLine {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/dot_vintage.gif");
+}
+.UserCaptionShadow{
+border-right:1px solid #efebc2;
+border-left:1px solid #efebc2;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/viewheadergrad_vintage.gif");
+}
+.UserToolbar {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavunselected_vintage.gif");
+border-bottom:1px solid #e8e3b7;
+}
+.UserCellSelected {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif");
+background-color:#fffbd5;
+border:solid 1px #8099b7;
+}
+.ms-ToolPaneOuter {
+border-top:1px solid #e8e3b7;
+border-right:2px solid #e8e3b7;
+}
+.ms-ToolPaneBorder {
+border-right:1px solid #efebc2;
+border-left:1px solid #efebc2;
+}
+.ms-ToolPaneClose {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavselected_vintage.gif");
+background-color:#e8e3b7;
+border-top:solid 1px #f7f3cd;
+border-bottom:solid 1px #e8e3b7;
+}
+.ms-ToolPaneTitle {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavselected_vintage.gif");
+border-left:solid 1px #f7f3cd;
+border-top:solid 1px #f7f3cd;
+border-bottom:solid 1px #e8e3b7;
+background-color:#e8e3b7;
+}
+.ms-ToolPaneInfo{
+background-color:#d8d4a2;
+}
+.ms-ToolStripSelected {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/menubuttonhover_vintage.gif");
+border-top:solid 1px #fffbd8;
+border-bottom:solid 1px #e8e3b7;
+}
+.ms-ToolStrip {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/listheadergrad_vintage.gif");
+border-top:solid 1px #fffbd8;
+border-bottom:solid 1px #e8e3b7;
+}
+.ms-TPHeader {
+background-color:#96aecc;
+}
+.ms-PropGridBuilderButton {
+background-color:#efebc2;
+}
+.ms-SPZone {
+border:1px solid #efebc2;
+background-color:#f7f3cd;
+}
+.ms-SPZoneSelected {
+background-color:#d0dded;
+}
+.ms-WPDesign{
+background-color:#efebc2;
+}
+.ms-WPMenu{
+background-color:#efebc2;
+}
+.ms-WPBorder,.ms-WPBorderBorderOnly {
+border-color:#efebc2;
+}
+.ms-HoverCellActive,.ms-SpLinkButtonActive {
+border:#e8e3b7 1px solid;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/menubuttonhover_vintage.gif");
+}
+.ms-HoverCellActiveDark {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/menubuttonhover_vintage.gif");
+}
+.ms-WPHeader TD{
+border-bottom:1px solid #a2b9d6;
+}
+.ms-SPzone .ms-WPHeader TD,.ms-SPZoneSelected .ms-WPHeader TD{
+background-color:#eeeeee;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/partgrad_vintage.gif");
+}
+.ms-rtApplyBackground {
+background-color:#96aecc;
+}
+.ms-tbButtonMouseOverDown {
+BACKGROUND-COLOR:#96aecc;
+}
+.ms-rtRemoveBackground {
+BORDER-BOTTOM:#96aecc solid 1px;
+BORDER-LEFT:#96aecc solid 1px;
+BORDER-RIGHT:#96aecc solid 1px;
+BORDER-TOP:#96aecc solid 1px;
+}
+.ms-tabselected {
+border-color:#bebb94;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif");
+background-color:#fffbd5;
+}
+.ms-tabinactive {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/topnavunselected_vintage.gif");
+background-position:0px 5px;
+background-color:#fbfeff;
+border:solid 1px #bebb94;
+border-bottom-width:0px;
+}
+.ms-uploadborder{
+border:1px solid #e8e3b7;
+}
+.ms-styleheader{
+background-color:#fffbd8;
+}
+.ms-alternating{
+background-color:#f6f5e8;
+}
+.ms-alternating .ms-unselectedtitle {
+background:transparent;
+}
+.ms-alternating .ms-vb-user table{
+background:transparent;
+}
+.ms-alternatingstrong{
+background-color:#f7f3cd;
+}
+.ms-MWSInstantiated a:hover{
+color:#efebc2;
+}
+.ms-entity-unresolved{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/squiggle_vintage.gif");
+}
+.ms-ganttTitleCell {
+border:solid 1px #e8e3b7;
+}
+.ms-ganttTitleHeaderCell {
+border:solid 1px #e8e3b7;
+}
+.ms-ganttInnerTable th {
+color:#000000;
+}
+.ms-ganttMajorTimeUnitHeaderCell {
+border-left:solid 1px #e8e3b7;
+border-right:solid 1px #e8e3b7;
+background-color:#fffbd8;
+}
+.ms-ganttDetailTimeUnitRow td,.ms-ganttDetailTimeUnitRow th {
+border:solid 1px #e8e3b7;
+background-color:#fffbd8;
+}
+.ms-GNWD {
+background:#fffbd8;
+}
+.ms-consolemptablerow{
+background-color:#e8e3b7;
+}
+.ms-consolestatuscell{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/pageTitleBKGD_vintage.gif");
+}
+.ms-consoleframe{
+border-color:#e8e3b7;
+}
+.ms-consolestatusmajorframe{
+background:url('/web/20110201151141im_/http://danfrick.com/_themes/Vintage/cnspgrdn_vintage.gif');
+}
+.ms-consolestatusminorframe{
+background-color:#f7f3cd;
+background:url('/web/20110201151141im_/http://danfrick.com/_themes/Vintage/cnsugrdn_vintage.gif');
+}
+.ms-consolestatuscheckoutframe,.ms-consoleminiframe{
+background:url('/web/20110201151141im_/http://danfrick.com/_themes/Vintage/cnsugrdn_vintage.gif') repeat-x;
+}
+.ms-consolemessage{
+color:#2a4666;
+}
+.ms-consoleqaborderhhover,.ms-consoleqabordervhover,.ms-consoleqacornerhover{
+background-color:#8099b7;
+}
+.ms-wikieditthird {
+background:#d0dded url(/web/20110201151141im_/http://danfrick.com/_themes/Vintage/toolgrad_vintage.gif);
+}
+.ms-diffinsert {
+background-color:#c0d1e5;
+}
+.ms-blogrssnav{
+border-top:solid 1px #efebc2;
+}
+.ms-PostTitle{
+border-top:solid 1px #f7f3cd;
+}
+h1.ms-PostDate {
+border-bottom:solid 1px #a2b9d6;
+}
+.ms-blogedit{
+border-top:solid 1px #f7f3cd;
+}
+.ms-blogedit a{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/toolgrad_vintage.gif");
+background-color:#d0dded;
+border:1px solid #e8e3b7;
+border-top-width:0px;
+}
+.ms-blogrss {
+border-top:solid 1px #f7f3cd;
+}
+.ms-commenttable td{
+border-top:solid 1px #e8e3b7;
+}
+.ms-CategoryTitleCell a {
+background:transparent url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/navbullet_vintage.gif") no-repeat;
+}
+.ms-BlogNavigator div.ms-navheader{
+background-color:#e8e3b7;
+border-top:solid 1px #fffbd8;
+border-left:solid 1px #fffbd8;
+border-bottom:1px solid #efebc2;
+}
+.ms-BlogNavigator div.ms-WPBody{
+border-top:solid 1px #efebc2;
+}
+.ms-pickertitlesection {
+background:#ffffff url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/siteTitleBKGD_vintage.jpg") repeat-y top right;
+}
+.ms-pickerbodysection {
+background:#ece9d8 url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/viewheadergrad_vintage.gif") repeat-x;
+}
+.ms-dialogHeader {
+background-image:url('/web/20110201151141im_/http://danfrick.com/_themes/Vintage/dialogTitleBKGD_vintage.jpg');
+}
+.ms-MenuUI,.ms-MenuUILarge,.ms-MenuUIRtL,.ms-MenuUILargeRtL {
+background-color:#f4f4f4;
+}
+.ms-MenuUI {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/MGrad_vintage.gif");
+}
+.ms-MenuUILarge {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/MGradLarge_vintage.gif");
+}
+.ms-MenuUIRtL {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/MGradRtl_vintage.gif");
+}
+.ms-MenuUILargeRtL {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/MGradLargeRtl_vintage.gif");
+}
+.ms-MenuUICheckMark {
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/ChkMrk_vintage.gif");
+}
+.ms-calheader{
+background-color:#f7f3cd;
+}
+.ms-cal-weekempty,.ms-cal-weekemptyRTL{
+background-color:#f7f3cd;
+}
+.ms-cal-weekname{
+background-color:#f7f3cd;
+}
+.ms-cal-weekday{
+background-color:#f7f3cd;
+}
+.ms-cal-week,.ms-cal-weekB,.ms-cal-weekRTL,.ms-cal-weekRTLB{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/weekbox_vintage.gif");
+background-color:#efebc2;
+border:1px solid #e8e3b7;
+}
+.ms-cal-weekselected,.ms-cal-weekselectedRTL{
+border:1px solid #e8e3b7;
+background-color:#f7f3cd;
+}
+.ms-cal-topday,.ms-cal-topdayL,.ms-cal-wtopdayL,.ms-cal-wtopday{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/calnumBttn_vintage.gif");
+background-repeat:repeat-x;
+background-color:#f5f1cb;
+border:solid 1px #a5a07f;
+}
+.ms-cal-topdayRTL,.ms-cal-topdayRTLL,.ms-cal-wtopdayRTL,.ms-cal-wtopdayRTLL{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/calnumBttn_vintage.gif");
+background-repeat:repeat-x;
+background-color:#f5f1cb;
+border:solid 1px #a5a07f;
+}
+.ms-cal-wtopday{
+border-right:none;
+}
+.ms-cal-wtopdayRTL{
+border-left:none;
+}
+.ms-cal-topdayfocus,.ms-cal-topdayfocusL,.ms-cal-topdayfocusRTL,.ms-cal-topdayfocusRTLL,.ms-cal-wtopdayfocus,.ms-cal-wtopdayfocusL,.ms-cal-wtopdayfocusRTL,.ms-cal-wtopdayfocusRTLL{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/calnumBttnfocus_vintage.gif");
+background-repeat:repeat-x;
+background-color:#e7e2b6;
+border:solid 1px #a5a07f;
+}
+.ms-cal-topday-todayover,.ms-cal-wtopday-todayover, .ms-cal-topday-todayoverRTL,.ms-cal-wtopday-todayRTLover {
+background-image:none;
+background-color:#fff;
+border:solid 1px #a5a07f;
+}
+.ms-cal-topdayover,.ms-cal-topdayoverL,.ms-cal-wtopdayover,.ms-cal-wtopdayLover,
+.ms-cal-topdayfocusover,.ms-cal-wtopdayfocusover,.ms-cal-wtopdayfocusLover {
+background-image:none;
+background-color:#fff;color="#ffc368"
+border:solid 1px #a5a07f;
+}
+.ms-cal-topdayoverRTL,.ms-cal-topdayoverRTLL,.ms-cal-topdayfocusoverRTL,.ms-cal-topdayfocusoverRTLL,
+.ms-cal-wtopdayRTLover,.ms-cal-wtopdayRTLLover,.ms-cal-wtopdayfocusRTLover,.ms-cal-wtopdayfocusRTLLover{
+background-color:#fff;
+background-image:none;
+border:solid 1px #a5a07f;
+}
+.ms-cal-topdayfocus,.ms-cal-topdayfocusL,.ms-cal-topdayfocusRTL,.ms-cal-topdayfocusRTLL,.ms-cal-wtopdayfocus,.ms-cal-wtopdayfocusL,.ms-cal-wtopdayfocusRTL,.ms-cal-wtopdayfocusRTLL{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/calnumBttnfocus_vintage.gif");
+background-repeat:repeat-x;
+background-color:#e7e2b6;
+border:solid 1px #a5a07f;
+}
+.ms-cal-topday-today,.ms-cal-wtopday-today,.ms-cal-topday-todayRTL,.ms-cal-wtopday-todayRTL{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/calnumBttntoday_vintage.gif");
+background-repeat:repeat-x;
+background-color:#ffc368;
+border:solid 1px #a5a07f;
+}
+.ms-cal-nodataLeftBtm,.ms-cal-nodataLeftBtmRTL,.ms-cal-nodataLeftBtm2,.ms-cal-nodataLeftBtmRTL2,.ms-cal-nodataBtm,.ms-cal-nodataBtm2{
+border-bottom:1px solid #e8e3b7;
+}
+.ms-cal-muworkitem,.ms-cal-muworkitemL,.ms-cal-muworkitemR,.ms-cal-muworkitemRTL,.ms-cal-muworkitemRTLL{
+border-left:1px solid #e8e3b7;
+border-right:1px solid #e8e3b7;
+}
+.ms-cal-workitem,.ms-cal-todayitem,.ms-cal-todayitemRTL{
+border-left:1px solid #e8e3b7;
+border-right:1px solid #e8e3b7;
+}
+.ms-cal-workitem2{
+border-left:1px solid #e8e3b7;
+border-right:1px solid #e8e3b7;
+}
+.ms-cal-workitem2B,.ms-cal-workitemRTL2B,.ms-cal-todayitem2B,.ms-cal-todayitemRTL2B{
+border-left:1px solid #e8e3b7;
+border-right:1px solid #e8e3b7;
+border-bottom:1px solid #e8e3b7;
+}
+.ms-cal-noworkitem,.ms-cal-noworkitemL,.ms-cal-noworkitemRTL{
+border-left:1px solid #e8e3b7;
+border-right:1px solid #e8e3b7;
+}
+.ms-cal-noworkitemB,.ms-cal-noworkitemLB,.ms-cal-noworkitem2B,.ms-cal-noworkitemL2B,.ms-cal-noworkitemRTL2B{
+border-left:1px solid #e8e3b7;
+border-right:1px solid #e8e3b7;
+border-bottom:1px solid #e8e3b7;
+}
+.ms-cal-defaultbgcolor{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/alldayDefault_vintage.gif");
+background-color:#e3efff;
+}
+.ms-cal-defaultbgcolorsel{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/alldayDefaultOver_vintage.gif");
+background-color:#e3efff;
+}
+.ms-cal-monthAllDay{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/alldayDefault_vintage.gif");
+background-color:#e3efff;
+border:solid 1px #efebc2;
+border-left:solid 2px #efebc2;
+border-right:solid 2px #efebc2;
+}
+.ms-cal-monthAllDaysel{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/alldayDefaultOver_vintage.gif");
+background-color:#e3efff;
+border:solid 1px #e8e3b7;
+border-left:solid 2px #e8e3b7;
+border-right:solid 2px #e8e3b7;
+}
+.ms-cal-time{
+border-right:1px solid #e8e3b7;
+background-color:#f7f3cd;
+}
+.ms-cal-timeRTL{
+border-left:1px solid #e8e3b7;
+background-color:#f7f3cd;
+}
+.ms-cal-workhour,.ms-cal-workhourhalfhour,
+.ms-cal-workhourover,.ms-cal-workhourhalfhourover{
+background-color:#f7f3cd;
+}
+.ms-cal-workhourB,.ms-cal-workhourBhalfhour,
+.ms-cal-workhourBover,.ms-cal-workhourBhalfhourover{
+border-bottom:solid 1px #efebc2;
+background-color:#f7f3cd;
+}
+.ms-cal-workhourRTL,.ms-cal-workhourRTLhalfhour,
+.ms-cal-workhourRTLover,.ms-cal-workhourRTLhalfhourover{
+background-color:#f7f3cd;
+}
+.ms-cal-workhourRTLB,.ms-cal-workhourRTLBhalfhour,
+.ms-cal-workhourRTLBover,.ms-cal-workhourRTLBhalfhourover{
+border-bottom:solid 1px #efebc2;
+background-color:#f7f3cd;
+}
+.ms-cal-workhourF,.ms-cal-workhourFover,
+.ms-cal-workhourFhalfhour,.ms-cal-workhourFhalfhourover{
+background-color:#f7f3cd;
+}
+.ms-cal-workhourRTLF,.ms-cal-workhourRTLFover,
+.ms-cal-workhourRTLFhalfhour,.ms-cal-workhourRTLFhalfhourover{
+background-color:#f7f3cd;
+}
+.ms-cal-workhourFover,.ms-cal-workhourRTLFover,.ms-cal-workhourover,
+.ms-cal-workhourFhalfhourover,.ms-cal-workhourRTLFhalfhourover,
+.ms-cal-workhourhalfhourover,.ms-cal-workhourBhalfhourover,
+.ms-cal-enoworkdayF,.ms-cal-enoworkdayRTLF{
+border-top:solid 1px #efebc2;
+}
+.ms-cal-eworkdayF,.ms-cal-eworkdayRTLF{
+border-top:solid 1px #efebc2;
+}
+.ms-cal-workhourF,.ms-cal-workhourRTL,.ms-cal-workhourRTLF,.ms-cal-workhourFover,
+.ms-cal-workhourRTLFover,.ms-cal-workhour,.ms-cal-workhourB,.ms-cal-workhourFover,
+.ms-cal-workhourRTLFover,.ms-cal-workhourover,.ms-cal-workhourBover,.ms-cal-workhourRTLover,
+.ms-cal-workhourRTLBover{
+border-top:1px solid #efebc2;
+}
+.ms-cal-eworkhourF .ms-cal-dayhour,.ms-cal-eworkhourF .ms-cal-dayhourF,.ms-cal-eworkhour .ms-cal-dayhourF,.ms-cal-eworkhour .ms-cal-dayhour,.ms-cal-eworkday .ms-cal-dayhour,.ms-cal-enoworkday .ms-cal-dayhour,.ms-cal-eworkday .ms-cal-dayhourF,.ms-cal-enoworkday .ms-cal-dayhourF,.ms-cal-enoworkhourF .ms-cal-dayhour,.ms-cal-enoworkhourF .ms-cal-dayhourF,.ms-cal-enoworkhour .ms-cal-dayhour,.ms-cal-enoworkhour .ms-cal-dayhourF{
+border-top:solid 1px #efebc2;
+}
+.ms-cal-eworkhourRTLF .ms-cal-dayhourRTL,.ms-cal-eworkhourRTLF .ms-cal-dayhourRTLF,.ms-cal-eworkhourRTL .ms-cal-dayhourRTLF,.ms-cal-eworkhourRTL .ms-cal-dayhourRTL,.ms-cal-eworkdayRTL .ms-cal-dayhourRTL,.ms-cal-enoworkdayRTL .ms-cal-dayhourRTL,.ms-cal-eworkdayRTL .ms-cal-dayhourRTLF,.ms-cal-enoworkdayRTL .ms-cal-dayhourRTLF,.ms-cal-enoworkhourRTL .ms-cal-dayhourRTLF,.ms-cal-enoworkhourRTL .ms-cal-dayhourRTL,.ms-cal-enoworkhourRTLF .ms-cal-dayhourRTLF,.ms-cal-enoworkhourRTLF .ms-cal-dayhourRTL{
+border-top:solid 1px #efebc2;
+}
+.ms-cal-eworkhourF .ms-cal-dayhalfhourF,.ms-cal-eworkhour .ms-cal-dayhalfhourF,.ms-cal-eworkhour .ms-cal-dayhalfhour,.ms-cal-eworkday .ms-cal-dayhalfhour,.ms-cal-enoworkday .ms-cal-dayhalfhour,.ms-cal-eworkday .ms-cal-dayhalfhourF,.ms-cal-enoworkday .ms-cal-dayhalfhourF,.ms-cal-enoworkhour .ms-cal-dayhalfhour,.ms-cal-enoworkhour .ms-cal-dayhalfhourF{
+border-top:solid 1px #e8e3b7;
+}
+.ms-cal-eworkhourRTLF .ms-cal-dayhalfhourRTLF,.ms-cal-eworkhourRTL .ms-cal-dayhalfhourRTLF,
+.ms-cal-eworkhourRTL .ms-cal-dayhalfhourRTL,.ms-cal-eworkdayRTL .ms-cal-dayhalfhourRTL,
+.ms-cal-enoworkdayRTL .ms-cal-dayhalfhourRTL,.ms-cal-eworkdayRTL .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkdayRTL .ms-cal-dayhalfhourRTLF,.ms-cal-enoworkhourRTL .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkhourRTLF .ms-cal-dayhalfhourRTLF,.ms-cal-enoworkhourRTL .ms-cal-dayhalfhourRTL,
+.ms-cal-workhourhalfhour,.ms-cal-workhourhalfhourB,.ms-cal-workhourRTLhalfhour,
+.ms-cal-workhourRTLBhalfhourover,.ms-cal-workhourRTLhalfhourover,
+.ms-cal-workhourBhalfhourover,.ms-cal-workhourBhalfhourover,
+.ms-cal-workhourhalfhourover,.ms-cal-workhourRTLFhalfhourover,
+.ms-cal-workhourFhalfhourover{
+border-top:solid 1px #e8e3b7;
+}
+.ms-cal-enoworkhourB .ms-cal-dayhalfhour,
+.ms-cal-enoworkhourB .ms-cal-dayhour{
+border-top:solid 1px #e8e3b7;
+border-bottom:solid 1px #efebc2;
+background-color:#f7f3cd;
+}
+.ms-cal-enoworkhourB .ms-cal-dayhalfhourF,
+.ms-cal-enoworkhourB .ms-cal-dayhourF{
+border-top:solid 1px #e8e3b7;
+border-bottom:solid 1px #efebc2;
+background-color:#f7f3cd;
+border-left:solid 1px #e8e3b7;
+}
+.ms-cal-enoworkhourF .ms-cal-dayhour,
+.ms-cal-enoworkhourRTL .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkhourRTLF .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkhourRTL .ms-cal-dayhalfhourRTL,
+.ms-cal-enoworkhourRTL .ms-cal-dayhourRTLF,
+.ms-cal-enoworkhourRTL .ms-cal-dayhourRTL,
+.ms-cal-enoworkhourRTLF .ms-cal-dayhourRTLF,
+.ms-cal-enoworkhourRTLF .ms-cal-dayhourRTL,
+.ms-cal-enoworkhour .ms-cal-dayhalfhourF,
+.ms-cal-enoworkhour .ms-cal-dayhalfhour,
+.ms-cal-enoworkhour .ms-cal-dayhourF,
+.ms-cal-enoworkhour .ms-cal-dayhour
+.ms-cal-enoworkhourF .ms-cal-dayhourF,
+.ms-cal-enoworkhour,
+.ms-cal-enoworkhourRTL,
+.ms-cal-enoworkhourRTLL,
+.ms-cal-enoworkhourL,
+.ms-cal-enoworkhourF,
+.ms-cal-enoworkhourRTLF{
+background-color:#f7f3cd;
+}
+.ms-cal-enoworkhourRTLB .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkhourRTLB .ms-cal-dayhourRTLF {
+border-top:solid 1px #e8e3b7;
+border-bottom:solid 1px #efebc2;
+background-color:#f7f3cd;
+border-right:solid 1px #e8e3b7;
+}
+.ms-cal-enoworkhourRTLB .ms-cal-dayhalfhourRTL,
+.ms-cal-enoworkhourRTLB .ms-cal-dayhourRTL {
+border-top:solid 1px #e8e3b7;
+border-bottom:solid 1px #efebc2;
+background-color:#f7f3cd;
+}
+.ms-cal-eworkhourF .ms-cal-dayhourF,.ms-cal-eworkday .ms-cal-dayhourF,
+.ms-cal-enoworkday .ms-cal-dayhourF,.ms-cal-enoworkdayF .ms-cal-dayhourF,
+.ms-cal-eworkday .ms-cal-dayhalfhourF,.ms-cal-enoworkday .ms-cal-dayhalfhourF,
+.ms-cal-enoworkdayF .ms-cal-dayhalfhourF,.ms-cal-eworkdayF .ms-cal-dayhourF,
+.ms-cal-eworkhour .ms-cal-dayhourF,.ms-cal-eworkhour .ms-cal-dayhalfhourF{
+border-left:solid 1px #e8e3b7;
+}
+.ms-cal-eworkhourRTLF .ms-cal-dayhourRTLF,.ms-cal-eworkdayRTL .ms-cal-dayhourRTLF,
+.ms-cal-enoworkhourRTLF .ms-cal-dayhalfhourRTLF,.ms-cal-enoworkdayRTL .ms-cal-dayhourRTLF,
+.ms-cal-enoworkdayRTLF .ms-cal-dayhourRTLF,.ms-cal-enoworkdayRTLF .ms-cal-dayhourRTLF,
+.ms-cal-eworkdayRTL .ms-cal-dayhalfhourRTLF,.ms-cal-enoworkdayRTL .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkdayRTLF .ms-cal-dayhalfhourRTLF,.ms-cal-eworkdayRTLF .ms-cal-dayhourRTLF,
+.ms-cal-eworkhourRTL .ms-cal-dayhourRTLF,.ms-cal-eworkhourRTL .ms-cal-dayhalfhourRTLF{
+border-right:solid 1px #e8e3b7;
+}
+.ms-cal-enoworkhourF .ms-cal-dayhourF,.ms-cal-enoworkhour .ms-cal-dayhalfhourF,.ms-cal-enoworkhour .ms-cal-dayhourF{
+border-left:solid 1px #e8e3b7;
+}
+.ms-cal-enoworkhourRTLF .ms-cal-dayhourRTLF,.ms-cal-enoworkhourRTL .ms-cal-dayhalfhourRTLF,.ms-cal-enoworkhourRTL .ms-cal-dayhourRTLF{
+border-right:solid 1px #e8e3b7;
+}
+.ms-cal-enoworkhour,.ms-cal-enoworkhourRTL,.ms-cal-enoworkhourRTLL,.ms-cal-enoworkhourL,.ms-cal-enoworkhourF,.ms-cal-enoworkhourRTLF,
+.ms-cal-enoworkdayF .ms-cal-dayhalfhourF,
+.ms-cal-enoworkday .ms-cal-dayhalfhourF,
+.ms-cal-enoworkday .ms-cal-dayhourF,
+.ms-cal-enoworkdayF .ms-cal-dayhourF,
+.ms-cal-enoworkdayRTL .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkdayRTLF .ms-cal-dayhalfhourRTLF,
+.ms-cal-enoworkdayRTL .ms-cal-dayhourRTLF,
+.ms-cal-enoworkdayRTLF .ms-cal-dayhourRTLF,
+.ms-cal-enoworkday,
+.ms-cal-enoworkdayRTL,
+.ms-cal-enoworkdayF,
+.ms-cal-enoworkdayRTLF{
+background-color:#f7f3cd;
+}
+.ms-cal-weekedge{
+background-color:#f7f3cd;
+}
+.ms-cal-wemptycell,.ms-cal-wemptycellL{
+border-left:1px solid #e8e3b7;
+background-color:#efebc2;
+}
+.ms-cal-walldayevent,.ms-cal-walldayeventL,.ms-cal-walldayeventRTL,.ms-cal-walldayeventRTLL{
+background-color:#efebc2;
+}
+.ms-cal-alldayevent,.ms-cal-alldayeventL,.ms-cal-alldayeventRTL,.ms-cal-alldayeventRTLL{
+border-right:1px solid #e8e3b7;
+border-left:1px solid #e8e3b7;
+}
+.cont,.contR,.contB,.contL{
+border-bottom:solid 1px #efebc2;
+border-top:solid 1px #efebc2;
+}
+.contB{
+border-left:solid 2px #efebc2;
+border-right:solid 2px #efebc2;
+}
+.contL{
+border-left:solid 2px #efebc2;
+}
+.contR{
+border-right:solid 2px #efebc2;
+}
+.ms-cal-tweekitem{
+border:1px solid #e8e3b7;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/alldayDefault_vintage.gif");
+background-color:#e3efff;
+}
+.ms-cal-tdayitem{
+border:1px solid #e8e3b7;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/alldayDefault_vintage.gif");
+background-color:#e3efff;
+}
+.ms-cal-nav-buttonsltr{
+color:#e8e3b7;
+}
+.ms-cal-nav-buttonsRTL{
+color:#e8e3b7;
+}
+div.ms-cal-navheader a img{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/listheadergrad_vintage.gif");
+border:solid 1px #bebb94;
+}
+.ms-picker-header{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/quickLaunchHeader_vintage.gif");
+background-color:#e8e3b7;
+}
+.ms-picker-header table.ms-picker-table{
+background-color:#efebc2;
+}
+.ms-picker-table .ms-picker-dayheader{
+border-bottom:solid 1px #efebc2;
+border-top:solid 1px #efebc2;
+}
+.ms-picker-week{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/weekbox_vintage.gif");
+border-left:solid 1px #f7f3cd;
+}
+.ms-picker-weekRTL{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/weekbox_vintage.gif");
+}
+table.ms-picker-table td.ms-picker-dayother,table.ms-picker-table td.ms-picker-daycenterOn,table.ms-picker-table td.ms-picker-daycenter{
+border:solid 1px #fffbd8;
+}
+table.ms-picker-table td.ms-picker-dayselected{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/calnumBttnfocus_vintage.gif");
+background-repeat:repeat-x;
+background-color:#e7e2b6;
+    border-color:#fffbd8;
+}
+.ms-quicklaunch table.ms-picker-table td.ms-picker-monthcenter{
+background-color:#fffbd8;
+border:solid 1px #fffbd8;
+}
+.ms-quicklaunch table.ms-picker-table td.ms-picker-monthcenterOn{
+background-image:none;
+background-color:#fff;
+border:solid 1px #fffbd8;
+}
+.ms-quicklaunch table.ms-picker-table td.ms-picker-monthselected{
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/selectednav_vintage.gif");
+background-color:#fffbd5;
+border:solid 1px #8099b7;
+}
+table.ms-picker-table td.ms-picker-footer{
+border-top:1px solid #efebc2;
+}
+.ms-navframe .ms-datepickerouter{
+
+border-bottom:solid 1px #e8e3b7;
+border-right:solid 1px #e8e3b7;
+}
+table.ms-disc-bar {
+background-color:#cbd9eb;
+background-image:url("/web/20110201151141im_/http://danfrick.com/_themes/Vintage/toolgrad_vintage.gif");
+border:1px solid #96aecc;
+}
+td.ms-disc-bordered,td.ms-disc-bordered-noleft {
+border:0px solid #96aecc;
+}
+table.ms-disc HR {
+color:#96aecc;
+}
+.ms-wikieditouter{
+border:1px solid #949172;
+border-bottom:none;
+border-right-width:2px;
+}
+
+
+/*
+     FILE ARCHIVED ON 15:11:41 Feb 01, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 07:28:36 Jun 14, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 105.923
+  exclusion.robots: 0.135
+  exclusion.robots.policy: 0.125
+  RedisCDXSource: 6.22
+  esindex: 0.008
+  LoadShardBlock: 80.877 (3)
+  PetaboxLoader3.datanode: 55.835 (4)
+  CDXLines.iter: 16.211 (3)
+  load_resource: 61.808
+  PetaboxLoader3.resolve: 29.325
+*/

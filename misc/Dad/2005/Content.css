@@ -1,0 +1,87 @@
+.ClsContactInfo {
+    COLOR: White;
+}
+.ClsContactInfo:Hover {
+    COLOR: Blue;
+}
+.ClsContent {
+}
+.ClsSideNote {
+    MARGIN-LEFT: 30px;
+    FONT-SIZE: 8pt;
+    COLOR: Silver;
+}
+.ClsGrp {
+}
+#ImgCD {
+}
+#TblContent {
+    MARGIN-LEFT: 75px;
+    WIDTH: 90%
+}
+#TblMenuBar {
+    BORDER-WIDTH: 1px;
+    BACKGROUND-COLOR: Black;
+    FONT-WEIGHT: bold;
+    BORDER-BOTTOM-STYLE: solid;
+    BORDER-TOP-STYLE: solid;
+    BORDER-BOTTOM-COLOR: Gray;
+    BORDER-TOP-COLOR: Gray;
+}
+#TblTop {
+    BACKGROUND-IMAGE: url(/web/20050419222414im_/http://www.danfrick.com/images/Top.gif);
+    HEIGHT: 67px;
+}
+#TDTechConsultant {
+    COLOR: YellowGreen;
+    FONT-SIZE: 32pt;
+    FONT-WEIGHT: bold;
+}
+A {
+    COLOR: White;
+}
+A:Hover {
+    COLOR: Red;
+}
+body {
+    BACKGROUND-COLOR: Black;
+    BACKGROUND-IMAGE: url(/web/20050419222414im_/http://www.danfrick.com/images/bg.gif);
+}
+H1 {
+    FONT-SIZE: 10pt;
+    COLOR: Lime;
+    FONT-WEIGHT: bold;
+    DISPLAY: inline;
+}
+li {
+    LIST-STYLE-TYPE: none;
+}
+ul {
+    DISPLAY: inline;
+    MARGIN-BOTTOM: 15px;
+    MARGIN-LEFT: 10px;
+    MARGIN-RIGHT: 0px;
+    MARGIN-TOP: 0px;
+}
+
+/*
+     FILE ARCHIVED ON 22:24:14 Apr 19, 2005 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 07:39:23 Jun 14, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 119.088
+  exclusion.robots: 0.08
+  exclusion.robots.policy: 0.074
+  RedisCDXSource: 18.945
+  esindex: 0.008
+  LoadShardBlock: 85.949 (3)
+  PetaboxLoader3.datanode: 93.628 (4)
+  CDXLines.iter: 12.292 (3)
+  load_resource: 962.902
+  PetaboxLoader3.resolve: 30.343
+*/
