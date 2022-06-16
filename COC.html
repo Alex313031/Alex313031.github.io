@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ thoriumos.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Code of Conduct</title>
+    <meta name="description" content="Thorium Code of Conduct and Privacy Policy">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="humans.txt">
+    <link rel="icon" type="image/png" sizes="32x32" href="coc-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="coc-favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body class="body3">
+	<!-- Main Logo -->
+	<div id="spinner">
+		<img class="logo spin shadow2" style="padding-bottom: 12px;" src="misc/CodeOfConduct.png" width="255em" max-width="75%" alt="Thorium Code of Conduct Logo" title="Thorium Code of Conduct Logo (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: flex-start;">
+		<h1><span class="title"><b><u><em>Code of Conduct & Privacy Policy</a></em></u></b></span></h1>
+	</div>
+	<hr class="line">
+	<div>
+	<!-- Links List -->
+    <h1 class="coc title">Thorium Code of Conduct&nbsp;&nbsp;<img alt="COC Logo" title="C.O.C Logo" class="spin coc" src="misc/COC_Light.png" width="36"></h1>
+    <img class="logo spin coc" style="margin-bottom: -8px;" alt="Thorium COC Logo" title="Thorium C.O.C Logo" src="misc/Thorium_COC_Light.png" width="220px">
+    <p class="coc">&nbsp;&nbsp;The Thorium Authors and the Chromium team are committed to preserving and fostering a
+diverse, welcoming community. Below is our community code of conduct, which
+applies to the Thorium repository, the Chromium repository, Alex313031 blog content, and any other Chromium-supported communication group or Thorium discussion board, as well as any private communication initiated in the context of these
+spaces, including GitHub Issues. This code of conduct must be followed by everyone contributing to or engaging with
+the Thorium project, regardless of affiliation or position.</p>
+<p class="coc"><em>Simply put,</em> community discussions should be:
+  <ul>
+  <li>respectful and kind;</li>
+  <li>about Thorium and/or Chromium;</li>
+  <li>about features and code, not the individuals involved (although friendly personal joking or discussion about individual matters is allowed).</li>
+  </ul></p>
+<h2 class="coc">Be respectful and constructive.</h2>
+    <p class="coc">&nbsp;&nbsp;<b><em>Treat everyone with respect.</em></b> Build on each other&#39;s ideas. Each of us has the
+right to enjoy our developer experience and participate without fear of harassment,
+discrimination, or condescension, whether blatant or subtle. Remember that
+Thorium and Chromium is a geographically distributed team and that you may not be
+communicating with someone in their primary language. We all get frustrated
+when working on hard problems, but we cannot allow that frustration to turn
+into personal attacks.</p>
+<h2 class="coc">Speak up if you see or hear something.</h2>
+    <p class="coc">&nbsp;&nbsp;You are empowered to politely engage when you feel that you or others are
+disrespected. The person making you feel uncomfortable may not be aware of what
+they are doing - politely bringing their behavior to their attention is
+encouraged.</p>
+<h2 class="coc">Contacting</h2>
+    <p class="coc">&nbsp;&nbsp;If you are uncomfortable speaking up, or feel that your concerns are not being
+duly considered, you can email me at Alex313031@gmail.com, or if it is specific to Chromium, at community@chromium.org to request involvement
+from a community manager. Please note that without a way to contact you, an anonymous report may be
+difficult to act on. You may also create a throwaway account to report. In
+cases where a public response is deemed necessary, the identities of victims
+and reporters will remain confidential unless those individuals instruct us
+otherwise.</p>
+    <p class="coc">I will always respond in some way, but also keep in mind that while all reports will be taken seriously, I or the Chromium community managers may
+not act on complaints that we feel are not violations of this code of conduct.</p>
+<h2 class="coc">We will <em>not</em> tolerate harassment of any kind, including but not limited to:</h2>
+  <p class="coc"><ul>
+  <li>Harassing comments</li>
+  <li>Intimidation</li>
+  <li>Encouraging a person to engage in self-harm.</li>
+  <li>Sustained disruption or derailing of threads, channels, lists, etc.</li>
+  <li>Offensive or violent comments, jokes or otherwise</li>
+  <li>Sustained disruption of discussion</li>
+  <li>Inappropriate sexual content</li>
+  <li>Unwelcome sexual or otherwise aggressive attention</li>
+  <li>Continued one-on-one communication after requests to cease</li>
+  <li>Distribution or threat of distribution of people&#39;s personally identifying information, AKA “doxing”</li>
+  </ul></p>
+<h2 class="coc">Consequences for failing to comply with this policy</h2>
+    <p class="coc">&nbsp;&nbsp;Consequences for failing to comply with this policy may include, at the sole
+discretion of the a Thorium Maintainer or the Chromium community managers:</p>
+  <p class="coc"><ul>
+  <li>a request for an apology;</li>
+  <li>a private or public warning or reprimand;</li>
+  <li>a temporary ban from the mailing list, blog, Chromium repository or organization, or other Chromium-supported communication group, including loss of committer status;</li>
+  <li>a temporary ban from the Thorium repository, discussion groups, or blog.</li>
+  <li>a permanent ban from any of the above, or from all current and future Thorium-supported or Chromium-supported communities, including loss of committer/maintainer status.</li>
+  </ul></p>
+    <p class="coc">Participants warned to stop any harassing behavior are expected to comply
+immediately; failure to do so will result in an escalation of consequences.</p>
+<h2 class="coc">Acknowledgements</h2>
+    <p class="coc">This Code of Conduct is based on the Chromium Code of Conduct &gt; <a rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/CODE_OF_CONDUCT.md">chromium.googlesource.com/chromium/src/+/master/CODE_OF_CONDUCT.md</a>, which is based on the Geek Feminism Code of Conduct &gt; <a rel="noopener" href="https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/">https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/</a>, the Django Code of Conduct &gt; <a rel="noopener" href="https://www.djangoproject.com/conduct/">https://www.djangoproject.com/conduct/</a>, and the Geek Feminism Wiki &quot;Effective codes of conduct&quot; guide &gt; <a rel="noopener" href="https://geekfeminism.fandom.com/wiki/Code_of_conduct_evaluations">https://geekfeminism.fandom.com/wiki/Code_of_conduct_evaluations</a>.</p>
+<h2 class="coc">License</h2>
+    <p class="coc">This Code of Conduct is available for reuse under the Creative Commons Zero
+(CC0) license. <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a></p>
+    <hr class="line">
+<h2 class="coc">Privacy Policy</h2>
+    <p class="coc">&nbsp;&nbsp;In general I feel that Thorium doesn't need a Privacy Policy, but basically it is similar to the Chromium/Chrome one, except Thorium has additional privacy patches that reduce stuff sent to Google as well as prefetching data sent to sites. I also needed a privacy policy page to use for my Chrome Developer Console to upload my Chromium Extensions, Apps, and Themes, so this is for that too. Outside of things in Chrome's Privacy Policy (sans some things), I don't collect, use, know, or want to know about anything related to you. Privacy is held dear by me, and I pass that on as a token of respect to any user of any software I create. In regard to my Extensions and Apps, the only data sent out is metrics that the Chrome Web Store collects for every Extension/App/Theme. Anyway, you can find the latest Chrome Privacy Policy, as well as archived versions here > <a rel="noopener" href="https://www.google.com/chrome/privacy/">https://www.google.com/chrome/privacy/</a></p>
+    <img class="logo shadow2 spin" style="padding-top: 12px; padding-bottom: 8px;" src="misc/badge.png" width="144px" alt="Badge" title="Badge">
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin.js"></script>
+	<script defer src="js/spun.js"></script>
+    <script defer src="js/button.js"></script>
+</body>
+</html>
