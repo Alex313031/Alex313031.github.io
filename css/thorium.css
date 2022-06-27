@@ -48,6 +48,10 @@
   --imgshadow: #ffffff;
   --coc: #000000;
 }
+/* Prefer border-box */
+* {
+    box-sizing: border-box;
+}
 /* General body settings */
 body {
   margin: 0.5em auto;
