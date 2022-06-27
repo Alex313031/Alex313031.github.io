@@ -1,0 +1,43 @@
+body { font: 13px/140% Roboto, sans-serif; font-family: "Roboto"; background: black; color: white; overflow: hidden; }
+
+html * { font: 13px/140%; font-family: "Roboto"; }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'),
+       url('../../fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../../fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+a { color: inherit; cursor: pointer; }
+
+img { display: none; }
+
+ul { padding: 0 0 0 20px; }
+
+h1 { font: bold italic 30px/30px Georgia; text-align: left; }
+    
+h2 { font: bold italic 17px/17px Roboto; padding-top: 8px; }
+    
+small { display: block; font-size: 11px; line-height: 15px; }
+    
+canvas { position: absolute; top: 0; left: 0; }
+    
+#help { position: absolute; top: 0; right: 0; bottom: 0; width: 280px; padding-right: 20px; overflow: auto; }
+    
+#loading { position: absolute; left: 0; top: 50%; right: 300px; text-align: center; margin-top: -8px; }
+    
+@media (max-width: 600px) {
+    
+  small { font-size: 8px; line-height: 10px; }
+      
+  #help { width: 100px; font-size: 10px; line-height: 12px; }
+      
+}
