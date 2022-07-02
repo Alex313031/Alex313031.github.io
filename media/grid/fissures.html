@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="preload" href="../../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="description" content="Three.js demo showcasing set visualization using anti-aliased lines.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="../../humans.txt">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff">
+    <title>Fissures Three.js Demo</title>
+    <link rel="stylesheet" href="../../css/other.css">
+    <link rel="stylesheet" href="../../css/media.css">
+  </head>
+  <body class="body3" style="background-image: url('bg-dark.jpg');">
+    <header>
+      <section>
+        <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="Fissures"><u>Anti-Aliased Grid Shader - <em>"Fissures"</em></u></h1>
+      </section>
+    </header>
+
+    <main>
+      <section>
+        
+
+<div id="shader" class="shards" title="&quot;Fissures&quot; - three.js Demo"></div>
+
+<div class="p2">
+<p class="p3">
+  &nbsp;&nbsp;This shader provides a convenient way to visualize the level set of any value using anti-aliased lines.
+  It uses screen-space partial derivatives to automatically compute the correct line width and falloff.
+  Try different coordinates below to get a sense for the effect:
+</p>
+
+<p class="indented p3" id="coordinates" title="Choose Coordinates"></p>
+<pre id="fragment"></pre>
+
+<p class="p3">
+  &nbsp;&nbsp;Screen-space partial derivatives are awesome.
+  They let you compute the approximate partial derivative along x and y for any value, which comes in handy in many different situations.
+  The feature was originally intended for estimating the appropriate mipmap level to use for a texture based on how fast the texture coordinates are changing across a surface.
+  In GLSL, the partial derivative is <code>dFdx(value)</code> for x and <code>dFdy(value)</code> for y.
+  The <code>fwidth()</code> function used above is equivalent to <code>abs(dFdx(p)) + abs(dFdy(p))</code>.
+</p>
+
+<p class="p3">
+  &nbsp;&nbsp;These functions may sound expensive, but they are actually really cheap.
+  The GPU renders many pixels at once using a group of threads that execute in lock-step and all run the same program (the fragment shader).
+  Fragment shader evaluation is always done in 2x2 blocks of pixels, which guarantees that every fragment shader always has one neighbor along x and one along y.
+  This means the partial derivative can be computed easily using a single subtraction (finite differencing).
+</p>
+
+<p class="p3">
+  &nbsp;&nbsp;A good <a title="a-trip-through-the-graphics-pipeline-2011-part-8" rel="noopener" href="https://fgiesen.wordpress.com/2011/07/10/a-trip-through-the-graphics-pipeline-2011-part-8/">in-depth overview</a> of rasterization can be found at Fabian Giesen's blog.
+  It's part of a series of fantastic articles that I recommend to anyone interested in how GPUs work.
+</p>
+</div>
+
+<script defer src="../../js/jquery-3.6.0.slim.min.js"></script>
+<script src="js/lightgl.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/grid.js"></script>
+
+      </section>
+    </main>
+  </body>
+</html>
