@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="preload" href="../../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="description" content="Three.js demo showcasing set visualization using anti-aliased lines.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="../../humans.txt">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff">
+    <title>Curvaceous Three.js Demo</title>
+    <link rel="stylesheet" href="../../css/other.css">
+    <link rel="stylesheet" href="../../css/media.css">
+  </head>
+  <body>
+    <body class="body3" style="background-image: url('bg-dark.jpg');">
+    <header>
+      <section>
+        <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="Fissures"><u>Screen Space Curvature Shader - <em>"Curvaceous"</em></u></h1>
+      </section>
+    </header>
+
+    <main>
+      <section>
+        
+
+<div id="shader" class="shards" title="&quot;Curvaceous&quot; - three.js Demo"></div>
+
+<div class="p2">
+<p class="p3">
+  &nbsp;&nbsp;This shader implements a screen-space curvature effect.
+  It uses the screen-space normals of neighboring pixels to automatically compute curvature.
+  Try different variants below to get a sense for the effect:
+</p>
+
+<p class="indented p3" id="materials" title="Choose Materials" style="font-style: italic;"></p>
+<pre title="Code" id="fragment"></pre>
+</div>
+
+<script defer src="../../js/jquery-3.6.0.slim.min.js"></script>
+<script src="js/lightgl.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/curves.js"></script>
+
+      </section>
+    </main>
+  </body>
+</html>

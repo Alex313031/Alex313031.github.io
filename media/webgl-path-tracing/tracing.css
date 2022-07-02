@@ -1,0 +1,56 @@
+body {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#main {
+  margin: 32px 0;
+  padding-top: 1px;
+  padding-left: 528px;
+  height: 512px;
+  position: relative;
+}
+
+#error {
+  position: absolute;
+  left: +6px;
+  top: +12px;
+  width: 402px;
+  height: 402px;
+  padding: 50px;
+  text-align: center;
+  background: #DFDFDF;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  touch-action: none; /* Need this to prevent scrolling on iOS 15+ */
+}
+
+button {
+  margin: 4px;
+}
+
+select {
+  margin-bottom: 4px;
+}
+
+ul {
+  margin: 0 0 30px 0;
+}
+
+#footer {
+  text-align: center;
+  margin: 32px 0 0 0;
+}
+
+#glossiness-factor {
+  font-size: 12px;
+}
+
+#glossiness-factor input {
+  width: 40px;
+  text-align: center;
+}

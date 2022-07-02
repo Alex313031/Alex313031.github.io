@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="preload" href="../../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="description" content="Three.js demo showcasing set visualization using anti-aliased lines.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="author" href="../../humans.txt">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <title>WebGL Path Tracing</title>
+  <link rel="stylesheet" href="../../css/other.css">
+  <link rel="stylesheet" href="../../css/media.css">
+  <link rel="stylesheet" href="tracing.css">
+  
+  <script type="text/javascript" src="js/sylvester.src.js"></script>
+  <script type="text/javascript" src="js/glUtils.js"></script>
+  <script type="text/javascript" src="js/tracing.js"></script>
+</head>
+<body style="background-image: url('bg-dark.jpg');">
+  <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="WebGL Path Tracing"><u>WebGL Path Tracing Demo</u></h1>
+
+  <div class="p2">
+  <p class="p3">&nbsp;&nbsp;Path tracing is a realistic lighting algorithm that simulates light bouncing around a scene. This path tracer uses WebGL for realtime performance and supports diffuse, mirrored, and glossy surfaces. The path tracer is continually rendering, so the scene will start off grainy and become smoother over time. Here's how to interact with it:</p>
+
+  <ul>
+    <li>Add an object using the <em>"Add Sphere</em>" or <em>"Add Cube"</em> buttons.</li>
+    <li>Select an object by clicking on it.</li>
+    <li>Move the selection along the face of its selection box by dragging around on that face.</li>
+    <li>Delete the selection using the backspace key.</li>
+    <li>Rotate the camera by dragging the background.</li>
+    <li>Rotate the light source by clicking the <em>"Light Source"</em> button and dragging the light cube.</li>
+  </ul>
+
+  <div id="main" class="shards">
+    <canvas title="Path Tracing WebGL Demo" id="canvas" class="shards" width="512" height="512"></canvas>
+    <div id="error"><noscript>Please enable JavaScript.</noscript></div>
+
+    <p class="p3 p2" title="Objects & Light Properties">
+      <button title="Change light source location." onclick="javascript:ui.selectLight()">Light Source</button>
+      <button title="Add a sphere" onclick="javascript:ui.addSphere()">Add Sphere</button>
+      <button title="Add a cube" onclick="javascript:ui.addCube()">Add Cube</button>
+    </p>
+
+    <p class="p3 p2" title="Material and Environment Properties">
+      <b>Material:</b>
+      <select title="Select Material" id="material">
+        <option value="0" selected>Diffuse</option>
+        <option value="1">Mirror</option>
+        <option value="2">Glossy</option>
+      </select>
+      <span id="glossiness-factor">
+        <br>with glossiness factor: 0 &lt; <input id="glossiness" value="0.6"> &lt; 1
+      </span>
+      <br>
+
+      <b>Environment:</b>
+      <select title="Choose Environment" id="environment">
+        <option value="0" selected>Cornell Box - Yellow and Blue</option>
+        <option value="1">Cornell Box - Red and Green</option>
+      </select>
+    </p>
+
+    <p class="p3 p2" title="Load a preset scene">
+      <b>Load Preset Scene:</b>
+      <br><button title="Column of Spheres Scene" onclick="javascript:ui.setObjects(makeSphereColumn())">Sphere Column</button>
+      <br><button title="Pyramid of Spheres Scene" onclick="javascript:ui.setObjects(makeSpherePyramid())">Sphere Pyramid</button>
+      <br><button title="Cube and Hemisphere Scene" onclick="javascript:ui.setObjects(makeSphereAndCube())">Cube and Hemisphere</button>
+      <br><button title="Cube and Spheres Scene" onclick="javascript:ui.setObjects(makeCubeAndSpheres())">Cube and Spheres</button>
+      <br><button title="Table and Chair Scene" onclick="javascript:ui.setObjects(makeTableAndChair())">Table and Chair</button>
+      <br><button title="Stacks of Tables Scene" onclick="javascript:ui.setObjects(makeStacks())">Table Stacks</button>
+    </p>
+  </div>
+  </div>
+
+  <p class="p3">&nbsp;&nbsp;The entire scene is dynamically compiled into a <a rel="noopener" href="https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language">GLSL shader</a>. Everything can be repositioned using the current shader, but any geometry or material change means a recompilation. To calculate a pixel color, a ray is shot into the scene and allowed to bounce around five times. At each bounce, the direct light incoming at that point (including shadows) is multiplied by all previous material colors and accumulated. Soft shadows are achieved by randomly jittering the light position per-pixel. The path tracing solution will only completely converge if your browser supports rendering to a floating-point texture.</p>
+  <p title="Credits" id="footer" class="p3"><em>Made by <a rel="noopener" href="https://madebyevan.com/">Evan Wallace</a> in 2010.</em></p>
+</body>
+</html>
