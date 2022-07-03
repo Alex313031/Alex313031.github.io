@@ -77,6 +77,14 @@ body {
   color: var(--fontcolor);
   background-color: var(--bgcolor);
 }
+.body4 {
+  margin: auto auto;
+  max-width: 75%;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem;
+  color: var(--fontcolor);
+  background-color: var(--bgcolor);
+}
 /* Clear floats after image containers */
 .row {
   float: center;
@@ -101,6 +109,27 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+div.gallery {
+  margin: 2px;
+  float: center;
+  width: 200px;
+  height: 280px;
+}
+img.gallery {
+  border: 1px solid var(--border);
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+  width: 200px;
+  height: auto;
+}
+img.gallery:hover {
+  border: 1px solid #1967d2;
+  filter: drop-shadow(1px 1px 1px #1967d2);
+}
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
 }
 .center {
   max-width: 100%;
