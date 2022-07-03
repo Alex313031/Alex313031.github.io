@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ thoriumos.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>About Me.</title>
+    <meta name="description" content="About Alex Frick">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="humans.txt">
+    <link rel="icon" type="image/png" sizes="32x32" href="flags-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="flags-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body class="body4" style="background-image: url('imgs/background.jpg');">
+	<!-- Main Logo -->
+	<div id="spinner">
+		<img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/aboutme.png" width="900em" max-width="900em" alt="A little about me" title="A little about me"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: flex-start;">
+		<h1><b><u><em>About Me</em></u></b></h1></div>
+		<div style="display: flex; justify-content: center; align-items: flex-start;">
+		<p class="intro" style="max-width: 65%; color: #ffffff; text-shadow: 1px 1px 1px #000000; background: #2b2b2b;">
+			&nbsp;&nbsp;I'm a 21 y.o. computer nerd libving in Broken Arrow, Oklahoma, U.S. I am a FOSS enthusiast, inlcuding Linux, Chromium, and ChromiumOS. I also appreciate other OSes as well as legacy hardware/software. I have a collection of PC's going back to an IBM PS/2 System with an i386 and DOS/Win3.11. I have systems with 95, 98SE, NT 4.0, Millenium, 2000, XP, Vista, 7, 10, and 11.</p></div>
+		<hr class="line">
+    <h1 style="text-align: center; margin-left: -38px;"><img class="spin" style="filter: drop-shadow(1px 1px 2px #000000);" src="box_38.png" alt="Box" title="Box"><u>Stuff</u> : </h1>
+    <div style="display: flex; justify-content: center; align-items: flex-start;">
+	<div class="gallery">
+		<a target="_blank" href="imgs/Computer_Lab.gif">
+		<img class="gallery" src="imgs/Computer_Lab.gif" alt="Computer_Lab.gif" width="200px" title="&quot;Computer Lab&quot; GIF by Carl Burton"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Bulbs.gif">
+		<img class="gallery" src="imgs/Bulbs.gif" alt="Bulbs.gif" width="200px" title="&quot;Bulbs&quot; GIF by Carl Burton"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Fan.gif">
+		<img class="gallery" src="imgs/Fan.gif" alt="Fan.gif" width="200px" title="&quot;Fan&quot; GIF by Carl Burton"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Desk.gif">
+		<img class="gallery" src="imgs/Desk.gif" alt="Desk.gif" width="200px" title="&quot;Desk&quot; GIF by Carl Burton"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Room.gif">
+		<img class="gallery" src="imgs/Room.gif" alt="Room.gif" width="200px" title="&quot;Room&quot; GIF by Carl Burton"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Factory.gif">
+		<img class="gallery" src="imgs/Factory.gif" alt="Factory.gif" width="200px" title="&quot;Factory&quot; GIF by Carl Burton"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Networks.gif">
+		<img class="gallery" src="imgs/Networks.gif" alt="Networks.gif" width="200px" title="&quot;Networks&quot; GIF by Carl Burton"></a>
+	</div>
+	</div>
+
+    <video title="NKP 765" alt="NKP 765 mp4" class="video2 off" width="1280px" max-width="75%" controls="true" preload="metadata" poster="media/NKP765.jpg"><source src="media/Nickel_Plate_Road_765_-_Thunder_in_the_Gorge_-_Allentown_to_Pittston.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+    
+    <video title="NKP 765" alt="NKP 765 mp4" class="video2 off" width="1280px" max-width="75%" controls="true" preload="metadata" poster="media/AmericanCirc.jpg"><source src="media/American_Circumcision_1080p.mp4" type="video/mp4"><track label="English" kind="subtitles" srclang="en" src="media/American_Circumcision_1080p.vtt" default>Sorry, your browser doesn't support embedded videos.</video>
+
+	<img style="display: flex; justify-content: center; align-items: flex-start;" class="shadow" src="misc/hidden/3dtest.png">
+
+	<a style="text-align: right; float: right;" href="misc/hidden/kody_doodles_9.3.png">&#9892;</a>
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin.js"></script>
+	<script defer src="js/spun.js"></script>
+    <script defer src="js/button.js"></script>
+</body>
+</html>
