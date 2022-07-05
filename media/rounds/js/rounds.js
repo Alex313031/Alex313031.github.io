@@ -30,6 +30,12 @@
     gl.viewport(0, 0, canvas.width, canvas.height);
     document.getElementById('shader').style.maxWidth = width + 'px';
     document.getElementById('shader').appendChild(canvas);
+    gl.canvas.className = "shards";
+    
+    if (!gl) {
+    alert('Unable to initialize WebGL. Your browser or machine may not support it.');
+    return;
+    }
 
     var boxShadowProgram = compileProgram([
       'precision highp float;',
