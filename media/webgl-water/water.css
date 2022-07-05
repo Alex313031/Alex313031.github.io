@@ -1,6 +1,6 @@
 body { font: 13px/140% Roboto, sans-serif; font-family: "Roboto"; background: black; color: white; overflow: hidden; }
 
-html * { font: 13px/140%; font-family: "Roboto"; }
+html * { font: 13px/140% Roboto; font-family: "Roboto"; }
 
 @font-face {
   font-family: 'Roboto';
