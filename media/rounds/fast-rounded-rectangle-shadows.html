@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="WebGL Water">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#000000">
+    <link rel="preload" href="../../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2">
+    <link rel="author" href="../../humans.txt">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>"Rounds" Shader Demo</title>
+    <link rel="stylesheet" href="../../css/other.css">
+    <link rel="stylesheet" href="../../css/media.css">
+  </head>
+  <body class="body3" style="background-image: url('bg-dark.jpg');">
+    <header>
+      <section>
+        <h1 style="text-align: center; border: 1px solid #ffffff; padding-top: 4px; padding-bottom: 5px;" title="Rounds"><u>Fast Rounded Rectangle Shadows - <em>"Rounds"</em></u></h1>
+      </section>
+    </header>
+
+    <main>
+      <section>
+        
+
+<div id="shader" class="shards" title="&quot;Rounds&quot; - Shader Demo"></div>
+
+<div class="p2">
+<p class="p3">
+  &nbsp;&nbsp;This demonstrates a shader I came up with for constant-time single-step rounded rectangle drop shadows on the GPU.
+  I became interested in this problem after reading that browsers still render box shadows
+  <a href="https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/">on the CPU</a>
+  and upload them to the GPU. Rectangular drop shadows are used all over the place in UI design and are an important
+  feature to accelerate, especially given the rise of animation in interface design.
+</p>
+
+<p class="p3">
+  You can pause the animation and toggle between rounded and square corners for comparison:
+</p>
+
+<p class="indented p3" id="controls">
+  <label>
+    <input id="box" type="radio" name="shader" value="box">
+    Use rectangle shader
+  </label>
+  <label>
+    <input id="rounded" type="radio" name="shader" value="rounded" checked>
+    Use rounded rectangle shader
+  </label>
+  <label>
+    <input id="paused" type="checkbox">
+    Pause animation
+  </label>
+</p>
+
+<h3>Fast Rectangle Blur</h3>
+
+<p class="p3">
+  &nbsp;&nbsp;There's a
+  <a href="http://stereopsis.com/shadowrect/">well-known shortcut</a>
+  for rendering drop shadows of axis-aligned rectangles.
+  It turns out that a 2D drop shadow can be defined as the multiplication of two perpendicular 1D blurred boxes.
+  Since there's a closed-form solution to the convolution of a 1D gaussian with a 1D box (it's just the piecewise integral of a gaussian), this becomes a constant-time single-step rendering algorithm.
+  It looks like this:
+</p>
+
+<pre title="Code" id="fragment">
+// License: CC0 (http://creativecommons.org/publicdomain/zero/1.0/)
+
+// This approximates the error function, needed for the gaussian integral
+vec4 erf(vec4 x) {
+  vec4 s = sign(x), a = abs(x);
+  x = 1.0 + (0.278393 + (0.230389 + 0.078108 * (a * a)) * a) * a;
+  x *= x;
+  return s - s / (x * x);
+}
+
+// Return the mask for the shadow of a box from lower to upper
+float boxShadow(vec2 lower, vec2 upper, vec2 point, float sigma) {
+  vec4 query = vec4(point - lower, upper - point);
+  vec4 integral = 0.5 + 0.5 * erf(query * (sqrt(0.5) / sigma));
+  return (integral.z - integral.x) * (integral.w - integral.y);
+}
+</pre>
+
+<p class="p3">
+  The integral of the gaussian <code>f(x) = exp(-x^2 / (2 sigma^2)) / (sigma sqrt(2 pi))</code> is exactly <code>F(x) = (1 + erf(x / (sigma sqrt(2)))) / 2</code>, where <code>erf()</code> is the error function.
+</p>
+
+<h3>Fast Rounded Rectangle Blur</h3>
+
+<p class="p3">
+  &nbsp;&nbsp;Unfortunately there's no closed-form solution for a rounded rectangle drop shadow.
+  After a lot of experimentation, I've found the best approach is to use the closed-form solution along the first dimension and sampling along the second dimension.
+  If the sample locations are chosen intelligently, only a small fixed number of samples are needed for a good approximation.
+  Here's a straightforward, unoptimized implementation:
+</p>
+
+<pre title="Code" id="fragment">
+// License: CC0 (http://creativecommons.org/publicdomain/zero/1.0/)
+
+// A standard gaussian function, used for weighting samples
+float gaussian(float x, float sigma) {
+  const float pi = 3.141592653589793;
+  return exp(-(x * x) / (2.0 * sigma * sigma)) / (sqrt(2.0 * pi) * sigma);
+}
+
+// This approximates the error function, needed for the gaussian integral
+vec2 erf(vec2 x) {
+  vec2 s = sign(x), a = abs(x);
+  x = 1.0 + (0.278393 + (0.230389 + 0.078108 * (a * a)) * a) * a;
+  x *= x;
+  return s - s / (x * x);
+}
+
+// Return the blurred mask along the x dimension
+float roundedBoxShadowX(float x, float y, float sigma, float corner, vec2 halfSize) {
+  float delta = min(halfSize.y - corner - abs(y), 0.0);
+  float curved = halfSize.x - corner + sqrt(max(0.0, corner * corner - delta * delta));
+  vec2 integral = 0.5 + 0.5 * erf((x + vec2(-curved, curved)) * (sqrt(0.5) / sigma));
+  return integral.y - integral.x;
+}
+
+// Return the mask for the shadow of a box from lower to upper
+float roundedBoxShadow(vec2 lower, vec2 upper, vec2 point, float sigma, float corner) {
+  // Center everything to make the math easier
+  vec2 center = (lower + upper) * 0.5;
+  vec2 halfSize = (upper - lower) * 0.5;
+  point -= center;
+
+  // The signal is only non-zero in a limited range, so don't waste samples
+  float low = point.y - halfSize.y;
+  float high = point.y + halfSize.y;
+  float start = clamp(-3.0 * sigma, low, high);
+  float end = clamp(3.0 * sigma, low, high);
+
+  // Accumulate samples (we can get away with surprisingly few samples)
+  float step = (end - start) / 4.0;
+  float y = start + step * 0.5;
+  float value = 0.0;
+  for (int i = 0; i < 4; i++) {
+    value += roundedBoxShadowX(point.x, point.y - y, sigma, corner, halfSize) * gaussian(y, sigma) * step;
+    y += step;
+  }
+
+  return value;
+}
+</pre>
+
+<p class="p3">
+  Instruction count can be reduced further using forward differencing and other tricks but I've left that stuff out since it obfuscates the algorithm.
+</p>
+
+<h3>Other Approaches</h3>
+
+<p class="p3">
+  &nbsp;&nbsp;Drop shadows are defined as the convolution of a circular gaussian blob with the mask of the object receiving the shadow.
+  2D convolution is prohibitively expensive because each pixel requires O(r<sup>2</sup>) samples, where r is the radius of the gaussian.
+  Since convolution by a gaussian blob is separable, these blurs are usually done using two successive 1D convolutions, one along x and one along y, which brings the complexity down to O(r).
+  This is much better than naive convolution but is still pretty expensive.
+  GPU blurs can use tricks such as
+  <a href="http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/">double-sampling using linear interpolation</a>
+  and
+  <a href="https://software.intel.com/en-us/blogs/2014/07/15/an-investigation-of-fast-real-time-gpu-based-image-blur-algorithms">downsampling before blurring</a>
+  but any texture sampling technique will suffer from the overhead of extra memory, extra fill-rate, and extra render passes.
+</p>
+
+<p class="p3">
+  &nbsp;&nbsp;Drop shadows can also be rendered on the CPU using repeated application of a
+  <a href="https://fgiesen.wordpress.com/2012/07/30/fast-blurs-1/">moving average box-blur</a>
+  to approximate a gaussian blur.
+  This works out to O(1) cost per pixel assuming the blur radius is much less than the size of the image.
+  Every additional box blur pass improves the approximation and in practice stopping after three passes is fine.
+  This is a legitimate approach but the data upload to the GPU ends up becoming a significant bottleneck.
+</p>
+</div>
+
+<script defer src="../../js/jquery-3.6.0.slim.min.js"></script>
+<script src="js/lightgl.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/rounds.js"></script>
+
+      </section>
+    </main>
+  </body>
+</html>
