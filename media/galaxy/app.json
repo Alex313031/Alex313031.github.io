@@ -1,0 +1,89 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"gammaInput": false,
+		"gammaOutput": false,
+		"shadows": true,
+		"vr": false
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "3B4802D2-D895-4D58-A5E7-E8675E31A939",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"matrix": [0.844375,0,-0.535752,0,-0.22326,0.909034,-0.35187,0,0.487017,0.416723,0.767566,0,14.610501,12.501677,23.02697,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.1,
+			"far": 10000,
+			"focus": 10,
+			"aspect": 1.293296,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "9E46C306-4400-4A21-ADCD-46D2DD9CA6CD",
+				"type": "IcosahedronGeometry",
+				"radius": 6,
+				"detail": 4
+			}],
+		"materials": [
+			{
+				"uuid": "BA1B9252-64BE-4D9B-BA45-0EAE67979C8C",
+				"type": "MeshBasicMaterial",
+				"color": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			}],
+		"object": {
+			"uuid": "E738B5E4-74C5-4ACE-8C3D-B775A512163C",
+			"type": "Scene",
+			"name": "Scene",
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "4697B5FD-DFA0-4275-942B-BC05F78C952F",
+					"type": "Group",
+					"name": "Galaxy",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+				},
+				{
+					"uuid": "D2456989-B057-4EB6-BC83-08C6475CD978",
+					"type": "Mesh",
+					"name": "Icosahedron",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+					"geometry": "9E46C306-4400-4A21-ADCD-46D2DD9CA6CD",
+					"material": "BA1B9252-64BE-4D9B-BA45-0EAE67979C8C"
+				}],
+			"background": 0
+		}
+	},
+	"scripts": {
+		"E738B5E4-74C5-4ACE-8C3D-B775A512163C": [
+			{
+				"name": "",
+				"source": "function update( event ) {\n\t\n\tvar time = Date.now();\n\n\tthis.rotation.x = time / 50000;\n\tthis.rotation.y = - time / 10000;\n\n}"
+			}],
+		"4697B5FD-DFA0-4275-942B-BC05F78C952F": [
+			{
+				"name": "",
+				"source": "function random() { return Math.random() * 2 - 1 }\n\nfunction createGeometry( amount, step ) {\n\n\tvar vertices = [];\n\n\tfor ( var i = 2000; i < amount; i += step ) {\n\n\t\tvar angle = i / 1200;\n\t\tvar distance = i / 600;\n\t\tvar progress = ( i / amount ) * 4 + 0.5;\n\n\t\tvertices.push(\n\t\t\tprogress * random() * random() + Math.sin( angle ) * distance,\n\t\t\tprogress * random() * random(),\n\t\t\tprogress * random() * random() + Math.cos( angle ) * distance\n\t\t);\n\n\t}\n\t\n\tvar geometry = new THREE.BufferGeometry();\n\tgeometry.addAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );\n\t\n\treturn geometry;\n\n}\n\nfunction createTexture( from, to ) {\n\tvar canvas = document.createElement( 'canvas' );\n\tcanvas.width = 16;\n\tcanvas.height = 16;\n\tvar context = canvas.getContext( '2d' );\n\tvar gradient = context.createRadialGradient( 8, 8, 0, 8, 8, 8 );\n\tgradient.addColorStop( 0, from );\n\tgradient.addColorStop( 1, to );\n\tcontext.fillStyle = gradient;\n\tcontext.fillRect( 0, 0, canvas.width, canvas.height );\n\treturn new THREE.CanvasTexture( canvas );\n}\n\n//\n\nvar geometry = createGeometry( 20000, 20 );\nvar material = new THREE.PointsMaterial( {\n\tsize: 4,\n\tmap: createTexture( 'rgba(0,0,15,1)', 'rgba(0,0,0,0)'  ),\n\tdepthWrite: false,\n\ttransparent: true\n} );\n\nvar points = new THREE.Points( geometry, material );\nthis.add( points );\n\nvar geometry = createGeometry( 20000, 20 );\nvar material = new THREE.PointsMaterial( {\n\tsize: 4,\n\tmap: createTexture( 'rgba(15,0,15,1)', 'rgba(0,0,0,0)'  ),\n\tdepthWrite: false,\n\ttransparent: true\n} );\n\nvar points = new THREE.Points( geometry, material );\npoints.rotation.y = Math.PI;\nthis.add( points );\n\n//\n\nvar geometry = createGeometry( 20000, 8 );\nvar material = new THREE.PointsMaterial( {\n\tsize: 0.4,\n\tmap: createTexture( 'rgba(255,205,255,1)', 'rgba(0,0,0,0)' ),\n\tblending: THREE.AdditiveBlending,\n\tdepthWrite: false,\n\ttransparent: true\n} );\n\nvar points = new THREE.Points( geometry, material );\nthis.add( points );\n\nvar geometry = createGeometry( 20000, 8 );\nvar material = new THREE.PointsMaterial( {\n\tsize: 0.4,\n\tmap: createTexture( 'rgba(255,255,200,1)', 'rgba(0,0,0,0)' ),\n\tblending: THREE.AdditiveBlending,\n\tdepthWrite: false,\n\ttransparent: true\n} );\n\nvar points = new THREE.Points( geometry, material );\npoints.rotation.y = Math.PI;\nthis.add( points );\n\n//\n\n//\n\nvar geometry = createGeometry( 20000, 0.4 );\nvar material = new THREE.PointsMaterial( {\n\tsize: 0.25,\n\tmap: createTexture( 'rgba(205,205,255,1)', 'rgba(0,0,0,0)' ),\n\tblending: THREE.AdditiveBlending,\n\tdepthWrite: false,\n\ttransparent: true\n} );\n\nvar points = new THREE.Points( geometry, material );\nthis.add( points );\n\nvar geometry = createGeometry( 20000, 0.4 );\nvar material = new THREE.PointsMaterial( {\n\tsize: 0.25,\n\tmap: createTexture( 'rgba(255,200,255,1)', 'rgba(0,0,0,0)' ),\n\tblending: THREE.AdditiveBlending,\n\tdepthWrite: false,\n\ttransparent: true\n} );\n\nvar points = new THREE.Points( geometry, material );\npoints.rotation.y = Math.PI;\nthis.add( points );"
+			}]
+	}
+}

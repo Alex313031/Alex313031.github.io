@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>Google Space</title>
+		<meta name="description" content="Mr.Doob Google Space Demo">
+		<link rel="author" href="../../humans.txt">
+		<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<meta itemprop="image" content="media/thumb.png">
+		<link rel="stylesheet" type="text/css" href="google-space.css">
+	</head>
+	<body>
+
+		<table id="topbar">
+			<tr>
+				<td class="box2d" onClick="location.href = 'https://plus.google.com/?gpsrc=ogpy0&tab=wX';"><span>+You</span></td>
+				<td class="box2d selected" onClick="location.href = 'http://www.google.com/webhp?hl=en&tab=ww';"><span>Search</span></td>
+				<td class="box2d" onClick="location.href = 'http://www.google.com/imghp?hl=en&tab=wi';"><span>Images</span></td>
+				<td class="box2d" onClick="location.href = 'http://maps.google.com/maps?hl=en&tab=wl';"><span>Maps</span></td>
+				<td class="box2d" onClick="location.href = 'https://play.google.com/?hl=en&tab=w8';"><span>Play</span></td>
+				<td class="box2d" onClick="location.href = 'http://www.youtube.com/?tab=w1';"><span>YouTube</span></td>
+				<td class="box2d" onClick="location.href = 'http://news.google.com/nwshp?hl=en&tab=wn';"><span>News</span></td>
+				<td class="box2d" onClick="location.href = 'https://mail.google.com/mail/?tab=wm';"><span>Gmail</span></td>
+				<td class="box2d" onClick="location.href = 'https://drive.google.com/?tab=wo';"><span>Drive</span></td>
+				<td class="box2d" onClick="location.href = 'https://www.google.com/calendar?tab=wc';"><span>Calendar</span></td>
+				<td class="box2d" onClick="location.href = 'http://www.google.com/intl/en/options/';"><span>More</span></td>
+				<td class="box2d empty" style="width:10%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:20%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:20%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:10%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:5%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:5%"><span>&nbsp;</span></td>
+				<td class="box2d empty" style="width:20%"><span>&nbsp;</span></td>
+			</tr>
+		</table>
+
+		<span style="position:absolute;top:50px;right:30px;"><button id="btnG" class="box2d" style="color:#fff;font-size:11px;font-weight:bold;padding: 0 16px;border:1px solid transparent;background-color:#d14836;text-transform: uppercase;">Sign in</button></span>
+
+		<div id="content">
+			<img id="logo" src="media/google.png" width="275" height="95"class="box2d"><br />
+			<input id="q" value="" title="Search" autocomplete="off" type="text" maxlength="2048" class="box2d"><br />
+			<span style="margin: 0 4px;"><button id="btnG" class="box2d">Google Search</button></span>
+			<span style="margin: 0 4px;"><button id="btnI" class="box2d">I'm Feeling Lucky</button></span>
+		</div>
+
+		<table id="bottombar">
+			<tr>
+				<td class="box2d" style="width:10%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:12%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:8%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:4%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:4%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:5%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:4%"><span>&nbsp;</span></td>
+				<td class="box2d" style="width:2%"><span>&nbsp;</span></td>
+			</tr>
+		</table>
+
+		<div id="footer">
+			<a href="http://www.google.com/intl/en/ads/" class="box2d">Advertising Programs</a>
+			<a href="http://www.google.com/services/" class="box2d">Business Solutions</a>
+			<a href="http://www.google.com/intl/en/policies/" class="box2d">Privacy & Terms</a>
+			<a href="https://plus.google.com/116899029375914044550" class="box2d">+Google</a>
+			<a href="http://www.google.com/intl/en/about.html" class="box2d">About Google</a>
+		</div>
+
+		<!-- <script src="http://www.google.com/uds/api?file=uds.js&v=0.1" type="text/javascript"></script> -->
+		<script src="js/inheritance.js"></script>
+		<script src="js/box2d.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
