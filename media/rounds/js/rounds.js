@@ -19,9 +19,12 @@
       return program;
     }
 
+    var angleX = 30;
+    var angleY = 30;
+
     var canvas = document.createElement('canvas');
     var gl = canvas.getContext('webgl', { alpha: false, depth: false, stencil: false });
-    var width = 500;
+    var width = 600;
     var height = 500;
     var ratio = window.devicePixelRatio || 1;
     canvas.width = Math.round(width * ratio);
