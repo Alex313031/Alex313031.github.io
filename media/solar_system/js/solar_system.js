@@ -311,11 +311,11 @@ $("#music").on("click", function () {
     if (play) {
         a.pause();
         play = false;
-        $(this).text("|Music On|");
+        $(this).text("|Music Off|");
     } else {
         a.play();
         play = true;
-        $(this).text("|Music Off|");
+        $(this).text("|Music On|");
     }
     return false;
 });
