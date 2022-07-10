@@ -58,7 +58,7 @@ video.video {
   float: center;
   margin-top: 6px;
 }
-video.video2 {
+.video2 {
   border: 1px solid var(--border);
   filter: drop-shadow(1px 1px 3px var(--imgshadow));
   max-width: 100%;
