@@ -114,7 +114,7 @@ div.gallery {
   margin: 2px;
   float: center;
   width: 200px;
-  height: 280px;
+  height: auto;
 }
 img.gallery {
   border: 1px solid var(--border);
