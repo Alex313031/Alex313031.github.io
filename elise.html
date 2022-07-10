@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ thoriumos.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>About Me.</title>
+    <meta name="description" content="About Alex Frick">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="humans.txt">
+    <link rel="icon" type="image/png" sizes="48x48" href="heart-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="heart-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="heart-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body class="body4" style="background-image: url('imgs/elise_background.jpg');">
+	<!-- Main Logo -->
+	<div id="spinner">
+		<img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/aboutme.png" width="900em" max-width="900em" alt="A little about me" title="A little about me"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: flex-start;">
+		<h1><b><u><em>About Elise</em></u></b></h1></div>
+		<div style="display: flex; justify-content: center; align-items: flex-start;">
+		<p class="intro" style="max-width: 900px; color: #ffffff; text-shadow: 1px 1px 1px #000000; background: #2b2b2b;">
+			Hi, my name is Elise. I am 19 years old. I love to hangout with my friends. I am currently going to college at TCC. I hope to eventually one day become a veterinarian or a nurse. I enjoy Netflix and Tennis.</p></div>
+		<hr class="line">
+    <h1 style="text-align: center; margin-left: -38px;"><img class="spin" style="filter: drop-shadow(1px 1px 2px #000000);" src="box_38.png" alt="Box" title="Box"><u><em>Pictures</u> : </em></h1>
+    <p style="display: flex; justify-content: center; align-items: flex-start;"><a target="_blank" rel="noopener"href="https://www.carlburton.io/">GIFs from Carl Burton</a></p>
+    <div style="display: flex; justify-content: center; align-items: flex-start;">
+	<div class="gallery">
+		<a target="_blank" href="imgs/Mr._Smiley_Face.svg">
+		<img class="gallery" src="imgs/Mr._Smiley_Face.svg" alt="Mr._Smiley_Face.svg" width="200px" title="Mr. Smiley Face"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/butterfly.jpg">
+		<img class="gallery" src="imgs/butterfly.jpg" alt="butterfly.jpg" width="200px" title="Butterfly"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/sunflower.jpg">
+		<img class="gallery" src="imgs/sunflower.jpg" alt="sunflower.jpg" width="200px" title="Sunflower"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Owl.jpg">
+		<img class="gallery" src="imgs/Owl.jpg" alt="Owl.jpg" width="200px" title="Owl"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/stars.jpg">
+		<img class="gallery" src="imgs/stars.jpg" alt="stars.jpg" width="200px" title="&quot;Stars&quot; from Evan Wallace Website"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Tony.png">
+		<img class="gallery" src="imgs/Tony.png" alt="Tony.png" width="200px" title="Tony"></a>
+	</div>
+	<div class="gallery">
+		<a target="_blank" href="imgs/Tux.svg">
+		<img class="gallery" src="imgs/Tux.svg" alt="Tux.svg" width="200px" title="Tux!"></a>
+	</div>
+	</div>
+
+	<p style="display: flex; justify-content: center; align-items: flex-start;"><a target="_blank" rel="noopener"href="https://www.youtube.com/watch?v=zcuDUvTtZ5Y">Youtube Video</a></p>
+    <video title="NKP 765" alt="NKP 765 mp4" class="video2 off" width="1280px" max-width="75%" controls="true" preload="metadata" poster="media/NKP765.jpg"><source src="https://dl.thorium.rocks/files/Nickel_Plate_Road_765_-_Thunder_in_the_Gorge_-_Allentown_to_Pittston.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+    
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin.js"></script>
+	<script defer src="js/spun.js"></script>
+    <script defer src="js/button.js"></script>
+</body>
+</html>
