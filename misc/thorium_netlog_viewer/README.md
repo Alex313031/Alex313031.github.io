@@ -8,7 +8,7 @@ The latest version of the Thorium Net Log Viewer can be accessed: [Here](https:/
 The latest version of the Chromium Net Log Viewer can be accessed: [Here](https://netlog-viewer.appspot.com/)
 
 ## Usage
-Go to chrome://net-export/ and start a logging session. By default it will save `chrome-net-export-log.json` to your Downloads folder. You can then upload/drag n' drop the file into the NetLog window.
+Go to *chrome://net-export/* and start a logging session. When you stop the session it will save the log file. By default it will save `chrome-net-export-log.json` to your Downloads folder. You can then upload/drag n' drop the file into the NetLog window.
 
 To run locally, clone the repo, and then you can run `serve_static.sh` (Linux), or `serve_static.bat` (Windows) and open your browser to *http://0.0.0.0:8086/netlog.html* to use it.
 
