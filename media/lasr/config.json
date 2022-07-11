@@ -1,0 +1,26 @@
+module.exports={
+  "attenuation": 0.975,
+  "camera": {
+    "fov": 60,
+    "near": 0.1,
+    "far": 1000,
+    "position": {
+      "x": -6.567236901462322,
+      "y": -1.4938772315284023,
+      "z": 200
+    }
+  },
+  "controls": {
+    "enableZoom": true,
+    "enableRotate": true,
+    "enablePan": true,
+    "enableDamping": true,
+    "dampingFactor": 0.5,
+    "rotateSpeed": 0.5,
+    "target": {
+      "x": 0,
+      "y": 0,
+      "z": 28.79999999999992
+    }
+  }
+}

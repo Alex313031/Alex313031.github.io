@@ -1,0 +1,32 @@
+
+*{
+  box-sizing:border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+.container{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+}
+
+.working {
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
