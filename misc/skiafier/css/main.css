@@ -1,0 +1,216 @@
+/* Copyright 2019 The Skiafy Authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. */
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: var(--fontcolor);
+  background-color: var(--bgcolor);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--fontcolor);
+  background-color: var(--bgcolor);
+  padding-left: 4px;
+}
+
+:root,
+/* Set colours */
+:root.light {
+  --bgcolor: #ffffff;
+  --fontcolor: #000000;
+  --linkcolor: #0000ee;
+  --visitedcolor: #551a8b;
+  --preformatted: #000000;
+  --accent-bg: #aecbfa;
+  --accent-fg: #24292f;
+  --border: #000000;
+  --construction: #e51c23;
+  --code: #000000;
+  --shadow: #ffffff;
+  --imgshadow: #000000;
+  --coc: #000000;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgcolor: #24292f;
+    --fontcolor: #ffffff;
+    --linkcolor: #ae5ee0;
+    --visitedcolor: #5bf5bf;
+    --preformatted: #ffffff;
+    --accent-bg: #2b2b2b;
+    --accent-fg: #aecbfa;
+    --border: #ffffff;
+    --construction: #fbbc04;
+    --code: #fbbc04;
+    --shadow: #000000;
+    --imgshadow: #ffffff;
+    --coc: #000000;
+  }
+}
+:root.dark {
+  --bgcolor: #24292f;
+  --fontcolor: #ffffff;
+  --linkcolor: #ae5ee0;
+  --visitedcolor: #5bf5bf;
+  --preformatted: #ffffff;
+  --accent-bg: #2b2b2b;
+  --accent-fg: #aecbfa;
+  --border: #ffffff;
+  --construction: #fbbc04;
+  --code: #fbbc04;
+  --shadow: #000000;
+  --imgshadow: #ffffff;
+  --coc: #000000;
+}
+/* Prefer border-box */
+* {
+    box-sizing: border-box;
+}
+
+/* Rounded Dark/Light Mode Button */
+button {
+  font-family: "Roboto", sans-serif;
+  box-shadow: 1px 1px 1px 0px var(--border);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* Set link colours */
+a:link{
+  color: var(--linkcolor);
+}
+a:visited,
+a:active {
+  color: var(--visitedcolor);
+}
+
+.title {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  width: 60%;
+  padding: 0.5rem 0.5rem;
+  background: var(--accent-bg);
+}
+
+.info {
+  font-size: 140%;
+  font-weight: bold;
+  width: 50%;
+}
+
+#use-webkit {
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #FBBC04 10px,
+    #FBBC04 20px
+  );
+  padding: 1em;
+  width: 60%;
+}
+
+.warn {
+  color: var(--preformatted);
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-size: 110%;
+  font-weight: bold;
+  width: 54.5%;
+}
+
+.caveat {
+  font-size: 110%;
+  font-weight: bold;
+  width: 50%;
+}
+
+#top-stuff > div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 3em 0;
+}
+
+#user-input {
+  display: block;
+  margin: 1em 0;
+}
+
+#user-input {
+  width: 800px;
+  height: 300px;
+}
+
+#svg-anchor::before {
+  content: 'Rendered SVG:';
+  vertical-align: top;
+  -webkit-margin-start: 1em;
+}
+
+#svg-anchor svg {
+  width: 576px;
+  height: 576px;
+}
+
+input:not(:checked) ~ .limitation {
+  display: none;
+}
+
+.limitation {
+  color: grey;
+  font-style: italic;
+}
+
+.checkbox {
+  font-family: "Roboto", sans-serif;
+  outline: 1px solid #000000;
+}
+
+.input {
+  border: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  border-radius: 4px;
+}
+
+pre {
+  padding: 0.5rem 1.0rem;
+  max-width: 100%;
+  overflow: auto;
+  color: var(--preformatted);
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  border-right: 2px solid var(--border);
+  border-radius: 4px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px var(--shadow);
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../../fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'),
+       url('../../../fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../../fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../../../fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../../fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}

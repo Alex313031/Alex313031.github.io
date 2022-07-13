@@ -1,0 +1,101 @@
+<!-- Copyright 2019 The Skiafy Authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <meta itemprop="image" content="thumb.png">
+  <title>Skiafy your SVG</title>
+  <meta name="description" content="Skiafier - Converts .svg icons to .icon format.">
+  <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="js/skiafy.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+  </script>
+</head>
+
+<body>
+<h1 class="title"><u>Skiafier - Generate .icon files.</u></h1>
+<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+<hr class="line">
+<div id="use-webkit" hidden>
+<p class="warn"><em>This tool probably doesn't work in this browser. Try <a href="https://www.chromium.org/getting-involved/download-chromium/">Chromium</a> or <a href="https://thorium.rocks/">Thorium</a>.</em></p>
+</div>
+<p class="info">Purpose: This program converts .svg icons to .icon format, used in the native UI of <a href="https://www.chromium.org/">Chromium</a> based browsers. .icon is a vector format that passes instructions directly to <a href="https://skia.org/">Skia</a>. For more information, see > <a href="https://chromium.googlesource.com/chromium/src/+/main/components/vector_icons/README.md">Here</a>.</p>
+
+<p class="caveat">Caveat emptor! This program makes a lot of assumptions. Its
+output is just a starting point; you may have to manipulate it further.</p>
+
+<p>Strongly consider pre-processing the SVG source with <a
+href="https://jakearchibald.github.io/svgomg/">Jake Archibald’s SVGOMG tool</a>
+(a web interface to <a href="https://github.com/svg/svgo/">the SVGO SVG
+optimizer</a>).</p>
+
+<div id="top-stuff">
+  <div id="input-stuff">
+    <p>Paste your SVG source below and then <button id="go-button" title="Skiafy!">Skiafy!</button></p>
+    <p>Options:</p>
+    <p>
+      <label><input id="flip-x" type="checkbox"> Flip on <var>x</var> axis</label><br/>
+      <label><input id="flip-y" type="checkbox"> Flip on <var>y</var> axis</label><br/>
+      <label>
+        <input id="preserve-fill" type="checkbox"> Try to preserve fill color. Note: it's often preferable to specify an icon's color at runtime.
+        <br/>
+        <span class="limitation">Works only with fill attributes & expects colors in form #FFF or #FFFFFF.</span>
+      </label>
+    </p>
+    <p>
+      Translate (applies after flip):<br/>
+      <input class="input" id="transform-x" placeholder="x"><br/>
+      <input class="input" id="transform-y" placeholder="y">
+    </p>
+    <textarea class="input" id="user-input"></textarea>
+    <div>
+      <span>Skiafied:</span>
+      <pre id="output-span">Skiafied output will be here</pre>
+    </div>
+  </div>
+  <div id="svg-anchor">
+  </div>
+</div>
+    <script defer src="js/button.js"></script>
+</body>
+</html>
