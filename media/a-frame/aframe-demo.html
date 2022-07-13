@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>A-Frame Demo</title>
+    <meta name="description" content="A-Frame Demo">
+    <link rel="author" href="../../humans.txt">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta itemprop="image" content="assets/thumb.png">
+    <script src="js/aframe-v1.3.0.js"></script>
+    <script src="js/aframe-event-set-component.js"></script>
+  </head>
+  <body>
+    <a-scene vr-mode-ui="enabled: true;" fog="type: linear; color: #000000; near: 180;">
+		<a-entity>
+		<a-box animation="property: object3D.position.z; to: 200; delay: 1000; dur: 8000; loop: true;" event-set__loaded="visible: true; _delay: 1000" position="-16 18 -180" color="white" opacity="1.00" width="6" depth="9" height="4" visible="true"></a-box>
+		<a-box animation="property: object3D.position.x; to: 200; delay: 1000; dur: 8000; loop: true;" event-set__loaded="visible: true; _delay: 1000" position="-180 12 -60" color="white" opacity="1.00" width="9" depth="6" height="4" visible="true"></a-box>
+		</a-entity>
+	  <a-entity position="0 0 0">
+      <a-box metalness="0.25" position="-1.25 0.5 -4" rotation="0 45 0" color="#5bf5bf"></a-box>
+      <a-sphere metalness="0.25" position="0 1.25 -6" radius="1.25" color="#1967d2"></a-sphere>
+      <a-cylinder metalness="0.25" position="-2.00 0.75 -5.5" radius="0.2" height="1.5" color="#EF2D5E"></a-cylinder>
+      <a-sphere position="-2.00 2.00 -5.5" radius="0.2" color="#EF2D5E"></a-sphere>
+      <a-cone metalness="0.25" position="1.25 0.75 -4" radius="0.5" height="1.5" color="#ffbc04"></a-cone>
+      <a-sphere metalness="0.25" position="1.25 1.75 -4" radius="0.25" color="#aaaaaa"></a-sphere>
+      <a-box metalness="0.10" position="0 -0.03 -5.25" rotation="-90 0 0" width="5.5" height="5.5" depth="0.025" color="#669df6"></a-box>
+      <a-box metalness="0.10" position="2.74 0.085 -5.25" rotation="0 -90 0" width="5.5" height="0.25" depth="0.025" color="#669df6"></a-box>
+      <a-box metalness="0.10" position="-2.74 0.085 -5.25" rotation="0 -90 0" width="5.5" height="0.25" depth="0.025" color="#669df6"></a-box>
+      <a-sky color="#24292f"></a-sky>
+      <a-light type="directional" color="#ffffff" intensity="1.25" position="3 2 1"></a-light>
+      <a-light type="ambient" intensity="0.50" color="#A8A8A8"></a-light>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
