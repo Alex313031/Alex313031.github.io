@@ -1,5 +1,5 @@
 # Vector Icon App <img src="https://raw.githubusercontent.com/Alex313031/vector-icon-app/main/vector_icon.svg">
-A basic [Demo](https://michaelwasserman.github.io/vector-icon-app) for Chromium's [vector icons](https://chromium.googlesource.com/chromium/src/+/master/components/vector_icons/README.md).
+A basic [Demo](https://thorium.rocks/misc/vector-icon-app/) for Chromium's [vector icons](https://chromium.googlesource.com/chromium/src/+/master/components/vector_icons/README.md).
 
 Forked from https://github.com/michaelwasserman/vector-icon-app
 
