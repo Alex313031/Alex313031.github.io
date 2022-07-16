@@ -44,7 +44,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* Media */
 audio.sound {
   border: 1px solid var(--border);
-  max-width: 100%;
+  max-width: 50%;
   border-radius: 28px;
   display: flex;
   float: right;
