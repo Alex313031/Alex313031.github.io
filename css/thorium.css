@@ -277,6 +277,18 @@ p.intro {
   font-weight: 600;
   text-shadow: 1px 1px 1px var(--shadow);
 }
+p.intro2 {
+  background: #24292f;
+  box-shadow: 1px 1px 2px 0px var(--border);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px var(--shadow);
+}
 p.p2 {
   padding-left: 16px;
   padding-right: 10px;
