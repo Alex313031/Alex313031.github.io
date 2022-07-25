@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ demos.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Thorium Optimizations</title>
+    <meta name="description" content="Document explaining the compiler optimizations of Thorium.">
+    <meta name="color-scheme" content="light">
+    <link rel="author" href="humans.txt">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta itemprop="image" content="thumb.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body class="body3" style="background-image: url('imgs/jonas-von-werne-ybK9n4jQON8-unsplash.jpg');">
+	<!-- Main Logo -->
+	<div id="spinner">
+		<img class="logo spin shadow" src="imgs/Engineering-Product@2x.png" width="600em" max-width="75%" alt="Engineering-Product@2x.png" title="Chromium Engineering"><div style="display: flex; justify-content: center; align-items: flex-start;">
+    </div>
+    <img class="logo spin shadow" style="float: left; padding-top: 24px;" src="imgs/thorium.svg" width="32px" height="32px" alt="thorium.svg" title="Thorium Logo (Click Me!)">
+    <div style="margin-left: auto; margin-right: auto; box-sizing: border-box; max-width: 92%; height: auto;">
+		<h1 style="text-align: center"><span class="title"><b><u>Thorium Compiler Optimizations</u></b></span></h1>
+	</div>
+	<div style="margin-left: 48px; margin-right: 48px; box-sizing: border-box; max-width: 92%; height: auto;">
+		<p class="intro" style="background: #24292f;" title="Description">Document explaining the compiler optimizations of Thorium; what they do and how they work.</p>
+	</div>
+	<hr class="line">
+	<!-- Body -->
+	<div class="p3">
+    <p class="intro2">&nbsp;&nbsp;Thorium uses many modifications to the compiler <em>BUILD.gn</em> file, which highly optimize the binaries, at the cost of size. While Google tries to minimize size, Thorium takes up approximately ~250MB compared to ~150MB for Chrome (Note that the full Thorium installer is ~500MB because it includes other stuff like thorium_shell and chromedriver). Neither of these is very large, and me and many others appreciate speed and performance over the smallest size.<br><br>
+    &nbsp;&nbsp;A highlight of these optimizations, and the first we will discuss, is AVX.</p>
+    </div>
+	<hr class="line">
+	<img class="logo spin shadow" style="float: center; margin-top: 12px;" src="imgs/connect.png" width="256px" max-width="33%" alt="connect.png" title="Connect.png (Click Me!)">
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin.js"></script>
+	<script defer src="js/spun.js"></script>
+    <script defer src="js/button.js"></script>
+</body>
+</html>
