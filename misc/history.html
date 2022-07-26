@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ main index.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../css/thorium.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <title>Thorium Browser</title>
+    <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="../humans.txt">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <meta itemprop="image" content="../thumb.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+    <style>
+		.br { content: "";
+			 height: .25em;
+			 display: block;
+			 font-size: 100%;
+			  }
+	</style>
+</head>
+<body style="border: 1px solid var(--border); max-width: 42em;">
+	<a name="latest"></a>
+	<h1><span class="title"><b style="text-shadow: 1px 1px 1px #ef5136;">&#60;Thorium Release Notes&#62;</b></span><img title="Git Icon (Click Me!)" class="logo spin shadow2" width="48" style="float: right;" src="Git-Icon-1788C.png"></h1>
+	<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;<small><em>You can find info about Chromium releases <a title="Chromium Dashboard" rel="noopener" target="_blank" href="https://chromiumdash.appspot.com/releases">Here</a>.</em></small>
+	<hr class="line" style="margin-top: 16px;"></hr><br>
+	<a name="M106.0.5197.0"><li class="link"><u>M106.0.5197.0</u></li></a>
+	<p><em> - M106</em><br class="br">
+ - Updated Back/Forward Icons, and the Media Icon color has been changed to purple.<br class="br">
+ - Tab Muting Icon color has been fixed.<br class="br">
+ - Updated the Bookmarks Icon to look like an actual bookmark, not a star.<br class="br">
+ - Re-Enabled Reader Mode after Chromium removed the flag for some reason? And updated the color to blue for the Reader Mode icon that shows in the omnibox. Wikipedia is a good place to test this.<br class="br">
+ - The AutoPlay flag has been fixed and now gives you more options. I will soon be removing the cmdline flag for disabling autoplay from the .desktop file. People who were used to this should set this flag to "user-gesture-required". Options are "No User Gesture Required", "User Gesture Required", and "Document User Activation Required". It is at <b class="link">chrome://flags/#autoplay-policy</b>.<br class="br">
+ - New <em>chrome://flags</em> flag to Show/Hide the Avatar Button. Options are "Always", "Incognito & Guest", and "Never". It is at <b class="link">chrome://flags/#show-avatar-button</b>.<br class="br">
+ - New flag to set the MSAA sample count for WebGL. Learn about MSAA <a title="About MSAA" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Multisample_anti-aliasing">Here</a> and WebGL <a title="About WebGL" rel="noopener" target="_blank" href="https://www.khronos.org/webgl/">Here</a>. It is at <b class="link">chrome://flags/#webgl-msaa-sample-count</b>.<br class="br">
+ - New flag to set the WebGL Anti-Aliasing Mode. "None" turns off MSAA, "Implicit" lets the page decide (if it can), and "Explicit" overrides anything and uses the number set with the flag above. It is at <b class="link">chrome://flags/#webgl-antialiasing-mode</b>.<br class="br">
+ - New flag to set the Native GPU Rasterization MSAA Sample Count. This is similar to the WebGL one, except it affects everything else in the browser. It is at <b class="link">chrome://flags/#gpu-rasterization-msaa-sample-count</b>.<br class="br">
+ - New flag to set the Number of Raster Threads. This sets the number of worker threads used to rasterize content. The default is 2, but if you have a quad core processor or better, you can set it to 3 or 4 for better performance. It is at <b class="link">chrome://flags/#num-raster-threads</b>.<br class="br">
+ - New flag to Enable Native UI Inspection in DevTools. This allows you to inspect the whole browser as if it were a web page. This was used heavily during Thorium development by using the cmdline flag <em>--enable-ui-devtools</em> ; this just makes it a GUI flag. To inspect after enabling it, go to <a href="chrome://inspect/#native-ui"><em>chrome://inspect/#native-ui</em></a>. It is at <b class="link">chrome://flags/#enable-ui-devtools</b>.<br class="br">
+ - New flag to Disable WebGL 2. This is useful for certain GPU/OS combinations that might crash the tab/browser when visiting a page with WebGL 2. It is at <b class="link">chrome://flags/#disable-webgl2</b>.<br class="br">
+ - New flags to Enable <em>Local File Accesses</em>, <em>Allow File URI Access from Files</em>, and <em>Disable Web Security</em> (Disables the same-origin policy). All three of these are good for local web development. For example, the 3D demos at <a title="Thorium 3D Demos!" rel="noopener" target="_blank" href="https://thorium.rocks/demos">thorium.rocks/demos</a> were made locally with these flags, to allow stuff like WebGL, cross-origin requests, and WOFF web fonts to be used when just "drag-n-dropping" a local *.html file into the browser. The first two are fine for daily usage, but only use the Disable Web Security one when working on a page, it is insecure (duh) for normal usage. They are at <b class="link">chrome://flags/#enable-local-file-accesses</b>, <b class="link">chrome://flags/#allow-file-access-from-files</b>, and <b class="link">chrome://flags/#disable-web-security</b>.<br class="br"><br class="br">
+ <b>· <u><em>Windows Specific Flags</em></u> ·</b><br class="br">
+ - New <em>chrome://flags</em> flag to enable <a title="About H.264" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Advanced_Video_Coding">H.264</a> hardware decode acceleration for <a title="About WebRTC" rel="noopener" target="_blank" href="https://webrtc.org/">WebRTC</a> on <a title="Windows 7!" rel="noopener" target="_blank" href="https://webrtc.org/">Windows 7</a>. It is at <b class="link">chrome://flags/#enable-win7-webrtc-hw-h264-decoding</b>.<br class="br">
+ - New flag to disable custom-drawing the window titlebar on Windows 10/11. Some people prefer this. It is at <b class="link">chrome://flags/#disable-windows10-custom-titlebar</b>.<br class="br">
+ - New flag to enable usage of exclusive mode audio streams. Leads to lower latencies/stuttering for audio streams which use the <a title="About AUDIO_PCM_LOW_LATENCY" rel="noopener" target="_blank" href="https://source.chromium.org/chromium/chromium/src/+/main:media/base/audio_parameters.h?q=AUDIO_PCM_LOW_LATENCY&ss=chromium">AudioParameters::AUDIO_PCM_LOW_LATENCY</a> audio path. Learn more <a title="About Exlusive Mode Audio Streams" rel="noopener" target="_blank" href="https://docs.microsoft.com/en-us/windows/win32/coreaudio/exclusive-mode-streams">Here</a>. It is at <b class="link">chrome://flags/#enable-exclusive-audio</b>.<br class="br">
+
+</p>
+	<hr class="smallline"></hr><br>
+	<a name="M105.0.5167.0"><li class="link"><u>M105.0.5167.0</u></li></a>
+	<p><em> - M105 Refresh</em><br class="br">
+ - New <em>chrome://flags</em> flag to use dark mode. It is at <b class="link">chrome://flags/#force-dark-mode</b>.<br class="br">
+ - New flag to disable AutoPlay. It is at <b class="link">chrome://flags/#autoplay-policy</b>.<br class="br">
+ - New flag to allow setting a custom NTP. It is at <b class="link">chrome://flags/#custom-ntp</b>. You can also do it with cmdline flag <em>"--custom-ntp=http://www.example.com/"</em><br class="br">
+ - New flag to allow removing the Side Panel button. It is at <b class="link">chrome://flags/#hide-sidepanel-button</b>.<br class="br">
+ - Kudos to ungoogled-chromium for the NTP and Side Panel patches, Dark Mode and AutoPlay patches were made by me for Thorium.</p>
+    <hr class="smallline"></hr><br>
+<img class="thor90 logo" style="float: center;" src="../imgs/Thorium90_504.jpg" width="200" height="200" title="Element &numero; 90." loading="lazy" alt="Thorium Element">
+    <script defer src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="../js/spin.js"></script>
+	<script defer src="../js/spun.js"></script>
+    <script defer src="../js/button.js"></script>
+    <script defer src="../js/shadowcubes.js"></script>
+</body>
+</html>
