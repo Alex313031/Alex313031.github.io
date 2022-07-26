@@ -55,7 +55,7 @@
 	<h1><span class="title"><b style="text-shadow: 1px 1px 1px #ef5136;">&#60;Thorium Release Notes&#62;</b></span><img title="Git Icon (Click Me!)" class="logo spin shadow2" width="48" style="float: right;" src="Git-Icon-1788C.png"></h1>
 	<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;<small><em>You can find info about Chromium releases <a title="Chromium Dashboard" rel="noopener" target="_blank" href="https://chromiumdash.appspot.com/releases">Here</a>.</em></small>
 	<hr class="line" style="margin-top: 16px;"></hr><br>
-	<a name="M106.0.5197.0"><li class="link"><u>M106.0.5197.0</u></li></a>
+	<a name="M106.0.5197.0"><li class="link"><u>M106.0.5197.0 & M106.0.5199.0(Windows)</u></li></a>
 	<p><em> - M106</em><br class="br">
  - Updated Back/Forward Icons, and the Media Icon color has been changed to purple.<br class="br">
  - Tab Muting Icon color has been fixed.<br class="br">
@@ -63,6 +63,7 @@
  - Re-Enabled Reader Mode after Chromium removed the flag for some reason? And updated the color to blue for the Reader Mode icon that shows in the omnibox. Wikipedia is a good place to test this.<br class="br">
  - The AutoPlay flag has been fixed and now gives you more options. I will soon be removing the cmdline flag for disabling autoplay from the .desktop file. People who were used to this should set this flag to "user-gesture-required". Options are "No User Gesture Required", "User Gesture Required", and "Document User Activation Required". It is at <b class="link">chrome://flags/#autoplay-policy</b>.<br class="br">
  - New <em>chrome://flags</em> flag to Show/Hide the Avatar Button. Options are "Always", "Incognito & Guest", and "Never". It is at <b class="link">chrome://flags/#show-avatar-button</b>.<br class="br">
+ - Installer now includes the <em>"resources"</em> dir for devs.<br class="br">
  - New flag to set the MSAA sample count for WebGL. Learn about MSAA <a title="About MSAA" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Multisample_anti-aliasing">Here</a> and WebGL <a title="About WebGL" rel="noopener" target="_blank" href="https://www.khronos.org/webgl/">Here</a>. It is at <b class="link">chrome://flags/#webgl-msaa-sample-count</b>.<br class="br">
  - New flag to set the WebGL Anti-Aliasing Mode. "None" turns off MSAA, "Implicit" lets the page decide (if it can), and "Explicit" overrides anything and uses the number set with the flag above. It is at <b class="link">chrome://flags/#webgl-antialiasing-mode</b>.<br class="br">
  - New flag to set the Native GPU Rasterization MSAA Sample Count. This is similar to the WebGL one, except it affects everything else in the browser. It is at <b class="link">chrome://flags/#gpu-rasterization-msaa-sample-count</b>.<br class="br">
