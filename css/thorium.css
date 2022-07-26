@@ -13,6 +13,8 @@
   --construction: #e51c23;
   --code: #000000;
   --shadow: #ffffff;
+  --shadow2: #000000;
+  --link: #006400;
   --imgshadow: #000000;
   --coc: #000000;
 }
@@ -29,6 +31,8 @@
     --construction: #fbbc04;
     --code: #fbbc04;
     --shadow: #000000;
+    --shadow2: #ffffff;
+    --link: #90ee90;
     --imgshadow: #ffffff;
     --coc: #000000;
   }
@@ -45,6 +49,8 @@
   --construction: #fbbc04;
   --code: #fbbc04;
   --shadow: #000000;
+  --shadow2: #ffffff;
+  --link: #90ee90;
   --imgshadow: #ffffff;
   --coc: #000000;
 }
@@ -55,7 +61,7 @@
 /* General body settings */
 body {
   margin: 0.5em auto;
-  max-width: 36em;
+  max-width: 38em;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
@@ -252,9 +258,11 @@ span.title {
 }
 /* Adjust top horiz separator */
 hr.line {
-  width: 106%;
-  margin-left: -0.9em;
+  width: 100%;
   border: 1px solid var(--fontcolor);
+}
+hr.smallline {
+  width: 100%;
 }
 /* Style headings */
 h1 {
@@ -325,8 +333,14 @@ div.p2 {
 a:link{
   color: var(--linkcolor);
 }
-a:visited,
-a:active {
+b.link{
+  color: var(--linkcolor);
+}
+li.link{
+  color: var(--link);
+  font-weight: 600;
+}
+a:visited,a:active {
   color: var(--visitedcolor);
 }
 /* Set under construction text colours */
