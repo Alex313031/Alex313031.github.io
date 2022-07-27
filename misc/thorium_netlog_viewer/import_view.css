@@ -4,5 +4,5 @@
 
  #import-view-load-log-file {
   /* Used to hide the unwanted status text next to the file picker button. */
-  color: transparent;
+  margin-right: auto;
 }
