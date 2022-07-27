@@ -6,10 +6,16 @@ Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 -->
   <head>
+	<meta charset="utf-8">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon48.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon16.png">
-    <meta charset="utf-8">
+    <link rel="shorcut icon" type="image/png" sizes="512x512" href="json-file.png">
+    <meta itemprop="image" content="thumb.png">
+    <meta name="description" content="NetLog Viewer for Thorium Browser.">
+    <meta name="color-scheme" content="light dark">
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
     <!-- Don't use automatic scaling on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0,
                                    maximum-scale=1.0, user-scalable=no">
@@ -25,6 +31,8 @@ found in the LICENSE file.
     <link type="text/css" rel="stylesheet" href="timeline_view.css">
     <link type="text/css" rel="stylesheet" href="tab_views.css">
     <link type="text/css" rel="stylesheet" href="import_view.css">
+
+	<script src="register.js"></script>
 
     <link rel="import" href="netlog_viewer.html">
   </head>
