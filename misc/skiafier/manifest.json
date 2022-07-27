@@ -1,0 +1,52 @@
+{
+  "short_name": "Skiafier",
+  "name": "Skiafier - Generate .icon files.",
+  "version": "1.0.0",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "thumb.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": "./skiafy.html",
+  "id": "./skiafy.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#24292f",
+  "shortcuts": [
+    {
+      "name": "Skiafier",
+      "short_name": "Import to Skiafier",
+      "description": "Skiafy your SVG",
+      "url": "./skiafy.html",
+      "icons": [{ "src": "favicon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "description": "Skiafier - Converts .svg icons to .icon format.",
+  "screenshots": [
+    {
+      "src": "promo.png",
+      "description": "Promo Image",
+      "type": "image/png",
+      "sizes": "320x320"
+    }
+  ]
+}
