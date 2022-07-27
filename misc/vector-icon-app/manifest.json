@@ -1,11 +1,29 @@
 {
   "name": "Vector Icon App",
   "short_name": "Vector Icon App",
-  "icons": [{
-    "src": "vector-icon-512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
+  "version": "1.0.1",
+  "icons": [
+    {
+      "src": "vector-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "vector-icon-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "vector-icon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "vector-icon-16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
   "file_handlers": [
     {
       "action": ".",
@@ -17,6 +35,9 @@
   ],
   "lang": "en-US",
   "start_url": "./",
+  "id": "./index.html",
+  "scope": "./",
+  "description": "View vector .icon files.",
   "display": "standalone",
   "background_color": "#808080",
   "theme_color": "#808080"
