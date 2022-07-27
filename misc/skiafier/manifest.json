@@ -25,6 +25,15 @@
       "sizes": "16x16"
     }
   ],
+  "file_handlers": [
+    {
+      "action": ".",
+      "name": "Scalable Vector Graphics",
+      "accept": {
+        "image/svg+xml": ".svg"
+      }
+    }
+  ],
   "start_url": "./skiafy.html",
   "id": "./skiafy.html",
   "background_color": "#ffffff",
