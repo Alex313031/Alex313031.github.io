@@ -2,6 +2,7 @@
   "short_name": "Thorium NetLog Viewer",
   "name": "Thorium NetLog Viewer",
   "version": "1.0.1",
+  "lang": "en-US",
   "icons": [
     {
       "src": "json-file.png",
@@ -24,18 +25,18 @@
       "sizes": "16x16"
     }
   ],
-  "start_url": "/netlog.html",
-  "id": "/netlog.html",
+  "start_url": "./netlog.html",
+  "id": "./netlog.html",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/",
+  "scope": "./",
   "theme_color": "#24292f",
   "shortcuts": [
     {
       "name": "Thorium NetLog Viewer",
       "short_name": "Import",
       "description": "Import NetLog",
-      "url": "/netlog.html#import",
+      "url": "./netlog.html#import",
       "icons": [{ "src": "favicon96.png", "sizes": "96x96" }]
     }
   ],
