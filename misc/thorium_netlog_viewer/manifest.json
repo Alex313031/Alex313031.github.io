@@ -29,7 +29,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#ffffff",
+  "theme_color": "#24292f",
   "shortcuts": [
     {
       "name": "Thorium NetLog Viewer",
