@@ -25,6 +25,15 @@
       "sizes": "16x16"
     }
   ],
+  "file_handlers": [
+    {
+      "action": ".",
+      "name": "Netlog .json files.",
+      "accept": {
+        "application/json": ".json"
+      }
+    }
+  ],
   "start_url": "./netlog.html",
   "id": "./netlog.html",
   "background_color": "#ffffff",
