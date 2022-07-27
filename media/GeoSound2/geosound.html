@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>-GeoSound- Three.js Demo</title>
+	<meta name="description" content="Three.js Demo showcasing geometry and WebAudio.">
+	<link rel="icon" type="image/gif" sizes="32x32" href="assets/favicon.gif">
+	<link rel="shortcut icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+	<meta itemprop="image" content="assets/thumb.png">
+	<meta name="msapplication-TileColor" content="#20252d">
+	<link rel="stylesheet" href="main.css">
+</head>
+	<body>
+<div id=page_effect>
+	<div class="page_effect__content">
+	  <h4 title="Warning" class="page_effect__text">This Three.js demo can be <em>loud</em>. Lower your volume before running.</h4>
+	  <button title="Start Demo" class="page_effect__button" data-start-button>Start</button>
+	</div>
+</div>
+<div id=loadingPage>
+<div id=container></div>
+</div>
+<div class="text">
+	<h1 title="Title" id="info">-GeoSound-</h1>
+	<p title="Info" id="info2"><em> Drag the geometry and put it on top <br/>of the pins to generate sound. <br> </em></p>
+</div>
+<div class="text">
+	<h4 id="rotationSpeedX"> Rotation Speed <br>X </h4>
+	<h4 id="rotationSpeedZ"> Rotation Speed <br>Z </h4>
+	<h4 id="randomness"> Randomness <br>% </h4>
+</div>
+<div title="Stats" class="contactInfo">
+	<h4 class="contact" id="contact1"></h4>
+	<h4 class="contact" id="contact2"></h4>
+	<h4 class="contact" id="contact3"></h4>
+	<h4 class="contact" id="contact4"></h4>
+</div>
+<a title="Source Code" class="button" id="button" rel="noopener" target="_blank" href="http://www.yanlinma.com/geosound-doc">Source</a>
+	<input title="Adjust X Axis Rotation Speed" type="range" value="20" id="slider1">
+	<input title="Adjust Y Axis Rotation Speed" type="range" value="20" id="slider2">
+	<input title="Adjust Randomness Value" type="range" value="20" id="slider3">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bundle.js"></script>
+<script type=text/javascript>
+	const startBtn = document.querySelector('[data-start-button]')
+  $(document).ready(function(){
+  	startBtn.addEventListener('click', function() {
+  		Tone.context.resume()
+      $("#page_effect").fadeOut(1000)
+  	})
+  });
+</script>
+</body>
+<html>
