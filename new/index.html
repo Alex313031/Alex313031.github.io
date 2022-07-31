@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY" />
+    <link rel="preload" href="../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <title>Thorium Browser</title>
+    <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
+    <meta name="keywords" content="thorium, browser, chromium" >
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="../humans.txt">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <meta itemprop="image" content="../thumb.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: eStartup - v4.8.0
+  * Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div id="logo">
+        <!-- <h1><a href="index.html"><span>e</span>Startup</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html"><img src="assets/img/thorium_banner.png" alt="thorium_banner.png" width="300" title="Thorium Banner"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about-us">About</a></li>
+          <li><a class="nav-link scrollto" target="_blank" href="../#links">Links</a></li>
+          <li><a class="nav-link scrollto" target="_blank" href="../#installation">Installation</a></li>
+          <li><a class="nav-link scrollto" href="#screenshots">Screenshots</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Thorium Browser</h1>
+      <h2><em>The fastest browser on Earth.</em></h2>
+      <!-- Dark/Light Mode Button -->
+    <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+      <img class="logo spin shadow" src="../imgs/thorium.svg" width="480" height="480" alt="Thorium Logo" title="Thorium Logo (Click Me!)" >
+      <a title="Install" href="#get-started" class="btn-get-started scrollto">Install</a>
+      <div class="btns">
+        <a href="#"><i class="fa fa-apple fa-3x"></i> Linux</a>
+        <a href="#"><i class="fa fa-play fa-3x"></i> Windows</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> Windows AVX2</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> MacOS (ARM M1 and x64)</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> Windows AVX2</a>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Features </h2>
+          <p class="separator">Supercharged Chromium</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-block">
+
+              <img class="spin" src="../imgs/gn-logo.png" alt="GN Logo" title="GN Logo (Click Me!)">
+              <h4>Compiler Optimizations</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a target="_blank" href="../optimizations.html">Read More</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+
+              <img class="spin" src="assets/img/UX.png" alt="UI Logo" title="UI Logo (Click Me!)">
+              <h4>UI Changes</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a target="_blank" rel="noopener" href="https://github.com/Alex313031/Thorium#features--differences-between-chromium-and-thorium--">Read More</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-block">
+
+              <img class="spin" src="assets/img/svg/cloud.svg" alt="Cloud Logo" title="Cloud Logo (Click Me!)">
+              <h4>Patches</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+              <a target="_blank" rel="noopener" href="https://github.com/Alex313031/Thorium/blob/main/infra/PATCHES.md">See PATCHES.md</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Get Started Section -->
+
+    <!-- ======= Screenshots Section ======= -->
+    <section id="screenshots" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Screenshots</h2>
+          <p class="separator">Screenshots on Linux, Windows, and MacOS.</p>
+        </div>
+
+        <div class="screens-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/screen/1.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/2.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/3.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/4.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/5.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/6.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/7.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/screen/8.jpg" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </section><!-- End Screenshots Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Contact Info</h2>
+          <p class="separator">Contact Me or post on GitHub Discussions.</p>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <p><a rel="noopener" target="_blank" href="mailto:Alex313031@gmail.com">Alex313031@gmail.com</a></p>
+              </div>
+
+              <div>
+                <i class="bi bi-phone"></i>
+                <p>+1 (918) 701-1572</p>
+              </div>
+              
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <p>Broken Arrow, Oklahoma<br> U.S.</p>
+              </div>
+              
+            </div>
+
+            <div class="social-links">
+              <a title="My Twitter" rel="noopener" target="_blank" href="https://twitter.com/alex313031" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a title="GitHub Discussions" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium/discussions" class="facebook"><i class="bi bi-github"></i></a>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">Thorium Browser</a>
+            <p><em>Chromium fork for Linux, MacOS, Raspberry Pi, and Windows named after radioactive element No. 90.</em></p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>About</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="../humans.txt">About Us</a></li>
+              <li><a href="#contact">Contact us</a></li>
+              <li><a target="_blank" href="../COC.html">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>Copyright &copy; 2022 Alex313031. All rights reserved.</p>
+        <div class="credits">
+          <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
+        -->
+          Modified from a template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" title="Back to top" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script defer src="../js/jquery-3.6.0.slim.min.js"></script>
+  <script defer src="../js/spin.js"></script>
+  <script defer src="../js/spun.js"></script>
+  <script defer src="../js/button.js"></script>
+
+</body>
+
+</html>
