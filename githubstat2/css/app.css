@@ -1,0 +1,76 @@
+.alert-success[data-v-56e7496a],
+.alert-success[data-v-232aa4dc],
+.alert-warning[data-v-56e7496a],
+.alert-warning[data-v-232aa4dc] {
+    color: inherit;
+}
+.spinner[data-v-56e7496a] {
+    margin: 100px auto;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    font-size: 10px;
+}
+.spinner > div[data-v-56e7496a] {
+    background-color: #333;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    margin: 2px;
+    -webkit-animation: sk-stretchdelay-data-v-56e7496a 1.2s ease-in-out infinite;
+    animation: sk-stretchdelay-data-v-56e7496a 1.2s ease-in-out infinite;
+}
+.spinner .rect2[data-v-56e7496a] {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+.spinner .rect3[data-v-56e7496a] {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+.spinner .rect4[data-v-56e7496a] {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+.spinner .rect5[data-v-56e7496a] {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+.spinner .rect6[data-v-56e7496a] {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+}
+@-webkit-keyframes sk-stretchdelay-data-v-56e7496a {
+    0%,
+    40%,
+    to {
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        -webkit-transform: scaleY(1);
+    }
+}
+@keyframes sk-stretchdelay-data-v-56e7496a {
+    0%,
+    40%,
+    to {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1);
+        -webkit-transform: scaleY(1);
+    }
+}
+body {
+    background-color: #fefefe;
+}
+.asset {
+    word-break: break-all;
+}
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
