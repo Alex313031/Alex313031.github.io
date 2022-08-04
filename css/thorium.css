@@ -145,6 +145,11 @@ div.gallery img {
 img.spin {
   transition: all .6s;
 }
+/* Image effects */
+img.invert:hover {
+  animation: invert 4.0s;
+  animation-iteration-count: infinite;
+}
 img.logo {
   display: block;
   margin-left: auto;
@@ -230,6 +235,32 @@ img.bubbles2:hover {
   80% { transform: translate(3px, 4px) rotate(-4deg); }
   90% { transform: translate(3px, -5px) rotate(6deg); }
   100% { transform: translate(3px, 2px) rotate(0deg); }
+}
+@keyframes invert {
+  0% { filter: invert(0%); }
+  1% { filter: invert(0%); }
+  2% { filter: invert(2%); }
+  3% { filter: invert(2%); }
+  5% { filter: invert(10%); }
+  10% { filter: invert(20%); }
+  15% { filter: invert(30%); }
+  20% { filter: invert(40%); }
+  25% { filter: invert(50%); }
+  30% { filter: invert(60%); }
+  35% { filter: invert(70%); }
+  40% { filter: invert(80%); }
+  45% { filter: invert(90%); }
+  50% { filter: invert(100%); }
+  55% { filter: invert(90%); }
+  60% { filter: invert(80%); }
+  65% { filter: invert(70%); }
+  70% { filter: invert(60%); }
+  75% { filter: invert(50%); }
+  80% { filter: invert(40%); }
+  85% { filter: invert(30%); }
+  90% { filter: invert(20%); }
+  95% { filter: invert(10%); }
+  100% { filter: invert(1%); }
 }
 @keyframes jig {
   0% { transform: rotate(0deg); }
