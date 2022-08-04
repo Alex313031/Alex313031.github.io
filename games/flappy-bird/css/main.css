@@ -1,0 +1,701 @@
+@-webkit-keyframes animLand {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -335px 0px;
+    }
+}
+
+@-moz-keyframes animLand {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -335px 0px;
+    }
+}
+
+@-o-keyframes animLand {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -335px 0px;
+    }
+}
+
+@keyframes animLand {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -335px 0px;
+    }
+}
+
+@-webkit-keyframes animSky {
+    0% {
+        background-position: 0px 100%;
+    }
+    100% {
+        background-position: -275px 100%;
+    }
+}
+
+@-moz-keyframes animSky {
+    0% {
+        background-position: 0px 100%;
+    }
+    100% {
+        background-position: -275px 100%;
+    }
+}
+
+@-o-keyframes animSky {
+    0% {
+        background-position: 0px 100%;
+    }
+    100% {
+        background-position: -275px 100%;
+    }
+}
+
+@keyframes animSky {
+    0% {
+        background-position: 0px 100%;
+    }
+    100% {
+        background-position: -275px 100%;
+    }
+}
+
+@-webkit-keyframes animBird {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 0px -96px;
+    }
+}
+
+@-moz-keyframes animBird {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 0px -96px;
+    }
+}
+
+@-o-keyframes animBird {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 0px -96px;
+    }
+}
+
+@keyframes animBird {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 0px -96px;
+    }
+}
+
+@-webkit-keyframes animPipe {
+    0% {
+        left: 300px;
+    }
+    100% {
+        left: -700px;
+    }
+}
+
+@-moz-keyframes animPipe {
+    0% {
+        left: 300px;
+    }
+    100% {
+        left: -700px;
+    }
+}
+
+@-o-keyframes animPipe {
+    0% {
+        left: 300px;
+    }
+    100% {
+        left: -700px;
+    }
+}
+
+@keyframes animPipe {
+    0% {
+        left: 300px;
+    }
+    100% {
+        left: -700px;
+    }
+}
+
+@-webkit-keyframes animCeiling {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -63px 0px;
+    }
+}
+
+@-moz-keyframes animCeiling {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -63px 0px;
+    }
+}
+
+@-o-keyframes animCeiling {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -63px 0px;
+    }
+}
+
+@keyframes animCeiling {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -63px 0px;
+    }
+}
+
+*,
+*:before,
+*:after {
+    /* border box */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* gpu acceleration */
+    -webkit-transition: translate3d(0, 0, 0);
+    /* select disable */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html,
+body {
+    min-height: 525px;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 12px;
+    background-color: #24292e;
+    margin-top: 24px;
+}
+.supercenter .cover{
+    background-color:#24292e;
+    z-index:11;
+    height: 525px;
+}
+
+.supercenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 176px) {
+    .supercenter .cover{
+        width:40px;
+    }
+  }
+@media (min-width: 576px) {
+    .supercenter .cover{
+        width:80px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .supercenter .cover{
+        width:100px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .supercenter .cover{
+        width:150px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .supercenter .cover{
+        width:300px;
+    }
+  }
+
+#gamecontainer {
+    width: 328px;
+    height: 525px;
+    min-height: 525px;
+}
+
+/*
+Screen - Game
+*/
+
+#gamescreen {
+    position: absolute;
+    width: 328px;
+    height: 525px;
+}
+
+#sky {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-image: url('../assets/sky.png');
+    background-repeat: repeat-x;
+    background-position: 0px 100%;
+    background-color: #4ec0ca;
+    -webkit-animation: animSky 7s linear infinite;
+    animation: animSky 7s linear infinite;
+}
+
+#flyarea {
+    position: absolute;
+    bottom: 0;
+    height: 420px;
+    width: 100%;
+}
+
+#ceiling {
+    position: absolute;
+    top: -16px;
+    height: 16px;
+    width: 100%;
+    background-image: url('../assets/ceiling.png');
+    background-repeat: repeat-x;
+    -webkit-animation: animCeiling 481ms linear infinite;
+    animation: animCeiling 481ms linear infinite;
+}
+
+#land {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-image: url('../assets/land.png');
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    background-color: #ded895;
+    -webkit-animation: animLand 2516ms linear infinite;
+    animation: animLand 2516ms linear infinite;
+}
+
+#bigscore {
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    z-index: 100;
+}
+
+#bigscore img {
+    display: inline-block;
+    padding: 1px;
+}
+
+#splash {
+    position: absolute;
+    opacity: 0;
+    top: 75px;
+    left: 65px;
+    width: 188px;
+    height: 170px;
+    background-image: url('../assets/splash.png');
+    background-repeat: no-repeat;
+}
+
+#scoreboard {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    top: 64px;
+    left: 43px;
+    width: 236px;
+    height: 280px;
+    background-image: url('../assets/scoreboard.png');
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+
+#medal {
+    position: absolute;
+    opacity: 0;
+    top: 114px;
+    left: 32px;
+    width: 44px;
+    height: 44px;
+}
+
+#currentscore {
+    position: absolute;
+    top: 105px;
+    left: 107px;
+    width: 104px;
+    height: 14px;
+    text-align: right;
+}
+
+#currentscore img {
+    padding-left: 2px;
+}
+
+#highscore {
+    position: absolute;
+    top: 147px;
+    left: 107px;
+    width: 104px;
+    height: 14px;
+    text-align: right;
+}
+
+#highscore img {
+    padding-left: 2px;
+}
+
+#replay {
+    position: absolute;
+    opacity: 0;
+    top: 205px;
+    left: 61px;
+    height: 115px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.boundingbox {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 1px solid red;
+}
+
+#player {
+    left: 60px;
+    top: 200px;
+}
+
+.bird {
+    position: absolute;
+    width: 34px;
+    height: 24px;
+    background-image: url('../assets/bird.png');
+    -webkit-animation: animBird 300ms steps(4) infinite;
+    animation: animBird 300ms steps(4) infinite;
+}
+
+.pipe {
+    position: absolute;
+    left: -100px;
+    width: 52px;
+    height: 100%;
+    z-index: 10;
+    -webkit-animation: animPipe 7500ms linear;
+    animation: animPipe 7500ms linear;
+}
+
+.pipe_upper {
+    position: absolute;
+    top: 0;
+    width: 52px;
+    background-image: url('../assets/pipe.png');
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+.pipe_upper:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 52px;
+    height: 26px;
+    background-image: url('../assets/pipe-down.png');
+}
+
+.pipe_lower {
+    position: absolute;
+    bottom: 0;
+    width: 52px;
+    background-image: url('../assets/pipe.png');
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+.pipe_lower:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 26px;
+    background-image: url('../assets/pipe-up.png');
+}
+
+.header {
+  color: wheat;
+  font-size: 1.0rem;
+  text-align: center;
+}
+
+#footer {
+    padding:5px;
+    bottom: 3px;
+    left: 3px;
+    color: wheat;
+    font-size: .9rem;
+    
+    text-align: center;
+}
+
+#footer a,
+#footer a:link,
+#footer a:visited,
+#footer a:hover,
+#footer a:active {
+    padding: 2px;
+    text-decoration: none;
+    color: wheat;
+}
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+    display: inline-block
+}
+
+.resp-sharing-button__link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0.5em
+}
+
+.resp-sharing-button {
+    border-radius: 5px;
+    transition: 25ms ease-out;
+    padding: 0.5em 0.75em;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+}
+
+.resp-sharing-button__icon svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.4em;
+    vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+    margin: 0;
+    vertical-align: middle
+}
+
+
+/* Non solid icons get a stroke */
+
+.resp-sharing-button__icon {
+    stroke: #fff;
+    fill: none
+}
+
+
+/* Solid icons get a fill */
+
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+    fill: #fff;
+    stroke: none
+}
+
+.resp-sharing-button--twitter {
+    background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+    background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+    background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+    background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+    background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+    background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+    background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+    background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+    background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+    background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+    background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+    background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+    background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+    background-color: #046293
+}
+
+.resp-sharing-button--email {
+    background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+    background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+    background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+    background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+    background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+    background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+    background-color: #FF6600
+}
+
+.resp-sharing-button--hackernews:hover,
+.resp-sharing-button--hackernews:focus {
+    background-color: #FB6200
+}
+
+.resp-sharing-button--vk {
+    background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+    background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+    background-color: #2d4373;
+    border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+    background-color: #55acee;
+    border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+    background-color: #2795e9;
+    border-color: #2795e9;
+}
+
+.resp-sharing-button--email {
+    background-color: #777777;
+    border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+    background-color: #5e5e5e;
+    border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+    background-color: #bd081c;
+    border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+    background-color: #8c0615;
+    border-color: #8c0615;
+}
+
+.resp-sharing-button--whatsapp {
+    background-color: #25D366;
+    border-color: #25D366;
+}
+
+.resp-sharing-button--whatsapp:hover,
+.resp-sharing-button--whatsapp:active {
+    background-color: #1DA851;
+    border-color: #1DA851;
+}
+
+.resp-sharing-button--vk {
+    background-color: #507299;
+    border-color: #507299;
+}
+
+.resp-sharing-button--vk:hover .resp-sharing-button--vk:active {
+    background-color: #43648c;
+    border-color: #43648c;
+}
+
+.resp-sharing-button--telegram {
+    background-color: #54A9EB;
+}
+
+.resp-sharing-button--telegram:hover {
+    background-color: #4B97D1;
+}
+

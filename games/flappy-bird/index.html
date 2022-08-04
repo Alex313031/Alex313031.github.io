@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Header -->
+<head>
+    <title>Flappy Bird HTML5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="description" content="Classic Flappy Bird written in HTML5.">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/32.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="img/48.png">
+
+    <!-- Style sheets -->
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<div class="header">Flappy Bird in HTML5!</div>
+<br>
+<br>
+<br>
+<body>
+    <div class="supercenter">
+        <div class="cover">
+            
+        </div>
+        <div id="gamecontainer">
+            <div id="gamescreen">
+                <div id="sky" class="animated">
+                    <div id="flyarea">
+                        <div id="ceiling" class="animated"></div>
+                        <!-- This is the flying and pipe area container -->
+                        <div id="player" class="bird animated"></div>
+    
+                        <div id="bigscore"></div>
+    
+                        <div id="splash"></div>
+    
+                        <div id="scoreboard">
+                            <div id="medal"></div>
+                            <div id="currentscore"></div>
+                            <div id="highscore"></div>
+                            <div id="replay"><img src="assets/replay.png" alt="replay"></div>
+                        </div>
+                        <!-- Pipes go here! -->
+                    </div>
+                </div>
+                <div id="land" class="animated">
+                    <div id="debug"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cover">
+            
+        </div>
+        
+    </div>
+    
+    <div id="footer">
+        <a title="Source Code" id="fullbtn" href="https://flappybird.ee/" target="_blank">Source</a> |
+        <a title="Toggle Easy/Hard Mode" id="ezbtn">Easy/Hard Mode</a> |
+		<a title="Mute/Unmute" class="btn-mute" href="#" id="mute">Mute/Unmute</a> |
+        <a title="Close footer bar" class="btn-hide" href="#" id="hide">X</a>
+
+    </div>
+    <div class="boundingbox" id="playerbox"></div>
+    <div class="boundingbox" id="pipebox"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/buzz.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
