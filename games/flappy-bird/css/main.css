@@ -202,11 +202,11 @@ body {
     overflow: hidden;
     font-family: monospace;
     font-size: 12px;
-    background-color: #24292e;
+    background-color: #24292f;
     margin-top: 24px;
 }
 .supercenter .cover{
-    background-color:#24292e;
+    background-color:#24292f;
     z-index:11;
     height: 525px;
 }
