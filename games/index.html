@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ main index.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
+    <title>Thorium Rocks Games</title>
+    <meta name="description" content="HTML5 Games for the Thorium.rocks Website.">
+    <meta name="keywords" content="thorium, browser, chromium" >
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="../humans.txt">
+    <link rel="stylesheet" href="../css/thorium.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta itemprop="image" content="thumb.png">    
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body>
+	<div class="d-flex2">
+        <img class="spin shadow" src="Video-Game-Controller-Icon.svg" width="90" height="90" alt="Games Icon" title="Games Icon (Click Me!)">
+    </div>
+	<h1 title="Thorium Games"><span style="text-align: center;"><u>Thorium Rocks Games</u></span></h1>
+	<!-- Dark/Light Mode Button -->
+    <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;
+    <small><em>Thorium Rocks HTML5 Games Landing Page.</em></small><br>
+    <hr class="line">
+	<a name="games"></a><ul>
+        <li><a title="Web Pac-Man" target="_blank" href="pacman/">Web Pac-Man</a>&nbsp;&nbsp;<img src="pacman/icon/favicon.png" width="18" title="Pacman" alt="Web Pacman" class="spin fav"></li>
+        <li><a title="Thorium Dino Game" rel="noopener" target="_blank" href="dino/">Thorium Dino Game!</a>&nbsp;&nbsp;<img src="../imgs/Dino.png" width="36" title="Dino!" alt="Dino Game" class="spin fav"></li>
+        <li><a title="Thorium Dino Game" rel="noopener" target="_blank" href="flappy-bird/">Flappy Bird!</a>&nbsp;&nbsp;<img src="flappy-bird/img/20.png" width="20" title="Dino!" alt="Dino Game" class="spin fav"></a>.</li>
+        <li><em>More coming soon!</em></li>
+    </ul>
+	<br>
+	<div style="margin-right: 8%;">
+	<img class="bubbles shadow" style="display: block; margin-left: auto; margin-right: auto; align-items: center;" src="games-footer.png" width="300" alt="Games Footer" title="Games Footer">
+	</div>
+	
+    <script defer src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="../js/spin.js"></script>
+	<script defer src="../js/spun.js"></script>
+    <script defer src="../js/button.js"></script>
+</body>
+</html>
