@@ -45,9 +45,12 @@
 	Website: https://www.chromium.org/
 	From: WorldWide
 
+	- There are other subpages with content from other people, such as videos and WebGL demos.
+	 I provide credit where possible, and all of these pages link to this file in the <link rel="author"> tag.
+
 /* SITE */
 
-	Last update: 2022/07/26
+	Last update: 2022/08/04
 	Language: English
 	Doctype: HTML5, CSS, XML, WebGL, Canvas2D
 	IDE: Geany, VSCodium, Atom
