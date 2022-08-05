@@ -1,0 +1,103 @@
+  *,:after,:before{box-sizing:border-box}
+  body,html{
+    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-weight:300;
+    font-size:16px;
+    background:#f2f2f2;
+    color:#2d3737;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100%;
+    background: radial-gradient(ellipse at center, #191119 0%,#010101 100%);
+    user-select: none;
+  }
+
+
+  :root {
+    --audio-bar-min: 8px;
+    --audio-bar-delta: 4px;
+  }
+
+
+  #container{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: radial-gradient(ellipse at center, #191119 0%,#010101 100%);
+    color: red;
+    transition: 10s;
+  }
+
+  .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    pointer-events: none;
+  }
+
+  #loading {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 50px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .audio-toggle {
+    position: fixed;
+    left: 6px;
+    bottom: 8px;
+    width: 30px;
+    height: 20px;
+    background-color: rgba(255,255,255,.25);
+    transition: 200ms;
+  }
+  .audio-toggle:hover {
+    background-color: rgba(155,225,255,.95);
+  }
+
+  .twitter {
+    position: fixed;
+    left: 44px;
+    bottom: 6px;
+    width: 24px;
+    height: 24px;
+    fill: #ffffff99;
+    transition: 200ms;
+  }
+  .twitter:hover {
+    fill: rgba(155,225,255,.95);
+  }
+
+  .audio-bar {
+    position: absolute;
+    width: 2px;
+    height: var(--audio-bar-min);
+    bottom: 4;
+    background-color: rgba(255,255,255,0.7);
+    pointer-events: none;
+  }
+
+  .animate-audio {
+    animation: audiobar 2s infinite;
+  }
+
+  @keyframes audiobar {
+    0% { height: calc(var(--audio-bar-min)); }
+    20% { height: calc(var(--audio-bar-min) + var(--audio-bar-delta) * 0.4 ); }
+    40% { height: calc(var(--audio-bar-min) + var(--audio-bar-delta) * -0.4 ); }
+    60% { height: calc(var(--audio-bar-min) + var(--audio-bar-delta) * 1.0 ); }
+    80% { height: calc(var(--audio-bar-min) + var(--audio-bar-delta) * 0.3 ); }
+    90% { height: calc(var(--audio-bar-min) + var(--audio-bar-delta) * 0.6 ); }
+    100% { height: calc(var(--audio-bar-min)); }
+  }
+
