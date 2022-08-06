@@ -1,0 +1,1 @@
+chrome-extension://cnlndebkegcfnbiknohgneobakigplhf/js/vector_icon.js
