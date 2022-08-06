@@ -1,0 +1,42 @@
+{
+  "name": "Wagner",
+  "main": "Wagner/",
+  "description": "Effects composer for three.js",
+  "authors": [
+    "Jaume Sanchez"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "webgl",
+    "threejs",
+    "effects",
+    "composer"
+  ],
+  "ignore": [
+    "**/.*",
+    "**/*.png",
+    "TODO.md",
+    "index.html",
+    "gruntfile.js",
+    "node_modules",
+    "bower_components",
+    "examples",
+    "assets",
+    "legacy",
+    "js"
+  ],
+  "homepage": "https://github.com/spite/Wagner",
+  "_release": "87dde4895e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "87dde4895e38ab8c2ef432b1e623ece9484ea5cc"
+  },
+  "_source": "https://github.com/spite/Wagner.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/spite/Wagner.git",
+  "_direct": true
+}
