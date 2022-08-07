@@ -1,1 +1,0 @@
-chrome-extension://eekailopagacbcdloonjhbiecobagjci/is_editable.js

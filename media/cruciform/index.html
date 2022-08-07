@@ -1,63 +1,26 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-
 	<meta charset="utf-8">
-	<title>cru·ci·form</title>
-
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
+	<title>cru·ci·form Three.js Demo</title>
+	<link rel="author" href="../../humans.txt">
 	<meta property="og:url" content="https://www.clicktorelease.com/code/cruciform"/>
-
 	<meta property="og:title" content="cru·ci·form"/>
-	<meta property="og:description" content="A study in architectural visualisation"/>
-	<meta property="og:image" content="https://www.clicktorelease.com/code/cruciform/thumb.jpg"/>
-	<meta name="description" content="A study in architectural visualisation">
+	<meta property="og:description" content="A Three.js in architectural visualisation."/>
+	<meta property="og:image" content="thumb.jpg"/>
+	<meta name="description" content="A Three.js study in architectural visualisation.">
 	<meta itemprop="name" content="cru·ci·form">
-	<meta itemprop="description" content="A study in architectural visualisation">
-	<meta itemprop="image" content="https://www.clicktorelease.com/code/cruciform/thumb.jpg">
-
-	<link href='//fonts.googleapis.com/css?family=Raleway:400,200,600' rel='stylesheet' type='text/css'>
-
-	<style>
-		*{box-sizing: border-box; margin: 0; padding: 0; }
-		body{overflow:hidden; background-color: black; font-family: Raleway, sans-serif; color: white; white-space: nowrap; }
-		.rs-base{ display: none}
-		#intro{ z-index: 100; position: absolute; left: 50%; top: 50%; transform: translate3d( -50%, -50%, 0 ); -webkit-transform: translate3d( -50%, -50%, 0 ); text-align: center; opacity: 0; pointer-events: none;}
-		p{ font-weight: 100; font-size: 14px }
-		h1{ font-weight: 500; font-size: 47px;}
-		span{ margin-right: 2.5em;}
-		#credits{ z-index: 100; position: absolute; left: 50%; top: 50%; transform: translate3d( -50%, 50px, 0 );-webkit-transform: translate3d( -50%, 50px, 0 ); text-align: center; opacity: 1; line-height: 2em; opacity: 0; pointer-events: none; }
-		a{ color: inherit; text-decoration: none;}
-		a:hover{ text-decoration: underline;}
-		#credits p{ font-size: 14px; }
-		#progress{ position: absolute; left: 0; top: 50%; margin-top: -1px; height: 2px; background-color: white; transition: opacity 500ms ease-out; will-change: opacity; }
-		#tapToStart{ position: absolute; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%; transition: opacity 500ms ease-out; will-change: pointer-events: auto;}
-		.hidden{ opacity: 0; pointer-events: none;}
-		#tapToStart p{ position: absolute; left: 0; right: 0; top: 50%; margin-top: -2em; text-align: center; }
-		#headphones{ position: absolute; left: 50%; top: 25%; margin-left: -5vh; margin-top: -5vh; width: 10vh; height: 10vh; opacity: 0; background: url( assets/headphones.svg ); background-size: cover; transition: opacity 500ms ease-out; will-change: opacity; }
-		#pointer{ position: absolute; left: 50%; top: 50%; width: 32px; height: 32px; margin-left: -16px; margin-top: -16px; border: 1px solid #ff00ff;}
-
-		#selection{ z-index: 200;position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: auto; white-space: normal; transition: opacity 500ms ease-out;}
-		.bkg{ position: fixed; background-image: url( assets/bkg.jpg ); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;  opacity: .3; left: 0; top: 0; right: 0; width: 100%; height: 100%; }
-		#block { position: absolute; left: 50%; top: 50px; width: 600px; margin-left: -300px; }
-		#block p{ font-weight: 100;  margin-bottom: 10px; line-height: 1.4em; }
-		#block h1{ font-weight: 500; font-size: 45px; margin-bottom: 20px;}
-		#block ul{ margin-left: 0; list-style-type: none; margin-top: 1em; margin-bottom: 2em;}
-		#block li{ margin-bottom: .5em; cursor: pointer; color: #aaa;}
-		#block li:hover{ color: white;}
-		#block li b{ width: 10em; display: inline-block;}
-
-		@media only screen and (max-width : 690px) {
-			#block{ width: 90%; margin-left: -45%;}
-			#block p{ font-size: 12px;}
-			ul{ width: 100%;}
-			#block li span{display: block;}
-			#block li span:nth-child(2){ margin-left: .6em;}
-		}
-
-
-	</style>
+	<meta itemprop="description" content="A Three.js study in architectural visualisation.">
+	<meta itemprop="image" content="thumb.jpg">
+	<meta name="theme-color" content="#24292f">
+	<link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon16.png">
+	
+	<link rel="stylesheet" href="css/Raleway.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -824,5 +787,6 @@ void main()  {
 
 </script>
 </body>
+<script src="js/stat.js" defer="defer" async="async"></script>
 </html>
-<script src="//cdn.webglstats.com/stat.js" defer="defer" async="async"></script>
+

@@ -1,1 +1,0 @@
-chrome-extension://cjpalhdlnbpafiamejdnhcphjbkeiagm/js/vapi-client.js
