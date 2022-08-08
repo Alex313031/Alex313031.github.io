@@ -1,0 +1,7 @@
+// Sample Icon File
+CIRCLE, 24, 24, 24,
+CIRCLE, 24, 24, 12,
+MOVE_TO, 12, 24,
+R_LINE_TO, 18.5f, -10,
+R_V_LINE_TO, 20,
+CLOSE
