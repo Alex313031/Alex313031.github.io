@@ -27,7 +27,7 @@
   ],
   "file_handlers": [
     {
-      "action": ".",
+      "action": "./skiafy.html#user-input",
       "name": "Scalable Vector Graphics",
       "accept": {
         "image/svg+xml": ".svg"

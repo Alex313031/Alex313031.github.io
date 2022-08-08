@@ -27,7 +27,7 @@
   ],
   "file_handlers": [
     {
-      "action": ".",
+      "action": "./netlog.html#import",
       "name": "Netlog .json files.",
       "accept": {
         "application/json": ".json"
