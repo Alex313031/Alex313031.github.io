@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <title>WebGL Cornell Box Demo</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="WebGL Cornell Box with mirror sphere demo.">
+  <link rel="author" href="../../humans.txt">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <meta itemprop="image" content="extrudeTube.png">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css">
+  </head>
+
+
+<body style="margin: 0">
+  <div id="clara-embed" style="position: absolute; width: 100%; height: 100%;"></div>
+  <script src="claraplayer.js"></script>
+  <script>
+   var api = claraplayer('clara-embed');
+   api.assets.addRoot('.');
+   api.initializePlayer("16fc3ba3-ec86-4f0b-943d-c6bfc67970ce", {
+     published: "3019aeb7ce802a9e10766982a0dbd595",
+     hideThumbnail: true,
+     useQueryParams: true
+   });
+  </script>
+</body>
+</html>
