@@ -1,0 +1,44 @@
+module.exports={
+  "version": "0.0.1",
+  "backgroundColor": 16777215,
+  "attenuation": 0.999,
+  "camera": {
+    "fov": 60,
+    "near": 1,
+    "far": 1000,
+    "position": {
+      "x": 0.5530312975540033,
+      "y": 0.48524403572738883,
+      "z": 31.423164395207767
+    }
+  },
+  "controls": {
+    "enableZoom": true,
+    "enableRotate": true,
+    "enablePan": true,
+    "enableDamping": true,
+    "dampingFactor": 0.5,
+    "rotateSpeed": 0.5,
+    "target": {
+      "x": 0.07717754602894467,
+      "y": -14.659580632140548,
+      "z": 1.1318653029928603
+    },
+    "maxPolarAngle": 3.141592653589793,
+    "minPolarAngle": 0
+  },
+  "light": {
+    "position": {
+      "x": 0,
+      "y": 50,
+      "z": 0
+    }
+  },
+  "colors": [
+    2390944,
+    7389619,
+    11721663,
+    15990717,
+    16717396
+  ]
+}
