@@ -1,0 +1,406 @@
+            html,
+            body,
+            div,
+            span,
+            object,
+            iframe,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            blockquote,
+            pre,
+            a,
+            abbr,
+            code,
+            del,
+            dfn,
+            em,
+            img,
+            ins,
+            kbd,
+            q,
+            s,
+            samp,
+            small,
+            strong,
+            sub,
+            sup,
+            var,
+            b,
+            u,
+            i,
+            dl,
+            dt,
+            dd,
+            ol,
+            ul,
+            li,
+            fieldset,
+            form,
+            label,
+            legend,
+            table,
+            caption,
+            tbody,
+            tfoot,
+            thead,
+            tr,
+            th,
+            td,
+            article,
+            aside,
+            canvas,
+            details,
+            embed,
+            figure,
+            figcaption,
+            footer,
+            header,
+            hgroup,
+            menu,
+            nav,
+            output,
+            ruby,
+            section,
+            summary,
+            time,
+            mark,
+            audio,
+            video {
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+                margin: 0;
+                padding: 0;
+            }
+            article,
+            aside,
+            details,
+            figcaption,
+            figure,
+            footer,
+            header,
+            hgroup,
+            menu,
+            nav,
+            section {
+                display: block;
+            }
+            body {
+                line-height: 1;
+            }
+            ol,
+            ul {
+                list-style: none;
+            }
+            blockquote,
+            q {
+                quotes: none;
+            }
+            blockquote:before,
+            blockquote:after,
+            q:before,
+            q:after {
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            img {
+                vertical-align: middle;
+            }
+            img.spin {
+				transition: all .6s;
+			}
+            a,
+            object,
+            embed,
+            textarea:focus,
+            input:focus {
+                outline: 0;
+            }
+            html,
+            body {
+                background-color: #e6e6e6;
+                color: #222;
+            }
+            html,
+            body,
+            input,
+            textarea,
+            select {
+                font: 95.3% arial, sans-serif;
+                line-height: 1.4;
+            }
+            .out {
+                width: 800px;
+                max-width: 95%;
+                margin: 0 auto;
+                word-wrap: break-word;
+            }
+            a:link,
+            a:visited,
+            a:active {
+                text-decoration: none;
+                color: #06c;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            #totop {
+                display: block;
+                position: fixed;
+                bottom: -4px;
+                right: 0;
+                margin: 0.5em;
+            }
+            #totop a:link,
+            #totop a:visited,
+            #totop a:active {
+                font-size: 3em;
+                text-decoration: none;
+                color: #4b7aa6;
+            }
+            #totop a:hover {
+                color: #2f5071;
+            }
+            #s {
+                float: right;
+                padding: 0.6em 1em;
+                border: 0;
+                background-color: #4b7aa6;
+                color: #fff;
+                text-shadow: 0 1px 0 #333;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            #s:hover {
+                background-color: #2f5071;
+            }
+            video,
+            audio,
+            table,
+            #u,
+            #m,
+            .warning {
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 0.3em;
+                word-wrap: break-word;
+            }
+            video,
+            audio {
+                margin-top: 0.3em;
+            }
+            label {
+                vertical-align: initial;
+            }
+            .f {
+                background-color: #f4f4f4;
+                padding: 0.5em;
+                border: 1px solid #ccc;
+            }
+            .f {
+                padding: 0.6em;
+                border: 1px solid #ccc;
+                background-color: #f4f4f4;
+                margin-bottom: 0.3em;
+            }
+            .f:hover {
+                border-color: #888;
+            }
+            .f:focus {
+                border-color: #06c;
+                background-color: #fff;
+            }
+            .h {
+                display: none;
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+            h1 a:link,
+            h1 a:visited,
+            h1 a:active {
+                color: #000;
+            }
+            #top {
+                border-top: solid 0.5em #e6e6e6;
+                background-image: linear-gradient(#4b7aa6, #e6e6e6);
+                border-bottom: solid 0.5em #4b7aa6;
+            }
+            #tabs {
+                float: right;
+            }
+            #tabs li {
+                margin-left: 2px;
+                padding: 0.7em 1em;
+                background-color: #f4f4f4;
+                border-radius: 0 0 6px 6px;
+                display: inline;
+            }
+            #tabs li a:link,
+            #tabs li a:visited,
+            #tabs li a:active,
+            small,
+            del,
+            aside h2 a:link {
+                color: #777;
+            }
+            header {
+                padding: 0 0 1.5em 0;
+                clear: both;
+            }
+            ul.disc {
+                padding-left: 2em;
+                list-style: disc outside;
+            }
+            footer {
+                padding: 1em 0;
+                border-top: solid 0.5em #4b7aa6;
+            }
+            small,
+            #tabs {
+                font-size: 0.86em;
+            }
+            small,
+            td small a:link,
+            td small a:visited,
+            footer {
+                color: #777;
+            }
+            .smallvid {
+                width: 30%;
+            }
+            strong {
+                font-weight: bold;
+            }
+            abbr {
+                text-decoration: none;
+                border-bottom: 1px dotted;
+                cursor: help;
+            }
+            code {
+                color: #008000;
+                font-family: monospace;
+                font-size: 1.1em;
+                word-wrap: break-word;
+            }
+            ::-webkit-input-placeholder {
+                opacity: 1;
+                color: #999;
+            }
+            ::-moz-placeholder {
+                opacity: 1;
+                color: #999;
+            }
+            :-ms-input-placeholder {
+                opacity: 1;
+                color: #999;
+            }
+            hr {
+                border: 0;
+                border-top: 1px dotted #999;
+            }
+            td,
+            th {
+                border-bottom: 1px solid #ccc;
+                vertical-align: middle;
+                text-align: center;
+                padding: 0.4em;
+            }
+            th {
+                background-color: #ccc;
+            }
+            td.left,
+            th.left {
+                text-align: left;
+                word-break: break-all;
+            }
+            tr:hover td {
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+            tr.playable {
+                background-color: rgba(180, 255, 180, 0.6);
+            }
+            tr.focus {
+                background-color: #ff9;
+            }
+            .warning,
+            .info {
+                padding: 0.5em;
+                text-align: center;
+                color: #eee;
+            }
+            .warning {
+                background-color: #d9534f;
+            }
+            .info {
+                background-color: #337ab7;
+            }
+            .news {
+                padding: 1em;
+                background-color: #fff;
+            }
+            #buffer {
+                display: none;
+                width: 100%;
+                position: relative;
+                height: 30px;
+                cursor: pointer;
+                opacity: 0.8;
+            }
+            #buffer:hover,
+            #buffer span:hover {
+                opacity: 1;
+            }
+            #buffer span {
+                color: #fff;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                padding-bottom: 5px;
+                text-align: center;
+                text-shadow: 0 1px 0 #333;
+                opacity: 0.8;
+            }
+            #toggleText {
+                cursor: pointer;
+                float: right;
+            }
+            .dot {
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: help;
+            }
+            .grey {
+                background-color: #ccc;
+            }
+            .green {
+                background-color: #20bc20;
+            }
+            @media screen and (max-width: 639px) and (orientation: portrait), screen and (max-width: 639px) and (orientation: landscape) {
+                html,
+                body {
+                    font-size: 100%;
+                }
+                header {
+                    text-align: center;
+                    padding-top: 1em;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                .d {
+                    display: none;
+                }
+            }

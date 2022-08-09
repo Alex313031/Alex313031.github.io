@@ -7,18 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <meta name="description" content="Developer Tools for Thorium Builders.">
     <title>Thorium Developer Tools</title>
-    <meta name="description" content="HTML5 Games for the Thorium.rocks Website.">
+    <meta name="description" content="Developer Tools for Thorium Builders.">
     <meta name="keywords" content="thorium, browser, chromium, developer, dev, tools" >
     <meta name="color-scheme" content="light dark">
     <link rel="author" href="../humans.txt">
     <link rel="stylesheet" href="../css/thorium.css">
     <link rel="stylesheet" href="../css/media.css">
-    <link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <meta itemprop="image" content="thumb.png">    
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <meta itemprop="image" content="../thumb.png">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
     <meta name="theme-color" content="#ffffff">
     <script>
     function toggleDarkMode(useDark) {
@@ -42,34 +44,63 @@
     }
     </script>
     <style>
-		
+		#svg {
+		  margin-top: 8px;
+		}
 	</style>
 </head>
 <body>
+	<div class="p3">
 	<div class="d-flex2">
-        <div class="spin shadow" id="svg" alt="Build Icon" title="Build Icon (Click Me!)"><svg xmlns="http://www.w3.org/2000/svg" height="90" viewBox="0 0 24 24" width="90"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22.61 18.99l-9.08-9.08c.93-2.34.45-5.1-1.44-7C9.79.61 6.21.4 3.66 2.26L7.5 6.11 6.08 7.52 2.25 3.69C.39 6.23.6 9.82 2.9 12.11c1.86 1.86 4.57 2.35 6.89 1.48l9.11 9.11c.39.39 1.02.39 1.41 0l2.3-2.3c.4-.38.4-1.01 0-1.41zm-3 1.6l-9.46-9.46c-.61.45-1.29.72-2 .82-1.36.2-2.79-.21-3.83-1.25C3.37 9.76 2.93 8.5 3 7.26l3.09 3.09 4.24-4.24-3.09-3.09c1.24-.07 2.49.37 3.44 1.31 1.08 1.08 1.49 2.57 1.24 3.96-.12.71-.42 1.37-.88 1.96l9.45 9.45-.88.89z" fill="currentColor"/></svg></div>
+        <div class="spin shadow" id="svg" alt="Tools Icon" title="Tools Icon (Click Me!)"><svg xmlns="http://www.w3.org/2000/svg" height="90" viewBox="0 0 24 24" width="90"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22.61 18.99l-9.08-9.08c.93-2.34.45-5.1-1.44-7C9.79.61 6.21.4 3.66 2.26L7.5 6.11 6.08 7.52 2.25 3.69C.39 6.23.6 9.82 2.9 12.11c1.86 1.86 4.57 2.35 6.89 1.48l9.11 9.11c.39.39 1.02.39 1.41 0l2.3-2.3c.4-.38.4-1.01 0-1.41zm-3 1.6l-9.46-9.46c-.61.45-1.29.72-2 .82-1.36.2-2.79-.21-3.83-1.25C3.37 9.76 2.93 8.5 3 7.26l3.09 3.09 4.24-4.24-3.09-3.09c1.24-.07 2.49.37 3.44 1.31 1.08 1.08 1.49 2.57 1.24 3.96-.12.71-.42 1.37-.88 1.96l9.45 9.45-.88.89z" fill="currentColor"/></svg></div>
 
     </div>
 	<h1 title="Thorium Games"><span style="text-align: center;"><u>Thorium Developer Tools</u></span></h1>
 	<!-- Dark/Light Mode Button -->
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;
-    <small><em>Developer Tools for Thorium Builders.</em></small><br>
+    <small><em>Developer Tools for Thorium Builders</em></small><br>
     <hr class="line">
-	<a name="games"></a><ul>
-        <li><a title="Thorium NetLog Viewer" target="_blank" href="thorium_netlog_viewer/netlog.html">Thorium NetLog Viewer</a>&nbsp;&nbsp;<img src="thorium_netlog_viewer/favicon48.png" width="20" title="NetLog Viewer" alt="NetLog Viewer Icon" class="spin fav"></li>
-        <li><a title="Thorium Dino Game" rel="noopener" href="dino/">Thorium Dino Game!</a>&nbsp;&nbsp;<img src="../imgs/Dino.png" width="34" title="Dino!" alt="Dino Game" class="spin fav"></li>
-        <li><a title="Thorium Dino Game" rel="noopener" href="flappy-bird/">Flappy Bird!</a>&nbsp;&nbsp;<img src="flappy-bird/img/20.png" width="20" title="Flappy Bird!" alt="Flappy Bird Game" class="spin fav"></a></li>
-        <li><a title="2048" rel="noopener" href="2048/">2048 Game</a>&nbsp;&nbsp;<img src="2048/favicon.ico" width="20" title="2048 Icon" alt="2048 Icon" class="spin fav"></a></li><br>
-        <li><em>More coming soon!</em></li>
+    <p>| For Thorium Development and the <a rel="noopener" target="_blank" href="https://source.chromium.org/">Chromium Code Search</a>:</p>
+	<a name="links"></a><ul>
+        <li><a title="Thorium NetLog Viewer" target="_blank" href="thorium_netlog_viewer/netlog.html">Thorium NetLog Viewer</a>&nbsp;&nbsp;<img src="thorium_netlog_viewer/favicon48.png" width="19" title="NetLog Viewer" alt="NetLog Viewer Icon" class="spin fav">
+        </li>
+        <li><a title="Skiafier Web App" target="_blank" href="skiafier/skiafy">Skiafier</a>&nbsp;&nbsp;<img src="skiafier/favicon-48x48.png" width="21" style="border: 1px solid #24292f" title="Skiafier Logo" alt="Skiafier Icon" class="spin fav">
+        </li>
+        <li><a title="Vector Icon Viewer Web App" target="_blank" href="vector-icon-app">Vector Icon Viewer</a>&nbsp;&nbsp;<img src="vector-icon-app/favicon.ico" width="19" title="Vector Icon Viewer" alt="Vector Icon Viewer Logo" class="spin fav">
+        </li>
+        <li><a title="Chromium Vector Icons Extension" rel="noopener" target="_blank" href="https://chrome.google.com/webstore/detail/chromium-vector-icon-pain/cnlndebkegcfnbiknohgneobakigplhf">Chromium Vector Icons</a> - Extension which draws vector .icon files.&nbsp;&nbsp;<img src="../imgs/Cr-Vector-Icons.png" width="20" title="Cr Vector Icons" alt="Chromium Vector Icons Logo" class="spin fav">
+        </li>
+        <li><a title="Thorium Code Search Themer" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium_Code_Search_Themer/">Thorium Code Search Themer</a> - Themer for Chromium Code Search.&nbsp;&nbsp;<img src="../imgs/Thorium-Themer.png" width="20" title="Thorium Code Search Themer Logo" alt="Thorium-Themer.png" class="spin fav">
+        </li>
+        <li><a title="Chromium Dev Editor" rel="noopener" target="_blank" href="https://github.com/Alex313031/Chromium-Dev-Editor/">Chromium Dev Editor</a> - Code/Text Editor App for Thorium.&nbsp;&nbsp;<img src="../imgs/Editor.png" width="22" title="Chromium Dev Editor Logo" alt="Chromium Dev Editor Logo" class="spin fav">
+        </li>
     </ul>
+    <p>| For Web Development, and Testing Thorium or GitHub Download Stats:</p>
+    <a name="links2"></a><ul>
+		<li><a title="Speedometer 2.1" target="_blank" href="Speedometer_2.1">Speedometer 2.1 (Custom Fork)</a> - Benchmark your browser.&nbsp;&nbsp;<img src="Speedometer_2.1/favicon32.png" width="20" title="Speedometer v2.1" alt="Speedometer Favicon" class="spin fav">
+        </li>
+		<li><a title="GitHub Download Count Viewer" target="_blank" href="../githubstat2">GitHubStat v2</a> - Get information about download counts for GitHub releases, release author and date of publishing.&nbsp;&nbsp;<img src="../githubstat2/favicon-32x32.png" width="18" title="GitHubStat v2" alt="GitHubStat v2" class="spin fav">
+        </li>
+        <li><a title="Resources Saver" rel="noopener" target="_blank" href="https://chrome.google.com/webstore/detail/resources-saver/nlfcijlhljpenllloeheihmhoobeefpc">Resources Saver</a> - Extension for one click downloading of all webpage resources files while keeping folder structures.&nbsp;&nbsp;<img src="../imgs/resources-saver.png" width="19" title="Resources Saver Logo" alt="Resources Saver Logo" class="spin fav">
+        </li>
+        <li><a title="HTML5 Audio/Video Tester" target="_blank" rel="noopener" href="https://tools.woolyss.com/html5-audio-video-tester/">HTML5 Audio/Video Tester</a>&nbsp;&nbsp;<img src="HTML5_Logo.svg" width="19" title="HTML5 Logo" alt="HTML5 Logo" class="spin fav"> - HTML5 audio and video tester to test file type and MIME type.
+        </li>
+        <li><a title="WebGL Tester" target="_blank" href="webgl-tester.html">WebGL Tester</a>&nbsp;&nbsp;<img src="webgl-favicon.ico" width="19" title="WebGl Tester" alt="WebGL Logo" class="spin fav"> &nbsp;- Also see Here and Here to verify WebGL 1 and 2, respectively.
+        </li>
+	</ul>
+	<p>| Documentation:</p>
+	<a name="links3"></a><ul>
+		<li><a title="Release Notes" alt="history" target="_blank" href="history.html">Release Notes</a>&nbsp;&nbsp;<img src="Git-Icon-1788C.png" width="19" title="Git Icon" alt="Git Icon" class="spin fav">
+        </li>
+        <li><a title="Building Documentation" alt="history" target="_blank" rel="noopener" href="https://github.com/Alex313031/Thorium/tree/main/docs">Building Docs</a>&nbsp;&nbsp;<img src="../imgs/info.svg" width="20" title="Building Information" alt="Info Icon" class="spin fav">
+        </li>
+	</ul>
+	<p><em>- More coming soon!</em></p>
 	<br>
-	<div style="margin-right: 8%;">
-	<img class="bubbles shadow" style="display: block; margin-left: auto; margin-right: auto; align-items: center;" src="games-footer.png" width="300" alt="Games Footer" title="Games Footer">
-	</div>
-	<br>
+	<img class="spin shadow" style="display: block; margin-left: auto; margin-right: auto; align-items: center;" src="thorium_greyscale_1024.png" width="300" alt="Thorium Greyscale Logo" title="Thorium Greyscale Logo (Click Me!)">
 	<br>
 	<hr class="line">
-	
+	</div>
     <script defer src="../js/jquery-3.6.0.slim.min.js"></script>
     <script defer src="../js/spin.js"></script>
 	<script defer src="../js/spun.js"></script>

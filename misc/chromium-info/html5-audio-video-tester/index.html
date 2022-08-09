@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="A free online HTML5 audio and video tester to test file type and MIME type.">
+        <meta name="keywords" content="html5,audio,video,online,file,type,player,mime,tester">
+        <meta name="author" content="Woolyss">
+        <meta itemprop="image" content="thumb.png">
+        <meta name="color-scheme" content="light dark">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="application-name" content="Chromium Info Tester">
+        <title>HTML5 Audio/Video Tester - MIME type tester</title>
+        <link rel="canonical" href="https://tools.woolyss.com/html5-audio-video-tester/">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="top">
+            <div class="out">
+                <ul id="tabs">
+                    <li><a title="https://woolyss.com/" href="https://woolyss.com/">woolyss</a></li>
+                </ul>
+                <header>
+                    WEB DEVELOPMENT
+                    <h1><img class="spin" alt="HTML5_Logo.svg" title="HTML5 Logo (Click Me!)" src="HTML5_Logo.svg" width="48px">&nbsp;<a href="#top">HTML5 Audio/Video Tester</a></h1>
+                    <small>A free online file type player and MIME type tester, mainly for <a target="_blank" rel="noopener" href="https://chromium.woolyss.com/">Chromium</a> and <a target="_blank" rel="noopener" href="https://www.mozilla.org/firefox/">Firefox</a> browsers.</small>
+                </header>
+            </div>
+        </div>
+        <div class="out">
+            <br />
+            <small><a title="Help" id="toggleText">How to use this tool?</a></small><br />
+            <div id="displayText" class="h">
+                <br />
+                This is a simple page to test <strong>only</strong> HTML <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags <strong> without Javascript</strong>.<br />
+                <br />
+                By default here, the <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/embedded-content.html#attr-source-type">MIME type</a> is undefined but you can use a site
+                <abbr title="Check in your address bar to see changes after to click on the 'Test' button">query string</abbr> to force it.<br />
+                <br />
+                Examples to test a media file + MIME type:
+                <ul class="disc">
+                    <li>
+                        <a target="_blank" rel="noopener" href="?u=https://upload.wikimedia.org/wikipedia/commons/b/b3/Big_Buck_Bunny_Trailer_400p.ogv&amp;m=video">m=video</a> or
+                        <a target="_blank" rel="noopener" href="?u=https://upload.wikimedia.org/wikipedia/commons/b/b3/Big_Buck_Bunny_Trailer_400p.ogv&amp;m=audio">m=audio</a><small> (if you do not know MIME type → It will only define HTML tag)</small>
+                    </li>
+                    <li>
+                        <a href="?u=https://upload.wikimedia.org/wikipedia/commons/b/b3/Big_Buck_Bunny_Trailer_400p.ogv&amp;m=video/ogg;%20codecs=%22theora,%20vorbis%22">m=video/ogg; codecs="theora, vorbis"</a>
+                        <small> (if you want to test a MIME type → It will define both MIME type and HTML tag)</small>
+                    </li>
+                    <li><a href="?u=https://i.imgur.com/NY5OPT1.webm&amp;l=1">l=1</a><small> (to enable audio/video loop)</small></li>
+                </ul>
+                <br />
+                Example to test only a MIME type, without a media file <small>(<abbr title="Javascript">JS</abbr> needed)</small>:
+                <ul class="disc">
+                    <li><a href="?m=video/ogg;%20codecs=%22theora,%20vorbis%22">m=video/ogg; codecs="theora, vorbis"</a></li>
+                </ul>
+                <br />
+            </div>
+            <form action="https://tools.woolyss.com/html5-audio-video-tester/" method="get" name="f">
+                <input title="Enter URL" id="u" name="u" class="f" placeholder="URL (ex: https://domain.com/media.mp3) • (optional)" value="" type="text" />
+                <input title="Enter MIME Type" id="m" name="m" class="f" placeholder="MIME (ex: audio/mp3) • (optional)" value="" type="text" /><input title="Run Test" id="s" name="s" value="Test" type="submit" /><input title="Loop media playback" id="l" name="l" value="1" class="f" type="checkbox" />
+                <label title="Loop media playback" for="l"> Loop</label>
+            </form>
+            <br />
+            <br />
+            <table id="mediaTable">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th title="Links">Test Links</th>
+                    <th title="Video Codec" class="d">Video</th>
+                    <th title="Audio Codec" class="d">Audio</th>
+                    <th title="Source URL" class="d">Source</th>
+                    <th title="Media Container Format" class="d">Format</th>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/caminandes-1-llama-drama-av1-opus.webm" rel="nofollow">caminandes-1-llama-drama-av1-opus.webm</a><br /></td>
+                    <td class="d">
+                        AV1<br />
+                        <small>Main@L3.0</small>
+                    </td>
+                    <td class="d">Opus</td>
+                    <td class="d">
+                        <small><a href="https://en.wikipedia.org/wiki/Caminandes" rel="nofollow">wikipedia.org</a></small>
+                    </td>
+                    <td class="d">webm</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/Chimera-AV1-8bit-480x270-552kbps.mp4" rel="nofollow">Chimera-AV1-8bit-480x270-552kbps.mp4</a><br /></td>
+                    <td class="d">
+                        AV1<br />
+                        <small>Main@L2.0</small>
+                    </td>
+                    <td class="d"><small>(no sound)</small></td>
+                    <td class="d">
+                        <small><a href="http://download.opencontent.netflix.com/?prefix=AV1/Chimera/" rel="nofollow">netflix.com</a></small>
+                    </td>
+                    <td class="d">mp4</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/spring-vp9-vorbis.webm" rel="nofollow">spring-vp9-vorbis.webm</a><br /></td>
+                    <td class="d">VP9</td>
+                    <td class="d">Vorbis</td>
+                    <td class="d">
+                        <small><a href="https://www.blender.org/press/spring-open-movie/" rel="nofollow">blender.org</a></small>
+                    </td>
+                    <td class="d">webm</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.720p.webm" rel="nofollow">Sintel_movie_4K.webm.720p.webm</a><br /></td>
+                    <td class="d">VP8</td>
+                    <td class="d">Vorbis</td>
+                    <td class="d">
+                        <small><a href="https://en.wikipedia.org/wiki/File:Sintel_movie_4K.webm" rel="nofollow">wikipedia.org</a></small>
+                    </td>
+                    <td class="d">webm</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=upload.wikimedia.org/wikipedia/commons/d/d0/Caminandes-_Llama_Drama_-_Short_Movie.ogv" rel="nofollow">minandes-_Llama_Drama_-_Short_Movie.ogv</a><br /></td>
+                    <td class="d">Theora</td>
+                    <td class="d">Vorbis</td>
+                    <td class="d">
+                        <small><a href="https://en.wikipedia.org/wiki/Caminandes" rel="nofollow">wikipedia.org</a></small>
+                    </td>
+                    <td class="d">ogv</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=video.dailymail.co.uk/video/1418450360/2015/02/1418450360_4056782948001_nerdist--1424015378606.mp4" rel="nofollow">056782948001_nerdist--1424015378606.mp4</a><br /></td>
+                    <td class="d">
+                        H.264/AVC<br />
+                        <small>Baseline@L2.1</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://www.dailymail.co.uk/femail/article-2954622/Hilarious-video-imagines-Nineties-sitcom-Friends-look-today.html" rel="nofollow">dailymail.co.uk</a></small>
+                    </td>
+                    <td class="d">mp4</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=www.mainconcept.com/fileadmin/user_upload/products/Source_out.mp4" rel="nofollow">Source_out.mp4</a><br /></td>
+                    <td class="d">
+                        H.264/AVC<br />
+                        <small>Main@L3.1</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://www.mainconcept.com/fileadmin/user_upload/products/test_html5.html" rel="nofollow">mainconcept.com</a></small>
+                    </td>
+                    <td class="d">mp4</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/Big_Buck_Bunny_Trailer.m4v" rel="nofollow">Big_Buck_Bunny_Trailer.m4v</a><br /></td>
+                    <td class="d">
+                        H.264/AVC<br />
+                        <small>Baseline@L3.0</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="http://www.jplayer.org/latest/demo-02-video/" rel="nofollow">jplayer.org</a></small>
+                    </td>
+                    <td class="d">m4v</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=www.hdpvrcapture.com/hdpvrcapturev3/samples/20120927_091416.m2ts" rel="nofollow">20120927_091416.m2ts</a><br /></td>
+                    <td class="d">
+                        H.264/AVC<br />
+                        <small>High@L4</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://www.hdpvrcapture.com/wordpress/?page_id=97" rel="nofollow">hdpvrcapture.com</a></small>
+                    </td>
+                    <td class="d">m2ts</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=ftp.nluug.nl/pub/graphics/blender/demo/movies/ToS/tears_of_steel_720p.mov" rel="nofollow">tears_of_steel_720p.mov</a><br /></td>
+                    <td class="d">
+                        H.264/AVC<br />
+                        <small>Main@L3.1</small>
+                    </td>
+                    <td class="d">MP3</td>
+                    <td class="d">
+                        <small><a href="https://mango.blender.org/download/" rel="nofollow">blender.org</a></small>
+                    </td>
+                    <td class="d">mov</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/small.3gp" rel="nofollow">small.3gp</a><br /></td>
+                    <td class="d">
+                        H.263<br />
+                        <small>BaseLine@1.0</small>
+                    </td>
+                    <td class="d">AMR</td>
+                    <td class="d">
+                        <small><a href="http://techslides.com/sample-webm-ogg-and-mp4-video-files-for-html5" rel="nofollow">techslides.com</a></small>
+                    </td>
+                    <td class="d">3gp</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/caminandes-2-gran-dillama-x65-aac.mp4" rel="nofollow">caminandes-2-gran-dillama-x65-aac.mp4</a><br /></td>
+                    <td class="d">
+                        H.265/HEVC<br />
+                        <small>Main@L4</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://en.wikipedia.org/wiki/Caminandes" rel="nofollow">wikipedia.org</a></small>
+                    </td>
+                    <td class="d">mp4</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/caminandes-3-llamigos-x265-aac.mp4" rel="nofollow">caminandes-3-llamigos-x265-aac.mp4</a><br /></td>
+                    <td class="d">
+                        H.265/HEVC<br />
+                        <small>Main@L3.1</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://en.wikipedia.org/wiki/Caminandes" rel="nofollow">wikipedia.org</a></small>
+                    </td>
+                    <td class="d">mp4</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=ossguy.com/sita/Sita_Sings_the_Blues_640x360_XviD.avi" rel="nofollow">Sita_Sings_the_Blues_640x360_XviD.avi</a><br /></td>
+                    <td class="d">
+                        MPEG-4 Visual<br />
+                        <small>Advanced Simple@L5</small>
+                    </td>
+                    <td class="d">MP3</td>
+                    <td class="d">
+                        <small><a href="https://www.sitasingstheblues.com/" rel="nofollow">sitasingstheblues.com</a></small>
+                    </td>
+                    <td class="d">avi</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=download.blender.org/demo/movies/esign_2_high.qt" rel="nofollow">esign_2_high.qt</a><br /></td>
+                    <td class="d">
+                        MPEG-4 Visual<br />
+                        <small>Advanced Simple@L3</small>
+                    </td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://download.blender.org/demo/movies/" rel="nofollow">blender.org</a></small>
+                    </td>
+                    <td class="d">qt</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/sample.amr" rel="nofollow">sample.amr</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">AMR</td>
+                    <td class="d">
+                        <small><a href="http://techslides.com/sample-files-for-development" rel="nofollow">techslides.com</a></small>
+                    </td>
+                    <td class="d">amr</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=www.groovydomain.com/gallery/music/ORIGINAL/Pink%20Floyd/The%20Dark%20Side%20of%20the%20Moon/09%20Eclipse.mp3" rel="nofollow">09 Eclipse.mp3</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">MP3</td>
+                    <td class="d">
+                        <small><a href="http://www.groovydomain.com/" rel="nofollow">groovydomain.com</a></small>
+                    </td>
+                    <td class="d">mp3</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=hpr.dogphilosophy.net/test/weba.weba" rel="nofollow">weba.weba</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">Vorbis</td>
+                    <td class="d">
+                        <small><a href="https://hpr.dogphilosophy.net/test/" rel="nofollow">dogphilosophy.net</a></small>
+                    </td>
+                    <td class="d">weba</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=hpr.dogphilosophy.net/test/ogg.ogg" rel="nofollow">ogg.ogg</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">Vorbis</td>
+                    <td class="d">
+                        <small><a href="https://hpr.dogphilosophy.net/test/" rel="nofollow">dogphilosophy.net</a></small>
+                    </td>
+                    <td class="d">ogg</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/test.oga" rel="nofollow">test.oga</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">Vorbis</td>
+                    <td class="d">
+                        <small><a href="http://xahlee.info/js/html5_audio.html" rel="nofollow">xahlee.info</a></small>
+                    </td>
+                    <td class="d">oga</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=hpr.dogphilosophy.net/test/opus.opus" rel="nofollow">opus.opus</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">Opus</td>
+                    <td class="d">
+                        <small><a href="https://hpr.dogphilosophy.net/test/" rel="nofollow">dogphilosophy.net</a></small>
+                    </td>
+                    <td class="d">opus</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=hpr.dogphilosophy.net/test/flac.flac" rel="nofollow">flac.flac</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">Flac</td>
+                    <td class="d">
+                        <small><a href="https://hpr.dogphilosophy.net/test/" rel="nofollow">dogphilosophy.net</a></small>
+                    </td>
+                    <td class="d">flac</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=hpr.dogphilosophy.net/test/wav.wav" rel="nofollow">wav.wav</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">Wave</td>
+                    <td class="d">
+                        <small><a href="https://hpr.dogphilosophy.net/test/" rel="nofollow">dogphilosophy.net</a></small>
+                    </td>
+                    <td class="d">wav</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=woolyss.com/f/TSP-01-Cro_magnon_man.m4a" rel="nofollow">TSP-01-Cro_magnon_man.m4a</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">
+                        AAC<br />
+                        <small>lc</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="http://www.jplayer.org/latest/demo-04/" rel="nofollow">jplayer.org</a></small>
+                    </td>
+                    <td class="d">m4a</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=streamingv2.shoutcast.com/SoulDeluxeEurope" rel="nofollow">SoulDeluxeEurope</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">
+                        MP3<br />
+                        <small>(streaming)</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://www.radionomy.com/en/radio/souldeluxeeurope/index" rel="nofollow">radionomy.com</a></small>
+                    </td>
+                    <td class="d">mp3</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=jazz-wr06.ice.infomaniak.ch/jazz-wr06-128.mp3" rel="nofollow">jazz-wr06-128.mp3</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">
+                        MP3<br />
+                        <small>(streaming)</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="http://www.jazzradio.fr/radio/webradio/12/funk" rel="nofollow">jazzradio.fr</a></small>
+                    </td>
+                    <td class="d">mp3</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=spoonradio.ice.infomaniak.ch/spoonradio-hd.aac" rel="nofollow">spoonradio-hd.aac</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">
+                        AAC<br />
+                        <small>(streaming)</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://www.spoonradio.com/" rel="nofollow">spoonradio.com</a></small>
+                    </td>
+                    <td class="d">aac</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=s3.euer.tv/audio.opus" rel="nofollow">audio.opus</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d">
+                        Opus<br />
+                        <small>(streaming)</small>
+                    </td>
+                    <td class="d">
+                        <small><a href="https://www.euer-radio.de/" rel="nofollow">euer-radio.de</a></small>
+                    </td>
+                    <td class="d">opus</td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=i.imgur.com/f1Y1xzl.gifv" rel="nofollow">f1Y1xzl.gifv</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d"><small>(no sound)</small></td>
+                    <td class="d">
+                        <small><a href="https://i.imgur.com/f1Y1xzl.gifv" rel="nofollow">imgur.com</a></small>
+                    </td>
+                    <td class="d"></td>
+                </tr>
+                <tr>
+                    <td><span class="dot grey"></span></td>
+                    <td class="left"><a href="?u=i.imgur.com/7wPZQ57.gifv" rel="nofollow">7wPZQ57.gifv</a><br /></td>
+                    <td class="d"></td>
+                    <td class="d"><small>(no sound)</small></td>
+                    <td class="d">
+                        <small><a href="https://i.imgur.com/7wPZQ57.gifv" rel="nofollow">imgur.com</a></small>
+                    </td>
+                    <td class="d"></td>
+                </tr>
+            </table>
+            <br />
+            Wikipedia pages:
+            <ul class="disc">
+                <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/HTML5_audio">HTML5 Audio</a></li>
+                <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/HTML5_video">HTML5 Video</a></li>
+                <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Comparison_of_video_container_formats">Comparison of video container formats</a></li>
+                <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Comparison_of_audio_coding_formats">Comparison of audio coding formats</a></li>
+            </ul>
+            <br />
+            Other reliable sites:
+            <ul class="disc">
+                <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">MDN - HTML5 Video</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.iana.org/assignments/media-types/media-types.xhtml">IANA - MIME Media Types registry</a></li>
+                <li>
+                    <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/HTML5test">HTML5test</a>
+                    <small> (<a target="_blank" rel="noopener" href="https://github.com/WebPlatformTest/HTML5test">Source code</a> • Mirror: <a target="_blank" rel="noopener" href="https://html5test.opensuse.org/">html5test.opensuse.org</a>)</small>
+                </li>
+                <li><a target="_blank" rel="noopener" href="http://caniuse.com/">Compatibility tables for support of HTML5 and other technologies in various browsers</a></li>
+                <li>
+                    <a target="_blank" rel="noopener"
+                        href="https://www.google.com/search?q=-inurl%3A(htm%7Chtml%7Cphp)%20intitle%3A%22index%20of%22%20%2B%22last%20modified%22%20%2B%22parent%20directory%22%20%2Bdescription%20%2Bsize%20%2B(mp3%7Cogg%7Cwma%7Caiff)%20%22marley%22"
+                    >
+                        Search music files in "index of/" related to "marley" artists, with Google Search
+                    </a>
+                </li>
+                <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=1La4QzGeaaQ">YouTube video: Peru 8K HDR 60FPS (FUHD)</a></li>
+            </ul>
+            <br />
+            About web browsers and systems:
+            <ul class="disc">
+                <li><a target="_blank" rel="noopener" href="https://developer.android.com/guide/topics/media/media-formats">Android: Supported media formats</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.chromium.org/audio-video">Chromium: Audio/Video</a></li>
+                <li><a target="_blank" rel="noopener" href="https://chromium.googlesource.com/chromium/src/+/master/net/base/mime_util.cc">Chromium: MIME types in source code</a></li>
+                <li><a target="_blank" rel="noopener" href="https://support.mozilla.org/kb/html5-audio-and-video-firefox">Firefox: HTML5 audio and video</a></li>
+                <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/docs/Web/Media/Formats/Containers">Firefox: Media container formats (file types)</a></li>
+                <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">Firefox: Common MIME types</a></li>
+            </ul>
+            <br />
+            About Javascript methods:
+            <ul class="disc">
+                <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType">HTMLMediaElement.canPlayType()</a></li>
+                <li><a target="_blank" rel="noopener" href="https://html5.komplett.cc/code/chap_video/js_canPlayType.html">HTMLMediaElement Interface Test</a></li>
+                <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/isTypeSupported">MediaSource.isTypeSupported()</a></li>
+                <li>
+                    <a target="_blank" rel="noopener" href="https://github.com/cconcolato/media-mime-support">Support for ISOBMFF-based MIME types in browsers</a>
+                    <small> (Demo: <a target="_blank" rel="noopener" href="https://cconcolato.github.io/media-mime-support/">main page</a> - <a target="_blank" rel="noopener" href="https://tools.woolyss.com/html5-canplaytype-tester/">mirror</a>)</small>
+                </li>
+            </ul>
+            <br />
+            Free and open-source software to get technical information about media files:
+            <ul class="disc">
+                <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/MediaInfo">MediaInfo</a></li>
+                <li><a target="_blank" rel="noopener" href="https://github.com/lordmulder/mediainfo-gui">MediaInfoXP</a><small> (A minimal portable GUI for MediaInfo, on Windows)</small></li>
+                <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/VLC_media_player">VLC media player</a></li>
+                <li>
+                    <a target="_blank" rel="noopener" href="https://github.com/gpac/mp4box.js">mp4box.js</a>
+                    <small> (Open-source tool for MP4 files • Demo: <a href="https://gpac.github.io/mp4box.js/test/filereader.html">main page</a> - <a target="_blank" rel="noopener" href="https://tools.woolyss.com/mp4box.js/filereader/">mirror</a>)</small>
+                </li>
+            </ul>
+            <br />
+            File extensions automatically recognized by this page:
+            <ul class="disc">
+                <li>
+                    <div style="color: #008000;">3g2, 3gp, aac, aif, aifc, aiff, amr, asf, au, avi, divx, flac, flv, gifv, m2ts, m4a, m4r, m4v, mka, mkv, mov, movie, mp2, mp3, mp4, mpa, mpeg, mpg, mts, oga, ogg, ogm, ogv, opus, qt, ra, snd, spx, wav, wave, wax, weba,
+                    webm, wm, wma, wmv, wvx</div>
+                </li>
+            </ul>
+            <img loading="lazy" class="spin" alt="spinner.svg" title="Woolyss Spinner (Click Me!)" src="spinner.svg" width="200px">
+        </div>
+        <footer>
+            <div class="out">
+                <small><a title="Info" href="https://info.woolyss.com/"><img src="info-logo.png" alt="Info logo" width="20" height="20"></a>&nbsp;
+                    Copyright &copy; <a href="https://woolyss.com/">Woolyss</a> • 2007-2022 • <a title="Contact Jerry" href="https://info.woolyss.com/" rel="nofollow">Contact</a> • Page under a <a href="https://info.woolyss.com/#licence" rel="license">free license</a> •
+                    <a target="_blank" rel="noopener" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ftools.woolyss.com%2Fhtml5-audio-video-tester%2F">W3C HTML</a> •
+                    <a target="_blank" rel="noopener" href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Ftools.woolyss.com%2Fhtml5-audio-video-tester%2F">Mobile-friendly</a>
+                </small>
+            </div>
+        </footer>
+        <div id="totop"><a href="#top" title="Back to top">▲</a></div>
+        <script src="main.js"></script>
+        <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+        <script defer src="js/spin.js"></script>
+        <script defer src="js/spun.js"></script>
+    </body>
+</html>

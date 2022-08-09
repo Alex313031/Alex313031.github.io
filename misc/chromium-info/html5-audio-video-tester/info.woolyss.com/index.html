@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="Information about woolyss.com" />
+        <meta name="keywords" content="information,about,contact,licence" />
+        <meta name="author" content="Woolyss" />
+        <meta name="robots" content="noodp,noydir,none,noindex,nofollow,noarchive,noimageindex" />
+        <title>Woolyss - Info</title>
+        <style>
+            html {
+                box-sizing: border-box;
+            }
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            ol,
+            ul {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+            }
+            ol,
+            ul {
+                list-style: none;
+            }
+            details {
+                display: block;
+            }
+            :root {
+                --main-bg-color: #fff;
+                --main-text-color: #111;
+                --main-color: #811ac0;
+                --main-color-hover: #511078;
+                --main-link-color: #811ac0;
+                --grey-color: #888;
+                --line-separator-width: 4px;
+                --stick-bg-color: #eee;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --main-bg-color: #222;
+                    --main-text-color: #eee;
+                    --main-link-color: #b968eb;
+                    --grey-color: #bbb;
+                    --stick-bg-color: #333;
+                }
+            }
+            html,
+            body {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+            }
+            body {
+                background-color: var(--main-bg-color);
+                color: var(--main-text-color);
+                font: 96% arial, sans-serif;
+                line-height: 1.4;
+            }
+            .in {
+                width: 1000px;
+                max-width: 92%;
+                margin: 0 auto;
+            }
+            header {
+                border-top: solid var(--line-separator-width) var(--stick-bg-color);
+            }
+            main {
+                flex: 1;
+            }
+            footer {
+                margin-top: 3em;
+                padding: 1em 0;
+                border-top: solid var(--line-separator-width) var(--main-color);
+            }
+            #logo {
+                display: inline;
+            }
+            #logo img {
+                margin-right: 0.5em;
+            }
+            #logo img:hover {
+                transform: rotate(360deg);
+                transition: all 0.6s ease-out;
+            }
+            nav {
+                display: block;
+                padding-top: 2.2em;
+            }
+            nav ul {
+                padding-top: 0.4em;
+                float: right;
+            }
+            nav li {
+                display: inline;
+            }
+            nav li a:link,
+            nav li a:visited,
+            nav li a:active {
+                display: inline-block;
+                padding: 0.7em 1.2em;
+                border-bottom: solid var(--line-separator-width) transparent;
+                text-decoration: none;
+            }
+            nav li a:hover {
+                border-bottom: solid var(--line-separator-width) var(--stick-bg-color);
+            }
+            nav li a.active {
+                border-bottom: solid var(--line-separator-width) var(--main-color);
+            }
+            nav li a:link,
+            nav li a:visited,
+            nav li a:active,
+            nav li a:hover {
+                transition: border-bottom 0.5s;
+            }
+            h1 {
+                font-size: 2em;
+                display: inline;
+                vertical-align: text-bottom;
+            }
+            h2 {
+                font-size: 1.6em;
+                border-bottom: solid 1px #ddd;
+                margin: 1em 0 0.5em 0;
+                color: var(--grey-color);
+            }
+            h3 {
+                font-family: "Linux Libertine", Georgia, Times, serif;
+                font-size: 1.3em;
+                text-decoration: underline;
+                text-underline-position: under;
+                margin-bottom: 0.2em;
+                padding-top: 1em;
+            }
+            h1 a:link,
+            h1 a:visited,
+            h1 a:active,
+            h2 a:link {
+                color: var(--grey-color);
+                text-decoration: none;
+            }
+            a:link,
+            a:visited,
+            a:active {
+                text-decoration: none;
+                color: var(--main-link-color);
+            }
+            a:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            #stick {
+                float: right;
+                padding: 0 0.9em 0.4em 0.9em;
+                background-color: var(--stick-bg-color);
+                border-radius: 0 0 8px 8px;
+            }
+            small,
+            header a:link,
+            header a:visited,
+            header a:active {
+                font-size: 0.86em;
+                color: var(--grey-color);
+            }
+            footer {
+                font-size: 0.86em;
+            }
+            #totop {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                margin: 0.1em;
+                font-size: 2.8em;
+                color: var(--main-color);
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 0.5s linear;
+            }
+            #totop:hover {
+                cursor: pointer;
+                color: var(--main-color-hover);
+            }
+            #totop.active {
+                visibility: visible;
+                opacity: 1;
+            }
+            #pages div[id^="p-"] {
+                display: none;
+            }
+            #pages div[id^="p-"].active {
+                display: block;
+            }
+            .center {
+                text-align: center;
+            }
+            strong {
+                font-weight: bold;
+            }
+            abbr {
+                text-decoration: none;
+                border-bottom: 0.1em dotted;
+                cursor: help;
+            }
+            ul.disc {
+                padding-left: 2em;
+                list-style: disc outside;
+            }
+            img.licence {
+                margin-bottom: 0.5em;
+                max-width: 371px;
+                max-height: 228px;
+                transition: all 0.5s ease;
+            }
+            img.licence:hover {
+                transform: rotate(-2deg);
+            }
+            svg {
+                color: var(--grey-color);
+            }
+            svg:hover {
+                transform: rotate(360deg);
+                transition: all 3s ease-out;
+            }
+            noscript {
+                display: block;
+                margin: 2em auto;
+                padding: 1em;
+                text-align: center;
+                background: var(--main-color);
+                color: #fff;
+            }
+            @media (max-width: 600px) {
+                html,
+                body {
+                    font-size: 100%;
+                }
+                header,
+                footer {
+                    text-align: center;
+                }
+                #logo {
+                    display: block;
+                    margin-bottom: 1em;
+                }
+                nav ul {
+                    float: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="in">
+                <div id="stick"><a href="//woolyss.com/">woolyss</a></div>
+                <nav>
+                    <div id="logo">
+                        <a href="https://info.woolyss.com/"><img src="https://info.woolyss.com/info-logo.png" alt="Info logo" width="32" height="32" /></a>
+                        <h1><a href="https://info.woolyss.com/">info</a></h1>
+                    </div>
+                    <ul>
+                        <li><a id="n-about" href="#about" class="active">ABOUT</a></li>
+                        <li><a id="n-privacy" href="#privacy" class="active">PRIVACY</a></li>
+                        <li><a id="n-licence" href="#licence">LICENCE</a></li>
+                        <li><a id="n-credits" href="#credits">CREDITS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="in">
+                <div id="pages">
+                    <div id="p-about" class="active">
+                        <h2>About</h2>
+                        <h3>Site</h3>
+                        The "woolyss" word means nothing at all. Because it was unique on the web in 2007, <strong>Jerry</strong> (admin) chose this domain name. This website exists since 2007. It was hosted on another web service provider
+                        (Free ISP) until 2010.<br />
+                        <br />
+                        <h3>Administrator</h3>
+                        Hello! ;)<br />
+                        My name is <strong>Jerry</strong>. As a non-professional developer, I write code in my spare time. In general, I develop all "handly" (without using of <abbr title="Content Management System">CMS</abbr> and
+                        framework). I speak English and French. <span id="OI10l">Please, follow the stars in the sky to contact me! ^^</span><br />
+                        <br />
+                        Do not contact me to ask for any form of advertising or partnership. I am not interested and will not answer you.<br />
+                        <br />
+                        <div class="center">
+                            <svg version="1.1" width="320" height="320" viewBox="0 0 320 320" fill="none" stroke="#ddd" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <path id="r1" d="">
+                                        <animate id="p1" attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" />
+                                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin" />
+                                    </path>
+                                    <path id="r2" d="">
+                                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+1s" />
+                                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+1s" />
+                                    </path>
+                                    <path id="r3" d="">
+                                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+2s" />
+                                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+2s" />
+                                    </path>
+                                    <path id="r4" d="">
+                                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+3s" />
+                                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+3s" />
+                                    </path>
+                                    <path id="r5" d="">
+                                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+4s" />
+                                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+4s" />
+                                    </path>
+                                    <path id="r6" d="">
+                                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+5s" />
+                                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+5s" />
+                                    </path>
+                                </defs>
+                                <use xlink:href="#r1" />
+                                <use xlink:href="#r1" transform="rotate(60 160 160)" />
+                                <use xlink:href="#r1" transform="rotate(120 160 160)" />
+                                <use xlink:href="#r1" transform="rotate(180 160 160)" />
+                                <use xlink:href="#r1" transform="rotate(240 160 160)" />
+                                <use xlink:href="#r1" transform="rotate(300 160 160)" />
+                                <use xlink:href="#r2" transform="rotate(30 160 160)" />
+                                <use xlink:href="#r2" transform="rotate(90 160 160)" />
+                                <use xlink:href="#r2" transform="rotate(150 160 160)" />
+                                <use xlink:href="#r2" transform="rotate(210 160 160)" />
+                                <use xlink:href="#r2" transform="rotate(270 160 160)" />
+                                <use xlink:href="#r2" transform="rotate(330 160 160)" />
+                                <use xlink:href="#r3" />
+                                <use xlink:href="#r3" transform="rotate(60 160 160)" />
+                                <use xlink:href="#r3" transform="rotate(120 160 160)" />
+                                <use xlink:href="#r3" transform="rotate(180 160 160)" />
+                                <use xlink:href="#r3" transform="rotate(240 160 160)" />
+                                <use xlink:href="#r3" transform="rotate(300 160 160)" />
+                                <use xlink:href="#r4" transform="rotate(30 160 160)" />
+                                <use xlink:href="#r4" transform="rotate(90 160 160)" />
+                                <use xlink:href="#r4" transform="rotate(150 160 160)" />
+                                <use xlink:href="#r4" transform="rotate(210 160 160)" />
+                                <use xlink:href="#r4" transform="rotate(270 160 160)" />
+                                <use xlink:href="#r4" transform="rotate(330 160 160)" />
+                                <use xlink:href="#r5" />
+                                <use xlink:href="#r5" transform="rotate(60 160 160)" />
+                                <use xlink:href="#r5" transform="rotate(120 160 160)" />
+                                <use xlink:href="#r5" transform="rotate(180 160 160)" />
+                                <use xlink:href="#r5" transform="rotate(240 160 160)" />
+                                <use xlink:href="#r5" transform="rotate(300 160 160)" />
+                                <use xlink:href="#r6" transform="rotate(30 160 160)" />
+                                <use xlink:href="#r6" transform="rotate(90 160 160)" />
+                                <use xlink:href="#r6" transform="rotate(150 160 160)" />
+                                <use xlink:href="#r6" transform="rotate(210 160 160)" />
+                                <use xlink:href="#r6" transform="rotate(270 160 160)" />
+                                <use xlink:href="#r6" transform="rotate(330 160 160)" />
+                            </svg>
+                            <br />
+                            <a href="https://woolyss.com/">→ home</a>
+                        </div>
+                    </div>
+                    <div id="p-privacy">
+                        <h2>Privacy Policy</h2>
+                        Your privacy is very important to me, I treat it like I would like mine to be treated. This privacy policy document explains when and how personal information may be collected. In any case, only non-personally
+                        identifiable information is collected, and I never sell, share, trade, or otherwise transfer personal information to third parties.<br />
+                        <br />
+                        In few words, this website and its sub-domains use:
+                        <ul class="disc">
+                            <li>no advertisement and sponsored content</li>
+                            <li>no <abbr title="Google Analytics, Fathom, Simple Analytics, WebTrends, Matomo...">web analytics</abbr></li>
+                            <li>no pop-up window</li>
+                            <li>no <abbr title="browser fingerprint, one-pixel image, web storage, ETag...">tracking tool</abbr></li>
+                            <li>no <abbr title="promotional software included">bundled software</abbr></li>
+                            <li>no malicious redirection and shortened URL</li>
+                            <li>no <abbr title="cookie, widget, JS script, font, image">third-party resource</abbr></li>
+                            <li>no registration required</li>
+                            <li>no HTML frame</li>
+                            <li>no <abbr title="A tool to determine whether or not the user is human">CAPTCHA</abbr></li>
+                            <li>no Push notification</li>
+                        </ul>
+                        <h3>Server logs</h3>
+                        In accordance with the European Union (EU) law, only <a href="https://en.wikipedia.org/wiki/Server_log">server logs</a> are created and stored (like each Web server in the world does) during maximum 1 year by my Web
+                        service provider •
+                        <a href="https://fr.wikipedia.org/wiki/Loi_pour_la_confiance_dans_l%27%C3%A9conomie_num%C3%A9rique">[<abbr title="French">FR</abbr>] <abbr title="Law for confidence in the digital economy">LCEN</abbr></a>).
+                        <h3>GDPR</h3>
+                        This website is <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation"><abbr title="General Data Protection Regulation">GDPR</abbr></a> and
+                        <a href="https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act"><abbr title="California Consumer Privacy Act">CCPA</abbr></a> compliant.<br />
+                        <h3>Cookies</h3>
+                        Only <a href="https://en.wikipedia.org/wiki/HTTP_cookie#Session_cookie">session cookies</a> are used by the comment system to store temporary non-personally identifiable information directly in your browser when you
+                        write a comment on the website.
+                        <h3>Comment system</h3>
+                        <ul class="disc">
+                            <li>Your personal user data are neither stored nor shared. Obviously, your username and comment are saved forever. No user profile is created.</li>
+                            <li>Your email address will be removed after 1 week if no exchange. Otherwise, it is only kept in my internal messaging service.</li>
+                            <li>Your comment will be automatically approved but not editable.</li>
+                            <li>Your avatar will be automatically created by an internal process (no third-party service).</li>
+                        </ul>
+                        <h3>Browser extensions</h3>
+                        My browser extensions do not collect personal information, do not collect your browsing history, and do not track your browsing activity. They do not collect data of any sort, and they do not inject ads.
+                        <h3>Changes</h3>
+                        I may update this privacy policy from time to time in order to reflect, for example, changes to my practices or for other operational, legal or regulatory reasons.
+                    </div>
+                    <div id="p-licence">
+                        <h2>Licence</h2>
+                        Except as otherwise noted, the content of <strong>woolyss.com</strong> and its sub-somains is licensed under the free <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA</a> license.
+                        <br />
+                        <br />
+                        <br />
+                        <div class="center">
+                            <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license"><img class="licence" src="i/licence.png" alt="Creative Commons Attribution-NonCommercial logo" /></a><br />
+                            <small>Creative Commons Attribution-ShareAlike</small>
+                        </div>
+                        <br />
+                        You are free to:
+                        <ul class="disc">
+                            <li><b>Share</b> - copy and redistribute the material in any medium or format</li>
+                            <li><b>Adapt</b> - remix, transform, and build upon the material for any purpose, even commercially.</li>
+                        </ul>
+                        <br />
+                        The licensor cannot revoke these freedoms as long as you follow the license terms.<br />
+                        <br />
+                        Under the following terms:
+                        <ul class="disc">
+                            <li>
+                                <b>Attribution</b> - You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor
+                                endorses you or your use.
+                            </li>
+                            <li><b>ShareAlike</b> - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li>
+                            <li><b>No additional restrictions</b> - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li>
+                        </ul>
+                        <br />
+                        Notices:
+                        <ul class="disc">
+                            <li>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.</li>
+                            <li>
+                                No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the
+                                material.
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <div id="p-credits">
+                        <h2>Credits</h2>
+                        All website themes on Woolyss are created by <a href="#about">Jerry</a>.<br />
+                        Also, the main Woolyss logo is created by <a href="#about">Jerry</a>.<br />
+                        <br />
+                        This site uses only free and open-source resources.<br />
+                        <small>(Note the images are modified by Jerry to respect the color theme of the site)</small><br />
+                        <ul class="disc">
+                            <li>SVG animated: <a href="https://twitter.com/mileselam">Miles Elam</a></li>
+                            <li>Licence logo: <a href="https://en.wikipedia.org/wiki/Creative_Commons">Creative Commons</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <noscript>Javascript must be enabled.</noscript>
+            </div>
+        </main>
+        <footer>
+            <div class="in"><a href="https://woolyss.com/">Woolyss</a> • 2007-2022 • <a href="https://info.woolyss.com/" rel="nofollow">Contact</a> • <a href="https://info.woolyss.com/#privacy" rel="nofollow">Privacy</a></div>
+        </footer>
+        <div id="totop" title="Back to top">▲</div>
+        <script>
+            window.onload = function () {
+                function switchPage() {
+                    var a = window.location.hash.replace("#", "");
+                    "top" !== a && (document.getElementById("p-" + a) ? showPage(a) : showPage("about"));
+                }
+                function showPage(a) {
+                    document.querySelectorAll('nav a[id^="n-"],div[id^="p-"]').forEach(function (a) {
+                        a.classList.remove("active");
+                    });
+                    document.getElementById("n-" + a).className = "active";
+                    document.getElementById("p-" + a).className = "active";
+                }
+                function $(a) {
+                    return atob(a.split("").reverse().join(""));
+                }
+                document.getElementById("OI10l").innerHTML = $(atob("PT1nUGg5Q1B0OTJZdU0zYzV4MmJ2ZEhRNUpuY2xwbVBpMDJiajV5Y3psSGJ2OTJkQWxuY3lWbWE2OEdkc2xXWXRKU1BtVm1jb0JTWThBQ2RoQlNadEJDZGpGR2R1OTJR"));
+                function scrollBody() {
+                    20 < document.body.scrollTop || 20 < document.documentElement.scrollTop ? (totop.className = "active") : totop.classList.remove("active");
+                }
+                function toTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+                switchPage();
+                window.addEventListener && (window.addEventListener("hashchange", switchPage, !1), window.addEventListener("scroll", scrollBody, !1));
+                if (window.addEventListener) {
+                    var totop = document.getElementById("totop");
+                    totop.addEventListener("click", toTop, !1);
+                }
+            };
+        </script>
+    </body>
+</html>
