@@ -148,6 +148,9 @@ div.gallery img {
 img.spin {
   transition: all .6s;
 }
+div.spin {
+  transition: all .6s;
+}
 /* Image effects */
 img.invert:hover {
   animation: invert 4.0s;
@@ -163,6 +166,9 @@ img.coc {
 }
 img.shadow {
   filter: drop-shadow(1px 1px 2px var(--imgshadow));
+}
+div.shadow {
+  filter: drop-shadow(1px 1px 2px var(--invert));
 }
 img.shadow2 {
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
