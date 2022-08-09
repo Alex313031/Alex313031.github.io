@@ -300,6 +300,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 5px;
   float: bottom;
+  background-color: #888888;
+  color: #ffffff;
 }
 .checkbox {
   font-family : inherit;

@@ -3,6 +3,7 @@
 /* Set colours */
 :root.light {
   --bgcolor: #ffffff;
+  --invert: #000000;
   --fontcolor: #000000;
   --linkcolor: #0000ee;
   --visitedcolor: #551a8b;
@@ -21,6 +22,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bgcolor: #24292f;
+    --invert: #ffffff;
     --fontcolor: #ffffff;
     --linkcolor: #ae5ee0;
     --visitedcolor: #5bf5bf;
@@ -39,6 +41,7 @@
 }
 :root.dark {
   --bgcolor: #24292f;
+  --invert: #ffffff;
   --fontcolor: #ffffff;
   --linkcolor: #ae5ee0;
   --visitedcolor: #5bf5bf;
@@ -433,6 +436,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 5px;
   float: bottom;
+  background-color: #888888;
+  color: #ffffff;
 }
 .checkbox {
   font-family: inherit;

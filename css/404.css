@@ -91,4 +91,6 @@ button {
   font-family: inherit;
   border: 1px solid var(--border);
   float: bottom;
+  background-color: #888888;
+  color: #ffffff;
 }*
