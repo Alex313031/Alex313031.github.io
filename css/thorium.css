@@ -148,7 +148,7 @@ div.gallery img {
 img.spin {
   transition: all .6s;
 }
-div.spin {
+svg.spin {
   transition: all .6s;
 }
 /* Image effects */
@@ -167,7 +167,7 @@ img.coc {
 img.shadow {
   filter: drop-shadow(1px 1px 2px var(--imgshadow));
 }
-div.shadow {
+svg.shadow {
   filter: drop-shadow(1px 1px 2px var(--invert));
 }
 img.shadow2 {
@@ -200,6 +200,9 @@ img.crbook {
   margin-top: 12px;
 }
 img.fav {
+  margin-bottom: -3px;
+}
+svg.fav {
   margin-bottom: -3px;
 }
 img.fav2 {
