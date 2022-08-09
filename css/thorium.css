@@ -179,7 +179,7 @@ img.thoros {
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 .thoros:hover {
-  animation: jig 0.5s;
+  animation: jig 1.0s;
   animation-iteration-count: infinite;
 }
 img.fly {
@@ -204,7 +204,7 @@ img.fav3 {
   animation-iteration-count: infinite;
 }
 .thor90:hover {
-  animation: jig 0.2s;
+  animation: jig 0.4s;
   animation-iteration-count: infinite;
 }
 img.bubbles:hover {
@@ -264,10 +264,15 @@ img.bubbles2:hover {
 }
 @keyframes jig {
   0% { transform: rotate(0deg); }
-  20% { transform: rotate(-1deg); }
-  40% { transform: rotate(-2deg); }
-  60% { transform: rotate(1deg); }
-  80% { transform: rotate(2deg); }
+  10% { transform: rotate(-0.5deg); }
+  20% { transform: rotate(-1.0deg); }
+  30% { transform: rotate(-1.5deg); }
+  40% { transform: rotate(-2.0deg); }
+  50% { transform: rotate(0deg); }
+  60% { transform: rotate(0.5deg); }
+  70% { transform: rotate(1.0deg); }
+  80% { transform: rotate(1.5deg); }
+  90% { transform: rotate(2.0deg); }
   100% { transform: rotate(0deg); }
 }
 @keyframes fly {
