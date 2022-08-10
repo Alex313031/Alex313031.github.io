@@ -16,4 +16,4 @@ Note that Tantalum includes several third-party libraries in the `src/thirdparty
 
 ## Compilation ##
 
-The only thing that needs to be compiled are the shaders, contained in the `shaders` subfolder. The `compile_shaders.py` script will turn those text files into a list of strings in a JS file (needs Python 3).
+The only thing that needs to be compiled are the shaders, contained in the `shaders` subfolder. The `compile-shaders.py` script will turn those text files into a list of strings in a JS file (needs Python 3).
