@@ -8,7 +8,7 @@ var MarpiDemoUI = MarpiDemoUI || function () {
             //document.getElementById("demoNav").className = "demoNav"
         }, 2500)
     }
-    var n, a, o = "https://demo.marpi.pl/",
+    var n, a, o = "./",
             i = void 0,
             s = [],
             m = void 0,
@@ -19,7 +19,7 @@ var MarpiDemoUI = MarpiDemoUI || function () {
         e() ? (document.getElementsByTagName("html")[0].setAttribute("class", "is-touch"), n = !0) : (document.getElementsByTagName("html")[0].setAttribute("class", "is-no-touch"), n = !1)
     }();
     var r = document.createElement("link");
-    r.href = o + "_/styles/demo-ui.css", r.type = "text/css", r.rel = "stylesheet", document.getElementsByTagName("head")[0].appendChild(r);
+    r.href = o + "styles/demo-ui.css", r.type = "text/css", r.rel = "stylesheet", document.getElementsByTagName("head")[0].appendChild(r);
     var u = function (e) {
         var t = new XMLHttpRequest;
         t.onreadystatechange = function () {
@@ -40,13 +40,13 @@ var MarpiDemoUI = MarpiDemoUI || function () {
                 if (false && s[m].noSocial != true) {
                     var p = [];
                     p[0] = {
-                        imageURL: "_/images/ui/icon-twitter.svg",
+                        imageURL: "../images/ui/icon-twitter.svg",
                         link: "https://twitter.com/marpi_"
                     }, p[1] = {
-                        imageURL: "_/images/ui/icon-instagram.svg",
+                        imageURL: "../images/ui/icon-instagram.svg",
                         link: "https://instagram.com/marpi_/"
                     }, p[2] = {
-                        imageURL: "_/images/ui/icon-facebook.svg",
+                        imageURL: "../images/ui/icon-facebook.svg",
                         link: "https://facebook.com/marpi.studio/"
                     };
                     var g = function (e, t) {
@@ -63,7 +63,7 @@ var MarpiDemoUI = MarpiDemoUI || function () {
                         })
                     })
                 }
-                e && (r = '<div class="demoNav__extended">\n<div class="demoNav__demoIndex">\n<a href="http://marpi.pl/" class="demoNav__demoIndexLink">Marpi</a> / <a href="' + o + '" class="demoNav__demoIndexLink">Artwork</a>\n</div>\n<div class="demoNav__demoTitle" id="demo-title">\n' + s[m].title + '</div>\n<div class="demoNav__buttons">\n<a href="' + s[c].url + '" class="demoNav__button" data-title="' + s[c].title + '">\n<span class="demoNav__buttonIcon demoNav__buttonIcon--prev"></span>\n</a>\n<a href="' + s[d].url + '" class="demoNav__button" data-title="' + s[d].title + '">\n<span class="demoNav__buttonIcon demoNav__buttonIcon--next"></span>\n</a>\n</div>\n</div>\n'), i.innerHTML = '<div class="demoNav is-hover" id="demoNav">\n<a href="' + o + '" class="demoNav__logo">\n<span class="logoMarpi"></span>\n</a>\n' + r + "</div>\n", document.body.appendChild(i);
+                e && (r = '<div class="demoNav__extended">\n<div class="demoNav__demoIndex">\n<a href="https://marpi.pl/" class="demoNav__demoIndexLink">Marpi</a> / <a href="' + o + '" class="demoNav__demoIndexLink">Artwork</a>\n</div>\n<div class="demoNav__demoTitle" id="demo-title">\n' + s[m].title + '</div>\n<div class="demoNav__buttons">\n<a href="' + s[c].url + '" class="demoNav__button" data-title="' + s[c].title + '">\n<span class="demoNav__buttonIcon demoNav__buttonIcon--prev"></span>\n</a>\n<a href="' + s[d].url + '" class="demoNav__button" data-title="' + s[d].title + '">\n<span class="demoNav__buttonIcon demoNav__buttonIcon--next"></span>\n</a>\n</div>\n</div>\n'), i.innerHTML = '<div class="demoNav is-hover" id="demoNav">\n<a href="https://marpi.pl/" class="demoNav__logo">\n<span class="logoMarpi"></span>\n</a>\n' + "</div>\n", document.body.appendChild(i);
                 var u = document.getElementsByClassName("demoNav__button");
                 if (!n) {
                     document.getElementById("demoNav").addEventListener("mouseout", function () {
@@ -86,7 +86,7 @@ var MarpiDemoUI = MarpiDemoUI || function () {
             };
     return {
         init: function (e) {
-            i = e, u("https://demo.marpi.pl/_/content.json")
+            i = e, u("content.json")
         }
     }
 }();

@@ -44,7 +44,6 @@
             </div>
         </div>
         <div style="position:absolute;right:5px;bottom:10px;z-index:100000000;">Visuals: <a class="credit" href="https://marpi.pl" target="_blank">Marpi</a> Audio: <a class="credit" href="https://twitter.com/gloom303" target="_blank">@gloom303</a>
-            <a href="#" class="btn btn-default" data-toggle="tooltip" title="Music" onclick="aud_play_pause()"><i id="stateicon" class="fa fa-volume-up"></i></a>
         </div>
         <a style="position:absolute;right:10px;top:10px;" href="#" id="b1" class="btn btn-default" data-toggle="tooltip" title="Fullscreen" onclick="fullscreen(event)"><i id="stateicon" class="fa fa-arrows-alt"></i></a>
 
@@ -103,6 +102,16 @@
         <script src="./js/ControlsHandler.js"></script>
         <script src="./js/FXHandler.js"></script>
         <script src="./js/VizHandler.js"></script>
+
+		<a href="#" style="position:absolute;left:10px;bottom:10px;z-index:100000000;" class="btn btn-default" data-toggle="tooltip" title="Mute/Unmute" onclick="aud_play_pause()"><i id="stateicon" class="fa fa-volume-up"></i></a>
+		<div id="viz"></div>
+        <div id="controls">
+            <div id="settings"></div>
+        </div>
+        <div id="wrap">
+            <div id="container">
+            </div>
+        </div>
 
         <script>
 			if (isMobile.any) {
