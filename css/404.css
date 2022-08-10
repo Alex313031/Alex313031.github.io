@@ -75,6 +75,7 @@ a:active {
 /* Set image styles */
 img.ohno {
   border: 1px solid var(--imgborder);
+  border-radius: 2px;
   margin-bottom: 2px;
 }
 img.shadow {
@@ -90,6 +91,7 @@ img.spin {
 button {
   font-family: inherit;
   border: 1px solid var(--border);
+  border-radius: 2px;
   float: bottom;
   background-color: #888888;
   color: #ffffff;
