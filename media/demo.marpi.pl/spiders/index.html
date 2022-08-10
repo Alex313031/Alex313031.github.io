@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>Spiders</title>
+
+        <meta name="author"              content="Marpi">
+        <meta name="description"         content="Low Poly WebGL+WebVR Spiders Study">
+        <meta property="og:title"        content="Spider">
+        <meta property="og:description"  content="Low Poly WebGL+WebVR Spiders Study">
+        <meta property="og:url"          content="https://demo.marpi.pl/spiders/">
+        <meta property="og:site_name"    content="Spiders">
+        <meta property="og:type"         content="website">
+        <meta name="twitter:card"        content="summary_large_image">
+        <meta name="twitter:url"         content="https://demo.marpi.pl/spiders/">
+        <meta name="twitter:title"       content="Spiders">
+        <meta property="og:image"        content="og_image.jpg">
+        <meta name="twitter:image"       content="og_image.jpg">
+        
+        <meta name="description" content="Low Poly WebGL+WebVR Spiders Study">
+		<meta name="color-scheme" content="light dark">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta itemprop="image" content="og_image.jpg">
+		
+        <link href="./css/style.css" rel="stylesheet" type="text/css">
+        <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <style>
+            body{
+                background-color: #FFF;
+            }
+
+            a{
+                color: #000;
+            }
+
+            #preloader_background{
+                background-color: #dddddd;
+            }
+        </style>
+    </head>	
+
+    <body>
+        <script src="scripts/demo-ui.js"></script>
+        <script type="text/javascript">
+            MarpiDemoUI.init( "spiders" );
+        </script>
+
+        <div id="preloader">
+            <div id="preloader_background">
+                <div id="progress"></div>
+            </div>
+        </div>
+        <audio loop id="myTune">
+            <source src="System.mp3" type="audio/mpeg">
+        </audio>
+
+        <a href="#" style="position:absolute;left:10px;bottom:10px;z-index:100000000;" class="btn btn-default" data-toggle="tooltip" title="Music" onclick="aud_play_pause()"><i id="stateicon" class="fa fa-volume-up"></i></a>
+        <a href="#" style="position:absolute;right:10px;bottom:10px;z-index:100000000;" class="btn btn-default" data-toggle="tooltip" title="Fullscreen" onclick="fullscreen()"><i id="stateicon" class="fa fa-arrows-alt"></i></a>
+        <a href="https://demo.marpi.pl/spiders/" style="position:absolute;right:30px;bottom:10px;z-index:100000000;" class="btn btn-default" data-toggle="tooltip" title="Info"><i id="stateicon" class="fa fa-info"></i></a>
+
+        <div id="viz"></div>
+        <div id="controls">
+            <div id="settings"></div>
+        </div>
+        <div id="wrap">
+            <div id="container">
+            </div>
+        </div>
+        
+        <script>
+            var preloaderProgressValue = 0.15;
+            var preloaderProgressAnimValue = 0;
+            function preloaderProgress(perc) {
+                if (perc > preloaderProgressValue)
+                    preloaderProgressValue = perc;
+            }
+            function draw() {
+                preloaderProgressAnimValue -= (preloaderProgressAnimValue - preloaderProgressValue) / 5;
+                document.getElementById("progress").style.width = 100 * preloaderProgressAnimValue + "px";
+                document.getElementById("progress").style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+
+                if (preloaderProgressAnimValue < .98) {
+                    requestAnimationFrame(draw);
+                } else {
+                    document.getElementsByTagName("canvas")[0].style.display = "block";
+                    document.getElementById("preloader").style.display = "none";
+                }
+            }
+            draw();
+        </script>
+
+        <script src="./js/lib/minivents.min.js"></script>
+        <script src="./js/lib/jquery-2.1.3.js"></script>
+        <script src="./js/lib/Detector.js"></script>
+        <script src="./js/lib/three.min.js"></script>
+        <script src="./js/lib/stats.min.js"></script>
+        <script src="./js/lib/dat.gui.min.js"></script>
+        <script src="./js/lib/SimplexNoise.js"></script>
+        <script src="./js/lib/atutil.js"></script>
+        <script src="./js/lib/TweenMax.min.js"></script>
+        
+        <script src="./js/lib/postprocessing/EffectComposer.js"></script>
+        <script src="./js/lib/postprocessing/RenderPass.js"></script>
+        <script src="./js/lib/postprocessing/ShaderPass.js"></script>
+        <script src="./js/lib/postprocessing/MaskPass.js"></script> 
+        <script src="./js/lib/controls/OrbitControls.js"></script>
+        <script src="./js/lib/controls/DeviceOrientationControls.js"></script>
+
+        <script src="./js/lib/WebVR.js"></script>
+        <script src="./js/lib/effects/VREffect.js"></script>
+        <script src="./js/lib/controls/VRControls.js"></script>
+        <script src="./js/lib/ViveController.js"></script>
+        
+        <script src="./js/lib/isMobile.min.js"></script>
+        <script src="./js/lib/bas.js"></script>
+
+        <script src="./js/lib/shaders/SMAAShader.js"></script>
+        <script src="./js/lib/loaders/OBJLoader.js"></script>
+
+        <script src="./js/lib/shaders/CopyShader.js"></script>
+        <script src="./js/lib/shaders/TiltShiftShader.js"></script>
+        <script src="./js/lib/shaders/HorizontalBlurShader.js"></script>
+        <script src="./js/lib/shaders/VerticalBlurShader.js"></script>
+        <script src="./js/lib/shaders/RGBShiftShader2.js"></script>
+        <script src="./js/lib/shaders/SSAOShader.js"></script>
+        <script src="./js/lib/postprocessing/SMAAPass.js"></script>
+        <script src="./js/lib/postprocessing/ManualMSAARenderPass.js"></script>
+
+        <script src="./js/viz/Tools.js"></script>
+        <script src="./js/viz/BG.js"></script>
+        <script src="./js/viz/Mecha.js"></script>
+        <script src="./js/viz/Shards.js"></script>
+        <script src="./js/viz/Assets.js"></script>
+
+        <script src="./js/Main.js"></script>
+        <script src="./js/AudioHandler.js"></script>
+        <script src="./js/ControlsHandler.js"></script>
+        <script src="./js/FXHandler.js"></script>
+        <script src="./js/VizHandler.js"></script>
+
+        <script>
+            if (isMobile.any) {
+                $('a').hide()
+            }
+            $(document).ready(function () {
+                var muted = false
+                //console.log(localStorage)
+                if (localStorage.muted == "true") {
+                    muted = true;
+                    $('#stateicon').removeClass('fa-volume-up');
+                    $('#stateicon').addClass('fa-volume-off');
+                }
+                if (!muted)
+                    setTimeout(play, 1000)
+            })
+            function aud_play_pause() {
+                var myAudio = document.getElementById("myTune");
+                if (myAudio.paused) {
+                    $('#stateicon').removeClass('fa-volume-off');
+                    $('#stateicon').addClass('fa-volume-up');
+                    myAudio.play();
+                    localStorage.setItem('muted', false);
+                } else {
+                    $('#stateicon').removeClass('fa-volume-up');
+                    $('#stateicon').addClass('fa-volume-off');
+                    myAudio.pause();
+                    localStorage.setItem('muted', true);
+                }
+            }
+            function play() {
+                var myAudio = document.getElementById("myTune");
+                myAudio.play()
+            }
+            function fullscreen() {
+                if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+                        (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                    if (document.documentElement.requestFullScreen) {
+                        document.documentElement.requestFullScreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullScreen) {
+                        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.cancelFullScreen) {
+                        document.cancelFullScreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitCancelFullScreen) {
+                        document.webkitCancelFullScreen();
+                    }
+                }
+            }
+        </script>
+
+    </body>
+</html>

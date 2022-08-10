@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tantalum - 2D Light Transport</title>
+
+    <link rel="stylesheet" href="ui.css">
+    
+    <script type="text/javascript" src="src/thirdparty/canvasToBlob/canvasToBlob.js"></script>
+    <script type="text/javascript" src="src/thirdparty/FileSaver/FileSaver.js"></script>
+    <script type="text/javascript" src="src/spectrum.js"></script>
+    <script type="text/javascript" src="src/gasspectra.js"></script>
+    <script type="text/javascript" src="src/tantalum.js"></script>
+    <script type="text/javascript" src="src/tantalum-shaders.js"></script>
+    <script type="text/javascript" src="src/tantalum-core.js"></script>
+    <script type="text/javascript" src="src/tantalum-ui.js"></script>
+    <script type="text/javascript" src="src/tantalum-gl.js"></script>
+</head>
+
+<body onload="new Tantalum();">
+    <div class="tantalum-render" id="content">
+        <canvas id="render-canvas" width="820" height="461"></canvas>
+        <div id="render-overlay" class="render-loading">Loading...</div>
+    </div>
+    <div class="tantalum-controls" id="controls" style="visibility: hidden">
+        <div id="render-progress"></div>
+        <p class="progress-label" id="render-progress-label"></p>
+        <div class="control-row clearfix">
+            <div class="col-3-12 col-left col-padding">
+                <h3 class="control-title">Download</h3>
+                <div class="button stretch-button active" id="save-button">Download as PNG</div>
+            </div>
+            <div class="col-8-12 col-left col-padding">
+                <h3 class="control-title">Resolution</h3>
+                <div id="resolution-selector"></div>
+            </div>
+        </div>
+        <div class="control-row clearfix">
+            <div class="col-3-12 col-left col-padding">
+                <h3 class="control-title">Scene</h3>
+                <div id="scene-selector"></div>
+            </div>
+            <div class="col-6-12 col-left col-padding">
+                <h3 class="control-title">Emission Spectrum</h3>
+                <div class="center-tight">
+                    <div id="emission-selector"></div>
+                    <canvas id="spectrum-canvas" style="border: none;" width="425" height="256"></canvas>
+                    <div id="emission-temperature"></div>
+                    <div id="gas-selection"></div>
+                </div>
+            </div>
+            <div class="col-2-12 col-left">
+                <h3 class="control-title">Spread</h3>
+                <div id="spread-selector"></div>
+            </div>
+        </div>
+        <div class="control-row clearfix">
+            <div class="col-3-12 col-left col-padding">
+                <h3 class="control-title">Light Path Length</h3>
+                <div id="path-length"></div>
+            </div>
+            <div class="col-8-12 col-left col-padding">
+                <h3 class="control-title">Sample Count</h3>
+                <div id="sample-count"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
