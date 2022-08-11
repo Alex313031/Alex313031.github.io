@@ -1,0 +1,41 @@
+html {
+  font-family: Monospace;
+  background-color: #000;
+  color: #fff;
+}
+
+body {
+  font-family: Monospace;
+  background-color: #000;
+  color: #fff;
+  margin: 0px;
+  overflow: hidden;
+}
+
+#info {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+#info a, .button {
+  color: #f00f00;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.select {
+  font-family: inherit;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 3px;
+}
+
+canvas {
+  background-color: #fff;
+}
