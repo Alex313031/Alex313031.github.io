@@ -9,7 +9,7 @@
 		
 		<title>"Littlest Tokyo" - Three.js Demo</title>
 		<link rel="author" href="../../humans.txt">
-		<meta name="description" content="Models of asteroids derived from radar and/or light curves, rendered in Three.js.">
+		<meta name="description" content="Three.js Example, made from Littlest Tokyo GLTF model.">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<meta itemprop="image" content="thumb.jpg">
 		
@@ -77,7 +77,7 @@
 			const controls = new OrbitControls( camera, renderer.domElement );
 			controls.target.set( 0, 0.5, 0 );
 			controls.update();
-			controls.enablePan = false;
+			controls.enablePan = true;
 			controls.enableDamping = true;
 
 			const dracoLoader = new DRACOLoader();
