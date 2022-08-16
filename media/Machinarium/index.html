@@ -20,6 +20,16 @@
 	<body>
 
 		<div id="container"></div>
+		
+		<script src="Tone/Tone.min.js"></script>
+  <script>	
+	var player = new Tone.Player("media/Main_Street.mp3").toMaster();
+	// play as soon as the buffer is loaded
+	player.autostart = true;
+	player.loop = true;
+	player.volume.value = -1;
+	player.start();
+  </script>
 
 		<div id="info">
 			<a href="https://threejs.org" target="_blank" rel="noopener">Three.js</a> Demo - "Machinarium"<br/>
