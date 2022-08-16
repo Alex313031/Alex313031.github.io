@@ -1871,7 +1871,7 @@ var Sketch = function Sketch(options) {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   }
-  renderer.setClearColor(0x333333, 0.1);
+  renderer.setClearColor(0x999999, 0.1);
 
   var clock = new THREE.Clock();
 

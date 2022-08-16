@@ -30,6 +30,7 @@ Modified by Alex313031
   <script src="js/main.js"></script>
   <link rel="stylesheet" href="water.css">
 </head><body>
+  <div style="font-family: 'Roboto'; position: absolute; top: 12; left: 12; z-index: 100;">&nbsp;Average FPS: <span style="color: #13fcfc; font-family: 'Roboto';" id="fps"></span></div>
   <div id="loading">Loading...</div>
   <div id="help">
     <h1>WebGL Water</h1>
@@ -54,7 +55,7 @@ Modified by Alex313031
       <li>Caustics (see <a href="https://medium.com/@evanwallace/rendering-realtime-caustics-in-webgl-2a99a29a0b2c">this</a> for details) **</li>
     </ul>
     <p><small><em>* requires the OES_texture_float extension</em><br><em>** requires the OES_standard_derivatives extension</em></small></p>
-    <p><small>Tile texture from <a href="http://www.flickr.com/photos/zooboing/3682834083/">zooboing</a> on Flickr.</small></p>
+    <p><small>Tile texture from <a class="small" href="http://www.flickr.com/photos/zooboing/3682834083/">zooboing</a> on Flickr.</small></p>
   </div>
   <img id="tiles" src="tiles.jpg">
   <img id="xneg" src="xneg.jpg">
@@ -62,4 +63,6 @@ Modified by Alex313031
   <img id="ypos" src="ypos.jpg">
   <img id="zneg" src="zneg.jpg">
   <img id="zpos" src="zpos.jpg">
-</body></html>
+  <script src="js/webgl-stats.js"></script>
+</body>
+</html>

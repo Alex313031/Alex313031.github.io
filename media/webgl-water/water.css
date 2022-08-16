@@ -1,7 +1,3 @@
-body { font: 13px/140% Roboto, sans-serif; font-family: "Roboto"; background: black; color: white; overflow: hidden; }
-
-html * { font: 13px/140% Roboto; font-family: "Roboto"; }
-
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -16,6 +12,10 @@ html * { font: 13px/140% Roboto; font-family: "Roboto"; }
        url('../../fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 
+body { font: 13px/140% Roboto, sans-serif; font-family: "Roboto"; background: black; color: white; overflow: hidden; }
+
+html * { font: 13px/140% Roboto; font-family: "Roboto"; }
+
 a { color: inherit; cursor: pointer; }
 
 img { display: none; }
@@ -24,9 +24,10 @@ ul { padding: 0 0 0 20px; }
 
 h1 { font: bold italic 30px/30px Georgia; text-align: left; }
     
-h2 { font: bold italic 17px/17px Roboto; padding-top: 8px; }
+h2 { font: bold italic 17px/17px Roboto, sans-serif; font-family: "Roboto"; padding-top: 8px; }
     
 small { display: block; font-size: 11px; line-height: 15px; }
+.small { font-size: 11px; }
     
 canvas { position: absolute; top: 0; left: 0; }
     

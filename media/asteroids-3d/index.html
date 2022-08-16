@@ -15,6 +15,7 @@
   </head>
 
   <body>
+	  <div style="font-family: 'Monospace'; color: #fff; font-size: 12px; position: absolute; top: 12px; left: 12px; z-index: 100;">Average FPS: <span style="color: #13fcfc; font-family: 'Monospace'; font-size: 12px;" id="fps"></span></div>
     <div id="info" style="display: none;">
       <u>Asteroid Model Viewer</u>
       <select title="Select Asteroid" class="select" id="asteroid"></select>
@@ -31,6 +32,7 @@
 
     <script src="list.js"></script>
     <script src="main.js"></script>
+    <script src="js/webgl-stats.js"></script>
 
 <!-- start Mixpanel  <script type="text/javascript">(function(d,c){var a,b,g,e;a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src='js/mixpanel.2.js';b=d.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b);c._i=[];c.init=function(a,d,f){var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";g="disable track track_pageview track_links track_forms register register_once unregister identify name_tag set_config".split(" ");
   for(e=0;e<g.length;e++)(function(a){b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}})(g[e]);c._i.push([a,d,f])};window.mixpanel=c})(document,[]);
