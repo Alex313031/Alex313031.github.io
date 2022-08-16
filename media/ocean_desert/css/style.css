@@ -1,0 +1,78 @@
+body {
+    background-color: #fff;
+    margin: 0;
+    color: #fff;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Fabrik, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding:0;
+    height:100%;
+    overflow:hidden;
+    font-size:13px;
+}
+
+* {  -webkit-backface-visibility:  hidden;
+     -webkit-tap-highlight-color:  transparent;
+}
+
+canvas {
+    display: none;
+}
+
+#preloader{
+    z-index:200;
+    width: 100px;
+    height: 40px;
+    left:50%;
+    top:50%;
+    margin-left: -50px;
+    margin-top: -20px;
+    position:absolute;
+}
+
+#preloader_background{
+    background-color: #EEE;
+    width: 100px;
+    top:20px;
+    height: 1px;
+    position:relative;
+}
+
+#progress{
+    background-color: #ffffff;
+    width: 0px;
+    height: 1px;
+}
+
+.credit {
+    padding-left:0px;
+    padding-right:5px;
+    font-weight: bold;
+}
+
+a {
+    -webkit-transition: color 0s ease-in-out;
+    color: #fff;
+}
+
+a:hover {
+    color: #000;
+    -webkit-animation: rainbow 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%, 100% { color: #ffffff; }
+    16%      { color: #37fec7; }
+    32%      { color: #2ecc40; }
+    48%      { color: #ffdc00; }
+    64%      { color: #b10dc9; }
+    80%      { color: #ff4136; }
+}
+@keyframes rainbow {
+    0%, 100% { color: #ffffff; }
+    16%      { color: #37fec7; }
+    32%      { color: #2ecc40; }
+    48%      { color: #ffdc00; }
+    64%      { color: #b10dc9; }
+    80%      { color: #ff4136; }
+}
