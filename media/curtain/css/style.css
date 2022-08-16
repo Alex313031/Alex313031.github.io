@@ -1,0 +1,27 @@
+body, html {
+  height: 100%;  
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-image: radial-gradient(circle, #ffffff, #999999);
+}
+canvas {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+h1 {
+  font-size: 50px;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 10%;
+}
+p {
+  font-size: 30px;
+  text-align: center;
+  width: 50%;
+  margin: 1em auto 0;
+}
