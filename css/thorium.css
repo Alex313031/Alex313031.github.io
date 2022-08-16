@@ -457,6 +457,22 @@ button {
   font-family: inherit;
   outline: 1px solid #000000;
 }
+
+#totop {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.50em;
+}
+#totop a:link,#totop a:visited,#totop a:active {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #551a8b;
+}
+#totop a:hover {
+  color: #0000ee;
+}
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
