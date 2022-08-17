@@ -139,6 +139,26 @@ div.gallery img {
   width: 100%;
   height: auto;
 }
+div.gallery2 {
+  margin: 4px;
+  float: center;
+  width: 50%;
+  height: auto;
+}
+img.gallery2 {
+  border: 1px solid var(--border);
+  filter: drop-shadow(1px 1px 1px var(--imgshadow));
+  width: 50%;
+  height: auto;
+}
+img.gallery2:hover {
+  border: 1px solid #1967d2;
+  filter: drop-shadow(1px 1px 1px #1967d2);
+}
+div.gallery2 img {
+  width: 100%;
+  height: auto;
+}
 }
 .center {
   max-width: 100%;
