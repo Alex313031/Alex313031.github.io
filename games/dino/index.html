@@ -42,6 +42,18 @@
 </head>
 
 <body id="t" class="offline">
+	
+	<script src="Tone/Tone.min.js"></script>
+  <script>	
+	var player = new Tone.Player("media/perpetuum_factory_2.ogg").toMaster();
+	// play as soon as the buffer is loaded
+	player.autostart = true;
+	player.loop = true;
+	player.volume.value = -5;
+	player.start;
+	console.log('Audio is started.');
+  </script>
+	
     <div id="main-frame-error" class="interstitial-wrapper">
         <div id="main-content">
             <div class="icon icon-offline" alt=""></div>

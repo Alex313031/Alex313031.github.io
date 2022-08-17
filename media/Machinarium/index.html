@@ -23,7 +23,7 @@
 		<script src="js/jquery-3.6.0.slim.min.js"></script>
 		
 		<audio loop autoplay id="myTune">
-            <source src="media/Main_Street.mp3" type="audio/mpeg">
+            <source src="media/Metropolis.mp3" type="audio/mpeg">
         </audio>
         
         <script>
@@ -97,7 +97,7 @@
 			const stats = new Stats();
 			container.appendChild( stats.dom );
 
-			const renderer = new THREE.WebGLRenderer( { antialias: true } );
+			const renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true} );
 			renderer.setPixelRatio( window.devicePixelRatio );
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			renderer.outputEncoding = THREE.sRGBEncoding;
