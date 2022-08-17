@@ -2,14 +2,14 @@
 <!-- Copyright 2013 the V8 project authors. Scroll to the end for full license -->
 <html lang="en">
 <head>
-<meta http-equiv="X-UA-Compatible" value="IE=edge"/>
-<meta charset="utf-8"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Octane 2.1 JavaScript Benchmark</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Script-Type" content="text/javascript">
-<meta name="description"
-  content="Octane 2.1 JavaScript Benchmark - the Javascript benchmark for the modern web">
-<meta name="author" content="Octane Team Google">
+<meta name="description" content="Octane 2.1 JavaScript Benchmark - the Javascript benchmark for the modern web.">
+<meta name="keywords" content="benchmark, browser, javascript, octane">
+<meta name="author" content="Google Chromium Octane Team">
 <!-- twitter bootstrap code -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap-transition.js"></script>
@@ -158,6 +158,7 @@ body {
   href="ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
   href="ico/apple-touch-icon-57-precomposed.png">
+<meta itemprop="image" content="ico/thumb.png">
 </head>
 
 <body onLoad="Load()">
@@ -167,7 +168,7 @@ body {
 
       <div class="container">
 
-        <a class="brand" href="#">Octane 2.1</a>
+        <a class="brand" href="#">Octane v2.1</a>
         <!--/.nav-collapse -->
       </div>
 
@@ -180,7 +181,7 @@ body {
     </div>
     <div id="main-container">
     <a id="run-octane" href="javascript:Run()">
-      <div class="hero-unit" id="inside-anchor">
+      <div title="Run Benchmark" class="hero-unit" id="inside-anchor" style="border: 1px solid #fff;">
         <h1 align="center" id="main-banner">Start Octane 2.1</h1>
         <div id="bar-appendix"></div>
       </div>
