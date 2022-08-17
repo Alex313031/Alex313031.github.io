@@ -51,6 +51,17 @@
   </script>
 </head>
 <body>
+	
+  <script src="Tone/Tone.min.js"></script>
+  <script>	
+	var player = new Tone.Player("media/slightly_nonsense_3.ogg").toMaster();
+	// play as soon as the buffer is loaded
+	player.autostart = true;
+	player.loop = true;
+	player.volume.value = -5;
+	player.start;
+	console.log('Audio is started.');
+  </script>
   <div class="container">
 	  <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
     <div class="heading">
