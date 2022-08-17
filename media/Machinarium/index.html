@@ -16,18 +16,35 @@
 		
 	</head>
 
-	<body>
+	<body class="tone">
 
 		<div id="container"></div>
 		
+		<button style="z-index: 10001;" class="tone" title="Mute/Unmute">Mute|Unmute</button>
+		
 		<script src="Tone/Tone.min.js"></script>
-  <script>	
+  <script>
+	
 	var player = new Tone.Player("media/Main_Street.mp3").toMaster();
 	// play as soon as the buffer is loaded
 	player.autostart = true;
 	player.loop = true;
-	player.volume.value = -1;
-	player.start();
+	player.volume.value = -10;
+	player.start;
+	console.log('Audio is started.');
+	
+	//attach a click listener to a play button
+	document.querySelector('button.tone')?.addEventListener('click', async () => {
+	player.volume.mute = true;
+	console.log('Audio is stopped.')
+	})
+	
+	// JS
+function toggleMuted() {
+  var sound = document.getElementById('sound');
+  sound.muted = !sound.muted;
+}
+	
   </script>
 
 		<div id="info">

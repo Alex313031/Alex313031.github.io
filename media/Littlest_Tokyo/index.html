@@ -20,6 +20,17 @@
 	<body>
 
 		<div id="container"></div>
+		
+		<script src="Tone/Tone.min.js"></script>
+  <script>	
+	var player = new Tone.Player("media/arthur-vyncke-welcome-to-okinawa.mp3").toMaster();
+	// play as soon as the buffer is loaded
+	player.autostart = true;
+	player.loop = true;
+	player.volume.value = -10;
+	player.start;
+	console.log('Audio is started.');
+  </script>
 
 		<div id="info">
 			<a href="https://threejs.org" target="_blank" rel="noopener">Three.js</a> Demo - "Littlest Tokyo"<br/>
