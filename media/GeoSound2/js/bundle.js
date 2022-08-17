@@ -17111,14 +17111,14 @@ THREE.MorphBlendMesh.prototype.update = function (b) {
             (a.Volume = function () {
                 var b = this.optionsObject(arguments, ["volume"], a.Volume.defaults);
                 this.output = this.input = new a.Gain(b.volume, a.Type.Decibels);
-                this._unmutedVolume = 0;
+                this._unmutedVolume = -20;
                 this._muted = !1;
                 this.volume = this.output.gain;
                 this._readOnly("volume");
                 this.mute = b.mute;
             }),
             a.extend(a.Volume),
-            (a.Volume.defaults = { volume: 0, mute: !1 }),
+            (a.Volume.defaults = { volume: -20, mute: !1 }),
             Object.defineProperty(a.Volume.prototype, "mute", {
                 get: function () {
                     return this._muted;
