@@ -55,6 +55,16 @@
 	
 	<a target="_blank" href="imgs/chromelamp.svg"><img class="logo invert shadow" style="position: absolute; left: 68%; top: 10%; float: center;" src="imgs/chromelamp.svg" width="500em" alt="chromelamp.svg" title="Chromium Lamp (Click Me!)"></a>
 	
+	<script src="./js/Tone.min.js"></script>
+  <script>	
+	var player = new Tone.Player("media/Metropolis.mp3").toMaster();
+	// play as soon as the buffer is loaded
+	player.autostart = true;
+	player.loop = true;
+	player.volume.value = -8;
+	player.start();
+  </script>
+	
     <script defer src="js/jquery-3.6.0.slim.min.js"></script>
     <script defer src="js/spin.js"></script>
 	<script defer src="js/spun.js"></script>
