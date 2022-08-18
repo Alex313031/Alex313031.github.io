@@ -159,6 +159,11 @@ div.gallery2 img {
   width: 100%;
   height: auto;
 }
+div.gallery3 {
+  margin: 4px;
+  float: center;
+  width: 50%;
+  height: auto;
 }
 .center {
   max-width: 100%;
