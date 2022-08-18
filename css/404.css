@@ -1,48 +1,52 @@
 /* Thorium 404 Cascading Style Sheet */
-*{
-  margin: 0;
-  padding: 0;
-  }
-html,code {
-  font: 15px/22px arial,sans-serif;
-  }
 :root, :root.light {
-  --border: #999999;
+  --border: #000000;
+  --buttonborder: #222222;
   --imgborder: #999999;
   --imgshadow: #000000;
-  --insert: #777777;
+  --insert: #666666;
   --bg: #ffffff;
   --color: #000000;
   --error: #ff0000;
   --linkcolor: #0000ee;
   --visitedcolor: #551a8b;
 }
-html, html.light {
-  background: var(--bg);
-  color: var(--color);
-  padding-top: -500px;
-  }
-.ins {
-  color: var(--insert);
-  padding-top: 10px;
-  text-decoration: none;
-  }
-.error {
-  color: var(--error);
-}
 @media (prefers-color-scheme: dark) {
-:root, :root.dark {
+:root {
   --border: #ffffff;
+  --buttonborder: #dcdcdc;
   --imgborder: #ffffff;
   --imgshadow: #ffffff;
-  --insert: #999999;
+  --insert: #aaaaaa;
   --bg: #24292f;
   --color: #ffffff;
   --error: #fbbc04;
   --linkcolor: #ae5ee0;
   --visitedcolor: #5bf5bf;
 }
-html, html.dark {
+
+}
+:root.dark {
+  --border: #ffffff;
+  --buttonborder: #dcdcdc;
+  --imgborder: #ffffff;
+  --imgshadow: #ffffff;
+  --insert: #aaaaaa;
+  --bg: #24292f;
+  --color: #ffffff;
+  --error: #fbbc04;
+  --linkcolor: #ae5ee0;
+  --visitedcolor: #5bf5bf;
+}
+code {
+  font: 15px/22px arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  }
+html {
+  font: 15px/22px arial,sans-serif;
+  margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--color);
   padding-top: -500px;
@@ -54,7 +58,6 @@ html, html.dark {
   }
 .error {
   color: var(--error);
-}
 }
 body {
   margin: 4% auto 0px;
@@ -90,15 +93,15 @@ img.spin {
 /* Rounded Dark/Light Mode Button */
 button {
   font-family: inherit;
-  border: 1px solid var(--border);
+  border: 1px solid var(--buttonborder);
   border-radius: 2px;
   float: bottom;
-  background-color: #888888;
+  background-color: #828282;
   color: #ffffff;
 }
 button:hover {
   background-color: #999999;
 }
 button:active {
-  box-shadow: 1px 1px 1px 0px #000000 inset;
-}*
+  box-shadow: 1px 1px 1px 0px #222222 inset;
+}

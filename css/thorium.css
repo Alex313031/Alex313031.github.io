@@ -11,6 +11,7 @@
   --accent-bg: #aecbfa;
   --accent-fg: #24292f;
   --border: #000000;
+  --buttonborder: #222222;
   --construction: #e51c23;
   --code: #000000;
   --shadow: #ffffff;
@@ -30,6 +31,7 @@
     --accent-bg: #2b2b2b;
     --accent-fg: #aecbfa;
     --border: #ffffff;
+    --buttonborder: #dcdcdc;
     --construction: #fbbc04;
     --code: #fbbc04;
     --shadow: #000000;
@@ -49,6 +51,7 @@
   --accent-bg: #2b2b2b;
   --accent-fg: #aecbfa;
   --border: #ffffff;
+  --buttonborder: #dcdcdc;
   --construction: #fbbc04;
   --code: #fbbc04;
   --shadow: #000000;
@@ -174,6 +177,12 @@ img.spin {
   transition: all .6s;
 }
 svg.spin {
+  transition: all .6s;
+}
+img.spin2 {
+  transition: all .6s;
+}
+svg.spin2 {
   transition: all .6s;
 }
 /* Image effects */
@@ -471,18 +480,18 @@ pre {
 /* Rounded Dark/Light Mode Button */
 button {
   font-family: inherit;
-  box-shadow: 1px 1px 1px 0px var(--border);
+  box-shadow: 1px 1px 1px 0px var(--buttonborder);
   border: 1px solid var(--border);
   border-radius: 5px;
   float: bottom;
-  background-color: #888888;
+  background-color: #828282;
   color: #ffffff;
 }
 button:hover {
   background-color: #999999;
 }
 button:active {
-  box-shadow: 1px 1px 1px 0px #000000 inset;
+  box-shadow: 1px 1px 1px 0px #222222 inset;
 }
 .checkbox {
   font-family: inherit;

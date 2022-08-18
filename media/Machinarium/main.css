@@ -22,10 +22,15 @@ button {
 	font-family: inherit;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 2px;
-	background-color: #888888;
+	background-color: #828282;
 	color: #ffffff;
 }
-
+button:hover {
+  background-color: #999999;
+}
+button:active {
+  box-shadow: 1px 1px 1px 0px #222222 inset;
+}
 #info {
 	position: absolute;
 	top: 0px;
