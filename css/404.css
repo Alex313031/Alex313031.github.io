@@ -95,4 +95,10 @@ button {
   float: bottom;
   background-color: #888888;
   color: #ffffff;
+}
+button:hover {
+  background-color: #999999;
+}
+button:active {
+  box-shadow: 1px 1px 1px 0px #000000 inset;
 }*

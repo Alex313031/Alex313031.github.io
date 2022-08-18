@@ -150,30 +150,35 @@
                 var muted = false
                 //console.log(localStorage)
                 if (localStorage.muted == "true") {
+					myAudio.volume = 0.6;
                     muted = true;
                     $('#stateicon').removeClass('fa-volume-up');
                     $('#stateicon').addClass('fa-volume-off');
                 }
                 if (!muted)
-                    setTimeout(play, 1000)
+                myAudio.volume = 0.6;
+                    setTimeout(play, 1000);
             })
             function aud_play_pause() {
                 var myAudio = document.getElementById("myTune");
                 if (myAudio.paused) {
                     $('#stateicon').removeClass('fa-volume-off');
                     $('#stateicon').addClass('fa-volume-up');
+                    myAudio.volume = 0.6;
                     myAudio.play();
                     localStorage.setItem('muted', false);
                 } else {
                     $('#stateicon').removeClass('fa-volume-up');
                     $('#stateicon').addClass('fa-volume-off');
+                    myAudio.volume = 0.6;
                     myAudio.pause();
                     localStorage.setItem('muted', true);
                 }
             }
             function play() {
                 var myAudio = document.getElementById("myTune");
-                myAudio.play()
+                myAudio.volume = 0.6;
+                myAudio.play();
             }
             function fullscreen() {
                 if ((document.fullScreenElement && document.fullScreenElement !== null) ||

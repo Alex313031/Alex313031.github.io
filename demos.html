@@ -39,7 +39,46 @@
     }
     </script>
 </head>
-<body class="body3">
+<body class="body4">
+	
+	<audio loop autoplay id="myTune">
+            <source src="media/the_void_2.ogg" type="audio/ogg">
+        </audio>
+        
+        <script>
+			
+		$(document).ready(function () {
+				var myAudio = document.getElementById("myTune");
+                var muted = false
+                //console.log(localStorage)
+                if (localStorage.muted == "true") {
+					myAudio.volume = 0.4;
+                    muted = true;
+                }
+                if (!muted)
+					myAudio.volume = 0.4;
+                    myAudio.play();
+            })
+			
+        function aud_play_pause() {
+                var myAudio = document.getElementById("myTune");
+                if (myAudio.paused) {
+					myAudio.volume = 0.4;
+                    myAudio.play();
+                    localStorage.setItem('muted', false);
+                } else {
+					myAudio.volume = 0.4;
+                    myAudio.pause();
+                    localStorage.setItem('muted', true);
+                }
+            }
+            function play() {
+                var myAudio = document.getElementById("myTune");
+                myAudio.volume = 0.4;
+                myAudio.play();
+            }
+            </script>
+	
 	<!-- Main Logo -->
 	<div id="spinner">
 		<img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/WebGL_Logo.svg" width="600em" max-width="75%" alt="WebGL Logo" title="WebGL Logo (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
@@ -50,10 +89,8 @@
 	<div style="margin-left:auto; margin-right:auto; box-sizing: border-box; max-width: 92%; height: auto;">
 		<p><em>&ndash;You can check your WebGL support and features <a title="WebGL Tester" href="misc/webgl-tester.html">Here</a>.</p>
 	</div>
-	<audio style="margin-left: auto; margin-right: 40%; max-width: 100%;" title="&quot;Wide Open&quot; from the game NightSky by Nicalis - Chris Schlarb" alt="the_void_2.ogg" class="sound" controls="true" autoplay loop><source src="media/the_void_2.ogg" type="audio/ogg">Your browser does not support the audio element.</audio>
-	<br>
-	<br>
-	<br>
+	<!-- <audio style="margin-left: auto; margin-right: 40%; max-width: 100%;" title="&quot;Wide Open&quot; from the game NightSky by Nicalis - Chris Schlarb" alt="the_void_2.ogg" class="sound" controls="true" autoplay loop><source src="media/the_void_2.ogg" type="audio/ogg">Your browser does not support the audio element.</audio> -->
+	<div style="display: flex; justify-content: center; align-items: flex-start; margin-bottom: 12px;">&nbsp;<button style="z-index: 10001;" class="tone" onclick="aud_play_pause()" title="Mute/Unmute">Mute|Unmute</button></div>
 	<hr class="line">
 	<div>
 	<!-- Links List -->
