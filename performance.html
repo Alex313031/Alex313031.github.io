@@ -22,7 +22,7 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffffff">
     <meta name="msapplication-TileColor" content="#111111">
     <meta name="theme-color" content="#111111">
-    <style>small { font-size: 0.9em; }</style>
+    <style>small { font-size: 0.9em; filter: drop-shadow(1px 1px 2px #000000); } p { filter: drop-shadow(1px 1px 2px #000000); }</style>
 </head>
 <body style="background-color: #111111; margin: auto auto; max-width: 75%; font-family: 'Roboto', sans-serif; padding: 1rem; color: var(--fontcolor);">
 	<!-- Main Logo -->
@@ -36,7 +36,7 @@
 			Performance comparisons using two popular benchmarks, <a title="Speedometer v2.1" target="_blank" href="misc/Speedometer_2.1">Speedometer</a>, <a title="Octane v2.1" target="_blank" href="misc/Octane_v2.1/">Octane v2</a>, Octane v1, and Jetstream2. The leftside images are Chromium, and the rightside images are Thorium. Testing was done on my main machine: <a title="FX-8370" target="_blank" rel="noopener" href="https://www.amd.com/en/products/cpu/fx-8370">AMD FX-8370</a> overclocked to 4.5 Ghz. | 24 GB 1600 Mhz. DDR3 RAM | <a title="Nvidia 900 Series" target="_blank" rel="noopener" href="https://www.nvidia.com/en-us/geforce/900-series/">Nvidia GTX 970</a> | Gigabyte <a title="My Motherboard" target="_blank" rel="noopener" href="https://www.gigabyte.com/Motherboard/GA-78LMT-USB3-R2-rev-10">GA-78LMT-USB3 R2</a> Motherboard. The browsers were run on a fresh, updated install of <a title="Ubuntu LTS 22.04" target="_blank" rel="noopener" href="https://releases.ubuntu.com/22.04/">Ubuntu 22.04.1</a> codename "Jammy Jellyfish", with no other major background tasks runnning.</p></div>
 		<hr class="line">
     <h1 title="Pictures" style="text-align: center; margin-left: -42px;"><img class="spin" style="filter: drop-shadow(1px 1px 2px #000000);" width="38" src="imgs/screenshot.svg" alt="screenshot.svg" title="Screenshots"> <u><em>Screenshots</u> : </em></h1>
-    <p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small style="filter: drop-shadow(1px 1px 2px #000000);">Speedometer v.2.1: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>71.9 vs. 106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>38.3361% performance gain.</small></p>
+    <p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small>Speedometer v.2.1: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>71.9 vs. 106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>&nbsp;&ndash;&nbsp;&nbsp;<em>38.3361%</em>&nbsp;performance gain.</small></p>
     <div style="display: flex; justify-content: center; align-items: flex-start; height: auto;">
 	<div class="gallery2">
 		<a href="imgs/benchmarks/Chromium_Speedometer.png">
@@ -48,7 +48,7 @@
 	</div>
 	</div>
 	<br>
-	<p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small style="filter: drop-shadow(1px 1px 2px #000000);">Octane v.2.0: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>28394 vs. 31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>9.12238% performance gain.</small></p>
+	<p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small>Octane v.2.0: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>28394 vs. 31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>&nbsp;&ndash;&nbsp;&nbsp;<em>9.12238%</em>&nbsp;performance gain.</small></p>
 	
 	<div style="display: flex; justify-content: center; align-items: flex-start; height: auto;">
 	<div class="gallery2">
@@ -61,7 +61,7 @@
 	</div>
 	</div>
 	<br>
-	<p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small style="filter: drop-shadow(1px 1px 2px #000000);">JetStream2: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>95.869 vs. 104.823<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>8.92313% performance gain.</small></p>
+	<p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small>JetStream2: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>95.869 vs. 104.823<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>&nbsp;&ndash;&nbsp;&nbsp;<em>8.92313%</em>&nbsp;performance gain.</small></p>
 	
 	<div style="display: flex; justify-content: center; align-items: flex-start; height: auto;">
 	<div class="gallery2">
@@ -74,7 +74,7 @@
 	</div>
 	</div>
 	<br>
-	<p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small style="filter: drop-shadow(1px 1px 2px #000000);">Octane v.1.0: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>26492 vs. 27959<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>5.38833% performance gain.</small></p>
+	<p style="display: flex; justify-content: center; align-items: flex-start; margin-top: -12px;"><small>Octane v.1.0: Chromium vs. Thorium<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>26492 vs. 27959<b>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&ndash;&nbsp;&nbsp;</b><em>5.38833%</em>&nbsp;performance gain.</small></p>
 	
 	<div style="display: flex; justify-content: center; align-items: flex-start; height: auto;">
 	<div class="gallery2">
@@ -87,12 +87,14 @@
 	</div>
 	</div>
 	<br>
-	<p>I also tested some other popular Chromium based browsers: Google Chrome, Brave, and Vivaldi.</p>
-	Chrome&nbsp;&nbsp;&rarr;&nbsp;&nbsp;Speedometer: 98.19 vs. 106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>Octane v2: 28612 vs. 31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>- 7.64974% & 8.35901% performance gains, respectively.
+	<p style="display: flex; justify-content: center; align-items: flex-start;">I also tested some other popular Chromium based browsers:&nbsp;<a title="Google Chrome" target="_blank" rel="noopener" href="https://www.google.com/chrome/">Google Chrome</a>,&nbsp;<a title="Brave Browser" target="_blank" rel="noopener" href="https://brave.com/">Brave</a>,&nbsp;and&nbsp;<a title="Vivaldi" target="_blank" rel="noopener" href="https://vivaldi.com/">Vivaldi</a>.&nbsp;<small><em>(Click on their scores to see screenshots.)</em></small></p>
 	<br>
-	Brave&nbsp;&nbsp;&rarr;&nbsp;&nbsp;Speedometer: 101 vs. 106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>Octane v2: 29484 vs. 31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>- 4.83092% & 5.36044% performance gains, respectively.
+	<p style="display: flex; justify-content: center; align-items: flex-start;"><b>Chrome</b>&nbsp;&nbsp;&rarr;&nbsp;&nbsp;Speedometer:&nbsp;<a title="Google Chrome Speedometer Screenshot" href="imgs/benchmarks/Google_Chrome_Speedometer.png">98.19</a>&nbsp;vs.&nbsp;106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>Octane v2:&nbsp;<a title="Google Chrome Octane v2 Screenshot" href="imgs/benchmarks/Google_Chrome_Octane_v2.png">28612</a>&nbsp;vs.&nbsp;31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>&nbsp;&ndash;&nbsp;&nbsp;<em>7.64974% & 8.35901% </em>&nbsp;performance gains, respectively.</p>
 	<br>
-	Vivaldi&nbsp;&nbsp;&rarr;&nbsp;&nbsp;Speedometer: 75.8 vs. 106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>Octane v2: 25436 vs. 31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>- 33.2233% & 20.0623% performance gains, respectively.
+	<p style="display: flex; justify-content: center; align-items: flex-start;"><b>Brave</b>&nbsp;&nbsp;&rarr;&nbsp;&nbsp;Speedometer:&nbsp;<a title="Brave Speedometer Screenshot" href="imgs/benchmarks/Brave_Speedometer.png">101</a>&nbsp;vs.&nbsp;106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>Octane v2:&nbsp;<a title="Brave Octane v2 Screenshot" href="imgs/benchmarks/Brave_Octane_v2.png">29484</a>&nbsp;vs.&nbsp;31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>&nbsp;&ndash;&nbsp;&nbsp;<em>4.83092% & 5.36044% </em>&nbsp;performance gains, respectively.</p>
+	<br>
+	<p style="display: flex; justify-content: center; align-items: flex-start;"><b>Vivaldi</b>&nbsp;&nbsp;&rarr;&nbsp;&nbsp;<a title="Vivaldi Speedometer Screenshot" href="imgs/benchmarks/Vivaldi_Speedometer.png">Speedometer</a>: 75.8 vs. 106<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b><a title="Vivaldi Octane v2 Screenshot" href="imgs/benchmarks/Vivaldi_Octane_v2.png">Octane v2</a>: 25436 vs. 31108<b>&nbsp;&nbsp;|&nbsp;&nbsp;</b>&nbsp;&ndash;&nbsp;&nbsp;<em>33.2233% & 20.0623% </em>&nbsp;performance gains, respectively.</p>
+	<br>
 	<hr class="line"></hr>
     
     <a name="demo"></a><p style="display: flex; justify-content: center; align-items: flex-start;"><a title="&quot;Machinarium&quot;" href="media/Machinarium"><em>&quot;Machinarium&quot; Three.js Demo</em></a></p>

@@ -21,7 +21,7 @@ button {
 	cursor: pointer;
 	font-family: inherit;
 	border: 1px solid rgb(255, 255, 255);
-	border-radius: 5px;
+	border-radius: 2px;
 	background-color: #888888;
 	color: #ffffff;
 }
