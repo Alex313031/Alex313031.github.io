@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ main index.html -->
+<html lang="en-US">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY" />
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Thorium Browser</title>
+    <meta name="description" content="Chromium fork for Linux named after radioactive element No. 90.">
+    <meta name="keywords" content="thorium, browser, chromium">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="humans.txt">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta itemprop="image" content="thumb.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body>
+	<!-- Main Logo -->
+	<div id="spinner">
+		<img class="logo spin shadow" src="imgs/thorium.svg" width="512" height="512" alt="Thorium Logo" title="Thorium Logo (Click Me!)">
+		<a name="top"></a>
+    </div>
+    <div class="d-flex">
+        <h1><span class="title"><b><u>Mercury - </u></b></span><br> <small><b><em>The fastest firefox fork on Earth.</em></b></small></h1>
+        <img class="bubbles shadow" src="imgs/thorium_bubbles.svg" width="128" height="128" alt="Thorium Bubbles" title="Thorium Bubbles">
+    </div>
+    <hr class="line">
+    <p class="intro" title="Description"><a title="Mozilla Firefox" rel="noopener" target="_blank" href="https://www.mozilla.org/en-US/firefox/">Firefox</a> fork for Linux and Windows named after Firefox's version control system, <a title="Mercurial VCS" rel="noopener" target="_blank" href="https://www.mercurial-scm.org/">Mercurial</a>, and the <a title="Mercury Element" rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Mercury_(element)">liquid element</a> No. 80.</p>
+    <h2><u>Highlights</u>&nbsp;&nbsp;<img src="imgs/bulb.svg" width="28" title="Bulb" alt="Bulb Icon" class="spin2"></h2>
+    <a target="_blank" href="chromiumstory"><img class="fly d-flex2" src="misc/flying_browser.png" width="128" title="Flying Thorium (Click Me!)" alt="Flying Thorium"></a>
+    <a name="info"></a><ul>
+        <li>Compiler modifications include SSE4.2, AVX, AES, and Cflags, thinLTO flags, and import_instr_limit flags set to /O3, 3, and 30 respectively, as well as other compiler flags.</li>
+        <li>LLVM LOOP optimizations as -mllvm flags</li>
+        <li>Learn more about these Thorium compiler optimizations and how they work <a title="Thorium Optimizations" href="optimizations">Here</a>.</li>
+        <li>UI Changes and Patches for Linux and Windows that fix bugs, enhance useability, and strengthen privacy/security.</li>
+    </ul>
+    <!-- Dark/Light Mode Button -->
+    <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+    <p>&nbsp;&nbsp;This nets a <a title="Thorium Performance Comparisons" href="performance"><b><em>8-40%</em> performance</b></a> improvement over vanilla Chromium, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium/blob/main/infra/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Thorium Browser" rel="noopener" target="_blank" href="./index.html">Thorium</a> & <a title="ThoriumOS" href="thoriumos">ThoriumOS</a></p>
+    
+    <a name="links"></a><h2><u>&#60;Links&#62;</u></h2>
+    <!-- Links List -->
+    <ul title="Thorium Links">
+		<li><a title="Thorium Dino Game" target="_blank" href="games/dino/">Thorium Dino Game!</a>&nbsp;&nbsp;<img src="imgs/Dino.png" width="36" title="Dino!" alt="Dino Game" class="spin2 fav">
+		</li>
+		<li><a title="Thorium IRC Channel" rel="noopener" target="_blank" href="https://kiwiirc.com/nextclient/#irc://irc.libera.chat:+6697/#thorium">Thorium IRC Channel (Web)</a>&nbsp;&nbsp;<img src="imgs/kiwiirc-favicon.ico" width="18" title="Kiwi IRC Logo" alt="Kiwi IRC Logo" class="spin2 fav">
+		</li>
+        </li>
+    </ul>
+    <a name="installation"></a><h2 class="h2"><u>Installation/Auto-Update</u><img src="imgs/hdd.svg" width="38" title="Install" alt="Hard Drive Icon" class="spin2 fav3"></h2>
+    <p>The repo can be used on any distribution that supports .deb packaging. <br> It is located at <a title="Thorium .deb Repo" rel="noopener" target="_blank" href="https://dl.thorium.rocks/">https://dl.thorium.rocks/</a>. To add to your system:</p>
+    <!-- Code Block -->
+    <pre title="APT Sources Setup">wget https://dl.thorium.rocks/debian/dists/stable/thorium.list
+sudo mv thorium.list /etc/apt/sources.list.d/
+sudo apt update
+sudo apt install thorium-browser-unstable</pre>
+    <a name="footer"></a><p title="Thanks!"><em style="font-weight: 600">Thanks for using Thorium!</em><em title="C.O.C / Privacy Policy">&nbsp;&nbsp;&nbsp;&nbsp;Code Of Conduct/Privacy Policy: </em><em><a title="C.O.C / Privacy Policy" href="COC.html">CoC</a></em>&nbsp;&nbsp;<img src="coc-favicon-32x32.png" width="18" title="C.O.C. Badge" alt="Badge Icons" class="spin2 fav"></p>
+    <!-- Credits & Custom 404 Landing Page (uses .haccess file) -->
+    <p title="Das Credits"><img src="imgs/info.svg" width="20" title="Info" alt="Info Icon" class="spin2 fav">&nbsp;<em>Credits: <a title="humans.txt" href="humans.txt">HuMaNs</a></em>&nbsp;&#9895;<em title="Funny 404 Error Page">&nbsp;&nbsp;&nbsp;&nbsp;404 Test Page: </em><em><a title="404 Test" href="404.html">blah</a></em>&nbsp;&nbsp;<img src="misc/sadtab.svg" width="20" title="Sad Tab" alt="Sad Tab" class="spin2 fav"><em title="Dad's Old Site">&nbsp;&nbsp;&nbsp;&nbsp;Dad's Old Site: </em><em><a title="danfrick.com modified from webarchive.org" target="_blank" href="misc/Dad/Dad.html">danfrick.com</a></em></p>
+    <img class="thor90" src="imgs/Thorium90_504.jpg" width="200" height="200" title="Element &numero; 90." loading="lazy" alt="Thorium Element">
+		<audio title="System.mp3" style="max-width: 75%;" class="sound" controls="true" autoplay loop><source src="media/System.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+    <!-- Canvas2D Shadow Cubes Demo with Thorium Colours -->
+    <canvas title="Canvas2D Shadow Cubes Demo" alt="Canvas2D Shadow Demo" class="shadowcubes canvas2" style="margin-top: 10px; margin-bottom: 10px;" id="shadowcubes" width="600" height="384"></canvas>
+	
+	<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+	
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin.js"></script>
+    <script defer src="js/spin2.js"></script>
+	<script defer src="js/spun.js"></script>
+    <script defer src="js/button.js"></script>
+    <script defer src="js/shadowcubes.js"></script>
+</body>
+</html>
