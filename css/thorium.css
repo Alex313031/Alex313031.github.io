@@ -417,13 +417,13 @@ div.p3 {
   padding-right: 12px;
 }
 /* Set link colours */
-a:link{
+a:link {
   color: var(--linkcolor);
 }
-b.link{
+b.link {
   color: var(--linkcolor);
 }
-li.link{
+li.link {
   color: var(--link);
   font-weight: 600;
 }

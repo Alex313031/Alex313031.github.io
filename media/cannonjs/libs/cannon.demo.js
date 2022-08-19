@@ -483,7 +483,7 @@ CANNON.Demo = function(options){
         scene.add( camera );
 
         // RENDERER
-        renderer = new THREE.WebGLRenderer( { clearColor: 0x000000, clearAlpha: 1, antialias: false } );
+        renderer = new THREE.WebGLRenderer( { clearColor: 0x000000, clearAlpha: 1, antialias: true } );
         renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
         renderer.domElement.style.position = "relative";
         renderer.domElement.style.top = MARGIN + 'px';
