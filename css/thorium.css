@@ -492,6 +492,7 @@ button:hover {
 }
 button:active {
   box-shadow: 1px 1px 1px 0px #222222 inset;
+  background-color: #888888;
 }
 .checkbox {
   font-family: inherit;

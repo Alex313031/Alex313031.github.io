@@ -33,6 +33,46 @@
         </div>
 
         <div id="footer"><a target="_blank" rel="noopener" href="http://david.li">David.Li</a> | <a target="_blank" rel="noopener" href="https://youtu.be/CmnbvHwd3jc">Source</a></div>
+        
+        <script src="js/jquery-3.6.0.slim.min.js"></script>
+		
+		<audio loop autoplay id="myTune">
+            <source src="media/Trinity_and_Beyond_The_Atomic_Bomb_Movie_-_China_Gets_The_Bomb_(320 kbps).mp3" type="audio/mpeg">
+        </audio>
+        
+        <script>
+			
+		$(document).ready(function () {
+				var myAudio = document.getElementById("myTune");
+                var muted = false
+                //console.log(localStorage)
+                if (localStorage.muted == "true") {
+					myAudio.volume = 0.4;
+                    muted = true;
+                }
+                if (!muted)
+					myAudio.volume = 0.4;
+                    myAudio.play();
+            })
+			
+        function aud_play_pause() {
+                var myAudio = document.getElementById("myTune");
+                if (myAudio.paused) {
+					myAudio.volume = 0.4;
+                    myAudio.play();
+                    localStorage.setItem('muted', false);
+                } else {
+					myAudio.volume = 0.4;
+                    myAudio.pause();
+                    localStorage.setItem('muted', true);
+                }
+            }
+            function play() {
+                var myAudio = document.getElementById("myTune");
+                myAudio.volume = 0.4;
+                myAudio.play();
+            }
+            </script>
 
         <script src="js/sharedvortexfilamentsconstants.js"></script>
         <script src="js/shaders.js"></script>
@@ -49,4 +89,6 @@
         <script src="js/main.js"></script>
         <script src="js/webgl-stats.js"></script>
     </body>
+    <div style="text-align: left; font-size: 10px; line-height: 10px; margin-left: 12px; margin-top: -32px;"><button style="z-index: 10001;" class="tone" onclick="aud_play_pause()" title="Mute/Unmute">Mute|Unmute</button></div>
+	<div style="text-align: right; font-size: 10px; line-height: 10px; margin-top: -10px; color: #333;">Modified by Alex313031&nbsp;&nbsp;</div>
 </html>
