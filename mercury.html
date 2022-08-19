@@ -62,26 +62,26 @@
     <img class="fly d-flex2" src="imgs/geckoview-crash.png" width="78" title="Flying Geckoview Crash" alt="geckoview-crash.png">
     <a name="info"></a><ul>
         <li>Compiler optimizations include SSE4.2, AVX, AES, and modifications to CFLAGS, LDFLAGS, thinLTO flags, and PGO, as well as other compiler flags.</li>
-        <li>Learn more about these Thorium compiler optimizations and how they work <a title="Thorium Optimizations" href="optimizations">Here</a>.</li>
+        <li>Learn more about these compiler optimizations and how they work <a title="Optimizations" href="optimizations">Here</a>.</li>
         <li>UI Changes and Patches for Linux and Windows that fix bugs, enhance useability, and strengthen privacy/security.</li>
     </ul>
     <!-- Dark/Light Mode Button -->
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
-    <p>&nbsp;&nbsp;This nets a <a title="Thorium Performance Comparisons" href="performance"><b><em>8-40%</em> performance</b></a> improvement over vanilla Chromium, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium/blob/main/infra/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Thorium Browser" rel="noopener" target="_blank" href="./index.html">Thorium</a> & <a title="ThoriumOS" href="thoriumos">ThoriumOS</a></p>
+    <p>&nbsp;&nbsp;This nets a <a title="Thorium Performance Comparisons" href="mercury_performance"><b><em>8-40%</em> performance</b></a> improvement over vanilla Chromium, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Mercury/blob/main/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Thorium Browser" rel="noopener" target="_blank" href="./index.html">Thorium</a> & <a title="ThoriumOS" href="thoriumos">ThoriumOS</a></p>
     
     <a name="links"></a><h2><u>&#60;Links&#62;</u></h2>
     <!-- Links List -->
     <ul title="Thorium Links">
-		<li><a title="Mercury Repo" target="_blank" rel="noopener" href="https://github.com/Alex313031/Mercury">Mercury Repo</a>&nbsp;&nbsp;<img src="imgs/mercury-favicon32.png" width="19" title="Mercury Favicon" alt="Mercury Favicon" style="border: 1px solid #24292f" class="spin2 fav">
+		<li><a title="Mercury Repo" target="_blank" rel="noopener" href="https://github.com/Alex313031/Mercury">Mercury Main Repo</a>&nbsp;&nbsp;<img src="imgs/mercury-favicon32.png" width="19" title="Mercury Favicon" alt="Mercury Favicon" style="border: 1px solid #24292f" class="spin2 fav">
 		</li>
-		<li><a title="Releases" target="_blank" rel="noopener" href="https://github.com/Alex313031/Mercury/releases">Releases</a>&nbsp;&nbsp;<img src="imgs/mercury-favicon32.png" width="19" title="Mercury Favicon" alt="Mercury Favicon" style="border: 1px solid #24292f" class="spin2 fav">
+		<li><a title="Releases" target="_blank" rel="noopener" href="https://github.com/Alex313031/Mercury/releases">Releases (Linux & Windows)</a>&nbsp;&nbsp;<img src="imgs/mercury-favicon32.png" width="19" title="Mercury Favicon" alt="Mercury Favicon" style="border: 1px solid #24292f" class="spin2 fav">
 		</li>
 		<li><a title="Issue Tracker" rel="noopener" target="_blank" href="https://github.com/Alex313031/Mercury/issues">File Bugs Here</a>&nbsp;&nbsp;<img src="imgs/bug.svg" width="18" title="Bugs Icon" alt="Bugs Icon" class="spin2 fav">
 		</li>
         </li>
     </ul>
     <a name="installation"></a><h2 class="h2"><u>Installation</u><img src="imgs/hdd.svg" width="38" title="Install" alt="Hard Drive Icon" class="spin2 fav3"></h2>
-    <p>The repo can be used on any distribution that supports .deb packaging. <br> It is located at <a title="Thorium .deb Repo" rel="noopener" target="_blank" href="https://dl.thorium.rocks/">https://dl.thorium.rocks/</a>. To add to your system:</p>
+    <p>The releases come in a <a title="About Tarballs" target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Tar_(computing)#:~:text=In%20computing%2C%20tar%20is%20a%20computer%20software%20utility%20for%20collecting%20many%20files%20into%20one%20archive%20file%2C%20often%20referred%20to%20as%20a%20tarball">tarball</a>. For Windows, just unpack anywhere, and make a shortcut to <em>mercury.exe</em> if you wish. For Linux, it can be used on any distribution. To add to your system:</p>
     <!-- Code Block -->
     <pre title="APT Sources Setup">wget https://dl.thorium.rocks/debian/dists/stable/thorium.list
 sudo mv thorium.list /etc/apt/sources.list.d/
