@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Alex313031's Virtual Business Card</title>
+      <meta name="description" content="Virtual Business Card for Alex Frick.">
+      <meta name="color-scheme" content="light dark">
+      <meta name="theme-color" content="#aaaaaa">
+      <script src="./js/mathlib-min.js"></script>
+      <script>
+window.addEventListener('load', onloadHandler, false);
+
+function onloadHandler()
+{
+   // get the canvas DOM element
+   var canvas = document.getElementById('canvas'),
+       ctx = canvas.getContext("2d"),
+       width = canvas.width,
+       height = canvas.height;
+   
+   // data structures - generate initial blobs
+   var blobList = new BlobList();
+   blobList.blobs = [
+      new Blob(150, 160, 0, 90, "rgba(220,5,134,.9)"),
+      new Blob(67,  136, 0, 34, "rgba(145,200,46,.9)"),
+      new Blob(106, 74,  0, 22, "rgba(45,172,173,.9)"),
+      new Blob(114, 52,  0, 10, "rgba(238,172,78,.75)"),
+      new Blob(220, 82,  0, 56, "rgba(47,118,178,.9)"),
+      new Blob(250, 138, 0, 43, "rgba(248,172,78,.9)"),
+      new Blob(232, 232, 0, 25, "rgba(99,198,78,.9)"),
+      new Blob(256, 222, 0, 10, "rgba(140,45,136,.9)"),
+      new Blob(128, 244, 0, 36, "rgba(226,74,63,.9)"),
+      new Blob(64,  188, 0, 10, "rgba(255,203,78,.9)")
+   ];
+   
+   function drawText(x, y, text, colour)
+   {
+     ctx.fillStyle = colour;
+     ctx.fillText(text, x, y);
+   };
+   
+   function drawDisc(x, y, rad, colour)
+   {
+      ctx.fillStyle = colour;
+      ctx.beginPath();
+      ctx.arc(x, y, rad, 0, TWOPI, true);
+      ctx.fill();
+   };
+   
+   // event handlers
+   var mouseMove = function(e)
+   {
+      blobList.mousex = e.clientX;
+      blobList.mousey = e.clientY;
+   };
+   canvas.addEventListener("mousemove", mouseMove, false);
+   
+   var offsetx = 0, offsety = 0;
+   
+   // init main animation loop
+   requestAnimFrame(loop);
+   function loop()
+   {
+      // compute canvas offset within parent window including page view position
+      var el = canvas;
+      offsetx = offsety = 0;
+      do
+      {
+         offsetx += el.offsetLeft;
+         offsety += el.offsetTop;
+      } while (el = el.offsetParent);
+      offsetx = offsetx - window.pageXOffset;
+      offsety = offsety - window.pageYOffset;
+      
+      ctx.save();
+      
+      // clear the left side of the card
+      // the right hand side is already rendered with fixed text
+      ctx.clearRect(0, 0, width, height);
+      
+      // perform initial one time rendering of text etc.
+      ctx.save();
+      ctx.font = "Bold 13pt Arial";
+      drawText(320,080,"Alexander Frick", "rgb(80,80,80)");
+      ctx.font = "12pt Arial";
+      drawText(320,120,"Developer", "rgb(80,80,80)");
+      drawText(320,140,"Thorium Browser" ,"rgb(80,80,80)");
+      drawText(320,160,"10101 54th Ct." ,"rgb(80,80,80)");
+      drawText(320,180,"Broken Arrow, OK 74014", "rgb(80,80,80)");
+      drawText(320,220,"+1 (918) 902-4714 mobile", "rgb(80,80,80)");
+      drawText(320,240,"alex313031@gmail.com", "rgb(47,118,178)");
+      ctx.restore();
+      
+      // render each edge blob - which react to mouse movement
+      ctx.globalCompositeOperation = 'darker';
+      blobList.update();
+      blobList.render();
+      
+      // render "eg" text overlay
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.font = "Bold 100pt Arial";
+      ctx.fillStyle = "white";
+      ctx.fillText("t", 96, 224);
+      ctx.fillText("h", 154, 224);
+      
+      ctx.restore();
+      
+      requestAnimFrame(loop);
+   };
+   
+   // data structures
+   function BlobList()
+   {
+      this.mousex = this.mousey = 0;
+      this.blobs = [];
+      
+      this.update = function()
+      {
+         // special case for first blob - which is the main magenta disc
+         var blob = this.blobs[0];
+         if (Rnd() > 0.99)
+         {
+            blob.velocity.z += (Rnd()*0.10 - 0.05);
+            blob.spring = 0.0125;
+         }
+         blob.update();
+         
+         // all the other blobs can animate based on mouse interaction
+         for (var i = 1,dx,dy,d; i < this.blobs.length; i++)
+         {
+            blob = this.blobs[i];
+            
+            // calculate offset from mouse position - apply canvas element offset
+            dx = this.mousex - (blob.position.x + offsetx);
+            dy = this.mousey - (blob.position.y + offsety);
+            d = Sqrt(dx * dx + dy * dy);
+            
+            // if the mouse is within the radius of a blog - then nudge it out
+            var rad = (blob.originradius > 16 ? blob.originradius : 16);
+            if (d < rad)
+            {
+               blob.targetPos.x = blob.position.x - dx;
+               blob.targetPos.y = blob.position.y - dy;
+               blob.spring = 0.033;
+            }
+            // else based on a random chance, pulse the blob
+            else if (Rnd() > 0.995)
+            {
+               blob.targetPos.x = blob.origin.x;
+               blob.targetPos.y = blob.origin.y;
+               blob.velocity.z += (Rnd()*0.30 - 0.15);
+               blob.spring = 0.0125;
+            }
+            // else just animate towards the original position
+            else
+            {
+               blob.targetPos.x = blob.origin.x;
+               blob.targetPos.y = blob.origin.y;
+               blob.spring = 0.05;
+            }
+            
+            blob.update();
+         }
+      };
+      
+      this.render = function()
+      {
+         for (var i = 0; i < this.blobs.length; i++)
+         {
+            ctx.save();
+            this.blobs[i].render();
+            ctx.restore();
+         }
+      };
+   };
+   
+   function Blob(x, y, z, radius, colour)
+   {
+      this.origin = new Vector3D(x,y,z);
+      this.position = new Vector3D(x,y,z);
+      this.targetPos = new Vector3D(x,y,z);
+      this.originradius = radius;
+      this.radius = radius;
+      this.velocity = new Vector3D(0,0,0);
+      this.colour = colour;
+      this.friction = 0.75;
+      this.spring = 0.05;
+      
+      this.update = function()
+      {
+         this.velocity.x += (this.targetPos.x - this.position.x) * this.spring;
+         this.velocity.x *= this.friction;
+         this.position.x += this.velocity.x;
+         
+         this.velocity.y += (this.targetPos.y - this.position.y) * this.spring;
+         this.velocity.y *= this.friction;
+         this.position.y += this.velocity.y;
+         
+         var dox = this.origin.x - this.position.x,
+             doy = this.origin.y - this.position.y,
+             d = Sqrt(dox * dox + doy * doy);
+         
+         this.targetPos.z = d/150 + 1;
+         this.velocity.z += (this.targetPos.z - this.position.z) * this.spring;
+         this.velocity.z *= this.friction;
+         this.position.z += this.velocity.z;
+         
+         this.radius = this.originradius * this.position.z;
+         if (this.radius < 1) this.radius = 1;
+      };
+      
+      this.render = function()
+      {
+         ctx.fillStyle = this.colour;
+         ctx.beginPath();
+         ctx.arc(this.position.x, this.position.y, this.radius, 0, TWOPI, true);
+         ctx.fill();
+      };
+   };
+}
+
+// requestAnimFrame shim
+window.requestAnimFrame = (function()
+{
+   return  window.requestAnimationFrame       || 
+           window.webkitRequestAnimationFrame || 
+           window.mozRequestAnimationFrame    || 
+           window.oRequestAnimationFrame      || 
+           window.msRequestAnimationFrame     || 
+           function(callback, element)
+           {
+               window.setTimeout(callback, 1000 / 60);
+           };
+})();
+      </script>
+      <style>
+.card-container
+{
+   text-align: center;
+   margin-bottom: 2.5em;
+}
+#canvas
+{
+   border: 1px solid #aaa;
+   background-image: url('images/cardbg.jpg');
+   -moz-box-shadow: 3px 3px 8px #222;
+   -webkit-box-shadow: 3px 3px 8px #222;
+   box-shadow: 3px 3px 8px #222;
+}
+.title
+{
+   text-align: center;
+   font-family: Segoe UI Light, Arial, Helvetica;
+   font-size: 2.2em;
+   margin: 1em;
+}
+.info
+{
+   text-align: center;
+   font-family: Segoe UI Light, Arial, Helvetica;
+   font-size: 1.2em;
+   margin: 0.25em;
+}
+a, a:visited, a:active, a:hover
+{
+   color: #fff;
+   text-decoration: none;
+}
+a:hover
+{
+   text-decoration: underline;
+}
+      </style>
+   </head>
+   
+   <body style="background-color: #aaa">
+      <div class="card-container">
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+		  <br>
+         <canvas id="canvas" width="560" height="320"></canvas>
+      </div>
+   </body>
+</html>
