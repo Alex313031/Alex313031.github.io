@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A virtual reality fly through of a 3D landscape, built with Three.js and Cinema 4D.">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta itemprop="image" content="thumb.png">
+    <title>Sechelt VR Demo</title>
+    <link rel="author" href="https://github.com/MozillaReality/sechelt">
+    
+    <style>
+    html, body {
+      background-color: #000;
+      color: #fff;
+      margin: 0px;
+      overflow: hidden;
+    }
+    #enterVr {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 10px;
+      background: #222;
+      border: 0;
+      color: #fff;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    </style>
+  </head>
+
+  <body>
+    <button id="enterVr">Enter VR</button>
+    <script src="js/three.min.js"></script>
+    <script src="js/webvr-polyfill.js"></script>
+    <script src="js/VRControls.js"></script>
+    <script src="js/VREffect.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/tween.min.js"></script>
+    <script src="js/C4DCurveLoader.js"></script>
+    <script src="js/sechelt.js"></script>
+  </body>
+</html>
