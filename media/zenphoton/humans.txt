@@ -1,0 +1,13 @@
+/* zenphoton humans.txt */
+
+	Built by Micah Elizabeth Scott
+	
+	Contact: micah@scanlime.org
+	Twitter: @scanlime
+	Blog: https://scanlime.org/
+
+/* SITE */
+	
+	Last update: 2022/08/21
+	Language: English
+	Doctype: HTML5, CSS, Canvas2D
