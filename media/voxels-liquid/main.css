@@ -1,0 +1,23 @@
+			body {
+				font-family: Monospace;
+				background-color: #24292f;
+				margin: 0px;
+				overflow: hidden;
+				color: #fff;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				font-style: italic;
+				padding: 6px;
+				text-align: center;
+			}
+			
+			a:link {
+			color: #5bf5bf;
+			}
+			
+			a:visited,a:active {
+			color: #5bf5bf;
+			}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Voxels Liquid</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="author" href="../../humans.txt">
+		<link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <meta itemprop="image" content="thumb.png">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		
+		<audio loop autoplay id="myTune">
+            <source src="media/skymning_2.ogg" type="audio/ogg">
+        </audio>
+
+		<div id="info"><a title="More Wavy" href="index2.html">More Wavy</a></div>
+
+		<script src="js/Detector.js"></script>
+		<script src="js/RequestAnimationFrame.js"></script>
+		<script src="js/Stats.js"></script>
+		<script src="js/Three.js"></script>
+		<script src="main.js"></script>
+		
+		<script src="js/jquery-3.6.0.slim.min.js"></script>
+    <script>
+			
+		$(document).ready(function () {
+				var myAudio = document.getElementById("myTune");
+                var muted = false
+                //console.log(localStorage)
+                if (localStorage.muted == "true") {
+					myAudio.volume = 0.4;
+                    muted = true;
+                }
+                if (!muted)
+					myAudio.volume = 0.4;
+                    myAudio.play();
+            })
+			
+        function aud_play_pause() {
+                var myAudio = document.getElementById("myTune");
+                if (myAudio.paused) {
+					myAudio.volume = 0.4;
+                    myAudio.play();
+                    localStorage.setItem('muted', false);
+                } else {
+					myAudio.volume = 0.4;
+                    myAudio.pause();
+                    localStorage.setItem('muted', true);
+                }
+            }
+            function play() {
+                var myAudio = document.getElementById("myTune");
+                myAudio.volume = 0.4;
+                myAudio.play();
+            }
+    </script>
+	</body>
+</html>

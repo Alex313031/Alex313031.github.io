@@ -1,0 +1,182 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"gammaInput": false,
+		"gammaOutput": false,
+		"shadows": true,
+		"vr": false
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "D38CC848-1EDA-4C6F-B99A-E03ABEA11A33",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"matrix": [0.763573,0,-0.645721,0,0.157857,0.969658,0.186668,0,0.626128,-0.244467,0.740405,0,4.682861,0.834146,5.558693,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.1,
+			"far": 10000,
+			"focus": 10,
+			"aspect": 0.698324,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "93A27B10-1D49-4AFC-82A8-E66C15065ED2",
+				"type": "CircleBufferGeometry",
+				"radius": 1,
+				"segments": 32,
+				"thetaStart": 0,
+				"thetaLength": 6.283185
+			},
+			{
+				"uuid": "5A1CF86C-F600-431A-A8BD-60CC371130A0",
+				"type": "CylinderBufferGeometry",
+				"radiusTop": 0.6,
+				"radiusBottom": 0.7,
+				"height": 0.1,
+				"radialSegments": 32,
+				"heightSegments": 1,
+				"openEnded": false
+			}],
+		"materials": [
+			{
+				"uuid": "CB2B39B0-6308-422A-B4B3-AAFB96E6E318",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 0.5,
+				"metalness": 0.5,
+				"emissive": 0,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			},
+			{
+				"uuid": "CB5DA07C-E182-43E3-8894-F0E56BDEA87C",
+				"type": "MeshPhongMaterial",
+				"color": 3355443,
+				"emissive": 0,
+				"specular": 1118481,
+				"shininess": 10,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true
+			}],
+		"object": {
+			"uuid": "7DF6C94E-302C-4AC0-827D-DF97E3F428ED",
+			"type": "Scene",
+			"name": "Scene",
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "38AA1D51-60BA-4539-A1A2-2B06E06FA598",
+					"type": "Mesh",
+					"name": "Circle",
+					"receiveShadow": true,
+					"matrix": [1,0,0,0,0,0,-1,0,0,1,0,0,0,-0.1,0,1],
+					"geometry": "93A27B10-1D49-4AFC-82A8-E66C15065ED2",
+					"material": "CB2B39B0-6308-422A-B4B3-AAFB96E6E318"
+				},
+				{
+					"uuid": "01439D62-50D4-492E-8FF8-65189401D0E5",
+					"type": "Mesh",
+					"name": "Cylinder",
+					"castShadow": true,
+					"receiveShadow": true,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,-0.05,0,1],
+					"geometry": "5A1CF86C-F600-431A-A8BD-60CC371130A0",
+					"material": "CB5DA07C-E182-43E3-8894-F0E56BDEA87C"
+				},
+				{
+					"uuid": "37F78E2E-94A9-4FCF-9C63-DB13BEA661F0",
+					"type": "Group",
+					"name": "Tree",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+					"children": [
+						{
+							"uuid": "078522BF-0346-45B3-B467-E7C2D7492834",
+							"type": "PointLight",
+							"name": "PointLight",
+							"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,2,0,1],
+							"color": 16777215,
+							"intensity": 2,
+							"distance": 4,
+							"decay": 1,
+							"shadow": {
+								"camera": {
+									"uuid": "E32D663F-53CD-4623-85D7-5E455BFE5583",
+									"type": "PerspectiveCamera",
+									"fov": 90,
+									"zoom": 1,
+									"near": 0.5,
+									"far": 500,
+									"focus": 10,
+									"aspect": 1,
+									"filmGauge": 35,
+									"filmOffset": 0
+								}
+							}
+						}]
+				},
+				{
+					"uuid": "96962D3B-4AA1-42B2-9954-8B845133412E",
+					"type": "DirectionalLight",
+					"name": "DirectionalLight",
+					"castShadow": true,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,5,10,7.5,1],
+					"color": 16777215,
+					"intensity": 0.5,
+					"shadow": {
+						"camera": {
+							"uuid": "45E0A214-053D-48A7-83BF-9E3AB2A2BAE4",
+							"type": "OrthographicCamera",
+							"zoom": 1,
+							"left": -5,
+							"right": 5,
+							"top": 5,
+							"bottom": -5,
+							"near": 0.5,
+							"far": 500
+						}
+					}
+				},
+				{
+					"uuid": "BE665D14-27AC-4B79-908B-44DB484F4D0B",
+					"type": "HemisphereLight",
+					"name": "HemisphereLight",
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,10,0,1],
+					"color": 4816794,
+					"intensity": 0.25,
+					"groundColor": 8678979
+				}],
+			"background": 1184274
+		}
+	},
+	"scripts": {
+		"37F78E2E-94A9-4FCF-9C63-DB13BEA661F0": [
+			{
+				"name": "",
+				"source": "const MAX_LIFE = 7;\n\nvar scope = this;\n\nvar geometry = new THREE.CubeGeometry();\ngeometry.translate( 0, 0.5, 0 );\n\nvar material = new THREE.MeshBasicMaterial( { color: 0x000000 } );\nvar material2 = new THREE.MeshStandardMaterial( { color: 0xffffff } );\n\nvar tree = new THREE.Group();\nvar leaves = [];\n\nvar root = new THREE.Mesh( geometry, material );\nroot.castShadow = true;\nroot.receiveShadow = true;\n\nfunction addBranch( child, life ) {\n\n\tvar progress = 1.05 - ( life / MAX_LIFE );\n\t\n\tvar scale = child.scale.y - Math.random() / 5;\n\tchild.scale.set( progress / 10, scale, progress / 10 );\n\n\tif ( life > 0 ) {\n\t\tchild.translateY( scale );\n\t\tchild.rotation.x += Math.random() - 0.5;\n\t\tchild.rotation.y += Math.random() - 0.5;\n\t\tchild.rotation.z += Math.random() - 0.5;\n\t}\n\tchild.updateMatrix();\n\ttree.add( child );\n\n\tif ( life < Math.random() * MAX_LIFE ) {\n\t\n\t\tlife = life + 1;\n\t\t\n\t\tfor ( var i = 0; i < 5; i ++ ) {\n\n\t\t\tif ( Math.random() > 0.1 ) {\n\t\t\t\t\n\t\t\t\taddBranch( child.clone(), life );\n\t\t\t\t\n\t\t\t}\n\n\t\t}\n\t\t\n\t} else {\n\n\t\tif ( Math.random() > 0.7 ) {\n\t\t\tvar leaf = child.clone();\n\t\t\tleaf.material = material2.clone();\n\t\t\tleaf.translateY( leaf.scale.y );\n\t\t\tleaf.scale.setScalar( 0.1 + Math.random() * 0.1 );\n\t\t\tleaf.userData.life = life;\n\t\t\tscope.add( leaf );\n\t\t\tleaves.push( leaf );\n\t\t}\n\t}\n\t\n}\n\naddBranch( root, 0 );\n\n// Merge branches\n\nvar geometry = new THREE.Geometry();\n\nfor ( var i = 0; i < tree.children.length; i ++ ) {\n\t\n\tvar branch = tree.children[ i ];\n\tgeometry.merge( branch.geometry, branch.matrix );\n\t\n}\n\nthis.add( new THREE.Mesh( geometry, material ) );\n\n//\n\nvar light = this.getObjectByName( 'PointLight' );\n\nfunction update( event ) {\n\t\n\tfor ( var i = 0; i < leaves.length; i ++ ) {\n\n\t\tvar leaf = leaves[ i ];\n\t\tvar life = leaf.userData.life * 1000;\n\n\t\tvar sin = Math.sin( ( life - event.time ) / 2000 ) * 0.25 + 0.25;\n\n\t\tleaf.material.emissive.setRGB( sin, 0, 0.25 );\n\n\t}\n\t\n\tlight.color.copy( leaves[ 0 ].material.emissive );\n\n}"
+			}],
+		"7DF6C94E-302C-4AC0-827D-DF97E3F428ED": [
+			{
+				"name": "",
+				"source": "function update( event ) {\n\n\tthis.rotation.y = event.time / 5000;\n\n}"
+			}]
+	}
+}
