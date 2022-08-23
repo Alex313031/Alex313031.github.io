@@ -75,6 +75,12 @@ body {
   color: var(--fontcolor);
   background-color: var(--bgcolor);
 }
+div.p3 {
+  border: 1px solid var(--invert);
+  margin: auto;
+  padding-left: 14px;
+  padding-right: 12px;
+}
 h1 {
   text-decoration: underline;
 }

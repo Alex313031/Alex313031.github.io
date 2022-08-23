@@ -50,7 +50,7 @@
 
 /* SITE */
 
-	Last update: 2022/08/21
+	Last update: 2022/08/23
 	Language: English
 	Doctype: HTML5, CSS, XML, WebGL, Canvas2D
 	IDE: Geany, VSCodium, Atom
