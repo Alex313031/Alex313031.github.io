@@ -100,6 +100,9 @@ img{
 svg {
   filter: drop-shadow(1px 1px 1px var(--invert));
 }
+.border {
+  border: 1px solid var(--border);
+}
 code {
   font-family: "monospace";
   font-size: 14px;
@@ -148,4 +151,20 @@ hr {
   80% { transform: rotate(1.5deg); }
   90% { transform: rotate(2.0deg); }
   100% { transform: rotate(0deg); }
+}
+#totop {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.50em;
+  filter: drop-shadow(1px 1px 2px var(--buttonborder));
+}
+#totop a:link,#totop a:visited,#totop a:active {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #551a8b;
+}
+#totop a:hover {
+  color: #0000ee;
 }
