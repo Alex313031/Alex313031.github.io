@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="../humans.txt">
+    <title>Thorium Sandbox</title>
+    <meta name="description" content="Thorium Documentation Landing Page.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="./docs48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./docs32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./docs16.png">
+    <meta itemprop="image" content="./thumb.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="./docs.css">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+
+<body>
+<img title="Thorium Logo (Click Me!)" class="spin" style="margin-right: 18px; margin-top: 12px; float: left;" src="./imgs/thorium48.png">
+<h1 title="Thorium Documentation Landing Page" id="sandbox">Thorium Docs<a style="margin-right: 12px; float: right;" id="svg" alt="Build Icon" title="Build Icon"><svg xmlns="http://www.w3.org/2000/svg" class="spin2" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22.61 18.99l-9.08-9.08c.93-2.34.45-5.1-1.44-7C9.79.61 6.21.4 3.66 2.26L7.5 6.11 6.08 7.52 2.25 3.69C.39 6.23.6 9.82 2.9 12.11c1.86 1.86 4.57 2.35 6.89 1.48l9.11 9.11c.39.39 1.02.39 1.41 0l2.3-2.3c.4-.38.4-1.01 0-1.41zm-3 1.6l-9.46-9.46c-.61.45-1.29.72-2 .82-1.36.2-2.79-.21-3.83-1.25C3.37 9.76 2.93 8.5 3 7.26l3.09 3.09 4.24-4.24-3.09-3.09c1.24-.07 2.49.37 3.44 1.31 1.08 1.08 1.49 2.57 1.24 3.96-.12.71-.42 1.37-.88 1.96l9.45 9.45-.88.89z" fill="currentColor"/></svg></a></h1>
+<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+<hr>
+<h2 id="Links" style="text-align: center; text-decoration: underline;"><em>Links</em></h2>
+<ul>
+<li><strong><a href="building.html">Building</a></strong>&nbsp;&ndash;&nbsp;For general building instructions and for building for Linux.</li>
+<br>
+<li><strong><a href="building_win.html">Building on Windows</a></strong>&nbsp;&ndash;&nbsp;For natively compiling on Windows.</li>
+<br>
+<li><strong><a href="building_win_cross.html">Cross-Building for Windows</a></strong>&nbsp;&ndash;&nbsp;For cross-compiling for Windows on Linux.</li>
+<br>
+<li><strong><a href="about_gn_args.html">About GN Args</a></strong>&nbsp;&ndash;&nbsp;Document explaining the GN arguments used in Thorium.</li>
+<br>
+<li><strong><a href="cmdline_flags.html">Commandline Flags</a></strong>&nbsp;&ndash;&nbsp;Document listing all available cmdline flags in Chromium/Thorium.</li>
+<br>
+<li><strong><a href="../optimizations.html">Thorium Optimizations</a></strong>&nbsp;&ndash;&nbsp;Document explaining the compiler optimizations of Thorium.</li>
+<br>
+<li><strong><a href="sandbox.html">Thorium Sandbox</a></strong>&nbsp;&ndash;&nbsp;Document describing the Sandbox mechanisms of Thorium. See also the<br>&nbsp;&nbsp;&nbsp;<a href="linux_sandboxing.html">Linux Sandbox</a>.</li>
+</ul><br>
+
+	<script defer src="./js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="./js/spin.js"></script>
+    <script defer src="./js/spin2.js"></script>
+	<script defer src="./js/spun2.js"></script>
+    <script defer src="./js/button.js"></script>
+
+</body>
+</html>

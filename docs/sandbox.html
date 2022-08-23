@@ -11,6 +11,8 @@
     <link rel="shortcut icon" type="image/png" sizes="48x48" href="./docs48.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./docs32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./docs16.png">
+    <meta itemprop="image" content="./thumb.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="./docs.css">
     <meta name="theme-color" content="#ffffff">
     <script>
@@ -37,7 +39,8 @@
 </head>
 
 <body>
-<h1 id="sandbox">Thorium Sandbox</h1>
+<h1 id="sandbox">Thorium Sandbox<a style="margin-right: 24px; float: right;" id="svg" alt="Build Icon" title="Build Icon"><svg xmlns="http://www.w3.org/2000/svg" class="spin2" height="64" width="64" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><path d="M360.923 302.912h-16.328c-6.765 0-12.249 5.485-12.249 12.249s5.484 12.249 12.249 12.249h16.328c6.765 0 12.249-5.485 12.249-12.249s-5.484-12.249-12.249-12.249z"/><path d="M499.751 302.912H475.18v-27.817c0-6.764-5.484-12.249-12.249-12.249h-43.896l-40.27-31.461 54.183-54.191a35.462 35.462 0 0 0 20.497 6.502c9.096 0 18.193-3.461 25.117-10.386l11.085-11.085a12.25 12.25 0 0 0 0-17.322l-41.732-41.732a12.25 12.25 0 0 0-8.661-3.588h-.004a12.243 12.243 0 0 0-8.662 3.593l-11.069 11.08c-12.402 12.402-13.689 31.764-3.889 45.612l-56.315 56.323-9.015-7.043a152.922 152.922 0 0 0-188.599-.001l-68.749 53.7H49.056c-6.765 0-12.249 5.485-12.249 12.249v27.817H12.249C5.484 302.912 0 308.397 0 315.161s5.484 12.249 12.249 12.249h24.559v72.758c0 6.764 5.484 12.249 12.249 12.249h413.875c6.765 0 12.249-5.485 12.249-12.249V327.41h24.571c6.765 0 12.249-5.485 12.249-12.249s-5.485-12.249-12.25-12.249zm-62.904-171.34 2.412-2.415 24.405 24.406-2.424 2.424c-4.298 4.298-11.291 4.299-15.59 0l-8.806-8.819c-4.3-4.299-4.3-11.293.003-15.596zm-260.064 96.88a128.466 128.466 0 0 1 158.435 0l44.025 34.395H132.749l44.034-34.395zM61.305 387.919V327.41h244.498c6.765 0 12.249-5.485 12.249-12.249s-5.484-12.249-12.249-12.249H61.305v-15.568H450.683v15.568H403.39c-6.765 0-12.249 5.485-12.249 12.249s5.484 12.249 12.249 12.249h47.293v60.509H61.305z" fill="currentColor"/></svg>
+</a></h1>
 <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
 <hr>
 <h2 id="overview">Overview</h2>
@@ -53,7 +56,7 @@ make persistent changes to the computer or access information that is
 confidential. The architecture and exact assurances that the sandbox provides
 are dependent on the operating system. This document covers the Windows
 implementation as well as the general design. The Linux implementation is
-described <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/linux/sandboxing.md">here</a>, the OSX implementation
+described <a href="./linux_sandboxing.html">here</a>, the OSX implementation
 <a href="http://dev.chromium.org/developers/design-documents/sandbox/osx-sandboxing-design">here</a>.</p>
 <p>If you don&#39;t feel like reading this whole document you can read the
 <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/design/sandbox_faq.md">Sandbox FAQ</a> instead. A

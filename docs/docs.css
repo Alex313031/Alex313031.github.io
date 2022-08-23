@@ -64,12 +64,14 @@
 }
 html {
   margin: auto;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
 body {
-  margin: 0em auto;
+  margin: auto;
   max-width: 46em;
   font-family: "Roboto", sans-serif;
-  padding: 1rem;
+  padding: 0.5rem;
   color: var(--fontcolor);
   background-color: var(--bgcolor);
 }
@@ -167,4 +169,36 @@ hr {
 }
 #totop a:hover {
   color: #0000ee;
+}
+/* Width & Height */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+/* Track Piece */
+body::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+  -webkit-border-radius: 5px;
+}
+/* Corner */
+body::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+/* Handle */
+body::-webkit-scrollbar-thumb { 
+  height: auto;
+  background-color: #24292f; 
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 1.0);
+}
+/* Handle on Hover */
+body::-webkit-scrollbar-thumb:hover {
+  height: auto;
+  background-color: #404040;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 1.0);
 }

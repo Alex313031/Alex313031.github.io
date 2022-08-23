@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="../humans.txt">
+    <title>Thorium Sandbox</title>
+    <meta name="description" content="Thorium Building Document for Windows Cross-Building.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="./docs48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./docs32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./docs16.png">
+    <meta itemprop="image" content="./thumb.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="./docs.css">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+
+<body>
+<h1 id="cross-compiling-thorium-for-windows-on-linux">Cross-Compiling Thorium<a style="margin-right: 12px; float: right;" id="svg" alt="Build Icon" title="Build Icon"><svg xmlns="http://www.w3.org/2000/svg" class="spin2" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22.61 18.99l-9.08-9.08c.93-2.34.45-5.1-1.44-7C9.79.61 6.21.4 3.66 2.26L7.5 6.11 6.08 7.52 2.25 3.69C.39 6.23.6 9.82 2.9 12.11c1.86 1.86 4.57 2.35 6.89 1.48l9.11 9.11c.39.39 1.02.39 1.41 0l2.3-2.3c.4-.38.4-1.01 0-1.41zm-3 1.6l-9.46-9.46c-.61.45-1.29.72-2 .82-1.36.2-2.79-.21-3.83-1.25C3.37 9.76 2.93 8.5 3 7.26l3.09 3.09 4.24-4.24-3.09-3.09c1.24-.07 2.49.37 3.44 1.31 1.08 1.08 1.49 2.57 1.24 3.96-.12.71-.42 1.37-.88 1.96l9.45 9.45-.88.89z" fill="currentColor"/></svg></a><br> for Windows on Linux</h1>
+<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+<hr>
+<p>As many Thorium developers are on Linux/Mac, cross-compiling Thorium for
+Windows targets facilitates development for Windows targets on non-Windows
+machines.</p>
+<p>It&#39;s possible to build most parts of the codebase on a Linux or Mac host while
+targeting Windows. It&#39;s also possible to run the locally-built binaries on
+swarming.  This document describes how to set that up, and current restrictions.</p>
+<h2 id="limitations">Limitations</h2>
+<p>What does <em>not</em> work:</p>
+<ul>
+<li><code>js2gtest</code> tests are omitted from the build (<a href="https://crbug.com/1010561">bug</a>)</li>
+<li>on Mac hosts, 32-bit builds don&#39;t work (<a href="https://crbug.com/794838">bug</a> has
+more information, and this is unlikely to ever change)</li>
+</ul>
+<p>All other targets build fine (including <code>chrome</code>, <code>thorium_shell</code>, etc...).</p>
+<p>Uses of <code>.asm</code> files have been stubbed out.  As a result, Crashpad cannot
+report crashes, and NaCl defaults to disabled and cannot be enabled in cross
+builds (<a href="https://crbug.com/762167">.asm bug</a>).</p>
+<h2 id="setup">Setup</h2>
+<p>First make sure you&#39;ve followed the instructions for getting the Chromium and Thorium code from <a href="./building.html#get-the-code">Here</a>. Also make sure you have run <code>setup.sh</code> to copy the Thorium code over the Chromium tree.</p>
+<h2 id="-gclient-setup"><em>.gclient</em> setup</h2>
+<ol>
+<li><p>Tell gclient that you need Windows build dependencies by adding
+<code>target_os = [&#39;win&#39;]</code> to the end of your <code>.gclient</code> file present in <em>~/chromium/</em>.  (If you already
+have a <code>target_os</code> line in there, just add <code>&#39;win&#39;</code> to the list.) e.g.</p>
+<pre><code>solutions = [
+  {
+    ...
+  }
+]
+target_os = [<span class="hljs-string">'linux'</span>, <span class="hljs-string">'win'</span>]
+</code></pre></li>
+<li><p>Run a <code>trunk.sh</code>, and follow instructions on screen.</p>
+</li>
+</ol>
+<h3 id="installing-the-msvs-artifacts-archive">Installing the MSVS Artifacts Archive</h3>
+<p>Download the latest MSVS Artifacts Archive from <a href="https://github.com/Alex313031/Snippets/releases/latest">Here</a>. Then, make a subdir in <em>chromium</em> called win, i.e. <code>mkdir ~/chromium/win</code>, and then place the .zip file in there.</p>
+<p>Then add these lines to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
+<pre><code><span class="hljs-built_in">export</span> DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=&lt;base url&gt;
+<span class="hljs-built_in">export</span> GYP_MSVS_HASH_&lt;toolchain <span class="hljs-built_in">hash</span>&gt;=&lt;<span class="hljs-built_in">hash</span> value&gt;
+</code></pre><p><code>&lt;base url&gt;</code> is the full path of the directory containing the .zip file, i.e. <em>/home/alex/chromium/win/80909eccbb.zip</em></p>
+<p><code>&lt;toolchain hash&gt;</code> is hardcoded in <code>src/build/vs_toolchain.py</code> and can be found by
+setting <code>DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL</code> and running <code>gclient runhooks</code>:</p>
+<pre><code>gclient runhooks
+...
+Running hooks:  17% (11/64) win_toolchain
+________ running '/usr/bin/python src/build/vs_toolchain.py <span class="hljs-keyword">update</span> <span class="hljs-comment">--force' in &lt;chromium dir&gt;</span>
+Windows toolchain <span class="hljs-keyword">out</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">or</span> doesn<span class="hljs-string">'t exist, updating (Pro)...
+current_hashes:
+desired_hash: &lt;toolchain hash&gt;</span>
+</code></pre><p><code>&lt;hash value&gt;</code> is the name of the .zip, without .zip at the end, i.e. <code>80909eccbb</code></p>
+<h2 id="building">Building</h2>
+<p>Follow <a href="./building.html#setting-up-the-build">Setting up the build</a>, except instead of using the <code>args.gn</code> from the
+root of the Thorium repo, use the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn"><code>win_args.gn</code></a>, from <em>~/Thorium/infra/</em></p>
+<p>Then, to build, run <code>build_win.sh</code>, instead of <code>build.sh</code>. See &gt; <a href="./building.html#build-thorium">Here</a>.</p>
+<p><em>Happy Thorium Building!</em></p>
+<p><img title="Thorium Mascot" class="shake border" src="./imgs/Thorium_Mascot.jpg" width="200"></p>
+<br>
+
+<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+
+	<script defer src="./js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="./js/spin.js"></script>
+    <script defer src="./js/spin2.js"></script>
+	<script defer src="./js/spun2.js"></script>
+    <script defer src="./js/button.js"></script>
+
+</body>
+</html>
