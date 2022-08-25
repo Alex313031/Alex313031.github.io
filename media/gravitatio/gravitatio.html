@@ -82,7 +82,7 @@
 
 			function init() {
 
-				renderer = new THREE.WebGLRenderer({ alpha: true });
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true} );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
                 renderer.setClearColor( 0xFFFFF9, 1 );

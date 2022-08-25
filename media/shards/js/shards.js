@@ -2,7 +2,7 @@
     var angleX = 30;
     var angleY = 30;
 
-    var gl = GL.create({ stencil: false, alpha: true, antialias: false });
+    var gl = GL.create({ stencil: false, alpha: true, antialias: true });
     var width = 600;
     var height = 400;
     var ratio = window.devicePixelRatio || 1;

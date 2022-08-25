@@ -24965,7 +24965,7 @@ module.exports = anime;
 					_alpha = parameters.alpha !== undefined ? parameters.alpha : false,
 					_depth = parameters.depth !== undefined ? parameters.depth : true,
 					_stencil = parameters.stencil !== undefined ? parameters.stencil : true,
-					_antialias = parameters.antialias !== undefined ? parameters.antialias : false,
+					_antialias = parameters.antialias !== undefined ? parameters.antialias : true,
 					_premultipliedAlpha = parameters.premultipliedAlpha !== undefined ? parameters.premultipliedAlpha : true,
 					_preserveDrawingBuffer = parameters.preserveDrawingBuffer !== undefined ? parameters.preserveDrawingBuffer : false,
 					_powerPreference = parameters.powerPreference !== undefined ? parameters.powerPreference : 'default',

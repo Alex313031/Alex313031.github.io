@@ -207,7 +207,7 @@ function init() {
 		source.start( 0 );
 	} );
 
-	renderer = new THREE.WebGLRenderer( { antialias: false } );
+	renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true} );
 	var pixelRatio = window.devicePixelRatio;
 	if ( isMobile ) pixelRatio *= .5;
 	renderer.setPixelRatio( pixelRatio );

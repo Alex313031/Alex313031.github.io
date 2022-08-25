@@ -24,7 +24,7 @@ function handleError(text) {
 
 window.onerror = handleError;
 
-var gl = GL.create();
+var gl = GL.create( { antialias: true, alpha: true} );
 var water;
 var cubemap;
 var renderer;

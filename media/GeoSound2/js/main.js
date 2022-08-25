@@ -4,7 +4,7 @@ function init() {
     scene = new THREE.Scene();
     var e = window.innerWidth / window.innerHeight;
     ((camera = new THREE.PerspectiveCamera(30, e, 1, 1e3)).position.z = 400),
-        (renderer = new THREE.WebGLRenderer({ antialias: !0 })).setSize(window.innerWidth, window.innerHeight),
+        (renderer = new THREE.WebGLRenderer({ antialias: true })).setSize(window.innerWidth, window.innerHeight),
         renderer.setPixelRatio(window.devicePixelRatio),
         renderer.setClearColor(2106669),
         (renderer.shadowMapEnabled = !0),

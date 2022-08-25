@@ -316,6 +316,7 @@ var Sketch = () => {
   var renderer = view.renderer
   renderer.setClearColor(new THREE.Color(config.backgroundColor), 1.0);
   renderer.autoClear = false;
+  renderer.antialias = true;
 
 
   // orbit controls

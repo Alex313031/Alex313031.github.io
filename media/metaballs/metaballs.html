@@ -310,9 +310,8 @@ function init() {
   quad.position.z = -500;
   scenePost.addObject(quad);
 
-  renderer = new THREE.WebGLRenderer({ clearColor: 0x000000, clearAlpha: 1 });
+  renderer = new THREE.WebGLRenderer({ clearColor: 0x000000, clearAlpha: 1, antialias: true, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-
   container.innerHTML = "";
 
   container.appendChild(renderer.domElement);

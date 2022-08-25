@@ -115,7 +115,7 @@ var Sketch = function(container){
 
   // three
   var view = new ThreeView(container);
-  var renderer = view.setupRenderer();
+  var renderer = view.setupRenderer( { antialias: true, alpha: true} );
 
   var clock = new THREE.Clock();
   var elapsedTime = 0;
