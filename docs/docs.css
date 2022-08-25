@@ -208,3 +208,23 @@ body::-webkit-scrollbar-thumb:hover {
   -webkit-border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 1.0);
 }
+form {
+  margin: auto;
+  float: right;
+  color: #ffffff;
+}
+input {
+  margin: auto;
+  color: #000000;
+  border: 1;
+}
+.search {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1;
+}
+.submit {
+  background-color: #828282;
+  color: #ffffff;
+  border: 1;
+}
