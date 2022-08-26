@@ -77,7 +77,7 @@ target_os = [<span class="hljs-string">'linux'</span>, <span class="hljs-string"
 </li>
 </ol>
 <h3 id="installing-the-msvs-artifacts-archive">Installing the MSVS Artifacts Archive</h3>
-<p>Download the latest MSVS Artifacts Archive from <a href="https://github.com/Alex313031/Snippets/releases/latest">Here</a>. Then, make a subdir in <em>chromium</em> called win, i.e. <code>mkdir ~/chromium/win</code>, and then place the .zip file in there.</p>
+<p>Download the latest MSVS Artifacts Archive from <a target="_blank" rel="noopener" href="https://github.com/Alex313031/Snippets/releases/latest">Here</a>. Then, make a subdir in <em>chromium</em> called win, i.e. <code>mkdir ~/chromium/win</code>, and then place the .zip file in there.</p>
 <p>Then, to use the generated file on a Linux or Mac host, the following environment variables
 need to be set, so add these lines to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
 <pre><code><span class="hljs-built_in">export</span> DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=&lt;base url&gt;
@@ -111,7 +111,7 @@ when it was released, and this is what you would use, e.g. 10.0.20348.0</p>
 <p>These commands create a zip file named <code>&lt;hash value&gt;.zip</code>, which can be used with the instructions above ^.</p>
 <h2 id="building">Building</h2>
 <p>Follow <a href="./building.html#setting-up-the-build">Setting up the build</a>, except instead of using the <code>args.gn</code> from the
-root of the Thorium repo, use the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn"><code>win_args.gn</code></a>, from <em>~/Thorium/infra/</em></p>
+root of the Thorium repo, use the <a target="_blank" rel="noopener" href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn"><code>win_args.gn</code></a>, from <em>~/Thorium/infra/</em></p>
 <p>Then, to build, run <code>build_win.sh</code>, instead of <code>build.sh</code>. See &gt; <a href="./building.html#build-thorium">Here</a>.</p>
 <p><em>Happy Thorium Building!</em></p>
 <p><img title="Thorium Mascot" class="shake border" src="./imgs/Thorium_Mascot.jpg" width="200"></p>

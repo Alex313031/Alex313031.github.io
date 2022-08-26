@@ -123,6 +123,15 @@ a:link {
 a:visited,a:active {
   color: var(--visitedcolor);
 }
+a.nocolor {
+  color: var(--fontcolor);
+}
+a.nocolor:hover {
+  color: var(--linkcolor);
+}
+a.nocolor:active {
+  color: var(--visitedcolor);
+}
 button {
   font-family: inherit;
   box-shadow: 1px 1px 1px 0px var(--buttonborder);

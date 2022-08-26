@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="../humans.txt">
+    <title>Cross-Building Thorium</title>
+    <meta name="description" content="Thorium Building Document for Windows Cross-Building.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="docs48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="docs32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="docs16.png">
+    <meta itemprop="image" content="thumb.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="docs.css">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+
+<body>
+<h1 id="cross-compiling-thorium-for-windows-on-linux">Project Goals<a style="margin-right: 12px; float: right;" id="svg" alt="Checkmark Icon" title="Checkmark Icon"><svg xmlns="http://www.w3.org/2000/svg" height="52" class="spin2" viewBox="0 0 48 48" width="52"><path d="m17.3 45-3.8-6.5-7.55-1.55.85-7.35L2 24l4.8-5.55-.85-7.35 7.55-1.55L17.3 3 24 6.1 30.7 3l3.85 6.55 7.5 1.55-.85 7.35L46 24l-4.8 5.6.85 7.35-7.5 1.55L30.7 45 24 41.9Zm1.35-3.95L24 38.8l5.5 2.25 3.35-5 5.85-1.5-.6-5.95 4.05-4.6-4.05-4.7.6-5.95-5.85-1.4-3.45-5L24 9.2l-5.5-2.25-3.35 5-5.85 1.4.6 5.95L5.85 24l4.05 4.6-.6 6.05 5.85 1.4ZM24 24Zm-2.15 6.65L33.2 19.4l-2.25-2.05-9.1 9-4.75-4.95-2.3 2.25Z" fill="currentColor"/></svg>
+</a><br></h1>
+<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+<hr>
+<h2 id="project-goals">Thorium Project Goals</h2>
+<p>Test</p>
+<h2 id="core-principles" title="Copy of Chromium's Core Principles"><a class="nocolor" target="_blank" rel="noopener" href="https://www.chromium.org/Home/chromium-security/core-principles/">Chromium Core Principles</a></h2>
+<h3 id="help-users-safely-navigate-the-web">Help users safely navigate the web.</h3>
+<p>Ensuring user safety means carefully balancing usability, capability and
+security. If we’re doing it right, these aspects should all work hand-in-hand.
+In most cases, we want security to be nearly invisible to the user. We update
+transparently and try to provide safe defaults without asking users to make
+security decisions. When <a rel="noopener" href="https://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=95617">security
+indicators</a>
+are surfaced, we aim to clearly explain the situation and highlight the most
+important information, such as the hostname and SSL state in the address bar.</p>
+<h3 id="design-for-defense-in-depth-and-more-depth">Design for defense in depth (and more depth).</h3>
+<p>Our goal in designing Chrome’s security architecture was to layer defenses, and
+avoid single points of failure. Chrome’s sandbox architecture represents one of
+the most effective parts of this strategy, but it’s far from the only piece. We
+also employ the best available anti-exploit technologies—including
+<a rel="noopener" href="https://en.wikipedia.org/wiki/Address_space_layout_randomization">ASLR</a>,
+<a rel="noopener" href="https://en.wikipedia.org/wiki/Data_Execution_Prevention">DEP</a>, <a href="https://www.matasano.com/research/Attacking_Clientside_JIT_Compilers_Paper.pdf#page=24">JIT
+hardening</a>,
+and <a rel="noopener" href="https://msdn.microsoft.com/en-us/library/9a89h429.aspx">SafeSEH</a>—along with
+custom technologies like <a rel="noopener" href="https://code.google.com/apis/safebrowsing/">Safe
+Browsing</a>, <a rel="noopener" href="https://support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1181003">out-of-date plugin
+blocking</a>,
+silent auto-update, and <a rel="noopener" href="https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot/">verified
+boot</a> on Chrome OS. And we
+continue to work towards advancing the state of the art with research into areas
+like per-origin sandboxing and control flow integrity.</p>
+<h3 id="security-is-a-team-responsibility">Security is a team responsibility.</h3>
+<p>There’s a common misconception that security can be handled as a feature or
+add-on component. The fact is that security of any complex piece of software is
+a cross-cutting concern, determined by millions of seemingly innocuous decisions
+being made by developers every day. That’s why it’s essential for every team
+member to be aware of secure development practices, and work with their security
+team throughout the lifecycle of the project. This general awareness helps
+supplement our normal security review process of auditing, regression testing,
+and fuzzing.</p>
+<h3 id="speed-matters">Speed matters.</h3>
+<p>User safety depends on quickly turning around security issues, regardless of
+whether a vulnerability is discovered internally or reported by a third party.
+We are committed to promptly addressing all security issues, and delivering
+fixes to our users via our fast automatic update process. This approach has
+allowed us to maintain an <a rel="noopener" href="https://www.accuvant.com/sites/default/files/images/webbrowserresearch_v1_0.pdf#page=24">industry-leading response
+time</a>
+to security vulnerabilities—even when dealing with such a complex and
+politically charged issue as an irresponsible root Certificate Authority.</p>
+<h3 id="be-transparent">Be transparent.</h3>
+<p>We do not downplay security impact or bury vulnerabilities with silent fixes,
+because doing so serves users poorly. Instead, we provide users and
+administrators with the information they need to accurately assess risk. We
+publicly document our <a rel="noopener" href="https://www.chromium.org/Home/chromium-security/security-bug-lifecycle">security handling
+process</a>,
+and we disclose all vulnerabilities fixed in Chrome and its dependencies—whether
+discovered internally or externally. Whenever possible, we list all fixed
+security issues in our <a rel="noopener" href="https://googlechromereleases.blogspot.com/">release
+notes</a>, and make the underlying
+details public as soon as other affected projects have an adequate amount of
+time to respond. When we do not control the disclosure timeline for a security
+issue and cannot list it at the time of release, we make the details of the
+issue public as soon as disclosure occurs.</p>
+<h3 id="engage-the-community">Engage the community.</h3>
+<p>No software is perfect, and security bugs slip through even the best development
+and review processes. That’s why we’re grateful for the work of the independent
+security research community in helping us find and fix vulnerabilities. In
+response, we do our best to <a rel="noopener" href="https://www.chromium.org/Home/chromium-security/hall-of-fame">acknowledge</a>
+and <a rel="noopener" href="https://www.chromium.org/Home/chromium-security/vulnerability-rewards-program">reward</a> their
+contributions by ensuring proper attribution, paying out bounties, and
+sponsoring security conferences. We leverage the community to even greater
+extent where we can, by hiring members directly onto our team and contracting
+with industry leading, independent security consultancies.</p>
+<h3 id="make-the-web-safer-for-everyone">Make the web safer for <em>everyone</em>.</h3>
+<p>Security is not a zero-sum game. One browser does not succeed in security at the
+cost of others, and we’re all better off when the best security technologies and
+techniques are employed by everyone. To that end, we work closely with standards
+bodies and other browser makers to raise the bar by collaborating on various
+standards, including <a rel="noopener" href="https://tools.ietf.org/html/draft-ietf-websec-key-pinning-01">public key
+pinning</a>, <a rel="noopener" href="https://www.w3.org/TR/CSP/">Content
+Security Policies</a>, and <a rel="noopener" href="https://www.chromium.org/spdy/">SPDY</a> (now <a rel="noopener" href="http://httpwg.org/specs/rfc7540.html">HTTP/2</a>). We also open
+source or otherwise make our security technologies widely available (e.g.
+<a rel="noopener" href="https://www.chromium.org/nativeclient/">Native Client</a> / <a rel="noopener" href="https://www.chromium.org/developers/design-documents/pepper-plugin-implementation/">Pepper</a>, <a rel="noopener" href="https://code.google.com/p/ots/">Open Type
+Sanitizer</a>, <a target="_blank" href="sandbox.html">application
+sandboxing</a>, and <a rel="noopener" href="https://code.google.com/apis/safebrowsing/">Safe
+Browsing</a>).</p><br>
+<p><img title="Goals Logo" style="display: block; margin-left: auto; margin-right: 38%;" class="shake" src="./imgs/goal.png" width="200"></p>
+<br>
+
+<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+
+	<script defer src="./js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="./js/spin.js"></script>
+    <script defer src="./js/spin2.js"></script>
+	<script defer src="./js/spun2.js"></script>
+    <script defer src="./js/button.js"></script>
+
+</body>
+</html>
