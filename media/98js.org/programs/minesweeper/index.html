@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- from https://jonziebell.com/minesweeper/ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Minesweeper</title>
+		<link href="../../lib/os-gui/layout.css" rel="stylesheet" type="text/css">
+		<link href="../../lib/os-gui/windows-98.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="../../images/icons/minesweeper-16x16.png" sizes="16x16" type="image/png">
+		<link rel="icon" href="../../images/icons/minesweeper-32x32.png" sizes="32x32" type="image/png">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<script src="../../lib/os-gui/MenuBar.js"></script>
+		<script src="../../lib/jquery.min.js"></script>
+		<script src="../../lib/os-gui/$Window.js"></script>
+		<script src="../../src/msgbox.js"></script>
+		<script>defaultMessageBoxTitle = "Minesweeper";</script>
+		<script src="lib/rocket.12.06.js"></script>
+		<script src="lib/seedrandom.js"></script>
+		<script src="lib/konami.js"></script>
+		<script src="menus.js"></script>
+		<script src="minesweeper.js"></script>
+		<script src="tile.js"></script>
+		<script src="face.js"></script>
+		<script src="grid.js"></script>
+		<script src="ssd.js"></script>
+		<script src="fun.js"></script>
+		<style>
+			body, #play_area {
+				margin: 0;
+				padding: 0;
+				background-color: #bdbdbd;
+				margin: auto;
+			}
+			* {
+				image-rendering: crisp-edges;
+				image-rendering: pixelated;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="play_area"></div>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Explorer</title>
+		<link href="../../layout.css" rel="stylesheet" type="text/css">
+		<link href="../../classic.css" rel="stylesheet" type="text/css">
+		<link href="../../lib/os-gui/layout.css" rel="stylesheet" type="text/css">
+		<link href="../../lib/os-gui/windows-98.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="../../images/icons/explorer-16x16.png" sizes="16x16" type="image/png">
+		<link rel="icon" href="../../images/icons/explorer-32x32.png" sizes="32x32" type="image/png">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<script src="../../lib/jquery.min.js"></script>
+		<script src="../../lib/browserfs.js"></script>
+		<script src="../../src/filesystem-setup.js"></script>
+		<script src="../../lib/os-gui/MenuBar.js"></script>
+		<script src="../../lib/os-gui/$Window.js"></script>
+		<script src="../../src/msgbox.js"></script>
+		<script src="../../src/iframe-windows.js"></script>
+		<script>defaultMessageBoxTitle = "Explorer";</script>
+		<script src="../../src/helpers.js"></script>
+		<script src="../../src/FolderView.js"></script>
+		<script src="../../src/FolderViewItem.js"></script>
+		<script src="menus.js"></script>
+		<script src="explorer.js"></script>
+		<link href="explorer.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="toolbars">
+		<div class="toolbar" id="menu-bar-toolbar">
+			<div class="toolbar-drag-handle"></div>
+		</div>
+		<div class="toolbar" id="standard-buttons-toolbar">
+		<div class="toolbar-drag-handle"></div>
+		<div id="standard-buttons">
+			<div class="toolbar-compound-button-wrapper">
+				<button class="toolbar-button lightweight back-button" disabled>
+					<span class="label-text">Back</span>
+				</button>
+				<button class="toolbar-dropdown-button lightweight back-dropdown-button" disabled>
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m6 4 4 4-4 4z"></path></svg>
+				</button>
+			</div>
+			<div class="toolbar-compound-button-wrapper">
+				<button class="toolbar-button lightweight forward-button" disabled>
+					<span class="label-text">Forward</span>
+				</button>
+				<button class="toolbar-dropdown-button lightweight forward-dropdown-button" disabled>
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m6 4 4 4-4 4z"></path></svg>
+				</button>
+			</div>
+			<button class="toolbar-button lightweight up-button">
+				<span class="label-text">Up</span>
+			</button>
+			<hr aria-orientation="vertical">
+			<button class="toolbar-button lightweight cut-button">
+				<span class="label-text">Cut</span>
+			</button>
+			<button class="toolbar-button lightweight copy-button">
+				<span class="label-text">Copy</span>
+			</button>
+			<button class="toolbar-button lightweight paste-button">
+				<span class="label-text">Paste</span>
+			</button>
+			<hr aria-orientation="vertical">
+			<button class="toolbar-button lightweight undo-button">
+				<span class="label-text">Undo</span>
+			</button>
+			<hr aria-orientation="vertical">
+			<button class="toolbar-button lightweight delete-button">
+				<span class="label-text">Delete</span>
+			</button>
+			<button class="toolbar-button lightweight properties-button">
+				<span class="label-text">Properties</span>
+			</button>
+			<hr aria-orientation="vertical">
+			<div class="toolbar-compound-button-wrapper">
+				<button class="toolbar-button lightweight cycle-view-mode-button">
+					<span class="label-text">Views</span>
+				</button>
+				<button class="toolbar-dropdown-button lightweight views-dropdown-button">
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m6 4 4 4-4 4z"></path></svg>
+				</button>
+			</div>
+		</div>
+		<div id="internet-buttons" style="display: none;">
+			<div class="toolbar-compound-button-wrapper">
+				<button class="toolbar-button lightweight back-button" disabled>
+					<span class="label-text">Back</span>
+				</button>
+				<button class="toolbar-dropdown-button lightweight back-dropdown-button" disabled>
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m6 4 4 4-4 4z"></path></svg>
+				</button>
+			</div>
+			<div class="toolbar-compound-button-wrapper">
+				<button class="toolbar-button lightweight forward-button" disabled>
+					<span class="label-text">Forward</span>
+				</button>
+				<button class="toolbar-dropdown-button lightweight forward-dropdown-button" disabled>
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m6 4 4 4-4 4z"></path></svg>
+				</button>
+			</div>
+			<button class="toolbar-button lightweight stop-button"><span class="label-text">Stop</span></button>
+			<button class="toolbar-button lightweight refresh-button"><span class="label-text">Refresh</span></button>
+			<button class="toolbar-button lightweight home-button"><span class="label-text">Home</span></button>
+			<hr aria-orientation="vertical">
+			<button class="toolbar-button lightweight toggle search-button"><span class="label-text">Search</span></button>
+			<button class="toolbar-button lightweight toggle favorites-button"><span class="label-text">Favorites</span></button>
+			<button class="toolbar-button lightweight toggle history-button"><span class="label-text">History</span></button>
+			<!-- <div class="toolbar-compound-button-wrapper">
+				<button class="toolbar-button lightweight mail-button" disabled>
+					<span class="label-text">Mail</span>
+				</button>
+				<button class="toolbar-dropdown-button lightweight mail-dropdown-button" disabled>
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m6 4 4 4-4 4z"></path></svg>
+				</button>
+			</div> -->
+			<hr aria-orientation="vertical">
+			<button class="toolbar-button lightweight print-button"><span class="label-text">Print</span></button>
+		</div>
+		</div>
+		<div class="toolbar" id="address-bar-toolbar">
+		<div class="toolbar-drag-handle"></div>
+		<div id="address-bar">
+			<!-- @TODO: d access key -->
+			<label for="address">Address</label>
+			<div id="address-compound-input" class="inset-deep">
+				<img id="address-icon" width="16" height="16" src="../../images/icons/folder-16x16.png" alt="">
+				<input type="text" id="address" autocomplete="off">
+				<button id="address-dropdown-button" disabled>
+					<!-- Outer SVG must not have the transform, because it has a filter when disabled which would get rotated. -->
+					<!-- @TODO: compute triangle graphics based on system metrics -->
+					<!-- <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle;transform:rotate(90deg)"><path d="m6 7 3 3-3 3z"></path></svg> -->
+					<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle"><path style="transform:rotate(90deg);transform-origin:center" d="m5 6 4 4-4 4z"></path></svg>
+					<!-- <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="fill:currentColor;display:inline-block;vertical-align:middle;transform:rotate(90deg)"><path d="m6 4 5 5-5 5z"></path></svg> -->
+			</button>
+				<!-- TODO: functional dropdown, autocompleting file/folder paths -->
+			</div>
+		</div>
+		</div>
+		</div>
+		<div id="content" class="inset-deep"></div>
+		<div id="status-bar">
+			<div id="status-bar-left" class="inset-shallow">
+				<img id="status-bar-left-icon" style="display: none;" width="16" height="16" src="../../images/icons/folder-16x16.png" alt="">
+				<span id="status-bar-left-text"></span>
+			</div>
+			<div id="status-bar-middle" class="inset-shallow">
+				<span id="status-bar-middle-text"></span>
+			</div>
+			<div id="status-bar-right" class="inset-shallow">
+				<img id="status-bar-right-icon" style="display: none;" width="16" height="16" src="../../images/icons/my-computer-16x16.png" alt="">
+				<span id="status-bar-right-text"></span>
+			</div>
+			<!-- for menu descriptions, replace left/middle/right layout with non-inset, singular area -->
+			<div id="status-bar-simple" style="display: none;">
+				<img id="status-bar-simple-icon" width="16" height="16" src="../../images/icons/my-computer-16x16.png" alt="">
+				<span id="status-bar-simple-text"></span>
+			</div>
+		</div>
+
+		<!-- TODO: DRY -->
+		<svg style="position: absolute; pointer-events: none; bottom: 100%;">
+			<defs>
+				<filter id="disabled-inset-filter" x="0" y="0" width="1px" height="1px">
+					<feColorMatrix
+						in="SourceGraphic"
+						type="matrix"
+						values="
+							1 0 0 0 0
+							0 1 0 0 0
+							0 0 1 0 0
+							-2 -2 -2 4 0
+						"
+						result="dark-parts-isolated"
+					/>
+					<feFlood result="shadow-color" flood-color="var(--ButtonShadow)"/>
+					<feFlood result="hilight-color" flood-color="var(--ButtonHilight)"/>
+					<feOffset in="dark-parts-isolated" dx="1" dy="1" result="offset"/>
+					<feComposite in="hilight-color" in2="offset" operator="in" result="hilight-colored-offset"/>
+					<feComposite in="shadow-color" in2="dark-parts-isolated" operator="in" result="shadow-colored"/>
+					<feMerge>
+						<feMergeNode in="hilight-colored-offset"/>
+						<feMergeNode in="shadow-colored"/>
+					</feMerge>
+				</filter>
+			</defs>
+		</svg>
+		<script>
+			window.addEventListener("resize", ()=> {
+				// work around a browser bug in Chrome where
+				// the SVG filter behaves differently based on the INITIAL zoom level
+				// (if you zoom in, the icons get cut off, if you zoom out, the effect is too thick)
+				document.getElementById("disabled-inset-filter").setAttribute("x", "0");
+			});
+		</script>
+	</body>
+</html>

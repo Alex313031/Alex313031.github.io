@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link href="../../lib/os-gui/layout.css" rel="stylesheet" type="text/css">
+    <link href="../../lib/os-gui/windows-98.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../../images/icons/calculator-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../../images/icons/calculator-32x32.png" sizes="32x32" type="image/png">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="../../lib/jquery.min.js"></script>
+    <script src="../../lib/os-gui/MenuBar.js"></script>
+    <script src="../../lib/os-gui/$Window.js"></script>
+    <script src="../../src/msgbox.js"></script>
+    <script>defaultMessageBoxTitle = "Calculator";</script>
+    <script src="menus.js"></script>
+    <link href="windows-98-calc.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="splash">
+        <div class="spinner"></div>
+        <div class="msg"></div>
+    </div>
+    <script>
+        function show(msg) {
+            document.querySelector(".splash > .msg").innerHTML = msg;
+        }
+        function revealCalc() {
+            document.querySelector(".container").style.display = "";
+            document.querySelector(".splash").style.display = "none";
+        }
+    </script>
+    <!--TODO: is there a race condition where script.js loads too late to define initialise for engine.js to call? or is order guaranteed even with async somehow?-->
+    <script async src="mcalculator/server/public/js/script.js"></script>
+    <script async onload="show('Please wait...');" src="mcalculator/server/public/js/engine.js"></script>
+    <!--Ids of buttons exactly match the Command enum names of CalculationManager namespace of engine-->
+    <div style="display: none;" class="container">
+        <div id="calc">
+
+            <div id="display">
+                <div id="expression" hidden>expression panel</div>
+                <input id="primary" class="inset-deep" style="background: var(--Window); color: var(--WindowText)"
+                    readonly value="0">
+            </div>
+            <div id="inp">
+                <div class="row row-with-deletion-options">
+                    <div class="memory-column">
+                        <!-- TODO -->
+                        <div id="memory-indicator" class="inset-deep"></div>
+                    </div>
+                    <div class="remaining-columns">
+                        <button id="CommandBACK" class="red-text">Backspace
+                            <!--&#xE94F;-->
+                        </button>
+                        <button id="CommandCENTR" class="red-text" aria-label="clear entry">CE</button>
+                        <button id="CommandCLEAR" class="red-text" aria-label="clear">C</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="memory-column">
+                        <button id="CommandMCLEAR" disabled class="red-text onmem" aria-label="memory clear">MC</button>
+                    </div>
+                    <div class="remaining-columns">
+                        <button id="Command7" class="blue-text">7</button>
+                        <button id="Command8" class="blue-text">8</button>
+                        <button id="Command9" class="blue-text">9</button>
+                        <button id="CommandDIV" class="red-text" aria-label="divide">&#xE94A;</button>
+                        <button id="CommandSQRT" class="blue-text" aria-label="square root">&#xF899;</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="memory-column">
+                        <button id="CommandRECALL" disabled class="red-text onmem">MR</button>
+                    </div>
+                    <div class="remaining-columns">
+                        <button id="Command4" class="blue-text">4</button>
+                        <button id="Command5" class="blue-text">5</button>
+                        <button id="Command6" class="blue-text">6</button>
+                        <button id="CommandMUL" class="red-text" aria-label="multiply">&#xE947;</button>
+                        <button id="CommandPERCENT" class="blue-text" aria-label="percent">&#xE94C;</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="memory-column">
+                        <button id="CommandSTORE" class="red-text">MS</button>
+                    </div>
+                    <div class="remaining-columns">
+                        <button id="Command1" class="blue-text">1</button>
+                        <button id="Command2" class="blue-text">2</button>
+                        <button id="Command3" class="blue-text">3</button>
+                        <button id="CommandSUB" class="red-text" aria-label="subtract">&#xE949;</button>
+                        <button id="CommandREC" class="blue-text" aria-label="reciprocal">&#xf7c9;</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="memory-column">
+                        <button id="CommandMPLUS" class="red-text">M+</button>
+                    </div>
+                    <div class="remaining-columns">
+                        <button id="Command0" class="blue-text">0</button>
+                        <button id="CommandSIGN" class="blue-text" aria-label="negate">&#xF898;</button>
+                        <button id="CommandPNT" class="blue-text" aria-label="decimal point">.</button>
+                        <button id="CommandADD" class="red-text" aria-label="add">&#xE948;</button>
+                        <button id="CommandEQU" class="red-text" aria-label="equals">&#xE94E;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar">
+            <div id="nav">
+                <!--ids of nav math classes of panels!!!-->
+                <div id="hspanel" class="nav-item active">
+                    History
+                </div>
+                <div id="mempanel" class="nav-item">
+                    Memory
+                </div>
+            </div>
+            <div id="panel">
+                <div class="hspanel">
+                    <p>There is no history yet</p>
+                    <!--buttons like this will be added dynamically-->
+                    <!--
+                        <button class="history-item">
+                          <div class="expression"></div>
+                          <div class="result"></div>
+                        </button>
+                        -->
+                    <button style="display: none;" onclick="clearHistory()" class="del">
+                        &#xE74D;
+                    </button>
+                </div>
+                <div style="display: none;" class="mempanel">
+                    <p>There's nothing saved in memory</p>
+                    <button id="memory-item-template" style="display: none;" class="memory-item">
+                        <div class="value">8566</div>
+                        <div class="btns">
+                            <div class="mp">M+</div>
+                            <div class="mm">M-</div>
+                            <div class="mc">MC</div>
+                        </div>
+                    </button>
+                    <button style="display: none;" onclick="clearAllMemory()" class="del">
+                        &#xE74D;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="mcalculator/server/public/fonts.css" />
+    <!-- <link rel="stylesheet" href="mcalculator/server/public/standard.css" /> -->
+    <noscript>
+        <p>Calculator requires Javascript and WebAssembly to be enabled.</p>
+    </noscript>
+</body>
+
+</html>

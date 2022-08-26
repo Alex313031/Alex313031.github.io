@@ -1,0 +1,61 @@
+{
+	"name": "98",
+	"description": "Web-based Windows 98 clone",
+	"version": "0.1.3",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/1j01/98.git"
+	},
+	"bugs": {
+		"url": "https://github.com/1j01/98/issues"
+	},
+	"license": "UNLICENSED",
+	"private": true,
+	"keywords": [
+		"web-based",
+		"recreation",
+		"clone",
+		"simulator",
+		"retro",
+		"classic",
+		"desktop",
+		"web-desktop",
+		"web",
+		"browser",
+		"windows",
+		"98",
+		"98.js",
+		"windows-98",
+		"operating-system",
+		"os",
+		"js",
+		"javascript"
+	],
+	"devDependencies": {
+		"browserfs": "^1.4.3",
+		"butterchurn": "2.6.7",
+		"butterchurn-presets": "2.4.7",
+		"fs-extra": "8.1.0",
+		"json": "^9.0.6",
+		"live-server": "^1.2.1",
+		"npm-run-all": "^4.1.5",
+		"onchange": "^7.1.0",
+		"os-gui": "^0.6.0",
+		"recursive-copy": "^2.0.9",
+		"rimraf": "^2.6.2",
+		"send": "^0.17.1",
+		"webamp": "1.5.0"
+	},
+	"scripts": {
+		"start": "run-p watch-fs-index start-server",
+		"start-server": "live-server --port=1998 --ignore=node_modules",
+		"watch-fs-index": "onchange --initial --poll 1000 --kill -f add -f addDir -f unlink -f unlinkDir '**' --exclude 'filesystem-index.json' --exclude '**/.history/**' -- npm run make-fs-index",
+		"watch-fs-index @NOTE 1": "--kill makes it not queue up the events as tasks (as well as sending kill signal to old process)",
+		"watch-fs-index @NOTE 2": "When many files are changed, such as when doing a rebase or otherwise checking out old commits, it can take a long time to start working again. Add --verbose to view the stupid behavior. It probably makes it slower too, logging a lot.",
+		"make-fs-index": "make_http_index | json > filesystem-index.json",
+		"make-fs-index @NOTE": "browserfs@2.0.0 is currently assumed to be installed globally",
+		"make-fs-index @TODO 1": "Keep this file out of repo, and generate it on deploy.",
+		"make-fs-index @TODO 2": "Ignore gitignored files, including globally gitignored files... I'm sure there's a way to base it off of what things are checked in to git. git ls-files, or git ls-tree, ideally with the contents after staged changes would be applied (is there a 'tree-ish' for that?)",
+		"pull-libs": "node pull-libs.js"
+	}
+}

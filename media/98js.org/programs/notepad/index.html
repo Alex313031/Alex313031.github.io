@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Notepad</title>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				border: 0;
+				overflow: hidden;
+			}
+		</style>
+		<link href="../../lib/os-gui/layout.css" rel="stylesheet" type="text/css">
+		<link href="../../lib/os-gui/windows-98.css" rel="stylesheet" type="text/css">
+		<link href="../../font/fixedsys-excelsior/fsex300.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="../../images/icons/notepad-16x16.png" sizes="16x16" type="image/png">
+		<link rel="icon" href="../../images/icons/notepad-32x32.png" sizes="32x32" type="image/png">
+		<link rel="icon" href="../../images/icons/notepad-48x48.png" sizes="48x48" type="image/png">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+	<body>
+		<div id="app">
+			<div id="document" class="inset-shallow">
+				<textarea id="document-textarea"></textarea>
+			</div>
+		</div>
+		<div id="print-helper"></div>
+		<script src="../../lib/jquery.min.js"></script>
+		<script src="../../lib/browserfs.js"></script>
+		<script src="../../src/filesystem-setup.js"></script>
+		<script src="../../src/helpers.js"></script>
+		<script src="../../lib/os-gui/MenuBar.js"></script>
+		<script src="../../lib/os-gui/$Window.js"></script>
+		<script src="../../src/msgbox.js"></script>
+		<script>defaultMessageBoxTitle = "Notepad";</script>
+		<script src="lib/moment.js"></script>
+		<script src="lib/FileSaver.js"></script>
+		<script src="src/app.js"></script>
+		<script src="src/menus.js"></script>
+		<style>
+			#app {
+				background: var(--ButtonFace);
+				display: flex;
+				flex-direction: column;
+			}
+			#document-textarea {
+				width: 100%;
+				height: 100%;
+				resize: none;
+				outline: none;
+				overflow: scroll;
+				padding: 0;
+				border: 0;
+				white-space: pre;
+				padding: 2px;
+				box-sizing: border-box;
+				cursor: auto; /* fix scrollbar cursor (https://stackoverflow.com/a/59244343/2624876) */
+			}
+			#document-textarea,
+			#print-helper {
+				font-family: "Fixedsys Excelsior", "FixedSys", monospace;
+				font-size: 16px; /* NOTE: FixedSys should be 15px, but Fixedsys Excelsior is 16px */
+			}
+			#document-textarea {
+				background: var(--Window);
+				color: var(--WindowText);
+			}
+			#print-helper {
+				background: white;
+				color: black;
+			}
+			html,
+			body,
+			#app,
+			#document {
+				box-sizing: border-box;
+				padding: 0;
+				margin: 0;
+			}
+			@media not print {
+				#print-helper {
+					display: none;
+				}
+				html,
+				body,
+				#app,
+				#document {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+			@media print {
+				#app {
+					display: none;
+				}
+				html,
+				body,
+				#print-helper {
+					height: auto;
+				}
+				#print-helper {
+					overflow: visible;
+					white-space: pre-wrap;
+					overflow-wrap: break-word;
+				}
+			}
+		</style>
+	</body>
+</html>

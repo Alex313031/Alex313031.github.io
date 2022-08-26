@@ -78,7 +78,8 @@ target_os = [<span class="hljs-string">'linux'</span>, <span class="hljs-string"
 </ol>
 <h3 id="installing-the-msvs-artifacts-archive">Installing the MSVS Artifacts Archive</h3>
 <p>Download the latest MSVS Artifacts Archive from <a href="https://github.com/Alex313031/Snippets/releases/latest">Here</a>. Then, make a subdir in <em>chromium</em> called win, i.e. <code>mkdir ~/chromium/win</code>, and then place the .zip file in there.</p>
-<p>Then add these lines to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
+<p>Then, to use the generated file on a Linux or Mac host, the following environment variables
+need to be set, so add these lines to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
 <pre><code><span class="hljs-built_in">export</span> DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=&lt;base url&gt;
 <span class="hljs-built_in">export</span> GYP_MSVS_HASH_&lt;toolchain <span class="hljs-built_in">hash</span>&gt;=&lt;<span class="hljs-built_in">hash</span> value&gt;
 </code></pre><p><code>&lt;base url&gt;</code> is the full path of the directory containing the .zip file, i.e. <em>/home/alex/chromium/win/80909eccbb.zip</em></p>
@@ -92,6 +93,22 @@ Windows toolchain <span class="hljs-keyword">out</span> <span class="hljs-keywor
 current_hashes:
 desired_hash: &lt;toolchain hash&gt;</span>
 </code></pre><p><code>&lt;hash value&gt;</code> is the name of the .zip, without .zip at the end, i.e. <code>80909eccbb</code></p>
+<h3 id="generating-a-msvs-artifacts-archive-yourself">Generating a MSVS Artifacts Archive yourself</h3>
+<p>After installing <a href="building_win.html#visual-studio">Microsoft&#39;s development tools</a>,
+you can package your Windows SDK installation into a zip file by running the following on a Windows machine in cmd.exe:</p>
+<pre><code class="lang-shell">    <span class="hljs-keyword">cd</span> path/<span class="hljs-keyword">to</span>/depot_tools/win_toolchain
+    <span class="hljs-keyword">python3</span> package_from_installed.<span class="hljs-keyword">py</span> &lt;<span class="hljs-keyword">vs</span> <span class="hljs-keyword">version</span>&gt; -<span class="hljs-keyword">w</span> &lt;win <span class="hljs-keyword">version</span>&gt;
+</code></pre>
+<p>Where &quot;path/to/depot_tools/win_toolchain&quot; would usually be <em>C:\src\depot_tools\win_toolchain</em> and
+where <code>&lt;vs version&gt;</code> and <code>&lt;win version&gt;</code> correspond respectively to the
+versions of Visual Studio (e.g. 2019) and of the Windows SDK (e.g.
+10.0.20348.0) installed on the Windows machine. Note that if you didn&#39;t
+install the ARM64 components of the SDK as noted in the link above, you
+should add <code>--noarm</code> to the parameter list.</p>
+<p><strong>NOTE</strong>: The -w flag takes the raw internal version of the SDK, not the actual patch version. This caused me and I&#39;m sure
+other people some confusion. So for example, the latest version of the Win 10 SDK is 10.1.20348.1, but its internal version doesn&#39;t change from
+when it was released, and this is what you would use, e.g. 10.0.20348.0</p>
+<p>These commands create a zip file named <code>&lt;hash value&gt;.zip</code>, which can be used with the instructions above ^.</p>
 <h2 id="building">Building</h2>
 <p>Follow <a href="./building.html#setting-up-the-build">Setting up the build</a>, except instead of using the <code>args.gn</code> from the
 root of the Thorium repo, use the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn"><code>win_args.gn</code></a>, from <em>~/Thorium/infra/</em></p>
