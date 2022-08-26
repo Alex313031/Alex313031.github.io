@@ -125,6 +125,7 @@ a:visited,a:active {
 }
 a.nocolor {
   color: var(--fontcolor);
+  text-decoration: overline;
 }
 a.nocolor:hover {
   color: var(--linkcolor);
