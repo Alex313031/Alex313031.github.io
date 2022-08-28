@@ -64,6 +64,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+  font-family: "Roboto", sans-serif;
+}
 /* General body settings */
 body {
   margin: 0.5em auto;
@@ -498,7 +501,6 @@ button:active {
   font-family: inherit;
   outline: 1px solid #000000;
 }
-
 #totop {
   display: block;
   position: fixed;
@@ -507,13 +509,25 @@ button:active {
   margin-right: 0.50em;
   filter: drop-shadow(1px 1px 2px var(--buttonborder));
 }
-#totop a:link,#totop a:visited,#totop a:active {
+#totop a:link {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #551a8b;
+}
+#totop a:visited {
   font-size: 2.5em;
   text-decoration: none;
   color: #551a8b;
 }
 #totop a:hover {
+  font-size: 2.5em;
+  text-decoration: none;
   color: #0000ee;
+}
+#totop a:active {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #551a8b;
 }
 /* roboto-regular - latin */
 @font-face {
