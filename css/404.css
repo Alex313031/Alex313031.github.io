@@ -90,6 +90,15 @@ img.grey {
 img.spin {
   transition: all .6s;
 }
+svg.spin {
+  transition: all .6s;
+}
+img.spin2 {
+  transition: all .6s;
+}
+svg.spin2 {
+  transition: all .6s;
+}
 /* Rounded Dark/Light Mode Button */
 button {
   font-family: inherit;
