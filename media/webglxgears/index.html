@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>WebGLXGears Launcher</title>
+  <meta name="description" content="MESA's glxgears demo rewritten in WebGL.">
+  <link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <meta itemprop="image" content="thumb.png">
+  <link rel="stylesheet" href="styles.css">
+  <script type='application/javascript'>
+    (function () {
+      "use strict";
+      var parseDim = function (str) {
+        let arr = str.split('x');
+        let n;
+        let ret = [];
+
+        if (arr.length !== 2) {
+          return null;
+        }
+        for (n of arr) {
+          n = parseInt(n);
+          if (isNaN(n)) {
+            return null;
+          }
+          ret.push(n);
+        }
+
+        return ret;
+      };
+      var boolAlpha = function (b) {
+        return b ? 'true' : 'false';
+      };
+
+      window.addEventListener('load', function () {
+        var frm = document.getElementById('frmParam');
+        var errorRow = frm.getElementsByClassName('errRow')[0];
+        var setErrorRow = function (str) {
+          if (str) {
+            errorRow.innerHTML = str;
+            errorRow.style.backgroundColor = 'red';
+            errorRow.style.color = 'white';
+          }
+          else {
+            errorRow.innerHTML = "";
+            errorRow.style.backgroundColor = 'initial';
+            errorRow.style.color = 'initial';
+          }
+        };
+
+        frm.launch.addEventListener('click', function () {
+          let pm = new Map();
+          let dim;
+          let pair;
+          let uri, paramArr;
+          let openArr = [
+            "toolbar=yes",
+            "resizable=yes" ];
+
+          switch(frm.size.value) {
+          case 'preset': dim = parseDim(frm.presetSize.value); break;
+          case 'custom':
+            dim = parseDim(frm.customSize.value);
+            if (!dim) {
+              setErrorRow("Unrecognised dimension");
+              frm.customSize.focus();
+              return;
+            }
+            break;
+          case 'default': // Fall through
+          default:
+            dim = [300, 300];
+          }
+          openArr.push("width=" + dim[0]);
+          openArr.push("height=" + dim[1]);
+
+          pm.set('msaa', boolAlpha(frm.msaa.checked));
+          pm.set('info', boolAlpha(frm.info.checked));
+          pm.set('verbose', boolAlpha(frm.verbose.checked));
+
+          paramArr = [];
+          for (pair of pm) {
+            paramArr.push(pair[0] + '=' + encodeURIComponent(pair[1]));
+          }
+
+          setErrorRow();
+          window.open(
+            "webglxgears.html?" + paramArr.join('&'),
+            '_blank',
+            openArr.join(',')
+          );
+        }, false);
+        frm.customSize.addEventListener('focus', function () {
+          frm.size.value = 'custom';
+        }, false);
+        frm.presetSize.addEventListener('focus', function () {
+          frm.size.value = 'preset';
+        }, false);
+      }, false);
+    })();
+  </script>
+  <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body>
+  <h1 style="margin-left: 10px;"><u>WebGLXGears Launcher Interface</u><img class="logo border" width="38px" height="38px" src="imgs/logo.png"></h1>
+  <p style="margin-left: 10px;">Visit <a title="https://github.com/Alex313031/webglxgears" target="_blank" rel="noopener" href="https://github.com/Alex313031/webglxgears">the github page</a> for details.</p>
+  <button style="margin-left: 10px;" id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+  <br><br>
+  <div class="border">
+  <h2>Launch Default</h2>
+  <p>
+    <a title="webglxgears.html" href="webglxgears.html">Launch Default</a><span>: windowed, 300x300, no MSAA, no info</span>
+  </p>
+  <h2>Launch with Parameters:</h2>
+  <p>
+    <form id='frmParam'><table>
+      <tr>
+        <th>Size</th>
+        <th>Options</th>
+      </tr>
+      <tr>
+        <td>
+          <label title="Default Size">
+            <input type='radio' name='size' title="Default Size" value='default' checked />
+            Default
+          </label>
+          <br/>
+          <input type='radio' name='size' value='preset' title="Preset Size" />
+          <!-- https://en.wikipedia.org/wiki/Display_resolution#Common_display_resolutions -->
+          <select name='presetSize' title="Preset Size">
+            <option value='800x600'>800x600</option>
+            <option value='1024x768'>1024x768</option>
+            <option value='1280x720'>1280x720</option>
+            <option value='1280x800'>1280x800</option>
+            <option value='1280x1024'>1280x1024</option>
+            <option value='1440x900'>1440x900</option>
+            <option value='1600x900'>1600x900</option>
+            <option value='1680x1050'>1680x1050</option>
+            <option value='1920x1080'>1920x1080</option>
+            <option value='2560x1440'>2560x1440</option>
+            <option value='3840x2160'>3840x2160</option>
+          </select>
+          <br/>
+          <label>
+            <input type='radio' name='size' value='custom' title="Custom Size" />
+            <input type='text' name='customSize' placeholder="300x300" size='10' title="Custom Size" />
+          </label>
+        </td>
+        <td>
+          <label title="Multisample Anti-aliasing. Cannot specify number of samples for WebGL contexts.">
+            <input type='checkbox' name='msaa' />
+            --MSAA
+          </label>
+          <br/>
+          <label title="Print GL related info to brower console.">
+            <input type='checkbox' name='info' />
+            --info
+          </label>
+          <br/>
+          <label title="Be verbose in browser console.">
+            <input type='checkbox' name='verbose' />
+            --verbose
+          </label>
+          <br/>
+          <label title="Obsolete technology. Placed here just for recognition.">
+            <input type='checkbox' name='stereo' disabled />
+            --stereo
+          </label>
+          <br/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan='2' style="text-align: center;">
+          <button name='launch' type='button' title="Launch WebGLXGears using these parameters.">Launch</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan='2' style="font-weight: bold;" class='errRow'></td>
+      </tr>
+    </table></form>
+    </div>
+    <p style="margin-left: 10px;"><a title="Jasmine JS IFrame Test" href="test/iframe.html">IFrame Test</a></p>
+  </p>
+    <script defer src="js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="js/spin2.js"></script>
+	<script defer src="js/spun2.js"></script>
+    <script defer src="js/button.js"></script>
+</body>
+</html>

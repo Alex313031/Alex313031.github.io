@@ -1,0 +1,16 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "worker": true,
+    "jasmine": true
+  },
+  "rules": {
+    "no-console": 0
+  }
+}

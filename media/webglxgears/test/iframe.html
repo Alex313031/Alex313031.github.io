@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IFrame Test</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+  <link rel="stylesheet" href="../js/jasmine/jasmine.css" />
+
+  <script type="application/javascript" src="../js/jasmine/jasmine.js"></script>
+  <script type="application/javascript" src="../js/jasmine/jasmine-html.js"></script>
+  <script type="application/javascript" src="../js/jasmine/boot.js"></script>
+
+  <script type="application/javascript" src="../js/gl-matrix-min.js"></script>
+  <script type="application/javascript" src="../js/webglxgears.js"></script>
+
+  <script type="application/javascript">
+  (function () {
+    "use strict";
+
+    describe("Iframe", function () {
+      (function () {
+        var iframe;
+
+        it("health check", function (done) {
+          iframe = document.createElement('iframe');
+
+          iframe.addEventListener('load', function () {
+            setTimeout(function () {
+              let h = iframe.contentDocument.webglgears.wg.health();
+
+              expect(h.attached).toBe(true);
+              expect(h.glErrorStack.length).toBe(0);
+              expect(h.fps).toBeGreaterThan(0);
+              done();
+            }, 10000);
+          }, false);
+
+          iframe.setAttribute('width', '300');
+          iframe.setAttribute('height', '300');
+          iframe.setAttribute('src', '../webglxgears.html');
+          document.body.appendChild(iframe);
+        }, 15000);
+
+        it("detach and remove", function () {
+          let wg = iframe.contentDocument.webglgears.wg;
+          let h;
+
+          h = wg
+            .detach()
+            .health();
+
+          expect(h.attached).toBe(false);
+          expect(h.glErrorStack.length).toBe(0);
+          expect(h.fps).toBe(0);
+          iframe.remove();
+        });
+      })();
+
+      (function () {
+        var iframe = document.createElement('iframe');
+
+        it("glErrorStack should be filled when the context is lost", function (done) {
+          iframe.addEventListener('load', function () {
+            setTimeout(function () {
+              var w = iframe.contentDocument.webglgears;
+
+              // Break the engine
+              w.gl.getExtension('WEBGL_lose_context').loseContext();
+
+              setTimeout(function () {
+                let h = w.wg.health();
+
+                w.wg.detach();
+
+                expect(h.attached).toBe(true);
+                expect(h.glErrorStack.length).toBeGreaterThan(0);
+                expect(h.glErrorStack.length).toBeLessThanOrEqual(20);
+                done();
+                iframe.remove();
+              }, 5000);
+            }, 5000);
+          }, false);
+
+          iframe.setAttribute('width', '300');
+          iframe.setAttribute('height', '300');
+          iframe.setAttribute('src', '../webglxgears.html');
+          document.body.appendChild(iframe);
+        }, 15000);
+      })();
+    });
+  })();
+  </script>
+</head>
+<body>
+</body>
+</html>

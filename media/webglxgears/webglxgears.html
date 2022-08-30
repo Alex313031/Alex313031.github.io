@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>WebGLXGears</title>
+  <link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <script type='application/javascript' src="js/gl-matrix-min.js"></script>
+  <script type='application/javascript' src="js/webglxgears-min.js"></script>
+  <script type='application/javascript'>
+    (function () {
+      "use strict";
+      var surface;
+      var gl;
+      var wg;
+      var uriParam;
+      var parseURIQuery, strBool;
+      let uriQuery;
+      let __defaultBool;
+
+      parseURIQuery = function (str) {
+        let arr = str.split('&');
+        let e, p;
+        let ret = {};
+
+        for (e of arr) {
+          p = e.split('=');
+          ret[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+        }
+
+        return ret;
+      };
+      strBool = function (str) {
+        const n = parseFloat(str);
+
+        if (isNaN(n)) {
+          if (str === "true") {
+            return true;
+          }
+          else if (str === "false") {
+            return false;
+          }
+          return null;
+        }
+        return n !== 0;
+      };
+      __defaultBool = function (b, def) {
+        if (b === null) {
+          return def;
+        }
+        return b;
+      };
+
+      uriQuery = parseURIQuery(location.search.substr(1));
+      uriParam = {
+        antialias: __defaultBool(strBool(uriQuery.msaa && uriQuery.msaa.trim()), false),
+        verbose: __defaultBool(strBool(uriQuery.verbose && uriQuery.verbose.trim()), false),
+        info: __defaultBool(strBool(uriQuery.info && uriQuery.info.trim()), false)
+      };
+
+
+      // External access to WebGL context, canvas element, and WebGLGears instance
+      document.webglgears = {};
+      window.addEventListener('load', function () {
+        let optCtxInfo;
+
+        // Prep canvas
+        document.webglgears.surface = surface = document.getElementById('surface');
+        surface.width = window.innerWidth;
+        surface.height = window.innerHeight;
+
+        // Prep WebGL context
+        optCtxInfo = WebGLGears.optimalContextParams();
+        optCtxInfo.attr.antialias = uriParam.antialias;
+        document.webglgears.gl = gl = surface.getContext(optCtxInfo.type, optCtxInfo.attr);
+
+        // Prep WebGLGears instance
+        document.webglgears.wg = wg = new WebGLGears();
+        wg.verbose = uriParam.verbose;
+        wg
+          .attach(gl)
+          .reshape(window.innerWidth, window.innerHeight);
+        if (uriParam.info) {
+          wg.info();
+        }
+
+        window.addEventListener('resize', function () {
+          surface.width = window.innerWidth;
+          surface.height = window.innerHeight;
+          wg.reshape(window.innerWidth, window.innerHeight);
+        }, false);
+
+        document.body.addEventListener('keyup', function (evt) {
+          switch (evt.code) {
+          case 'ArrowLeft': wg.view_roty += 5.0; break;
+          case 'ArrowRight': wg.view_roty -= 5.0; break;
+          case 'ArrowUp': wg.view_rotx += 5.0; break;
+          case 'ArrowDown': wg.view_rotx -= 5.0; break;
+          case 'KeyA': wg.animate = !wg.animate; break;
+          case 'Escape': wg.detach(); break;
+          }
+        }, false);
+      }, false);
+    })();
+  </script>
+</head>
+<body style="margin: 0px; padding: 0px; overflow: hidden;">
+  <div style="font-family: 'Roboto'; position: absolute; top: 12px; left: 8px; z-index: 100; color: #ffffff;">&nbsp;Average FPS: <span style="color: #13fcfc; font-family: 'Roboto';" id="fps"></span></div>
+  <canvas id='surface'></canvas>
+  <script src="js/webgl-stats.js"></script>
+</body>
+</html>
