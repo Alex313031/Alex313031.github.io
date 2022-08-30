@@ -31,6 +31,16 @@
 			}
 	  </script>
       <script type="module" src="./js/index.js"></script>
+      <script src="./js/Tone.min.js"></script>
+      <script>	
+	var player = new Tone.Player("media/thunder.mp3").toMaster();
+	// play as soon as the buffer is loaded
+	player.autostart = true;
+	player.loop = true;
+	player.volume.value = -10;
+	player.start;
+	console.log('Audio is started.');
+  </script>
       <div style="font-family: 'Monospace'; color: #fff; font-size: 12px; position: absolute; top: 12px; left: 12px; z-index: 100;">Average FPS: <span style="color: #13fcfc; font-family: 'Monospace'; font-size: 12px;" id="fps"></span></div>
       <script src="./js/webgl-stats.js"></script>
   </body>
