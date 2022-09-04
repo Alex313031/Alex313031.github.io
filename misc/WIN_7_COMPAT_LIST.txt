@@ -1,0 +1,9 @@
+## List of program versions that work with Windows 7 ##
+
+VLC : https://download.videolan.org/pub/videolan/vlc/2.2.8/
+
+OBS : https://github.com/obsproject/obs-studio/releases/tag/25.0.8
+
+Python 3.9 Hack : https://github.com/nalexandru/api-ms-win-core-path-HACK
+
+7+ Taskbar Tweaker : https://rammichael.com/7-taskbar-tweaker
