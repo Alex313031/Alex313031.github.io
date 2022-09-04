@@ -51,7 +51,7 @@
 		<p class="intro" id="intro" title="Info" style="max-width: 900px; color: #ffffff; text-shadow: 1px 1px 1px #000000; background: #2b2b2b;">
 			&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener" href="https://retrowindows.miraheze.org/wiki/Windows_7">Windows 7</a> is a great OS, still used by almost 20% of Windows PCs worldwide. Support for it ended on Jan. 14, 2020, as per <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962">here</a>. Companies can still get <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/troubleshoot/windows-client/windows-7-eos-faq/windows-7-extended-security-updates-faq">ESU updates</a> until Jan. 10, 2023, and there are <a target="_blank" rel="noopener" href="https://www.deskmodder.de/blog/2019/12/07/windows-7-erweiterte-sicherheitsupdates-esu-erhalten-wird-moeglich-sein/">unofficial hacks</a> for individual users to get these for free as well. As was the case with Windows XP, software support is slowly receding, although most software still supports Windows 7 at a minimum. Chromium <a target="_blank" rel="noopener" href="https://bugs.chromium.org/p/chromium/issues/detail?id=579196">ended support for XP</a> with version 49.0.2623.112 (Download <a target="_blank" rel="noopener" href="https://web.archive.org/web/20210603163609/https://github.com/henrypp/chromium/releases/tag/v49.0.2623.112-r403382-win32">Here</a>), and Chromium is ending Windows 7 support with <a target="_blank" rel="noopener" href="https://chromiumdash.appspot.com/schedule">M108</a>. In light of this, and the fact that I also still use Windows 7, I will be making special, custom builds of Thorium for Windows 7. I will make AVX and SSE3 builds, and unlike regular Thorium, which is built to tip-o-tree, these will be placed in a seperate repo, and be updated and built to the latest stable M108 release. They will also have an easter egg hidden somewhere (can you find it?), saying something along the lines of "R.I.P. Windows 7".<br>
 			&nbsp;&nbsp;&nbsp;This page will also serve other Windows 7 related stuff, including a .txt list with the latest versions to work with 7 for popular programs, a link to WinLoader 2.2.2, which can be used to activate Windows 7 & 8, and <a target="_blank" rel="noopener" href="https://www.heidoc.net/">Heidoc's</a> Windows ISO downloader, which can be used to download any version of Windows 7, 8.1, 10, 11, and Office Products. Linked directly under this is an official direct link to an ISO of Windows 7 Ultimate x64 Service Pack 1 with integrated updates until Aug. 2018, which is what most people will want. For writing a Windows ISO to a USB drive, one should use <a target="_blank" rel="noopener" href="https://github.com/pbatard/rufus">Rufus</a> (Site linked below).</p></div>
-		<p style="text-align: center; margin-top: -12px;" title="Download Windows 7"><br> <img src="imgs/win7/iso.png" width="20" title="ISO Icon" alt="iso.png" class="spin2 fav shadow"><b>&nbsp;&nbsp;<em>Download Windows 7 SP1 Ultimate x64</em>&nbsp;:&nbsp;</b><a title="Windows 7 ISO Download" href="https://download.microsoft.com/download/5/1/9/5195A765-3A41-4A72-87D8-200D897CBE21/7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_ULTIMATE_x64FRE_en-us.iso" download>Here</a></p>
+		<p style="text-align: center; margin-top: -12px;" title="Download Windows 7"><br> <img src="imgs/win7/iso.png" width="20" title="ISO Icon" alt="iso.png" class="spin2 fav"><b>&nbsp;&nbsp;<em>Download Windows 7 SP1 Ultimate x64</em>&nbsp;:&nbsp;</b><a title="Windows 7 ISO Download" href="https://download.microsoft.com/download/5/1/9/5195A765-3A41-4A72-87D8-200D897CBE21/7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_ULTIMATE_x64FRE_en-us.iso" download>Here</a></p>
 		<hr class="line">
     <a name="stuff"></a><h1 style="text-align: center; margin-left: -32px;"><img class="spin2 shadow" style="margin-bottom: -8px;" src="imgs/win7/win7.png" width="48px" alt="win7" title="Windows 7 Sticker">&nbsp;<u><em>Links</u>&nbsp;:&nbsp;</em></h1>
 
@@ -82,6 +82,16 @@
     <video title="Destino" alt="Rhapsody In Blue Fantasia 2000" class="video2 off" width="1280px" style="max-width: 100%;" allow="accelerometer; gyroscope; picture-in-picture" controls="true" preload="metadata" poster="media/Rhapsody_In_Blue_Fantasia_2000.jpg"><source src="https://dl.thorium.rocks/files/Rhapsody_In_Blue_Fantasia_2000_%281080p%29.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
   
 	<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+	<script src="./js/Tone.min.js"></script>
+	<script>	
+		var player = new Tone.Player("media/win7startup.wav").toMaster();
+		// play as soon as the buffer is loaded
+		player.autostart = true;
+		player.loop = false;
+		player.volume.value = 0;
+		player.start;
+		console.log('Audio is started.');
+	</script>
 	
     <script defer src="js/jquery-3.6.0.slim.min.js"></script>
     <script defer src="js/spin.js"></script>
