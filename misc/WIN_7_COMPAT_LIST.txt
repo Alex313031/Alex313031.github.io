@@ -1,4 +1,5 @@
 ## List of program versions that work with Windows 7 ##
+--------------------------------------------------------
 
 VLC : https://download.videolan.org/pub/videolan/vlc/2.2.8/
 
