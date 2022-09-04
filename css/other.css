@@ -211,6 +211,7 @@ b {
 p.intro {
   box-shadow: 1px 1px 2px 0px var(--border);
   padding-left: 16px;
+  padding-right: 4px;
   padding-top: 6px;
   padding-bottom: 6px;
   border: 1px solid var(--border);
