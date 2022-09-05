@@ -261,6 +261,10 @@ img.bubbles:hover {
   animation: shake 4.0s;
   animation-iteration-count: infinite;
 }
+img.shake:hover {
+  animation: jig 0.4s;
+  animation-iteration-count: infinite;
+}
 img.bubbles2 {
   display: flex;
   float: right;
