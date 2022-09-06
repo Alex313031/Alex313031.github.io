@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Noguchi Coffee Table Three.js Demo</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="author" href="../../humans.txt">
+		<meta name="description" content="Three.js demo showing an animated mechanical model.">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta itemprop="image" content="thumb.png">
+		
+		<link type="text/css" rel="stylesheet" href="main.css">
+	</head>
+
+	<body>
+		<div id="info">
+			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - GLTFLoader + compression extensions<br />
+			<a href="https://sketchfab.com/3d-models/noguchi-coffee-table-8f8a3dbd45534152b5771c36cc4742d9" target="_blank" rel="noopener">Coffee Table</a> by <a href="https://sketchfab.com/3dmaedchen" target="_blank" rel="noopener">3D Mädchen</a>
+		</div>
+
+		<!-- Import maps polyfill -->
+		<!-- Remove this when import maps will be widely supported -->
+		<script async src="./js/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "./js/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+
+		<script type="module">
+
+			import * as THREE from 'three';
+
+			import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+			import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+			import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
+			import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+
+			let camera, scene, renderer;
+
+			init();
+			render();
+
+			function init() {
+
+				const container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.toneMapping = THREE.ACESFilmicToneMapping;
+				renderer.toneMappingExposure = 1;
+				renderer.outputEncoding = THREE.sRGBEncoding;
+				container.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 4000 );
+				camera.position.set( 0, 100, 0 );
+
+				const environment = new RoomEnvironment();
+				const pmremGenerator = new THREE.PMREMGenerator( renderer );
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0x888888 );
+				scene.environment = pmremGenerator.fromScene( environment ).texture;
+				environment.dispose();
+
+				const grid = new THREE.GridHelper( 1000, 10, 0xffffff, 0xffffff );
+				grid.material.opacity = 0.5;
+				grid.material.depthWrite = false;
+				grid.material.transparent = true;
+				scene.add( grid );
+
+				const ktx2Loader = new KTX2Loader()
+					.setTranscoderPath( 'js/' )
+					.detectSupport( renderer );
+
+				const loader = new GLTFLoader().setPath( 'models/' );
+				loader.setKTX2Loader( ktx2Loader );
+				loader.setMeshoptDecoder( MeshoptDecoder );
+				loader.load( 'noguchi_coffee_table.glb', function ( gltf ) {
+
+					// coffeemat.glb was produced from the source scene using gltfpack:
+					// gltfpack -i coffeemat/scene.gltf -o coffeemat.glb -cc -tc
+					// The resulting model uses EXT_meshopt_compression (for geometry) and KHR_texture_basisu (for texture compression using ETC1S/BasisLZ)
+
+					gltf.scene.position.x = -500;
+					gltf.scene.position.y = 0;
+					gltf.scene.position.z = 350;
+					
+					gltf.scene.scale.set( 0.80, 0.80, 0.80 );
+
+					scene.add( gltf.scene );
+
+					render();
+
+				} );
+
+				const controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render ); // use if there is no animation loop
+				controls.minDistance = 1800;
+				controls.maxDistance = 8000;
+				controls.target.set( 10, 90, -16 );
+				controls.update();
+
+				window.addEventListener( 'resize', onWindowResize );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				render();
+
+			}
+
+			//
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
+</html>
