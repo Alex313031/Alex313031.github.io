@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="../humans.txt">
+    <title>Building Thorium Win</title>
+    <meta name="description" content="Thorium Building Document for Windows.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="docs48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="docs32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="docs16.png">
+    <meta itemprop="image" content="thumb.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="docs.css">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+
+<body>
+<h1 id="checking-out-and-building-thorium-for-windows">Checking out and Building Thorium<a style="margin-right: 12px; float: right;" id="svg" alt="Build Icon" title="Build Icon"><svg xmlns="http://www.w3.org/2000/svg" class="spin2" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22.61 18.99l-9.08-9.08c.93-2.34.45-5.1-1.44-7C9.79.61 6.21.4 3.66 2.26L7.5 6.11 6.08 7.52 2.25 3.69C.39 6.23.6 9.82 2.9 12.11c1.86 1.86 4.57 2.35 6.89 1.48l9.11 9.11c.39.39 1.02.39 1.41 0l2.3-2.3c.4-.38.4-1.01 0-1.41zm-3 1.6l-9.46-9.46c-.61.45-1.29.72-2 .82-1.36.2-2.79-.21-3.83-1.25C3.37 9.76 2.93 8.5 3 7.26l3.09 3.09 4.24-4.24-3.09-3.09c1.24-.07 2.49.37 3.44 1.31 1.08 1.08 1.49 2.57 1.24 3.96-.12.71-.42 1.37-.88 1.96l9.45 9.45-.88.89z" fill="currentColor"/></svg></a><br> on Windows</h1>
+<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+<hr>
+<h2 id="system-requirements">System Requirements</h2>
+<ul>
+<li>A 64-bit machine with at least 8GB of RAM. More than 16GB is highly
+recommended.</li>
+<li>At least 75GB of free disk space on an NTFS-formatted hard drive. FAT32
+will not work, as some of the Git packfiles are larger than 4GB.</li>
+<li>An appropriate version of Visual Studio, as described below.</li>
+<li>Windows 10 1709 or newer.</li>
+</ul>
+<h2 id="setting-up-windows">Setting up Windows</h2>
+<h3 id="visual-studio">Visual Studio</h3>
+<p>Chromium requires <a href="https://visualstudio.microsoft.com/vs/older-downloads/">Visual Studio 2019</a> (&gt;=16.0.0)
+to build, but <a href="https://visualstudio.microsoft.com/vs/">Visual Studio 2022</a> (&gt;=17.0.0)
+is preferred. Visual Studio can also be used to debug Chromium, and version 2022 is
+preferred for this as it handles Chromium&#39;s large debug information much better.
+The <em>clang-cl</em> compiler is used, but Visual Studio&#39;s header files, libraries, and
+some tools are required. Visual Studio Community Edition will work. You must install the &quot;Desktop development with
+C++&quot; component and the &quot;MFC/ATL support&quot; sub-components. This can be done from
+the command line by passing these arguments to the Visual Studio installer (see
+below for ARM64 instructions):</p>
+<pre><code class="lang-shell">VisualStudioSetup<span class="hljs-selector-class">.exe</span> --add Microsoft<span class="hljs-selector-class">.VisualStudio</span><span class="hljs-selector-class">.Workload</span><span class="hljs-selector-class">.NativeDesktop</span><br>--add Microsoft<span class="hljs-selector-class">.VisualStudio</span><span class="hljs-selector-class">.Component</span><span class="hljs-selector-class">.VC</span><span class="hljs-selector-class">.ATLMFC</span> --includeRecommended
+</code></pre>
+<p>If you want to build for Windows on ARM64 then some extra arguments are needed. The
+full set for that case is:</p>
+<pre><code class="lang-shell">VisualStudioSetup<span class="hljs-selector-class">.exe</span> --add Microsoft<span class="hljs-selector-class">.VisualStudio</span><span class="hljs-selector-class">.Workload</span><span class="hljs-selector-class">.NativeDesktop</span><br>--add Microsoft<span class="hljs-selector-class">.VisualStudio</span><span class="hljs-selector-class">.Component</span><span class="hljs-selector-class">.VC</span><span class="hljs-selector-class">.ATLMFC</span> --add Microsoft<span class="hljs-selector-class">.VisualStudio</span><span class="hljs-selector-class">.Component</span><span class="hljs-selector-class">.VC</span><span class="hljs-selector-class">.Tools</span><span class="hljs-selector-class">.ARM64</span><br>--add Microsoft<span class="hljs-selector-class">.VisualStudio</span><span class="hljs-selector-class">.Component</span><span class="hljs-selector-class">.VC</span><span class="hljs-selector-class">.MFC</span><span class="hljs-selector-class">.ARM64</span> --includeRecommended
+</code></pre>
+<ul>
+<li>You must have the version 10.1.20348.0 <a href="https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/">Windows 10 SDK</a>
+installed. This can be installed separately or by checking the appropriate box
+in the Visual Studio Installer (Note that MSVS 2022 will try to install the 19043 version by default, uncheck this and check the 20348 version).
+There is also experimental support for the Windows 11 10.1.22000.0 version.</li>
+</ul>
+<p>The SDK Debugging Tools must also be installed. If the Windows 10 SDK was
+installed via the Visual Studio installer, then they can be installed by going
+to: Control Panel → Programs → Programs and Features → Select the &quot;Windows
+Software Development Kit&quot; → Change → Change → Check &quot;Debugging Tools For
+Windows&quot; → Change. Or, you can download the standalone SDK installer and use it
+to install the Debugging Tools.</p>
+<h2 id="install-depot_tools-">Install <em>depot_tools</em></h2>
+<p>Download the <a href="https://storage.googleapis.com/chrome-infra/depot_tools.zip">depot_tools bundle</a>
+and extract it to <em>C:\src\depot_tools</em>.</p>
+<p><em>**note
+<strong>Warning:</strong> __</em>DO NOT*__ use drag-n-drop or copy-n-paste extract from Explorer,
+this will not extract the hidden “.git” folder which is necessary for
+depot_tools to autoupdate itself. You can use “Extract all…” from the
+context menu, or 7-Zip though.</p>
+<hr>
+<p>Add depot_tools to the start of your PATH (must be ahead of any installs of
+Python). Note that environment variable names are case insensitive.</p>
+<p>Assuming you unzipped the bundle to <em>C:\src\depot_tools</em>, open:</p>
+<p>Control Panel → System and Security → System → Advanced system settings</p>
+<p>If you have Administrator access, Modify the PATH system variable and
+put <code>C:\src\depot_tools</code> at the front, by clicking &quot;Move Up&quot;. (Or at least in front of any directory
+that might already have a copy of Python or Git).</p>
+<p>If you don&#39;t have Administrator access, you can add a user-level PATH
+environment variable by opening:</p>
+<p>Control Panel → System and Security → System → Search for &quot;Edit environment variables for your account&quot;</p>
+<p>Add <code>C:\src\depot_tools</code> at the front. Note: If your system PATH has a Python in it, you will be out of luck.</p>
+<p>Also, add a <code>DEPOT_TOOLS_WIN_TOOLCHAIN</code> environment variable in the same way, and set
+it to <strong>0</strong>. This tells depot_tools to use your locally installed version of Visual
+Studio (by default, depot_tools will try to use a google-internal version).</p>
+<p>You should also set the variable <code>vs2019_install</code> or
+<code>vs2022_install</code> to your installation path of Visual Studio 19 or 22, like
+<code>vs2019_install</code> = <strong>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community</strong>
+for Visual Studio 2019, or
+<code>vs2022_install</code> = <strong>C:\Program Files\Microsoft Visual Studio\2022\Community</strong>
+for Visual Studio 2022.</p>
+<p>Once all of this is done, we will download some infra archives using <code>gclient</code>. \
+From a cmd.exe shell, run:</p>
+<pre><code class="lang-shell"><span class="hljs-attribute">gclient</span>
+</code></pre>
+<p>On first run, gclient will install all the Windows-specific bits needed to work
+with the code, including msysgit and Python.</p>
+<ul>
+<li>If you run gclient from a non-cmd shell (e.g., cygwin, PowerShell),
+it may appear to run properly, but msysgit, python, and other tools
+may not get installed correctly.</li>
+<li>If you see strange errors with the file system on the first run of gclient,
+you may want to <a href="https://tortoisesvn.net/faq.html#cantmove2">disable Windows Indexing</a>.</li>
+</ul>
+<h2 id="check-python-install">Check Python install</h2>
+<p>After running gclient open a command prompt and type <code>where python</code> and
+confirm that the depot_tools <code>python.bat</code> comes ahead of any copies of
+python.exe. Failing to ensure this can lead to overbuilding when
+using gn - see <a href="https://crbug.com/611087">crbug.com/611087</a>.</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions#alias">App Execution Aliases</a> in Windows 10/11
+can conflict with other installations of python on the system so disable
+these for &#39;python.exe&#39; and &#39;python3.exe&#39; by opening &#39;App execution aliases&#39;
+section of Control Panel and unticking the boxes next to both of these
+that point to &#39;App Installer&#39;.</p>
+<h2 id="download-the-chromium-code">Downloading the Chromium code</h2>
+<p>First, configure Git:</p>
+<pre><code class="lang-shell">git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.name</span> <span class="hljs-string">"My Name"</span>
+git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> user<span class="hljs-variable">.email</span> <span class="hljs-string">"my-name@chromium.org"</span>
+git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> core<span class="hljs-variable">.autocrlf</span> false
+git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> core<span class="hljs-variable">.filemode</span> false
+git <span class="hljs-keyword">config</span> --<span class="hljs-keyword">global</span> branch<span class="hljs-variable">.autosetuprebase</span> <span class="hljs-keyword">always</span>
+</code></pre>
+<p>Create a <code>chromium</code> directory in <em>C:\src</em> for the checkout and change to it.</p>
+<pre><code class="lang-shell"><span class="hljs-built_in">cd</span> / &amp;&amp; <span class="hljs-built_in">cd</span> src &amp;&amp; <span class="hljs-built_in">mkdir</span> chromium &amp;&amp; <span class="hljs-built_in">cd</span> chromium
+</code></pre>
+<p>Run the <code>fetch</code> tool from <code>depot_tools</code> to check out the code and its
+dependencies.</p>
+<pre><code class="lang-shell"><span class="hljs-attribute">fetch chromium</span>
+</code></pre>
+<p>If you don&#39;t want the full repo history, you can save a lot of time by
+adding the <code>--no-history</code> flag to <code>fetch</code>.</p>
+<p>Expect the command to take 30 minutes on even a fast connection, and many
+hours on slower ones.</p>
+<p>When <code>fetch</code> completes, it will have created a hidden <code>.gclient</code> file and a
+directory called <code>src</code> in the working directory. The remaining instructions
+assume you have switched to this directory (i.e. <em>C:\src\chromium\src</em>):</p>
+<pre><code class="lang-shell"><span class="hljs-built_in">cd</span> src
+</code></pre>
+<p><em>Optional</em>: You can also <a href="https://www.chromium.org/developers/how-tos/api-keys">build with API
+keys</a> if you want your
+build to talk to some Google services like Google Sync, Translate, and GeoLocation.&nbsp;<a title="Key Icon"><svg xmlns="http://www.w3.org/2000/svg" id="svg" height="24" class="spin2" width="24" viewBox="0 0 48 48"><path d="M14 36q-5 0-8.5-3.5T2 24q0-5 3.5-8.5T14 12q3.9 0 6.575 1.875 2.675 1.875 3.975 4.975H43q1.25 0 2.125.875T46 21.85v4.3q0 1.25-.875 2.125T43 29.15h-2.3V33q0 1.25-.875 2.125T37.7 36h-3.3q-1.25 0-2.125-.875T31.4 33v-3.85h-6.85q-1.3 3.1-3.975 4.975Q17.9 36 14 36Zm0-3q3.55 0 5.825-2.35 2.275-2.35 2.675-4.5h12.1V33h3.1v-6.85H43v-4.3H22.5q-.4-2.15-2.675-4.5T14 15q-3.75 0-6.375 2.625T5 24q0 3.75 2.625 6.375T14 33Zm0-5.6q1.45 0 2.425-.975.975-.975.975-2.425 0-1.45-.975-2.425Q15.45 20.6 14 20.6q-1.45 0-2.425.975Q10.6 22.55 10.6 24q0 1.45.975 2.425.975.975 2.425.975Zm0-3.4Z" fill="currentColor"/></svg></a>&nbsp;
+Thorium has its own keys in a private repository, if you are a builder or would like access to them, contact me. Otherwise, for personal or development builds, 
+you can create your own keys and add yourself to <a href="https://groups.google.com/u/1/a/chromium.org/g/google-browser-signin-testaccounts">google-browser-signin-testaccounts</a>
+to enable Sync.</p>
+<h2 id="downloading-the-thorium-code">Downloading the Thorium code</h2>
+<p>You can either use git clone, or download a .zip from the repo. It should be placed side by side with the Chromium directory in <em>C:\src</em>. \
+Using Git:</p>
+<pre><code class="lang-shell">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/Alex313031/Thorium.git
+</code></pre>
+<p>Or download the .zip (Make sure to rename the extracted dir to just Thorium, not Thorium-main).
+<a href="https://github.com/Alex313031/Thorium/archive/refs/heads/main.zip">https://github.com/Alex313031/Thorium/archive/refs/heads/main.zip</a></p>
+<h2 id="setting-up-the-build">Setting up the build</h2>
+<p>First, we need to copy the Thorium source files over the Chromium tree.
+Run the <code>setup.bat</code> script in <em>Thorium\win_scripts</em> to automate this.</p>
+<pre><code class="lang-shell">cd C:<span class="hljs-symbol">\s</span>rc<span class="hljs-symbol">\T</span>horium<span class="hljs-symbol">\w</span>in_scripts &amp;&amp; setup.bat
+</code></pre>
+<p>It will drop you back to <em>C:\src\chromium\src</em>, which is where the rest of the commands will be carried out.</p>
+<p>Next, we will download the PGO profile for Thorium, which changes with every revision. Run:</p>
+<pre><code class="lang-shell"><span class="hljs-keyword">python3</span> tools\update_pgo_profiles.<span class="hljs-keyword">py</span> --target=win64 <span class="hljs-keyword">update</span> --gs-url-base=chromium-optimization-profiles/pgo_profiles
+</code></pre>
+<p>This will download a *.profdata file, looking something like <code>chrome-win64-main-1659409120-058034bd778fed227d12a29fd0edd0942810dbf8.profdata</code>. \
+Take note of this, as we will be using it in the <code>args.gn</code> below.</p>
+<h3 id="creating-the-build-directory">Creating the build directory</h3>
+<p>Chromium &amp; Thorium use <a href="https://ninja-build.org">Ninja</a> as its main build tool along with
+a tool called <a href="https://gn.googlesource.com/gn/+/main/docs/quick_start.md">GN</a> to generate <code>.ninja</code> files. Create the build directory by running:</p>
+<pre><code class="lang-shell"><span class="hljs-built_in">gn</span> <span class="hljs-built_in">args</span> out\thorium
+</code></pre>
+<p>This will open up notepad.exe, and this is where we will specify build arguments (&quot;args&quot;) which direct Ninja on how to lay out the build directory tree.
+We will be copy/pasting the contents of the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn">win_args.gn</a> file (from <em>C:\src\Thorium\infra\win_args.gn</em>) into notepad.
+Notice the three lines at the top, related to API Keys. It is fine to leave them blank, or add the ones you have made. \
+<strong>At the bottom</strong>, though, notice the line that says <em>pgo_data_path = &quot;&quot;</em>. This is where we will put the full path to the PGO profile data file we downloaded earlier.</p>
+<p>That line should look something like:</p>
+<p><code>pgo_data_path = &quot;C:\src\chromium\src\chrome\build\pgo_profiles\chrome-win64-main-1659409120-058034bd778fed227d12a29fd0edd0942810dbf8.profdata&quot;</code></p>
+<ul>
+<li>For other build arguments, and what the ones that Thorium uses do, see <a href="https://github.com/Alex313031/Thorium/blob/main/infra/DEBUG/ABOUT_GN_ARGS.md">ABOUT_GN_ARGS.md</a> &amp; <a href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.list">win_args.list</a></li>
+<li>For more info on GN, run <code>gn help</code> on the command line or read the <a href="https://gn.googlesource.com/gn/+/main/docs/quick_start.md">quick
+start guide</a>.</li>
+</ul>
+<h2 id="build-thorium">Build Thorium</h2>
+<p>Build Thorium, and the other things like <a href="https://chromedriver.chromium.org/home">chromedriver</a> and <a href="https://github.com/Alex313031/Thorium/tree/main/thorium_shell#readme">thorium_shell</a> with Ninja using the command:</p>
+<pre><code class="lang-shell">autoninja -C <span class="hljs-keyword">out</span>\thorium chrome chromedriver thorium_shell setup mini_installer -j8
+</code></pre>
+<p>(Where -j# can be any number, and should generally be set to the number of cores on your CPU).</p>
+<p><code>autoninja</code> is a wrapper that automatically provides optimal values for the
+arguments passed to <code>ninja</code>.</p>
+<p>You can get a list of all of the other build targets from GN by running
+<code>gn ls out\thorium</code> from the command line. To compile one, pass to Ninja
+the GN label with no preceding &quot;//&quot; (so for <code>//chrome/test:unit_tests</code>
+use autoninja -C out/Default chrome/test:unit_tests).</p>
+<h2 id="install-run-thorium">Install/Run Thorium</h2>
+<p>Once it is built, you can simply install the browser.</p>
+<pre><code class="lang-shell">out<span class="hljs-symbol">\t</span>horium<span class="hljs-symbol">\m</span>ini_installer.exe
+</code></pre>
+<h2 id="update-your-checkout">Update your checkout</h2>
+<p>To update an existing Chromium checkout, you should run the <code>trunk.bat</code> script in win_scripts:</p>
+<pre><code class="lang-shell">cd C:<span class="hljs-symbol">\s</span>rc<span class="hljs-symbol">\T</span>horium<span class="hljs-symbol">\w</span>in_scripts &amp;&amp; trunk.bat
+</code></pre>
+<p>(This script will also download the latest PGO profile data file at the end; useful when making fresh builds.)</p>
+<p>This syncs the subrepositories to the appropriate versions,
+deleting those that are no longer needed, and re-runs the hooks as needed.</p>
+<p>To update an existing Thorium checkout, just download the latest .zip, or do a git pull:</p>
+<pre><code class="lang-shell"><span class="hljs-attribute">git pull origin main</span>
+</code></pre>
+<p><em>Happy Thorium Building!</em></p>
+<p><img title="Thorium Mascot" class="shake border" src="./imgs/Thorium_Mascot.jpg" width="200"></p><br>
+
+<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+
+	<script defer src="./js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="./js/spin.js"></script>
+    <script defer src="./js/spin2.js"></script>
+	<script defer src="./js/spun2.js"></script>
+    <script defer src="./js/button.js"></script>
+
+</body>
+</html>
+

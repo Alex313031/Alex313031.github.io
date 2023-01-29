@@ -1,129 +1,146 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="author" href="../humans.txt">
-    <title>Cross-Building Thorium</title>
-    <meta name="description" content="Thorium Building Document for Windows Cross-Building.">
-    <meta name="color-scheme" content="light dark">
-    <link rel="shortcut icon" type="image/png" sizes="48x48" href="docs48.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="docs32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="docs16.png">
-    <meta itemprop="image" content="thumb.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="docs.css">
-    <meta name="theme-color" content="#ffffff">
-    <script>
-    function toggleDarkMode(useDark) {
-        if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-        }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
-        useDark = true;
-        toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
-        useDark = false;
-        toggleDarkMode(useDark);
-    }
-    </script>
-</head>
-
-<body>
-<h1 id="cross-compiling-thorium-for-windows-on-linux">Cross-Compiling Thorium<a style="margin-right: 12px; float: right;" id="svg" alt="Build Icon" title="Build Icon"><svg xmlns="http://www.w3.org/2000/svg" class="spin2" height="48" viewBox="0 0 24 24" width="48"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22.61 18.99l-9.08-9.08c.93-2.34.45-5.1-1.44-7C9.79.61 6.21.4 3.66 2.26L7.5 6.11 6.08 7.52 2.25 3.69C.39 6.23.6 9.82 2.9 12.11c1.86 1.86 4.57 2.35 6.89 1.48l9.11 9.11c.39.39 1.02.39 1.41 0l2.3-2.3c.4-.38.4-1.01 0-1.41zm-3 1.6l-9.46-9.46c-.61.45-1.29.72-2 .82-1.36.2-2.79-.21-3.83-1.25C3.37 9.76 2.93 8.5 3 7.26l3.09 3.09 4.24-4.24-3.09-3.09c1.24-.07 2.49.37 3.44 1.31 1.08 1.08 1.49 2.57 1.24 3.96-.12.71-.42 1.37-.88 1.96l9.45 9.45-.88.89z" fill="currentColor"/></svg></a><br> for Windows on Linux</h1>
-<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
-<hr>
-<p>As many Thorium developers are on Linux/Mac, cross-compiling Thorium for
-Windows targets facilitates development for Windows targets on non-Windows
-machines.</p>
-<p>It&#39;s possible to build most parts of the codebase on a Linux or Mac host while
-targeting Windows. It&#39;s also possible to run the locally-built binaries on
-swarming.  This document describes how to set that up, and current restrictions.</p>
-<h2 id="limitations">Limitations</h2>
-<p>What does <em>not</em> work:</p>
-<ul>
-<li><code>js2gtest</code> tests are omitted from the build (<a href="https://crbug.com/1010561">bug</a>)</li>
-<li>on Mac hosts, 32-bit builds don&#39;t work (<a href="https://crbug.com/794838">bug</a> has
-more information, and this is unlikely to ever change)</li>
-</ul>
-<p>All other targets build fine (including <code>chrome</code>, <code>thorium_shell</code>, etc...).</p>
-<p>Uses of <code>.asm</code> files have been stubbed out.  As a result, Crashpad cannot
-report crashes, and NaCl defaults to disabled and cannot be enabled in cross
-builds (<a href="https://crbug.com/762167">.asm bug</a>).</p>
-<h2 id="setup">Setup</h2>
-<p>First make sure you&#39;ve followed the instructions for getting the Chromium and Thorium code from <a href="./building.html#get-the-code">Here</a>. Also make sure you have run <code>setup.sh</code> to copy the Thorium code over the Chromium tree.</p>
-<h2 id="-gclient-setup"><em>.gclient</em> setup</h2>
-<ol>
-<li><p>Tell gclient that you need Windows build dependencies by adding
-<code>target_os = [&#39;win&#39;]</code> to the end of your <code>.gclient</code> file present in <em>~/chromium/</em>.  (If you already
-have a <code>target_os</code> line in there, just add <code>&#39;win&#39;</code> to the list.) e.g.</p>
-<pre><code>solutions = [
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cross-Compiling Thorium for Windows on Linux</title>
+        <link rel="stylesheet" type="text/css" href="static/base.css" />
+        <link rel="stylesheet" type="text/css" href="static/doc.css" />
+        <link rel="stylesheet" type="text/css" href="static/prettify/prettify.css" />
+        <!-- default customHeadTagPart -->
+    </head>
+    <body class="Site">
+        <header class="Site-header">
+            <div class="Header"><div class="Header-title"></div></div>
+        </header>
+        <div class="Site-content Site-Content--markdown">
+            <div class="Container">
+                <div class="doc">
+                    <h1>
+                        <a class="h" name="Cross_Compiling-Thorium-for-Windows-on-Linux" href="#Cross_Compiling-Thorium-for-Windows-on-Linux"><span></span></a>
+                        <a class="h" name="cross_compiling-thorium-for-windows-on-linux" href="#cross_compiling-thorium-for-windows-on-linux"><span></span></a>Cross-Compiling Thorium for Windows on Linux
+                    </h1>
+                    <p>As many Thorium developers are on Linux/Mac, cross-compiling Thorium for Windows targets facilitates development for Windows targets on non-Windows machines.</p>
+                    <p>
+                        It&#39;s possible to build most parts of the codebase on a Linux or Mac host while targeting Windows. It&#39;s also possible to run the locally-built binaries on swarming. This document describes how to set that up,
+                        and current restrictions.
+                    </p>
+                    <h2>
+                        <a class="h" name="Limitations" href="#Limitations"><span></span></a><a class="h" name="limitations" href="#limitations"><span></span></a>Limitations
+                    </h2>
+                    <p>What does <em>not</em> work:</p>
+                    <ul>
+                        <li><code class="code">js2gtest</code> tests are omitted from the build (<a href="https://crbug.com/1010561">bug</a>)</li>
+                        <li>on Mac hosts, 32-bit builds don&#39;t work (<a href="https://crbug.com/794838">bug</a> has more information, and this is unlikely to ever change)</li>
+                    </ul>
+                    <p>All other targets build fine (including <code class="code">chrome</code>, <code class="code">thorium_shell</code>, etc...).</p>
+                    <p>
+                        Uses of <code class="code">.asm</code> files have been stubbed out. As a result, Crashpad cannot report crashes, and NaCl defaults to disabled and cannot be enabled in cross builds (
+                        <a href="https://crbug.com/762167">.asm bug</a>).
+                    </p>
+                    <h2>
+                        <a class="h" name="Setup" href="#Setup"><span></span></a><a class="h" name="setup" href="#setup"><span></span></a>Setup
+                    </h2>
+                    <p>
+                        First make sure you&#39;ve followed the instructions for getting the Chromium and Thorium code from <a href="https://github.com/Alex313031/Thorium/blob/main/docs/BUILDING.md#get-the-code">HERE</a>. <br />
+                        Also make sure you have run <code class="code">setup.sh</code> to copy the Thorium code over the Chromium tree.
+                    </p>
+                    <h2>
+                        <a class="h" name="gclient-setup" href="#gclient-setup"><span></span></a><em>.gclient</em> setup
+                    </h2>
+                    <ol>
+                        <li>
+                            <p>
+                                Tell gclient that you need Windows build dependencies by adding <code class="code">target_os = [&#39;win&#39;]</code> to the end of your <code class="code">.gclient</code> file present in
+                                <em>~/chromium/</em>. (If you already have a <code class="code">target_os</code> line in there, just add <code class="code">&#39;win&#39;</code> to the list.) e.g.
+                            </p>
+                            <pre class="code">
+solutions = [
   {
     ...
   }
 ]
-target_os = [<span class="hljs-string">'linux'</span>, <span class="hljs-string">'win'</span>]
-</code></pre></li>
-<li><p>Run a <code>trunk.sh</code>, and follow instructions on screen.</p>
-</li>
-</ol>
-<h3 id="installing-the-msvs-artifacts-archive">Installing the MSVS Artifacts Archive</h3>
-<p>Download the latest MSVS Artifacts Archive from <a target="_blank" rel="noopener" href="https://github.com/Alex313031/Snippets/releases/latest">Here</a>. Then, make a subdir in <em>chromium</em> called win, i.e. <code>mkdir ~/chromium/win</code>, and then place the .zip file in there.</p>
-<p>Then, to use the generated file on a Linux or Mac host, the following environment variables
-need to be set, so add these lines to your <code>.bashrc</code> or <code>.zshrc</code>.</p>
-<pre><code><span class="hljs-built_in">export</span> DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=&lt;base url&gt;
-<span class="hljs-built_in">export</span> GYP_MSVS_HASH_&lt;toolchain <span class="hljs-built_in">hash</span>&gt;=&lt;<span class="hljs-built_in">hash</span> value&gt;
-</code></pre><p><code>&lt;base url&gt;</code> is the full path of the directory containing the .zip file, i.e. <em>/home/alex/chromium/win/80909eccbb.zip</em></p>
-<p><code>&lt;toolchain hash&gt;</code> is hardcoded in <code>src/build/vs_toolchain.py</code> and can be found by
-setting <code>DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL</code> and running <code>gclient runhooks</code>:</p>
-<pre><code>gclient runhooks
+target_os = [&#39;linux&#39;, &#39;win&#39;]
+
+                            </pre>
+                        </li>
+                        <li>
+                            <p>Run a <code class="code">trunk.sh</code>, and follow instructions on screen.</p>
+                        </li>
+                    </ol>
+                    <h3>
+                        <a class="h" name="Installing-the-MSVS-Artifacts-Archive" href="#Installing-the-MSVS-Artifacts-Archive"><span></span></a>
+                        <a class="h" name="installing-the-msvs-artifacts-archive" href="#installing-the-msvs-artifacts-archive"><span></span></a>Installing the MSVS Artifacts Archive
+                    </h3>
+                    <p>
+                        Download the latest MSVS Artifacts Archive from <a href="https://github.com/Alex313031/Snippets/releases/latest">HERE</a>. <br />
+                        Then, make a subdir in <em>chromium</em> called win, i.e. <code class="code">mkdir ~/chromium/win</code>, and then place the .zip file in there.
+                    </p>
+                    <p>Then, to use the generated file on a Linux or Mac host, the following environment variables need to be set, so add these lines to your <code class="code">.bashrc</code> or <code class="code">.zshrc</code>.</p>
+                    <pre class="code">
+export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=&lt;base url&gt;
+export GYP_MSVS_HASH_&lt;toolchain hash&gt;=&lt;hash value&gt;
+
+                    </pre>
+                    <p><code class="code">&lt;base url&gt;</code> is the full path of the directory containing the .zip file, i.e. <em>/home/alex/chromium/win/80909eccbb.zip</em></p>
+                    <p>
+                        <code class="code">&lt;toolchain hash&gt;</code> is hardcoded in <code class="code">src/build/vs_toolchain.py</code> and can be found by setting <code class="code">DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL</code> and
+                        running <code class="code">gclient runhooks</code>:
+                    </p>
+                    <pre class="code">
+gclient runhooks
 ...
 Running hooks:  17% (11/64) win_toolchain
-________ running '/usr/bin/python src/build/vs_toolchain.py <span class="hljs-keyword">update</span> <span class="hljs-comment">--force' in &lt;chromium dir&gt;</span>
-Windows toolchain <span class="hljs-keyword">out</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">or</span> doesn<span class="hljs-string">'t exist, updating (Pro)...
+________ running &#39;/usr/bin/python src/build/vs_toolchain.py update --force&#39; in &lt;chromium dir&gt;
+Windows toolchain out of date or doesn&#39;t exist, updating (Pro)...
 current_hashes:
-desired_hash: &lt;toolchain hash&gt;</span>
-</code></pre><p><code>&lt;hash value&gt;</code> is the name of the .zip, without .zip at the end, i.e. <code>80909eccbb</code></p>
-<h3 id="generating-a-msvs-artifacts-archive-yourself">Generating a MSVS Artifacts Archive yourself</h3>
-<p>After installing <a href="building_win.html#visual-studio">Microsoft&#39;s development tools</a>,
-you can package your Windows SDK installation into a zip file by running the following on a Windows machine in cmd.exe:</p>
-<pre><code class="lang-shell">    <span class="hljs-keyword">cd</span> path/<span class="hljs-keyword">to</span>/depot_tools/win_toolchain
-    <span class="hljs-keyword">python3</span> package_from_installed.<span class="hljs-keyword">py</span> &lt;<span class="hljs-keyword">vs</span> <span class="hljs-keyword">version</span>&gt; -<span class="hljs-keyword">w</span> &lt;win <span class="hljs-keyword">version</span>&gt;
-</code></pre>
-<p>Where &quot;path/to/depot_tools/win_toolchain&quot; would usually be <em>C:\src\depot_tools\win_toolchain</em> and
-where <code>&lt;vs version&gt;</code> and <code>&lt;win version&gt;</code> correspond respectively to the
-versions of Visual Studio (e.g. 2019) and of the Windows SDK (e.g.
-10.0.20348.0) installed on the Windows machine. Note that if you didn&#39;t
-install the ARM64 components of the SDK as noted in the link above, you
-should add <code>--noarm</code> to the parameter list.</p>
-<p><strong>NOTE</strong>: The -w flag takes the raw internal version of the SDK, not the actual patch version. This caused me and I&#39;m sure
-other people some confusion. So for example, the latest version of the Win 10 SDK is 10.1.20348.1, but its internal version doesn&#39;t change from
-when it was released, and this is what you would use, e.g. 10.0.20348.0</p>
-<p>These commands create a zip file named <code>&lt;hash value&gt;.zip</code>, which can be used with the instructions above ^.</p>
-<h2 id="building">Building</h2>
-<p>Follow <a href="./building.html#setting-up-the-build">Setting up the build</a>, except instead of using the <code>args.gn</code> from the
-root of the Thorium repo, use the <a target="_blank" rel="noopener" href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn"><code>win_args.gn</code></a>, from <em>~/Thorium/infra/</em></p>
-<p>Then, to build, run <code>build_win.sh</code>, instead of <code>build.sh</code>. See &gt; <a href="./building.html#build-thorium">Here</a>.</p>
-<p><em>Happy Thorium Building!</em></p>
-<p><img title="Thorium Mascot" class="shake border" src="./imgs/Thorium_Mascot.jpg" width="200"></p>
-<br>
+desired_hash: &lt;toolchain hash&gt;
 
-<div id="totop"><a href="#top" title="Back to top">▲</a></div>
-
-	<script defer src="./js/jquery-3.6.0.slim.min.js"></script>
-    <script defer src="./js/spin.js"></script>
-    <script defer src="./js/spin2.js"></script>
-	<script defer src="./js/spun2.js"></script>
-    <script defer src="./js/button.js"></script>
-
-</body>
+                    </pre>
+                    <p><code class="code">&lt;hash value&gt;</code> is the name of the .zip, without .zip at the end, i.e. <code class="code">80909eccbb</code></p>
+                    <h3>
+                        <a class="h" name="Generating-a-MSVS-Artifacts-Archive-yourself" href="#Generating-a-MSVS-Artifacts-Archive-yourself"><span></span></a>
+                        <a class="h" name="generating-a-msvs-artifacts-archive-yourself" href="#generating-a-msvs-artifacts-archive-yourself"><span></span></a>Generating a MSVS Artifacts Archive yourself
+                    </h3>
+                    <p>
+                        After installing <a href="https://github.com/Alex313031/Thorium/blob/main/docs/BUILDING_WIN.md#visual-studio">Microsoft&#39;s development tools</a>, you can package your Windows SDK installation into a zip file by
+                        running the following on a Windows machine in cmd.exe:
+                    </p>
+                    <pre
+                        class="code"
+                    ><span class="pln">    cd path</span><span class="pun">/</span><span class="pln">to</span><span class="pun">/</span><span class="pln">depot_tools</span><span class="pun">/</span><span class="pln">win_toolchain
+    python3 package_from_installed</span><span class="pun">.</span><span class="pln">py </span><span class="pun">&lt;</span><span class="pln">vs version</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">-</span><span class="pln">w </span><span class="pun">&lt;</span><span class="pln">win version</span><span class="pun">&gt;</span><span class="pln">
+</span></pre>
+                    <p>
+                        Where &quot;path/to/depot_tools/win_toolchain&quot; would usually be <em>C:\src\depot_tools\win_toolchain</em> and where <code class="code">&lt;vs version&gt;</code> and
+                        <code class="code">&lt;win version&gt;</code> correspond respectively to the versions of Visual Studio (e.g. 2019) and of the Windows SDK (e.g. 10.0.20348.0) installed on the Windows machine. Note that if you
+                        didn&#39;t install the ARM64 components of the SDK as noted in the link above, you should add <code class="code">--noarm</code> to the parameter list.
+                    </p>
+                    <p>
+                        <strong>NOTE</strong>: The -w flag takes the raw internal version of the SDK, not the actual patch version. This caused me and I&#39;m sure other people some confusion. So for example, the latest version of the Win
+                        10 SDK is 10.1.20348.1, but its internal version doesn&#39;t change from when it was released, and this is what you would use, e.g. 10.0.20348.0
+                    </p>
+                    <p>These commands create a zip file named <code class="code">&lt;hash value&gt;.zip</code>, which can be used with the instructions above ^.</p>
+                    <h2>
+                        <a class="h" name="Building" href="#Building"><span></span></a><a class="h" name="building" href="#building"><span></span></a>Building
+                    </h2>
+                    <p>
+                        Follow <a href="https://github.com/Alex313031/Thorium/blob/main/docs/BUILDING.md#setting-up-the-build">Setting up the build</a>, except instead of using the <code class="code">args.gn</code> from the root of the
+                        Thorium repo, use the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/win_args.gn"><code class="code">win_args.gn</code></a>, from <em>~/Thorium/infra/</em>
+                    </p>
+                    <p>
+                        Then, to build, run <code class="code">build_win.sh</code>, instead of <code class="code">build.sh</code>. See &gt; <a href="https://github.com/Alex313031/Thorium/blob/main/docs/BUILDING.md#build-thorium-">Here</a>.
+                    </p>
+                    <p><em>Happy Thorium Building!</em></p>
+                </div>
+            </div>
+        </div>
+        <!-- default customDocFooter -->
+        <footer class="Site-footer">
+            <div class="Footer">
+                <span class="Footer-poweredBy">Powered by <a href="https://gerrit.googlesource.com/gitiles/">Gitiles</a></span>
+                <div class="Footer-links"></div>
+            </div>
+        </footer>
+    </body>
 </html>
