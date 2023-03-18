@@ -1,0 +1,326 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+
+    <title>WebGPU Dissapearing Geometry Bug Repro</title>
+
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .dg {
+        z-index: 1 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script type='module'>
+      import {mat4} from './gl-matrix/src/gl-matrix.js';
+
+      const SAMPLE_COUNT = 4;
+      const DEPTH_FORMAT = 'depth24plus';
+
+      const BackgroundShader = {
+        vertex: `
+          var<private> pos : array<vec2<f32>, 4> = array<vec2<f32>, 4>(
+            vec2<f32>(-1.0, 1.0), vec2<f32>(1.0, 1.0), vec2<f32>(-1.0, -1.0), vec2<f32>(1.0, -1.0)
+          );
+          @builtin(position) var<out> Position : vec4<f32>;
+          @builtin(vertex_index) var<in> VertexIndex : i32;
+
+          @location(0) var<out> vPos : vec2<f32>;
+
+          @stage(vertex)
+          fn main() -> void {
+            vPos = pos[VertexIndex];
+            Position = vec4<f32>(vPos, 0.0, 1.0);
+            return;
+          }
+        `,
+        fragment: `
+          @location(0) var<out> outColor : vec4<f32>;
+          @stage(fragment)
+          fn main(@location(0) vPos : vec2<f32>) -> void {
+            outColor = vec4<f32>((vPos.x + 1.0) / 2.0, (vPos.y + 1.0) / 2.0, 0.0, 1.0);
+            return;
+          }
+        `
+      };
+
+      const TileShader = {
+        vertex: `
+          var<private> pos : array<vec2<f32>, 4> = array<vec2<f32>, 4>(
+            vec2<f32>(-1.0, -1.0), vec2<f32>(1.0, -1.0), vec2<f32>(-1.0, 1.0), vec2<f32>(1.0, 1.0)
+          );
+
+          @builtin(position) var<out> Position : vec4<f32>;
+          @builtin(vertex_index) var<in> VertexIndex : i32;
+
+          @location(0) var<out> vPos : vec2<f32>;
+
+          struct FrameUniforms {
+            projectionMatrix : mat4x4<f32>;
+            tileMatrix : mat4x4<f32>;
+          };
+          @group(0) @binding(0) var<uniform> frameUniforms : FrameUniforms;
+
+          @stage(vertex)
+          fn main() -> void {
+            vPos = pos[VertexIndex];
+            Position = frameUniforms.projectionMatrix * frameUniforms.tileMatrix * vec4<f32>(vPos, 0.0, 1.0);
+            return;
+          }
+        `,
+
+        fragment: `
+          @location(0) var<out> outColor : vec4<f32>;
+          @stage(fragment)
+          fn main(@location(0) vPos : vec2<f32>) -> void {
+            outColor = vec4<f32>(0.0, (vPos.x + 1.0) / 2.0, (vPos.y + 1.0) / 2.0, 1.0);
+            return;
+          }
+        `
+      };
+
+      export class WebGPURenderer {
+        constructor() {
+          this.canvas = document.createElement('canvas');
+          this.context = this.canvas.getContext('gpupresent');
+          this.projectionMatrix = mat4.create();
+          this.tileMatrix = mat4.create();
+        }
+
+        async initialize() {
+          this.adapter = await navigator.gpu.requestAdapter({
+            powerPreference: "high-performance"
+          });
+          this.device = await this.adapter.requestDevice();
+
+          // Swap chain setup
+          this.swapChainFormat = this.context.getSwapChainPreferredFormat(this.adapter);
+          this.swapChain = this.context.configureSwapChain({
+            device: this.device,
+            format: this.swapChainFormat
+          });
+
+          this.colorAttachment = {
+            // view is acquired and set in onCanvasResize.
+            view: undefined,
+            // resolveTarget is acquired and set in onFrame.
+            resolveTarget: undefined,
+            clearValue: {r: 0.0, g: 0.0, b: 0.0, a: 1.0},
+            loadOp: 'clear',
+            storeOp: 'store',
+          };
+
+          this.depthAttachment = {
+            // view is acquired and set in onCanvasResize.
+            view: undefined,
+            depthClearValue: 1.0,
+            depthLoadOp: 'clear',
+            depthStoreOp: 'store',
+          };
+
+          this.renderPassDescriptor = {
+            colorAttachments: [this.colorAttachment],
+            depthStencilAttachment: this.depthAttachment
+          };
+
+          // Background rendering setup
+          this.backgroundPipeline = this.device.createRenderPipeline({
+            vertex: {
+              module: this.device.createShaderModule({
+                code: BackgroundShader.vertex
+              }),
+              entryPoint: 'main'
+            },
+            fragment: {
+              module: this.device.createShaderModule({
+                code: BackgroundShader.fragment
+              }),
+              entryPoint: 'main',
+              targets: [{
+                format: this.swapChainFormat,
+              }],
+            },
+            primitive: {
+              topology: 'triangle-strip',
+              stripIndexFormat: 'uint16',
+            },
+            depthStencil: {
+              depthWriteEnabled: false,
+              depthCompare: 'less',
+              format: DEPTH_FORMAT,
+            },
+            multisample: {
+              count: SAMPLE_COUNT,
+            }
+          });
+
+          // Tile rendering setup
+          this.tilePipeline = this.device.createRenderPipeline({
+            vertex: {
+              module: this.device.createShaderModule({
+                code: TileShader.vertex
+              }),
+              entryPoint: 'main',
+            },
+            fragment: {
+              module: this.device.createShaderModule({
+                code: TileShader.fragment
+              }),
+              entryPoint: 'main',
+              targets: [{
+                format: this.swapChainFormat,
+              }],
+            },
+            primitive: {
+              topology: 'triangle-strip',
+              stripIndexFormat: 'uint32',
+            },
+            depthStencil: {
+              depthWriteEnabled: true,
+              depthCompare: 'less',
+              format: DEPTH_FORMAT,
+            },
+            multisample: {
+              count: SAMPLE_COUNT,
+            }
+          });
+
+          this.frameUniformsBuffer = this.device.createBuffer({
+            size: 32 * Float32Array.BYTES_PER_ELEMENT, // Enough for two matrix
+            usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.UNIFORM,
+          });
+
+          this.frameUniformBindGroup = this.device.createBindGroup({
+            layout: this.tilePipeline.getBindGroupLayout(0),
+            entries: [{
+              binding: 0,
+              resource: {
+                buffer: this.frameUniformsBuffer,
+              },
+            }],
+          });
+        }
+
+        onCanvasResize() {
+          const width = Math.round(this.canvas.clientWidth * devicePixelRatio);
+          const height = Math.round(this.canvas.clientHeight * devicePixelRatio);
+          this.canvas.width = width;
+          this.canvas.height = height;
+
+          const aspect = width/height;
+          mat4.ortho(this.projectionMatrix,
+            -3 * aspect, 3 * aspect,
+            -(4 - 1), (4 - 1),
+            -10, 10);
+
+          if (!this.device) return;
+
+          // Update the Projection Matrix
+          this.device.queue.writeBuffer(this.frameUniformsBuffer, 0, this.projectionMatrix);
+
+          mat4.identity(this.tileMatrix);
+          this.device.queue.writeBuffer(this.frameUniformsBuffer, 16 * Float32Array.BYTES_PER_ELEMENT, this.tileMatrix);
+
+          const msaaColorTexture = this.device.createTexture({
+            size: { width, height },
+            sampleCount: SAMPLE_COUNT,
+            format: this.swapChainFormat,
+            usage: GPUTextureUsage.RENDER_ATTACHMENT,
+          });
+          this.colorAttachment.view = msaaColorTexture.createView();
+          // For backwards compat with older builds.
+          this.colorAttachment.attachment = this.colorAttachment.view;
+
+          const depthTexture = this.device.createTexture({
+            size: { width, height },
+            sampleCount: SAMPLE_COUNT,
+            format: DEPTH_FORMAT,
+            usage: GPUTextureUsage.RENDER_ATTACHMENT
+          });
+          this.depthAttachment.view = depthTexture.createView();
+          // For backwards compat with older builds.
+          this.depthAttachment.attachment = this.depthAttachment.view
+        }
+
+        initializeTile(tile) {
+          tile.uniformBuffer = this.device.createBuffer({
+            size: 16 * Float32Array.BYTES_PER_ELEMENT, // Enough for one matrix
+            usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.UNIFORM,
+          });
+
+          tile.bindGroup = this.device.createBindGroup({
+            layout: this.tilePipeline.getBindGroupLayout(1),
+            entries: [{
+              binding: 0,
+              resource: {
+                buffer: tile.uniformBuffer,
+              },
+            }],
+          });
+
+          this.device.queue.writeBuffer(tile.uniformBuffer, 0, tile.modelView);
+        }
+
+        onFrame(timestamp) {
+          // Update the Tile Matrix
+          mat4.identity(this.tileMatrix);
+          mat4.rotateZ(this.tileMatrix, this.tileMatrix, timestamp / 1000);
+          this.device.queue.writeBuffer(this.frameUniformsBuffer, 16 * Float32Array.BYTES_PER_ELEMENT, this.tileMatrix);
+
+          this.colorAttachment.resolveTarget = this.swapChain.getCurrentTexture().createView();
+
+          const commandEncoder = this.device.createCommandEncoder({});
+
+          const passEncoder = commandEncoder.beginRenderPass(this.renderPassDescriptor);
+
+          // Draw a checkered background (mostly so we can see alpha effects).
+          passEncoder.setPipeline(this.backgroundPipeline);
+          passEncoder.draw(4, 1, 0, 0);
+
+          // Draw the tile.
+          passEncoder.setPipeline(this.tilePipeline);
+          passEncoder.setBindGroup(0, this.frameUniformBindGroup);
+          passEncoder.draw(4, undefined, 0, 0);
+
+          passEncoder.end();
+          this.device.queue.submit([commandEncoder.finish()]);
+        }
+      }
+
+      const renderer = new WebGPURenderer();
+      renderer.initialize().then(() => {
+        document.body.appendChild(renderer.canvas);
+        window.addEventListener('resize', () => { renderer.onCanvasResize(); });
+        renderer.onCanvasResize();
+        window.requestAnimationFrame(onFrame);
+      });
+
+      function onFrame(timestamp) {
+        window.requestAnimationFrame(onFrame);
+        renderer.onFrame(timestamp);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <meta itemprop="image" content="thumb.png">
+
+    <title>WebGPU in an iframe test</title>
+
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        background-color: #660000;
+      }
+      #container {
+        position: absolute;
+        top: 1em;
+        bottom: 1em;
+        left: 0.5em;
+        right: 0.5em;
+        display: flex;
+      }
+      iframe {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+      }
+      #same-origin {
+        flex-grow: 1;
+      }
+      #cross-origin {
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <iframe id="same-origin" src="cube.html"></iframe>
+      <iframe id="cross-origin" src="https://austin-eng.com/webgpu-samples/samples/helloTriangle"></iframe>
+    </div>
+  </body>
+</html>
