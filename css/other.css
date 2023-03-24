@@ -4,8 +4,8 @@
 :root.light {
   --bgcolor: #24292f;
   --fontcolor: #ffffff;
-  --linkcolor: #ae5ee0;
-  --visitedcolor: #5bf5bf;
+  --linkcolor: #5bf5bf;
+  --visitedcolor: #ae5ee0;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;
   --accent-fg: #aecbfa;
@@ -18,8 +18,8 @@
 :root.dark {
   --bgcolor: #24292f;
   --fontcolor: #ffffff;
-  --linkcolor: #ae5ee0;
-  --visitedcolor: #5bf5bf;
+  --linkcolor: #5bf5bf;
+  --visitedcolor: #ae5ee0;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;
   --accent-fg: #aecbfa;

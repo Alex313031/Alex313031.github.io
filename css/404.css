@@ -21,8 +21,8 @@
   --bg: #24292f;
   --color: #ffffff;
   --error: #fbbc04;
-  --linkcolor: #ae5ee0;
-  --visitedcolor: #5bf5bf;
+  --linkcolor: #5bf5bf;
+  --visitedcolor: #ae5ee0;
 }
 
 }
@@ -35,8 +35,8 @@
   --bg: #24292f;
   --color: #ffffff;
   --error: #fbbc04;
-  --linkcolor: #ae5ee0;
-  --visitedcolor: #5bf5bf;
+  --linkcolor: #5bf5bf;
+  --visitedcolor: #ae5ee0;
 }
 code {
   font: 15px/22px arial,sans-serif;
