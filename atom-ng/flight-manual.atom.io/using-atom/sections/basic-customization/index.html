@@ -1,0 +1,1719 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Basic Customization</title>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" media="all" href="/assets/stylesheets/application.css" data-proofer-ignore>
+
+<link rel="stylesheet" media="all" href="/assets/stylesheets/development.css" data-proofer-ignore>
+
+
+<script type="text/javascript" src="/assets/javascripts/application.js"></script>
+
+  </head>
+  <body class="layout-article">
+    <div class="footer-push">
+      <div class="top-bar">
+  <div class="wrapper no-pad">
+
+    <ul class="navigation">
+      <li><h1 title="Atom: A hackable text editor for the 21st Century"><a href="https://atom.io/" class="logo-small"></a></h1></li>
+      <li><a href="https://atom.io/packages">Packages</a></li>
+      <li><a href="https://atom.io/themes">Themes</a></li>
+      <li><a href="https://atom.io/docs" class="is-selected">Documentation</a></li>
+      <li><a href="https://blog.atom.io">Blog</a></li>
+      <li><a href="https://github.com/atom/atom/discussions">Discussions</a></li>
+    </ul>
+
+  </div>
+</div>
+
+      <div class="wrapper documents content-push wide">
+        <script id="quicksearch-results-template" type="text/mustache">
+  [[#entries]]
+    <a href="[[url]]" class="js-articles-quicksearch-link">[[title]]</a>
+  [[/entries]]
+  <a class="initial quicksearch-seemore" href="/search?q=">See more results</a>
+</script>
+
+<script id="search-results-template" type="text/mustache">
+  [[#entries]]
+    <li>
+      <h3>
+        <a href="[[url]]">[[title]]</a>
+        <div class="label"><a href="[[category_url]]">[[category]]</a></div>
+      </h3>
+      <p>
+      [[excerpt]]
+      </p>
+    </li>
+  [[/entries]]
+</script>
+
+<div class="documents-search" style="display: flex; align-items: center;">
+  <select id="documents-search-versions" style="display: inline; margin-right: 20px; height: 40px;">
+    
+      <option  value="1.63.1">
+        v1.63.1
+      </option>
+    
+      <option  value="1.60.0">
+        v1.60.0
+      </option>
+    
+      <option  value="1.59.0">
+        v1.59.0
+      </option>
+    
+      <option  value="1.58.0">
+        v1.58.0
+      </option>
+    
+      <option  value="1.57.0">
+        v1.57.0
+      </option>
+    
+      <option  value="1.56.0">
+        v1.56.0
+      </option>
+    
+      <option  value="1.55.0">
+        v1.55.0
+      </option>
+    
+      <option  value="1.54.0">
+        v1.54.0
+      </option>
+    
+      <option  value="1.53.0">
+        v1.53.0
+      </option>
+    
+      <option  value="1.52.0">
+        v1.52.0
+      </option>
+    
+      <option  value="1.51.0">
+        v1.51.0
+      </option>
+    
+      <option  value="1.50.0">
+        v1.50.0
+      </option>
+    
+      <option  value="1.49.0">
+        v1.49.0
+      </option>
+    
+      <option  value="1.48.0">
+        v1.48.0
+      </option>
+    
+      <option  value="1.47.0">
+        v1.47.0
+      </option>
+    
+      <option  value="1.46.0">
+        v1.46.0
+      </option>
+    
+      <option  value="1.45.0">
+        v1.45.0
+      </option>
+    
+      <option  value="1.44.0">
+        v1.44.0
+      </option>
+    
+      <option  value="1.43.0">
+        v1.43.0
+      </option>
+    
+      <option  value="1.42.0">
+        v1.42.0
+      </option>
+    
+      <option  value="1.41.0">
+        v1.41.0
+      </option>
+    
+      <option  value="1.40.1">
+        v1.40.1
+      </option>
+    
+      <option  value="1.40.0">
+        v1.40.0
+      </option>
+    
+      <option  value="1.39.1">
+        v1.39.1
+      </option>
+    
+      <option  value="1.39.0">
+        v1.39.0
+      </option>
+    
+      <option  value="1.38.2">
+        v1.38.2
+      </option>
+    
+      <option  value="1.38.1">
+        v1.38.1
+      </option>
+    
+      <option  value="1.38.0">
+        v1.38.0
+      </option>
+    
+      <option  value="1.37.0">
+        v1.37.0
+      </option>
+    
+      <option  value="1.36.1">
+        v1.36.1
+      </option>
+    
+      <option  value="1.36.0">
+        v1.36.0
+      </option>
+    
+      <option  value="1.35.1">
+        v1.35.1
+      </option>
+    
+      <option  value="1.35.0">
+        v1.35.0
+      </option>
+    
+      <option  value="1.34.0">
+        v1.34.0
+      </option>
+    
+      <option  value="1.33.1">
+        v1.33.1
+      </option>
+    
+      <option  value="1.33.0">
+        v1.33.0
+      </option>
+    
+      <option  value="1.32.2">
+        v1.32.2
+      </option>
+    
+      <option  value="1.32.1">
+        v1.32.1
+      </option>
+    
+      <option  value="1.32.0">
+        v1.32.0
+      </option>
+    
+      <option  value="1.31.2">
+        v1.31.2
+      </option>
+    
+      <option  value="1.31.1">
+        v1.31.1
+      </option>
+    
+      <option  value="1.31.0">
+        v1.31.0
+      </option>
+    
+      <option  value="1.30.0">
+        v1.30.0
+      </option>
+    
+      <option  value="1.29.0">
+        v1.29.0
+      </option>
+    
+      <option  value="1.28.2">
+        v1.28.2
+      </option>
+    
+      <option  value="1.28.1">
+        v1.28.1
+      </option>
+    
+      <option  value="1.28.0">
+        v1.28.0
+      </option>
+    
+      <option  value="1.27.2">
+        v1.27.2
+      </option>
+    
+      <option  value="1.27.1">
+        v1.27.1
+      </option>
+    
+      <option  value="1.27.0">
+        v1.27.0
+      </option>
+    
+      <option  value="1.26.1">
+        v1.26.1
+      </option>
+    
+      <option  value="1.26.0">
+        v1.26.0
+      </option>
+    
+      <option  value="1.25.1">
+        v1.25.1
+      </option>
+    
+      <option  value="1.25.0">
+        v1.25.0
+      </option>
+    
+      <option  value="1.24.1">
+        v1.24.1
+      </option>
+    
+      <option  value="1.24.0">
+        v1.24.0
+      </option>
+    
+      <option  value="1.23.3">
+        v1.23.3
+      </option>
+    
+      <option  value="1.23.2">
+        v1.23.2
+      </option>
+    
+      <option  value="1.23.1">
+        v1.23.1
+      </option>
+    
+      <option  value="1.23.0">
+        v1.23.0
+      </option>
+    
+      <option  value="1.22.1">
+        v1.22.1
+      </option>
+    
+      <option  value="1.22.0">
+        v1.22.0
+      </option>
+    
+      <option  value="1.21.2">
+        v1.21.2
+      </option>
+    
+      <option  value="1.21.1">
+        v1.21.1
+      </option>
+    
+      <option  value="1.21.0">
+        v1.21.0
+      </option>
+    
+      <option  value="1.20.1">
+        v1.20.1
+      </option>
+    
+      <option  value="1.20.0">
+        v1.20.0
+      </option>
+    
+      <option  value="1.19.7">
+        v1.19.7
+      </option>
+    
+      <option  value="1.19.6">
+        v1.19.6
+      </option>
+    
+      <option  value="1.19.5">
+        v1.19.5
+      </option>
+    
+      <option  value="1.19.4">
+        v1.19.4
+      </option>
+    
+      <option  value="1.19.3">
+        v1.19.3
+      </option>
+    
+      <option  value="1.19.2">
+        v1.19.2
+      </option>
+    
+      <option  value="1.19.1">
+        v1.19.1
+      </option>
+    
+      <option  value="1.19.0">
+        v1.19.0
+      </option>
+    
+      <option  value="1.18.0">
+        v1.18.0
+      </option>
+    
+      <option  value="1.17.2">
+        v1.17.2
+      </option>
+    
+      <option  value="1.17.1">
+        v1.17.1
+      </option>
+    
+      <option  value="1.17.0">
+        v1.17.0
+      </option>
+    
+      <option  value="1.16.0">
+        v1.16.0
+      </option>
+    
+      <option  value="1.15.0">
+        v1.15.0
+      </option>
+    
+      <option  value="1.14.4">
+        v1.14.4
+      </option>
+    
+      <option  value="1.14.3">
+        v1.14.3
+      </option>
+    
+      <option  value="1.14.2">
+        v1.14.2
+      </option>
+    
+      <option  value="1.14.1">
+        v1.14.1
+      </option>
+    
+      <option  value="1.14.0">
+        v1.14.0
+      </option>
+    
+      <option  value="1.13.1">
+        v1.13.1
+      </option>
+    
+      <option  value="1.13.0">
+        v1.13.0
+      </option>
+    
+      <option  value="1.12.9">
+        v1.12.9
+      </option>
+    
+      <option  value="1.12.8">
+        v1.12.8
+      </option>
+    
+      <option  value="1.12.7">
+        v1.12.7
+      </option>
+    
+      <option  value="1.12.6">
+        v1.12.6
+      </option>
+    
+      <option  value="1.12.5">
+        v1.12.5
+      </option>
+    
+      <option  value="1.12.4">
+        v1.12.4
+      </option>
+    
+      <option  value="1.12.3">
+        v1.12.3
+      </option>
+    
+      <option  value="1.12.2">
+        v1.12.2
+      </option>
+    
+      <option  value="1.12.1">
+        v1.12.1
+      </option>
+    
+      <option  value="1.12.0">
+        v1.12.0
+      </option>
+    
+      <option  value="1.11.2">
+        v1.11.2
+      </option>
+    
+      <option  value="1.11.1">
+        v1.11.1
+      </option>
+    
+      <option  value="1.11.0">
+        v1.11.0
+      </option>
+    
+      <option  value="1.10.2">
+        v1.10.2
+      </option>
+    
+      <option  value="1.10.1">
+        v1.10.1
+      </option>
+    
+      <option  value="1.10.0">
+        v1.10.0
+      </option>
+    
+      <option  value="1.9.9">
+        v1.9.9
+      </option>
+    
+      <option  value="1.9.8">
+        v1.9.8
+      </option>
+    
+      <option  value="1.9.7">
+        v1.9.7
+      </option>
+    
+      <option  value="1.9.6">
+        v1.9.6
+      </option>
+    
+      <option  value="1.9.5">
+        v1.9.5
+      </option>
+    
+      <option  value="1.9.4">
+        v1.9.4
+      </option>
+    
+      <option  value="1.9.3">
+        v1.9.3
+      </option>
+    
+      <option  value="1.9.2">
+        v1.9.2
+      </option>
+    
+      <option  value="1.9.1">
+        v1.9.1
+      </option>
+    
+      <option  value="1.9.0">
+        v1.9.0
+      </option>
+    
+      <option  value="1.8.0">
+        v1.8.0
+      </option>
+    
+      <option  value="1.7.4">
+        v1.7.4
+      </option>
+    
+      <option  value="1.7.3">
+        v1.7.3
+      </option>
+    
+      <option  value="1.7.2">
+        v1.7.2
+      </option>
+    
+      <option  value="1.7.1">
+        v1.7.1
+      </option>
+    
+      <option  value="1.7.0">
+        v1.7.0
+      </option>
+    
+      <option  value="1.6.2">
+        v1.6.2
+      </option>
+    
+      <option  value="1.6.1">
+        v1.6.1
+      </option>
+    
+      <option  value="1.6.0">
+        v1.6.0
+      </option>
+    
+      <option  value="1.5.4">
+        v1.5.4
+      </option>
+    
+      <option  value="1.5.3">
+        v1.5.3
+      </option>
+    
+      <option  value="1.5.2">
+        v1.5.2
+      </option>
+    
+      <option  value="1.5.1">
+        v1.5.1
+      </option>
+    
+      <option  value="1.5.0">
+        v1.5.0
+      </option>
+    
+      <option  value="1.4.3">
+        v1.4.3
+      </option>
+    
+      <option  value="1.4.2">
+        v1.4.2
+      </option>
+    
+      <option  value="1.4.1">
+        v1.4.1
+      </option>
+    
+      <option  value="1.4.0">
+        v1.4.0
+      </option>
+    
+      <option  value="1.3.3">
+        v1.3.3
+      </option>
+    
+      <option  value="1.3.2">
+        v1.3.2
+      </option>
+    
+      <option  value="1.3.1">
+        v1.3.1
+      </option>
+    
+      <option  value="1.3.0">
+        v1.3.0
+      </option>
+    
+      <option  value="1.2.4">
+        v1.2.4
+      </option>
+    
+      <option  value="1.2.3">
+        v1.2.3
+      </option>
+    
+      <option  value="1.2.2">
+        v1.2.2
+      </option>
+    
+      <option  value="1.2.1">
+        v1.2.1
+      </option>
+    
+      <option  value="1.2.0">
+        v1.2.0
+      </option>
+    
+      <option  value="1.1.0">
+        v1.1.0
+      </option>
+    
+      <option  value="1.0.19">
+        v1.0.19
+      </option>
+    
+      <option  value="1.0.18">
+        v1.0.18
+      </option>
+    
+      <option  value="1.0.17">
+        v1.0.17
+      </option>
+    
+      <option  value="1.0.16">
+        v1.0.16
+      </option>
+    
+      <option  value="1.0.15">
+        v1.0.15
+      </option>
+    
+      <option  value="1.0.14">
+        v1.0.14
+      </option>
+    
+      <option  value="1.0.13">
+        v1.0.13
+      </option>
+    
+      <option  value="1.0.12">
+        v1.0.12
+      </option>
+    
+      <option  value="1.0.11">
+        v1.0.11
+      </option>
+    
+      <option  value="1.0.10">
+        v1.0.10
+      </option>
+    
+      <option  value="1.0.9">
+        v1.0.9
+      </option>
+    
+      <option  value="1.0.8">
+        v1.0.8
+      </option>
+    
+      <option  value="1.0.7">
+        v1.0.7
+      </option>
+    
+      <option  value="1.0.6">
+        v1.0.6
+      </option>
+    
+      <option  value="1.0.5">
+        v1.0.5
+      </option>
+    
+      <option  value="1.0.4">
+        v1.0.4
+      </option>
+    
+      <option  value="1.0.3">
+        v1.0.3
+      </option>
+    
+      <option  value="1.0.2">
+        v1.0.2
+      </option>
+    
+      <option  value="1.0.1">
+        v1.0.1
+      </option>
+    
+      <option  value="1.0.0">
+        v1.0.0
+      </option>
+    
+  </select>
+  <form accept-charset="UTF-8" action="/search" id="articles-search" method="get" style="width: 100%"><div style="margin:0;padding:0;display:inline;"><input name="utf8" type="hidden" value="✓"></div>
+    <input type="text" name="q" id="quicksearch-query" class="documents-search-input js-articles-quicksearch" placeholder="Search the Flight Manual" autocomplete="off">
+  </form>
+</div>
+
+<div class="autocomplete-results" style="display: none;">
+  <div class="result-group"></div>
+</div>
+
+
+        <div class="toc">
+          
+
+
+  <h4>
+    <a href="/getting-started">Chapter 1: Getting Started</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/why-atom">Why Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/installing-atom">Installing Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/atom-basics">Atom Basics</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/using-atom">Chapter 2: Using Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-packages">Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/moving-in-atom">Moving in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-selections">Atom Selections</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/editing-and-deleting-text">Editing and Deleting Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/find-and-replace">Find and Replace</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/snippets">Snippets</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/autocomplete">Autocomplete</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/folding">Folding</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/panes">Panes</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/pending-pane-items">Pending Pane Items</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/grammar">Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/version-control-in-atom">Version Control in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/github-package">GitHub package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/writing-in-atom">Writing in Atom</a>
+      </li>
+    
+      <li class="selected">
+        <a href="/using-atom/sections/basic-customization">Basic Customization</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/hacking-atom">Chapter 3: Hacking Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/tools-of-the-trade">Tools of the Trade</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/the-init-file">The Init File</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-word-count">Package: Word Count</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-modifying-text">Package: Modifying Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-active-editor-info">Package: Active Editor Info</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-theme">Creating a Theme</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-grammar">Creating a Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-legacy-textmate-grammar">Creating a Legacy TextMate Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/publishing">Publishing</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/iconography">Iconography</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/debugging">Debugging</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/writing-specs">Writing specs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/handling-uris">Handling URIs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/cross-platform-compatibility">Cross-Platform Compatibility</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/converting-from-textmate">Converting from TextMate</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/hacking-on-atom-core">Hacking on Atom Core</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/contributing-to-official-atom-packages">Contributing to Official Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-fork-of-a-core-package-in-atom-atom">Creating a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/maintaining-a-fork-of-a-core-package-in-atom-atom">Maintaining a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/behind-atom">Chapter 4: Behind Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/configuration-api">Configuration API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/keymaps-in-depth">Keymaps In-Depth</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors">Scoped Settings, Scopes and Scope Descriptors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/serialization-in-atom">Serialization in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/developing-node-modules">Developing Node Modules</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/interacting-with-other-packages-via-services">Interacting With Other Packages Via Services</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/maintaining-your-packages">Maintaining Your Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/how-atom-uses-chromium-snapshots">How Atom Uses Chromium Snapshots</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+
+
+
+
+<h4>
+  <a href="/api/v1.63.1/">Reference: API</a>
+</h4>
+<ul>
+  
+    <li>
+      <a href="/api/v1.63.1/AtomEnvironment/">AtomEnvironment</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedNodeProcess/">BufferedNodeProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedProcess/">BufferedProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Clipboard/">Clipboard</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Color/">Color</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CommandRegistry/">CommandRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CompositeDisposable/">CompositeDisposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Config/">Config</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ContextMenuManager/">ContextMenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Cursor/">Cursor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Decoration/">Decoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DeserializerManager/">DeserializerManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Directory/">Directory</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarker/">DisplayMarker</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarkerLayer/">DisplayMarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Disposable/">Disposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Dock/">Dock</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Emitter/">Emitter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/File/">File</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GitRepository/">GitRepository</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Grammar/">Grammar</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GrammarRegistry/">GrammarRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Gutter/">Gutter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/HistoryManager/">HistoryManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/KeymapManager/">KeymapManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/LayerDecoration/">LayerDecoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MarkerLayer/">MarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MenuManager/">MenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Notification/">Notification</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/NotificationManager/">NotificationManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Package/">Package</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PackageManager/">PackageManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Pane/">Pane</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Panel/">Panel</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PathWatcher/">PathWatcher</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Point/">Point</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Project/">Project</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Range/">Range</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ScopeDescriptor/">ScopeDescriptor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Selection/">Selection</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/StyleManager/">StyleManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Task/">Task</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextBuffer/">TextBuffer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextEditor/">TextEditor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ThemeManager/">ThemeManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TooltipManager/">TooltipManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ViewRegistry/">ViewRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Workspace/">Workspace</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/WorkspaceCenter/">WorkspaceCenter</a>
+    </li>
+  
+</ul>
+
+
+  <h4>
+    <a href="/resources">Appendix A: Resources</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/resources/sections/glossary">Glossary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/faq">Appendix B: FAQ</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/faq/sections/is-atom-open-source">Is Atom open source?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-atom-cost">What does Atom cost?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-platforms-does-atom-run-on">What platforms does Atom run on?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-contribute-to-atom">How can I contribute to Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-atom-collect-usage-data">Why does Atom collect usage data?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/atom-in-the-cloud">Atom in the cloud?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-s-the-difference-between-an-ide-and-an-editor">What's the difference between an IDE and an editor?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-tell-if-subpixel-antialiasing-is-working">How can I tell if subpixel antialiasing is working?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-is-atom-deleting-trailing-whitespace-why-is-there-a-newline-at-the-end-of-the-file">Why is Atom deleting trailing whitespace? Why is there a newline at the end of the file?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-safe-mode-do">What does Safe Mode do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-have-a-question-about-a-specific-atom-community-package-where-is-the-best-place-to-ask-it">I have a question about a specific Atom community package. Where is the best place to ask it?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-using-an-international-keyboard-and-keys-that-use-altgr-or-ctrl-alt-aren-t-working">I’m using an international keyboard and keys that use AltGr or Ctrl+Alt aren’t working</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-julia-what-do-i-do">I’m having a problem with Julia! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-getting-an-error-about-a-self-signed-certificate-what-do-i-do">I’m getting an error about a “self-signed certificate”. What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-platformio-what-do-i-do">I’m having a problem with PlatformIO! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-atom-recognize-a-file-with-extension-x-as-language-y">How do I make Atom recognize a file with extension X as language Y?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-the-welcome-screen-stop-showing-up">How do I make the Welcome screen stop showing up?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-preview-web-page-changes-automatically">How do I preview web page changes automatically?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-accept-input-from-my-program-or-script-when-using-the-script-package">How do I accept input from my program or script when using the script package?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-am-unable-to-update-to-the-latest-version-of-atom-on-macos-how-do-i-fix-this">I am unable to update to the latest version of Atom on macOS. How do I fix this?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-trying-to-change-my-syntax-colors-from-styles-less-but-it-isn-t-working">I’m trying to change my syntax colors from styles.less, but it isn’t working!</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-build-or-execute-code-i-ve-written-in-atom">How do I build or execute code I've written in Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-uninstall-atom-on-macos">How do I uninstall Atom on macOS?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/macos-mojave-font-rendering-change">macOS Mojave font rendering change</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-macos-say-that-atom-wants-to-access-my-calendar-contacts-photos-etc">Why does macOS say that Atom wants to access my calendar, contacts, photos, etc.?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-turn-on-line-wrap">How do I turn on line wrap?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/the-menu-bar-disappeared-how-do-i-get-it-back">The menu bar disappeared, how do I get it back?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-use-a-newline-in-the-result-of-find-and-replace">How do I use a newline in the result of find and replace?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-is-this-line-on-the-right-in-the-editor-view">What is this line on the right in the editor view?</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/shadow-dom">Appendix C: Shadow DOM</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/shadow-dom/sections/removing-shadow-dom-styles">Removing Shadow DOM styles</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/upgrading-to-1-0-apis">Appendix D: Upgrading to 1.0 APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-package">Upgrading Your Package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-ui-theme-or-package-selectors">Upgrading Your UI Theme Or Package Selectors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-syntax-theme">Upgrading Your Syntax Theme</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/atom-server-side-apis">Appendix E: Atom server-side APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-package-server-api">Atom package server API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-update-server-api">Atom update server API</a>
+      </li>
+    
+  </ul>
+
+
+        </div>
+
+        
+        <h1 class="document-title">
+          <div id="platform-nav">
+  <span class="octicon octicon-device-desktop"></span>
+  <ul>
+    <li class="platform-mac">
+      <a href="#platform-mac" data-platform="mac">
+        mac
+      </a>
+    </li>
+    <li class="platform-windows">
+      <a href="#platform-windows" data-platform="windows">
+        windows
+      </a>
+    </li>
+    <li class="platform-linux">
+      <a href="#platform-linux" data-platform="linux">
+        linux
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <a class="improve-link"
+              href="https://github.com/atom/flight-manual.atom.io/edit/master/content/using-atom/sections/basic-customization.md" data-proofer-ignore>
+            <span class="octicon octicon-pencil"></span> Improve this page
+          </a>
+        </h1>
+
+        <div class="markdown-body document-content">
+          
+          <h3>
+<a id="basic-customization" class="anchor" href="#basic-customization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Customization</h3>
+
+<p>Now that we are feeling comfortable with just about everything built into Atom, let's look at how to tweak it. Perhaps there is a keybinding that you use a lot but feels wrong or a color that isn't quite right for you. Atom is amazingly flexible, so let's go over some of the simpler flexes it can do.</p>
+
+<h4>
+<a id="configuring-with-cson" class="anchor" href="#configuring-with-cson" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring with CSON</h4>
+
+<p>All of Atom's config files (with the exception of your <a href="#style-tweaks">style sheet</a> and your <a href="/hacking-atom/sections/the-init-file">Init Script</a>) are written in CSON, short for <a href="https://github.com/bevry/cson#what-is-cson">CoffeeScript Object Notation</a>. Just like its namesake JSON, <a href="https://json.org/">JavaScript Object Notation</a>, CSON is a text format for storing structured data in the form of simple objects made up of key-value pairs.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="na">key</span><span class="o">:</span>
+  <span class="na">key</span><span class="o">:</span> <span class="nx">value</span>
+  <span class="na">key</span><span class="o">:</span> <span class="nx">value</span>
+  <span class="na">key</span><span class="o">:</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Objects are the backbone of any CSON file, and are delineated by indentation (as in the above example). A key's value can either be a String, a Number, an Object, a Boolean, <code>null</code>, or an Array of any of these data types.</p>
+
+<div class="alert warning">
+
+<p>Just like the more common JSON, CSON's keys can only be repeated once per object. If there are duplicate keys, then the last usage of that key overwrites all others, as if they weren't there. The same holds true for Atom's config files.</p>
+
+<p><strong>Don't do this:</strong></p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Only the second snippet will be loaded</span>
+<span class="s">'.source.js'</span><span class="o">:</span>
+  <span class="s">'console.log'</span><span class="o">:</span>
+    <span class="s">'prefix'</span><span class="o">:</span> <span class="s">'log'</span>
+    <span class="s">'body'</span><span class="o">:</span> <span class="s">'console.log(${1:"crash"});$2'</span>
+<span class="s">'.source.js'</span><span class="o">:</span>
+  <span class="s">'console.error'</span><span class="o">:</span>
+    <span class="s">'prefix'</span><span class="o">:</span> <span class="s">'error'</span>
+    <span class="s">'body'</span><span class="o">:</span> <span class="s">'console.error(${1:"crash"});$2'</span>
+</code></pre></div>
+
+<p><strong>Use this instead:</strong></p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Both snippets will be loaded</span>
+<span class="s">'.source.js'</span><span class="o">:</span>
+  <span class="s">'console.log'</span><span class="o">:</span>
+    <span class="s">'prefix'</span><span class="o">:</span> <span class="s">'log'</span>
+    <span class="s">'body'</span><span class="o">:</span> <span class="s">'console.log(${1:"crash"});$2'</span>
+  <span class="s">'console.error'</span><span class="o">:</span>
+    <span class="s">'prefix'</span><span class="o">:</span> <span class="s">'error'</span>
+    <span class="s">'body'</span><span class="o">:</span> <span class="s">'console.error(${1:"crash"});$2'</span>
+</code></pre></div>
+
+</div>
+
+<h4>
+<a id="style-tweaks" class="anchor" href="#style-tweaks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Style Tweaks</h4>
+
+<p>If you want to apply quick-and-dirty personal styling changes without creating an entire theme that you intend to publish, you can add styles to the <code>styles.less</code> file in your <span class="platform-mac platform-linux"><code>~/.atom</code></span><span class="platform-windows"><code>%USERPROFILE%\.atom</code></span> directory. You can open this file in an editor from the <span class="platform-mac"><em>Atom &gt; Stylesheet</em></span><span class="platform-windows"><em>File &gt; Stylesheet</em></span><span class="platform-linux"><em>Edit &gt; Stylesheet</em></span> menu.</p>
+
+<div class="platform-mac">
+
+<p><img src="../../images/menubar.png" alt="Stylesheet" title="Stylesheet..."></p>
+
+</div>
+
+<p>For example, to change the colors of the Status Bar, you could add the following rule to your <code>styles.less</code> file:</p>
+
+<div class="highlight highlight-css"><pre class="highlight"><code><span class="nc">.status-bar</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The easiest way to see what classes are available to style is to inspect the DOM manually via the Developer Tools. We'll go over the Developer Tools in great detail in the next chapter, but for now let's take a simple look. You can open the Developer Tools by pressing <kbd class="platform-mac">Alt+Cmd+I</kbd><kbd class="platform-windows platform-linux">Ctrl+Shift+I</kbd>, which will bring up the Chromium Developer Tools panel.</p>
+
+<p><img src="../../images/devtools.png" alt="Developer Tools" title="Developer Tools"></p>
+
+<p>With the Developer Tools, you can inspect all the elements in Atom. If you want to update the style of something, you can figure out what classes it has and add a Less rule to your stylesheet to modify it.</p>
+
+<div class="alert tip">
+
+<p>If you are unfamiliar with Less, it is a basic CSS preprocessor that makes some things in CSS a bit easier. You can learn more about it at <a href="http://www.lesscss.org">lesscss.org</a>.</p>
+
+<p>If you prefer to use CSS instead, you can do that in the same <code>styles.less</code> file, since CSS is also valid in Less.</p>
+
+</div>
+
+<h4>
+<a id="customizing-keybindings" class="anchor" href="#customizing-keybindings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Keybindings</h4>
+
+<p>Atom keymaps work similarly to stylesheets. Just as stylesheets use selectors to apply styles to elements, Atom keymaps use selectors to associate key combinations with events in specific contexts. Here's a small example, excerpted from Atom's built-in keymap:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'enter'</span><span class="o">:</span> <span class="s">'editor:newline'</span>
+
+<span class="s">'atom-text-editor[mini] input'</span><span class="o">:</span>
+  <span class="s">'enter'</span><span class="o">:</span> <span class="s">'core:confirm'</span>
+</code></pre></div>
+
+<p>This keymap defines the meaning of <kbd class="platform-all">Enter</kbd> in two different contexts. In a normal editor, pressing <kbd class="platform-all">Enter</kbd> triggers the <code>editor:newline</code> command, which causes the editor to insert a newline. But if the same keystroke occurs inside a select list's mini-editor, it instead triggers the <code>core:confirm</code> command based on the binding in the more-specific selector.</p>
+
+<p>By default, <code>keymap.cson</code> is loaded when Atom is started. It will always be loaded last, giving you the chance to override bindings that are defined by Atom's core keymaps or third-party packages. You can open this file in an editor from the <span class="platform-mac"><em>Atom &gt; Keymap</em></span><span class="platform-windows"><em>File &gt; Keymap</em></span><span class="platform-linux"><em>Edit &gt; Keymap</em></span> menu.</p>
+
+<p>You can see all the keybindings that are currently configured in your installation of Atom in the Keybindings tab in the Settings View.</p>
+
+<p>If you run into problems with keybindings, the Keybinding Resolver is a huge help. It can be opened with the <kbd class="platform-mac">Cmd+.</kbd><kbd class="platform-windows platform-linux">Ctrl+.</kbd> key combination. It will show you what keys Atom saw you press and what command Atom executed because of that combination.</p>
+
+<h4>
+<a id="global-configuration-settings" class="anchor" href="#global-configuration-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Global Configuration Settings</h4>
+
+<p>Atom loads configuration settings from the <code>config.cson</code> file in your <span class="platform-mac platform-linux"><code>~/.atom</code></span><span class="platform-windows"><code>%USERPROFILE%\.atom</code></span> directory.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'*'</span><span class="o">:</span>
+  <span class="s">'core'</span><span class="o">:</span>
+    <span class="s">'excludeVcsIgnoredPaths'</span><span class="o">:</span> <span class="no">true</span>
+  <span class="s">'editor'</span><span class="o">:</span>
+    <span class="s">'fontSize'</span><span class="o">:</span> <span class="mi">18</span>
+</code></pre></div>
+
+<p>The configuration is grouped into global settings under the <code>*</code> key and language-specific settings under scope named keys like <code>.python.source</code> or <code>.html.text</code>. Underneath that, you'll find configuration settings grouped by package name or one of the two core namespaces: <code>core</code> or <code>editor</code>.</p>
+
+<p>You can open this file in an editor from the <span class="platform-mac"><em>Atom &gt; Config</em></span><span class="platform-windows"><em>File &gt; Config</em></span><span class="platform-linux"><em>Edit &gt; Config</em></span> menu.</p>
+
+<h5>
+<a id="configuration-key-reference" class="anchor" href="#configuration-key-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration Key Reference</h5>
+
+<ul>
+<li>
+<code>core</code>
+
+<ul>
+<li>
+<code>customFileTypes</code>: Associations of language scope to file extensions (see <a href="#customizing-language-recognition">Customizing Language Recognition</a>)</li>
+<li>
+<code>disabledPackages</code>: An array of package names to disable</li>
+<li>
+<code>excludeVcsIgnoredPaths</code>: Don't search within files specified by <code>.gitignore</code>
+</li>
+<li>
+<code>ignoredNames</code>: File names to ignore across all of Atom</li>
+<li>
+<code>projectHome</code>: The directory where projects are assumed to be located</li>
+<li>
+<code>themes</code>: An array of theme names to load, in cascading order</li>
+</ul>
+</li>
+<li>
+<code>editor</code>
+
+<ul>
+<li>
+<code>autoIndent</code>: Enable/disable basic auto-indent (defaults to <code>true</code>)</li>
+<li>
+<code>nonWordCharacters</code>: A string of non-word characters to define word boundaries</li>
+<li>
+<code>fontSize</code>: The editor font size</li>
+<li>
+<code>fontFamily</code>: The editor font family</li>
+<li>
+<code>invisibles</code>: A hash of characters Atom will use to render whitespace characters. Keys are whitespace character types,     values are rendered characters (use value <code>false</code> to turn off individual whitespace character types)
+
+<ul>
+<li>
+<code>tab</code>: Hard tab characters</li>
+<li>
+<code>cr</code>: Carriage return (for Microsoft-style line endings)</li>
+<li>
+<code>eol</code>: <code>\n</code> characters</li>
+<li>
+<code>space</code>: Leading and trailing space characters</li>
+</ul>
+</li>
+<li>
+<code>lineHeight</code>: Height of editor lines, as a multiplier of font size</li>
+<li>
+<code>preferredLineLength</code>: Identifies the length of a line (defaults to <code>80</code>)</li>
+<li>
+<code>showInvisibles</code>: Whether to render placeholders for invisible characters (defaults to <code>false</code>)</li>
+<li>
+<code>showIndentGuide</code>: Show/hide indent indicators within the editor</li>
+<li>
+<code>showLineNumbers</code>: Show/hide line numbers within the gutter</li>
+<li>
+<code>softWrap</code>: Enable/disable soft wrapping of text within the editor</li>
+<li>
+<code>softWrapAtPreferredLineLength</code>: Enable/disable soft line wrapping at <code>preferredLineLength</code>
+</li>
+<li>
+<code>tabLength</code>: Number of spaces within a tab (defaults to <code>2</code>)</li>
+</ul>
+</li>
+<li>
+<code>fuzzyFinder</code>
+
+<ul>
+<li>
+<code>ignoredNames</code>: Files to ignore <em>only</em> in the fuzzy-finder</li>
+</ul>
+</li>
+<li>
+<code>whitespace</code>
+
+<ul>
+<li>
+<code>ensureSingleTrailingNewline</code>: Whether to reduce multiple newlines to one at the end of files</li>
+<li>
+<code>removeTrailingWhitespace</code>: Enable/disable stripping of whitespace at the end of lines (defaults to <code>true</code>)</li>
+</ul>
+</li>
+<li>
+<code>wrap-guide</code>
+
+<ul>
+<li>
+<code>columns</code>: Array of hashes with a <code>pattern</code> and <code>column</code> key to match the path of the current editor to a column position.</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="language-specific-configuration-settings" class="anchor" href="#language-specific-configuration-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Language Specific Configuration Settings</h4>
+
+<p>You can also set several configuration settings differently for different file types. For example, you may want Atom to soft wrap markdown files, have two-space tabs for ruby files, and four-space tabs for python files.</p>
+
+<p>There are several settings now scoped to an editor's language. Here is the current list:</p>
+
+<pre><code>editor.autoIndent
+editor.autoIndentOnPaste
+editor.invisibles
+editor.nonWordCharacters
+editor.preferredLineLength
+editor.scrollPastEnd
+editor.showIndentGuide
+editor.showInvisibles
+editor.softWrap
+editor.softWrapAtPreferredLineLength
+editor.softWrapHangingIndent
+editor.tabLength
+</code></pre>
+
+<h5>
+<a id="language-specific-settings-in-the-settings-view" class="anchor" href="#language-specific-settings-in-the-settings-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>Language-specific Settings in the Settings View</h5>
+
+<p>You can edit these config settings in the Settings View on a per-language basis. Click on "Packages" tab in the navigation bar on the left, search for the language of your choice, select it, and edit away!</p>
+
+<p><img src="../../images/python-settings.png" alt="Python-specific settings" title="Python-specific settings"></p>
+
+<h5>
+<a id="language-specific-settings-in-your-config-file" class="anchor" href="#language-specific-settings-in-your-config-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Language-specific Settings in your Config File</h5>
+
+<p>You can also edit the <code>config.cson</code> directly. To open your configuration file via the Command Palette, press <kbd class="platform-mac">Cmd+Shift+P</kbd><kbd class="platform-windows platform-linux">Ctrl+Shift+P</kbd> type <code>open config</code>, and press <kbd class="platform-all">Enter</kbd>.</p>
+
+<p>Global settings are under the <code>*</code> key, and each language can have its own top-level key. This key is the language's scope. Language-specific settings take precedence over anything set in the global section for that language only.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'*'</span><span class="o">:</span> <span class="c1"># all languages unless overridden</span>
+  <span class="s">'editor'</span><span class="o">:</span>
+    <span class="s">'softWrap'</span><span class="o">:</span> <span class="no">false</span>
+    <span class="s">'tabLength'</span><span class="o">:</span> <span class="mi">8</span>
+
+<span class="s">'.source.gfm'</span><span class="o">:</span> <span class="c1"># markdown overrides</span>
+  <span class="s">'editor'</span><span class="o">:</span>
+    <span class="s">'softWrap'</span><span class="o">:</span> <span class="no">true</span>
+
+<span class="s">'.source.ruby'</span><span class="o">:</span> <span class="c1"># ruby overrides</span>
+  <span class="s">'editor'</span><span class="o">:</span>
+    <span class="s">'tabLength'</span><span class="o">:</span> <span class="mi">2</span>
+
+<span class="s">'.source.python'</span><span class="o">:</span> <span class="c1"># python overrides</span>
+  <span class="s">'editor'</span><span class="o">:</span>
+    <span class="s">'tabLength'</span><span class="o">:</span> <span class="mi">4</span>
+</code></pre></div>
+
+<h5>
+<a id="finding-a-languages-scope-name" class="anchor" href="#finding-a-languages-scope-name" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding a Language's Scope Name</h5>
+
+<p>In order to write these overrides effectively, you'll need to know the scope name for the language. We've already done this for finding a scope for writing a snippet in <a href="/using-atom/sections/snippets#snippet-format">Snippet Format</a>, but we can quickly cover it again.</p>
+
+<p>The scope name is shown in the settings view for each language. Click on "Packages" in the navigation on the left, search for the language of your choice, select it, and you should see the scope name under the language name heading:</p>
+
+<p><img src="../../images/python-grammar.png" alt="Finding a language grammar" title="Finding a grammar's scope name"></p>
+
+<p>Another way to find the scope for a specific language is to open a file of its kind and <span class="platform-mac">press <kbd class="platform-mac">Alt+Cmd+P</kbd></span><span class="platform-windows platform-linux">choose "Editor: Log Cursor Scope" in the Command Palette</span> to show all scopes for the current position of the cursor. The scope mentioned top most is always the language for this kind of file, the scopes following are specific to the cursor position:</p>
+
+<p><img src="../../images/cursor-scope.png" alt="Finding a language grammar with cursor scope" title="Finding a language grammar with cursor scope"></p>
+
+<p>These scopes can be especially useful to style the editor, since they can also be used as class names in your stylesheet.</p>
+
+<h4>
+<a id="customizing-language-recognition" class="anchor" href="#customizing-language-recognition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customizing Language Recognition</h4>
+
+<p>If you want Atom to always recognize certain file types as a specific grammar, you'll need to manually edit your <code>config.cson</code> file. You can open it using the <em>Application: Open Your Config</em> command from the Command Palette. For example, if you wanted to add the <code>foo</code> extension to the CoffeeScript language, you could add this to your configuration file under the <code>*.core</code> section:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'*'</span><span class="o">:</span>
+  <span class="na">core</span><span class="o">:</span>
+    <span class="na">customFileTypes</span><span class="o">:</span>
+      <span class="s">'source.coffee'</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s">'foo'</span>
+      <span class="p">]</span>
+</code></pre></div>
+
+<p>In the example above, <code>source.coffee</code> is the language's scope name (see <a href="#finding-a-languages-scope-name">Finding a Language's Scope Name</a> for more information) and <code>foo</code> is the file extension to match without the period. Adding a period to the beginning of either of these will not work.</p>
+
+<h4>
+<a id="controlling-where-customization-is-stored-to-simplify-your-workflow" class="anchor" href="#controlling-where-customization-is-stored-to-simplify-your-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controlling Where Customization is Stored to Simplify Your Workflow</h4>
+
+<p>The CSON configuration files for Atom are stored on disk on your machine. The location for this storage is customizable. The default is to use the home directory of the user executing the application. The Atom Home directory will, by default, be called <code>.atom</code> and will be located in the root of the home directory of the user.</p>
+
+<h5>
+<a id="custom-home-location-with-an-environment-variable" class="anchor" href="#custom-home-location-with-an-environment-variable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom home location with an environment variable</h5>
+
+<p>An environment variable can be used to make Atom use a different location. This can be useful for several reasons. One of these may be that multiple user accounts on a machine want to use the same Atom Home. The environment variable used to specify an alternate location is called <code>ATOM_HOME</code>. If this environment variable exists, the location specified will be used to load and store Atom settings.</p>
+
+<h5>
+<a id="taking-your-customization-with-you-with-portable-mode" class="anchor" href="#taking-your-customization-with-you-with-portable-mode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Taking your customization with you with Portable Mode</h5>
+
+<p>In addition to using the <code>ATOM_HOME</code> environment variable, Atom can also be set to use "Portable Mode".</p>
+
+<p>Portable Mode is most useful for taking Atom with you, with all your custom setting and packages, from machine to machine. This may take the form of keeping Atom on a USB drive or a cloud storage platform that syncs folders to different machines, like Dropbox. Atom is in Portable Mode when there is a directory named .atom sibling to the directory in which the atom executable file lives. For example, the installed Atom directory can be placed into a Dropbox folder next to a .atom folder.</p>
+
+<p><img src="../../images/portable-mode-folder.png" alt="Portable mode directory structure"></p>
+
+<p>With such a setup, Atom will use the same Home directory with the same settings for any machine with this directory syncronized/plugged in.</p>
+
+<h5>
+<a id="moving-to-portable-mode" class="anchor" href="#moving-to-portable-mode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Moving to Portable Mode</h5>
+
+<p>Atom provides a command-line parameter option for setting Portable Mode.</p>
+
+<pre class="command-line">
+<span class="command">atom --portable</span>
+</pre>
+
+<p>Executing atom with the <code>--portable</code> option will take the <code>.atom</code> directory you have in the default location (<code>~/.atom</code>) and copy the relevant contents for your configuration to a new home directory in the Portable Mode location. This enables easily moving from the default location to a portable operation without losing the customization you have already set up.</p>
+        </div>
+      </div>
+      <div class="footer-pad"></div>
+    </div>
+    <footer>
+  <div class="footer">
+    <div class="wrapper no-pad">
+      <ul class="footer-left">
+        <li><a href="https://atom.io/terms">Terms of Use</a></li>
+        <li><a href="https://help.github.com/articles/github-privacy-policy/">Privacy</a></li>
+        <li><a href="https://github.com/atom/atom/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://atom.io/releases">Releases</a></li>
+        <li><a href="https://atom.io/faq">FAQ</a></li>
+        <li><a href="https://atom.io/contact">Contact</a></li>
+        <li><a href="https://github.com/atom/flight-manual.atom.io/blob/master/CONTRIBUTING.md">Contribute!</a></li>
+      </ul>
+
+      <div class="footer-right">
+        <a href="https://github.com"><span class="octicon octicon-code"></span> with <span class="octicon octicon-heart"></span> by <span class="octicon octicon-logo-github"></span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,1620 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>GitHub package</title>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" media="all" href="/assets/stylesheets/application.css" data-proofer-ignore>
+
+<link rel="stylesheet" media="all" href="/assets/stylesheets/development.css" data-proofer-ignore>
+
+
+<script type="text/javascript" src="/assets/javascripts/application.js"></script>
+
+  </head>
+  <body class="layout-article">
+    <div class="footer-push">
+      <div class="top-bar">
+  <div class="wrapper no-pad">
+
+    <ul class="navigation">
+      <li><h1 title="Atom: A hackable text editor for the 21st Century"><a href="https://atom.io/" class="logo-small"></a></h1></li>
+      <li><a href="https://atom.io/packages">Packages</a></li>
+      <li><a href="https://atom.io/themes">Themes</a></li>
+      <li><a href="https://atom.io/docs" class="is-selected">Documentation</a></li>
+      <li><a href="https://blog.atom.io">Blog</a></li>
+      <li><a href="https://github.com/atom/atom/discussions">Discussions</a></li>
+    </ul>
+
+  </div>
+</div>
+
+      <div class="wrapper documents content-push wide">
+        <script id="quicksearch-results-template" type="text/mustache">
+  [[#entries]]
+    <a href="[[url]]" class="js-articles-quicksearch-link">[[title]]</a>
+  [[/entries]]
+  <a class="initial quicksearch-seemore" href="/search?q=">See more results</a>
+</script>
+
+<script id="search-results-template" type="text/mustache">
+  [[#entries]]
+    <li>
+      <h3>
+        <a href="[[url]]">[[title]]</a>
+        <div class="label"><a href="[[category_url]]">[[category]]</a></div>
+      </h3>
+      <p>
+      [[excerpt]]
+      </p>
+    </li>
+  [[/entries]]
+</script>
+
+<div class="documents-search" style="display: flex; align-items: center;">
+  <select id="documents-search-versions" style="display: inline; margin-right: 20px; height: 40px;">
+    
+      <option  value="1.63.1">
+        v1.63.1
+      </option>
+    
+      <option  value="1.60.0">
+        v1.60.0
+      </option>
+    
+      <option  value="1.59.0">
+        v1.59.0
+      </option>
+    
+      <option  value="1.58.0">
+        v1.58.0
+      </option>
+    
+      <option  value="1.57.0">
+        v1.57.0
+      </option>
+    
+      <option  value="1.56.0">
+        v1.56.0
+      </option>
+    
+      <option  value="1.55.0">
+        v1.55.0
+      </option>
+    
+      <option  value="1.54.0">
+        v1.54.0
+      </option>
+    
+      <option  value="1.53.0">
+        v1.53.0
+      </option>
+    
+      <option  value="1.52.0">
+        v1.52.0
+      </option>
+    
+      <option  value="1.51.0">
+        v1.51.0
+      </option>
+    
+      <option  value="1.50.0">
+        v1.50.0
+      </option>
+    
+      <option  value="1.49.0">
+        v1.49.0
+      </option>
+    
+      <option  value="1.48.0">
+        v1.48.0
+      </option>
+    
+      <option  value="1.47.0">
+        v1.47.0
+      </option>
+    
+      <option  value="1.46.0">
+        v1.46.0
+      </option>
+    
+      <option  value="1.45.0">
+        v1.45.0
+      </option>
+    
+      <option  value="1.44.0">
+        v1.44.0
+      </option>
+    
+      <option  value="1.43.0">
+        v1.43.0
+      </option>
+    
+      <option  value="1.42.0">
+        v1.42.0
+      </option>
+    
+      <option  value="1.41.0">
+        v1.41.0
+      </option>
+    
+      <option  value="1.40.1">
+        v1.40.1
+      </option>
+    
+      <option  value="1.40.0">
+        v1.40.0
+      </option>
+    
+      <option  value="1.39.1">
+        v1.39.1
+      </option>
+    
+      <option  value="1.39.0">
+        v1.39.0
+      </option>
+    
+      <option  value="1.38.2">
+        v1.38.2
+      </option>
+    
+      <option  value="1.38.1">
+        v1.38.1
+      </option>
+    
+      <option  value="1.38.0">
+        v1.38.0
+      </option>
+    
+      <option  value="1.37.0">
+        v1.37.0
+      </option>
+    
+      <option  value="1.36.1">
+        v1.36.1
+      </option>
+    
+      <option  value="1.36.0">
+        v1.36.0
+      </option>
+    
+      <option  value="1.35.1">
+        v1.35.1
+      </option>
+    
+      <option  value="1.35.0">
+        v1.35.0
+      </option>
+    
+      <option  value="1.34.0">
+        v1.34.0
+      </option>
+    
+      <option  value="1.33.1">
+        v1.33.1
+      </option>
+    
+      <option  value="1.33.0">
+        v1.33.0
+      </option>
+    
+      <option  value="1.32.2">
+        v1.32.2
+      </option>
+    
+      <option  value="1.32.1">
+        v1.32.1
+      </option>
+    
+      <option  value="1.32.0">
+        v1.32.0
+      </option>
+    
+      <option  value="1.31.2">
+        v1.31.2
+      </option>
+    
+      <option  value="1.31.1">
+        v1.31.1
+      </option>
+    
+      <option  value="1.31.0">
+        v1.31.0
+      </option>
+    
+      <option  value="1.30.0">
+        v1.30.0
+      </option>
+    
+      <option  value="1.29.0">
+        v1.29.0
+      </option>
+    
+      <option  value="1.28.2">
+        v1.28.2
+      </option>
+    
+      <option  value="1.28.1">
+        v1.28.1
+      </option>
+    
+      <option  value="1.28.0">
+        v1.28.0
+      </option>
+    
+      <option  value="1.27.2">
+        v1.27.2
+      </option>
+    
+      <option  value="1.27.1">
+        v1.27.1
+      </option>
+    
+      <option  value="1.27.0">
+        v1.27.0
+      </option>
+    
+      <option  value="1.26.1">
+        v1.26.1
+      </option>
+    
+      <option  value="1.26.0">
+        v1.26.0
+      </option>
+    
+      <option  value="1.25.1">
+        v1.25.1
+      </option>
+    
+      <option  value="1.25.0">
+        v1.25.0
+      </option>
+    
+      <option  value="1.24.1">
+        v1.24.1
+      </option>
+    
+      <option  value="1.24.0">
+        v1.24.0
+      </option>
+    
+      <option  value="1.23.3">
+        v1.23.3
+      </option>
+    
+      <option  value="1.23.2">
+        v1.23.2
+      </option>
+    
+      <option  value="1.23.1">
+        v1.23.1
+      </option>
+    
+      <option  value="1.23.0">
+        v1.23.0
+      </option>
+    
+      <option  value="1.22.1">
+        v1.22.1
+      </option>
+    
+      <option  value="1.22.0">
+        v1.22.0
+      </option>
+    
+      <option  value="1.21.2">
+        v1.21.2
+      </option>
+    
+      <option  value="1.21.1">
+        v1.21.1
+      </option>
+    
+      <option  value="1.21.0">
+        v1.21.0
+      </option>
+    
+      <option  value="1.20.1">
+        v1.20.1
+      </option>
+    
+      <option  value="1.20.0">
+        v1.20.0
+      </option>
+    
+      <option  value="1.19.7">
+        v1.19.7
+      </option>
+    
+      <option  value="1.19.6">
+        v1.19.6
+      </option>
+    
+      <option  value="1.19.5">
+        v1.19.5
+      </option>
+    
+      <option  value="1.19.4">
+        v1.19.4
+      </option>
+    
+      <option  value="1.19.3">
+        v1.19.3
+      </option>
+    
+      <option  value="1.19.2">
+        v1.19.2
+      </option>
+    
+      <option  value="1.19.1">
+        v1.19.1
+      </option>
+    
+      <option  value="1.19.0">
+        v1.19.0
+      </option>
+    
+      <option  value="1.18.0">
+        v1.18.0
+      </option>
+    
+      <option  value="1.17.2">
+        v1.17.2
+      </option>
+    
+      <option  value="1.17.1">
+        v1.17.1
+      </option>
+    
+      <option  value="1.17.0">
+        v1.17.0
+      </option>
+    
+      <option  value="1.16.0">
+        v1.16.0
+      </option>
+    
+      <option  value="1.15.0">
+        v1.15.0
+      </option>
+    
+      <option  value="1.14.4">
+        v1.14.4
+      </option>
+    
+      <option  value="1.14.3">
+        v1.14.3
+      </option>
+    
+      <option  value="1.14.2">
+        v1.14.2
+      </option>
+    
+      <option  value="1.14.1">
+        v1.14.1
+      </option>
+    
+      <option  value="1.14.0">
+        v1.14.0
+      </option>
+    
+      <option  value="1.13.1">
+        v1.13.1
+      </option>
+    
+      <option  value="1.13.0">
+        v1.13.0
+      </option>
+    
+      <option  value="1.12.9">
+        v1.12.9
+      </option>
+    
+      <option  value="1.12.8">
+        v1.12.8
+      </option>
+    
+      <option  value="1.12.7">
+        v1.12.7
+      </option>
+    
+      <option  value="1.12.6">
+        v1.12.6
+      </option>
+    
+      <option  value="1.12.5">
+        v1.12.5
+      </option>
+    
+      <option  value="1.12.4">
+        v1.12.4
+      </option>
+    
+      <option  value="1.12.3">
+        v1.12.3
+      </option>
+    
+      <option  value="1.12.2">
+        v1.12.2
+      </option>
+    
+      <option  value="1.12.1">
+        v1.12.1
+      </option>
+    
+      <option  value="1.12.0">
+        v1.12.0
+      </option>
+    
+      <option  value="1.11.2">
+        v1.11.2
+      </option>
+    
+      <option  value="1.11.1">
+        v1.11.1
+      </option>
+    
+      <option  value="1.11.0">
+        v1.11.0
+      </option>
+    
+      <option  value="1.10.2">
+        v1.10.2
+      </option>
+    
+      <option  value="1.10.1">
+        v1.10.1
+      </option>
+    
+      <option  value="1.10.0">
+        v1.10.0
+      </option>
+    
+      <option  value="1.9.9">
+        v1.9.9
+      </option>
+    
+      <option  value="1.9.8">
+        v1.9.8
+      </option>
+    
+      <option  value="1.9.7">
+        v1.9.7
+      </option>
+    
+      <option  value="1.9.6">
+        v1.9.6
+      </option>
+    
+      <option  value="1.9.5">
+        v1.9.5
+      </option>
+    
+      <option  value="1.9.4">
+        v1.9.4
+      </option>
+    
+      <option  value="1.9.3">
+        v1.9.3
+      </option>
+    
+      <option  value="1.9.2">
+        v1.9.2
+      </option>
+    
+      <option  value="1.9.1">
+        v1.9.1
+      </option>
+    
+      <option  value="1.9.0">
+        v1.9.0
+      </option>
+    
+      <option  value="1.8.0">
+        v1.8.0
+      </option>
+    
+      <option  value="1.7.4">
+        v1.7.4
+      </option>
+    
+      <option  value="1.7.3">
+        v1.7.3
+      </option>
+    
+      <option  value="1.7.2">
+        v1.7.2
+      </option>
+    
+      <option  value="1.7.1">
+        v1.7.1
+      </option>
+    
+      <option  value="1.7.0">
+        v1.7.0
+      </option>
+    
+      <option  value="1.6.2">
+        v1.6.2
+      </option>
+    
+      <option  value="1.6.1">
+        v1.6.1
+      </option>
+    
+      <option  value="1.6.0">
+        v1.6.0
+      </option>
+    
+      <option  value="1.5.4">
+        v1.5.4
+      </option>
+    
+      <option  value="1.5.3">
+        v1.5.3
+      </option>
+    
+      <option  value="1.5.2">
+        v1.5.2
+      </option>
+    
+      <option  value="1.5.1">
+        v1.5.1
+      </option>
+    
+      <option  value="1.5.0">
+        v1.5.0
+      </option>
+    
+      <option  value="1.4.3">
+        v1.4.3
+      </option>
+    
+      <option  value="1.4.2">
+        v1.4.2
+      </option>
+    
+      <option  value="1.4.1">
+        v1.4.1
+      </option>
+    
+      <option  value="1.4.0">
+        v1.4.0
+      </option>
+    
+      <option  value="1.3.3">
+        v1.3.3
+      </option>
+    
+      <option  value="1.3.2">
+        v1.3.2
+      </option>
+    
+      <option  value="1.3.1">
+        v1.3.1
+      </option>
+    
+      <option  value="1.3.0">
+        v1.3.0
+      </option>
+    
+      <option  value="1.2.4">
+        v1.2.4
+      </option>
+    
+      <option  value="1.2.3">
+        v1.2.3
+      </option>
+    
+      <option  value="1.2.2">
+        v1.2.2
+      </option>
+    
+      <option  value="1.2.1">
+        v1.2.1
+      </option>
+    
+      <option  value="1.2.0">
+        v1.2.0
+      </option>
+    
+      <option  value="1.1.0">
+        v1.1.0
+      </option>
+    
+      <option  value="1.0.19">
+        v1.0.19
+      </option>
+    
+      <option  value="1.0.18">
+        v1.0.18
+      </option>
+    
+      <option  value="1.0.17">
+        v1.0.17
+      </option>
+    
+      <option  value="1.0.16">
+        v1.0.16
+      </option>
+    
+      <option  value="1.0.15">
+        v1.0.15
+      </option>
+    
+      <option  value="1.0.14">
+        v1.0.14
+      </option>
+    
+      <option  value="1.0.13">
+        v1.0.13
+      </option>
+    
+      <option  value="1.0.12">
+        v1.0.12
+      </option>
+    
+      <option  value="1.0.11">
+        v1.0.11
+      </option>
+    
+      <option  value="1.0.10">
+        v1.0.10
+      </option>
+    
+      <option  value="1.0.9">
+        v1.0.9
+      </option>
+    
+      <option  value="1.0.8">
+        v1.0.8
+      </option>
+    
+      <option  value="1.0.7">
+        v1.0.7
+      </option>
+    
+      <option  value="1.0.6">
+        v1.0.6
+      </option>
+    
+      <option  value="1.0.5">
+        v1.0.5
+      </option>
+    
+      <option  value="1.0.4">
+        v1.0.4
+      </option>
+    
+      <option  value="1.0.3">
+        v1.0.3
+      </option>
+    
+      <option  value="1.0.2">
+        v1.0.2
+      </option>
+    
+      <option  value="1.0.1">
+        v1.0.1
+      </option>
+    
+      <option  value="1.0.0">
+        v1.0.0
+      </option>
+    
+  </select>
+  <form accept-charset="UTF-8" action="/search" id="articles-search" method="get" style="width: 100%"><div style="margin:0;padding:0;display:inline;"><input name="utf8" type="hidden" value="✓"></div>
+    <input type="text" name="q" id="quicksearch-query" class="documents-search-input js-articles-quicksearch" placeholder="Search the Flight Manual" autocomplete="off">
+  </form>
+</div>
+
+<div class="autocomplete-results" style="display: none;">
+  <div class="result-group"></div>
+</div>
+
+
+        <div class="toc">
+          
+
+
+  <h4>
+    <a href="/getting-started">Chapter 1: Getting Started</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/why-atom">Why Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/installing-atom">Installing Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/atom-basics">Atom Basics</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/using-atom">Chapter 2: Using Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-packages">Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/moving-in-atom">Moving in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-selections">Atom Selections</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/editing-and-deleting-text">Editing and Deleting Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/find-and-replace">Find and Replace</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/snippets">Snippets</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/autocomplete">Autocomplete</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/folding">Folding</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/panes">Panes</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/pending-pane-items">Pending Pane Items</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/grammar">Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/version-control-in-atom">Version Control in Atom</a>
+      </li>
+    
+      <li class="selected">
+        <a href="/using-atom/sections/github-package">GitHub package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/writing-in-atom">Writing in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/basic-customization">Basic Customization</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/hacking-atom">Chapter 3: Hacking Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/tools-of-the-trade">Tools of the Trade</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/the-init-file">The Init File</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-word-count">Package: Word Count</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-modifying-text">Package: Modifying Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-active-editor-info">Package: Active Editor Info</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-theme">Creating a Theme</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-grammar">Creating a Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-legacy-textmate-grammar">Creating a Legacy TextMate Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/publishing">Publishing</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/iconography">Iconography</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/debugging">Debugging</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/writing-specs">Writing specs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/handling-uris">Handling URIs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/cross-platform-compatibility">Cross-Platform Compatibility</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/converting-from-textmate">Converting from TextMate</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/hacking-on-atom-core">Hacking on Atom Core</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/contributing-to-official-atom-packages">Contributing to Official Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-fork-of-a-core-package-in-atom-atom">Creating a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/maintaining-a-fork-of-a-core-package-in-atom-atom">Maintaining a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/behind-atom">Chapter 4: Behind Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/configuration-api">Configuration API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/keymaps-in-depth">Keymaps In-Depth</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors">Scoped Settings, Scopes and Scope Descriptors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/serialization-in-atom">Serialization in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/developing-node-modules">Developing Node Modules</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/interacting-with-other-packages-via-services">Interacting With Other Packages Via Services</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/maintaining-your-packages">Maintaining Your Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/how-atom-uses-chromium-snapshots">How Atom Uses Chromium Snapshots</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+
+
+
+
+<h4>
+  <a href="/api/v1.63.1/">Reference: API</a>
+</h4>
+<ul>
+  
+    <li>
+      <a href="/api/v1.63.1/AtomEnvironment/">AtomEnvironment</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedNodeProcess/">BufferedNodeProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedProcess/">BufferedProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Clipboard/">Clipboard</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Color/">Color</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CommandRegistry/">CommandRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CompositeDisposable/">CompositeDisposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Config/">Config</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ContextMenuManager/">ContextMenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Cursor/">Cursor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Decoration/">Decoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DeserializerManager/">DeserializerManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Directory/">Directory</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarker/">DisplayMarker</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarkerLayer/">DisplayMarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Disposable/">Disposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Dock/">Dock</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Emitter/">Emitter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/File/">File</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GitRepository/">GitRepository</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Grammar/">Grammar</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GrammarRegistry/">GrammarRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Gutter/">Gutter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/HistoryManager/">HistoryManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/KeymapManager/">KeymapManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/LayerDecoration/">LayerDecoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MarkerLayer/">MarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MenuManager/">MenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Notification/">Notification</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/NotificationManager/">NotificationManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Package/">Package</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PackageManager/">PackageManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Pane/">Pane</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Panel/">Panel</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PathWatcher/">PathWatcher</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Point/">Point</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Project/">Project</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Range/">Range</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ScopeDescriptor/">ScopeDescriptor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Selection/">Selection</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/StyleManager/">StyleManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Task/">Task</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextBuffer/">TextBuffer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextEditor/">TextEditor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ThemeManager/">ThemeManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TooltipManager/">TooltipManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ViewRegistry/">ViewRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Workspace/">Workspace</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/WorkspaceCenter/">WorkspaceCenter</a>
+    </li>
+  
+</ul>
+
+
+  <h4>
+    <a href="/resources">Appendix A: Resources</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/resources/sections/glossary">Glossary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/faq">Appendix B: FAQ</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/faq/sections/is-atom-open-source">Is Atom open source?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-atom-cost">What does Atom cost?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-platforms-does-atom-run-on">What platforms does Atom run on?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-contribute-to-atom">How can I contribute to Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-atom-collect-usage-data">Why does Atom collect usage data?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/atom-in-the-cloud">Atom in the cloud?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-s-the-difference-between-an-ide-and-an-editor">What's the difference between an IDE and an editor?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-tell-if-subpixel-antialiasing-is-working">How can I tell if subpixel antialiasing is working?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-is-atom-deleting-trailing-whitespace-why-is-there-a-newline-at-the-end-of-the-file">Why is Atom deleting trailing whitespace? Why is there a newline at the end of the file?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-safe-mode-do">What does Safe Mode do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-have-a-question-about-a-specific-atom-community-package-where-is-the-best-place-to-ask-it">I have a question about a specific Atom community package. Where is the best place to ask it?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-using-an-international-keyboard-and-keys-that-use-altgr-or-ctrl-alt-aren-t-working">I’m using an international keyboard and keys that use AltGr or Ctrl+Alt aren’t working</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-julia-what-do-i-do">I’m having a problem with Julia! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-getting-an-error-about-a-self-signed-certificate-what-do-i-do">I’m getting an error about a “self-signed certificate”. What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-platformio-what-do-i-do">I’m having a problem with PlatformIO! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-atom-recognize-a-file-with-extension-x-as-language-y">How do I make Atom recognize a file with extension X as language Y?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-the-welcome-screen-stop-showing-up">How do I make the Welcome screen stop showing up?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-preview-web-page-changes-automatically">How do I preview web page changes automatically?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-accept-input-from-my-program-or-script-when-using-the-script-package">How do I accept input from my program or script when using the script package?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-am-unable-to-update-to-the-latest-version-of-atom-on-macos-how-do-i-fix-this">I am unable to update to the latest version of Atom on macOS. How do I fix this?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-trying-to-change-my-syntax-colors-from-styles-less-but-it-isn-t-working">I’m trying to change my syntax colors from styles.less, but it isn’t working!</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-build-or-execute-code-i-ve-written-in-atom">How do I build or execute code I've written in Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-uninstall-atom-on-macos">How do I uninstall Atom on macOS?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/macos-mojave-font-rendering-change">macOS Mojave font rendering change</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-macos-say-that-atom-wants-to-access-my-calendar-contacts-photos-etc">Why does macOS say that Atom wants to access my calendar, contacts, photos, etc.?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-turn-on-line-wrap">How do I turn on line wrap?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/the-menu-bar-disappeared-how-do-i-get-it-back">The menu bar disappeared, how do I get it back?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-use-a-newline-in-the-result-of-find-and-replace">How do I use a newline in the result of find and replace?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-is-this-line-on-the-right-in-the-editor-view">What is this line on the right in the editor view?</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/shadow-dom">Appendix C: Shadow DOM</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/shadow-dom/sections/removing-shadow-dom-styles">Removing Shadow DOM styles</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/upgrading-to-1-0-apis">Appendix D: Upgrading to 1.0 APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-package">Upgrading Your Package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-ui-theme-or-package-selectors">Upgrading Your UI Theme Or Package Selectors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-syntax-theme">Upgrading Your Syntax Theme</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/atom-server-side-apis">Appendix E: Atom server-side APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-package-server-api">Atom package server API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-update-server-api">Atom update server API</a>
+      </li>
+    
+  </ul>
+
+
+        </div>
+
+        
+        <h1 class="document-title">
+          <div id="platform-nav">
+  <span class="octicon octicon-device-desktop"></span>
+  <ul>
+    <li class="platform-mac">
+      <a href="#platform-mac" data-platform="mac">
+        mac
+      </a>
+    </li>
+    <li class="platform-windows">
+      <a href="#platform-windows" data-platform="windows">
+        windows
+      </a>
+    </li>
+    <li class="platform-linux">
+      <a href="#platform-linux" data-platform="linux">
+        linux
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <a class="improve-link"
+              href="https://github.com/atom/flight-manual.atom.io/edit/master/content/using-atom/sections/github-package.md" data-proofer-ignore>
+            <span class="octicon octicon-pencil"></span> Improve this page
+          </a>
+        </h1>
+
+        <div class="markdown-body document-content">
+          
+          <h3>
+<a id="github-package" class="anchor" href="#github-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub package</h3>
+
+<p>The github package brings Git and GitHub integration right inside Atom.</p>
+
+<ul>
+<li><a href="#initialize-repositories">Initialize</a></li>
+<li><a href="#clone-repositories">Clone</a></li>
+<li><a href="#branch">Branch</a></li>
+<li><a href="#stage">Stage</a></li>
+<li><a href="#discard-changes">Discard</a></li>
+<li><a href="#commit">Commit</a></li>
+<li><a href="#amend-and-undo">Amend and undo</a></li>
+<li><a href="#publish-and-push">Publish and push</a></li>
+<li><a href="#fetch-and-pull">Fetch and pull</a></li>
+<li><a href="#resolve-conflicts">Resolve conflicts</a></li>
+<li><a href="#create-a-pull-request">Create a Pull Request</a></li>
+<li><a href="#view-pull-requests">View Pull Requests</a></li>
+<li><a href="#checkout-a-pull-request">Checkout a Pull Request</a></li>
+<li><a href="#open-any-issue-or-pull-request">Open any Issue or Pull Request</a></li>
+<li><a href="#view-pull-request-review-comments">View Pull Request review comments</a></li>
+<li><a href="#navigate-pull-request-review-comments">Navigate Pull Request review comments</a></li>
+<li><a href="#respond-to-a-pull-request-review-comment">Respond to a Pull Request review comment</a></li>
+</ul>
+
+<p>Most of the functionality lives within the Git and GitHub dock items.</p>
+
+<p><img src="../../images/github-panels.png" alt="The Git and GitHub panels" title="The Git and GitHub panels"></p>
+
+<p>There are different ways to access them, probably the most common way is through their keybindings:</p>
+
+<ul>
+<li>Open the <strong>Git</strong> panel: <kbd class=".platform-all">Ctrl+9</kbd>
+</li>
+<li>Open the <strong>GitHub</strong> panel: <kbd class=".platform-all">Ctrl+8</kbd>
+</li>
+</ul>
+
+<p>Another way is from the menu: <code>Packages -&gt; GitHub -&gt; Toggle Git Tab and Toggle GitHub Tab</code></p>
+
+<p>Or you can also toggle the Git panel from the Status Bar by clicking on the changed files icon:</p>
+
+<p><img src="../../images/github-open-git-panel.png" alt="Open Git panel" title="Open Git panel"></p>
+
+<hr>
+
+<h4>
+<a id="initialize-repositories" class="anchor" href="#initialize-repositories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initialize repositories</h4>
+
+<p>In case a project doesn't have a Git repository yet, you can create one from the Git panel.</p>
+
+<p><img src="../../images/github-initialize.png" alt="Initialize repositories" title="Initialize repositories"></p>
+
+<h4>
+<a id="clone-repositories" class="anchor" href="#clone-repositories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone repositories</h4>
+
+<p>To clone a repository, open the GitHub panel while you have no project folders open in Atom and click "Clone an existing GitHub repository". In the dialog, paste the URL of a repository and click "Clone". The new project will be added to the Tree View.</p>
+
+<p><img src="../../images/github-without-projects.png" alt="GitHub panel" title="GitHub panel without projects"></p>
+
+<p><img src="../../images/github-clone.png" alt="Clone dialog" title="Clone repositories"></p>
+
+<p>Alternately, run the <code>GitHub: Clone</code> command to open the Clone dialog any time.</p>
+
+<h4>
+<a id="branch" class="anchor" href="#branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Branch</h4>
+
+<p>To open the branch tooltip, click the branch icon in the Status Bar. From there you can <strong>create</strong> or <strong>switch</strong> branches.</p>
+
+<p><img src="../../images/github-branch.png" alt="Create or switch branches" title="Create or switch branches"></p>
+
+<h4>
+<a id="stage" class="anchor" href="#stage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stage</h4>
+
+<p>After making some changes, <strong>stage</strong> anything you want to be part of the next commit. Choose between staging...</p>
+
+<ul>
+<li>
+<strong>All changes</strong>: Click the "Stage All" button in the "Unstaged Changes" bar.</li>
+<li>
+<strong>Files</strong>: Double-click a file or select a file and press <kbd class=".platform-all">Enter</kbd>.</li>
+<li>
+<strong>Hunk</strong>: Click on the "Stage Hunk" button or select a hunk and press <kbd class=".platform-all">Enter</kbd>.</li>
+<li>
+<strong>Lines</strong>: Click on a line (or drag on multiple lines) to select, then click on the "Stage Selection" button. Or use the <kbd class="platform-mac">Cmd-/</kbd><kbd class="platform-windows platform-linux">Cmd-/</kbd> key to toggle from hunk mode to line mode, then press <kbd class="platform-mac">Cmd-Enter</kbd><kbd class="platform-windows platform-linux">Ctrl-Enter</kbd> to stage just a single line.</li>
+</ul>
+
+<p>Use the <kbd class="platform-mac">Cmd-Left</kbd><kbd class="platform-windows platform-linux">Ctrl-Left</kbd> or <kbd class="platform-mac">Cmd-Right</kbd><kbd class="platform-windows platform-linux">Ctrl-Right</kbd> arrow key to switch between file list and the diff view. Unstaging can be done in the same way.</p>
+
+<p><img src="../../images/github-stage.png" alt="Stage changes" title="Stage changes"></p>
+
+<h4>
+<a id="discard-changes" class="anchor" href="#discard-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discard changes</h4>
+
+<p>If you no longer want to keep some changes, you can discard them. It's similar to staging, but accessible behind a context menu.</p>
+
+<ul>
+<li>
+<strong>All changes</strong>: Click the <kbd>...</kbd> menu in the "Unstaged Changes" header and choose "Discard All Changes".</li>
+<li>
+<strong>Files</strong>: Right-click a file (or multiple) and choose "Discard Changes".</li>
+<li>
+<strong>Hunk</strong>: Click on the trash icon in the top bar of a hunk.</li>
+<li>
+<strong>Lines</strong>: Right-click on a line (or multiple) and choose "Discard Selection".</li>
+</ul>
+
+<p><img src="../../images/github-discard.png" alt="Discard changes" title="Discard changes"></p>
+
+<h4>
+<a id="commit-preview" class="anchor" href="#commit-preview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commit Preview</h4>
+
+<p>To double check <strong>all changes</strong> that are going into your next commit, click the "<strong>See All Staged Changes</strong>" button above the commit message box. It lets you see all of your staged changes in a single pane. This "commit preview" can also serve as an inspiration for writing the commit message.</p>
+
+<p><img src="../../images/github-commit-preview.png" alt="Commit Preview" title="Commit Preview"></p>
+
+<h4>
+<a id="commit" class="anchor" href="#commit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commit</h4>
+
+<p>Once you've staged your changes, enter a commit <strong>message</strong>. Feel free to describe the commit in more detail after leaving an empty line. Finalize by clicking the <strong>Commit</strong> button. If you need more space, click the expand icon at the bottom right. It will open a commit editor in the center.</p>
+
+<p><img src="../../images/github-commit.png" alt="Commit changes" title="Commit changes"></p>
+
+<p>To add multiple <strong>co-authors</strong> to a commit, click the "👤➕" icon in the bottom left corner of the commit message editor. Now you can search by name, email or GitHub username to give credit to a co-author.</p>
+
+<p><img src="../../images/github-commit-with-co-authors.png" alt="Commit with co-authors" title="Commit with co-authors"></p>
+
+<h4>
+<a id="amend-and-undo" class="anchor" href="#amend-and-undo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Amend and undo</h4>
+
+<p>In case you forgot to commit a change and would like to add it to your previous commit, right-click on the last commit, then choose "Amend" from the context menu.</p>
+
+<p><img src="../../images/github-amend.png" alt="Amend previous commit" title="Amend previous commit"></p>
+
+<p>If you want to edit the commit message of your last commit, or add/remove changes, click on the "Undo" button. It will roll back to the state just before you clicked on the commit button.</p>
+
+<p><img src="../../images/github-undo.png" alt="Undo previous commit" title="Undo previous commit"></p>
+
+<h4>
+<a id="view-commits" class="anchor" href="#view-commits" aria-hidden="true"><span class="octicon octicon-link"></span></a>View commits</h4>
+
+<p>Once you've made some commits, click on a commit message in the recent commit list to see the full diff and commit message associated with each:</p>
+
+<p><img src="../../images/github-commit-detail.png" alt="View commit detai" title="View commit detai"></p>
+
+<h4>
+<a id="publish-and-push" class="anchor" href="#publish-and-push" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publish and push</h4>
+
+<p>When you're ready to share your changes with your team members, click the <strong>Publish</strong> button in the Status Bar. It will push your local branch to the remote repository. After making more commits, you can <strong>Push</strong> them as well from the Status Bar.</p>
+
+<p><img src="../../images/github-publish-push.png" alt="Publish and push commits" title="Publish and push commits"></p>
+
+<h4>
+<a id="fetch-and-pull" class="anchor" href="#fetch-and-pull" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fetch and pull</h4>
+
+<p>From time to time it's a good idea to click on the <strong>Fetch</strong> button to see if any other team member pushed changes. If so, click on <strong>Pull</strong> to merge the changes into your local branch.</p>
+
+<p><img src="../../images/github-fetch-pull.png" alt="Fetch and pull commits" title="Fetch and pull commits"></p>
+
+<p>If you prefer to <strong>rebase</strong> when pulling, you can configure Git to make it the default behavior:</p>
+
+<pre><code>git config --global --bool pull.rebase true
+</code></pre>
+
+<p>Learn more about <a href="https://mislav.net/2013/02/merge-vs-rebase/">merge vs. rebase</a>.</p>
+
+<h4>
+<a id="resolve-conflicts" class="anchor" href="#resolve-conflicts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resolve conflicts</h4>
+
+<p>Sometimes there can be conflicts when trying to merge. Files that have merge conflicts will show up in the "Merge Conflicts" list. Click on a file to open the editor. There you can <strong>resolve</strong> the conflict by picking a version or make further edits. Once done, stage the file and commit.</p>
+
+<p><img src="../../images/github-resolve-conflicts.png" alt="Resolve conflicts" title="Resolve conflicts"></p>
+
+<h4>
+<a id="create-a-pull-request" class="anchor" href="#create-a-pull-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Pull Request</h4>
+
+<p>When your changes are ready to be reviewed by your team members, open the "GitHub" panel <kbd>Ctrl+8</kbd> and click on <strong>Open new pull request</strong>. It will open the browser where you can continue creating a pull request. If commits haven't been pushed or the branch isn't published yet, the GitHub package will do that automatically for you.</p>
+
+<p><img src="../../images/github-create-a-pull-request.png" alt="Create a Pull Request" title="Create a Pull Request"></p>
+
+<h4>
+<a id="view-pull-requests" class="anchor" href="#view-pull-requests" aria-hidden="true"><span class="octicon octicon-link"></span></a>View Pull Requests</h4>
+
+<p>Once the pull request is created, it will appear under <strong>Current pull request</strong> at the top of the panel. Underneath is a list of <strong>Open pull requests</strong>. It lets you quickly find a pull request by avatar, title or PR number. It also lets you keep an eye on the CI status. Clicking on a pull request in the list opens a center pane with more details, the timeline and conversations.</p>
+
+<p><img src="../../images/github-view-pull-requests.png" alt="View Pull Requests" title="View Pull Requests"></p>
+
+<h4>
+<a id="open-any-issue-or-pull-request" class="anchor" href="#open-any-issue-or-pull-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open any Issue or Pull Request</h4>
+
+<p>You can open issues or pull requests from any repo on GitHub. To do so, run the <code>GitHub: Open Issue Or Pull Request</code> command and paste the URL from an issue or pull request. Then press the <strong>Open Issue or Pull Request</strong> button and it will open a center pane. This lets you keep an issue or pull request as a reference, when working in another repo.</p>
+
+<p><img src="../../images/github-open-issue-or-pull-request.png" alt="Open Issue or Pull Request" title="Open Issue or Pull Request"></p>
+
+<h4>
+<a id="checkout-a-pull-request" class="anchor" href="#checkout-a-pull-request" aria-hidden="true"><span class="octicon octicon-link"></span></a>Checkout a Pull Request</h4>
+
+<p>To test a pull request locally, open it in the workspace center by clicking on the pull request in the "open pull requests" list from the GitHub tab, then click on the <strong>Checkout</strong> button. It will automatically create a local branch and pull all the changes. If you would like to contribute to that pull request, start making changes, commit and push. Your contribution is now part of that pull request.</p>
+
+<p><img src="../../images/github-checkout.png" alt="Checkout a pull request" title="Checkout a pull request"></p>
+
+<h4>
+<a id="view-pull-request-review-comments" class="anchor" href="#view-pull-request-review-comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>View Pull Request review comments</h4>
+
+<p>To view review comments on a Pull Request, open the Reviews Tab from the <strong>See Reviews</strong> button from the footer of a Pull Request Pane. Alternatively, if the pull request has already been checked out, Reviews Tab can also be open from the same button on GitHub Tab.</p>
+
+<p><img src="../../images/github-see-review-footer.png" alt="Open review tab from footer" title="Open review tab from footer"></p>
+
+<h4>
+<a id="navigate-pull-request-review-comments" class="anchor" href="#navigate-pull-request-review-comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Navigate Pull Request review comments</h4>
+
+<p>You can see all the review summaries and comments of a pull request in the Reviews Tab. The comment section has a progress bar to help you keep track of how close are you to finish addressing the Pull Request comments (i.e. marking all comment threads on a Pull Request as "resolved"). Comment threads are greyed out after they have been resolved.</p>
+
+<p><img src="../../images/github-review-tab.png" alt="Review tab" title="Review tab"></p>
+
+<p>After the pull request branch has been checked out, you can click <strong>Jump To File</strong> to open the commented on file and make changes as per the review comment right in the editor. If you would like to get the full context of the review comment, click <strong>Open Diff</strong> to open the diff view with line highlighting.</p>
+
+<p><img src="../../images/github-review-jump-to-file.png" alt="Jump to file from review tab" title="Jump to file from review tab"></p>
+
+<p>Conversely, in-editor comments are indicated by the comment icon in the gutter. Clicking the icon, either from within the editor or the diff view, will take you back to the Reviews Tab.</p>
+
+<p><img src="../../images/github-open-review-from-diff.png" alt="Open review tab from diff" title="Open review tab from diff"></p>
+
+<h4>
+<a id="respond-to-a-pull-request-review-comment" class="anchor" href="#respond-to-a-pull-request-review-comment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Respond to a Pull Request review comment</h4>
+
+<p>To respond to a Pull Request review comment, type your message and click <strong>Comment</strong>; a single line comment will be created in the same thread as the comment you responded to. After addressing a Pull Request review comment, click <strong>Resolve conversation</strong> to mark the whole thread as "resolved". The progress bar in the "Comments" section will update accordingly.</p>
+
+<p><img src="../../images/github-review-reply.png" alt="Respond to a Pull Request review comment" title="Respond to a Pull Request review comment"></p>
+        </div>
+      </div>
+      <div class="footer-pad"></div>
+    </div>
+    <footer>
+  <div class="footer">
+    <div class="wrapper no-pad">
+      <ul class="footer-left">
+        <li><a href="https://atom.io/terms">Terms of Use</a></li>
+        <li><a href="https://help.github.com/articles/github-privacy-policy/">Privacy</a></li>
+        <li><a href="https://github.com/atom/atom/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://atom.io/releases">Releases</a></li>
+        <li><a href="https://atom.io/faq">FAQ</a></li>
+        <li><a href="https://atom.io/contact">Contact</a></li>
+        <li><a href="https://github.com/atom/flight-manual.atom.io/blob/master/CONTRIBUTING.md">Contribute!</a></li>
+      </ul>
+
+      <div class="footer-right">
+        <a href="https://github.com"><span class="octicon octicon-code"></span> with <span class="octicon octicon-heart"></span> by <span class="octicon octicon-logo-github"></span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

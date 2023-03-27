@@ -1,0 +1,1905 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Package: Word Count</title>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" media="all" href="/assets/stylesheets/application.css" data-proofer-ignore>
+
+<link rel="stylesheet" media="all" href="/assets/stylesheets/development.css" data-proofer-ignore>
+
+
+<script type="text/javascript" src="/assets/javascripts/application.js"></script>
+
+  </head>
+  <body class="layout-article">
+    <div class="footer-push">
+      <div class="top-bar">
+  <div class="wrapper no-pad">
+
+    <ul class="navigation">
+      <li><h1 title="Atom: A hackable text editor for the 21st Century"><a href="https://atom.io/" class="logo-small"></a></h1></li>
+      <li><a href="https://atom.io/packages">Packages</a></li>
+      <li><a href="https://atom.io/themes">Themes</a></li>
+      <li><a href="https://atom.io/docs" class="is-selected">Documentation</a></li>
+      <li><a href="https://blog.atom.io">Blog</a></li>
+      <li><a href="https://github.com/atom/atom/discussions">Discussions</a></li>
+    </ul>
+
+  </div>
+</div>
+
+      <div class="wrapper documents content-push wide">
+        <script id="quicksearch-results-template" type="text/mustache">
+  [[#entries]]
+    <a href="[[url]]" class="js-articles-quicksearch-link">[[title]]</a>
+  [[/entries]]
+  <a class="initial quicksearch-seemore" href="/search?q=">See more results</a>
+</script>
+
+<script id="search-results-template" type="text/mustache">
+  [[#entries]]
+    <li>
+      <h3>
+        <a href="[[url]]">[[title]]</a>
+        <div class="label"><a href="[[category_url]]">[[category]]</a></div>
+      </h3>
+      <p>
+      [[excerpt]]
+      </p>
+    </li>
+  [[/entries]]
+</script>
+
+<div class="documents-search" style="display: flex; align-items: center;">
+  <select id="documents-search-versions" style="display: inline; margin-right: 20px; height: 40px;">
+    
+      <option  value="1.63.1">
+        v1.63.1
+      </option>
+    
+      <option  value="1.60.0">
+        v1.60.0
+      </option>
+    
+      <option  value="1.59.0">
+        v1.59.0
+      </option>
+    
+      <option  value="1.58.0">
+        v1.58.0
+      </option>
+    
+      <option  value="1.57.0">
+        v1.57.0
+      </option>
+    
+      <option  value="1.56.0">
+        v1.56.0
+      </option>
+    
+      <option  value="1.55.0">
+        v1.55.0
+      </option>
+    
+      <option  value="1.54.0">
+        v1.54.0
+      </option>
+    
+      <option  value="1.53.0">
+        v1.53.0
+      </option>
+    
+      <option  value="1.52.0">
+        v1.52.0
+      </option>
+    
+      <option  value="1.51.0">
+        v1.51.0
+      </option>
+    
+      <option  value="1.50.0">
+        v1.50.0
+      </option>
+    
+      <option  value="1.49.0">
+        v1.49.0
+      </option>
+    
+      <option  value="1.48.0">
+        v1.48.0
+      </option>
+    
+      <option  value="1.47.0">
+        v1.47.0
+      </option>
+    
+      <option  value="1.46.0">
+        v1.46.0
+      </option>
+    
+      <option  value="1.45.0">
+        v1.45.0
+      </option>
+    
+      <option  value="1.44.0">
+        v1.44.0
+      </option>
+    
+      <option  value="1.43.0">
+        v1.43.0
+      </option>
+    
+      <option  value="1.42.0">
+        v1.42.0
+      </option>
+    
+      <option  value="1.41.0">
+        v1.41.0
+      </option>
+    
+      <option  value="1.40.1">
+        v1.40.1
+      </option>
+    
+      <option  value="1.40.0">
+        v1.40.0
+      </option>
+    
+      <option  value="1.39.1">
+        v1.39.1
+      </option>
+    
+      <option  value="1.39.0">
+        v1.39.0
+      </option>
+    
+      <option  value="1.38.2">
+        v1.38.2
+      </option>
+    
+      <option  value="1.38.1">
+        v1.38.1
+      </option>
+    
+      <option  value="1.38.0">
+        v1.38.0
+      </option>
+    
+      <option  value="1.37.0">
+        v1.37.0
+      </option>
+    
+      <option  value="1.36.1">
+        v1.36.1
+      </option>
+    
+      <option  value="1.36.0">
+        v1.36.0
+      </option>
+    
+      <option  value="1.35.1">
+        v1.35.1
+      </option>
+    
+      <option  value="1.35.0">
+        v1.35.0
+      </option>
+    
+      <option  value="1.34.0">
+        v1.34.0
+      </option>
+    
+      <option  value="1.33.1">
+        v1.33.1
+      </option>
+    
+      <option  value="1.33.0">
+        v1.33.0
+      </option>
+    
+      <option  value="1.32.2">
+        v1.32.2
+      </option>
+    
+      <option  value="1.32.1">
+        v1.32.1
+      </option>
+    
+      <option  value="1.32.0">
+        v1.32.0
+      </option>
+    
+      <option  value="1.31.2">
+        v1.31.2
+      </option>
+    
+      <option  value="1.31.1">
+        v1.31.1
+      </option>
+    
+      <option  value="1.31.0">
+        v1.31.0
+      </option>
+    
+      <option  value="1.30.0">
+        v1.30.0
+      </option>
+    
+      <option  value="1.29.0">
+        v1.29.0
+      </option>
+    
+      <option  value="1.28.2">
+        v1.28.2
+      </option>
+    
+      <option  value="1.28.1">
+        v1.28.1
+      </option>
+    
+      <option  value="1.28.0">
+        v1.28.0
+      </option>
+    
+      <option  value="1.27.2">
+        v1.27.2
+      </option>
+    
+      <option  value="1.27.1">
+        v1.27.1
+      </option>
+    
+      <option  value="1.27.0">
+        v1.27.0
+      </option>
+    
+      <option  value="1.26.1">
+        v1.26.1
+      </option>
+    
+      <option  value="1.26.0">
+        v1.26.0
+      </option>
+    
+      <option  value="1.25.1">
+        v1.25.1
+      </option>
+    
+      <option  value="1.25.0">
+        v1.25.0
+      </option>
+    
+      <option  value="1.24.1">
+        v1.24.1
+      </option>
+    
+      <option  value="1.24.0">
+        v1.24.0
+      </option>
+    
+      <option  value="1.23.3">
+        v1.23.3
+      </option>
+    
+      <option  value="1.23.2">
+        v1.23.2
+      </option>
+    
+      <option  value="1.23.1">
+        v1.23.1
+      </option>
+    
+      <option  value="1.23.0">
+        v1.23.0
+      </option>
+    
+      <option  value="1.22.1">
+        v1.22.1
+      </option>
+    
+      <option  value="1.22.0">
+        v1.22.0
+      </option>
+    
+      <option  value="1.21.2">
+        v1.21.2
+      </option>
+    
+      <option  value="1.21.1">
+        v1.21.1
+      </option>
+    
+      <option  value="1.21.0">
+        v1.21.0
+      </option>
+    
+      <option  value="1.20.1">
+        v1.20.1
+      </option>
+    
+      <option  value="1.20.0">
+        v1.20.0
+      </option>
+    
+      <option  value="1.19.7">
+        v1.19.7
+      </option>
+    
+      <option  value="1.19.6">
+        v1.19.6
+      </option>
+    
+      <option  value="1.19.5">
+        v1.19.5
+      </option>
+    
+      <option  value="1.19.4">
+        v1.19.4
+      </option>
+    
+      <option  value="1.19.3">
+        v1.19.3
+      </option>
+    
+      <option  value="1.19.2">
+        v1.19.2
+      </option>
+    
+      <option  value="1.19.1">
+        v1.19.1
+      </option>
+    
+      <option  value="1.19.0">
+        v1.19.0
+      </option>
+    
+      <option  value="1.18.0">
+        v1.18.0
+      </option>
+    
+      <option  value="1.17.2">
+        v1.17.2
+      </option>
+    
+      <option  value="1.17.1">
+        v1.17.1
+      </option>
+    
+      <option  value="1.17.0">
+        v1.17.0
+      </option>
+    
+      <option  value="1.16.0">
+        v1.16.0
+      </option>
+    
+      <option  value="1.15.0">
+        v1.15.0
+      </option>
+    
+      <option  value="1.14.4">
+        v1.14.4
+      </option>
+    
+      <option  value="1.14.3">
+        v1.14.3
+      </option>
+    
+      <option  value="1.14.2">
+        v1.14.2
+      </option>
+    
+      <option  value="1.14.1">
+        v1.14.1
+      </option>
+    
+      <option  value="1.14.0">
+        v1.14.0
+      </option>
+    
+      <option  value="1.13.1">
+        v1.13.1
+      </option>
+    
+      <option  value="1.13.0">
+        v1.13.0
+      </option>
+    
+      <option  value="1.12.9">
+        v1.12.9
+      </option>
+    
+      <option  value="1.12.8">
+        v1.12.8
+      </option>
+    
+      <option  value="1.12.7">
+        v1.12.7
+      </option>
+    
+      <option  value="1.12.6">
+        v1.12.6
+      </option>
+    
+      <option  value="1.12.5">
+        v1.12.5
+      </option>
+    
+      <option  value="1.12.4">
+        v1.12.4
+      </option>
+    
+      <option  value="1.12.3">
+        v1.12.3
+      </option>
+    
+      <option  value="1.12.2">
+        v1.12.2
+      </option>
+    
+      <option  value="1.12.1">
+        v1.12.1
+      </option>
+    
+      <option  value="1.12.0">
+        v1.12.0
+      </option>
+    
+      <option  value="1.11.2">
+        v1.11.2
+      </option>
+    
+      <option  value="1.11.1">
+        v1.11.1
+      </option>
+    
+      <option  value="1.11.0">
+        v1.11.0
+      </option>
+    
+      <option  value="1.10.2">
+        v1.10.2
+      </option>
+    
+      <option  value="1.10.1">
+        v1.10.1
+      </option>
+    
+      <option  value="1.10.0">
+        v1.10.0
+      </option>
+    
+      <option  value="1.9.9">
+        v1.9.9
+      </option>
+    
+      <option  value="1.9.8">
+        v1.9.8
+      </option>
+    
+      <option  value="1.9.7">
+        v1.9.7
+      </option>
+    
+      <option  value="1.9.6">
+        v1.9.6
+      </option>
+    
+      <option  value="1.9.5">
+        v1.9.5
+      </option>
+    
+      <option  value="1.9.4">
+        v1.9.4
+      </option>
+    
+      <option  value="1.9.3">
+        v1.9.3
+      </option>
+    
+      <option  value="1.9.2">
+        v1.9.2
+      </option>
+    
+      <option  value="1.9.1">
+        v1.9.1
+      </option>
+    
+      <option  value="1.9.0">
+        v1.9.0
+      </option>
+    
+      <option  value="1.8.0">
+        v1.8.0
+      </option>
+    
+      <option  value="1.7.4">
+        v1.7.4
+      </option>
+    
+      <option  value="1.7.3">
+        v1.7.3
+      </option>
+    
+      <option  value="1.7.2">
+        v1.7.2
+      </option>
+    
+      <option  value="1.7.1">
+        v1.7.1
+      </option>
+    
+      <option  value="1.7.0">
+        v1.7.0
+      </option>
+    
+      <option  value="1.6.2">
+        v1.6.2
+      </option>
+    
+      <option  value="1.6.1">
+        v1.6.1
+      </option>
+    
+      <option  value="1.6.0">
+        v1.6.0
+      </option>
+    
+      <option  value="1.5.4">
+        v1.5.4
+      </option>
+    
+      <option  value="1.5.3">
+        v1.5.3
+      </option>
+    
+      <option  value="1.5.2">
+        v1.5.2
+      </option>
+    
+      <option  value="1.5.1">
+        v1.5.1
+      </option>
+    
+      <option  value="1.5.0">
+        v1.5.0
+      </option>
+    
+      <option  value="1.4.3">
+        v1.4.3
+      </option>
+    
+      <option  value="1.4.2">
+        v1.4.2
+      </option>
+    
+      <option  value="1.4.1">
+        v1.4.1
+      </option>
+    
+      <option  value="1.4.0">
+        v1.4.0
+      </option>
+    
+      <option  value="1.3.3">
+        v1.3.3
+      </option>
+    
+      <option  value="1.3.2">
+        v1.3.2
+      </option>
+    
+      <option  value="1.3.1">
+        v1.3.1
+      </option>
+    
+      <option  value="1.3.0">
+        v1.3.0
+      </option>
+    
+      <option  value="1.2.4">
+        v1.2.4
+      </option>
+    
+      <option  value="1.2.3">
+        v1.2.3
+      </option>
+    
+      <option  value="1.2.2">
+        v1.2.2
+      </option>
+    
+      <option  value="1.2.1">
+        v1.2.1
+      </option>
+    
+      <option  value="1.2.0">
+        v1.2.0
+      </option>
+    
+      <option  value="1.1.0">
+        v1.1.0
+      </option>
+    
+      <option  value="1.0.19">
+        v1.0.19
+      </option>
+    
+      <option  value="1.0.18">
+        v1.0.18
+      </option>
+    
+      <option  value="1.0.17">
+        v1.0.17
+      </option>
+    
+      <option  value="1.0.16">
+        v1.0.16
+      </option>
+    
+      <option  value="1.0.15">
+        v1.0.15
+      </option>
+    
+      <option  value="1.0.14">
+        v1.0.14
+      </option>
+    
+      <option  value="1.0.13">
+        v1.0.13
+      </option>
+    
+      <option  value="1.0.12">
+        v1.0.12
+      </option>
+    
+      <option  value="1.0.11">
+        v1.0.11
+      </option>
+    
+      <option  value="1.0.10">
+        v1.0.10
+      </option>
+    
+      <option  value="1.0.9">
+        v1.0.9
+      </option>
+    
+      <option  value="1.0.8">
+        v1.0.8
+      </option>
+    
+      <option  value="1.0.7">
+        v1.0.7
+      </option>
+    
+      <option  value="1.0.6">
+        v1.0.6
+      </option>
+    
+      <option  value="1.0.5">
+        v1.0.5
+      </option>
+    
+      <option  value="1.0.4">
+        v1.0.4
+      </option>
+    
+      <option  value="1.0.3">
+        v1.0.3
+      </option>
+    
+      <option  value="1.0.2">
+        v1.0.2
+      </option>
+    
+      <option  value="1.0.1">
+        v1.0.1
+      </option>
+    
+      <option  value="1.0.0">
+        v1.0.0
+      </option>
+    
+  </select>
+  <form accept-charset="UTF-8" action="/search" id="articles-search" method="get" style="width: 100%"><div style="margin:0;padding:0;display:inline;"><input name="utf8" type="hidden" value="✓"></div>
+    <input type="text" name="q" id="quicksearch-query" class="documents-search-input js-articles-quicksearch" placeholder="Search the Flight Manual" autocomplete="off">
+  </form>
+</div>
+
+<div class="autocomplete-results" style="display: none;">
+  <div class="result-group"></div>
+</div>
+
+
+        <div class="toc">
+          
+
+
+  <h4>
+    <a href="/getting-started">Chapter 1: Getting Started</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/why-atom">Why Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/installing-atom">Installing Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/atom-basics">Atom Basics</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/using-atom">Chapter 2: Using Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-packages">Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/moving-in-atom">Moving in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-selections">Atom Selections</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/editing-and-deleting-text">Editing and Deleting Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/find-and-replace">Find and Replace</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/snippets">Snippets</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/autocomplete">Autocomplete</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/folding">Folding</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/panes">Panes</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/pending-pane-items">Pending Pane Items</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/grammar">Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/version-control-in-atom">Version Control in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/github-package">GitHub package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/writing-in-atom">Writing in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/basic-customization">Basic Customization</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/hacking-atom">Chapter 3: Hacking Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/tools-of-the-trade">Tools of the Trade</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/the-init-file">The Init File</a>
+      </li>
+    
+      <li class="selected">
+        <a href="/hacking-atom/sections/package-word-count">Package: Word Count</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-modifying-text">Package: Modifying Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-active-editor-info">Package: Active Editor Info</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-theme">Creating a Theme</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-grammar">Creating a Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-legacy-textmate-grammar">Creating a Legacy TextMate Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/publishing">Publishing</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/iconography">Iconography</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/debugging">Debugging</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/writing-specs">Writing specs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/handling-uris">Handling URIs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/cross-platform-compatibility">Cross-Platform Compatibility</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/converting-from-textmate">Converting from TextMate</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/hacking-on-atom-core">Hacking on Atom Core</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/contributing-to-official-atom-packages">Contributing to Official Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-fork-of-a-core-package-in-atom-atom">Creating a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/maintaining-a-fork-of-a-core-package-in-atom-atom">Maintaining a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/behind-atom">Chapter 4: Behind Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/configuration-api">Configuration API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/keymaps-in-depth">Keymaps In-Depth</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors">Scoped Settings, Scopes and Scope Descriptors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/serialization-in-atom">Serialization in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/developing-node-modules">Developing Node Modules</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/interacting-with-other-packages-via-services">Interacting With Other Packages Via Services</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/maintaining-your-packages">Maintaining Your Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/how-atom-uses-chromium-snapshots">How Atom Uses Chromium Snapshots</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+
+
+
+
+<h4>
+  <a href="/api/v1.63.1/">Reference: API</a>
+</h4>
+<ul>
+  
+    <li>
+      <a href="/api/v1.63.1/AtomEnvironment/">AtomEnvironment</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedNodeProcess/">BufferedNodeProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedProcess/">BufferedProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Clipboard/">Clipboard</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Color/">Color</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CommandRegistry/">CommandRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CompositeDisposable/">CompositeDisposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Config/">Config</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ContextMenuManager/">ContextMenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Cursor/">Cursor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Decoration/">Decoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DeserializerManager/">DeserializerManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Directory/">Directory</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarker/">DisplayMarker</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarkerLayer/">DisplayMarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Disposable/">Disposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Dock/">Dock</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Emitter/">Emitter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/File/">File</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GitRepository/">GitRepository</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Grammar/">Grammar</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GrammarRegistry/">GrammarRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Gutter/">Gutter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/HistoryManager/">HistoryManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/KeymapManager/">KeymapManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/LayerDecoration/">LayerDecoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MarkerLayer/">MarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MenuManager/">MenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Notification/">Notification</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/NotificationManager/">NotificationManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Package/">Package</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PackageManager/">PackageManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Pane/">Pane</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Panel/">Panel</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PathWatcher/">PathWatcher</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Point/">Point</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Project/">Project</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Range/">Range</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ScopeDescriptor/">ScopeDescriptor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Selection/">Selection</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/StyleManager/">StyleManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Task/">Task</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextBuffer/">TextBuffer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextEditor/">TextEditor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ThemeManager/">ThemeManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TooltipManager/">TooltipManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ViewRegistry/">ViewRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Workspace/">Workspace</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/WorkspaceCenter/">WorkspaceCenter</a>
+    </li>
+  
+</ul>
+
+
+  <h4>
+    <a href="/resources">Appendix A: Resources</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/resources/sections/glossary">Glossary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/faq">Appendix B: FAQ</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/faq/sections/is-atom-open-source">Is Atom open source?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-atom-cost">What does Atom cost?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-platforms-does-atom-run-on">What platforms does Atom run on?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-contribute-to-atom">How can I contribute to Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-atom-collect-usage-data">Why does Atom collect usage data?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/atom-in-the-cloud">Atom in the cloud?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-s-the-difference-between-an-ide-and-an-editor">What's the difference between an IDE and an editor?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-tell-if-subpixel-antialiasing-is-working">How can I tell if subpixel antialiasing is working?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-is-atom-deleting-trailing-whitespace-why-is-there-a-newline-at-the-end-of-the-file">Why is Atom deleting trailing whitespace? Why is there a newline at the end of the file?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-safe-mode-do">What does Safe Mode do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-have-a-question-about-a-specific-atom-community-package-where-is-the-best-place-to-ask-it">I have a question about a specific Atom community package. Where is the best place to ask it?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-using-an-international-keyboard-and-keys-that-use-altgr-or-ctrl-alt-aren-t-working">I’m using an international keyboard and keys that use AltGr or Ctrl+Alt aren’t working</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-julia-what-do-i-do">I’m having a problem with Julia! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-getting-an-error-about-a-self-signed-certificate-what-do-i-do">I’m getting an error about a “self-signed certificate”. What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-platformio-what-do-i-do">I’m having a problem with PlatformIO! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-atom-recognize-a-file-with-extension-x-as-language-y">How do I make Atom recognize a file with extension X as language Y?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-the-welcome-screen-stop-showing-up">How do I make the Welcome screen stop showing up?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-preview-web-page-changes-automatically">How do I preview web page changes automatically?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-accept-input-from-my-program-or-script-when-using-the-script-package">How do I accept input from my program or script when using the script package?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-am-unable-to-update-to-the-latest-version-of-atom-on-macos-how-do-i-fix-this">I am unable to update to the latest version of Atom on macOS. How do I fix this?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-trying-to-change-my-syntax-colors-from-styles-less-but-it-isn-t-working">I’m trying to change my syntax colors from styles.less, but it isn’t working!</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-build-or-execute-code-i-ve-written-in-atom">How do I build or execute code I've written in Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-uninstall-atom-on-macos">How do I uninstall Atom on macOS?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/macos-mojave-font-rendering-change">macOS Mojave font rendering change</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-macos-say-that-atom-wants-to-access-my-calendar-contacts-photos-etc">Why does macOS say that Atom wants to access my calendar, contacts, photos, etc.?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-turn-on-line-wrap">How do I turn on line wrap?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/the-menu-bar-disappeared-how-do-i-get-it-back">The menu bar disappeared, how do I get it back?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-use-a-newline-in-the-result-of-find-and-replace">How do I use a newline in the result of find and replace?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-is-this-line-on-the-right-in-the-editor-view">What is this line on the right in the editor view?</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/shadow-dom">Appendix C: Shadow DOM</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/shadow-dom/sections/removing-shadow-dom-styles">Removing Shadow DOM styles</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/upgrading-to-1-0-apis">Appendix D: Upgrading to 1.0 APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-package">Upgrading Your Package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-ui-theme-or-package-selectors">Upgrading Your UI Theme Or Package Selectors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-syntax-theme">Upgrading Your Syntax Theme</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/atom-server-side-apis">Appendix E: Atom server-side APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-package-server-api">Atom package server API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-update-server-api">Atom update server API</a>
+      </li>
+    
+  </ul>
+
+
+        </div>
+
+        
+        <h1 class="document-title">
+          <div id="platform-nav">
+  <span class="octicon octicon-device-desktop"></span>
+  <ul>
+    <li class="platform-mac">
+      <a href="#platform-mac" data-platform="mac">
+        mac
+      </a>
+    </li>
+    <li class="platform-windows">
+      <a href="#platform-windows" data-platform="windows">
+        windows
+      </a>
+    </li>
+    <li class="platform-linux">
+      <a href="#platform-linux" data-platform="linux">
+        linux
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <a class="improve-link"
+              href="https://github.com/atom/flight-manual.atom.io/edit/master/content/hacking-atom/sections/package-word-count.md" data-proofer-ignore>
+            <span class="octicon octicon-pencil"></span> Improve this page
+          </a>
+        </h1>
+
+        <div class="markdown-body document-content">
+          
+          <h3>
+<a id="package-word-count" class="anchor" href="#package-word-count" aria-hidden="true"><span class="octicon octicon-link"></span></a>Package: Word Count</h3>
+
+<p>Let's get started by writing a very simple package and looking at some of the tools needed to develop one effectively. We'll start by writing a package that tells you how many words are in the current buffer and display it in a small modal window.</p>
+
+<h4>
+<a id="package-generator" class="anchor" href="#package-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Package Generator</h4>
+
+<p>The simplest way to start a package is to use the built-in package generator that ships with Atom. As you might expect by now, this generator is itself a separate package implemented in <a href="https://github.com/atom/package-generator">package-generator</a>.</p>
+
+<p>You can run the generator by invoking the command palette and searching for "Generate Package". A dialog will appear asking you to name your new project. Name it <code>your-name-word-count</code>. Atom will then create that directory and fill it out with a skeleton project and link it into your <span class="platform-mac platform-linux"><code>~/.atom/packages</code></span><span class="platform-windows"><code>%USERPROFILE%\.atom\packages</code></span> directory so it's loaded when you launch your editor next time.</p>
+
+<div class="alert note">
+
+<p><strong>Note:</strong> You may encounter a situation where your package is not loaded. That is because a new package using the same name as an actual package hosted on <a href="https://atom.io/packages">atom.io</a> (e.g. "wordcount" and "word-count") is not being loaded as you expected. If you follow our suggestion above of using the <code>your-name-word-count</code> package name, you <em>should</em> be safe <img class="emoji" title=":grinning:" alt=":grinning:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png" height="20" width="20" align="absmiddle"></p>
+
+</div>
+
+<p><img src="../../images/package.png" alt="Basic generated Atom package"></p>
+
+<p>You can see that Atom has created about a dozen files that make up the package. Let's take a look at each of them to get an idea of how a package is structured, then we can modify them to get our word count functionality.</p>
+
+<p>The basic package layout is as follows:</p>
+
+<pre><code>my-package/
+├─ grammars/
+├─ keymaps/
+├─ lib/
+├─ menus/
+├─ spec/
+├─ snippets/
+├─ styles/
+├─ index.js
+└─ package.json
+</code></pre>
+
+<p>Not every package will have (or need) all of these directories and the package generator doesn't create <code>snippets</code> or <code>grammars</code>. Let's see what some of these are so we can start messing with them.</p>
+
+<h5>
+<a id="packagejson" class="anchor" href="#packagejson" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>package.json</code>
+</h5>
+
+<p>Similar to <a href="https://en.wikipedia.org/wiki/Npm_(software)">Node modules</a>, Atom packages contain a <code>package.json</code> file in their top-level directory. This file contains metadata about the package, such as the path to its "main" module, library dependencies, and manifests specifying the order in which its resources should be loaded.</p>
+
+<p>In addition to some of the regular <a href="https://docs.npmjs.com/files/package.json">Node <code>package.json</code> keys</a> available, Atom <code>package.json</code> files have their own additions.</p>
+
+<ul>
+<li>
+<code>main</code>: the path to the JavaScript file that's the entry point to your package. If this is missing, Atom will default to looking for an <code>index.coffee</code> or <code>index.js</code>.</li>
+<li>
+<code>styles</code>: an Array of Strings identifying the order of the
+style sheets your package needs to load. If not specified, style sheets in the <code>styles</code> directory are added alphabetically.</li>
+<li>
+<code>keymaps</code>: an Array of Strings identifying the order of the key mappings your package needs to load. If not specified, mappings in the <code>keymaps</code> directory are added alphabetically.</li>
+<li>
+<code>menus</code>: an Array of Strings identifying the order of the menu mappings your package needs to load. If not specified, mappings in the <code>menus</code> directory are added alphabetically.</li>
+<li>
+<code>snippets</code>: an Array of Strings identifying the order of the snippets your package needs to load. If not specified, snippets in the <code>snippets</code> directory are added alphabetically.</li>
+<li>
+<code>activationCommands</code>: an Object identifying commands that trigger your package's activation. The keys are CSS selectors, the values are Arrays of Strings identifying the command. The loading of your package is delayed until one of these events is triggered within the associated scope defined by the CSS selector. If not specified, the <code>activate()</code> method of your main export will be called when your package is loaded.</li>
+<li>
+<code>activationHooks</code>: an Array of Strings identifying hooks that trigger your package's activation. The loading of your package is delayed until one of these hooks are triggered. Currently, there are three activation hooks:
+
+<ul>
+<li>
+<code>core:loaded-shell-environment</code> for when Atom has finished loading the shell environment variables</li>
+<li>
+<code>scope.name:root-scope-used</code> for when a file is opened from the specified language (e.g. <code>source.ruby:root-scope-used</code>)</li>
+<li>
+<code>language-package-name:grammar-used</code> for when a specific language package is used (e.g., <code>my-special-language-javascript:grammar-used</code>)</li>
+</ul>
+</li>
+<li>
+<code>workspaceOpeners</code>: An Array of Strings identifying URIs that trigger your package's activation. For example, say your package registers a custom opener for <code>atom://my-custom-panel</code>. By including that string in <code>workspaceOpeners</code>, your package will defer its activation until that URI is opened.</li>
+</ul>
+
+<p>The <code>package.json</code> in the package we've just generated looks like this currently:</p>
+
+<div class="highlight highlight-json"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-name-word-count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/your-name-word-count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A short description of your package"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"activationCommands"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"atom-workspace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-name-word-count:toggle"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repository"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/atom/your-name-word-count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"engines"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"atom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=1.0.0 &lt;2.0.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>If you wanted to use activationHooks, you might have:</p>
+
+<div class="highlight highlight-json"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-name-word-count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./lib/your-name-word-count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A short description of your package"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"activationHooks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"language-javascript:grammar-used"</span><span class="p">,</span><span class="w"> </span><span class="s2">"language-coffee-script:grammar-used"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"repository"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/atom/your-name-word-count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"engines"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"atom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=1.0.0 &lt;2.0.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>One of the first things you should do is ensure that this information is filled out. The name, description, repository URL the project will be at, and the license can all be filled out immediately. The other information we'll get into more detail on as we go.</p>
+
+<div class="alert warning">
+
+<p><strong>Warning:</strong> Do not forget to update the repository URL. The one generated for you is invalid by design and will prevent you from publishing your package until updated.</p>
+
+</div>
+
+<h5>
+<a id="source-code" class="anchor" href="#source-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Source Code</h5>
+
+<p>If you want to extend Atom's behavior, your package should contain a single top-level module, which you export from whichever file is indicated by the <code>main</code> key in your <code>package.json</code> file. In the package we just generated, the main package file is <code>lib/your-name-word-count.js</code>. The remainder of your code should be placed in the <code>lib</code> directory, and required from your top-level file. If the <code>main</code> key is not in your <code>package.json</code> file, it will look for <code>index.js</code> or <code>index.coffee</code> as the main entry point.</p>
+
+<p>Your package's top-level module is a singleton object that manages the lifecycle of your extensions to Atom. Even if your package creates ten different views and appends them to different parts of the DOM, it's all managed from your top-level object.</p>
+
+<p>Your package's top-level module can implement the following basic methods:</p>
+
+<ul>
+<li>
+<code>activate(state)</code>: This <strong>optional</strong> method is called when your package is activated. It is passed the state data from the last time the window was serialized if your module implements the <code>serialize()</code> method. Use this to do initialization work when your package is started (like setting up DOM elements or binding events). If this method returns a promise the package will be considered loading until the promise resolves (or rejects).</li>
+<li>
+<code>initialize(state)</code>: (Available in Atom 1.14 and above) This <strong>optional</strong> method is similar to <code>activate()</code> but is called earlier. Whereas activation occurs after the workspace has been deserialized (and can therefore happen after <a href="/behind-atom/sections/serialization-in-atom/#serialization-methods">your package's deserializers</a> have been called), <code>initialize()</code> is guaranteed to be called before everything. Use <code>activate()</code> if you want to be sure that the workspace is ready; use <code>initialize()</code> if you need to do some setup prior to your deserializers or view providers being invoked.</li>
+<li>
+<code>serialize()</code>: This <strong>optional</strong> method is called when the window is shutting down, allowing you to return JSON to represent the state of your component. When the window is later restored, the data you returned is passed to your module's <code>activate</code> method so you can restore your view to where the user left
+off.</li>
+<li>
+<code>deactivate()</code>: This <strong>optional</strong> method is called when the window is shutting down and when the package is disabled. If your package is watching any files or holding external resources in any other way, release them here. You should also dispose of all subscriptions you're holding on to.</li>
+</ul>
+
+<h5>
+<a id="style-sheets" class="anchor" href="#style-sheets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Style Sheets</h5>
+
+<p>Style sheets for your package should be placed in the <code>styles</code> directory. Any style sheets in this directory will be loaded and attached to the DOM when your package is activated. Style sheets can be written as CSS or <a href="http://lesscss.org">Less</a>, but Less is recommended.</p>
+
+<p>Ideally, you won't need much in the way of styling. Atom provides a standard set of components which define both the colors and UI elements for any package that fits into Atom seamlessly. You can view all of Atom's UI components by opening the styleguide: open the command palette <kbd class="platform-mac">Cmd+Shift+P</kbd><kbd class="platform-windows platform-linux">Ctrl+Shift+P</kbd> and search for <code>styleguide</code>, or type <kbd class="platform-mac">Cmd+Ctrl+Shift+G</kbd><kbd class="platform-windows platform-linux">Ctrl+Shift+G</kbd>.</p>
+
+<p>If you <em>do</em> need special styling, try to keep only structural styles in the package style sheets. If you <em>must</em> specify colors and sizing, these should be taken from the active theme's <a href="https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less">ui-variables.less</a>.</p>
+
+<p>An optional <code>styleSheets</code> array in your <code>package.json</code> can list the style sheets by name to specify a loading order; otherwise, style sheets are loaded alphabetically.</p>
+
+<h5>
+<a id="keymaps" class="anchor" href="#keymaps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keymaps</h5>
+
+<p>You can provide key bindings for commonly used actions for your extension, especially if you're also adding a new command. In our new package, we have a keymap filled in for us already in the <code>keymaps/your-name-word-count.json</code> file:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">atom-workspace</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">ctrl-alt-o</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">your-name-word-count:toggle</span><span class="dl">"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>This means that if you press <kbd class="platform-all">Alt+Ctrl+O</kbd>, our package will run the <code>your-name-word-count:toggle</code> command. We'll look at that code next, but if you want to change the default key mapping, you can do that in this file.</p>
+
+<p>Keymaps are placed in the <code>keymaps</code> subdirectory. By default, all keymaps are loaded in alphabetical order. An optional <code>keymaps</code> array in your <code>package.json</code> can specify which keymaps to load and in what order.</p>
+
+<p>Keybindings are executed by determining which element the keypress occurred on. In the example above, the <code>your-name-word-count:toggle</code> command is executed when pressing <kbd class="platform-all">Alt+Ctrl+O</kbd> on the <code>atom-workspace</code> element. Because the <code>atom-workspace</code> element is the parent of the entire Atom UI, this means the key combination will work anywhere in the application.</p>
+
+<p>We'll cover more advanced keybinding stuff a bit later in <a href="/behind-atom/sections/keymaps-in-depth/">Keymaps in Depth</a>.</p>
+
+<h5>
+<a id="menus" class="anchor" href="#menus" aria-hidden="true"><span class="octicon octicon-link"></span></a>Menus</h5>
+
+<p>Menus are placed in the <code>menus</code> subdirectory. This defines menu elements like what pops up when you right click a context-menu or would go in the application menu to trigger functionality in your plugin.</p>
+
+<p>By default, all menus are loaded in alphabetical order. An optional <code>menus</code> array in your <code>package.json</code> can specify which menus to load and in what order.</p>
+
+<h6>
+<a id="application-menu" class="anchor" href="#application-menu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application Menu</h6>
+
+<p>It's recommended that you create an application menu item under the <em>Packages</em> menu for common actions with your package that aren't tied to a specific element. If we look in the <code>menus/your-name-word-count.json</code> file that was generated for us, we'll see a section that looks like this:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code>
+<span class="dl">"</span><span class="s2">menu</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Packages</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">submenu</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Word Count</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">submenu</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Toggle</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">command</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">your-name-word-count:toggle</span><span class="dl">"</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+
+</code></pre></div>
+
+<p>This section puts a "Toggle" menu item under a menu group named "Your Name Word Count" in the "Packages" menu.</p>
+
+<p><img src="../../images/menu.png" alt="Application Menu Item"></p>
+
+<p>When you select that menu item, it will run the <code>your-name-word-count:toggle</code> command, which we'll look at in a bit.</p>
+
+<p>The menu templates you specify are merged with all other templates provided by other packages in the order which they were loaded.</p>
+
+<h6>
+<a id="context-menu" class="anchor" href="#context-menu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Context Menu</h6>
+
+<p>It's recommended to specify a context menu item for commands that are linked to specific parts of the interface. In our <code>menus/your-name-word-count.json</code> file, we can see an auto-generated section that looks like this:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="dl">"</span><span class="s2">context-menu</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">atom-text-editor</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Toggle your-name-word-count</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">command</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">your-name-word-count:toggle</span><span class="dl">"</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+</code></pre></div>
+
+<p>This adds a "Toggle Word Count" menu option to the menu that pops up when you right-click in an Atom text editor pane.</p>
+
+<p><img src="../../images/context-menu.png" alt="Context Menu Entry"></p>
+
+<p>When you click that it will again run the <code>your-name-word-count:toggle</code> method in your code.</p>
+
+<p>Context menus are created by determining which element was selected and then adding all of the menu items whose selectors match that element (in the order which they were loaded). The process is then repeated for the elements until reaching the top of the DOM tree.</p>
+
+<p>You can also add separators and submenus to your context menus. To add a submenu, provide a <code>submenu</code> key instead of a command. To add a separator, add an item with a single <code>type: 'separator'</code> key/value pair. For instance, you could do something like this:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">context-menu</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">atom-workspace</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Text</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">submenu</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Inspect Element</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">command</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">core:inspect</span><span class="dl">"</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">separator</span><span class="dl">"</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Selector All</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">command</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">core:select-all</span><span class="dl">"</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">separator</span><span class="dl">"</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Deleted Selected Text</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">command</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">core:delete</span><span class="dl">"</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4>
+<a id="developing-our-package" class="anchor" href="#developing-our-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Developing Our Package</h4>
+
+<p>Currently with the generated package we have, if we run that <code>your-name-word-count:toggle</code> command through the menu or the command palette, we'll get a dialog that says "The YourNameWordCount package is Alive! It's ALIVE!".</p>
+
+<p><img src="../../images/toggle.png" alt="Wordcount Package is Alive Dialog"></p>
+
+<h5>
+<a id="understanding-the-generated-code" class="anchor" href="#understanding-the-generated-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Understanding the Generated Code</h5>
+
+<p>Let's take a look at the code in our <code>lib</code> directory and see what is happening.</p>
+
+<p>There are two files in our <code>lib</code> directory. One is the main file (<code>lib/your-name-word-count.js</code>), which is pointed to in the <code>package.json</code> file as the main file to execute for this package. This file handles the logic of the whole plugin.</p>
+
+<p>The second file is a View class, <code>lib/your-name-word-count-view.js</code>, which handles the UI elements of the package. Let's look at this file first, since it's pretty simple.</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">YourNameWordCountView</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">serializedState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Create root element</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">your-name-word-count</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// Create message element</span>
+    <span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">message</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">The YourNameWordCount package is Alive! It</span><span class="se">\'</span><span class="s1">s ALIVE!</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">message</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Returns an object that can be retrieved when package is activated</span>
+  <span class="nx">serialize</span><span class="p">()</span> <span class="p">{}</span>
+
+  <span class="c1">// Tear down any state and detach</span>
+  <span class="nx">destroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">getElement</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre></div>
+
+<p>Basically the only thing happening here is that when the View class is created, it creates a simple <code>div</code> element and adds the <code>your-name-word-count</code> class to it (so we can find or style it later) and then adds the "<code>Your Name Word Count package is Alive!</code>" text to it. There is also a <code>getElement</code> method which returns that <code>div</code>. The <code>serialize</code> and <code>destroy</code> methods don't do anything and we won't have to worry about that until another example.</p>
+
+<p>Notice that we're simply using the basic browser DOM methods: <code>createElement()</code> and <code>appendChild()</code>.</p>
+
+<p>The second file we have is the main entry point to the package. Again, because it's referenced in the <code>package.json</code> file. Let's take a look at that file.</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="k">import</span> <span class="nx">YourNameWordCountView</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./your-name-word-count-view</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CompositeDisposable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">atom</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+
+  <span class="na">yourNameWordCountView</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="na">modalPanel</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="na">subscriptions</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+
+  <span class="nx">activate</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">YourNameWordCountView</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">yourNameWordCountViewState</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="nx">workspace</span><span class="p">.</span><span class="nx">addModalPanel</span><span class="p">({</span>
+      <span class="na">item</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(),</span>
+      <span class="na">visible</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subscriptions</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CompositeDisposable</span><span class="p">();</span>
+
+    <span class="c1">// Register command that toggles this view</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">atom</span><span class="p">.</span><span class="nx">commands</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">atom-workspace</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="dl">'</span><span class="s1">your-name-word-count:toggle</span><span class="dl">'</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggle</span><span class="p">()</span>
+    <span class="p">}));</span>
+  <span class="p">},</span>
+
+  <span class="nx">deactivate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+  <span class="p">},</span>
+
+  <span class="nx">serialize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">yourNameWordCountViewState</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span><span class="p">.</span><span class="nx">serialize</span><span class="p">()</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+  <span class="nx">toggle</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">YourNameWordCount was toggled!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">()</span> <span class="p">?</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">hide</span><span class="p">()</span> <span class="p">:</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">};</span>
+</code></pre></div>
+
+<p>There is a bit more going on here.  First of all we can see that we are defining four methods. The only required one is <code>activate</code>. The <code>deactivate</code> and <code>serialize</code> methods are expected by Atom but optional. The <code>toggle</code> method is one Atom is not looking for, so we'll have to invoke it somewhere for it to be called, which you may recall we do both in the <code>activationCommands</code> section of the <code>package.json</code> file and in the action we have in the menu file.</p>
+
+<p>The <code>deactivate</code> method simply destroys the various class instances we've created and the <code>serialize</code> method simply passes on the serialization to the View class. Nothing too exciting here.</p>
+
+<p>The <code>activate</code> command does a number of things. For one, it is not called automatically when Atom starts up, it is first called when one of the <code>activationCommands</code> as defined in the <code>package.json</code> file are called. In this case, <code>activate</code> is only called the first time the <code>toggle</code> command is called. If nobody ever invokes the menu item or hotkey, this code is never called.</p>
+
+<p>This method does two things. The first is that it creates an instance of the View class we have and adds the element that it creates to a hidden modal panel in the Atom workspace.</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">YourNameWordCountView</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">yourNameWordCountViewState</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="nx">workspace</span><span class="p">.</span><span class="nx">addModalPanel</span><span class="p">({</span>
+  <span class="na">item</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(),</span>
+  <span class="na">visible</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>We'll ignore the state stuff for now, since it's not important for this simple plugin. The rest should be fairly straightforward.</p>
+
+<p>The next thing this method does is create an instance of the CompositeDisposable class so it can register all the commands that can be called from the plugin so other plugins could subscribe to these events.</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="c1">// Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">subscriptions</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CompositeDisposable</span><span class="p">();</span>
+
+<span class="c1">// Register command that toggles this view</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">atom</span><span class="p">.</span><span class="nx">commands</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">atom-workspace</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">your-name-word-count:toggle</span><span class="dl">'</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggle</span><span class="p">()</span>
+<span class="p">}));</span>
+</code></pre></div>
+
+<p>Next we have the <code>toggle</code> method. This method simply toggles the visibility of the modal panel that we created in the <code>activate</code> method.</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nx">toggle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">YourNameWordCount was toggled!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">()</span> <span class="p">?</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">hide</span><span class="p">()</span> <span class="p">:</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>This should be fairly simple to understand. We're looking to see if the modal element is visible and hiding or showing it depending on its current state.</p>
+
+<h5>
+<a id="the-flow" class="anchor" href="#the-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Flow</h5>
+
+<p>So, let's review the actual flow in this package.</p>
+
+<ol>
+<li>Atom starts up</li>
+<li>Atom starts loading packages</li>
+<li>Atom reads your <code>package.json</code>
+</li>
+<li>Atom loads keymaps, menus, styles and the main module</li>
+<li>Atom finishes loading packages</li>
+<li>At some point, the user executes your package command <code>your-name-word-count:toggle</code>
+</li>
+<li>Atom executes the <code>activate</code> method in your main module which sets up the UI by creating the hidden modal view</li>
+<li>Atom executes the package command <code>your-name-word-count:toggle</code> which reveals the hidden modal view</li>
+<li>At some point, the user executes the <code>your-name-word-count:toggle</code> command again</li>
+<li>Atom executes the command which hides the modal view</li>
+<li>Eventually, Atom is shut down which can trigger any serializations that your package has defined</li>
+</ol>
+
+<div class="alert tip">
+
+<p><strong>Tip:</strong> Keep in mind that the flow will be slightly different if you choose not to use <code>activationCommands</code> in your package.</p>
+
+</div>
+
+<h5>
+<a id="counting-the-words" class="anchor" href="#counting-the-words" aria-hidden="true"><span class="octicon octicon-link"></span></a>Counting the Words</h5>
+
+<p>So now that we understand what is happening, let's modify the code so that our little modal box shows us the current word count instead of static text.</p>
+
+<p>We'll do this in a very simple way. When the dialog is toggled, we'll count the words right before displaying the modal. So let's do this in the <code>toggle</code> command.  If we add some code to count the words and ask the view to update itself, we'll have something like this:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nx">toggle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">editor</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="nx">workspace</span><span class="p">.</span><span class="nx">getActiveTextEditor</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">getText</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">+/</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">yourNameWordCountView</span><span class="p">.</span><span class="nx">setCount</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">modalPanel</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Let's look at the 3 lines we've added. First we get an instance of the current editor object (where our text to count is) by calling <a href="https://atom.io/docs/api/latest/Workspace#instance-getActiveTextEditor"><code>atom.workspace.getActiveTextEditor()</code></a>.</p>
+
+<p>Next we get the number of words by calling <a href="https://atom.io/docs/api/latest/TextEditor#instance-getText"><code>getText()</code></a> on our new editor object, then splitting that text on whitespace with a regular expression and then getting the length of that array.</p>
+
+<p>Finally, we tell our view to update the word count it displays by calling the <code>setCount()</code> method on our view and then showing the modal again. Since that method doesn't yet exist, let's create it now.</p>
+
+<p>We can add this code to the end of our <code>your-name-word-count-view.js</code> file:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">displayText</span> <span class="o">=</span> <span class="s2">`There are </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2"> words.`</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">displayText</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Pretty simple! We take the count number that was passed in and place it into a string that we then stick into the element that our view is controlling.</p>
+
+<div class="alert note">
+
+<p><strong>Note:</strong> To see your changes, you'll need to reload the code. You can do this by reloading the window (The <code>window:reload</code> command in the Command Palette). A common practice is to have two Atom windows, one for developing your package, and one for testing and reloading.</p>
+
+</div>
+
+<p><img src="../../images/wordcount.png" alt="Word Count Working"></p>
+
+<h4>
+<a id="basic-debugging" class="anchor" href="#basic-debugging" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Debugging</h4>
+
+<p>You'll notice a few <code>console.log</code> statements in the code. One of the cool things about Atom being built on Chromium is that you can use some of the same debugging tools available to you that you have when doing web development.</p>
+
+<p>To open up the Developer Console, press <kbd class="platform-mac">Alt+Cmd+I</kbd><kbd class="platform-windows platform-linux">Ctrl+Shift+I</kbd>, or choose the menu option <em>View &gt; Developer &gt; Toggle Developer Tools</em>.</p>
+
+<p><img src="../../images/dev-tools.png" alt="Developer Tools Debugging"></p>
+
+<p>From here you can inspect objects, run code and view console output just as though you were debugging a web site.</p>
+
+<h4>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h4>
+
+<p>Your package should have tests, and if they're placed in the <code>spec</code> directory, they can be run by Atom.</p>
+
+<p>Under the hood, <a href="https://jasmine.github.io/archives/1.3/introduction">Jasmine v1.3</a> executes your tests, so you can assume that any DSL available there is also available to your package.</p>
+
+<h5>
+<a id="running-tests" class="anchor" href="#running-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Tests</h5>
+
+<p>Once you've got your test suite written, you can run it by pressing <kbd class="platform-mac">Alt+Cmd+Ctrl+P</kbd><kbd class="platform-windows platform-linux">Alt+Ctrl+P</kbd> or via the <em>View &gt; Developer &gt; Run Package Specs</em> menu. Our generated package comes with an example test suite, so you can run this right now to see what happens.</p>
+
+<p><img src="../../images/spec-suite.png" alt="Spec Suite Results"></p>
+
+<p>You can also use the <code>atom --test spec</code> command to run them from the command line. It prints the test output and results to the console and returns the proper status code depending on whether the tests passed or failed.</p>
+
+<h4>
+<a id="summary" class="anchor" href="#summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary</h4>
+
+<p>We've now generated, customized and tested our first plugin for Atom. Congratulations! Now let's go ahead and <a href="../publishing/">publish</a> it so it's available to the world.</p>
+        </div>
+      </div>
+      <div class="footer-pad"></div>
+    </div>
+    <footer>
+  <div class="footer">
+    <div class="wrapper no-pad">
+      <ul class="footer-left">
+        <li><a href="https://atom.io/terms">Terms of Use</a></li>
+        <li><a href="https://help.github.com/articles/github-privacy-policy/">Privacy</a></li>
+        <li><a href="https://github.com/atom/atom/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://atom.io/releases">Releases</a></li>
+        <li><a href="https://atom.io/faq">FAQ</a></li>
+        <li><a href="https://atom.io/contact">Contact</a></li>
+        <li><a href="https://github.com/atom/flight-manual.atom.io/blob/master/CONTRIBUTING.md">Contribute!</a></li>
+      </ul>
+
+      <div class="footer-right">
+        <a href="https://github.com"><span class="octicon octicon-code"></span> with <span class="octicon octicon-heart"></span> by <span class="octicon octicon-logo-github"></span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,1655 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Keymaps In-Depth</title>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" media="all" href="/assets/stylesheets/application.css" data-proofer-ignore>
+
+<link rel="stylesheet" media="all" href="/assets/stylesheets/development.css" data-proofer-ignore>
+
+
+<script type="text/javascript" src="/assets/javascripts/application.js"></script>
+
+  </head>
+  <body class="layout-article">
+    <div class="footer-push">
+      <div class="top-bar">
+  <div class="wrapper no-pad">
+
+    <ul class="navigation">
+      <li><h1 title="Atom: A hackable text editor for the 21st Century"><a href="https://atom.io/" class="logo-small"></a></h1></li>
+      <li><a href="https://atom.io/packages">Packages</a></li>
+      <li><a href="https://atom.io/themes">Themes</a></li>
+      <li><a href="https://atom.io/docs" class="is-selected">Documentation</a></li>
+      <li><a href="https://blog.atom.io">Blog</a></li>
+      <li><a href="https://github.com/atom/atom/discussions">Discussions</a></li>
+    </ul>
+
+  </div>
+</div>
+
+      <div class="wrapper documents content-push wide">
+        <script id="quicksearch-results-template" type="text/mustache">
+  [[#entries]]
+    <a href="[[url]]" class="js-articles-quicksearch-link">[[title]]</a>
+  [[/entries]]
+  <a class="initial quicksearch-seemore" href="/search?q=">See more results</a>
+</script>
+
+<script id="search-results-template" type="text/mustache">
+  [[#entries]]
+    <li>
+      <h3>
+        <a href="[[url]]">[[title]]</a>
+        <div class="label"><a href="[[category_url]]">[[category]]</a></div>
+      </h3>
+      <p>
+      [[excerpt]]
+      </p>
+    </li>
+  [[/entries]]
+</script>
+
+<div class="documents-search" style="display: flex; align-items: center;">
+  <select id="documents-search-versions" style="display: inline; margin-right: 20px; height: 40px;">
+    
+      <option  value="1.63.1">
+        v1.63.1
+      </option>
+    
+      <option  value="1.60.0">
+        v1.60.0
+      </option>
+    
+      <option  value="1.59.0">
+        v1.59.0
+      </option>
+    
+      <option  value="1.58.0">
+        v1.58.0
+      </option>
+    
+      <option  value="1.57.0">
+        v1.57.0
+      </option>
+    
+      <option  value="1.56.0">
+        v1.56.0
+      </option>
+    
+      <option  value="1.55.0">
+        v1.55.0
+      </option>
+    
+      <option  value="1.54.0">
+        v1.54.0
+      </option>
+    
+      <option  value="1.53.0">
+        v1.53.0
+      </option>
+    
+      <option  value="1.52.0">
+        v1.52.0
+      </option>
+    
+      <option  value="1.51.0">
+        v1.51.0
+      </option>
+    
+      <option  value="1.50.0">
+        v1.50.0
+      </option>
+    
+      <option  value="1.49.0">
+        v1.49.0
+      </option>
+    
+      <option  value="1.48.0">
+        v1.48.0
+      </option>
+    
+      <option  value="1.47.0">
+        v1.47.0
+      </option>
+    
+      <option  value="1.46.0">
+        v1.46.0
+      </option>
+    
+      <option  value="1.45.0">
+        v1.45.0
+      </option>
+    
+      <option  value="1.44.0">
+        v1.44.0
+      </option>
+    
+      <option  value="1.43.0">
+        v1.43.0
+      </option>
+    
+      <option  value="1.42.0">
+        v1.42.0
+      </option>
+    
+      <option  value="1.41.0">
+        v1.41.0
+      </option>
+    
+      <option  value="1.40.1">
+        v1.40.1
+      </option>
+    
+      <option  value="1.40.0">
+        v1.40.0
+      </option>
+    
+      <option  value="1.39.1">
+        v1.39.1
+      </option>
+    
+      <option  value="1.39.0">
+        v1.39.0
+      </option>
+    
+      <option  value="1.38.2">
+        v1.38.2
+      </option>
+    
+      <option  value="1.38.1">
+        v1.38.1
+      </option>
+    
+      <option  value="1.38.0">
+        v1.38.0
+      </option>
+    
+      <option  value="1.37.0">
+        v1.37.0
+      </option>
+    
+      <option  value="1.36.1">
+        v1.36.1
+      </option>
+    
+      <option  value="1.36.0">
+        v1.36.0
+      </option>
+    
+      <option  value="1.35.1">
+        v1.35.1
+      </option>
+    
+      <option  value="1.35.0">
+        v1.35.0
+      </option>
+    
+      <option  value="1.34.0">
+        v1.34.0
+      </option>
+    
+      <option  value="1.33.1">
+        v1.33.1
+      </option>
+    
+      <option  value="1.33.0">
+        v1.33.0
+      </option>
+    
+      <option  value="1.32.2">
+        v1.32.2
+      </option>
+    
+      <option  value="1.32.1">
+        v1.32.1
+      </option>
+    
+      <option  value="1.32.0">
+        v1.32.0
+      </option>
+    
+      <option  value="1.31.2">
+        v1.31.2
+      </option>
+    
+      <option  value="1.31.1">
+        v1.31.1
+      </option>
+    
+      <option  value="1.31.0">
+        v1.31.0
+      </option>
+    
+      <option  value="1.30.0">
+        v1.30.0
+      </option>
+    
+      <option  value="1.29.0">
+        v1.29.0
+      </option>
+    
+      <option  value="1.28.2">
+        v1.28.2
+      </option>
+    
+      <option  value="1.28.1">
+        v1.28.1
+      </option>
+    
+      <option  value="1.28.0">
+        v1.28.0
+      </option>
+    
+      <option  value="1.27.2">
+        v1.27.2
+      </option>
+    
+      <option  value="1.27.1">
+        v1.27.1
+      </option>
+    
+      <option  value="1.27.0">
+        v1.27.0
+      </option>
+    
+      <option  value="1.26.1">
+        v1.26.1
+      </option>
+    
+      <option  value="1.26.0">
+        v1.26.0
+      </option>
+    
+      <option  value="1.25.1">
+        v1.25.1
+      </option>
+    
+      <option  value="1.25.0">
+        v1.25.0
+      </option>
+    
+      <option  value="1.24.1">
+        v1.24.1
+      </option>
+    
+      <option  value="1.24.0">
+        v1.24.0
+      </option>
+    
+      <option  value="1.23.3">
+        v1.23.3
+      </option>
+    
+      <option  value="1.23.2">
+        v1.23.2
+      </option>
+    
+      <option  value="1.23.1">
+        v1.23.1
+      </option>
+    
+      <option  value="1.23.0">
+        v1.23.0
+      </option>
+    
+      <option  value="1.22.1">
+        v1.22.1
+      </option>
+    
+      <option  value="1.22.0">
+        v1.22.0
+      </option>
+    
+      <option  value="1.21.2">
+        v1.21.2
+      </option>
+    
+      <option  value="1.21.1">
+        v1.21.1
+      </option>
+    
+      <option  value="1.21.0">
+        v1.21.0
+      </option>
+    
+      <option  value="1.20.1">
+        v1.20.1
+      </option>
+    
+      <option  value="1.20.0">
+        v1.20.0
+      </option>
+    
+      <option  value="1.19.7">
+        v1.19.7
+      </option>
+    
+      <option  value="1.19.6">
+        v1.19.6
+      </option>
+    
+      <option  value="1.19.5">
+        v1.19.5
+      </option>
+    
+      <option  value="1.19.4">
+        v1.19.4
+      </option>
+    
+      <option  value="1.19.3">
+        v1.19.3
+      </option>
+    
+      <option  value="1.19.2">
+        v1.19.2
+      </option>
+    
+      <option  value="1.19.1">
+        v1.19.1
+      </option>
+    
+      <option  value="1.19.0">
+        v1.19.0
+      </option>
+    
+      <option  value="1.18.0">
+        v1.18.0
+      </option>
+    
+      <option  value="1.17.2">
+        v1.17.2
+      </option>
+    
+      <option  value="1.17.1">
+        v1.17.1
+      </option>
+    
+      <option  value="1.17.0">
+        v1.17.0
+      </option>
+    
+      <option  value="1.16.0">
+        v1.16.0
+      </option>
+    
+      <option  value="1.15.0">
+        v1.15.0
+      </option>
+    
+      <option  value="1.14.4">
+        v1.14.4
+      </option>
+    
+      <option  value="1.14.3">
+        v1.14.3
+      </option>
+    
+      <option  value="1.14.2">
+        v1.14.2
+      </option>
+    
+      <option  value="1.14.1">
+        v1.14.1
+      </option>
+    
+      <option  value="1.14.0">
+        v1.14.0
+      </option>
+    
+      <option  value="1.13.1">
+        v1.13.1
+      </option>
+    
+      <option  value="1.13.0">
+        v1.13.0
+      </option>
+    
+      <option  value="1.12.9">
+        v1.12.9
+      </option>
+    
+      <option  value="1.12.8">
+        v1.12.8
+      </option>
+    
+      <option  value="1.12.7">
+        v1.12.7
+      </option>
+    
+      <option  value="1.12.6">
+        v1.12.6
+      </option>
+    
+      <option  value="1.12.5">
+        v1.12.5
+      </option>
+    
+      <option  value="1.12.4">
+        v1.12.4
+      </option>
+    
+      <option  value="1.12.3">
+        v1.12.3
+      </option>
+    
+      <option  value="1.12.2">
+        v1.12.2
+      </option>
+    
+      <option  value="1.12.1">
+        v1.12.1
+      </option>
+    
+      <option  value="1.12.0">
+        v1.12.0
+      </option>
+    
+      <option  value="1.11.2">
+        v1.11.2
+      </option>
+    
+      <option  value="1.11.1">
+        v1.11.1
+      </option>
+    
+      <option  value="1.11.0">
+        v1.11.0
+      </option>
+    
+      <option  value="1.10.2">
+        v1.10.2
+      </option>
+    
+      <option  value="1.10.1">
+        v1.10.1
+      </option>
+    
+      <option  value="1.10.0">
+        v1.10.0
+      </option>
+    
+      <option  value="1.9.9">
+        v1.9.9
+      </option>
+    
+      <option  value="1.9.8">
+        v1.9.8
+      </option>
+    
+      <option  value="1.9.7">
+        v1.9.7
+      </option>
+    
+      <option  value="1.9.6">
+        v1.9.6
+      </option>
+    
+      <option  value="1.9.5">
+        v1.9.5
+      </option>
+    
+      <option  value="1.9.4">
+        v1.9.4
+      </option>
+    
+      <option  value="1.9.3">
+        v1.9.3
+      </option>
+    
+      <option  value="1.9.2">
+        v1.9.2
+      </option>
+    
+      <option  value="1.9.1">
+        v1.9.1
+      </option>
+    
+      <option  value="1.9.0">
+        v1.9.0
+      </option>
+    
+      <option  value="1.8.0">
+        v1.8.0
+      </option>
+    
+      <option  value="1.7.4">
+        v1.7.4
+      </option>
+    
+      <option  value="1.7.3">
+        v1.7.3
+      </option>
+    
+      <option  value="1.7.2">
+        v1.7.2
+      </option>
+    
+      <option  value="1.7.1">
+        v1.7.1
+      </option>
+    
+      <option  value="1.7.0">
+        v1.7.0
+      </option>
+    
+      <option  value="1.6.2">
+        v1.6.2
+      </option>
+    
+      <option  value="1.6.1">
+        v1.6.1
+      </option>
+    
+      <option  value="1.6.0">
+        v1.6.0
+      </option>
+    
+      <option  value="1.5.4">
+        v1.5.4
+      </option>
+    
+      <option  value="1.5.3">
+        v1.5.3
+      </option>
+    
+      <option  value="1.5.2">
+        v1.5.2
+      </option>
+    
+      <option  value="1.5.1">
+        v1.5.1
+      </option>
+    
+      <option  value="1.5.0">
+        v1.5.0
+      </option>
+    
+      <option  value="1.4.3">
+        v1.4.3
+      </option>
+    
+      <option  value="1.4.2">
+        v1.4.2
+      </option>
+    
+      <option  value="1.4.1">
+        v1.4.1
+      </option>
+    
+      <option  value="1.4.0">
+        v1.4.0
+      </option>
+    
+      <option  value="1.3.3">
+        v1.3.3
+      </option>
+    
+      <option  value="1.3.2">
+        v1.3.2
+      </option>
+    
+      <option  value="1.3.1">
+        v1.3.1
+      </option>
+    
+      <option  value="1.3.0">
+        v1.3.0
+      </option>
+    
+      <option  value="1.2.4">
+        v1.2.4
+      </option>
+    
+      <option  value="1.2.3">
+        v1.2.3
+      </option>
+    
+      <option  value="1.2.2">
+        v1.2.2
+      </option>
+    
+      <option  value="1.2.1">
+        v1.2.1
+      </option>
+    
+      <option  value="1.2.0">
+        v1.2.0
+      </option>
+    
+      <option  value="1.1.0">
+        v1.1.0
+      </option>
+    
+      <option  value="1.0.19">
+        v1.0.19
+      </option>
+    
+      <option  value="1.0.18">
+        v1.0.18
+      </option>
+    
+      <option  value="1.0.17">
+        v1.0.17
+      </option>
+    
+      <option  value="1.0.16">
+        v1.0.16
+      </option>
+    
+      <option  value="1.0.15">
+        v1.0.15
+      </option>
+    
+      <option  value="1.0.14">
+        v1.0.14
+      </option>
+    
+      <option  value="1.0.13">
+        v1.0.13
+      </option>
+    
+      <option  value="1.0.12">
+        v1.0.12
+      </option>
+    
+      <option  value="1.0.11">
+        v1.0.11
+      </option>
+    
+      <option  value="1.0.10">
+        v1.0.10
+      </option>
+    
+      <option  value="1.0.9">
+        v1.0.9
+      </option>
+    
+      <option  value="1.0.8">
+        v1.0.8
+      </option>
+    
+      <option  value="1.0.7">
+        v1.0.7
+      </option>
+    
+      <option  value="1.0.6">
+        v1.0.6
+      </option>
+    
+      <option  value="1.0.5">
+        v1.0.5
+      </option>
+    
+      <option  value="1.0.4">
+        v1.0.4
+      </option>
+    
+      <option  value="1.0.3">
+        v1.0.3
+      </option>
+    
+      <option  value="1.0.2">
+        v1.0.2
+      </option>
+    
+      <option  value="1.0.1">
+        v1.0.1
+      </option>
+    
+      <option  value="1.0.0">
+        v1.0.0
+      </option>
+    
+  </select>
+  <form accept-charset="UTF-8" action="/search" id="articles-search" method="get" style="width: 100%"><div style="margin:0;padding:0;display:inline;"><input name="utf8" type="hidden" value="✓"></div>
+    <input type="text" name="q" id="quicksearch-query" class="documents-search-input js-articles-quicksearch" placeholder="Search the Flight Manual" autocomplete="off">
+  </form>
+</div>
+
+<div class="autocomplete-results" style="display: none;">
+  <div class="result-group"></div>
+</div>
+
+
+        <div class="toc">
+          
+
+
+  <h4>
+    <a href="/getting-started">Chapter 1: Getting Started</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/why-atom">Why Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/installing-atom">Installing Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/atom-basics">Atom Basics</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/using-atom">Chapter 2: Using Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-packages">Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/moving-in-atom">Moving in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-selections">Atom Selections</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/editing-and-deleting-text">Editing and Deleting Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/find-and-replace">Find and Replace</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/snippets">Snippets</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/autocomplete">Autocomplete</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/folding">Folding</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/panes">Panes</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/pending-pane-items">Pending Pane Items</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/grammar">Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/version-control-in-atom">Version Control in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/github-package">GitHub package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/writing-in-atom">Writing in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/basic-customization">Basic Customization</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/hacking-atom">Chapter 3: Hacking Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/tools-of-the-trade">Tools of the Trade</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/the-init-file">The Init File</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-word-count">Package: Word Count</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-modifying-text">Package: Modifying Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-active-editor-info">Package: Active Editor Info</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-theme">Creating a Theme</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-grammar">Creating a Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-legacy-textmate-grammar">Creating a Legacy TextMate Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/publishing">Publishing</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/iconography">Iconography</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/debugging">Debugging</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/writing-specs">Writing specs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/handling-uris">Handling URIs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/cross-platform-compatibility">Cross-Platform Compatibility</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/converting-from-textmate">Converting from TextMate</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/hacking-on-atom-core">Hacking on Atom Core</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/contributing-to-official-atom-packages">Contributing to Official Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-fork-of-a-core-package-in-atom-atom">Creating a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/maintaining-a-fork-of-a-core-package-in-atom-atom">Maintaining a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/behind-atom">Chapter 4: Behind Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/configuration-api">Configuration API</a>
+      </li>
+    
+      <li class="selected">
+        <a href="/behind-atom/sections/keymaps-in-depth">Keymaps In-Depth</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors">Scoped Settings, Scopes and Scope Descriptors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/serialization-in-atom">Serialization in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/developing-node-modules">Developing Node Modules</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/interacting-with-other-packages-via-services">Interacting With Other Packages Via Services</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/maintaining-your-packages">Maintaining Your Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/how-atom-uses-chromium-snapshots">How Atom Uses Chromium Snapshots</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+
+
+
+
+<h4>
+  <a href="/api/v1.63.1/">Reference: API</a>
+</h4>
+<ul>
+  
+    <li>
+      <a href="/api/v1.63.1/AtomEnvironment/">AtomEnvironment</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedNodeProcess/">BufferedNodeProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedProcess/">BufferedProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Clipboard/">Clipboard</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Color/">Color</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CommandRegistry/">CommandRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CompositeDisposable/">CompositeDisposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Config/">Config</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ContextMenuManager/">ContextMenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Cursor/">Cursor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Decoration/">Decoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DeserializerManager/">DeserializerManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Directory/">Directory</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarker/">DisplayMarker</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarkerLayer/">DisplayMarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Disposable/">Disposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Dock/">Dock</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Emitter/">Emitter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/File/">File</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GitRepository/">GitRepository</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Grammar/">Grammar</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GrammarRegistry/">GrammarRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Gutter/">Gutter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/HistoryManager/">HistoryManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/KeymapManager/">KeymapManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/LayerDecoration/">LayerDecoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MarkerLayer/">MarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MenuManager/">MenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Notification/">Notification</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/NotificationManager/">NotificationManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Package/">Package</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PackageManager/">PackageManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Pane/">Pane</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Panel/">Panel</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PathWatcher/">PathWatcher</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Point/">Point</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Project/">Project</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Range/">Range</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ScopeDescriptor/">ScopeDescriptor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Selection/">Selection</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/StyleManager/">StyleManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Task/">Task</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextBuffer/">TextBuffer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextEditor/">TextEditor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ThemeManager/">ThemeManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TooltipManager/">TooltipManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ViewRegistry/">ViewRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Workspace/">Workspace</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/WorkspaceCenter/">WorkspaceCenter</a>
+    </li>
+  
+</ul>
+
+
+  <h4>
+    <a href="/resources">Appendix A: Resources</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/resources/sections/glossary">Glossary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/faq">Appendix B: FAQ</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/faq/sections/is-atom-open-source">Is Atom open source?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-atom-cost">What does Atom cost?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-platforms-does-atom-run-on">What platforms does Atom run on?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-contribute-to-atom">How can I contribute to Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-atom-collect-usage-data">Why does Atom collect usage data?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/atom-in-the-cloud">Atom in the cloud?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-s-the-difference-between-an-ide-and-an-editor">What's the difference between an IDE and an editor?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-tell-if-subpixel-antialiasing-is-working">How can I tell if subpixel antialiasing is working?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-is-atom-deleting-trailing-whitespace-why-is-there-a-newline-at-the-end-of-the-file">Why is Atom deleting trailing whitespace? Why is there a newline at the end of the file?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-safe-mode-do">What does Safe Mode do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-have-a-question-about-a-specific-atom-community-package-where-is-the-best-place-to-ask-it">I have a question about a specific Atom community package. Where is the best place to ask it?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-using-an-international-keyboard-and-keys-that-use-altgr-or-ctrl-alt-aren-t-working">I’m using an international keyboard and keys that use AltGr or Ctrl+Alt aren’t working</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-julia-what-do-i-do">I’m having a problem with Julia! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-getting-an-error-about-a-self-signed-certificate-what-do-i-do">I’m getting an error about a “self-signed certificate”. What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-platformio-what-do-i-do">I’m having a problem with PlatformIO! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-atom-recognize-a-file-with-extension-x-as-language-y">How do I make Atom recognize a file with extension X as language Y?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-the-welcome-screen-stop-showing-up">How do I make the Welcome screen stop showing up?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-preview-web-page-changes-automatically">How do I preview web page changes automatically?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-accept-input-from-my-program-or-script-when-using-the-script-package">How do I accept input from my program or script when using the script package?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-am-unable-to-update-to-the-latest-version-of-atom-on-macos-how-do-i-fix-this">I am unable to update to the latest version of Atom on macOS. How do I fix this?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-trying-to-change-my-syntax-colors-from-styles-less-but-it-isn-t-working">I’m trying to change my syntax colors from styles.less, but it isn’t working!</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-build-or-execute-code-i-ve-written-in-atom">How do I build or execute code I've written in Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-uninstall-atom-on-macos">How do I uninstall Atom on macOS?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/macos-mojave-font-rendering-change">macOS Mojave font rendering change</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-macos-say-that-atom-wants-to-access-my-calendar-contacts-photos-etc">Why does macOS say that Atom wants to access my calendar, contacts, photos, etc.?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-turn-on-line-wrap">How do I turn on line wrap?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/the-menu-bar-disappeared-how-do-i-get-it-back">The menu bar disappeared, how do I get it back?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-use-a-newline-in-the-result-of-find-and-replace">How do I use a newline in the result of find and replace?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-is-this-line-on-the-right-in-the-editor-view">What is this line on the right in the editor view?</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/shadow-dom">Appendix C: Shadow DOM</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/shadow-dom/sections/removing-shadow-dom-styles">Removing Shadow DOM styles</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/upgrading-to-1-0-apis">Appendix D: Upgrading to 1.0 APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-package">Upgrading Your Package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-ui-theme-or-package-selectors">Upgrading Your UI Theme Or Package Selectors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-syntax-theme">Upgrading Your Syntax Theme</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/atom-server-side-apis">Appendix E: Atom server-side APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-package-server-api">Atom package server API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-update-server-api">Atom update server API</a>
+      </li>
+    
+  </ul>
+
+
+        </div>
+
+        
+        <h1 class="document-title">
+          <div id="platform-nav">
+  <span class="octicon octicon-device-desktop"></span>
+  <ul>
+    <li class="platform-mac">
+      <a href="#platform-mac" data-platform="mac">
+        mac
+      </a>
+    </li>
+    <li class="platform-windows">
+      <a href="#platform-windows" data-platform="windows">
+        windows
+      </a>
+    </li>
+    <li class="platform-linux">
+      <a href="#platform-linux" data-platform="linux">
+        linux
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <a class="improve-link"
+              href="https://github.com/atom/flight-manual.atom.io/edit/master/content/behind-atom/sections/keymaps-in-depth.md" data-proofer-ignore>
+            <span class="octicon octicon-pencil"></span> Improve this page
+          </a>
+        </h1>
+
+        <div class="markdown-body document-content">
+          
+          <h3>
+<a id="keymaps-in-depth" class="anchor" href="#keymaps-in-depth" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keymaps In-Depth</h3>
+
+<h4>
+<a id="structure-of-a-keymap-file" class="anchor" href="#structure-of-a-keymap-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Structure of a Keymap File</h4>
+
+<p>Keymap files are encoded as JSON or CSON files containing nested hashes. They work much like style sheets, but instead of applying style properties to elements matching the selector, they specify the meaning of keystrokes on elements matching the selector. Here is an example of some bindings that apply when keystrokes pass through <code>atom-text-editor</code> elements:</p>
+
+<div class="platform-mac">
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'cmd-delete'</span><span class="o">:</span> <span class="s">'editor:delete-to-beginning-of-line'</span>
+  <span class="s">'alt-backspace'</span><span class="o">:</span> <span class="s">'editor:delete-to-beginning-of-word'</span>
+  <span class="s">'ctrl-A'</span><span class="o">:</span> <span class="s">'editor:select-to-first-character-of-line'</span>
+  <span class="s">'ctrl-shift-e'</span><span class="o">:</span> <span class="s">'editor:select-to-end-of-line'</span>
+  <span class="s">'cmd-left'</span><span class="o">:</span> <span class="s">'editor:move-to-first-character-of-line'</span>
+
+<span class="s">'atom-text-editor:not([mini])'</span><span class="o">:</span>
+  <span class="s">'cmd-alt-['</span><span class="o">:</span> <span class="s">'editor:fold-current-row'</span>
+  <span class="s">'cmd-alt-]'</span><span class="o">:</span> <span class="s">'editor:unfold-current-row'</span>
+</code></pre></div>
+
+</div>
+
+<div class="platform-windows">
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'ctrl-left'</span><span class="o">:</span> <span class="s">'editor:move-to-beginning-of-word'</span>
+  <span class="s">'ctrl-right'</span><span class="o">:</span> <span class="s">'editor:move-to-end-of-word'</span>
+  <span class="s">'ctrl-shift-left'</span><span class="o">:</span> <span class="s">'editor:select-to-beginning-of-word'</span>
+  <span class="s">'ctrl-shift-right'</span><span class="o">:</span> <span class="s">'editor:select-to-end-of-word'</span>
+  <span class="s">'ctrl-backspace'</span><span class="o">:</span> <span class="s">'editor:delete-to-beginning-of-word'</span>
+  <span class="s">'ctrl-delete'</span><span class="o">:</span> <span class="s">'editor:delete-to-end-of-word'</span>
+
+<span class="s">'atom-text-editor:not([mini])'</span><span class="o">:</span>
+  <span class="s">'ctrl-alt-['</span><span class="o">:</span> <span class="s">'editor:fold-current-row'</span>
+  <span class="s">'ctrl-alt-]'</span><span class="o">:</span> <span class="s">'editor:unfold-current-row'</span>
+</code></pre></div>
+
+</div>
+
+<div class="platform-linux">
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'ctrl-left'</span><span class="o">:</span> <span class="s">'editor:move-to-beginning-of-word'</span>
+  <span class="s">'ctrl-right'</span><span class="o">:</span> <span class="s">'editor:move-to-end-of-word'</span>
+  <span class="s">'ctrl-shift-left'</span><span class="o">:</span> <span class="s">'editor:select-to-beginning-of-word'</span>
+  <span class="s">'ctrl-shift-right'</span><span class="o">:</span> <span class="s">'editor:select-to-end-of-word'</span>
+  <span class="s">'ctrl-backspace'</span><span class="o">:</span> <span class="s">'editor:delete-to-beginning-of-word'</span>
+  <span class="s">'ctrl-delete'</span><span class="o">:</span> <span class="s">'editor:delete-to-end-of-word'</span>
+
+<span class="s">'atom-text-editor:not([mini])'</span><span class="o">:</span>
+  <span class="s">'ctrl-alt-['</span><span class="o">:</span> <span class="s">'editor:fold-current-row'</span>
+  <span class="s">'ctrl-alt-]'</span><span class="o">:</span> <span class="s">'editor:unfold-current-row'</span>
+</code></pre></div>
+
+</div>
+
+<p>Beneath the first selector are several keybindings, mapping specific key combinations to commands. When an element with the <code>atom-text-editor</code> class is focused and <kbd class="platform-mac">Alt+Backspace</kbd><kbd class="platform-windows platform-linux">Ctrl+Backspace</kbd> is pressed, a custom DOM event called <code>editor:delete-to-beginning-of-word</code> is emitted on the <code>atom-text-editor</code> element.</p>
+
+<p>The second selector group also targets editors, but only if they don't have the <code>mini</code> attribute. In this example, the commands for code folding don't really make sense on mini-editors, so the selector restricts them to regular editors.</p>
+
+<h5>
+<a id="key-combinations" class="anchor" href="#key-combinations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Combinations</h5>
+
+<p>Key combinations express one or more keys combined with optional modifier keys. For example: <code>ctrl-w v</code>, or <code>cmd-shift-up</code>. A key combination is composed of the following symbols, separated by a <code>-</code>. A key sequence can be expressed as key combinations separated by spaces.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Character literals</td>
+<td align="left">
+<code>a</code> <code>4</code> <code>$</code>
+</td>
+</tr>
+<tr>
+<td align="left">Modifier keys</td>
+<td align="left">
+<code>cmd</code> <code>ctrl</code> <code>alt</code> <code>shift</code>
+</td>
+</tr>
+<tr>
+<td align="left">Special keys</td>
+<td align="left">
+<code>enter</code> <code>escape</code> <code>backspace</code> <code>delete</code> <code>tab</code> <code>home</code> <code>end</code> <code>pageup</code> <code>pagedown</code> <code>left</code> <code>right</code> <code>up</code> <code>down</code> <code>space</code>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h5>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commands</h5>
+
+<p>Commands are custom DOM events that are triggered when a key combination or sequence matches a binding. This allows user interface code to listen for named commands without specifying the specific keybinding that triggers it. For example, the following code creates a command to insert the current date in an editor:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nx">atom</span><span class="p">.</span><span class="nx">commands</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">atom-text-editor</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">user:insert-date</span><span class="dl">'</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">editor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getModel</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">insertText</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleString</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p><code>atom.commands</code> refers to the global <code>CommandRegistry</code> instance where all commands are set and consequently picked up by the command palette.</p>
+
+<p>When you are looking to bind new keys, it is often useful to use the Command Palette (<kbd class="platform-mac">Cmd+Shift+P</kbd><kbd class="platform-windows platform-linux">Ctrl+Shift+P</kbd>) to discover what commands are being listened for in a given focus context. Commands are "humanized" following a simple algorithm, so a command like <code>editor:fold-current-row</code> would appear as "Editor: Fold Current Row".</p>
+
+<h5>
+<a id="composed-commands" class="anchor" href="#composed-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Composed" Commands</h5>
+
+<p>A common question is, "How do I make a single keybinding execute two or more commands?" There isn't any direct support for this in Atom, but it can be achieved by creating a custom command that performs the multiple actions you desire and then creating a keybinding for that command. For example, let's say I want to create a "composed" command that performs a Select Line followed by Cut. You could add the following to your <code>init.coffee</code>:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nx">atom</span><span class="p">.</span><span class="nx">commands</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">atom-text-editor</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">custom:cut-line</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">editor</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getModel</span><span class="p">();</span>
+  <span class="nx">editor</span><span class="p">.</span><span class="nx">selectLinesContainingCursors</span><span class="p">();</span>
+  <span class="nx">editor</span><span class="p">.</span><span class="nx">cutSelectedText</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Then let's say we want to map this custom command to <code>alt-ctrl-z</code>, you could add the following to your keymap:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'alt-ctrl-z'</span><span class="o">:</span> <span class="s">'custom:cut-line'</span>
+</code></pre></div>
+
+<h5>
+<a id="specificity-and-cascade-order" class="anchor" href="#specificity-and-cascade-order" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specificity and Cascade Order</h5>
+
+<p>As is the case with CSS applying styles, when multiple bindings match for a single element, the conflict is resolved by choosing the most <em>specific</em> selector. If two matching selectors have the same specificity, the binding for the selector appearing later in the cascade takes precedence.</p>
+
+<p>Currently, there's no way to specify selector ordering within a single keymap, because JSON objects do not preserve order. We handle cases where selector ordering is critical by breaking the keymap into separate files, such as <code>snippets-1.cson</code> and <code>snippets-2.cson</code>.</p>
+
+<h5>
+<a id="selectors-and-custom-packages" class="anchor" href="#selectors-and-custom-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Selectors and Custom Packages</h5>
+
+<p>If a keybinding should only apply to a specific grammar, you can limit bindings to that grammar using the <code>data-grammar</code> attribute on the <code>atom-text-editor</code> element:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">"atom-text-editor[data-grammar='source example']"</span><span class="o">:</span>
+  <span class="s">'ctrl-.'</span><span class="o">:</span> <span class="s">'custom:custom-command'</span>
+</code></pre></div>
+
+<p>While selectors can be applied to the entire editor by what grammar is associated with it, they cannot be applied to scopes defined within the grammar or to sub-elements of <code>atom-text-editor</code>.</p>
+
+<h4>
+<a id="removing-bindings" class="anchor" href="#removing-bindings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Removing Bindings</h4>
+
+<p>When the keymap system encounters a binding with the <code>unset!</code> directive as its command, it will treat the current element as if it had no key bindings matching the current keystroke sequence and continue searching from its parent. For example, the following code removes the keybinding for <code>a</code> in the Tree View, which is normally used to trigger the <code>tree-view:add-file</code> command:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'.tree-view'</span><span class="o">:</span>
+  <span class="s">'a'</span><span class="o">:</span> <span class="s">'unset!'</span>
+</code></pre></div>
+
+<p><img src="../../images/keybinding.png" alt="Keybinding Resolver"></p>
+
+<p>But if some element above the Tree View had a keybinding for <code>a</code>, that keybinding would still execute even when the focus is inside the Tree View.</p>
+
+<p>When the keymap system encounters a binding with the <code>abort!</code> directive as its command, it will stop searching for a keybinding. For example, the following code removes the keybinding for <kbd class="platform-mac">Cmd+O</kbd><kbd class="platform-windows platform-linux">Ctrl+O</kbd> when the selection is inside an editor pane:</p>
+
+<div class="platform-mac">
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'cmd-o'</span><span class="o">:</span> <span class="s">'abort!'</span>
+</code></pre></div>
+
+</div>
+
+<div class="platform-windows">
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'ctrl-o'</span><span class="o">:</span> <span class="s">'abort!'</span>
+</code></pre></div>
+
+</div>
+
+<div class="platform-linux">
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="s">'atom-text-editor'</span><span class="o">:</span>
+  <span class="s">'ctrl-o'</span><span class="o">:</span> <span class="s">'abort!'</span>
+</code></pre></div>
+
+</div>
+
+<p>But if you click inside the Tree View and press <kbd class="platform-mac">Cmd+O</kbd><kbd class="platform-windows platform-linux">Ctrl+O</kbd>, it will work.</p>
+
+<h4>
+<a id="forcing-chromiums-native-keystroke-handling" class="anchor" href="#forcing-chromiums-native-keystroke-handling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forcing Chromium's Native Keystroke Handling</h4>
+
+<p>If you want to force the native browser behavior for a given keystroke, use the <code>native!</code> directive as the command of a binding. This can be useful to enable the correct behavior in native input elements.  If you apply the <code>.native-key-bindings</code> class to an element, all the keystrokes typically handled by the browser will be assigned the <code>native!</code> directive.</p>
+
+<div class="alert tip">
+
+<p><strong>Tip:</strong> Components and input elements may not correctly handle backspace and arrow keys without forcing this behavior.  If your backspace isn't working correctly inside of a component, add either the directive or the <code>.native-key-bindings</code> class.</p>
+
+</div>
+
+<h4>
+<a id="overloading-key-bindings" class="anchor" href="#overloading-key-bindings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overloading Key Bindings</h4>
+
+<p>Occasionally, it makes sense to layer multiple actions on top of the same key binding. An example of this is the snippets package. Snippets are inserted by typing a snippet prefix such as <code>for</code> and then pressing <kbd class="platform-all">Tab</kbd>. Every time <kbd class="platform-all">Tab</kbd> is pressed, we want to execute code attempting to expand a snippet if one exists for the text preceding the cursor. If a snippet <em>doesn't</em> exist, we want <kbd class="platform-all">Tab</kbd> to actually insert whitespace.</p>
+
+<p>To achieve this, the snippets package makes use of the <code>.abortKeyBinding()</code> method on the event object representing the <code>snippets:expand</code> command.</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="c1">// pseudo-code</span>
+<span class="nx">editor</span><span class="p">.</span><span class="nx">command</span><span class="p">(</span><span class="dl">'</span><span class="s1">snippets:expand</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cursorFollowsValidPrefix</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">expandSnippet</span><span class="p">();</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">abortKeyBinding</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>When the event handler observes that the cursor does not follow a valid prefix, it calls <code>e.abortKeyBinding()</code>, telling the keymap system to continue searching for another matching binding.</p>
+
+<h4>
+<a id="step-by-step-how-keydown-events-are-mapped-to-commands" class="anchor" href="#step-by-step-how-keydown-events-are-mapped-to-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step-by-Step: How Keydown Events are Mapped to Commands</h4>
+
+<ul>
+<li>A keydown event occurs on a <em>focused</em> element.</li>
+<li>Starting at the focused element, the keymap walks upward towards the root of
+the document, searching for the most specific CSS selector that matches the
+current DOM element and also contains a keystroke pattern matching the keydown
+event.</li>
+<li>When a matching keystroke pattern is found, the search is terminated and the
+pattern's corresponding command is triggered on the current element.</li>
+<li>If <code>.abortKeyBinding()</code> is called on the triggered event object, the search
+is resumed, triggering a binding on the next-most-specific CSS selector for
+the same element or continuing upward to parent elements.</li>
+<li>If no bindings are found, the event is handled by Chromium normally.</li>
+</ul>
+
+<h4>
+<a id="overriding-atoms-keyboard-layout-recognition" class="anchor" href="#overriding-atoms-keyboard-layout-recognition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overriding Atom's Keyboard Layout Recognition</h4>
+
+<p>Sometimes the problem isn't mapping the command to a key combination, the problem is that Atom doesn't recognize properly what keys you're pressing. This is due to <a href="https://blog.atom.io/2016/10/17/the-wonderful-world-of-keyboards.html">some limitations in how Chromium reports keyboard events</a>. But even this can be customized now.</p>
+
+<p>You can add the following to your <code>init.coffee</code> to send <kbd class="platform-all">Ctrl+@</kbd> when you press <kbd class="platform-all">Ctrl+Alt+G</kbd>:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="nx">atom</span><span class="p">.</span><span class="na">keymaps</span><span class="p">.</span><span class="na">addKeystrokeResolver</span> <span class="p">({</span><span class="nx">event</span><span class="p">})</span> <span class="o">-&gt;</span>
+  <span class="k">if</span> <span class="nx">event</span><span class="p">.</span><span class="na">code</span> <span class="o">is</span> <span class="s">'KeyG'</span> <span class="o">and</span> <span class="nx">event</span><span class="p">.</span><span class="na">altKey</span> <span class="o">and</span> <span class="nx">event</span><span class="p">.</span><span class="na">ctrlKey</span> <span class="o">and</span> <span class="nx">event</span><span class="p">.</span><span class="na">type</span> <span class="o">isnt</span> <span class="s">'keyup'</span>
+    <span class="k">return</span> <span class="s">'ctrl-@'</span>
+</code></pre></div>
+
+<p>Or if you've converted your init script to JavaScript:</p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nx">atom</span><span class="p">.</span><span class="nx">keymaps</span><span class="p">.</span><span class="nx">addKeystrokeResolver</span><span class="p">(({</span><span class="nx">event</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">KeyG</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nx">altKey</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nx">ctrlKey</span> <span class="o">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nx">type</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">keyup</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">ctrl-@</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>If you want to know the <code>event</code> for the keystroke you pressed you can paste the following script to your <a href="https://flight-manual.atom.io/hacking-atom/sections/debugging/#check-for-errors-in-the-developer-tools">developer tools console</a></p>
+
+<div class="highlight highlight-javascript"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">keydown</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+</code></pre></div>
+
+<p>This will print every keypress event in Atom to the console so you can inspect <code>KeyboardEvent.key</code> and <code>KeyboardEvent.code</code>.</p>
+        </div>
+      </div>
+      <div class="footer-pad"></div>
+    </div>
+    <footer>
+  <div class="footer">
+    <div class="wrapper no-pad">
+      <ul class="footer-left">
+        <li><a href="https://atom.io/terms">Terms of Use</a></li>
+        <li><a href="https://help.github.com/articles/github-privacy-policy/">Privacy</a></li>
+        <li><a href="https://github.com/atom/atom/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://atom.io/releases">Releases</a></li>
+        <li><a href="https://atom.io/faq">FAQ</a></li>
+        <li><a href="https://atom.io/contact">Contact</a></li>
+        <li><a href="https://github.com/atom/flight-manual.atom.io/blob/master/CONTRIBUTING.md">Contribute!</a></li>
+      </ul>
+
+      <div class="footer-right">
+        <a href="https://github.com"><span class="octicon octicon-code"></span> with <span class="octicon octicon-heart"></span> by <span class="octicon octicon-logo-github"></span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

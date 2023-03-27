@@ -1,0 +1,2008 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Upgrading Your Package</title>
+
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" media="all" href="/assets/stylesheets/application.css" data-proofer-ignore>
+
+<link rel="stylesheet" media="all" href="/assets/stylesheets/development.css" data-proofer-ignore>
+
+
+<script type="text/javascript" src="/assets/javascripts/application.js"></script>
+
+  </head>
+  <body class="layout-article">
+    <div class="footer-push">
+      <div class="top-bar">
+  <div class="wrapper no-pad">
+
+    <ul class="navigation">
+      <li><h1 title="Atom: A hackable text editor for the 21st Century"><a href="https://atom.io/" class="logo-small"></a></h1></li>
+      <li><a href="https://atom.io/packages">Packages</a></li>
+      <li><a href="https://atom.io/themes">Themes</a></li>
+      <li><a href="https://atom.io/docs" class="is-selected">Documentation</a></li>
+      <li><a href="https://blog.atom.io">Blog</a></li>
+      <li><a href="https://github.com/atom/atom/discussions">Discussions</a></li>
+    </ul>
+
+  </div>
+</div>
+
+      <div class="wrapper documents content-push wide">
+        <script id="quicksearch-results-template" type="text/mustache">
+  [[#entries]]
+    <a href="[[url]]" class="js-articles-quicksearch-link">[[title]]</a>
+  [[/entries]]
+  <a class="initial quicksearch-seemore" href="/search?q=">See more results</a>
+</script>
+
+<script id="search-results-template" type="text/mustache">
+  [[#entries]]
+    <li>
+      <h3>
+        <a href="[[url]]">[[title]]</a>
+        <div class="label"><a href="[[category_url]]">[[category]]</a></div>
+      </h3>
+      <p>
+      [[excerpt]]
+      </p>
+    </li>
+  [[/entries]]
+</script>
+
+<div class="documents-search" style="display: flex; align-items: center;">
+  <select id="documents-search-versions" style="display: inline; margin-right: 20px; height: 40px;">
+    
+      <option  value="1.63.1">
+        v1.63.1
+      </option>
+    
+      <option  value="1.60.0">
+        v1.60.0
+      </option>
+    
+      <option  value="1.59.0">
+        v1.59.0
+      </option>
+    
+      <option  value="1.58.0">
+        v1.58.0
+      </option>
+    
+      <option  value="1.57.0">
+        v1.57.0
+      </option>
+    
+      <option  value="1.56.0">
+        v1.56.0
+      </option>
+    
+      <option  value="1.55.0">
+        v1.55.0
+      </option>
+    
+      <option  value="1.54.0">
+        v1.54.0
+      </option>
+    
+      <option  value="1.53.0">
+        v1.53.0
+      </option>
+    
+      <option  value="1.52.0">
+        v1.52.0
+      </option>
+    
+      <option  value="1.51.0">
+        v1.51.0
+      </option>
+    
+      <option  value="1.50.0">
+        v1.50.0
+      </option>
+    
+      <option  value="1.49.0">
+        v1.49.0
+      </option>
+    
+      <option  value="1.48.0">
+        v1.48.0
+      </option>
+    
+      <option  value="1.47.0">
+        v1.47.0
+      </option>
+    
+      <option  value="1.46.0">
+        v1.46.0
+      </option>
+    
+      <option  value="1.45.0">
+        v1.45.0
+      </option>
+    
+      <option  value="1.44.0">
+        v1.44.0
+      </option>
+    
+      <option  value="1.43.0">
+        v1.43.0
+      </option>
+    
+      <option  value="1.42.0">
+        v1.42.0
+      </option>
+    
+      <option  value="1.41.0">
+        v1.41.0
+      </option>
+    
+      <option  value="1.40.1">
+        v1.40.1
+      </option>
+    
+      <option  value="1.40.0">
+        v1.40.0
+      </option>
+    
+      <option  value="1.39.1">
+        v1.39.1
+      </option>
+    
+      <option  value="1.39.0">
+        v1.39.0
+      </option>
+    
+      <option  value="1.38.2">
+        v1.38.2
+      </option>
+    
+      <option  value="1.38.1">
+        v1.38.1
+      </option>
+    
+      <option  value="1.38.0">
+        v1.38.0
+      </option>
+    
+      <option  value="1.37.0">
+        v1.37.0
+      </option>
+    
+      <option  value="1.36.1">
+        v1.36.1
+      </option>
+    
+      <option  value="1.36.0">
+        v1.36.0
+      </option>
+    
+      <option  value="1.35.1">
+        v1.35.1
+      </option>
+    
+      <option  value="1.35.0">
+        v1.35.0
+      </option>
+    
+      <option  value="1.34.0">
+        v1.34.0
+      </option>
+    
+      <option  value="1.33.1">
+        v1.33.1
+      </option>
+    
+      <option  value="1.33.0">
+        v1.33.0
+      </option>
+    
+      <option  value="1.32.2">
+        v1.32.2
+      </option>
+    
+      <option  value="1.32.1">
+        v1.32.1
+      </option>
+    
+      <option  value="1.32.0">
+        v1.32.0
+      </option>
+    
+      <option  value="1.31.2">
+        v1.31.2
+      </option>
+    
+      <option  value="1.31.1">
+        v1.31.1
+      </option>
+    
+      <option  value="1.31.0">
+        v1.31.0
+      </option>
+    
+      <option  value="1.30.0">
+        v1.30.0
+      </option>
+    
+      <option  value="1.29.0">
+        v1.29.0
+      </option>
+    
+      <option  value="1.28.2">
+        v1.28.2
+      </option>
+    
+      <option  value="1.28.1">
+        v1.28.1
+      </option>
+    
+      <option  value="1.28.0">
+        v1.28.0
+      </option>
+    
+      <option  value="1.27.2">
+        v1.27.2
+      </option>
+    
+      <option  value="1.27.1">
+        v1.27.1
+      </option>
+    
+      <option  value="1.27.0">
+        v1.27.0
+      </option>
+    
+      <option  value="1.26.1">
+        v1.26.1
+      </option>
+    
+      <option  value="1.26.0">
+        v1.26.0
+      </option>
+    
+      <option  value="1.25.1">
+        v1.25.1
+      </option>
+    
+      <option  value="1.25.0">
+        v1.25.0
+      </option>
+    
+      <option  value="1.24.1">
+        v1.24.1
+      </option>
+    
+      <option  value="1.24.0">
+        v1.24.0
+      </option>
+    
+      <option  value="1.23.3">
+        v1.23.3
+      </option>
+    
+      <option  value="1.23.2">
+        v1.23.2
+      </option>
+    
+      <option  value="1.23.1">
+        v1.23.1
+      </option>
+    
+      <option  value="1.23.0">
+        v1.23.0
+      </option>
+    
+      <option  value="1.22.1">
+        v1.22.1
+      </option>
+    
+      <option  value="1.22.0">
+        v1.22.0
+      </option>
+    
+      <option  value="1.21.2">
+        v1.21.2
+      </option>
+    
+      <option  value="1.21.1">
+        v1.21.1
+      </option>
+    
+      <option  value="1.21.0">
+        v1.21.0
+      </option>
+    
+      <option  value="1.20.1">
+        v1.20.1
+      </option>
+    
+      <option  value="1.20.0">
+        v1.20.0
+      </option>
+    
+      <option  value="1.19.7">
+        v1.19.7
+      </option>
+    
+      <option  value="1.19.6">
+        v1.19.6
+      </option>
+    
+      <option  value="1.19.5">
+        v1.19.5
+      </option>
+    
+      <option  value="1.19.4">
+        v1.19.4
+      </option>
+    
+      <option  value="1.19.3">
+        v1.19.3
+      </option>
+    
+      <option  value="1.19.2">
+        v1.19.2
+      </option>
+    
+      <option  value="1.19.1">
+        v1.19.1
+      </option>
+    
+      <option  value="1.19.0">
+        v1.19.0
+      </option>
+    
+      <option  value="1.18.0">
+        v1.18.0
+      </option>
+    
+      <option  value="1.17.2">
+        v1.17.2
+      </option>
+    
+      <option  value="1.17.1">
+        v1.17.1
+      </option>
+    
+      <option  value="1.17.0">
+        v1.17.0
+      </option>
+    
+      <option  value="1.16.0">
+        v1.16.0
+      </option>
+    
+      <option  value="1.15.0">
+        v1.15.0
+      </option>
+    
+      <option  value="1.14.4">
+        v1.14.4
+      </option>
+    
+      <option  value="1.14.3">
+        v1.14.3
+      </option>
+    
+      <option  value="1.14.2">
+        v1.14.2
+      </option>
+    
+      <option  value="1.14.1">
+        v1.14.1
+      </option>
+    
+      <option  value="1.14.0">
+        v1.14.0
+      </option>
+    
+      <option  value="1.13.1">
+        v1.13.1
+      </option>
+    
+      <option  value="1.13.0">
+        v1.13.0
+      </option>
+    
+      <option  value="1.12.9">
+        v1.12.9
+      </option>
+    
+      <option  value="1.12.8">
+        v1.12.8
+      </option>
+    
+      <option  value="1.12.7">
+        v1.12.7
+      </option>
+    
+      <option  value="1.12.6">
+        v1.12.6
+      </option>
+    
+      <option  value="1.12.5">
+        v1.12.5
+      </option>
+    
+      <option  value="1.12.4">
+        v1.12.4
+      </option>
+    
+      <option  value="1.12.3">
+        v1.12.3
+      </option>
+    
+      <option  value="1.12.2">
+        v1.12.2
+      </option>
+    
+      <option  value="1.12.1">
+        v1.12.1
+      </option>
+    
+      <option  value="1.12.0">
+        v1.12.0
+      </option>
+    
+      <option  value="1.11.2">
+        v1.11.2
+      </option>
+    
+      <option  value="1.11.1">
+        v1.11.1
+      </option>
+    
+      <option  value="1.11.0">
+        v1.11.0
+      </option>
+    
+      <option  value="1.10.2">
+        v1.10.2
+      </option>
+    
+      <option  value="1.10.1">
+        v1.10.1
+      </option>
+    
+      <option  value="1.10.0">
+        v1.10.0
+      </option>
+    
+      <option  value="1.9.9">
+        v1.9.9
+      </option>
+    
+      <option  value="1.9.8">
+        v1.9.8
+      </option>
+    
+      <option  value="1.9.7">
+        v1.9.7
+      </option>
+    
+      <option  value="1.9.6">
+        v1.9.6
+      </option>
+    
+      <option  value="1.9.5">
+        v1.9.5
+      </option>
+    
+      <option  value="1.9.4">
+        v1.9.4
+      </option>
+    
+      <option  value="1.9.3">
+        v1.9.3
+      </option>
+    
+      <option  value="1.9.2">
+        v1.9.2
+      </option>
+    
+      <option  value="1.9.1">
+        v1.9.1
+      </option>
+    
+      <option  value="1.9.0">
+        v1.9.0
+      </option>
+    
+      <option  value="1.8.0">
+        v1.8.0
+      </option>
+    
+      <option  value="1.7.4">
+        v1.7.4
+      </option>
+    
+      <option  value="1.7.3">
+        v1.7.3
+      </option>
+    
+      <option  value="1.7.2">
+        v1.7.2
+      </option>
+    
+      <option  value="1.7.1">
+        v1.7.1
+      </option>
+    
+      <option  value="1.7.0">
+        v1.7.0
+      </option>
+    
+      <option  value="1.6.2">
+        v1.6.2
+      </option>
+    
+      <option  value="1.6.1">
+        v1.6.1
+      </option>
+    
+      <option  value="1.6.0">
+        v1.6.0
+      </option>
+    
+      <option  value="1.5.4">
+        v1.5.4
+      </option>
+    
+      <option  value="1.5.3">
+        v1.5.3
+      </option>
+    
+      <option  value="1.5.2">
+        v1.5.2
+      </option>
+    
+      <option  value="1.5.1">
+        v1.5.1
+      </option>
+    
+      <option  value="1.5.0">
+        v1.5.0
+      </option>
+    
+      <option  value="1.4.3">
+        v1.4.3
+      </option>
+    
+      <option  value="1.4.2">
+        v1.4.2
+      </option>
+    
+      <option  value="1.4.1">
+        v1.4.1
+      </option>
+    
+      <option  value="1.4.0">
+        v1.4.0
+      </option>
+    
+      <option  value="1.3.3">
+        v1.3.3
+      </option>
+    
+      <option  value="1.3.2">
+        v1.3.2
+      </option>
+    
+      <option  value="1.3.1">
+        v1.3.1
+      </option>
+    
+      <option  value="1.3.0">
+        v1.3.0
+      </option>
+    
+      <option  value="1.2.4">
+        v1.2.4
+      </option>
+    
+      <option  value="1.2.3">
+        v1.2.3
+      </option>
+    
+      <option  value="1.2.2">
+        v1.2.2
+      </option>
+    
+      <option  value="1.2.1">
+        v1.2.1
+      </option>
+    
+      <option  value="1.2.0">
+        v1.2.0
+      </option>
+    
+      <option  value="1.1.0">
+        v1.1.0
+      </option>
+    
+      <option  value="1.0.19">
+        v1.0.19
+      </option>
+    
+      <option  value="1.0.18">
+        v1.0.18
+      </option>
+    
+      <option  value="1.0.17">
+        v1.0.17
+      </option>
+    
+      <option  value="1.0.16">
+        v1.0.16
+      </option>
+    
+      <option  value="1.0.15">
+        v1.0.15
+      </option>
+    
+      <option  value="1.0.14">
+        v1.0.14
+      </option>
+    
+      <option  value="1.0.13">
+        v1.0.13
+      </option>
+    
+      <option  value="1.0.12">
+        v1.0.12
+      </option>
+    
+      <option  value="1.0.11">
+        v1.0.11
+      </option>
+    
+      <option  value="1.0.10">
+        v1.0.10
+      </option>
+    
+      <option  value="1.0.9">
+        v1.0.9
+      </option>
+    
+      <option  value="1.0.8">
+        v1.0.8
+      </option>
+    
+      <option  value="1.0.7">
+        v1.0.7
+      </option>
+    
+      <option  value="1.0.6">
+        v1.0.6
+      </option>
+    
+      <option  value="1.0.5">
+        v1.0.5
+      </option>
+    
+      <option  value="1.0.4">
+        v1.0.4
+      </option>
+    
+      <option  value="1.0.3">
+        v1.0.3
+      </option>
+    
+      <option  value="1.0.2">
+        v1.0.2
+      </option>
+    
+      <option  value="1.0.1">
+        v1.0.1
+      </option>
+    
+      <option  value="1.0.0">
+        v1.0.0
+      </option>
+    
+  </select>
+  <form accept-charset="UTF-8" action="/search" id="articles-search" method="get" style="width: 100%"><div style="margin:0;padding:0;display:inline;"><input name="utf8" type="hidden" value="✓"></div>
+    <input type="text" name="q" id="quicksearch-query" class="documents-search-input js-articles-quicksearch" placeholder="Search the Flight Manual" autocomplete="off">
+  </form>
+</div>
+
+<div class="autocomplete-results" style="display: none;">
+  <div class="result-group"></div>
+</div>
+
+
+        <div class="toc">
+          
+
+
+  <h4>
+    <a href="/getting-started">Chapter 1: Getting Started</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/why-atom">Why Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/installing-atom">Installing Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/atom-basics">Atom Basics</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/getting-started/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/using-atom">Chapter 2: Using Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-packages">Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/moving-in-atom">Moving in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/atom-selections">Atom Selections</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/editing-and-deleting-text">Editing and Deleting Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/find-and-replace">Find and Replace</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/snippets">Snippets</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/autocomplete">Autocomplete</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/folding">Folding</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/panes">Panes</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/pending-pane-items">Pending Pane Items</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/grammar">Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/version-control-in-atom">Version Control in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/github-package">GitHub package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/writing-in-atom">Writing in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/basic-customization">Basic Customization</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/using-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/hacking-atom">Chapter 3: Hacking Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/tools-of-the-trade">Tools of the Trade</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/the-init-file">The Init File</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-word-count">Package: Word Count</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-modifying-text">Package: Modifying Text</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/package-active-editor-info">Package: Active Editor Info</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-theme">Creating a Theme</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-grammar">Creating a Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-legacy-textmate-grammar">Creating a Legacy TextMate Grammar</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/publishing">Publishing</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/iconography">Iconography</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/debugging">Debugging</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/writing-specs">Writing specs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/handling-uris">Handling URIs</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/cross-platform-compatibility">Cross-Platform Compatibility</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/converting-from-textmate">Converting from TextMate</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/hacking-on-atom-core">Hacking on Atom Core</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/contributing-to-official-atom-packages">Contributing to Official Atom Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/creating-a-fork-of-a-core-package-in-atom-atom">Creating a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/maintaining-a-fork-of-a-core-package-in-atom-atom">Maintaining a Fork of a Core Package in atom/atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/hacking-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/behind-atom">Chapter 4: Behind Atom</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/configuration-api">Configuration API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/keymaps-in-depth">Keymaps In-Depth</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors">Scoped Settings, Scopes and Scope Descriptors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/serialization-in-atom">Serialization in Atom</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/developing-node-modules">Developing Node Modules</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/interacting-with-other-packages-via-services">Interacting With Other Packages Via Services</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/maintaining-your-packages">Maintaining Your Packages</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/how-atom-uses-chromium-snapshots">How Atom Uses Chromium Snapshots</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/behind-atom/sections/summary">Summary</a>
+      </li>
+    
+  </ul>
+
+
+
+
+
+<h4>
+  <a href="/api/v1.63.1/">Reference: API</a>
+</h4>
+<ul>
+  
+    <li>
+      <a href="/api/v1.63.1/AtomEnvironment/">AtomEnvironment</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedNodeProcess/">BufferedNodeProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/BufferedProcess/">BufferedProcess</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Clipboard/">Clipboard</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Color/">Color</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CommandRegistry/">CommandRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/CompositeDisposable/">CompositeDisposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Config/">Config</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ContextMenuManager/">ContextMenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Cursor/">Cursor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Decoration/">Decoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DeserializerManager/">DeserializerManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Directory/">Directory</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarker/">DisplayMarker</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/DisplayMarkerLayer/">DisplayMarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Disposable/">Disposable</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Dock/">Dock</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Emitter/">Emitter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/File/">File</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GitRepository/">GitRepository</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Grammar/">Grammar</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/GrammarRegistry/">GrammarRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Gutter/">Gutter</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/HistoryManager/">HistoryManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/KeymapManager/">KeymapManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/LayerDecoration/">LayerDecoration</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MarkerLayer/">MarkerLayer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/MenuManager/">MenuManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Notification/">Notification</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/NotificationManager/">NotificationManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Package/">Package</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PackageManager/">PackageManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Pane/">Pane</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Panel/">Panel</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/PathWatcher/">PathWatcher</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Point/">Point</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Project/">Project</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Range/">Range</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ScopeDescriptor/">ScopeDescriptor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Selection/">Selection</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/StyleManager/">StyleManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Task/">Task</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextBuffer/">TextBuffer</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TextEditor/">TextEditor</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ThemeManager/">ThemeManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/TooltipManager/">TooltipManager</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/ViewRegistry/">ViewRegistry</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/Workspace/">Workspace</a>
+    </li>
+  
+    <li>
+      <a href="/api/v1.63.1/WorkspaceCenter/">WorkspaceCenter</a>
+    </li>
+  
+</ul>
+
+
+  <h4>
+    <a href="/resources">Appendix A: Resources</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/resources/sections/glossary">Glossary</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/faq">Appendix B: FAQ</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/faq/sections/is-atom-open-source">Is Atom open source?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-atom-cost">What does Atom cost?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-platforms-does-atom-run-on">What platforms does Atom run on?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-contribute-to-atom">How can I contribute to Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-atom-collect-usage-data">Why does Atom collect usage data?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/atom-in-the-cloud">Atom in the cloud?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-s-the-difference-between-an-ide-and-an-editor">What's the difference between an IDE and an editor?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-can-i-tell-if-subpixel-antialiasing-is-working">How can I tell if subpixel antialiasing is working?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-is-atom-deleting-trailing-whitespace-why-is-there-a-newline-at-the-end-of-the-file">Why is Atom deleting trailing whitespace? Why is there a newline at the end of the file?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-does-safe-mode-do">What does Safe Mode do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-have-a-question-about-a-specific-atom-community-package-where-is-the-best-place-to-ask-it">I have a question about a specific Atom community package. Where is the best place to ask it?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-using-an-international-keyboard-and-keys-that-use-altgr-or-ctrl-alt-aren-t-working">I’m using an international keyboard and keys that use AltGr or Ctrl+Alt aren’t working</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-julia-what-do-i-do">I’m having a problem with Julia! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-getting-an-error-about-a-self-signed-certificate-what-do-i-do">I’m getting an error about a “self-signed certificate”. What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-having-a-problem-with-platformio-what-do-i-do">I’m having a problem with PlatformIO! What do I do?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-atom-recognize-a-file-with-extension-x-as-language-y">How do I make Atom recognize a file with extension X as language Y?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-make-the-welcome-screen-stop-showing-up">How do I make the Welcome screen stop showing up?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-preview-web-page-changes-automatically">How do I preview web page changes automatically?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-accept-input-from-my-program-or-script-when-using-the-script-package">How do I accept input from my program or script when using the script package?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-am-unable-to-update-to-the-latest-version-of-atom-on-macos-how-do-i-fix-this">I am unable to update to the latest version of Atom on macOS. How do I fix this?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/i-m-trying-to-change-my-syntax-colors-from-styles-less-but-it-isn-t-working">I’m trying to change my syntax colors from styles.less, but it isn’t working!</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-build-or-execute-code-i-ve-written-in-atom">How do I build or execute code I've written in Atom?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-uninstall-atom-on-macos">How do I uninstall Atom on macOS?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/macos-mojave-font-rendering-change">macOS Mojave font rendering change</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/why-does-macos-say-that-atom-wants-to-access-my-calendar-contacts-photos-etc">Why does macOS say that Atom wants to access my calendar, contacts, photos, etc.?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-turn-on-line-wrap">How do I turn on line wrap?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/the-menu-bar-disappeared-how-do-i-get-it-back">The menu bar disappeared, how do I get it back?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/how-do-i-use-a-newline-in-the-result-of-find-and-replace">How do I use a newline in the result of find and replace?</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/faq/sections/what-is-this-line-on-the-right-in-the-editor-view">What is this line on the right in the editor view?</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/shadow-dom">Appendix C: Shadow DOM</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/shadow-dom/sections/removing-shadow-dom-styles">Removing Shadow DOM styles</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/upgrading-to-1-0-apis">Appendix D: Upgrading to 1.0 APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="selected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-package">Upgrading Your Package</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-ui-theme-or-package-selectors">Upgrading Your UI Theme Or Package Selectors</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/upgrading-to-1-0-apis/sections/upgrading-your-syntax-theme">Upgrading Your Syntax Theme</a>
+      </li>
+    
+  </ul>
+
+  <h4>
+    <a href="/atom-server-side-apis">Appendix E: Atom server-side APIs</a>
+  </h4>
+  <ul>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-package-server-api">Atom package server API</a>
+      </li>
+    
+      <li class="unselected">
+        <a href="/atom-server-side-apis/sections/atom-update-server-api">Atom update server API</a>
+      </li>
+    
+  </ul>
+
+
+        </div>
+
+        
+        <h1 class="document-title">
+          <div id="platform-nav">
+  <span class="octicon octicon-device-desktop"></span>
+  <ul>
+    <li class="platform-mac">
+      <a href="#platform-mac" data-platform="mac">
+        mac
+      </a>
+    </li>
+    <li class="platform-windows">
+      <a href="#platform-windows" data-platform="windows">
+        windows
+      </a>
+    </li>
+    <li class="platform-linux">
+      <a href="#platform-linux" data-platform="linux">
+        linux
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <a class="improve-link"
+              href="https://github.com/atom/flight-manual.atom.io/edit/master/content/upgrading-to-1-0-apis/sections/upgrading-your-package.md" data-proofer-ignore>
+            <span class="octicon octicon-pencil"></span> Improve this page
+          </a>
+        </h1>
+
+        <div class="markdown-body document-content">
+          
+          <h3>
+<a id="upgrading-your-package" class="anchor" href="#upgrading-your-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading Your Package</h3>
+
+<p>This document will guide you through the large bits of upgrading your package to work with 1.0 APIs.</p>
+
+<h4>
+<a id="tldr" class="anchor" href="#tldr" aria-hidden="true"><span class="octicon octicon-link"></span></a>TL;DR</h4>
+
+<p>We've set deprecation messages and errors in strategic places to help make sure you don't miss anything. You should be able to get 95% of the way to an updated package just by fixing errors and deprecations. There are a couple of things you can do to get the full effect of all the errors and deprecations.</p>
+
+<h5>
+<a id="use-atom-space-pen-views" class="anchor" href="#use-atom-space-pen-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use atom-space-pen-views</h5>
+
+<p>If you use any class from <code>require 'atom'</code> with a <code>$</code> or <code>View</code> in the name, add the <code>atom-space-pen-views</code> module to your package's <code>package.json</code> file's dependencies:</p>
+
+<div class="highlight highlight-json"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"atom-space-pen-views"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.0.3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>Then run <code>apm install</code> in your package directory.</p>
+
+<h5>
+<a id="require-views-from-atom-space-pen-views" class="anchor" href="#require-views-from-atom-space-pen-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Require views from atom-space-pen-views</h5>
+
+<p>Anywhere you are requiring one of the following from <code>atom</code> you need to require them from <code>atom-space-pen-views</code> instead.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># require these from 'atom-space-pen-views' rather than 'atom'</span>
+<span class="nx">$</span>
+<span class="nx">$$</span>
+<span class="nx">$$$</span>
+<span class="nx">View</span>
+<span class="nx">TextEditorView</span>
+<span class="nx">ScrollView</span>
+<span class="nx">SelectListView</span>
+</code></pre></div>
+
+<p>So this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old way</span>
+<span class="p">{</span><span class="nx">$</span><span class="p">,</span> <span class="nx">TextEditorView</span><span class="p">,</span> <span class="nx">View</span><span class="p">,</span> <span class="nx">GitRepository</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+</code></pre></div>
+
+<p>Would be replaced by this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New way</span>
+<span class="p">{</span><span class="nx">GitRepository</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+<span class="p">{</span><span class="nx">$</span><span class="p">,</span> <span class="nx">TextEditorView</span><span class="p">,</span> <span class="nx">View</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom-space-pen-views'</span>
+</code></pre></div>
+
+<h5>
+<a id="run-specs-and-test-your-package" class="anchor" href="#run-specs-and-test-your-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run specs and test your package</h5>
+
+<p>You wrote specs, right!? Here's where they shine. Run them with <code>cmd-shift-P</code>, and search for <code>run package specs</code>. It will show all the deprecation messages and errors.</p>
+
+<h5>
+<a id="update-the-engines-field" class="anchor" href="#update-the-engines-field" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update the engines field</h5>
+
+<p>When you are deprecation free and all done converting, upgrade the <code>engines</code> field in your package.json:</p>
+
+<div class="highlight highlight-json"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"engines"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"atom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=0.174.0 &lt;2.0.0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h5>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h5>
+
+<p>We have upgraded all the core packages. Please see <a href="https://github.com/atom/atom/issues/4011">this issue</a> for a link to all the upgrade PRs.</p>
+
+<h4>
+<a id="deprecations" class="anchor" href="#deprecations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deprecations</h4>
+
+<p>All of the methods in Atom core that have changes will emit deprecation messages when called. These messages are shown in two places: your <strong>package specs</strong>, and in Deprecation Cop.</p>
+
+<h5>
+<a id="specs" class="anchor" href="#specs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specs</h5>
+
+<p>Just run your specs, and all the deprecations will be displayed in yellow.</p>
+
+<p><img src="../../images/spec-deps.png" alt="Deprecations in Specs"></p>
+
+<div class="alert note">
+
+<p><strong>Note:</strong> Deprecations are only displayed when executing specs through the "Window: Run Package Specs" command in the Atom UI. Deprecations are not displayed when running specs at the terminal.</p>
+
+</div>
+
+<h5>
+<a id="deprecation-cop" class="anchor" href="#deprecation-cop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deprecation Cop</h5>
+
+<p>Run Atom in Dev Mode, <code>atom --dev</code>, with your package loaded, and open Deprecation Cop (search for "deprecation" in the command palette). Deprecated methods will appear in Deprecation Cop only after they have been called.</p>
+
+<p><img src="../../images/dep-cop.png" alt="Deprecation Cop"></p>
+
+<p>When Deprecation Cop is open, and deprecated methods are called, a <code>Refresh</code> button will appear in the top right of the Deprecation Cop interface. So exercise your package, then come back to Deprecation Cop and click the <code>Refresh</code> button.</p>
+
+<h4>
+<a id="upgrading-your-views" class="anchor" href="#upgrading-your-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading your Views</h4>
+
+<p>Previous to 1.0, views were baked into Atom core. These views were based on jQuery and <code>space-pen</code>. They looked something like this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># The old way: getting views from atom</span>
+<span class="p">{</span><span class="nx">$</span><span class="p">,</span> <span class="nx">TextEditorView</span><span class="p">,</span> <span class="nx">View</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="na">exports</span> <span class="o">=</span>
+<span class="k">class</span> <span class="nx">SomeView</span> <span class="k">extends</span> <span class="nx">View</span>
+  <span class="vi">@</span><span class="na">content</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">div</span> <span class="na">class</span><span class="o">:</span> <span class="s">'find-and-replace'</span><span class="p">,</span> <span class="o">=&gt;</span>
+      <span class="vi">@</span><span class="na">div</span> <span class="na">class</span><span class="o">:</span> <span class="s">'block'</span><span class="p">,</span> <span class="o">=&gt;</span>
+        <span class="vi">@</span><span class="na">subview</span> <span class="s">'myEditor'</span><span class="p">,</span> <span class="k">new</span> <span class="nx">TextEditorView</span><span class="p">(</span><span class="na">mini</span><span class="o">:</span> <span class="no">true</span><span class="p">)</span>
+  <span class="c1">#...</span>
+</code></pre></div>
+
+<h5>
+<a id="the-new" class="anchor" href="#the-new" aria-hidden="true"><span class="octicon octicon-link"></span></a>The New</h5>
+
+<p><code>require 'atom'</code> no longer provides view helpers or jQuery. Atom Core is now 'view agnostic'. The preexisting view system is available from a new Node module: atom-space-pen-views.</p>
+
+<p>atom-space-pen-views now provides jQuery, space-pen views, and Atom specific views:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># These are now provided by atom-space-pen-views</span>
+<span class="nx">$</span>
+<span class="nx">$$</span>
+<span class="nx">$$$</span>
+<span class="nx">View</span>
+<span class="nx">TextEditorView</span>
+<span class="nx">ScrollView</span>
+<span class="nx">SelectListView</span>
+</code></pre></div>
+
+<h5>
+<a id="adding-the-module-dependencies" class="anchor" href="#adding-the-module-dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the module dependencies</h5>
+
+<p>To use the new views, you need to specify the atom-space-pen-views module in your package's <code>package.json</code> file's dependencies:</p>
+
+<div class="highlight highlight-json"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"atom-space-pen-views"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.0.3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<p>space-pen bundles jQuery. If you do not need space-pen or any of the views, you can require jQuery directly.</p>
+
+<div class="highlight highlight-json"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+<h5>
+<a id="converting-your-views" class="anchor" href="#converting-your-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Converting your views</h5>
+
+<p>Sometimes it is as simple as converting the requires at the top of each view page. I assume you read the 'TL;DR' section and have updated all of your requires.</p>
+
+<h5>
+<a id="upgrading-classes-extending-any-space-pen-view" class="anchor" href="#upgrading-classes-extending-any-space-pen-view" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading classes extending any space-pen View</h5>
+
+<h6>
+<a id="afterattach-and-beforeremove-updated" class="anchor" href="#afterattach-and-beforeremove-updated" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>afterAttach</code> and <code>beforeRemove</code> updated</h6>
+
+<p>The <code>afterAttach</code> and <code>beforeRemove</code> hooks have been replaced with <code>attached</code> and <code>detached</code> and the semantics have changed.</p>
+
+<p><code>afterAttach</code> was called whenever the node was attached to another DOM node, even if that parent node wasn't present in the DOM. <code>afterAttach</code> also was called with a boolean indicating whether or not the element and its parents were on the DOM. Now the <code>attached</code> hook is <em>only</em> called when the node and all of its parents are actually on the DOM, and is not called with a boolean.</p>
+
+<p><code>beforeRemove</code> was only called when <code>$.fn.remove</code> was called, which was typically used when the node was completely removed from the DOM. The new <code>detached</code> hook is called whenever the DOM node is <em>detached</em>, which could happen if the node is being detached for reattachment later. In short, if <code>beforeRemove</code> is called the node is never coming back. With <code>detached</code> it might be attached again later.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old way</span>
+<span class="p">{</span><span class="nx">View</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+<span class="k">class</span> <span class="nx">MyView</span> <span class="k">extends</span> <span class="nx">View</span>
+  <span class="na">afterAttach</span><span class="o">:</span> <span class="p">(</span><span class="nx">onDom</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="c1">#...</span>
+
+  <span class="na">beforeRemove</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="c1">#...</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New way</span>
+<span class="p">{</span><span class="nx">View</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom-space-pen-views'</span>
+<span class="k">class</span> <span class="nx">MyView</span> <span class="k">extends</span> <span class="nx">View</span>
+  <span class="na">attached</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="c1"># Always called with the equivalent of @afterAttach(true)!</span>
+    <span class="c1">#...</span>
+
+  <span class="na">detached</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="c1">#...</span>
+</code></pre></div>
+
+<h6>
+<a id="subscribe-and-subscribetocommand-methods-removed" class="anchor" href="#subscribe-and-subscribetocommand-methods-removed" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>subscribe</code> and <code>subscribeToCommand</code> methods removed</h6>
+
+<p>The <code>subscribe</code> and <code>subscribeToCommand</code> methods have been removed. See the Eventing and Disposables section for more info.</p>
+
+<h5>
+<a id="upgrading-to-the-new-texteditorview" class="anchor" href="#upgrading-to-the-new-texteditorview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading to the new TextEditorView</h5>
+
+<p>All of the atom-specific methods available on the <code>TextEditorView</code> have been moved to the <code>TextEditor</code>, available via <code>TextEditorView::getModel</code>. See the <a href="https://github.com/atom/atom-space-pen-views#texteditorview"><code>TextEditorView</code> docs</a> and <a href="https://atom.io/docs/api/latest/TextEditor"><code>TextEditor</code> docs</a> for more info.</p>
+
+<h5>
+<a id="upgrading-classes-extending-scrollview" class="anchor" href="#upgrading-classes-extending-scrollview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading classes extending ScrollView</h5>
+
+<p>The <code>ScrollView</code> has very minor changes.</p>
+
+<p>You can no longer use <code>@off</code> to remove default behavior for <code>core:move-up</code>, <code>core:move-down</code>, etc.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old way to turn off default behavior</span>
+<span class="k">class</span> <span class="nx">ResultsView</span> <span class="k">extends</span> <span class="nx">ScrollView</span>
+  <span class="na">initialize</span><span class="o">:</span> <span class="p">(</span><span class="vi">@</span><span class="na">model</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="k">super</span><span class="p">()</span>
+    <span class="c1"># turn off default scrolling behavior from ScrollView</span>
+    <span class="vi">@</span><span class="na">off</span> <span class="s">'core:move-up'</span>
+    <span class="vi">@</span><span class="na">off</span> <span class="s">'core:move-down'</span>
+    <span class="vi">@</span><span class="na">off</span> <span class="s">'core:move-left'</span>
+    <span class="vi">@</span><span class="na">off</span> <span class="s">'core:move-right'</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New way to turn off default behavior</span>
+<span class="k">class</span> <span class="nx">ResultsView</span> <span class="k">extends</span> <span class="nx">ScrollView</span>
+  <span class="na">initialize</span><span class="o">:</span> <span class="p">(</span><span class="vi">@</span><span class="na">model</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">disposable</span> <span class="o">=</span> <span class="k">super</span><span class="p">()</span>
+    <span class="c1"># turn off default scrolling behavior from ScrollView</span>
+    <span class="nx">disposable</span><span class="p">.</span><span class="na">dispose</span><span class="p">()</span>
+</code></pre></div>
+
+<ul>
+<li>Check out <a href="https://github.com/atom/find-and-replace/pull/311/files#diff-9">an example</a> from find-and-replace.</li>
+<li>See the <a href="https://github.com/atom/atom-space-pen-views#scrollview">docs</a> for all the options.</li>
+</ul>
+
+<h5>
+<a id="upgrading-classes-extending-selectlistview" class="anchor" href="#upgrading-classes-extending-selectlistview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading classes extending SelectListView</h5>
+
+<p>Your <code>SelectListView</code> might look something like this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="k">class</span> <span class="nx">CommandPaletteView</span> <span class="k">extends</span> <span class="nx">SelectListView</span>
+  <span class="na">initialize</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="k">super</span><span class="p">()</span>
+    <span class="vi">@</span><span class="na">addClass</span><span class="p">(</span><span class="s">'command-palette overlay from-top'</span><span class="p">)</span>
+    <span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span><span class="p">.</span><span class="na">command</span> <span class="s">'command-palette:toggle'</span><span class="p">,</span> <span class="o">=&gt;</span> <span class="vi">@</span><span class="na">toggle</span><span class="p">()</span>
+
+  <span class="na">confirmed</span><span class="o">:</span> <span class="p">({</span><span class="nx">name</span><span class="p">,</span> <span class="nx">jQuery</span><span class="p">})</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">cancel</span><span class="p">()</span>
+    <span class="c1"># do something with the result</span>
+
+  <span class="na">toggle</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="k">if</span> <span class="vi">@</span><span class="na">hasParent</span><span class="p">()</span>
+      <span class="vi">@</span><span class="na">cancel</span><span class="p">()</span>
+    <span class="k">else</span>
+      <span class="vi">@</span><span class="na">attach</span><span class="p">()</span>
+
+  <span class="na">attach</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">storeFocusedElement</span><span class="p">()</span>
+
+    <span class="nx">items</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># TODO: build items</span>
+    <span class="vi">@</span><span class="na">setItems</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span>
+
+    <span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+    <span class="vi">@</span><span class="na">focusFilterEditor</span><span class="p">()</span>
+
+  <span class="na">confirmed</span><span class="o">:</span> <span class="p">({</span><span class="nx">name</span><span class="p">,</span> <span class="nx">jQuery</span><span class="p">})</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">cancel</span><span class="p">()</span>
+</code></pre></div>
+
+<p>This attaches and detaches itself from the DOM when toggled, canceling magically detaches it from the DOM, and it uses the classes <code>overlay</code> and <code>from-top</code>.</p>
+
+<p>The new SelectListView no longer automatically detaches itself from the DOM when cancelled. It's up to you to implement whatever cancel behavior you want. Using the new APIs to mimic the semantics of the old class, it should look like this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="k">class</span> <span class="nx">CommandPaletteView</span> <span class="k">extends</span> <span class="nx">SelectListView</span>
+  <span class="na">initialize</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="k">super</span><span class="p">()</span>
+    <span class="c1"># no more need for the `overlay` and `from-top` classes</span>
+    <span class="vi">@</span><span class="na">addClass</span><span class="p">(</span><span class="s">'command-palette'</span><span class="p">)</span>
+    <span class="nx">atom</span><span class="p">.</span><span class="na">commands</span><span class="p">.</span><span class="na">add</span> <span class="s">'atom-workspace'</span><span class="p">,</span> <span class="s">'command-palette:toggle'</span><span class="p">,</span> <span class="o">=&gt;</span> <span class="vi">@</span><span class="na">toggle</span><span class="p">()</span>
+
+  <span class="c1"># You need to implement the `cancelled` method and hide.</span>
+  <span class="na">cancelled</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">hide</span><span class="p">()</span>
+
+  <span class="na">confirmed</span><span class="o">:</span> <span class="p">({</span><span class="nx">name</span><span class="p">,</span> <span class="nx">jQuery</span><span class="p">})</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">cancel</span><span class="p">()</span>
+    <span class="c1"># do something with the result</span>
+
+  <span class="na">toggle</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="c1"># Toggling now checks panel visibility,</span>
+    <span class="c1"># and hides / shows rather than attaching to / detaching from the DOM.</span>
+    <span class="k">if</span> <span class="vi">@</span><span class="na">panel</span><span class="o">?</span><span class="p">.</span><span class="na">isVisible</span><span class="p">()</span>
+      <span class="vi">@</span><span class="na">cancel</span><span class="p">()</span>
+    <span class="k">else</span>
+      <span class="vi">@</span><span class="na">show</span><span class="p">()</span>
+
+  <span class="na">show</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="c1"># Now you will add your select list as a modal panel to the workspace</span>
+    <span class="vi">@</span><span class="na">panel</span> <span class="o">?=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span><span class="p">.</span><span class="na">addModalPanel</span><span class="p">(</span><span class="na">item</span><span class="o">:</span> <span class="k">this</span><span class="p">)</span>
+    <span class="vi">@</span><span class="na">panel</span><span class="p">.</span><span class="na">show</span><span class="p">()</span>
+
+    <span class="vi">@</span><span class="na">storeFocusedElement</span><span class="p">()</span>
+
+    <span class="nx">items</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># TODO: build items</span>
+    <span class="vi">@</span><span class="na">setItems</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span>
+
+    <span class="vi">@</span><span class="na">focusFilterEditor</span><span class="p">()</span>
+
+  <span class="na">hide</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">panel</span><span class="o">?</span><span class="p">.</span><span class="na">hide</span><span class="p">()</span>
+</code></pre></div>
+
+<ul>
+<li>And check out the <a href="https://github.com/atom/command-palette/pull/19/files">conversion of <code>CommandPaletteView</code></a> as a real-world example.</li>
+<li>See the <a href="https://github.com/atom/atom-space-pen-views#selectlistview"><code>SelectListView</code> docs</a> for all options.</li>
+</ul>
+
+<h4>
+<a id="using-the-model-layer-rather-than-the-view-layer" class="anchor" href="#using-the-model-layer-rather-than-the-view-layer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the model layer rather than the view layer</h4>
+
+<p>The API no longer exposes any specialized view objects or view classes. <code>atom.workspaceView</code>, and all the view classes: <code>WorkspaceView</code>, <code>EditorView</code>, <code>PaneView</code>, etc. have been globally deprecated.</p>
+
+<p>Nearly all of the atom-specific actions performed by the old view objects can now be managed via the model layer. For example, here's adding a panel to the interface using the <code>atom.workspace</code> model instead of the <code>workspaceView</code>:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="na">createElement</span><span class="p">(</span><span class="s">'div'</span><span class="p">)</span>
+<span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span><span class="p">.</span><span class="na">appendToTop</span><span class="p">(</span><span class="nx">div</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="na">createElement</span><span class="p">(</span><span class="s">'div'</span><span class="p">)</span>
+<span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span><span class="p">.</span><span class="na">addTopPanel</span><span class="p">(</span><span class="na">item</span><span class="o">:</span> <span class="nx">div</span><span class="p">)</span>
+</code></pre></div>
+
+<p>For actions that still require the view, such as dispatching commands or munging css classes, you'll access the view via the <code>atom.views.getView()</code> method. This will return a subclass of <code>HTMLElement</code> rather than a jQuery object or an instance of a deprecated view class (e.g. <code>WorkspaceView</code>).</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">workspaceView</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span>
+<span class="nx">editorView</span> <span class="o">=</span> <span class="nx">workspaceView</span><span class="p">.</span><span class="na">getActiveEditorView</span><span class="p">()</span>
+<span class="nx">paneView</span> <span class="o">=</span> <span class="nx">editorView</span><span class="p">.</span><span class="na">getPaneView</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="c1"># Generally, just use the models</span>
+<span class="nx">workspace</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span>
+<span class="nx">editor</span> <span class="o">=</span> <span class="nx">workspace</span><span class="p">.</span><span class="na">getActiveTextEditor</span><span class="p">()</span>
+<span class="nx">pane</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="na">getPane</span><span class="p">()</span>
+
+<span class="c1"># If you need views, get them with `getView`</span>
+<span class="nx">workspaceElement</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">views</span><span class="p">.</span><span class="na">getView</span><span class="p">(</span><span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span><span class="p">)</span>
+<span class="nx">editorElement</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">views</span><span class="p">.</span><span class="na">getView</span><span class="p">(</span><span class="nx">editor</span><span class="p">)</span>
+<span class="nx">paneElement</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">views</span><span class="p">.</span><span class="na">getView</span><span class="p">(</span><span class="nx">pane</span><span class="p">)</span>
+</code></pre></div>
+
+<h4>
+<a id="updating-specs" class="anchor" href="#updating-specs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating Specs</h4>
+
+<p><code>atom.workspaceView</code>, the <code>WorkspaceView</code> class and the <code>EditorView</code> class have been deprecated. These two objects are used heavily throughout specs, mostly to dispatch events and commands. This section will explain how to remove them while still retaining the ability to dispatch events and commands.</p>
+
+<h5>
+<a id="removing-workspaceview-references" class="anchor" href="#removing-workspaceview-references" aria-hidden="true"><span class="octicon octicon-link"></span></a>Removing <code>WorkspaceView</code> references</h5>
+
+<p><code>WorkspaceView</code> has been deprecated. Everything you could do on the view, you can now do on the <code>Workspace</code> model.</p>
+
+<p>Requiring <code>WorkspaceView</code> from <code>atom</code> and accessing any methods on it will throw a deprecation warning. Many specs lean heavily on <code>WorkspaceView</code> to trigger commands and fetch <code>EditorView</code> objects.</p>
+
+<p>Your specs might contain something like this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="p">{</span><span class="nx">WorkspaceView</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+<span class="nx">describe</span> <span class="s">'FindView'</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="nx">beforeEach</span> <span class="o">-&gt;</span>
+    <span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WorkspaceView</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Instead, we will use the <code>atom.views.getView()</code> method. This will return a plain <code>HTMLElement</code>, not a <code>WorkspaceView</code> or jQuery object.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">describe</span> <span class="s">'FindView'</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="nx">workspaceElement</span> <span class="o">=</span> <span class="no">null</span>
+  <span class="nx">beforeEach</span> <span class="o">-&gt;</span>
+    <span class="nx">workspaceElement</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">views</span><span class="p">.</span><span class="na">getView</span><span class="p">(</span><span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span><span class="p">)</span>
+</code></pre></div>
+
+<h5>
+<a id="attaching-the-workspace-to-the-dom" class="anchor" href="#attaching-the-workspace-to-the-dom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attaching the workspace to the DOM</h5>
+
+<p>The workspace needs to be attached to the DOM in some cases. For example, view hooks only work (<code>attached()</code> on <code>View</code>, <code>attachedCallback()</code> on custom elements) when there is a descendant attached to the DOM.</p>
+
+<p>You might see this in your specs:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span><span class="p">.</span><span class="na">attachToDom</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Change it to:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">jasmine</span><span class="p">.</span><span class="na">attachToDOM</span><span class="p">(</span><span class="nx">workspaceElement</span><span class="p">)</span>
+</code></pre></div>
+
+<h5>
+<a id="removing-editorview-references" class="anchor" href="#removing-editorview-references" aria-hidden="true"><span class="octicon octicon-link"></span></a>Removing EditorView references</h5>
+
+<p>Like <code>WorkspaceView</code>, <code>EditorView</code> has been deprecated. Everything you needed to do on the view you are now able to do on the <code>TextEditor</code> model.</p>
+
+<p>In many cases, you will not even need to get the editor's view anymore. Any of those instances should be updated to use the <code>TextEditor</code> instance instead. You should really only need the editor's view when you plan on triggering a command on the view in a spec.</p>
+
+<p>Your specs might contain something like this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">describe</span> <span class="s">'Something'</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="p">[</span><span class="nx">editorView</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="nx">beforeEach</span> <span class="o">-&gt;</span>
+    <span class="nx">editorView</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span><span class="p">.</span><span class="na">getActiveView</span><span class="p">()</span>
+</code></pre></div>
+
+<p>We're going to use <code>atom.views.getView()</code> again to get the editor element. As in the case of the <code>workspaceElement</code>, <code>getView</code> will return a subclass of <code>HTMLElement</code> rather than an <code>EditorView</code> or jQuery object.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">describe</span> <span class="s">'Something'</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="p">[</span><span class="nx">editor</span><span class="p">,</span> <span class="nx">editorElement</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="nx">beforeEach</span> <span class="o">-&gt;</span>
+    <span class="nx">editor</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span><span class="p">.</span><span class="na">getActiveTextEditor</span><span class="p">()</span>
+    <span class="nx">editorElement</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">views</span><span class="p">.</span><span class="na">getView</span><span class="p">(</span><span class="nx">editor</span><span class="p">)</span>
+</code></pre></div>
+
+<h5>
+<a id="dispatching-commands" class="anchor" href="#dispatching-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dispatching commands</h5>
+
+<p>Since the <code>editorElement</code> objects are no longer jQuery objects, they no longer support <code>trigger()</code>. Additionally, Atom has a new command dispatcher, <code>atom.commands</code>, that we use rather than commandeering jQuery's <code>trigger</code> method.</p>
+
+<p>From this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">workspaceView</span><span class="p">.</span><span class="na">trigger</span> <span class="s">'a-package:toggle'</span>
+<span class="nx">editorView</span><span class="p">.</span><span class="na">trigger</span> <span class="s">'find-and-replace:show'</span>
+</code></pre></div>
+
+<p>To this:</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">atom</span><span class="p">.</span><span class="na">commands</span><span class="p">.</span><span class="na">dispatch</span> <span class="nx">workspaceElement</span><span class="p">,</span> <span class="s">'a-package:toggle'</span>
+<span class="nx">atom</span><span class="p">.</span><span class="na">commands</span><span class="p">.</span><span class="na">dispatch</span> <span class="nx">editorElement</span><span class="p">,</span> <span class="s">'find-and-replace:show'</span>
+</code></pre></div>
+
+<h4>
+<a id="eventing-and-disposables" class="anchor" href="#eventing-and-disposables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Eventing and Disposables</h4>
+
+<p>A couple large things changed with respect to events:</p>
+
+<ol>
+<li>All model events are now exposed as event subscription methods that return <a href="https://atom.io/docs/api/latest/Disposable"><code>Disposable</code></a> objects</li>
+<li>The <code>subscribe()</code> method is no longer available on <code>space-pen</code> <code>View</code> objects</li>
+<li>An Emitter is now provided from <code>require 'atom'</code>
+</li>
+</ol>
+
+<h5>
+<a id="consuming-events" class="anchor" href="#consuming-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Consuming Events</h5>
+
+<p>All events from the Atom API are now methods that return a <a href="https://atom.io/docs/api/latest/Disposable"><code>Disposable</code></a> object, on which you can call <code>dispose()</code> to unsubscribe.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">editor</span><span class="p">.</span><span class="na">on</span> <span class="s">'changed'</span><span class="p">,</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">disposable</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="na">onDidChange</span> <span class="o">-&gt;</span>
+
+<span class="c1"># You can unsubscribe at some point in the future via `dispose()`</span>
+<span class="nx">disposable</span><span class="p">.</span><span class="na">dispose</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Deprecation warnings will guide you toward the correct methods.</p>
+
+<h6>
+<a id="using-a-compositedisposable" class="anchor" href="#using-a-compositedisposable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using a <code>CompositeDisposable</code>
+</h6>
+
+<p>You can group multiple disposables into a single disposable with a <code>CompositeDisposable</code>.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="p">{</span><span class="nx">CompositeDisposable</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+
+<span class="k">class</span> <span class="nx">Something</span>
+  <span class="na">constructor</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="nx">editor</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">.</span><span class="na">workspace</span><span class="p">.</span><span class="na">getActiveTextEditor</span><span class="p">()</span>
+    <span class="vi">@</span><span class="na">disposables</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CompositeDisposable</span>
+    <span class="vi">@</span><span class="na">disposables</span><span class="p">.</span><span class="na">add</span> <span class="nx">editor</span><span class="p">.</span><span class="na">onDidChange</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">disposables</span><span class="p">.</span><span class="na">add</span> <span class="nx">editor</span><span class="p">.</span><span class="na">onDidChangePath</span> <span class="o">-&gt;</span>
+
+  <span class="na">destroy</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">disposables</span><span class="p">.</span><span class="na">dispose</span><span class="p">()</span>
+</code></pre></div>
+
+<h5>
+<a id="removing-viewsubscribe-and-subscribersubscribe-calls" class="anchor" href="#removing-viewsubscribe-and-subscribersubscribe-calls" aria-hidden="true"><span class="octicon octicon-link"></span></a>Removing <code>View::subscribe</code> and <code>Subscriber::subscribe</code> calls</h5>
+
+<p>There were a couple permutations of <code>subscribe()</code>. In these examples, a <code>CompositeDisposable</code> is used as it will commonly be useful where conversion is necessary.</p>
+
+<h6>
+<a id="subscribeunsubscribable" class="anchor" href="#subscribeunsubscribable" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>subscribe(unsubscribable)</code>
+</h6>
+
+<p>This one is very straight forward.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="vi">@</span><span class="na">subscribe</span> <span class="nx">editor</span><span class="p">.</span><span class="na">on</span> <span class="s">'changed'</span><span class="p">,</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">disposables</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CompositeDisposable</span>
+<span class="nx">disposables</span><span class="p">.</span><span class="na">add</span> <span class="nx">editor</span><span class="p">.</span><span class="na">onDidChange</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<h6>
+<a id="subscribemodelobject-event-method" class="anchor" href="#subscribemodelobject-event-method" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>subscribe(modelObject, event, method)</code>
+</h6>
+
+<p>When the modelObject is an Atom model object, the change is very simple. Just use the correct event method, and add it to your CompositeDisposable.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="vi">@</span><span class="na">subscribe</span> <span class="nx">editor</span><span class="p">,</span> <span class="s">'changed'</span><span class="p">,</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="nx">disposables</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CompositeDisposable</span>
+<span class="nx">disposables</span><span class="p">.</span><span class="na">add</span> <span class="nx">editor</span><span class="p">.</span><span class="na">onDidChange</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<h6>
+<a id="subscribejqueryobject-selectoroptional-event-method" class="anchor" href="#subscribejqueryobject-selectoroptional-event-method" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>subscribe(jQueryObject, selector(optional), event, method)</code>
+</h6>
+
+<p>Things are a little more complicated when subscribing to a DOM or jQuery element. Atom no longer provides helpers for subscribing to elements. You can use jQuery or the native DOM APIs, whichever you prefer.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="vi">@</span><span class="na">subscribe</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">),</span> <span class="s">'focus'</span><span class="p">,</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="p">{</span><span class="nx">Disposable</span><span class="p">,</span> <span class="nx">CompositeDisposable</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+<span class="nx">disposables</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CompositeDisposable</span>
+
+<span class="c1"># New with jQuery</span>
+<span class="nx">focusCallback</span> <span class="o">=</span> <span class="o">-&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="na">on</span> <span class="s">'focus'</span><span class="p">,</span> <span class="nx">focusCallback</span>
+<span class="nx">disposables</span><span class="p">.</span><span class="na">add</span> <span class="k">new</span> <span class="nx">Disposable</span> <span class="o">-&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="na">off</span> <span class="s">'focus'</span><span class="p">,</span> <span class="nx">focusCallback</span>
+
+<span class="c1"># New with native APIs</span>
+<span class="nx">focusCallback</span> <span class="o">=</span> <span class="o">-&gt;</span>
+<span class="nb">window</span><span class="p">.</span><span class="na">addEventListener</span> <span class="s">'focus'</span><span class="p">,</span> <span class="nx">focusCallback</span>
+<span class="nx">disposables</span><span class="p">.</span><span class="na">add</span> <span class="k">new</span> <span class="nx">Disposable</span> <span class="o">-&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="na">removeEventListener</span> <span class="s">'focus'</span><span class="p">,</span> <span class="nx">focusCallback</span>
+</code></pre></div>
+
+<h5>
+<a id="providing-events-using-the-emitter" class="anchor" href="#providing-events-using-the-emitter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Providing Events: Using the <code>Emitter</code>
+</h5>
+
+<p>You no longer need to require <code>emissary</code> to get an emitter. We now provide an <code>Emitter</code> class from <code>require 'atom'</code>. We have a specific pattern for use of the <code>Emitter</code>. Rather than mixing it in, we instantiate a member variable, and create explicit subscription methods. For more information see the <a href="https://atom.io/docs/api/latest/Emitter"><code>Emitter</code> docs</a>.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="p">{</span><span class="nx">Emitter</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'atom'</span>
+
+<span class="k">class</span> <span class="nx">Something</span>
+  <span class="na">constructor</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">emitter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Emitter</span>
+
+  <span class="na">destroy</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">emitter</span><span class="p">.</span><span class="na">dispose</span><span class="p">()</span>
+
+  <span class="na">onDidChange</span><span class="o">:</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">emitter</span><span class="p">.</span><span class="na">on</span> <span class="s">'did-change'</span><span class="p">,</span> <span class="nx">callback</span>
+
+  <span class="na">methodThatFiresAChange</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">emitter</span><span class="p">.</span><span class="na">emit</span> <span class="s">'did-change'</span><span class="p">,</span> <span class="p">{</span><span class="na">data</span><span class="o">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="c1"># Using the evented class</span>
+<span class="nx">something</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Something</span>
+<span class="nx">something</span><span class="p">.</span><span class="na">onDidChange</span> <span class="p">(</span><span class="nx">eventObject</span><span class="p">)</span> <span class="o">-&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="na">log</span> <span class="nx">eventObject</span><span class="p">.</span><span class="na">data</span> <span class="c1"># =&gt; 2</span>
+<span class="nx">something</span><span class="p">.</span><span class="na">methodThatFiresAChange</span><span class="p">()</span>
+</code></pre></div>
+
+<h4>
+<a id="subscribing-to-commands" class="anchor" href="#subscribing-to-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subscribing To Commands</h4>
+
+<p><code>$.fn.command</code> and <code>View::subscribeToCommand</code> are no longer available. Now we use <code>atom.commands.add</code>, and collect the results in a <code>CompositeDisposable</code>. See <a href="https://atom.io/docs/api/latest/CommandRegistry#instance-add">the docs</a> for more info.</p>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># Old!</span>
+<span class="nx">atom</span><span class="p">.</span><span class="na">workspaceView</span><span class="p">.</span><span class="na">command</span> <span class="s">'core:close core:cancel'</span><span class="p">,</span> <span class="o">-&gt;</span>
+
+<span class="c1"># When inside a View class, you might see this</span>
+<span class="vi">@</span><span class="na">subscribeToCommand</span> <span class="s">'core:close core:cancel'</span><span class="p">,</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<div class="highlight highlight-coffee"><pre class="highlight"><code><span class="c1"># New!</span>
+<span class="vi">@</span><span class="na">disposables</span><span class="p">.</span><span class="na">add</span> <span class="nx">atom</span><span class="p">.</span><span class="na">commands</span><span class="p">.</span><span class="na">add</span> <span class="s">'atom-workspace'</span><span class="p">,</span>
+  <span class="s">'core:close'</span><span class="o">:</span> <span class="o">-&gt;</span>
+  <span class="s">'core:cancel'</span><span class="o">:</span> <span class="o">-&gt;</span>
+
+<span class="c1"># You can register commands directly on individual DOM elements in addition to</span>
+<span class="c1"># using selectors. When in a View class, you should have a `@element` object</span>
+<span class="c1"># available. `@element` is a plain HTMLElement object</span>
+<span class="vi">@</span><span class="na">disposables</span><span class="p">.</span><span class="na">add</span> <span class="nx">atom</span><span class="p">.</span><span class="na">commands</span><span class="p">.</span><span class="na">add</span> <span class="vi">@</span><span class="na">element</span><span class="p">,</span>
+  <span class="s">'core:close'</span><span class="o">:</span> <span class="o">-&gt;</span>
+  <span class="s">'core:cancel'</span><span class="o">:</span> <span class="o">-&gt;</span>
+</code></pre></div>
+
+<h4>
+<a id="upgrading-your-stylesheets-selectors" class="anchor" href="#upgrading-your-stylesheets-selectors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrading your stylesheet's selectors</h4>
+
+<p>Many selectors have changed, and we have introduced the <a href="https://blog.atom.io/2014/11/18/avoiding-style-pollution-with-the-shadow-dom.html">Shadow DOM</a> to the editor. See the <a href="/upgrading-to-1-0-apis/sections/upgrading-your-ui-theme-or-package-selectors/">Upgrading Your UI Theme And Package Selectors guide</a> for more information in upgrading your package stylesheets.</p>
+        </div>
+      </div>
+      <div class="footer-pad"></div>
+    </div>
+    <footer>
+  <div class="footer">
+    <div class="wrapper no-pad">
+      <ul class="footer-left">
+        <li><a href="https://atom.io/terms">Terms of Use</a></li>
+        <li><a href="https://help.github.com/articles/github-privacy-policy/">Privacy</a></li>
+        <li><a href="https://github.com/atom/atom/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+        <li><a href="https://atom.io/releases">Releases</a></li>
+        <li><a href="https://atom.io/faq">FAQ</a></li>
+        <li><a href="https://atom.io/contact">Contact</a></li>
+        <li><a href="https://github.com/atom/flight-manual.atom.io/blob/master/CONTRIBUTING.md">Contribute!</a></li>
+      </ul>
+
+      <div class="footer-right">
+        <a href="https://github.com"><span class="octicon octicon-code"></span> with <span class="octicon octicon-heart"></span> by <span class="octicon octicon-logo-github"></span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
