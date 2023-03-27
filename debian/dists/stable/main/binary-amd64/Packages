@@ -1,19 +1,38 @@
 Package: thorium-browser-unstable
-Version: 104.0.5083.0-1
+Version: 109.0.5414.120-1
 Architecture: amd64
 Maintainer: Thorium Linux Maintainers <alex313031@gmail.com>
-Installed-Size: 543610
+Installed-Size: 596956
 Pre-Depends: dpkg (>= 1.14.0)
-Depends: ca-certificates, fonts-liberation, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.17), libcairo2 (>= 1.6.0), libcups2 (>= 1.6.0), libcurl3-gnutls | libcurl3-nss | libcurl4 | libcurl3, libdbus-1-3 (>= 1.5.12), libdrm2 (>= 2.4.60), libexpat1 (>= 2.0.1), libgbm1 (>= 8.1~0), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.9.10) | libgtk-4-1, libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.26), libpango-1.0-0 (>= 1.14.0), libwayland-client0 (>= 1.0.2), libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.4.4-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.4.1), libxrandr2, wget, xdg-utils (>= 1.0.2)
-Recommends: libu2f-udev, libvulkan1, unrar
+Depends: ca-certificates, fonts-liberation, libasound2 (>= 1.0.17), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.17), libcairo2 (>= 1.6.0), libcups2 (>= 1.6.0), libcurl3-gnutls | libcurl3-nss | libcurl4 | libcurl3, libdbus-1-3 (>= 1.9.14), libdrm2 (>= 2.4.75), libexpat1 (>= 2.0.1), libgbm1 (>= 17.1.0~rc2), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.9.10) | libgtk-4-1, libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.26), libpango-1.0-0 (>= 1.14.0), libu2f-udev, libvulkan1, libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.4.4-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.5.0), libxrandr2, wget, xdg-utils (>= 1.0.2)
 Provides: www-browser
-Filename: dists/stable/main/binary-amd64/thorium-browser_104.0.5083.0-1_amd64.deb
-Size: 148587672
-MD5sum: 47ebacf1009d01edc39ab1091042c492
-SHA1: ab1e9d3027cf911a7d0e722fc0f3ff9d6b7d7b0d
-SHA256: af33325bb85e338f7f3a51522cbe768b112b42caa76bb09a57006e1131549f75
+Filename: dists/stable/main/binary-amd64/thorium-browser_109.0.5414.120-1_amd64.deb
+Size: 160626140
+MD5sum: 93abbaaf7aecff04787a979b474e0c5a
+SHA1: a31e4bbd3796e3124e6bfaa7fab378fd862babb6
+SHA256: 2e7252f1b450903d42e397710aeb1b595218fbe3d2846993736974e48cad3f8a
 Section: web
 Priority: optional
-Description: The web browser from Chromium.org and The Thorium Authors
+Description: The web browser from The Thorium Authors
  Thorium is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
 
+Package: thorium-browser
+Version: 111.0.5563.111-1
+Architecture: amd64
+Maintainer: Thorium Linux Maintainers <alex313031@gmail.com>
+Installed-Size: 598544
+Pre-Depends: dpkg (>= 1.14.0)
+Depends: ca-certificates, fonts-liberation, libasound2 (>= 1.0.17), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.17), libcairo2 (>= 1.6.0), libcups2 (>= 1.6.0), libcurl3-gnutls | libcurl3-nss | libcurl4 | libcurl3, libdbus-1-3 (>= 1.9.14), libdrm2 (>= 2.4.75), libexpat1 (>= 2.0.1), libgbm1 (>= 17.1.0~rc2), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.9.10) | libgtk-4-1, libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.26), libpango-1.0-0 (>= 1.14.0), libu2f-udev, libvulkan1, libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.4.4-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.5.0), libxrandr2, wget, xdg-utils (>= 1.0.2)
+Recommends: unrar, vdpau-driver-all, exo | exo-utils
+Conflicts: thorium-browser-unstable
+Replaces: thorium-browser-unstable, thorium-browser-stable
+Provides: www-browser
+Filename: dists/stable/main/binary-amd64/thorium-browser_111.0.5563.111-1_amd64.deb
+Size: 111894
+MD5sum: 5e53dd928fb9e8442d4204d578d9de2b
+SHA1: 388e8964719272325b607883ff38e4e317fd0262
+SHA256: a5c33494ecd28aaf42a593ef5dac2cc2a686057005f633932808dc7dbaefb963
+Section: web
+Priority: optional
+Description: The web browser from The Thorium Authors
+ Thorium is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
