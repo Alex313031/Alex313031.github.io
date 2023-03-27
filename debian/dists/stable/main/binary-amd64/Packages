@@ -28,7 +28,7 @@ Conflicts: thorium-browser-unstable
 Replaces: thorium-browser-unstable, thorium-browser-stable
 Provides: www-browser
 Filename: dists/stable/main/binary-amd64/thorium-browser_111.0.5563.111-1_amd64.deb
-Size: 114579536
+Size: 14579536
 MD5sum: 5e53dd928fb9e8442d4204d578d9de2b
 SHA1: 388e8964719272325b607883ff38e4e317fd0262
 SHA256: a5c33494ecd28aaf42a593ef5dac2cc2a686057005f633932808dc7dbaefb963
