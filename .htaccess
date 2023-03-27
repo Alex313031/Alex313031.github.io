@@ -2,3 +2,17 @@ ErrorDocument 404 /404.html
 Options +Indexes
 IndexOptions +FancyIndexing
 IndexIgnore *.bak
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^(www.)?thorium.rocks$
+RewriteCond %{REQUEST_URI} !^/atom-ng/flight-manual.atom.io/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /atom-ng/flight-manual.atom.io/$1
+
+RewriteCond %{HTTP_HOST} ^(www.)?thorium.rocks$
+
+RewriteRule ^(/)?$ /atom-ng/flight-manual.atom.io/ [L]
