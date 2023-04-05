@@ -7,11 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../css/thorium.css">
-    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="./atom-ng.css">
     <title>Atom-ng</title>
     <meta name="description" content="Webpage for my Atom fork: Atom-ng.">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="dark">
     <link rel="author" href="../humans.txt">
     <link rel="apple-touch-icon" sizes="128x128" href="128.png">
     <link rel="icon" type="image/png" sizes="16x16" href="16.png">
@@ -19,8 +18,8 @@
     <link rel="shortcut icon" type="image/png" sizes="48x48" href="48.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta itemprop="image" content="thumb.png">
-    <meta name="msapplication-TileColor" content="#24292f">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#343233">
+    <meta name="theme-color" content="#343233">
     <style>
         #container {
             width: 500px;
@@ -32,29 +31,6 @@
             width: inherit;
             height: inherit;
         }
-    </style>
-    <script>
-    function toggleDarkMode(useDark) {
-        if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-        }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
-        useDark = true;
-        toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
-        useDark = false;
-        toggleDarkMode(useDark);
-    }
-    </script>
-    <style>
 		.br { content: "";
 			 height: .25em;
 			 display: block;
@@ -62,33 +38,33 @@
 			  }
 	</style>
 </head>
-<body style="border: 1px solid var(--border); max-width: 42em;">
+<body>
 	<a name="latest"></a>
-	<h1><span class="title"><b style="text-shadow: 1px 1px 2px #472474;">&#60; Atom-ng &#62;</b></span><img title="Atom Dev Icon (Click Me!)" class="logo spin shadow2" width="48" style="float: right;" src="64.png"></h1>
-	<button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;<small><em>The original Atom.io site is <a title="atom.io" rel="noopener" target="_blank" href="https://atom.io/">Here</a>.</em></small>
+	<h1 class="title"><b style="text-shadow: 1px 1px 2px #472474;">&#60; Atom-ng &#62;</b><img title="Atom Dev Icon (Click Me!)" class="logo spin shadow2" width="48" style="float: right;" src="64.png"></h1>
+	&nbsp;<small><em>The original Atom.io site is <a title="atom.io" rel="noopener" target="_blank" href="https://atom.io/">Here</a>. (Archived)</em></small>
 	<hr class="line" style="margin-top: 16px;"></hr>
-	<h3 class="link"><a title="Atom-ng GitHub Page" rel="noopener" target="_blank" href="https://github.com/Alex313031/atom-ng">Atom-ng</a>: <em>The hackable text editor</em>. Community maintained fork of <a title="atom.io" rel="noopener" target="_blank" href="https://atom.io/">Atom</a> with compiler optimizations.</h3>
-	<p>- Updated <a title="Atom-ng package.json" rel="noopener" target="_blank" href="https://github.com/Alex313031/atom-ng/blob/master/package.json">Libraries</a><br class="br">
- - <a title="Electron.js" rel="noopener" target="_blank" href="https://www.electronjs.org/">Electron</a> updated, and built from source with the <a title="atom.io" target="_blank" href="../optimizations.html">compiler optimizations</a> of Thorium.<br class="br"><div style="text-align: center;"><b><em>Installation</em> - </b>See <a href="./#installation">Below</a></div></p>
-<br class="br">
+	<h3 class="link"><a title="Atom-ng GitHub" rel="noopener" target="_blank" href="https://github.com/Alex313031/atom-ng">Atom-ng</a>: <em>The hyper-hackable text editor</em>. Community maintained fork of <a title="Atom GitHub" rel="noopener" target="_blank" href="https://github.com/atom/atom">Atom</a> with compiler optimizations.</h3>
+	<p> - Updated <a title="Atom-ng package.json" rel="noopener" target="_blank" href="https://github.com/Alex313031/atom-ng/blob/master/package.json">Libraries</a><br class="br"> - <a title="Electron.js" rel="noopener" target="_blank" href="https://www.electronjs.org/">Electron</a> updated to <code>12.2.3</code>, and built from source with the <a title="Optimizations" target="_blank" href="../optimizations.html">compiler optimizations</a> of Thorium.<br class="br"> - Added the minimap, color-picker, and atom-browser packages<br class="br"> - Multiple other various tweaks, fixes, and improvements<br class="br"><div style="text-align: center;"><b><em>Installation</em> - </b>See <a href="./#installation">Below</a></div></p>
  
     <hr class="smallline"></hr><br>
-    <div style="width: 100%;position: relative">
+    <div style="margin-top: -56px; margin-bottom: -48px;">
+    <div style="width: 100%; position: relative;">
     <div id="container" title="Atom-ng Loading"></div>
     <img
         width="120px"
         title="Atom-ng Loading"
-        style="position: absolute;left: calc(50% - 60px);top: 190px"
+        style="position: absolute; left: calc(50% - 60px); top: 190px;"
         src="./atom.svg"
     />
     </div>
+    </div>
 
-<a name="atomvideo"></a><p style="display: flex; justify-content: center; align-items: flex-start;"><a title="Introducing Atom 1.0!" target="_blank" rel="noopener" href="https://blog.atom.io/2015/06/25/atom-1-0.html">Introducing Atom 1.0!</a>&nbsp;:&nbsp;GitHub</p>
+<a name="atomvideo"></a><p style="display: flex; justify-content: center; align-items: flex-start;"><a title="Introducing Atom 1.0!" target="_blank" rel="noopener" href="https://web.archive.org/web/20221207054456/https://blog.atom.io/2015/06/25/atom-1-0.html">Introducing Atom 1.0!</a>&nbsp;:&nbsp;GitHub</p>
     <video title="Atom Introduction Video" alt="Introducing Atom 1.0" class="video2 off" width="1280px" max-width="75%" allow="accelerometer; gyroscope; picture-in-picture" controls="true" preload="metadata" poster="atomvideo.jpg"><source src="Introducing_Atom_1.0!.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video><br>
     
     <a name="installation"><hr class="smallline"></hr></a>
     <h3 class="link" style="justify-content: center; text-align: center;"><em>Installing</em> <img src="../imgs/hdd.svg" width="38" title="Install" alt="Hard Drive Icon" class="spin fav3"></h3>
-    <p>Simply go to the <a title="Atom-ng Releases" rel="noopener" target="_blank" href="https://github.com/Alex313031/atom-ng/releases">Releases</a> page. The <em>.deb</em> files can be used on Debian/Ubuntu & derivatives. The <em>.tar.gz</em> files can be used for any linux distribution; use the <code style="color: var(--linkcolor);"><em>RUN.sh</em></code> file within to launch it.<br>For Windows, download the .zip and run the <code style="color: var(--linkcolor);"><em>atom-ng</em></code> shortcut inside.</p>
+    <p>Simply go to the <a title="Atom-ng Releases" rel="noopener" target="_blank" href="https://github.com/Alex313031/atom-ng/releases">Releases</a> page. The <em>.deb</em> files can be used on Debian/Ubuntu & derivatives. The <em>.tar.gz</em> files can be used for any linux distribution; use the <code><em>RUN.sh</em></code> file within to launch it.<br>For Windows, download the .zip and run the <code><em>atom-ng</em></code> shortcut inside.</p>
     
     <img src="installing.gif" width="300" title="Installing Atom-ng" alt="Installing Atom GIF" class="spin fav3 shadow" style="display: block; margin-left: auto; margin-right: auto;">
     
