@@ -1,0 +1,7 @@
+https://iso.pop-os.org/18.04/amd64/intel/62/pop-os_18.04_amd64_intel_62.iso
+
+https://iso.pop-os.org/18.04/amd64/nvidia/62/pop-os_18.04_amd64_nvidia_62.iso
+
+https://iso.pop-os.org/20.04/amd64/intel/39/pop-os_20.04_amd64_intel_39.iso
+
+https://iso.pop-os.org/20.04/amd64/nvidia/39/pop-os_20.04_amd64_nvidia_39.iso
