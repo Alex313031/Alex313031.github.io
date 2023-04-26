@@ -1,6 +1,6 @@
 ## thorium.rocks humans.txt ##
 
-# Copyright (c) 2022 Alex313031.
+# Copyright (c) 2023 Alex313031.
 # https://humanstxt.org/
 
 /* TEAM */
