@@ -1,6 +1,6 @@
 {
-    "name": "About Me.",
-    "short_name": "About",
+    "name": "Welcome!",
+    "short_name": "Welcome!",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

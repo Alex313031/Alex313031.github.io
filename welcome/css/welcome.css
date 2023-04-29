@@ -177,7 +177,7 @@ div.gallery3 {
 }
 /* Image effects */
 img.spin {
-  transition: all .6s;
+  transition: transform .6s;
 }
 svg.spin {
   transition: all .6s;
@@ -197,6 +197,12 @@ img.logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+img.logo:hover {
+  max-width: 204px;
+  max-height: 204px;
 }
 img.coc {
   filter: drop-shadow(1px 1px 2px var(--coc));
@@ -450,6 +456,12 @@ a:visited,a:active {
 /* Set under construction text colours */
 .construction {
   color: var(--construction);
+}
+img.construction {
+  max-width: 256px;
+}
+img.construction:hover {
+  max-width: 260px;
 }
 code {
   color: var(--code);
