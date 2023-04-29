@@ -1,0 +1,24 @@
+## Thorium Netlog Viewer humans.txt ##
+
+# Copyright (c) 2023 Alex313031.
+# https://humanstxt.org/
+
+/* ABOUT */
+	
+	Developer: Alexander Frick
+	Role: Main Thorium Developer
+	Twitter: @alex313031
+	GitHub: @Alex313031
+	Email: alex313031@gmail.com
+	From: Oklahoma, US
+	
+/* THANKS */
+	
+	Chromium Contributors
+
+/* WEBPAGE */
+
+	Last update: 2023/04/29
+	Language: English
+	Doctype: HTML5, CSS, WebGL
+	IDE: Geany
