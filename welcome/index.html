@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/welcome/ -->
+<html lang="en-US" style="padding-top: 8px; padding-bottom: 8px;">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./css/welcome.css">
+    <title>Welcome!</title>
+    <meta name="description" content="Welcome page for Thorium Browser.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="humans.txt">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <meta itemprop="image" content="assets/thumb.png">
+    <link rel="manifest" href="welcome.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+    function toggleDarkMode(useDark) {
+        if (useDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }
+    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+    }
+    else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+    }
+    </script>
+</head>
+<body class="body4" style="background-image: url('imgs/background.jpg');">
+		
+    <div style="text-align: center;"><a name="welcome"></a>
+		<h1><b><u><em>Welcome to Thorium Browser!</em></u></b></h1></div>
+		<div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
+		<br>
+		<p style="text-align: center; margin-top: -12px;"><br> <img src="imgs/info_black.svg" width="20" title="Info" alt="Black Info Icon" style="filter: drop-shadow(1px 1px 2px #ffffff);" class="spin2 fav"><b>&nbsp;&nbsp;<em>Contact me</em>&nbsp;:&nbsp;</b><a title="Contact Info" href="misc/business-card">Virtual Business Card</a></p>
+		<p style="text-align: center; margin-top: -12px;"><br> <img src="imgs/heart.svg" width="20" title="Heart" alt="heart.svg" style="filter: drop-shadow(1px 1px 2px #000000);" class="spin2 fav"><b>&nbsp;&nbsp;<em>My BFF</em>&nbsp;:&nbsp;</b><a title="Chancie Wancie" href="chance">Chance</a></p>
+		<hr class="line">
+	<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+	
+    <script defer src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script defer src="../js/spin.js"></script>
+    <script defer src="../js/spin2.js"></script>
+	<script defer src="../js/spun.js"></script>
+    <script defer src="../js/button.js"></script>
+</body>
+</html>
