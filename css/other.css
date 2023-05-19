@@ -4,7 +4,7 @@
 :root.light {
   --bgcolor: #24292f;
   --fontcolor: #ffffff;
-  --linkcolor: #5bf5bf;
+  --linkcolor: #1be1be;
   --visitedcolor: #ae5ee0;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;
@@ -18,7 +18,7 @@
 :root.dark {
   --bgcolor: #24292f;
   --fontcolor: #ffffff;
-  --linkcolor: #5bf5bf;
+  --linkcolor: #1be1be;
   --visitedcolor: #ae5ee0;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;

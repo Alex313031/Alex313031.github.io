@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_beakerbrowser_com=self.webpackChunkdocs_beakerbrowser_com||[]).push([[44],{7085:function(e){e.exports=JSON.parse('{"name":"docusaurus-theme-search-algolia","id":"default"}')}}]);

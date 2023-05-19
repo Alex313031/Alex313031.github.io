@@ -25,7 +25,7 @@
     --bgcolor: #24292f;
     --invert: #ffffff;
     --fontcolor: #ffffff;
-    --linkcolor: #5bf5bf;
+    --linkcolor: #1be1be;
     --visitedcolor: #ae5ee0;
     --preformatted: #ffffff;
     --accent-bg: #2b2b2b;
@@ -45,7 +45,7 @@
   --bgcolor: #24292f;
   --invert: #ffffff;
   --fontcolor: #ffffff;
-  --linkcolor: #5bf5bf;
+  --linkcolor: #1be1be;
   --visitedcolor: #ae5ee0;
   --preformatted: #ffffff;
   --accent-bg: #2b2b2b;
@@ -387,7 +387,7 @@ p.intro {
   font-weight: 600;
 }
 #intro a:visited,a:active {
-  color: #5bf5bf;
+  color: #1be1be;
 }
 p.intro2 {
   background: #24292f;
