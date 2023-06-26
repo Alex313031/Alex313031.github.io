@@ -1,10 +1,23 @@
 ## List of program versions that work with Windows 7 ##
 --------------------------------------------------------
 
-VLC : https://download.videolan.org/pub/videolan/vlc/2.2.8/
+VLC : https://download.videolan.org/pub/videolan/vlc/3.0.18/
 
-OBS : https://github.com/obsproject/obs-studio/releases/tag/25.0.8
+OBS : https://github.com/obsproject/obs-studio/releases/tag/27.2.4
 
+Blender : https://download.blender.org/release/Blender2.92/
+Blender 3 has an unofficial build : https://github.com/nalexandru/BlenderCompat/releases
+
+Chromium : 109.0.5414.120
+
+Thorium : 109.0.5414.151
+
+Supermium (Chromium Fork) : https://github.com/win32ss/supermium/releases
+
+NodeJS : https://nodejs.org/download/release/v14.17.6/
+(You must use the NODE_SKIP_PLATFORM_CHECK=1 environment variable)
+
+Python : 3.8.10
 Python 3.9 Hack : https://github.com/nalexandru/api-ms-win-core-path-HACK
 
 7+ Taskbar Tweaker : https://rammichael.com/7-taskbar-tweaker
