@@ -41,7 +41,7 @@ alias gkedit='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BU
 alias memregen='sudo swapoff -a && sudo swapon -a'
 alias bashconf='nano /home/alex/.bashrc'
 alias jar='java -jar'
-alias fdd='find . -name'
+alias fdd='/usr/bin/find . -name'
 alias handbook='exo-open --launch WebBrowser /usr/share/doc/debian-kernel-handbook/kernel-handbook.html/index.html'
 alias failed='sudo systemctl list-units --state failed'
 alias sysd='sudo systemctl status'
@@ -86,7 +86,7 @@ alias mp='/home/alex/bin/mpv/build/mpv '
 alias server='python3 -m http.server'
 alias find="grep -rnw $PWD -e '"
 alias zst="tar --use-compress-program=unzstd -xvf "
-alias thordeb="/home/alex/bin/autoninja -C ~/chromium/src/out/thorium "chrome/installer/linux:stable_deb" -j"
+alias thordeb="autoninja -C ~/chromium/src/out/thorium chrome/installer/linux:stable_deb -j"
 alias commit='git add . && git commit -m "'
 alias push="git push origin main"
 alias pushd='git push origin master'
@@ -97,7 +97,9 @@ alias sysroot='build/linux/sysroot_scripts/install-sysroot.py --all'
 alias status='git status'
 alias grep2='grep -C2 --colour'
 alias diff='git diff'
+alias timetouch='/usr/bin/find . -exec touch {} +'
+alias ni='nvm install && npm install'
 export DEPOT_TOOLS_UPDATE=0
 export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=/home/alex/chromium/win
-#export PATH="$(python3 -m site --user-base)/bin:$PATH"
-#source "$HOME/.cargo/env"
+#export GYP_MSVS_HASH_27370823e7=38936ba45f
+export PATH="$(python3 -m site --user-base)/bin:$PATH"
