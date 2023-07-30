@@ -21,3 +21,6 @@ Python : 3.8.10
 Python 3.9 Hack : https://github.com/nalexandru/api-ms-win-core-path-HACK
 
 7+ Taskbar Tweaker : https://rammichael.com/7-taskbar-tweaker
+
+Windscribe 2.4 (Even though their site says 10/11 only, they didn't update the version
+  and this is in fact the same 2.4 that you can download now)
