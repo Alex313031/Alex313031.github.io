@@ -228,6 +228,10 @@ img.thoros {
   animation: jig 1.0s;
   animation-iteration-count: infinite;
 }
+.jig:hover {
+  animation: jig 0.6s;
+  animation-iteration-count: infinite;
+}
 img.fly {
   margin-top: -16px;
   border: 1px solid var(--border);
