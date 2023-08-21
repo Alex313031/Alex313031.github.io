@@ -1,0 +1,11 @@
+{
+  "version": "109.0.5414.159",
+  "sse2": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/thorium_WIN32_mini_installer.exe",
+  "sse2_zip": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/Thorium_WIN32_109.0.5414.159.zip",
+  "sse3": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/thorium_SSE3_mini_installer.exe",
+  "sse3_zip": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/Thorium_SSE3_109.0.5414.159.zip",
+  "avx": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/thorium_AVX_mini_installer.exe",
+  "avx_zip": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/Thorium_AVX_109.0.5414.159.zip",
+  "avx2": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/thorium_AVX2_mini_installer.exe"
+  "avx2_zip": "https://github.com/Alex313031/thorium-win7/releases/download/M109.0.5414.159/Thorium_AVX2_109.0.5414.159.zip"
+}
