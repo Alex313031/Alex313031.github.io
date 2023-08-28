@@ -10,7 +10,7 @@ Blender 3 has an unofficial build : https://github.com/nalexandru/BlenderCompat/
 
 Chromium : 109.0.5414.120
 
-Thorium : 109.0.5414.151
+Thorium : 109.0.5414.159
 
 Supermium (Chromium Fork) : https://github.com/win32ss/supermium/releases
 
@@ -22,5 +22,8 @@ Python 3.9 Hack : https://github.com/nalexandru/api-ms-win-core-path-HACK
 
 7+ Taskbar Tweaker : https://rammichael.com/7-taskbar-tweaker
 
-Windscribe 2.4 (Even though their site says 10/11 only, they didn't update the version
-  and this is in fact the same 2.4 that you can download now)
+Windscribe : 2.4.11 https://github.com/Windscribe/Desktop-App/releases/tag/v2.4.11
+
+Electron:  22.x.x
+
+VSCode/VSCodium : 1.81.x
