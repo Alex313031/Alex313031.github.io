@@ -51,7 +51,7 @@
 		<a name="top"></a>
     </div>
     <div class="d-flex">
-        <h1><span class="title"><b><u>Mercury - </u></b></span><br> <small><b><em>The fastest Firefox fork on Earth.</em></b></small></h1>
+        <h1><span class="title"><b><u>Mercury - </u></b></span><br> <small><b><em>Compiler optimized, private Firefox fork.</em></b></small></h1>
         <a target="_blank" rel="noopener" href="https://mozilla.github.io/geckoview/"><img class="bubbles shadow" src="imgs/geckoview.svg" width="96" height="96" alt="Geckoview" title="Geckoview (Click Me!)"></a>
     </div>
     <hr class="line">
@@ -60,12 +60,12 @@
     <img class="fly d-flex2" src="imgs/geckoview-crash.png" width="78" title="Flying Geckoview Crash" alt="geckoview-crash.png">
     <a name="info"></a><ul>
         <li>Compiler optimizations include AVX, AES, LTO and PGO.</li>
-        <li>Learn more about these compiler optimizations and how they work <a title="Optimizations" href="optimizations">Here</a>.</li>
-        <li><a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Mercury/blob/main/PATCHES.md">Patches and UI changes</a> that enhance useability, and strengthen privacy/security. <br>Many of these come from LibreWolf, Waterfox, PlasmaFox, and GNU IceCat</li>
+        <li>Learn more about these compiler optimizations and how they work <a title="Optimizations" href="./optimizations">Here</a>.</li>
+        <li><a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Mercury/blob/main/docs/PATCHES.md">Patches and UI changes</a> that enhance useability, and strengthen privacy/security. <br>Many of these come from LibreWolf, Waterfox, PlasmaFox, and GNU IceCat</li>
     </ul>
     <!-- Dark/Light Mode Button -->
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
-    <p>&nbsp;&nbsp;This nets a <a title="Mercury Performance Comparisons" href="mercury_performance"><b><em>8-20%</em> performance</b></a> improvement over vanilla Firefox, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Mercury/blob/main/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Firefox regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Thorium Browser" rel="noopener" target="_blank" href="./index.html">Thorium</a> & <a title="ThoriumOS" href="thoriumos">ThoriumOS</a></p>
+    <p>&nbsp;&nbsp;This nets a <a title="Mercury Performance Comparisons" href="./mercury_performance"><b><em>8-20%</em> performance</b></a> improvement over vanilla Firefox, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Mercury/blob/main/docs/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Firefox regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Thorium Browser" rel="noopener" target="_blank" href="./index.html">Thorium</a> & <a title="ThoriumOS" href="./thoriumos">ThoriumOS</a></p>
     
     <a name="links"></a><h2><u>&#60;Links&#62;</u></h2>
     <!-- Links List -->
@@ -79,10 +79,10 @@
         </li>
     </ul>
     <a name="installation"></a><h2 class="h2"><u>Installation</u><img src="imgs/hdd.svg" width="38" title="Install" alt="Hard Drive Icon" class="spin2 fav3"></h2>
-    <p>The releases come in a <a title="About Tarballs" target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Tar_(computing)#:~:text=In%20computing%2C%20tar%20is%20a%20computer%20software%20utility%20for%20collecting%20many%20files%20into%20one%20archive%20file%2C%20often%20referred%20to%20as%20a%20tarball">tarball</a>. For Windows, just unpack anywhere, and make a shortcut to <em>mercury.exe</em> if you wish. As of v112 there are also .exe installers. For Linux, it can be used on any distribution. To add to your system:</p>
+    <p>The Linux releases come in a <a title="About Tarballs" target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Tar_(computing)#:~:text=In%20computing%2C%20tar%20is%20a%20computer%20software%20utility%20for%20collecting%20many%20files%20into%20one%20archive%20file%2C%20often%20referred%20to%20as%20a%20tarball">tarball</a> and a .deb package. For Windows, there are .zips and .exe installers. To use the .tar.gz:</p>
     <!-- Code Block -->
     <pre title="APT Sources Setup">tar -xvf mercury-versionnumber.tar.gz &&
-run ./mercury-bin or ./RUN.sh
+./RUN.sh
 ----------------------------------------
 You can create a .desktop file using
 the sample one provided in the tarball.</pre>
