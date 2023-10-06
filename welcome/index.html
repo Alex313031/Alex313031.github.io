@@ -19,25 +19,23 @@
     <link rel="manifest" href="welcome.webmanifest">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body class="body4">
@@ -45,7 +43,7 @@
 		<h1><b><u><em>Welcome to Thorium Browser!</em></u></b></h1></div>
 		<div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
 		<br>
-		<p style="text-align: center; margin-top: -12px;"><br> <img src="./assets/door.svg" width="20" title="Welcome In" alt="Open Door Icon" style="filter: drop-shadow(1px 1px 2px #000);" class="spin2 fav">&nbsp;&nbsp;Welcome! You just launched Thorium Browser. This page only shows on the first start of a fresh install.&nbsp;&nbsp;<br>Want to learn about the patches or optimizations of Thorium? See > <a title="PATCHES.md" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium/blob/main/infra/PATCHES.md">Patches.md</a> and <a title="About Optimizations" rel="noopener" target="_blank" href="https://thorium.rocks/optimizations">Optimizations</a>.</em></p>
+		<p style="text-align: center; margin-top: -12px;"><br> <img src="./assets/door.svg" width="20" title="Welcome In" alt="Open Door Icon" style="filter: drop-shadow(1px 1px 2px #000);" class="spin2 fav">&nbsp;&nbsp;Welcome! You just launched Thorium Browser. This page only shows on the first start of a fresh install.&nbsp;&nbsp;<br>Want to learn about the patches or optimizations of Thorium? See > <a title="PATCHES.md" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium/blob/main/infra/PATCHES.md">Patches.md</a> and <a title="About Optimizations" rel="noopener" target="_blank" href="https://thorium.rocks/optimizations">Optimizations</a>.</p>
 		<p style="text-align: center; margin-top: -12px;"><br> <img src="./assets/help.svg" width="21" title="Help" alt="help.svg" style="filter: drop-shadow(1px 1px 2px #000);" class="spin2 fav">&nbsp;&nbsp;Need Help?&nbsp;>&nbsp;Join us on&nbsp;<a title="Thorium IRC Channel" rel="noopener" target="_blank" href="https://kiwiirc.com/nextclient/#irc://irc.libera.chat:+6697/#thorium">IRC</a> , <a title="File a bug or question" rel="noopener" target="_blank" href="https://github.com/Alex313031/thorium/issues">file an issue on GitHub</a> , or <a title="Email me at Alex313031@gmail.com" rel="noopener" target="_blank" href="mailto:Alex313031@gmail.com">Contact Me</a>.</p>
 		<p style="text-align: center; margin-top: -12px;"><a href="https://thorium.rocks/">Back to main page</a></p>
 		<hr class="line">
@@ -54,7 +52,7 @@
 		<br>
         <div style="text-align: center;">
 			<p title="Under Construction" class="construction"><b><em>Webpage under construction.</em></b></p>
-			<a title="Under Construction" target="_blank" href="../misc/Chicago_Under_Construction.png"><img title="Under Construction" alt="Windows Chicago Under Construction" class="construction" src="../misc/Chicago_Under_Construction.png"></img></a></span>
+			<a title="Under Construction" target="_blank" href="../misc/Chicago_Under_Construction.png"><img title="Under Construction" alt="Windows Chicago Under Construction" class="construction" src="../misc/Chicago_Under_Construction.png"></a>
 		</div>
 	<div id="totop"><a href="#top" title="Back to top">▲</a></div>
 	

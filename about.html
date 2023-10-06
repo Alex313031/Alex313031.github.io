@@ -20,25 +20,23 @@
     <link rel="manifest" href="about.webmanifest">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body class="body4" style="background-image: url('imgs/background.jpg');">
@@ -54,7 +52,7 @@
 		<p style="text-align: center; margin-top: -12px;"><br> <img src="imgs/info_black.svg" width="20" title="Info" alt="Black Info Icon" style="filter: drop-shadow(1px 1px 2px #ffffff);" class="spin2 fav"><b>&nbsp;&nbsp;<em>Contact me</em>&nbsp;:&nbsp;</b><a title="Contact Info" href="misc/business-card">Virtual Business Card</a></p>
 		<p style="text-align: center; margin-top: -12px;"><br> <img src="imgs/heart.svg" width="20" title="Heart" alt="heart.svg" style="filter: drop-shadow(1px 1px 2px #000000);" class="spin2 fav"><b>&nbsp;&nbsp;<em>My BFF</em>&nbsp;:&nbsp;</b><a title="Chancie Wancie" href="chance">Chance</a></p>
 		<hr class="line">
-    <a name="stuff"></a><h1 style="text-align: center; margin-left: -38px;"><img class="spin2" style="filter: drop-shadow(1px 1px 2px #000000);" src="box_38.png" alt="Box" title="Box"><u><em>Stuff</u>&nbsp;:&nbsp;</em></h1>
+    <a name="stuff"></a><h1 style="text-align: center; margin-left: -38px;"><img class="spin2" style="filter: drop-shadow(1px 1px 2px #000000);" src="box_38.png" alt="Box" title="Box"><em><u>Stuff</u>&nbsp;:&nbsp;</em></h1>
     <p style="display: flex; justify-content: center; align-items: flex-start;"><a target="_blank" rel="noopener" href="https://www.carlburton.io/">GIFs from Carl Burton</a></p>
     <div style="display: flex; justify-content: center; align-items: flex-start; height: auto;">
 	<div class="gallery">
@@ -107,7 +105,7 @@
     <video title="&quot;Oil&quot; (Experimental Video Art)" alt="Oil (Experimental Video Art)" class="video2 off" width="1280px" style="max-width: 100%;" allow="accelerometer; gyroscope; picture-in-picture" controls="true" preload="metadata" poster="media/oilvideo.jpg"><source src="media/Oil_(Experimental_Video_Art)_1080p.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
 
 	<a name="atom"></a><p style="text-align: center;">"Chromium Engineering"&nbsp;:&nbsp;Image originally from&nbsp;<a target="_blank" rel="noopener" href="https://github.blog/2022-06-08-sunsetting-atom">Sunsetting Atom</a></p>
-	<div style="display: flex; justify-content: center; align-items: flex-start;"><a href="imgs/Engineering-Product@2x.png"><img loading="lazy" class="shadow" width="1280px" style="max-width: 100%;" alt="Engineering-Product@2x.png" title="Chromium Engineering" src="imgs/Engineering-Product@2x.png"></div>
+	<div style="display: flex; justify-content: center; align-items: flex-start;"><a href="imgs/Engineering-Product@2x.png"><img loading="lazy" class="shadow" width="1280px" style="max-width: 100%;" alt="Engineering-Product@2x.png" title="Chromium Engineering" src="imgs/Engineering-Product@2x.png"></a></div>
 
 	<!-- <a style="text-align: right; float: right;" href="misc/hidden/kody_doodles_9.3.png">&#9892;</a> -->
 	<div id="totop"><a href="#top" title="Back to top">▲</a></div>

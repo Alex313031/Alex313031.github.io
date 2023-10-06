@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY" />
+    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY">
     <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/thorium.css">
     <link rel="stylesheet" href="css/media.css">
@@ -24,31 +24,29 @@
     <meta name="msapplication-TileColor" content="#24292f">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body>
 	<!-- Main Logo -->
 	<div id="spinner">
-		<img class="spin shadow" style="float: center; margin-right: 10px; margin-bottom: 2px;" src="imgs/thoriumos_bootsplash.png" width="600" alt="ThoriumOS Logo" title="ThoriumOS Logo (Click Me!)">
+		<img class="spin shadow" style="margin-right: 10px; margin-bottom: 2px;" src="imgs/thoriumos_bootsplash.png" width="600" alt="ThoriumOS Logo" title="ThoriumOS Logo (Click Me!)">
     </div>
     <div class="d-flex">
         <h1><span class="title"><b><u>ThoriumOS - </u></b></span><br> <small><b><em>ChromiumOS for the masses.</em></b></small></h1>

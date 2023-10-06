@@ -138,7 +138,6 @@ button {
   box-shadow: 1px 1px 1px 0px var(--buttonborder);
   border: 1px solid var(--border);
   border-radius: 5px;
-  float: bottom;
   background-color: #828282;
   color: #ffffff;
 }
@@ -226,15 +225,15 @@ form {
 input {
   margin: auto;
   color: #000000;
-  border: 1;
+  border: 1px;
 }
 .search {
   background-color: #ffffff;
   color: #000000;
-  border: 1;
+  border: 1px;
 }
 .submit {
   background-color: #828282;
   color: #ffffff;
-  border: 1;
+  border: 1px;
 }

@@ -18,25 +18,23 @@
     <link rel="manifest" href="demos.webmanifest">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body class="body4">
@@ -50,11 +48,11 @@
 		<img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/WebGL_Logo.svg" width="600em" max-width="75%" alt="WebGL Logo" title="WebGL Logo (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
     </div>
     <div style="display: flex; justify-content: center; align-items: flex-start; margin-left: auto; margin-right: auto; box-sizing: border-box; height: auto;">
-		<h1 style="font-style: italic;"><a rel="noopener" title="WebGL Homepage" alt="WebGL Homepage" href="https://www.khronos.org/webgl/">WebGL</a>, <a rel="noopener" title="three.js Homepage" alt="three.js Homepage" href="https://threejs.org/">Three.js</a> & <a rel="noopener" title="cannon.js Homepage" alt="cannon.js Homepage" href="http://www.cannonjs.org/">Cannon.js</a> Demos:</h1>
+		<h1 style="font-style: italic;"><a rel="noopener" title="WebGL Homepage" href="https://www.khronos.org/webgl/">WebGL</a>, <a rel="noopener" title="three.js Homepage" href="https://threejs.org/">Three.js</a> & <a rel="noopener" title="cannon.js Homepage" href="http://www.cannonjs.org/">Cannon.js</a> Demos:</h1>
 	</div>
 	<img class="spin2 shadow" style="float: right; margin-right: 2em; margin-top: -4.4em;" width="64px" title="VR Cardboard" alt="VR_Cardboard" src="imgs/VR_Cardboard.png">
 	<div style="display: flex; justify-content: center; align-items: flex-start; margin-left: auto; margin-right: auto; margin-top: -1.33%; box-sizing: border-box; height: auto;">
-		<p style="text-align: center;"><em>&ndash;You can check your WebGL support and features <a title="WebGL Tester" href="misc/webgl-tester.html">Here</a>.</p>
+		<p style="text-align: center;"><em>&ndash;You can check your WebGL support and features <a title="WebGL Tester" href="misc/webgl-tester.html">Here</a>.</em></p>
 	</div>
 	<!-- <audio style="margin-left: auto; margin-right: 40%; max-width: 100%;" title="&quot;Wide Open&quot; from the game NightSky by Nicalis - Chris Schlarb" alt="the_void_2.ogg" class="sound" controls="true" autoplay loop><source src="media/the_void_2.ogg" type="audio/ogg">Your browser does not support the audio element.</audio> -->
 	<div style="display: flex; justify-content: center; align-items: flex-start; margin-bottom: 12px;">&nbsp;<button style="z-index: 10001;" class="tone" onclick="aud_play_pause()" title="Mute/Unmute">Mute|Unmute</button></div>
@@ -181,7 +179,7 @@
 	<img class="spin2 shadow" loading="lazy" style="float: left; max-width: 33%;" src="imgs/threejs.svg" width="144px" max-width="33%" alt="Three.js Logo" title="Three.js Logo">
 	<img class="spin2 shadow" loading="lazy" style="float: left; margin-left: 75px; margin-top: 35px; max-width: 33%;" src="imgs/WebGL_Logo.svg" width="144px" max-width="33%" alt="Three.js Logo" title="WebGL Logo">
 	<img class="spin2 shadow" loading="lazy" style="float: right; margin-top: 14px; max-width: 33%;" src="imgs/cannonjs.webp" width="128px" max-width="33%" alt="Cannon.js Logo" title="Cannon.js Logo">
-	<a href="media/Machina.gif"><img class="shadow" loading="lazy" style="float: center; position: relative; margin-top: 14px; max-width: 33%; margin-left: 15%;" src="media/Machina.gif" max-width="33%" alt="Machina GIF" title="&quot;Machina&quot; GIF by Carl Burton (Click Me!)"></a>
+	<a href="media/Machina.gif"><img class="shadow" loading="lazy" style="position: relative; margin-top: 14px; max-width: 33%; margin-left: 15%;" src="media/Machina.gif" max-width="33%" alt="Machina GIF" title="&quot;Machina&quot; GIF by Carl Burton (Click Me!)"></a>
 	
     <script src="js/jquery-3.7.0.slim.min.js"></script>
     <script>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY" />
+    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY">
     <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/thorium.css">
     <link rel="stylesheet" href="css/media.css">
@@ -25,25 +25,23 @@
     <meta name="msapplication-TileColor" content="#24292f">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body>
@@ -69,8 +67,8 @@
     <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
     <p>&nbsp;&nbsp;This nets a <a title="Thorium Performance Comparisons" href="performance"><b><em>8-38%</em> performance</b></a> improvement over vanilla Chromium, depending on the benchmark and OS. See <a title="List of Patches" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium/blob/main/infra/PATCHES.md"><em>PATCHES.md</em></a> for a detailed overview of all modifications compared to vanilla Chromium regarding performance, security and useability. <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="ThoriumOS" href="thoriumos">ThoriumOS</a> & <a title="CrOS TrImLy Script" rel="noopener" target="_blank" href="https://github.com/Alex313031/TrImLy">TrImLy</a>&nbsp;&nbsp;<img src="imgs/thorium.svg" width="21" title="ThoriumOS" alt="ThoriumOS Icon" class="spin2 fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="The Chromium Story" href="chromiumstory">The Chromium Story</a>&nbsp;&nbsp;<img src="imgs/chromium.svg" width="21" title="Chromium Story" alt="Chromium Story" class="spin2 fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="HTML5 Games!" href="games/">Thorium HTML5 Games!</a>&nbsp;&nbsp;<img src="games/favicon-32x32.png" width="18" title="Games Icon" alt="Games Icon" class="spin2 fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="WebGL Demos" href="demos">3D Web Demos!</a>&nbsp;&nbsp;<img src="demos-favicon.ico" width="18" title="3D Demos" alt="3D Demos Favicon" class="spin2 fav"> <br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Material Interaction" target="_blank" href="media/Material/material-design">Material Design Interactives</a>&nbsp;&nbsp;<img src="md-favicon.ico" width="18" title="Material Interaction" alt="Material Interaction Icon" class="spin2 fav"><br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="About Me" href="about">About Me</a>&nbsp;&nbsp;<img src="flags-32x32.png" width="18" title="Thorium Flags Icon" alt="Thorium Flags Icon" class="spin2 fav"><br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Mercury Browser" href="mercury">Mercury Browser</a> <small>(Firefox Fork)</small>&nbsp;&nbsp;<img src="imgs/mercury-favicon32.png" width="19" title="Mercury Favicon" alt="Mercury Favicon" style="border: 1px solid #24292f;" class="spin2 fav"><br> <b>&nbsp;&nbsp;<em>See also</em> : </b><a title="Atom-ng" href="atom-ng/">Atom-ng</a> <small>(Atom Editor Fork)</small>&nbsp;&nbsp;<img src="atom-ng/32.png" width="21" title="Atom-ng Favicon" alt="Atom-ng Favicon" style="border: 1px solid #24292f; margin-bottom: -6px;" class="spin2 fav"></p>
     
-    <a name="links"></a><h2><u>&#60;Links&#62;</u></h2>
-    <p> <span title="Under Construction" class="construction"><b><em>Website under construction.</em></b></span> <a title="Under Construction" alt="Windows Chicago Under Construction" target="_blank" href="misc/Chicago_Under_Construction.png">Δ</a> Meanwhile, you can check out the main <a title="Thorium Source Code" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium">repository</a>, read the <a title="alex313031.blogspot.com" rel="noopener" target="_blank" href="https://alex313031.blogspot.com/">developer blog</a>, view the <a title="Release Notes" alt="history" href="misc/history">release notes</a>, or download releases for:</p>
+    <a name="links"></a><h2 title="Thorium Links"><u>&#60;Links&#62;</u></h2>
+    <p> <span title="Under Construction" class="construction"><b><em>Website under construction.</em></b></span> <a title="Under Construction" alt="Windows Chicago Under Construction" target="_blank" href="misc/Chicago_Under_Construction.png">Δ</a> Meanwhile, you can check out the main <a title="Thorium Source Code" rel="noopener" target="_blank" href="https://github.com/Alex313031/Thorium">repository</a>, read the <a title="alex313031.blogspot.com" rel="noopener" target="_blank" href="https://alex313031.blogspot.com/">developer blog</a>, view the <a title="Release Notes" href="misc/history">release notes</a>, or download releases for:</p>
     <!-- Links List -->
     <ul title="Thorium Links">
 		<li><a title="Thorium Dino Game" target="_blank" href="games/dino/">Thorium Dino Game!</a>&nbsp;&nbsp;<img src="imgs/Dino.png" width="36" title="Dino!" alt="Dino Game" class="spin2 fav">

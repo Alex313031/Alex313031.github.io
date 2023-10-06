@@ -127,7 +127,6 @@ img {
 }
 div.gallery {
   margin: 2px;
-  float: center;
   width: 200px;
   height: auto;
 }
@@ -147,7 +146,6 @@ div.gallery img {
 }
 div.gallery2 {
   margin: 4px;
-  float: center;
   width: 50%;
   height: auto;
 }
@@ -167,7 +165,6 @@ div.gallery2 img {
 }
 div.gallery3 {
   margin: 4px;
-  float: center;
   width: 50%;
   height: auto;
 }
@@ -504,7 +501,6 @@ button {
   box-shadow: 1px 1px 1px 0px var(--buttonborder);
   border: 1px solid var(--border);
   border-radius: 5px;
-  float: bottom;
   background-color: #828282;
   color: #ffffff;
 }

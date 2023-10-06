@@ -19,25 +19,23 @@
     <meta itemprop="image" content="win7_thumb.png">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body class="body4">
@@ -56,10 +54,11 @@
 		<p style="text-align: center; margin-top: -12px;" title="Download Windows 7"><br> <img src="imgs/win7/iso.png" width="20" title="ISO Icon" alt="iso.png" class="spin2 fav"><b>&nbsp;&nbsp;<em>Download Windows 7 SP1 Ultimate x64</em>&nbsp;:&nbsp;</b><a title="Windows 7 ISO Download" href="https://archive.org/details/7601.24214.180801-1700.win-7sp-1-ldr-escrow-client-ultimate-x-64-fre-en-us_202304" download>Here</a>
 		<small>&nbsp;&nbsp;<em>Original Link from Microsoft (Dead)</em>&nbsp;:&nbsp;<a title="Windows 7 ISO Original Download" href="https://download.microsoft.com/download/5/1/9/5195A765-3A41-4A72-87D8-200D897CBE21/7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_ULTIMATE_x64FRE_en-us.iso" download>Was Here</a></small></p>
 		<hr class="line">
-    <a name="stuff"></a><h1 style="text-align: center; margin-left: -32px;"><img class="spin2 shadow" style="margin-bottom: -8px;" src="imgs/win7/win7.png" width="48px" alt="win7" title="Windows 7 Sticker">&nbsp;<u><em>Links</u>&nbsp;:&nbsp;</em></h1>
+    <a name="stuff"></a><h1 style="text-align: center; margin-left: -32px;"><img class="spin2 shadow" style="margin-bottom: -8px;" src="imgs/win7/win7.png" width="48px" alt="win7" title="Windows 7 Sticker">&nbsp;<em><u>Links</u>&nbsp;:&nbsp;</em></h1>
 
 	<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: -10px;">
-	<p style="text-align: center; max-width: 33%;"><ul title="Windows 7 Links">
+	<p style="text-align: center; max-width: 33%;">
+	<ul title="Windows 7 Links">
 		Includes AVX, AVX2, SSE3, and 32 Bit SSE2 builds!<br>Note: These releases <em>also</em> work on Server 2008 R2, Windows 8/8.1, and Server 2012/2012 R2!
 		<li><a title="Thorium Win7" target="_blank" href="https://github.com/Alex313031/thorium-win7/releases">Thorium Releases for Windows 7</a>&nbsp;&nbsp;<img src="favicon-48x48.png" width="20" title="Thorium Logo" alt="Thorium Icon" class="spin2 fav">
 		</li>
@@ -92,7 +91,9 @@
 		<p><a target="_blank" rel="noopener" href="https://web.archive.org/web/20211107030255/https://github.com/zeffy/wufuc">Wufuc</a>, which enables updates on "unsupported systems".<br>See the <a target="_blank" rel="noopener" href="https://web.archive.org/web/20211107030255/https://github.com/zeffy/wufuc#readme">README</a>.</p>
 		<li>&nbsp;<a title="Wufuc @ dl.thorium.rocks/files/win7" target="_blank" rel="noopener" href="https://dl.thorium.rocks/files/win7/wufuc_v1.0.1.201-a52637d4.zip" download>wufuc_v1.0.1.201-a52637d4.zip</a>&nbsp;&nbsp;<img src="imgs/win7/favicon48.png" width="19" title="Windows 7 Orb" alt="Win7 Favicon" class="spin2 fav">
 		</li>
-	</ul></p></div>
+	</ul>
+	</p>
+	</div>
 	<hr class="line">
 
 	<a name="video"></a><p style="text-align: center;"><a title="The History of Windows 7 Development" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=BNCpU4BaquY">The History of Windows 7 Development</a> : Michael MJD </p>

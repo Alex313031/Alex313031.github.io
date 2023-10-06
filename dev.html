@@ -22,32 +22,30 @@
     <link rel="mask-icon" href="./misc/build.svg" color="#ffffff">
     <meta name="msapplication-TileColor" content="#24292f">
     <meta name="theme-color" content="#ffffff">
-    <script>
-    function toggleDarkMode(useDark) {
-        if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-        }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
-        useDark = true;
-        toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
-        useDark = false;
-        toggleDarkMode(useDark);
-    }
-    </script>
     <style>
 		#svg {
 		  margin-top: 8px;
 		}
 	</style>
+    <script>
+      function toggleDarkMode(useDark) {
+        if (useDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+      } else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+      }
+    </script>
 </head>
 <body>
 	<div class="p3">
@@ -76,7 +74,7 @@
         </li>
         <li><a title="Chromium Dev Editor" rel="noopener" target="_blank" href="https://github.com/Alex313031/Chromium-Dev-Editor/">Chromium Dev Editor</a> - Code/Text Editor App for Thorium.&nbsp;&nbsp;<img src="./imgs/Editor.png" width="22" title="Chromium Dev Editor Logo" alt="Chromium Dev Editor Logo" class="spin2 fav">
         </li>
-		<li><a title="Release Notes" alt="history" target="_blank" href="./misc/history.html">Release Notes</a>&nbsp;&nbsp;<img src="./misc/Git-Icon-1788C.png" width="19" title="Git Icon" alt="Git Icon" class="spin2 fav">
+		<li><a title="Release Notes" target="_blank" href="./misc/history.html">Release Notes</a>&nbsp;&nbsp;<img src="./misc/Git-Icon-1788C.png" width="19" title="Git Icon" alt="Git Icon" class="spin2 fav">
         </li>
     </ul>
     <p>| For Web Development, and Testing Thorium or GitHub Download Stats:</p>
@@ -105,9 +103,9 @@
 	<p><em>- More coming soon!</em></p>
 	<div style="text-align: center;">
 	<a title="PopOS 18.04 ISO" target="_blank" href="https://iso.pop-os.org/18.04/amd64/intel/62/pop-os_18.04_amd64_intel_62.iso" download>PopOS 18.04 Intel ISO</a>
-	<br/><a title="PopOS 18.04 Nvidia ISO" target="_blank" href="https://iso.pop-os.org/18.04/amd64/nvidia/62/pop-os_18.04_amd64_nvidia_62.iso" download>PopOS 18.04 Nvidia ISO</a>
-	<br/><a title="PopOS 20.04 ISO" target="_blank" href="https://iso.pop-os.org/20.04/amd64/intel/39/pop-os_20.04_amd64_intel_39.iso" download>PopOS 20.04 Intel ISO</a>
-	<br/><a title="PopOS 20.04 Nvidia ISO" target="_blank" href="https://iso.pop-os.org/20.04/amd64/nvidia/39/pop-os_20.04_amd64_nvidia_39.iso" download>PopOS 20.04 Nvidia ISO</a>
+	<br><a title="PopOS 18.04 Nvidia ISO" target="_blank" href="https://iso.pop-os.org/18.04/amd64/nvidia/62/pop-os_18.04_amd64_nvidia_62.iso" download>PopOS 18.04 Nvidia ISO</a>
+	<br><a title="PopOS 20.04 ISO" target="_blank" href="https://iso.pop-os.org/20.04/amd64/intel/39/pop-os_20.04_amd64_intel_39.iso" download>PopOS 20.04 Intel ISO</a>
+	<br><a title="PopOS 20.04 Nvidia ISO" target="_blank" href="https://iso.pop-os.org/20.04/amd64/nvidia/39/pop-os_20.04_amd64_nvidia_39.iso" download>PopOS 20.04 Nvidia ISO</a>
 	</div>
 	<br>
 	<img class="spin shadow" style="display: block; margin-left: auto; margin-right: auto; align-items: center;" src="./misc/thorium_greyscale_1024.png" width="256" alt="Thorium Greyscale Logo" title="Thorium Greyscale Logo (Click Me!)">

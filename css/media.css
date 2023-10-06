@@ -55,7 +55,6 @@ video.video {
   filter: drop-shadow(1px 1px 3px var(--imgshadow));
   max-width: 100%;
   display: flex;
-  float: center;
   margin-top: 6px;
 }
 iframe.inlineiframe {
@@ -65,7 +64,6 @@ iframe.inlineiframe {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  float: center;
   margin-top: 6px;
 }
 .video2 {
@@ -75,7 +73,6 @@ iframe.inlineiframe {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  float: center;
   margin-top: 6px;
 }
 .off {
@@ -140,7 +137,6 @@ audio::-webkit-media-controls-timeline-container {
 canvas.glcube {
   border: 1px solid var(--border);
   max-width: 100%;
-  float: center;
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 /* Add three.js Canvas Element */
@@ -150,7 +146,6 @@ canvas.shards {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  float: center;
 }
 div.shards {
   margin-top: -8px;
@@ -158,7 +153,6 @@ div.shards {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  float: center;
 }
 p.p3 {
   margin-top: 8px;
@@ -168,13 +162,11 @@ p.p3 {
 canvas.shadowcubes {
   border: 1px solid var(--border);
   max-width: 100%;
-  float: center;
   filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 canvas {
   margin-top: 6px;
   margin-bottom: 6px;
-  float: center;
 }
 canvas.canvas2 {
   margin-top: 6px;
@@ -182,7 +174,6 @@ canvas.canvas2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  float: center;
 }
 /* roboto-regular - latin */
 @font-face {

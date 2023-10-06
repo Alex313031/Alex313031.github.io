@@ -17,25 +17,23 @@
     <link rel="icon" type="image/png" sizes="16x16" href="coc-favicon-16x16.png">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body class="body3">
@@ -44,10 +42,9 @@
 		<img class="logo spin shadow2" style="padding-bottom: 12px;" src="misc/CodeOfConduct.png" width="255em" max-width="75%" alt="Thorium Code of Conduct Logo" title="Thorium Code of Conduct Logo (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
     </div>
     <div style="display: flex; justify-content: center; align-items: flex-start;">
-		<h1 style="text-align: center;"><span class="title"><b><u><em>Code of Conduct & Privacy Policy</a></em></u></b></span></h1>
+		<h1 style="text-align: center;"><span class="title"><b><u><em>Code of Conduct & Privacy Policy</em></u></b></span></h1>
 	</div>
 	<hr class="line">
-	<div>
 	<!-- Links List -->
     <h1 class="coc title" style="text-align: center;">Thorium Code of Conduct&nbsp;&nbsp;<img alt="COC Logo" title="C.O.C Logo" class="spin2 coc" src="misc/COC_Light.png" width="36"></h1>
     <img class="logo spin coc" style="margin-bottom: -8px;" alt="Thorium COC Logo" title="Thorium C.O.C Logo (Click Me!)" src="misc/Thorium_COC_Light.png" width="220px">
@@ -61,7 +58,8 @@ the Thorium project, regardless of affiliation or position.</p>
   <li>respectful and kind;</li>
   <li>about Thorium and/or Chromium;</li>
   <li>about features and code, not the individuals involved (although friendly personal joking or discussion about individual matters is allowed).</li>
-  </ul></p>
+  </ul>
+</p>
 <h2 class="coc">Be respectful and constructive.</h2>
     <p class="coc">&nbsp;&nbsp;<b><em>Treat everyone with respect.</em></b> Build on each other&#39;s ideas. Each of us has the
 right to enjoy our developer experience and participate without fear of harassment,
@@ -97,7 +95,8 @@ not act on complaints that we feel are not violations of this code of conduct.</
   <li>Unwelcome sexual or otherwise aggressive attention</li>
   <li>Continued one-on-one communication after requests to cease</li>
   <li>Distribution or threat of distribution of people&#39;s personally identifying information, AKA “doxing”</li>
-  </ul></p>
+  </ul>
+  </p>
 <h2 class="coc">Consequences for failing to comply with this policy</h2>
     <p class="coc">&nbsp;&nbsp;Consequences for failing to comply with this policy may include, at the sole
 discretion of the a Thorium Maintainer or the Chromium community managers:</p>
@@ -107,7 +106,8 @@ discretion of the a Thorium Maintainer or the Chromium community managers:</p>
   <li>a temporary ban from the mailing list, blog, Chromium repository or organization, or other Chromium-supported communication group, including loss of committer status;</li>
   <li>a temporary ban from the Thorium repository, discussion groups, or blog.</li>
   <li>a permanent ban from any of the above, or from all current and future Thorium-supported or Chromium-supported communities, including loss of committer/maintainer status.</li>
-  </ul></p>
+  </ul>
+  </p>
     <p class="coc">Participants warned to stop any harassing behavior are expected to comply
 immediately; failure to do so will result in an escalation of consequences.</p>
 <h2 class="coc">Acknowledgements</h2>

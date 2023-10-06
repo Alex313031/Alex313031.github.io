@@ -76,7 +76,7 @@ body {
 }
 /* Image autoconfig */
 img {
-  max-width: auto;
+  max-width: 100%;
   height: auto;
 }
 /* Image effects */
@@ -300,7 +300,6 @@ button {
   box-shadow: 1px 1px 1px 0px var(--border);
   border: 1px solid var(--border);
   border-radius: 5px;
-  float: bottom;
   background-color: #888888;
   color: #ffffff;
 }

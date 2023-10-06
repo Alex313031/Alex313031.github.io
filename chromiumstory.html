@@ -20,34 +20,32 @@
     <link rel="manifest" href="chromiumstory.webmanifest">
     <meta name="theme-color" content="#ffffff">
     <script>
-    function toggleDarkMode(useDark) {
+      function toggleDarkMode(useDark) {
         if (useDark) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
         }
-        else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-        }
-    }
-    let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
         useDark = true;
         toggleDarkMode(useDark);
-    }
-    else if (localStorage.getItem('dark-mode') === 'false') {
+      } else if (localStorage.getItem('dark-mode') === 'false') {
         useDark = false;
         toggleDarkMode(useDark);
-    }
+      }
     </script>
 </head>
 <body class="body2">
 	<!-- Main Logo -->
 	<div id="spinner">
-		</a><img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/cros_bootsplash_animated.gif" width="1200em" max-width="92%" alt="ChromiumOS Animated Logo" title="ChromiumOS Logo (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
+		<img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/cros_bootsplash_animated.gif" width="1200em" max-width="92%" alt="ChromiumOS Animated Logo" title="ChromiumOS Logo (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button></div>
     </div>
     <div style="display: flex; justify-content: center; align-items: flex-start;">
-		<h1><span class="title"><b><u><em>The Chromium Story</em></u></b></span>&nbsp;&nbsp;<a rel="noopener" title="Chromium Wikipedia Link" alt="Chromium Wikipedia Link" href="https://en.wikipedia.org/wiki/Chromium_(web_browser)">Δ</a></h1>
+		<h1><span class="title"><b><u><em>The Chromium Story</em></u></b></span>&nbsp;&nbsp;<a rel="noopener" title="Chromium Wikipedia Link" href="https://en.wikipedia.org/wiki/Chromium_(web_browser)">Δ</a></h1>
 	</div>
     <ul style="display: flex; justify-content: center; align-items: flex-start; list-style-type: none; padding-left: 0;">
 		<li>
@@ -72,10 +70,10 @@
 			<img class="bubbles shadow" src="imgs/chromium.svg" width="128" height="128" alt="Current Chromium Logo" title="Current Chromium Logo">
 		</li>
 	</ul>
-    <h2 class="h2" style="text-align: center;"><u>Chromium Speed Tests Video</u>&nbsp;&nbsp;<a title="Google Chrome Speed Tests Video Link" alt="Google Chrome Speed Tests Video Link" rel="noopener" href="https://www.youtube.com/watch?v=nCgQDjiotG0/">Δ</a>&nbsp;&nbsp;<a title="Making the Google Chrome Speed Tests Video Link" alt="Making the Google Chrome Speed Tests Video Link" rel="noopener" href="https://www.youtube.com/watch?v=_oarMXGq3gI/">Δ</a></h2>
-    <video title="Chrome Speed Test Video" alt="Chrome Speed Tests Video" class="video2" width="1200em" style="max-width: 100%;" controls="true"><source src="media/Google_Chrome_Speed_Tests_720p.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+    <h2 class="h2" style="text-align: center;"><u>Chromium Speed Tests Video</u>&nbsp;&nbsp;<a title="Google Chrome Speed Tests Video Link" rel="noopener" href="https://www.youtube.com/watch?v=nCgQDjiotG0/">Δ</a>&nbsp;&nbsp;<a title="Making the Google Chrome Speed Tests Video Link" rel="noopener" href="https://www.youtube.com/watch?v=_oarMXGq3gI/">Δ</a></h2>
+    <video title="Chrome Speed Test Video" class="video2" width="1200em" style="max-width: 100%;" controls="true"><source src="media/Google_Chrome_Speed_Tests_720p.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
     <hr class="line" style="margin-top: 16px; margin-bottom: -10px;">
-	<h2 class="h2" style="text-align: center;"><u>Comic</u>&nbsp;&nbsp;<a rel="noopener" title="Chrome Comic Link" alt="Chrome Comic Link" href="https://www.google.com/googlebooks/chrome/">Δ</a>&nbsp;&nbsp;<a title="About the Chrome Comic" alt="About the Chrome Comic" href="media/Chrome_Comic/About.txt">Δ</a></h2>
+	<h2 class="h2" style="text-align: center;"><u>Comic</u>&nbsp;&nbsp;<a rel="noopener" title="Chrome Comic Link" href="https://www.google.com/googlebooks/chrome/">Δ</a>&nbsp;&nbsp;<a title="About the Chrome Comic" href="media/Chrome_Comic/About.txt">Δ</a></h2>
 	<div class="row">
 	<div class="column">
 	<img class="comic" src="media/Chrome_Comic/1.jpg" width="100%" alt="Chrome Comic" title="Chrome Comic Pg. 1">
