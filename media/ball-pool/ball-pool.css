@@ -1,0 +1,12 @@
+* {
+  font-family: Georgia;
+}
+body {
+  overflow: hidden;
+  background-color: #000000;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+}
