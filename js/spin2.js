@@ -1,4 +1,4 @@
-// thorium.svg spinner
+// image spinner
 
 $( ".spin2" ).hover(function() {
     //alert($( this ).css( "transform" ));
