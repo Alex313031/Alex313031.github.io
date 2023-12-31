@@ -10,7 +10,9 @@ Blender 3 has an unofficial build : https://github.com/nalexandru/BlenderCompat/
 
 Chromium : 109.0.5414.120
 
-Thorium : 109.0.5414.159
+Chrome : 109.0.5414.168
+
+Thorium : 109.0.5414.173
 
 Supermium (Chromium Fork) : https://github.com/win32ss/supermium/releases
 
@@ -24,6 +26,10 @@ Python 3.9 Hack : https://github.com/nalexandru/api-ms-win-core-path-HACK
 
 Windscribe : 2.4.11 https://github.com/Windscribe/Desktop-App/releases/tag/v2.4.11
 
-Electron:  22.x.x
+Electron :  22.3.27
+
+Supermium based Electron : 28.x https://github.com/win32ss/supermium-electron
 
 VSCode/VSCodium : 1.81.x
+
+qBittorrent : 4.5.5 (QT5 versions)
