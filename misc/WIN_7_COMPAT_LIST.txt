@@ -32,4 +32,6 @@ Supermium based Electron : 28.x https://github.com/win32ss/supermium-electron
 
 VSCode/VSCodium : 1.81.x
 
+Codium (my fork of VSCodium) 1.84.2 > https://github.com/Alex313031/codium/releases/tag/1.84.2.24001
+
 qBittorrent : 4.5.5 (QT5 versions)
