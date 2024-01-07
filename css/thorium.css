@@ -543,6 +543,10 @@ button:active {
   text-decoration: none;
   color: #551a8b;
 }
+textarea {
+  position: absolute;
+  left: -100%;
+}
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';

@@ -138,9 +138,11 @@
     <a name="installation"></a><h2 class="h2"><u>Installation/Auto-Update</u><img src="imgs/hdd.svg" width="38" title="Install" alt="Hard Drive Icon" class="spin2 fav3"></h2>
     <p>The repo can be used on any distribution that supports .deb packaging. <br> It is located at <a title="Thorium .deb Repo" rel="noopener" target="_blank" href="https://dl.thorium.rocks/">https://dl.thorium.rocks/</a>. To add to your system:</p>
     <!-- Code Block -->
-    <pre title="APT Sources Setup">wget https://dl.thorium.rocks/debian/dists/stable/thorium.list
-sudo mv thorium.list /etc/apt/sources.list.d/
-sudo apt update
+    <button onclick="copyText()">Copy Text</button>
+    <pre title="APT Sources Setup"><span id="copy-text" type="text">sudo wget -P /etc/apt/sources.list.d/ \
+https://dl.thorium.rocks/debian/dists/stable/thorium.list && \
+sudo apt update</span>
+
 sudo apt install thorium-browser</pre>
     <a name="footer"></a><p title="Thanks!"><em style="font-weight: 600">Thanks for using Thorium!</em><em title="C.O.C / Privacy Policy">&nbsp;&nbsp;&nbsp;&nbsp;Code Of Conduct/Privacy Policy: </em><em><a title="C.O.C / Privacy Policy" href="CoC.html">CoC</a></em>&nbsp;&nbsp;<img src="coc-favicon-32x32.png" width="18" title="C.O.C. Badge" alt="Badge Icons" class="spin2 fav"></p>
     <!-- Credits & Custom 404 Landing Page (uses .haccess file) -->
@@ -159,6 +161,7 @@ sudo apt install thorium-browser</pre>
     <script defer src="js/spin2.js"></script>
 	<script defer src="js/spun.js"></script>
     <script defer src="js/button.js"></script>
+    <script defer src="js/copy-text.js"></script>
     <script defer src="js/shadowcubes.js"></script>
 </body>
 </html>
