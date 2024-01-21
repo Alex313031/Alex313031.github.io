@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pacman Doodle</title>
+        <meta name="keywords" content="google, pacman, pac-man, doodle">
+        <link rel="shortcut icon" href="favicon.ico">
+        <meta itemprop="image" content="thumb.png">
+        <link rel="stylesheet" href="css/index2.css">
+    </head>
+    <body>
+        <div id="t">Doodle for 30th Anniversary of PAC-MAN</div>
+        <div id="st">Google homepage, May 21, 2010</div>
+        <div id="c"><iframe id="i" src="./index.html#bg=black&amp;autoplay"> </iframe></div>
+        <script nonce="C6BPVXdSDrbGzhe1CZjDmg">
+            var iframe = document.getElementById("i");
+            var w = 484;
+            var h = 208;
+            window.onresize = function () {
+                var isLandscape = window.innerWidth > window.innerHeight;
+                document.getElementById("t").style.display = isLandscape ? "none" : "";
+                document.getElementById("st").style.display = isLandscape ? "none" : "";
+                window.scrollTo(0, 0);
+                var scale = Math.min(window.innerWidth / w, window.innerHeight / h);
+                iframe.style.webkitTransform = "scale(" + scale + ")";
+                var padding = Math.ceil((window.innerWidth / scale - w) / 2) + "px";
+                iframe.style.paddingLeft = padding;
+                iframe.style.paddingRight = padding;
+            };
+            window.onresize();
+            document.addEventListener("touchstart", function () {});
+        </script>
+    </body>
+</html>

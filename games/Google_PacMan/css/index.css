@@ -1,0 +1,72 @@
+html {
+  touch-action: none;
+}
+body {
+  background: #fff;
+  color: black;
+  font-family: arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+td {
+  line-height: 0.8em;
+}
+.ds {
+  border-bottom: solid 1px #e7e7e7;
+  border-right: solid 1px #e7e7e7;
+  display: -moz-inline-box;
+  display: inline-block;
+  height: 32px;
+  margin: 3px;
+}
+.lsbb {
+  background: #eee;
+  border: solid 1px;
+  border-color: #ccc #999 #999 #ccc;
+  display: inline-block;
+  height: 30px;
+}
+.lsb {
+  background: url(../nav_logo13.png) bottom;
+  border: none;
+  cursor: pointer;
+  font: 15px arial, sans-serif;
+  height: 30px;
+  margin: 0;
+  outline: 0;
+  vertical-align: top;
+}
+.lsb:active {
+  background: #ccc;
+}
+#hplogo {
+  background: black url(../pacman10-hp.2.png) 0 0 no-repeat;
+  height: 208px;
+  margin-bottom: 9px;
+  position: relative;
+  width: 484px;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+}
+#hplogo-c {
+  outline: 0;
+}
+#hplogo-l {
+  background: #990;
+  display: none;
+  height: 2px;
+  left: 177px;
+  overflow: hidden;
+  position: absolute;
+  top: 157px;
+  width: 200px;
+}
+#hplogo-b {
+  background: #ff0;
+  height: 8px;
+  left: 0;
+  position: absolute;
+  width: 0;
+}

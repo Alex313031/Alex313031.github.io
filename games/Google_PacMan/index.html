@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PAC-MAN's 30th Birthday!</title>
+        <meta name="keywords" content="google, pacman, pac-man, doodle">
+        <link rel="shortcut icon" href="favicon.ico">
+        <meta itemprop="image" content="thumb.png">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body bgcolor="#ffffff" text="#000000" link="#0000cc" vlink="#551a8b" alink="#ff0000">
+        <center>
+            <div id="lga">
+                <div id="hplogo" title="PAC-MAN's 30th Birthday! Doodle with PAC-MAN™ & ©1980 NAMCO BANDAI Games Inc.">
+                    <div id="hplogo-l"><div id="hplogo-b"></div></div>
+                </div>
+            </div>
+            <form id="hplogo-f" action="http://www.google.com/search" name="gbqf">
+                <table cellpadding="0" cellspacing="0">
+                    <tr valign="top">
+                        <td align="center" nowrap>
+                            <br style="line-height: 0;" />
+                            <span class="ds">
+                                <span class="lsbb"><input name="btnI" type="submit" value="Insert Coin" class="lsb" onclick="this.checked=1" /></span>
+								    <br>
+								    <br>
+                                <span class="lsbb"><a href="./index2.html"><input type="button" value="Go Full Screen" class="lsb"></input></a></span>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+        <script nonce="VRyJinxDE08PzRttbma4Ow">
+            window.google || (window.google = {});
+            (function () {
+                google.doodle || (google.doodle = {});
+                -1 < window.location.hash.indexOf("bg=black") && (document.body.style.background = "#000");
+                var d = -1 < window.location.hash.indexOf("autoplay");
+                if (d) {
+                    var f = document.getElementById("hplogo-f");
+                    f && f.parentNode && f.parentNode.removeChild(f);
+                }
+                function g(a) {
+                    google.doodle.pmlInstalled ||
+                        ((google.doodle.pmlInstalled = !0),
+                        a ||
+                            ((document.getElementById("hplogo").style.background = "black"),
+                            window.setTimeout(function () {
+                                var c = document.getElementById("hplogo-l");
+                                c && (c.style.display = "block");
+                            }, 400)),
+                        (a = document.createElement("script")),
+                        (a.type = "text/javascript"),
+                        (a.src = "./js/pacman10-hp.12.js"),
+                        (document.getElementById("xjsc") || document.body).appendChild(a));
+                }
+                function h() {
+                    for (var a = document.forms, c = ["f", "gs", "tsf", "gbqf"], b = 0, e; (e = c[b++]); ) if ((e = a[e])) return e;
+                    return null;
+                }
+                function k() {
+                    var a = h();
+                    a &&
+                        a.btnI &&
+                        (a.btnI.onclick = function () {
+                            "undefined" != typeof google.pacman ? google.pacman.insertCoin() : ((google.doodle.pacManSound = !0), g(!1));
+                            return !1;
+                        });
+                }
+                google.doodle.pmlLoaded ||
+                    ((google.doodle.pmlLoaded = !0),
+                    window.setTimeout(function () {
+                        var a = h();
+                        a && a.q && "" == a.q.value && g(!0);
+                    }, 5e3),
+                    d ? ((google.doodle.pacManSound = !0), g(!1)) : (window.setTimeout(k, 0), google.g && google.g.push(k)),
+                    google.dstr &&
+                        google.dstr.push(function () {
+                            google.pacman && google.pacman.destroy();
+                            if (google.doodle.pmlInstalled) {
+                                for (var a = (document.getElementById("xjsc") || document.body).getElementsByTagName("script"), c = 0, b; (b = a[c++]); )
+                                    -1 != b.src.indexOf("./js/pacman10-hp.12.js") && b && b.parentNode && b.parentNode.removeChild(b);
+                                google.doodle.pmlInstalled = !1;
+                            }
+                        }));
+                google.doodle.pacManQuery = function () {
+                    window.top.location.href = "/search?q=pacman+30th+anniversary&ct=pacman10-hp&oi=ddle";
+                };
+            }.call(this));
+        </script>
+    </body>
+</html>
