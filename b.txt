@@ -3,11 +3,12 @@ export EDITOR=nano
 export VISUAL=nano
 
 export NINJA_SUMMARIZE_BUILD=1
+export NINJA_STATUS="[%r processes, %f/%t @ %o/s | %e sec. ] "
 export PATH=/home/alex/depot_tools:$PATH
 export PATH=/home/alex/bin:$PATH
 
 alias up='sudo apt update'
-alias upgrade='sudo apt full-upgrade'
+alias upgrade='sudo apt full-upgrade && sudo snap refresh'
 alias inst='sudo apt install'
 alias mark='sudo apt-mark auto'
 alias ..='cd ..'
@@ -28,7 +29,9 @@ alias clr='clear'
 alias cls='clear'
 alias purge='sudo apt remove --purge'
 alias trim='sudo fstrim -a -v'
-alias autopurge='sudo apt autoremove --purge'
+alias autopurge='sudo apt autopurge'
+alias autoremove='sudo apt autoremove'
+alias autoclean='sudo apt autoclean'
 alias search='sudo apt search '
 alias dir1='dir -1 -b -q'
 alias sys='htop'
@@ -72,7 +75,7 @@ alias crosd='cd /home/alex/chromiumos'
 alias mouse='xinput --set-prop "16" "libinput Accel Speed" 1 && xset r rate 250 55'
 alias ...='cd /'
 alias s='sync'
-alias g='gn args out/thorium'
+# alias g='gn args out/thorium'
 alias nigw='/home/alex/bin/autoninja -C out/thorium chrome chromedriver thorium_shell setup mini_installer thorium_ui_debug_shell -j'
 alias gknv='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS nvidia-settings'
 alias io='sudo iotop'
@@ -84,7 +87,7 @@ alias susp='sudo systemctl suspend'
 alias hist='cat /home/alex/.bash_history | grep '
 alias mp='/home/alex/bin/mpv/build/mpv '
 alias server='python3 -m http.server'
-alias find="grep -rnw $PWD -e '"
+#alias find="grep -rnw $PWD -e '"
 alias zst="tar --use-compress-program=unzstd -xvf "
 alias thordeb="autoninja -C ~/chromium/src/out/thorium chrome/installer/linux:stable_deb -j"
 alias commit='git add . && git commit -m "'
@@ -99,7 +102,20 @@ alias grep2='grep -C2 --colour'
 alias diff='git diff'
 alias timetouch='/usr/bin/find . -exec touch {} +'
 alias ni='nvm install && npm install'
+alias ns='npm run start'
+alias ys='yarn run start'
+alias pull='git pull'
+alias thos='cd ~/thoriumos'
+alias burn='npm run clean && npm run burn'
+alias clean='npm run clean'
+alias 7='cd ~/thorium-win7'
+alias snapclean='sudo snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done'
+alias move='mv'
+alias crtest='./chrome --user-data-dir=${PWD}/test'
+alias restore='git restore '
+alias distclean='npm run distclean'
+alias dist='npm run dist'
 export DEPOT_TOOLS_UPDATE=0
 export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL=/home/alex/chromium/win
-#export GYP_MSVS_HASH_27370823e7=38936ba45f
+export GYP_MSVS_HASH_27370823e7=cacabf52f1
 export PATH="$(python3 -m site --user-base)/bin:$PATH"
