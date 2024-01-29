@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html prefix="og: http://ogp.me/ns#" class="" lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A quick note about Chromium</title>
+
+  <style>
+  *,::after,::before{box-sizing:border-box}html{color:#111;font-family:Ubuntu,-apple-system,"Segoe UI",Roboto,Oxygen,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;font-weight:300;line-height:1.5rem;overflow-x:hidden!important}body{margin:0}.u-no-margin--top{margin-top:0!important}.p-engage-banner--dark{background-blend-mode:normal;background-color:#111;background-image:linear-gradient(201deg,#4e4e4e 0,#333 46%,#111 90%);color:#fff;background-position:left top;background-repeat:no-repeat;background-size:100% 99.8%}.p-strip{overflow-x:hidden}.l-whitepapers .p-strip--hero,.p-strip,.p-strip--accent,.p-strip--dark,.p-strip--image,.p-strip--light,.p-strip--security,.p-strip--square-darksuru,.p-strip--square-lightsuru,.p-strip--square-suru,.p-strip--suru,.p-strip--suru-accent,.p-strip--suru-background,.p-strip--suru-blog-header,.p-strip--suru-blog-hero,.p-strip--suru-bottomed,.p-strip--suru-half-and-half,.p-strip--suru-half-and-half-reversed,.p-strip--suru-image,.p-strip--suru-light,.p-strip--suru-topped,.p-strip-suru-half-top,.p-takeover--aqua,.p-takeover--dark,.p-takeover--grad,.p-takeover--k8s,.p-takeover--snapcraft{clear:both;position:relative;width:100%}.l-whitepapers .p-strip--hero,.p-strip,.p-strip--accent,.p-strip--dark,.p-strip--image,.p-strip--light,.p-strip--security,.p-strip--square-darksuru,.p-strip--square-lightsuru,.p-strip--square-suru,.p-strip--suru,.p-strip--suru-accent,.p-strip--suru-background,.p-strip--suru-blog-header,.p-strip--suru-blog-hero,.p-strip--suru-bottomed,.p-strip--suru-half-and-half,.p-strip--suru-half-and-half-reversed,.p-strip--suru-image,.p-strip--suru-light,.p-strip--suru-topped,.p-strip-suru-half-top,.p-takeover--aqua,.p-takeover--dark,.p-takeover--grad,.p-takeover--k8s,.p-takeover--snapcraft{padding-bottom:2rem;padding-top:2rem}.navigation-logo-engage{padding-top:2rem;margin-top:-2.2rem;padding-bottom:1.75rem}.p-navigation__row,.p-navigation__row--full-width,.row,.u-fixed-width{display:grid;padding-left:1.5rem;padding-right:1.5rem;grid-template-rows:auto;margin-left:auto;margin-right:auto;max-width:68rem;width:100%;grid-gap:0 2rem;grid-template-columns:repeat(12,minmax(0,1fr))}a:visited{color:#7d42b8}a{color:#06c;text-decoration:none;background-color:transparent}.u-equal-height.l-documentation,.u-equal-height.l-tutorial,.u-equal-height.row{display:grid}.u-equal-height{display:flex}.col-7:first-child{margin-left:0}.row [class*=col-]{grid-column-start:auto}.u-vertically-center{align-items:center!important;display:grid;justify-content:flex-start}.u-align--center{justify-content:center!important;text-align:center!important}.col-7{grid-column-end:span 7;margin-left:0;width:auto}.col-5{grid-column-end:span 5;margin-left:0;width:auto}.col-8{grid-column-end:span 8;margin-left:0;width:auto}h1{font-size:2.91029rem;line-height:3.5rem;margin-bottom:.8rem;padding-top:.201rem;max-width:40em;font-style:normal;font-weight:100;margin-top:0;margin:.67em 0}h4{font-size:1.30612rem;line-height:2rem;margin-bottom:.95rem;padding-top:.051rem;max-width:40em;font-style:normal;font-weight:300;margin-top:0}p{max-width:40em;margin-bottom:1.1rem;line-height:1.5rem;margin-top:0;padding-top:.4005rem}[class^=p-strip].is-bordered{margin-bottom:0}.is-shallow[class*=p-strip]{padding-bottom:.75rem;padding-top:.75rem;position:relative}.p-strip{overflow-x:hidden;background-color:transparent;clear:both;position:relative;width:100%;padding-bottom:2rem;padding-top:2rem}ol,ul{margin-bottom:1.5rem;margin-left:1rem;margin-top:0;padding-left:1rem}.p-list__item{padding-bottom:.25rem;padding-top:.25rem}.p-footer{border:0;box-shadow:0 4px 4px -4px rgba(0,0,0,.3) inset;margin-bottom:0;padding:2.5rem 0}.p-footer--secondary{padding:0}.p-footer--secondary__content{margin-bottom:.125rem;max-width:inherit}small{font-size:.875rem;line-height:1rem;margin-bottom:.8rem;padding-top:.2005rem}.p-inline-list--middot{margin-left:0;padding-left:0}.p-inline-list--middot .p-inline-list__item::after{bottom:0;height:0;margin-bottom:auto;margin-top:auto;right:-.65em;top:0}.p-footer--secondary__nav .p-inline-list__item::after{display:block}.p-inline-list--middot .p-inline-list__item::after{color:#666;content:'\00b7';font-size:1.4em;line-height:0;position:absolute;right:-.8rem;top:0}.p-inline-list--middot .p-inline-list__item:last-of-type::after{display:none}.p-link--soft:visited{color:#111;text-decoration:none}a:visited{color:#7d42b8}.p-link--soft{color:#111}.u-off-screen{height:1px!important;left:-10000px!important;overflow:hidden!important;position:absolute!important;top:auto!important;width:1px!important}.p-inline-list--middot>.p-inline-list__item{white-space:nowrap}.p-footer--secondary__nav .p-inline-list__item{display:inline-block}.p-inline-list--middot .p-inline-list__item{list-style:none;margin-right:1rem;position:relative}@media screen and (max-width:875px){.u-hide--small{display:none!important}h1{font-size:2.22819rem;line-height:3rem;margin-bottom:.835rem;padding-top:.166rem}.u-fixed-width,class['col-*']{grid-column:1/span 4}.row,.u-fixed-width{grid-gap:0 1.5rem;grid-template-columns:repeat(4,minmax(0,1fr))}h4{font-size:1.22176rem;line-height:1.5rem;margin-bottom:.7rem;padding-top:.301rem}}
+  </style>
+
+
+  <link rel="shortcut icon" href="https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://assets.ubuntu.com/v1/17b68252-apple-touch-icon-180x180-precomposed-ubuntu.png">
+
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/46ed6870-Ubuntu-L-subset.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/3baab91b-Ubuntu-Th-subset.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/6113b69a-Ubuntu-LI-subset.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/0c7b8dc0-Ubuntu-R-subset.woff2" crossorigin>
+
+  <meta name="description" content="A quick note about Chromium">
+</head>
+
+<body>
+  <div class="wrapper u-no-margin--top">
+    <div id="main-content" class="inner-wrapper">
+      <section  class="p-strip p-engage-banner--dark">
+        <div class="u-fixed-width navigation-logo-engage">
+          <a href="https://ubuntu.com/">
+            <svg width="143" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90"><circle cx="376.06" r="23.941" cy="24.026" fill="#fff"/><path d="M361.13 21.149a2.872 2.872 0 00-2.873 2.877 2.876 2.876 0 005.75 0 2.885 2.885 0 00-2.88-2.877zm20.53 13.075a2.868 2.868 0 00-1.054 3.921 2.877 2.877 0 003.929 1.056 2.873 2.873 0 001.054-3.927 2.872 2.872 0 00-3.93-1.05zm-14.28-10.198a8.381 8.381 0 013.569-6.876l-2.1-3.525a12.525 12.525 0 00-5.17 7.264 4.023 4.023 0 011.489 3.137c0 1.26-.576 2.386-1.489 3.131a12.523 12.523 0 005.17 7.262l2.1-3.522a8.381 8.381 0 01-3.57-6.871zm8.4-8.406c4.391 0 7.991 3.366 8.369 7.662l4.099-.066a12.463 12.463 0 00-3.713-8.103 4.028 4.028 0 01-3.45-.281 4.031 4.031 0 01-1.967-2.85 12.6 12.6 0 00-3.339-.454 12.42 12.42 0 00-5.534 1.295l1.997 3.58a8.268 8.268 0 013.53-.783zm0 16.803a8.345 8.345 0 01-3.538-.78l-1.997 3.58a12.385 12.385 0 005.534 1.293c1.156 0 2.275-.157 3.339-.452a4.04 4.04 0 011.967-2.852 4.02 4.02 0 013.45-.275 12.48 12.48 0 003.713-8.108l-4.099-.058a8.385 8.385 0 01-8.36 7.652zm5.88-18.597a2.873 2.873 0 003.926-1.056 2.873 2.873 0 00-1.051-3.924 2.877 2.877 0 00-3.929 1.053 2.882 2.882 0 001.05 3.927z" fill="#DD4814"/><g fill="#fff"><path d="M47.88 86.839c-2.434.61-5.643 1.254-9.632 1.939-3.993.682-8.611 1.024-13.853 1.024-4.558 0-8.399-.666-11.513-1.994-3.117-1.328-5.625-3.209-7.524-5.642-1.902-2.433-3.268-5.302-4.104-8.609C.416 70.254 0 66.588 0 62.558V29.271h10.602v31.006c0 7.221 1.14 12.388 3.421 15.502 2.28 3.12 6.116 4.676 11.513 4.676 1.142 0 2.317-.041 3.535-.117a78.17 78.17 0 003.422-.285c1.061-.114 2.031-.227 2.905-.341.873-.113 1.501-.244 1.882-.399V29.271h10.603v57.568h-.003zM73.755 31.891c1.291-.835 3.251-1.709 5.872-2.62 2.62-.912 5.643-1.367 9.062-1.367 4.256 0 8.038.761 11.344 2.279 3.305 1.521 6.099 3.646 8.379 6.382 2.278 2.736 4.006 6.006 5.186 9.803 1.177 3.803 1.768 7.981 1.768 12.542 0 4.786-.706 9.102-2.108 12.937-1.41 3.838-3.404 7.085-5.986 9.747-2.585 2.66-5.699 4.713-9.349 6.155-3.646 1.444-7.751 2.166-12.312 2.166-4.942 0-9.311-.344-13.108-1.027-3.8-.684-6.917-1.369-9.349-2.052V1.914L73.756.089v31.802h.001zm0 47.422c1.065.305 2.565.593 4.504.854 1.937.27 4.349.401 7.238.401 5.699 0 10.26-1.882 13.678-5.643 3.422-3.762 5.132-9.102 5.132-16.015 0-3.038-.305-5.889-.912-8.554-.61-2.657-1.597-4.959-2.966-6.893-1.367-1.94-3.135-3.459-5.3-4.561s-4.77-1.654-7.808-1.654c-2.891 0-5.549.497-7.978 1.483-2.437.989-4.297 2.015-5.588 3.079l-.001 37.503zM174.52 86.839c-2.434.61-5.644 1.254-9.632 1.939-3.989.682-8.608 1.024-13.851 1.024-4.558 0-8.396-.666-11.512-1.994-3.117-1.328-5.625-3.209-7.523-5.642-1.902-2.433-3.267-5.302-4.105-8.609-.837-3.303-1.254-6.969-1.254-11V29.271h10.6v31.006c0 7.221 1.142 12.388 3.421 15.502 2.282 3.12 6.119 4.676 11.513 4.676 1.143 0 2.32-.041 3.535-.117a78.644 78.644 0 003.421-.285c1.064-.114 2.032-.227 2.908-.341.872-.113 1.499-.244 1.878-.399V29.271h10.603v57.568h-.01zM189.8 30.983c2.431-.61 5.659-1.254 9.69-1.94 4.025-.683 8.661-1.026 13.905-1.026 4.713 0 8.626.667 11.74 1.995 3.116 1.331 5.605 3.192 7.469 5.587 1.858 2.392 3.169 5.262 3.931 8.605.759 3.349 1.14 7.033 1.14 11.059v33.285h-10.602V57.541c0-3.646-.248-6.761-.741-9.347-.495-2.587-1.311-4.675-2.451-6.268-1.14-1.599-2.66-2.756-4.559-3.478-1.899-.725-4.259-1.084-7.065-1.084-1.144 0-2.321.038-3.533.113a87.114 87.114 0 00-3.477.286c-1.106.113-2.09.248-2.966.397-.875.154-1.5.267-1.881.341v50.044h-10.6V30.983zM262.18 29.271h22.456v8.891H262.18v27.359c0 2.963.227 5.419.684 7.355s1.142 3.459 2.052 4.556a7.369 7.369 0 003.419 2.337c1.369.457 2.963.687 4.786.687 3.265 0 5.852-.364 7.753-1.088 1.898-.721 3.192-1.233 3.878-1.538l2.278 8.666c-1.065.533-2.946 1.218-5.643 2.05-2.698.837-5.755 1.254-9.175 1.254-4.03 0-7.355-.511-9.977-1.537-2.619-1.029-4.729-2.564-6.325-4.619-1.596-2.05-2.716-4.576-3.361-7.581-.649-3-.971-6.477-.971-10.43v-52.89l10.602-1.825-.01 18.353zM342.32 86.839c-2.436.61-5.643 1.254-9.632 1.939-3.989.682-8.609 1.024-13.849 1.024-4.561 0-8.399-.666-11.516-1.994s-5.625-3.209-7.521-5.642c-1.902-2.433-3.268-5.302-4.106-8.609-.835-3.303-1.254-6.969-1.254-11V29.271h10.605v31.006c0 7.221 1.14 12.388 3.421 15.502 2.278 3.12 6.116 4.676 11.513 4.676 1.139 0 2.316-.041 3.533-.117a78.36 78.36 0 003.418-.285c1.064-.114 2.033-.227 2.908-.341.871-.113 1.5-.244 1.882-.399V29.271h10.602v57.568h.01z"/></g></svg>
+          </a>
+        </div>
+        <div class="row u-equal-height">
+          <div class="col-7  u-vertically-center">
+            <div>
+              <h1>
+                A quick note about Chromium
+              </h1>
+              <h4>
+                Chromium is brought to you by the Ubuntu Desktop team at&nbsp;Canonical.
+              </h4>
+            </div>
+          </div>
+          <div class="col-5 u-hide--small u-align--center u-vertically-center">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" height="256" width="256" viewBox="-10 -10 276 276"><circle cx="128" cy="128" r="64" fill="#fff"/><path fill="#669df6" d="M96 183.4A63.7 63.7 0 0 1 72.6 160L17.2 64A128 128 0 0 0 128 256l55.4-96A64 64 0 0 1 96 183.4Z"/><path fill="#aecbfa" d="M192 128a63.7 63.7 0 0 1-8.6 32L128 256A128 128 0 0 0 238.9 64h-111a64 64 0 0 1 64 64Z"/><circle cx="128" cy="128" r="52" fill="#1a73e8"/><path fill="#1967d2" d="M96 72.6a63.7 63.7 0 0 1 32-8.6h110.8a128 128 0 0 0-221.7 0l55.5 96A64 64 0 0 1 96 72.6Z"/></svg>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="p-strip is-shallow is-bordered">
+        <div class="row">
+          <div class="col-8">
+            <p>Chromium is now delivered as a snap package. This enables users to receive security fixes, updates and new features, faster. It also allows Canonical to maintain a single Chromium package, reducing maintenance overhead. The snap is installable across all supported releases of Ubuntu, derivatives, and many other Linux distributions.</p>
+            <p>Your bookmarks, history, and other data have been transferred automatically.</p>
+            <p>We’re <a href="https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bugs?field.tag=snap">aware of some issues</a> that we’re working hard to resolve. For further details, <a href="https://ubuntu.com/blog/chromium-in-ubuntu-deb-to-snap-transition">check out</a> what we’ve done and how you can give feedback.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="p-footer p-strip u-clearfix">
+    <div>
+      <div class="row">
+        <div class="col-8">
+          <p class="p-footer--secondary__content"><small>&copy; Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</small></p>
+          <nav class="p-footer--secondary__nav">
+            <ul class="p-inline-list--middot u-no-margin--bottom">
+              <li class="p-inline-list__item">
+                <a class="p-link--soft" accesskey="8" href="https://ubuntu.com/legal"><small>Legal information</small></a>
+              </li>
+              <li class="p-inline-list__item">
+                <a class="p-link--soft" accesskey="9" href="https://ubuntu.com/legal/data-privacy"><small>Data privacy</small></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <span class="u-off-screen"><a href="#">Go to the top of the page</a></span>
+    </div>
+  </footer>
+</body>
+</html>
