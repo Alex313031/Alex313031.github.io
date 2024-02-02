@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: Roboto, sans-serif;
+}
+body {
+  margin: auto;
+  max-width: 50%;
+  font-family: Roboto, sans-serif;
+  padding: 1rem;
+  color: #fff;
+  background-color: #4D5057;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+div.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 24px;
+}
+p {
+  text-align: center;
+  align-content: center;
+}
