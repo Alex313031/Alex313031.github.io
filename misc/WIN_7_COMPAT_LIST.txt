@@ -36,7 +36,7 @@ VSCode : 1.70.3 > https://code.visualstudio.com/updates/v1_70
 
 VSCodium : 1.81.1.23222 > https://github.com/VSCodium/vscodium/releases/tag/1.81.1.23222
 
-Codium (my fork of VSCodium) 1.85.1 > https://github.com/Alex313031/codium/releases/tag/1.84.2.24001
+Codium (my fork of VSCodium) 1.86.0 > https://github.com/Alex313031/codium/releases/tag/1.86.0.24035
 
 qBittorrent : 4.5.5 > https://www.fosshub.com/qBittorrent-old.html?dwl=qbittorrent_4.5.5_x64_setup.exe
 
