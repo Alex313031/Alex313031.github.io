@@ -34,3 +34,10 @@ h1,
 h2 {
   text-align: center;
 }
+a:link {
+  color: #5bf5bf;
+}
+a:visited,
+a:active {
+  color: #ae5ee0;
+}
