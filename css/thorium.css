@@ -362,7 +362,7 @@ b {
 }
 /* Put box around intro/description */
 p.intro {
-  box-shadow: 1px 1px 2px 0px var(--border);
+  box-shadow: 1px 1px 2px 0 var(--border);
   padding-left: 16px;
   padding-right: 4px;
   padding-top: 6px;
@@ -387,7 +387,7 @@ p.intro {
 }
 p.intro2 {
   background: #24292f;
-  box-shadow: 1px 1px 2px 0px var(--border);
+  box-shadow: 1px 1px 2px 0 var(--border);
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
@@ -418,7 +418,7 @@ p.coc {
 }
 h1.coc {
   margin-top: 16px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 h2.coc {
   margin-top: 12px;
@@ -498,7 +498,7 @@ pre {
 /* Rounded Dark/Light Mode Button */
 button {
   font-family: inherit;
-  box-shadow: 1px 1px 1px 0px var(--buttonborder);
+  box-shadow: 1px 1px 1px 0 var(--buttonborder);
   border: 1px solid var(--border);
   border-radius: 5px;
   background-color: #828282;
@@ -508,7 +508,7 @@ button:hover {
   background-color: #999999;
 }
 button:active {
-  box-shadow: 1px 1px 1px 0px #222222 inset;
+  box-shadow: 1px 1px 1px 0 #222222 inset;
   background-color: #888888;
 }
 .checkbox {

@@ -59,7 +59,7 @@ html {
   color: var(--error);
 }
 body {
-  margin: 4% auto 0px;
+  margin: 4% auto 0;
   max-width: 512px;
   max-height: 512px;
   }
@@ -81,7 +81,7 @@ img.ohno {
   margin-bottom: 2px;
 }
 img.shadow {
-  filter: drop-shadow(1px 1px 0px var(--imgshadow));
+  filter: drop-shadow(1px 1px 0 var(--imgshadow));
 }
 img.grey {
   margin-top: 12px;
@@ -110,6 +110,6 @@ button:hover {
   background-color: #999999;
 }
 button:active {
-  box-shadow: 1px 1px 1px 0px #222222 inset;
+  box-shadow: 1px 1px 1px 0 #222222 inset;
   background-color: #888888;
 }
