@@ -6,6 +6,9 @@ jQuery(function ($) {
         return a === b ? options.fn(this) : options.inverse(this);
     });
 
+    Handlebars.registerHelper('computeTaskPriority', function (index) {
+        return 4 - (index % 5);
+    });
 
     var util = {
         uuid: function () {
@@ -54,7 +57,7 @@ jQuery(function ($) {
         bindEvents: function () {
             $('#new-todo').on('keyup', this.create.bind(this));
             $('#toggle-all').on('change', this.toggleAll.bind(this));
-            $('#footer').on('click', '#clear-completed', this.destroyCompleted.bind(this));
+            $('#footer').on('click', '.clear-completed', this.destroyCompleted.bind(this));
             $('#todo-list')
                 .on('change', '.toggle', this.toggle.bind(this))
                 .on('dblclick', 'label', this.edit.bind(this))

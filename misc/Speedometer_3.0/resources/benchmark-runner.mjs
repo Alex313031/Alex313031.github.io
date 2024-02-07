@@ -33,13 +33,10 @@ class Page {
         return new Promise((resolve) => {
             const resolveIfReady = () => {
                 const element = this.querySelector(selector);
-                if (element) {
-                    window.requestAnimationFrame(() => {
-                        return resolve(element);
-                    });
-                } else {
-                    setTimeout(resolveIfReady, 50);
-                }
+                let callback = resolveIfReady;
+                if (element)
+                    callback = () => resolve(element);
+                window.requestAnimationFrame(callback);
             };
             resolveIfReady();
         });
@@ -215,8 +212,7 @@ class PageElement {
 }
 
 function geomeanToScore(geomean) {
-    const correctionFactor = 50; // This factor makes the test score look reasonably fit within 0 to 140.
-    return (60 * 1000) / geomean / correctionFactor;
+    return 1000 / geomean;
 }
 
 // The WarmupSuite is used to make sure all runner helper functions and
@@ -315,6 +311,16 @@ class RAFTestInvoker extends TestInvoker {
     }
 }
 
+// https://stackoverflow.com/a/47593316
+function seededHashRandomNumberGenerator(a) {
+    return function () {
+        var t = a += 0x6d2b79f5;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return (t ^ (t >>> 14)) >>> 0;
+    };
+}
+
 export class BenchmarkRunner {
     constructor(suites, client) {
         this._suites = suites;
@@ -324,6 +330,8 @@ export class BenchmarkRunner {
         this._page = null;
         this._metrics = null;
         this._iterationCount = params.iterationCount;
+        if (params.shuffleSeed !== "off")
+            this._suiteOrderRandomNumberGenerator = seededHashRandomNumberGenerator(params.shuffleSeed);
     }
 
     async runMultipleIterations(iterationCount) {
@@ -382,10 +390,23 @@ export class BenchmarkRunner {
         this._removeFrame();
         await this._appendFrame();
         this._page = new Page(this._frame);
+
+        let suites = [...this._suites];
+        if (this._suiteOrderRandomNumberGenerator) {
+            // We just do a simple Fisher-Yates shuffle based on the repeated hash of the
+            // seed. This is not a high quality RNG, but it's plenty good enough.
+            for (let i = 0; i < suites.length - 1; i++) {
+                let j = i + (this._suiteOrderRandomNumberGenerator() % (suites.length - i));
+                let tmp = suites[i];
+                suites[i] = suites[j];
+                suites[j] = tmp;
+            }
+        }
+
         performance.mark(prepareEndLabel);
         performance.measure("runner-prepare", prepareStartLabel, prepareEndLabel);
 
-        for (const suite of this._suites) {
+        for (const suite of suites) {
             if (!suite.disabled)
                 await this._runSuite(suite);
         }
@@ -524,7 +545,7 @@ export class BenchmarkRunner {
     }
 
     _appendIterationMetrics() {
-        const getMetric = (name) => this._metrics[name] || (this._metrics[name] = new Metric(name));
+        const getMetric = (name, unit = "ms") => this._metrics[name] || (this._metrics[name] = new Metric(name, unit));
         const iterationTotalMetric = (i) => {
             if (i >= params.iterationCount)
                 throw new Error(`Requested iteration=${i} does not exist.`);
@@ -555,7 +576,7 @@ export class BenchmarkRunner {
             for (let i = 0; i < this._iterationCount; i++)
                 iterationTotalMetric(i);
             getMetric("Geomean");
-            getMetric("Score");
+            getMetric("Score", "score");
         }
 
         const geomean = getMetric("Geomean");

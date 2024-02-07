@@ -37,7 +37,7 @@ export default class Item extends PureComponent {
             element = <TextInput text={todo.text} editing={this.state.editing} onSave={(text) => this.handleSave(todo.id, text)} />;
         } else {
             element = (
-                <div className={classnames("targeted", `view-${index}`)}>
+                <div className="view">
                     <input className="toggle" type="checkbox" data-testid="todo-item-toggle" checked={todo.completed} onChange={() => toggleTodo(todo.id)} />
                     <label onDoubleClick={this.handleDoubleClick} data-testid="todo-item-label">
                         {todo.text}
@@ -49,11 +49,12 @@ export default class Item extends PureComponent {
 
         return (
             <li
-                className={classnames("targeted", `li-${index}`, {
+                className={classnames({
                     completed: todo.completed,
                     editing: this.state.editing,
                 })}
                 data-testid="todo-item"
+                data-priority={4 - (index % 5)}
             >
                 {element}
             </li>

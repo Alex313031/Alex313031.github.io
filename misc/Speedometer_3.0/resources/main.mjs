@@ -1,5 +1,4 @@
 import { BenchmarkRunner } from "./benchmark-runner.mjs";
-import "./benchmark-report.mjs";
 import * as Statistics from "./statistics.mjs";
 import { Suites } from "./tests.mjs";
 import { renderMetricView } from "./metric-ui.mjs";
@@ -24,7 +23,12 @@ class MainBenchmarkClient {
         this._showSection(window.location.hash);
     }
 
-    startBenchmark() {
+    start() {
+        if (this._startBenchmark())
+            this._showSection("#running");
+    }
+
+    _startBenchmark() {
         if (this._isRunning)
             return false;
 
@@ -65,6 +69,10 @@ class MainBenchmarkClient {
         const runner = new BenchmarkRunner(Suites, this);
         runner.runMultipleIterations(params.iterationCount);
         return true;
+    }
+
+    get metrics() {
+        return this._metrics;
     }
 
     willAddTestFrame(frame) {
@@ -250,7 +258,7 @@ class MainBenchmarkClient {
         }
 
         if (params.startAutomatically)
-            this._startBenchmarkHandler();
+            this.start();
     }
 
     _hashChangeHandler() {
@@ -268,8 +276,7 @@ class MainBenchmarkClient {
     }
 
     _startBenchmarkHandler() {
-        if (this.startBenchmark())
-            this._showSection("#running");
+        this.start();
     }
 
     _logoClickHandler(event) {
@@ -324,20 +331,42 @@ class MainBenchmarkClient {
 
     _showSection(hash) {
         if (this._isRunning) {
-            window.location.hash = "#running";
+            this._setLocationHash("#running");
             return;
         } else if (this._hasResults) {
             if (hash !== "#summary" && hash !== "#details") {
-                window.location.hash = "#summary";
+                this._setLocationHash("#summary");
                 return;
             }
-        } else {
-            if (hash !== "#home" && hash !== "#about") {
-                window.location.hash = "#home";
-                return;
-            }
+        } else if (hash !== "#home" && hash !== "") {
+            // Redirect invalid views to #home directly.
+            this._setLocationHash("#home");
+            return;
         }
-        window.location.hash = hash || "#home";
+        this._setLocationHash(hash);
+    }
+
+    _setLocationHash(hash) {
+        if (hash === "#home" || hash === "") {
+            if (window.location.hash !== hash)
+                window.location.hash = "#home";
+            hash = "#home";
+            this._removeLocationHash();
+        } else {
+            window.location.hash = hash;
+        }
+        this._updateDocumentTitle(hash);
+    }
+
+    _updateDocumentTitle(hash) {
+        const maybeSection = document.querySelector(hash);
+        const sectionTitle = maybeSection?.getAttribute("data-title") ?? "";
+        document.title = `Speedometer 3.0 ${sectionTitle}`.trimEnd();
+    }
+
+    _removeLocationHash() {
+        const location = window.location;
+        window.history.pushState("", document.title, location.pathname + location.search);
     }
 }
 
