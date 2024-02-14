@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Checking out and building Thorium for MacOS</title>
+        <link rel="stylesheet" type="text/css" href="static/base.css" />
+        <link rel="stylesheet" type="text/css" href="static/doc.css" />
+        <link rel="stylesheet" type="text/css" href="static/prettify/prettify.css" />
+        <!-- default customHeadTagPart -->
+    </head>
+    <body class="Site">
+        <div class="Site-content Site-Content--markdown">
+            <div class="Container">
+                <div class="doc">
+                    <h1>
+                        <a class="h" name="Checking-out-and-building-Thorium-for-Mac" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Checking-out-and-building-Thorium-for-Mac"><span></span></a>
+                        <a class="h" name="checking-out-and-building-thorium-for-mac" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#checking-out-and-building-thorium-for-mac"><span></span></a>Checking out and building
+                        Thorium for Mac
+                    </h1>
+                    <p>There are instructions for other platforms here in the Thorium Docs directory.</p>
+                    <h2>
+                        <a class="h" name="System-requirements" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#System-requirements"><span></span></a>
+                        <a class="h" name="system-requirements" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#system-requirements"><span></span></a>System requirements
+                    </h2>
+                    <ul>
+                        <li>
+                            <p>A Mac, Intel or Arm. (<a href="https://chromium.googlesource.com/chromium/src.git/+/main/docs/mac_arm64.md">More details about Arm Macs</a>.)</p>
+                        </li>
+                        <li><p>MacOS 10.15 or higher.</p></li>
+                        <li>
+                            <p><a href="https://developer.apple.com/xcode/">Xcode</a>. Xcode comes with...</p>
+                        </li>
+                        <li>
+                            <p>The macOS SDK. Run</p>
+                            <pre
+                                class="code"
+                            ><span class="pln">$ ls </span><span class="str">`xcode-select -p`</span><span class="pun">/</span><span class="typ">Platforms</span><span class="pun">/</span><span class="typ">MacOSX</span><span class="pun">.</span><span class="pln">platform</span><span class="pun">/</span><span class="typ">Developer</span><span class="pun">/</span><span class="typ">SDKs</span><span class="pln">
+</span></pre>
+                            <p>
+                                to check whether you have it, and what version you have. <code class="code">mac_sdk_official_version</code> in <a href="about:invalid#zSoyz">mac_sdk.gni</a> is the SDK version used on all the bots and for
+                                <a href="https://source.chromium.org/search?q=MAC_BINARIES_LABEL&amp;ss=chromium">official builds</a>, so that version is guaranteed to work. Building with a newer SDK usually works too (please fix or file a
+                                bug if it doesn't).
+                            </p>
+                            <p>Building with an older SDK might also work, but if it doesn't then we won't accept changes for making it work.</p>
+                            <p>
+                                The easiest way to get the newest SDK is to use the newest version of Xcode, which often requires using the newest version of macOS. We don't use Xcode itself much, so if you're know what you're doing, you
+                                can likely get the build working with an older version of macOS as long as you get a new version of the macOS SDK on it.
+                            </p>
+                        </li>
+                        <li><p>An APFS-formatted volume (this is the default format for macOS volumes).</p></li>
+                    </ul>
+                    <h2>
+                        <a class="h" name="get-the-code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#get-the-code"><span></span></a>Downloading the Thorium code
+                    </h2>
+                    <p>Using Git:</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">git clone </span><span class="pun">--</span><span class="pln">recursive https</span><span class="pun">:</span><span class="com">//github.com/Alex313031/thorium.git</span><span class="pln">
+</span></pre>
+                    <h2>
+                        <a class="h" name="Install" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Install"><span></span></a>
+                        <a class="h" name="install" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#install"><span></span></a>Install <code class="code">depot_tools</code>
+                    </h2>
+                    <p>Clone the <code class="code">depot_tools</code> repository:</p>
+                    <pre class="code"><span class="pln">$ git clone https</span><span class="pun">:</span><span class="com">//chromium.googlesource.com/chromium/tools/depot_tools.git</span><span class="pln">
+</span></pre>
+                    <p>
+                        Add <code class="code">depot_tools</code> to the end of your PATH (you will probably want to put this in your <code class="code">~/.bash_profile</code> or <code class="code">~/.zshrc</code>). Assuming you cloned
+                        <code class="code">depot_tools</code> to <code class="code">/path/to/depot_tools</code> (note: you <strong>must</strong> use the absolute path or Python will not be able to find infra tools):
+                    </p>
+                    <pre class="code"><span class="pln">$ </span><span class="kwd">export</span><span class="pln"> PATH</span><span class="pun">=</span><span class="str">"$PATH:/path/to/depot_tools"</span><span class="pln">
+</span></pre>
+                    <h2>
+                        <a class="h" name="Get-the-Chromium-code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Get-the-Chromium-code"><span></span></a>
+                        <a class="h" name="get-the-chromium-code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#get-the-chromium-code"><span></span></a>Get the Chromium code
+                    </h2>
+                    <p>Create a <code class="code">chromium</code> directory for the checkout and change to it (you can call this whatever you like and put it wherever you like, as long as the full path has no spaces):</p>
+                    <pre class="code"><span class="pln">$ mkdir chromium </span><span class="pun">&amp;&amp;</span><span class="pln"> cd chromium
+</span></pre>
+                    <p>Run the <code class="code">fetch</code> tool from <code class="code">depot_tools</code> to check out the code and its dependencies.</p>
+                    <pre class="code"><span class="pln">$ caffeinate fetch chromium
+</span></pre>
+                    <p>
+                        Running the <code class="code">fetch</code> with <code class="code">caffeinate</code> is optional, but it will prevent the system from sleeping for the duration of the <code class="code">fetch</code> command, which
+                        may run for a considerable amount of time.
+                    </p>
+                    <p>
+                        If you don't need the full repo history, you can save time by using <code class="code">fetch --no-history chromium</code>. You can call <code class="code">git fetch --unshallow</code> to retrieve the full history
+                        later.
+                    </p>
+                    <p>Expect the command to take 30 minutes on even a fast connection, and many hours on slower ones.</p>
+                    <p>
+                        When <code class="code">fetch</code> completes, it will have created a hidden <code class="code">.gclient</code> file and a directory called <code class="code">src</code> in the working directory. The remaining
+                        instructions assume you have switched to the <code class="code">src</code> directory:
+                    </p>
+                    <pre class="code"><span class="pln">$ cd src
+</span></pre>
+                    <p>
+                        <em>Optional:</em> You can also <a href="https://www.chromium.org/developers/how-tos/api-keys">build with API keys</a> if you want your build to talk to some Google services like Google Sync, Translate, and
+                        GeoLocation.&nbsp; &nbsp;Thorium has its own keys in a private repository, if you are a builder or would like access to them, contact me. Otherwise, for personal or development builds, you can create your own keys
+                        and add yourself to <a href="https://groups.google.com/u/1/a/chromium.org/g/google-browser-signin-testaccounts">google-browser-signin-testaccounts</a> to enable Sync.
+                    </p>
+                    <h2>
+                        <a class="h" name="Setting-up-the-build" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Setting-up-the-build"><span></span></a>
+                        <a class="h" name="setting-up-the-build" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#setting-up-the-build"><span></span></a>Setting up the build
+                    </h2>
+                    <p>First, we need to make sure we have all the tags/branches and are on Tip of Tree. For this, run (from within the Thorium repo):</p>
+                    <pre class="code"><span class="pun">./</span><span class="pln">trunk</span><span class="pun">.</span><span class="pln">sh
+</span></pre>
+                    <p>Secondly, we need to check out the revision that Thorium is currently using. For this, run:</p>
+                    <pre class="code"><span class="pun">./</span><span class="pln">version</span><span class="pun">.</span><span class="pln">sh
+</span></pre>
+                    <p>
+                        At the end it will download the <a href="https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/docs/pgo.md">PGO profiles</a> for Chromium for all platforms. The file for MacOS will be downloaded to
+                        <em>/Users/$USERNAME/chromium/src/build/pgo_profiles/*.profdata</em> with the actual file name looking something like 'chrome-mac-6167-1706032279-25144dc1c87be275c5981becbafed7785e2f39f2.profdata', which should be
+                        added to the end of args.gn as per below. Take note of this, as we will be using it in the <code class="code">args.gn</code> below.
+                    </p>
+                    <p>Lastly, we need to copy the Thorium source files over the Chromium tree. For this, run:</p>
+                    <pre class="code"><span class="pun">./</span><span class="pln">setup</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">--</span><span class="pln">mac
+</span></pre>
+                    <p>This will copy all the files and patches to the needed locations.</p>
+                    <ul>
+                        <li>NOTE: To build for arm64, use <code class="code">./setup.sh --mac-arm</code>. Use <code class="code">./setup.sh --help</code> to see all options/platforms.</li>
+                    </ul>
+                    <p>
+                        Chromium uses <a href="https://ninja-build.org/">Ninja</a> as its main build tool along with a tool called <a href="https://gn.googlesource.com/gn/+/main/docs/quick_start.md">GN</a> to generate
+                        <code class="code">.ninja</code> files. You can create any number of <em>build directories</em> with different configurations. Create the build output directory by running:
+                    </p>
+                    <pre class="code"><span class="pln">$ gn args </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium
+</span></pre>
+                    <p>
+                        The contents of '<a href="https://github.com/Alex313031/thorium/blob/other/Mac/mac_args.gn">mac_args.gn</a>' in the root of this repo should be copy/pasted into the editor.
+                        <em>and edit the last line to point to the actual path and file name of the '*.profdata' it</em><br />
+                        Use the '<a href="https://github.com/Alex313031/thorium/blob/other/Mac/mac_ARM_args.gn">mac_ARM_args.gn</a>' for arm64 builds.
+                    </p>
+                    <ul>
+                        <li>
+                            For other build arguments, including release settings, see <a href="https://www.chromium.org/developers/gn-build-configuration">GN build configuration</a>. The default will be a debug component build matching the
+                            current host operating system and CPU.
+                        </li>
+                        <li>For more info on GN, run <code class="code">gn help</code> on the command line or read the <a href="https://gn.googlesource.com/gn/+/main/docs/quick_start.md">quick start guide</a>.</li>
+                        <li>Building Thorium for arm64 Macs requires <a href="http://localhost:8080/docs/+/refs/heads/master/mac_arm64.md">additional setup</a>.</li>
+                    </ul>
+                    <h2>
+                        <a class="h" name="build" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#build"><span></span></a>Build Thorium
+                    </h2>
+                    <p>Build Thorium (the "chrome" target) with Ninja using the command:</p>
+                    <pre class="code"><span class="pln">$ autoninja </span><span class="pun">-</span><span class="pln">C </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium thorium chromedriver
+</span></pre>
+                    <p>(<code class="code">autoninja</code> is a wrapper that automatically provides optimal values for the arguments passed to <code class="code">ninja</code>.)</p>
+                    <p>
+                        You can get a list of all of the other build targets from GN by running <code class="code">gn ls out/thorium</code> from the command line. To compile one, pass the GN label to Ninja with no preceding "//" (so, for
+                        <code class="code">//chrome/test:unit_tests</code> use <code class="code">autoninja -C out/thorium chrome/test:unit_tests</code>).
+                    </p>
+                    <h2>
+                        <a class="h" name="Run_Install-Thorium" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Run_Install-Thorium"><span></span></a>
+                        <a class="h" name="run_install-thorium" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#run_install-thorium"><span></span></a>Run/Install Thorium
+                    </h2>
+                    <p>Once it is built, you can simply run the browser:</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium</span><span class="pun">/</span><span class="typ">Thorium</span><span class="pun">.</span><span class="pln">app</span><span class="pun">/</span><span class="typ">Contents</span><span class="pun">/</span><span class="typ">MacOS</span><span class="pun">/</span><span class="typ">Thorium</span><span class="pln">
+</span></pre>
+                    <p>To generate a <em>.dmg</em> installation package, run (from within the Thorium repo):</p>
+                    <pre class="code"><span class="pln">$ </span><span class="pun">./</span><span class="pln">build_dmg</span><span class="pun">.</span><span class="pln">sh
+</span></pre>
+                    <h3>
+                        <a
+                            class="h"
+                            name="Avoiding-repetitive-system-permissions-dialogs-after-each-build"
+                            href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Avoiding-repetitive-system-permissions-dialogs-after-each-build"
+                        >
+                            <span></span>
+                        </a>
+                        <a
+                            class="h"
+                            name="avoiding-repetitive-system-permissions-dialogs-after-each-build"
+                            href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#avoiding-repetitive-system-permissions-dialogs-after-each-build"
+                        >
+                            <span></span>
+                        </a>
+                        Avoiding repetitive system permissions dialogs after each build
+                    </h3>
+                    <p>
+                        Every time you start a new developer build, you may get two system dialogs: <code class="code">Thorium wants to use your confidential information stored in "Thorium Safe Storage" in your keychain.</code>, and
+                        <code class="code">Do you want the application "Thorium.app" to accept incoming network connections?</code>.
+                    </p>
+                    <p>To avoid them, you can run Thorium with these command-line flags (but of course beware that they will change the behavior of certain subsystems, like password storage):</p>
+                    <pre
+                        class="code"
+                    ><span class="pun">--</span><span class="kwd">use</span><span class="pun">-</span><span class="pln">mock</span><span class="pun">-</span><span class="pln">keychain </span><span class="pun">--</span><span class="pln">disable</span><span class="pun">-</span><span class="pln">features</span><span class="pun">=</span><span class="typ">DialMediaRouteProvider</span><span class="pln">
+</span></pre>
+                    <h2>
+                        <a class="h" name="Debugging" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Debugging"><span></span></a>
+                        <a class="h" name="debugging" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#debugging"><span></span></a>Debugging
+                    </h2>
+                    <p>Good debugging tips can be found <a href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/mac/debugging.md">here</a>.</p>
+                    <p>If you have problems building, join us in the Thorium IRC Channel at <code class="code">#thorium</code> on <code class="code">irc.libera.chat</code> and ask there.</p>
+                    <h2>
+                        <a class="h" name="Build-and-run-test-targets" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Build-and-run-test-targets"><span></span></a>
+                        <a class="h" name="build-and-run-test-targets" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#build-and-run-test-targets"><span></span></a>Build and run test targets
+                    </h2>
+                    <p>
+                        Tests are split into multiple test targets based on their type and where they exist in the directory structure. To see what target a given unit test or browser test file corresponds to, the following command can be
+                        used:
+                    </p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ gn refs </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium </span><span class="pun">--</span><span class="pln">testonly</span><span class="pun">=</span><span class="kwd">true</span><span class="pln"> </span><span class="pun">--</span><span class="pln">type</span><span class="pun">=</span><span class="pln">executable </span><span class="pun">--</span><span class="pln">all chrome</span><span class="pun">/</span><span class="pln">browser</span><span class="pun">/</span><span class="pln">ui</span><span class="pun">/</span><span class="pln">browser_list_unittest</span><span class="pun">.</span><span class="pln">cc
+</span><span class="com">//chrome/test:unit_tests</span><span class="pln">
+</span></pre>
+                    <p>In the example above, the target is unit_tests. The unit_tests binary can be built by running the following command:</p>
+                    <pre class="code"><span class="pln">$ autoninja </span><span class="pun">-</span><span class="pln">C </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium unit_tests
+</span></pre>
+                    <p>You can run the tests by running the unit_tests binary. You can also limit which tests are run using the <code class="code">--gtest_filter</code> arg, e.g.:</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium</span><span class="pun">/</span><span class="pln">unit_tests </span><span class="pun">--</span><span class="pln">gtest_filter</span><span class="pun">=</span><span class="str">"BrowserListUnitTest.*"</span><span class="pln">
+</span></pre>
+                    <p>You can find out more about GoogleTest at its <a href="https://github.com/google/googletest">GitHub page</a>.</p>
+                    <h2>
+                        <a class="h" name="Update-your-checkout" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Update-your-checkout"><span></span></a>
+                        <a class="h" name="update-your-checkout" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#update-your-checkout"><span></span></a>Update your checkout
+                    </h2>
+                    <p>To update an existing checkout, you can run (from within the Thorium repo):</p>
+                    <pre class="code"><span class="pln">$ </span><span class="pun">./</span><span class="pln">trunk</span><span class="pun">.</span><span class="pln">sh
+</span></pre>
+                    <h2>
+                        <a class="h" name="Tips_tricks_and-troubleshooting" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Tips_tricks_and-troubleshooting"><span></span></a>
+                        <a class="h" name="tips_tricks_and-troubleshooting" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#tips_tricks_and-troubleshooting"><span></span></a>Tips, tricks, and troubleshooting
+                    </h2>
+                    <h3>
+                        <a class="h" name="Improving-performance-of" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Improving-performance-of"><span></span></a>
+                        <a class="h" name="improving-performance-of" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#improving-performance-of"><span></span></a>Improving performance of
+                        <code class="code">git status</code>
+                    </h3>
+                    <h4>
+                        <a class="h" name="Increase-the-vnode-cache-size" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Increase-the-vnode-cache-size"><span></span></a>
+                        <a class="h" name="increase-the-vnode-cache-size" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#increase-the-vnode-cache-size"><span></span></a>Increase the vnode cache size
+                    </h4>
+                    <p>
+                        <code class="code">git status</code> is used frequently to determine the status of your checkout. Due to the large number of files in Chromium's checkout, <code class="code">git status</code> performance can be quite
+                        variable. Increasing the system's vnode cache appears to help. By default, this command:
+                    </p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ sysctl </span><span class="pun">-</span><span class="pln">a </span><span class="pun">|</span><span class="pln"> egrep </span><span class="str">'kern\..*vnodes'</span><span class="pln">
+</span></pre>
+                    <p>Outputs <code class="code">kern.maxvnodes: 263168</code> (263168 is 257 * 1024). To increase this setting:</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ sudo sysctl kern</span><span class="pun">.</span><span class="pln">maxvnodes</span><span class="pun">=</span><span class="pln">$</span><span class="pun">((</span><span class="lit">512</span><span class="pun">*</span><span class="lit">1024</span><span class="pun">))</span><span class="pln">
+</span></pre>
+                    <p>Higher values may be appropriate if you routinely move between different Chromium checkouts. This setting will reset on reboot. To apply it at startup:</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ sudo tee </span><span class="pun">/</span><span class="typ">Library</span><span class="pun">/</span><span class="typ">LaunchDaemons</span><span class="pun">/</span><span class="pln">kern</span><span class="pun">.</span><span class="pln">maxvnodes</span><span class="pun">.</span><span class="pln">plist </span><span class="pun">&gt;</span><span class="pln"> </span><span class="str">/dev/</span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln">EOF
+</span><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"UTF-8"</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="pun">&lt;!</span><span class="pln">DOCTYPE plist PUBLIC </span><span class="str">"-//Apple//DTD PLIST 1.0//EN"</span><span class="pln"> </span><span class="str">"http://www.apple.com/DTDs/PropertyList-1.0.dtd"</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;</span><span class="pln">plist version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pun">&gt;</span><span class="pln">
+  </span><span class="str">&lt;dict&gt;</span><span class="pln">
+    </span><span class="str">&lt;key&gt;</span><span class="typ">Label</span><span class="pun">&lt;/</span><span class="pln">key</span><span class="pun">&gt;</span><span class="pln">
+      </span><span class="str">&lt;string&gt;</span><span class="pln">kern</span><span class="pun">.</span><span class="pln">maxvnodes</span><span class="pun">&lt;/</span><span class="kwd">string</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="str">&lt;key&gt;</span><span class="typ">ProgramArguments</span><span class="pun">&lt;/</span><span class="pln">key</span><span class="pun">&gt;</span><span class="pln">
+      </span><span class="str">&lt;array&gt;</span><span class="pln">
+        </span><span class="str">&lt;string&gt;</span><span class="pln">sysctl</span><span class="pun">&lt;/</span><span class="kwd">string</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="str">&lt;string&gt;</span><span class="pln">kern</span><span class="pun">.</span><span class="pln">maxvnodes</span><span class="pun">=</span><span class="lit">524288</span><span class="pun">&lt;/</span><span class="kwd">string</span><span class="pun">&gt;</span><span class="pln">
+      </span><span class="pun">&lt;/</span><span class="pln">array</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="str">&lt;key&gt;</span><span class="typ">RunAtLoad</span><span class="pun">&lt;/</span><span class="pln">key</span><span class="pun">&gt;</span><span class="pln">
+      </span><span class="pun">&lt;</span><span class="kwd">true</span><span class="pun">/&gt;</span><span class="pln">
+  </span><span class="pun">&lt;/</span><span class="pln">dict</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">plist</span><span class="pun">&gt;</span><span class="pln">
+EOF
+</span></pre>
+                    <p>Or edit the file directly.</p>
+                    <h4>
+                        <a class="h" name="Configure-git-to-use-an-untracked-cache" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Configure-git-to-use-an-untracked-cache"><span></span></a>
+                        <a class="h" name="configure-git-to-use-an-untracked-cache" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#configure-git-to-use-an-untracked-cache"><span></span></a>Configure git to use an
+                        untracked cache
+                    </h4>
+                    <p>Try running</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ git update</span><span class="pun">-</span><span class="pln">index </span><span class="pun">--</span><span class="pln">test</span><span class="pun">-</span><span class="pln">untracked</span><span class="pun">-</span><span class="pln">cache
+</span></pre>
+                    <p>If the output ends with <code class="code">OK</code>, then the following may also improve performance of <code class="code">git status</code>:</p>
+                    <pre class="code"><span class="pln">$ git config core</span><span class="pun">.</span><span class="pln">untrackedCache </span><span class="kwd">true</span><span class="pln">
+</span></pre>
+                    <h4>
+                        <a class="h" name="Configure-git-to-use-fsmonitor" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Configure-git-to-use-fsmonitor"><span></span></a>
+                        <a class="h" name="configure-git-to-use-fsmonitor" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#configure-git-to-use-fsmonitor"><span></span></a>Configure git to use fsmonitor
+                    </h4>
+                    <p>
+                        You can significantly speed up git by using <a href="https://github.blog/2022-06-29-improve-git-monorepo-performance-with-a-file-system-monitor/">fsmonitor.</a> You should enable fsmonitor in large repos, such as
+                        Chromium and v8. Enabling it globally will launch many processes and probably isn't worthwhile. The command to enable fsmonitor in the current repo is:
+                    </p>
+                    <pre class="code"><span class="pln">$ git config core</span><span class="pun">.</span><span class="pln">fsmonitor </span><span class="kwd">true</span><span class="pln">
+</span></pre>
+                    <h3>
+                        <a class="h" name="Xcode-license-agreement" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Xcode-license-agreement"><span></span></a>
+                        <a class="h" name="xcode-license-agreement" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#xcode-license-agreement"><span></span></a>Xcode license agreement
+                    </h3>
+                    <p>If you're getting the error</p>
+                    <blockquote><p>Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.</p></blockquote>
+                    <p>the Xcode license hasn't been accepted yet which (contrary to the message) any user can do by running:</p>
+                    <pre class="code"><span class="pln">$ xcodebuild </span><span class="pun">-</span><span class="pln">license
+</span></pre>
+                    <p>Only accepting for all users of the machine requires root:</p>
+                    <pre class="code"><span class="pln">$ sudo xcodebuild </span><span class="pun">-</span><span class="pln">license
+</span></pre>
+                    <h3>
+                        <a class="h" name="Exclude-checkout-from-Spotlight-indexing" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#Exclude-checkout-from-Spotlight-indexing"><span></span></a>
+                        <a class="h" name="exclude-checkout-from-spotlight-indexing" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING_MAC.md#exclude-checkout-from-spotlight-indexing"><span></span></a>Exclude checkout from
+                        Spotlight indexing
+                    </h3>
+                    <p>
+                        Chromium's checkout contains a lot of files, and building generates many more. Spotlight will try to index all of those files, and uses a lot of CPU time doing so, especially during a build, which can slow things
+                        down.
+                    </p>
+                    <p>To prevent the Chromium checkout from being indexed by Spotlight, open System Preferences, go to "Spotlight" -&gt; "Privacy" and add your Chromium checkout directory to the list of excluded locations.</p>
+                </div>
+            </div>
+        </div>
+        <!-- default customDocFooter -->
+        <footer class="Site-footer">
+            <div class="Footer">
+                <span class="Footer-poweredBy">Powered by <a href="https://gerrit.googlesource.com/gitiles/">Gitiles</a></span>
+                <div class="Footer-links"></div>
+            </div>
+        </footer>
+    </body>
+</html>

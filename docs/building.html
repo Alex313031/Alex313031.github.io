@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Checking out and building Thorium on Linux</title>
+        <title>Checking out and building Thorium for Linux</title>
         <link rel="stylesheet" type="text/css" href="static/base.css" />
         <link rel="stylesheet" type="text/css" href="static/doc.css" />
         <link rel="stylesheet" type="text/css" href="static/prettify/prettify.css" />
@@ -14,61 +14,67 @@
             <div class="Container">
                 <div class="doc">
                     <h1>
-                        <a class="h" name="Checking-out-and-building-Thorium-on-Linux" href="#Checking-out-and-building-Thorium-on-Linux"><span></span></a>
-                        <a class="h" name="checking-out-and-building-thorium-on-linux" href="#checking-out-and-building-thorium-on-linux"><span></span></a>Checking out and building Thorium on Linux
+                        <a class="h" name="Checking-out-and-building-Thorium-on-Linux" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Checking-out-and-building-Thorium-on-Linux"><span></span></a>
+                        <a class="h" name="checking-out-and-building-thorium-on-linux" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#checking-out-and-building-thorium-on-linux"><span></span></a>Checking out and building
+                        Thorium on Linux &nbsp;
                     </h1>
-                    <p>There are instructions for other platforms here in the Thorium Docs directory. You can also read the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/BUILDING.md">old building instructions</a>.</p>
+                    <p>There are instructions for other platforms here in the Thorium Docs directory. You can also read the <a href="https://github.com/Alex313031/thorium/blob/main/infra/BUILDING.md">old building instructions</a>.</p>
                     <h4>
-                        <a class="h" name="Windows" href="#Windows"><span></span></a><a class="h" name="windows" href="#windows"><span></span></a>Windows
+                        <a class="h" name="Windows" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Windows"><span></span></a>
+                        <a class="h" name="windows" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#windows"><span></span></a>Windows
                     </h4>
                     <p>
                         For Windows and Windows <a href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2">AVX2</a>, I made new dedicated instructions. If you are building on Windows use
-                        <a href="https://github.com/Alex313031/Thorium/blob/main/docs/BUILDING_WIN.md">BUILDING_WIN.md</a> and if you are building for Windows on Linux, use
-                        <a href="https://github.com/Alex313031/Thorium/blob/main/docs/WIN_CROSS_BUILD_INSTRUCTIONS.txt">WIN_CROSS_BUILD_INSTRUCTIONS</a>
+                        <a href="https://github.com/Alex313031/thorium/blob/main/docs/BUILDING_WIN.md">BUILDING_WIN.md</a> and if you are building for Windows on Linux, use
+                        <a href="https://github.com/Alex313031/thorium/blob/main/docs/WIN_CROSS_BUILD_INSTRUCTIONS.txt">WIN_CROSS_BUILD_INSTRUCTIONS</a>
                     </p>
                     <h2>
-                        <a class="h" name="System-Requirements" href="#System-Requirements"><span></span></a><a class="h" name="system-requirements" href="#system-requirements"><span></span></a>System Requirements
+                        <a class="h" name="System-Requirements" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#System-Requirements"><span></span></a>
+                        <a class="h" name="system-requirements" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#system-requirements"><span></span></a>System Requirements
                     </h2>
                     <ul>
                         <li>A x64 machine with at least 8GB of RAM. 16GB or more is highly recommended.</li>
                         <li>At least 75GB of free disk space.</li>
-                        <li>You must have Git and Python v3.6+ installed already (and <code class="code">python3</code> must point to a Python v3.6+ binary (i.e. in your path or as default python install).</li>
+                        <li>
+                            You must have Git and Python v3.8+ installed already (and <code class="code">python3</code> must point to a Python v3.8+ binary, i.e. in your path or as default python install). Depot_tools bundles an appropriate
+                            version of Python in <code class="code">$depot_tools/python-bin</code>, if you don't have an appropriate version already on your system.
+                        </li>
                     </ul>
                     <p>
-                        Most development is done on Ubuntu (currently 22.04, Jammy Jellyfish). Ubuntu 16.04 no longer works. 18.04, 20.04 and Debian 10/11 will work. There are some instructions for other distros below, but they are mostly unsupported.
+                        Most development is done on Ubuntu 22.04, Jammy Jellyfish (This is what Chromium's build infrastructure currently runs). Ubuntu 16.04/18.04 no longer works. 20.04 and Debian 10/11/12 will work. There are some
+                        instructions for other distros below, but they are mostly unsupported.
                     </p>
                     <p><strong>The scripts to build Thorium assume that depot_tools, thorium and chromium are both in $HOME!</strong></p>
                     <h2>
-                        <a class="h" name="Install-depot_tools" href="#Install-depot_tools"><span></span></a><a class="h" name="install-depot_tools" href="#install-depot_tools"><span></span></a>Install <em>depot_tools</em>
+                        <a class="h" name="depot-tools" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#depot-tools"><span></span></a>Install <code class="code">depot_tools</code>
                     </h2>
                     <p>Clone the <code class="code">depot_tools</code> repository:</p>
                     <pre class="code"><span class="pln">$ git clone https</span><span class="pun">:</span><span class="com">//chromium.googlesource.com/chromium/tools/depot_tools.git</span><span class="pln">
 </span></pre>
                     <p>
-                        Add <em>depot_tools</em> to the end of your <em>$PATH</em> (you will probably want to put this in your <code class="code">~/.bashrc</code> or <code class="code">~/.zshrc</code>). When cloning <em>depot_tools</em> to
-                        your home directory <strong>do not</strong> use <code class="code">~</code> on PATH, otherwise <code class="code">gclient runhooks</code> will fail to run. Rather, you should use either
+                        Add <em>depot_tools</em> to the end of your <em>$PATH</em> (you will probably want to put this in your <code class="code">~/.bashrc</code> or <code class="code">~/.zshrc</code>). When setting the path after cloning
+                        <em>depot_tools</em> to your home directory <strong>do not</strong> use <code class="code">~</code> in the PATH, otherwise <code class="code">gclient runhooks</code> will fail to run. Rather, you should use either
                         <code class="code">$HOME</code> or the absolute path. So, assuming you cloned <em>depot_tools</em> to <em>$HOME</em>:
                     </p>
                     <pre
                         class="code"
-                    ><span class="pln">$ </span><span class="kwd">export</span><span class="pln"> PATH</span><span class="pun">=</span><span class="str">&quot;$PATH:${HOME}/depot_tools&quot;</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> $ </span><span class="kwd">export</span><span class="pln"> PATH</span><span class="pun">=</span><span class="str">&quot;$PATH:/home/alex/depot_tools&quot;</span><span class="pln">
+                    ><span class="pln">$ </span><span class="kwd">export</span><span class="pln"> PATH</span><span class="pun">=</span><span class="str">"${HOME}/depot_tools:$PATH"</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> $ </span><span class="kwd">export</span><span class="pln"> PATH</span><span class="pun">=</span><span class="str">"/home/alex/depot_tools:$PATH"</span><span class="pln">
 </span></pre>
                     <h2>
-                        <a class="h" name="Get-the-code" href="#Get-the-code"><span></span></a><a class="h" name="get-the-code" href="#get-the-code"><span></span></a>Get the code
+                        <a class="h" name="get-the-code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#get-the-code"><span></span></a>Get the code
                     </h2>
                     <h3>
-                        <a class="h" name="Thorium-Code" href="#Thorium-Code"><span></span></a><a class="h" name="thorium-code" href="#thorium-code"><span></span></a>Thorium Code
+                        <a class="h" name="Thorium-Code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Thorium-Code"><span></span></a>
+                        <a class="h" name="thorium-code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#thorium-code"><span></span></a>Thorium Code
                     </h3>
                     <p>Clone the Thorium repo into <em>$HOME</em></p>
-                    <pre class="code"><span class="pln">$ git clone https</span><span class="pun">:</span><span class="com">//github.com/Alex313031/Thorium.git</span><span class="pln">
-</span></pre>
-                    <p>Then, make the <code class="code">set_exec.sh</code> script executable and run it (this will set all the other scripts in the repo as executable).</p>
                     <pre
                         class="code"
-                    ><span class="pln">$ chmod </span><span class="pun">+</span><span class="pln">x set_exec</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">./</span><span class="pln">set_exec</span><span class="pun">.</span><span class="pln">sh
+                    ><span class="pln">$ git clone </span><span class="pun">--</span><span class="pln">recursive https</span><span class="pun">:</span><span class="com">//github.com/Alex313031/thorium.git</span><span class="pln">
 </span></pre>
                     <h3>
-                        <a class="h" name="Chromium-Code" href="#Chromium-Code"><span></span></a><a class="h" name="chromium-code" href="#chromium-code"><span></span></a>Chromium Code
+                        <a class="h" name="Chromium-Code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Chromium-Code"><span></span></a>
+                        <a class="h" name="chromium-code" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#chromium-code"><span></span></a>Chromium Code
                     </h3>
                     <p>Create a <em>chromium</em> directory for the checkout and change to it.</p>
                     <pre class="code"><span class="pln">$ mkdir </span><span class="pun">~</span><span class="str">/chromium &amp;&amp; cd ~/</span><span class="pln">chromium
@@ -81,12 +87,12 @@
                         <code class="code">repo</code> are used to download, rebase, and sync all Google repositories, including Chromium, ChromiumOS, Android, Fuchsia, Infra, Monorail, GN, etc.
                     </p>
                     <p>
-                        If you don&#39;t want the full repo history, you can save a lot of time by adding the <code class="code">--no-history</code> flag to <code class="code">fetch</code>. This is equivalent to a shallow git clone with a
-                        depth of 1.
+                        If you don't want the full repo history, you can save a lot of time by adding the <code class="code">--no-history</code> flag to <code class="code">fetch</code>. This is equivalent to a shallow git clone with a depth
+                        of 1.
                     </p>
                     <p>Expect the command to take 20 minutes on a fast (150mbps+) connection, and many hours on slower ones.</p>
                     <p>
-                        If you&#39;ve already installed the build dependencies on the machine (from another checkout, for example), you can omit the <code class="code">--nohooks</code> flag and <em>fetch</em> will automatically execute
+                        If you've already installed the build dependencies on the machine (from another checkout, for example), you can omit the <code class="code">--nohooks</code> flag and <em>fetch</em> will automatically execute
                         <code class="code">gclient runhooks</code> at the end.
                     </p>
                     <p>
@@ -96,11 +102,11 @@
                     <pre class="code"><span class="pln">$ cd src
 </span></pre>
                     <h3>
-                        <a class="h" name="Install-additional-build-dependencies" href="#Install-additional-build-dependencies"><span></span></a>
-                        <a class="h" name="install-additional-build-dependencies" href="#install-additional-build-dependencies"><span></span></a>Install additional build dependencies
+                        <a class="h" name="Install-additional-build-dependencies" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Install-additional-build-dependencies"><span></span></a>
+                        <a class="h" name="install-additional-build-dependencies" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#install-additional-build-dependencies"><span></span></a>Install additional build dependencies
                     </h3>
                     <p>
-                        Once you have checked out the code, and assuming you&#39;re using Ubuntu, run the
+                        Once you have checked out the code, and assuming you're using Ubuntu, run the
                         <a href="https://chromium.googlesource.com/chromium/src/+/main/build/install-build-deps.sh">
                             <em><code class="code">install-build-deps.sh</code></em>
                         </a>
@@ -108,58 +114,63 @@
                     </p>
                     <pre
                         class="code"
-                    ><span class="pln">$ </span><span class="pun">./</span><span class="pln">build</span><span class="pun">/</span><span class="pln">install</span><span class="pun">-</span><span class="pln">build</span><span class="pun">-</span><span class="pln">deps</span><span class="pun">.</span><span class="pln">sh
+                    ><span class="pln">$ </span><span class="pun">./</span><span class="pln">build</span><span class="pun">/</span><span class="pln">install</span><span class="pun">-</span><span class="pln">build</span><span class="pun">-</span><span class="pln">deps</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">--</span><span class="kwd">no</span><span class="pun">-</span><span class="pln">nacl
 </span></pre>
                     <p>
                         You can run it with the flag <code class="code">--help</code> to see arguments. For example, you would want <code class="code">--lib32</code> if building for 32 bit Linux, <code class="code">--arm</code> for building
                         a Raspberry Pi release, <code class="code">--chromeos-fonts</code> for building Thorium for ThoriumOS, and <code class="code">--quick-check</code> just to verify needed libraries are installed.
                     </p>
                     <p>
-                        You may need to adjust the build dependencies for other distros. There are some <a href="#notes">notes</a> at the end of this document, but we make no guarantees for their accuracy, as distros get updated over time.
+                        You may need to adjust the build dependencies for other distros. There are some <a href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#notes">notes</a> at the end of this document, but we make no
+                        guarantees for their accuracy, as distros get updated over time.
                     </p>
                     <h3>
-                        <a class="h" name="Run-the-hooks" href="#Run-the-hooks"><span></span></a><a class="h" name="run-the-hooks" href="#run-the-hooks"><span></span></a>Run the hooks
+                        <a class="h" name="Run-the-hooks" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Run-the-hooks"><span></span></a>
+                        <a class="h" name="run-the-hooks" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#run-the-hooks"><span></span></a>Run the hooks
                     </h3>
-                    <p>
-                        Once you&#39;ve run <code class="code">install-build-deps</code> at least once, you can now run the Chromium-specific hooks, which will download additional binaries and other things like LLVM and a Debian Sysroot.:
-                    </p>
+                    <p>Once you've run <code class="code">install-build-deps</code> at least once, you can now run the Chromium-specific hooks, which will download additional binaries and other things like LLVM and a Debian Sysroot.:</p>
                     <pre class="code"><span class="pln">$ gclient runhooks
 </span></pre>
                     <p>
-                        <em>Optional</em>: You can also <a href="https://www.chromium.org/developers/how-tos/api-keys">build with API keys</a> if you want your build to talk to some Google services like Google Sync, Translate, and
-                        GeoLocation.   Thorium has its own keys in a private repository, if you are a builder or would like access to them, contact me. Otherwise, for personal or development builds, you can create your own keys and add
-                        yourself to <a href="https://groups.google.com/u/1/a/chromium.org/g/google-browser-signin-testaccounts">google-browser-signin-testaccounts</a> to enable Sync.
+                        <em>Optional:</em> You can also <a href="https://www.chromium.org/developers/how-tos/api-keys">build with API keys</a> if you want your build to talk to some Google services like Google Sync, Translate, and
+                        GeoLocation.&nbsp; &nbsp;Thorium has its own keys in a private repository, if you are a builder or would like access to them, contact me. Otherwise, for personal or development builds, you can create your own keys
+                        and add yourself to <a href="https://groups.google.com/u/1/a/chromium.org/g/google-browser-signin-testaccounts">google-browser-signin-testaccounts</a> to enable Sync.
                     </p>
                     <h2>
-                        <a class="h" name="Setting-up-the-build" href="#Setting-up-the-build"><span></span></a><a class="h" name="setting-up-the-build" href="#setting-up-the-build"><span></span></a>Setting up the build
+                        <a class="h" name="setup" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#setup"><span></span></a>Setting up the build
                     </h2>
                     <p>
-                        First, we need to run <code class="code">trunk.sh</code> (in the root of the Thorium repo.) This will Rebase/Sync the Chromium repo, and revert it to stock Chromium. It should be used before every seperate build. See
-                        the <a href="#updating">Updating</a> section.
+                        First, we need to run <code class="code">./trunk.sh</code> (in the root of the Thorium repo.) This will Rebase/Sync the Chromium repo, and revert it to stock Chromium.<br />
+                        It should be used before every seperate build. See the <a href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#updating">Updating</a> section.
                     </p>
-                    <p>
-                        This will update and sync the sources and at the end it will download the <a href="https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/docs/pgo.md">PGO profiles</a> for Chromium for all platforms.
-                        The file will be downloaded to <em>//chromium/src/chrome/build/pgo_profiles/*.profdata</em> with the actual file name looking something like
-                        &#39;chrome-linux-main-1632505958-ddbb37bcdfa7dbd7b10cf3a9b6a5bc45e7a958a6.profdata&#39;, which should be added to the end of args.gn as per below.
-                    </p>
+                    <p><strong>IMPORTANT</strong> This will update and sync the sources to the latest revision (tip of tree) and ensure you have all the version tags.</p>
                     <ul>
-                        <li>Then, (from where you cloned this repo) run <code class="code">./setup.sh</code>. This will copy all the files and patches to the needed locations and drop you to <em>//chromium/src</em>.</li>
-                        <li>NOTE: To build for MacOS, use <code class="code">./setup.sh --mac</code>. To build for Raspberry Pi, use <code class="code">./setup.sh --raspi</code>.</li>
+                        <li>
+                            Then, to check out the current Chromium revision that Thorium is using, run <code class="code">./version.sh</code>. At the end it will download the
+                            <a href="https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/docs/pgo.md">PGO profiles</a> for Chromium for all platforms. The file will be downloaded to
+                            <em>//chromium/src/chrome/build/pgo_profiles/*.profdata</em> with the actual file name looking something like 'chrome-linux-6167-1706004111-41f78c57fb3a1fe49a5c549b16f0221465339af9.profdata', which should be
+                            added to the end of args.gn as per below. Take note of this, as we will be using it in the <code class="code">args.gn</code> below.
+                        </li>
+                        <li>Then, (from where you cloned this repo) run <code class="code">./setup.sh</code>. This will copy all the files and patches to the needed locations.</li>
+                        <li>
+                            NOTE: To build for MacOS, use <code class="code">./setup.sh --mac</code>. To build for Raspberry Pi, use <code class="code">./setup.sh --raspi</code>. Use <code class="code">./setup.sh --help</code> to see all
+                            options/platforms.
+                        </li>
                     </ul>
                     <p>
-                        Chromium and Thorium use <a href="https://ninja-build.org">Ninja</a> as their main build tool, along with a tool called <a href="https://gn.googlesource.com/gn/+/refs/heads/main/README.md">GN</a> to generate
-                        <code class="code">.ninja</code> files in the build output directory. You can create any number of <em>build directories</em> with different configurations. To create a build directory:
+                        Chromium and Thorium use <a href="https://ninja-build.org/">Ninja</a> as their main build tool, along with a tool called <a href="https://gn.googlesource.com/gn/+/refs/heads/main/README.md">GN</a> to generate
+                        <code class="code">.ninja</code> files in the build output directory. You can create any number of <em>build directories</em> with different configurations. Create the build output directory by running:
                     </p>
                     <ul>
                         <li>
-                            Run <code class="code">gn args out/thorium</code> and the contents of &#39;<a href="https://github.com/Alex313031/Thorium/blob/main/args.gn">args.gn</a>&#39; in the root of this repo should be copy/pasted into
-                            the editor. Note that for Windows, Mac, ChromiumOS, or Android there are seperate *_args.gn files for those platforms.
-                            <em>--Include your api keys here at the top or leave blank, and edit the last line to point to the actual path and file name of &#39;*.profdata&#39;</em>
+                            Run <code class="code">gn args out/thorium</code> and the contents of '<a href="https://github.com/Alex313031/thorium/blob/main/args.gn">args.gn</a>' in the root of this repo should be copy/pasted into the
+                            editor. Note that for Windows, Mac, ChromiumOS, or Android there are seperate *_args.gn files for those platforms.
+                            <em>--Include your api keys here at the top or leave blank, and edit the last line to point to the actual path and file name of '*.profdata'</em>
                         </li>
-                        <li>For more info about args.gn, read the <a href="https://github.com/Alex313031/Thorium/blob/main/infra/DEBUG/ABOUT_GN_ARGS.md">ABOUT_GN_ARGS.md</a> file.</li>
+                        <li>For more info about args.gn, read the <a href="https://github.com/Alex313031/thorium/blob/main/infra/DEBUG/ABOUT_GN_ARGS.md">ABOUT_GN_ARGS.md</a> file.</li>
                         <li>
-                            &#39;<a href="https://github.com/Alex313031/Thorium/blob/main/infra/args.list">infra/args.list</a>&#39; contains an alphabetical list with descriptions of all possible build arguments;
-                            <a href="https://github.com/Alex313031/Thorium/blob/main/infra/gn_args.list">gn_args.list</a> gives a similar list but with the flags in args.gn added.
+                            '<a href="https://github.com/Alex313031/thorium/blob/main/infra/args.list">infra/args.list</a>' contains an alphabetical list with descriptions of all possible build arguments;
+                            <a href="https://github.com/Alex313031/thorium/blob/main/infra/gn_args.list">gn_args.list</a> gives a similar list but with the flags in args.gn added.
                         </li>
                     </ul>
                     <p>You can list all the possible build arguments and pipe it to a text file by running:</p>
@@ -173,7 +184,7 @@
                             You can replace <em>thorium</em> with another name, but it should be a subdirectory of <em>out</em>. Note that if you choose another name, the <code class="code">trunk.sh</code> and
                             <code class="code">build.sh</code> scripts will not work.
                         </li>
-                        <li>For information on the args.gn that Thorium uses, see <a href="https://github.com/Alex313031/Thorium/blob/main/docs/ABOUT_GN_ARGS.md">ABOUT_GN_ARGS.md</a>.</li>
+                        <li>For information on the args.gn that Thorium uses, see <a href="https://github.com/Alex313031/thorium/blob/main/docs/ABOUT_GN_ARGS.md">ABOUT_GN_ARGS.md</a>.</li>
                         <li>
                             For other build arguments, including release settings, see <a href="https://www.chromium.org/developers/gn-build-configuration">GN build configuration</a>. The default will be a vanilla Chromium debug component
                             build matching the current host operating system and CPU.
@@ -181,17 +192,17 @@
                         <li>For more info on GN, run <code class="code">gn help</code> on the command line or read the <a href="https://gn.googlesource.com/gn/+/main/docs/quick_start.md">quick start guide</a>.</li>
                     </ul>
                     <h4>
-                        <a class="h" name="ccache" href="#ccache"><span></span></a>ccache
+                        <a class="h" name="ccache" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#ccache"><span></span></a>ccache
                     </h4>
-                    <p>You can use <a href="https://ccache.dev">ccache</a> to speed up local builds.</p>
+                    <p>You can use <a href="https://ccache.dev/">ccache</a> to speed up local builds.</p>
                     <p>
                         Increase your ccache hit rate by setting <code class="code">CCACHE_BASEDIR</code> to a parent directory that the working directories all have in common (e.g.,
                         <code class="code">/home/yourusername/development</code>). Consider using <code class="code">CCACHE_SLOPPINESS=include_file_mtime</code> (since if you are using multiple working directories, header times in svn
-                        sync&#39;ed portions of your trees will be different - see <a href="https://ccache.dev/manual/latest.html#_troubleshooting">the ccache troubleshooting section</a> for additional information). If you use symbolic
-                        links from your home directory to get to the local physical disk directory where you keep those working development directories, consider putting
+                        sync'ed portions of your trees will be different - see <a href="https://ccache.dev/manual/latest.html#_troubleshooting">the ccache troubleshooting section</a> for additional information). If you use symbolic links
+                        from your home directory to get to the local physical disk directory where you keep those working development directories, consider putting
                     </p>
                     <pre class="code">
-alias cd=&quot;cd -P&quot;
+alias cd="cd -P"
 
                     </pre>
                     <p>
@@ -199,95 +210,122 @@ alias cd=&quot;cd -P&quot;
                         <code class="code">CCACHE_BASEDIR</code> also refers to a physical parent).
                     </p>
                     <p>
-                        If you tune ccache correctly, a second working directory that uses a branch tracking trunk and is up to date with trunk and was gclient sync&#39;ed at about the same time should build chrome in about 1/3 the time,
-                        and the cache misses as reported by <code class="code">ccache -s</code> should barely increase.
+                        If you tune ccache correctly, a second working directory that uses a branch tracking trunk and is up to date with trunk and was gclient sync'ed at about the same time should build chrome in about 1/3 the time, and
+                        the cache misses as reported by <code class="code">ccache -s</code> should barely increase.
                     </p>
                     <p>This is especially useful if you use <a href="http://git-scm.com/docs/git-worktree">git-worktree</a> and keep multiple local working directories going at once.</p>
                     <h2>
-                        <a class="h" name="build" href="#build"><span></span></a>Build Thorium
+                        <a class="h" name="build" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#build"><span></span></a>Build Thorium
                     </h2>
                     <p>
-                        Build Thorium (the &quot;chrome&quot; target), as well as <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/linux/sandboxing.md">chrome_sandbox</a>,
-                        <a href="https://chromedriver.chromium.org/home">chromedriver</a>, and <a href="https://github.com/Alex313031/Thorium/tree/main/thorium_shell#readme">thorium_shell</a> (based on
-                        <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/testing/web_tests_in_content_shell.md#as-a-simple-browser">content_shell</a> ), using the <code class="code">build.sh</code> in the root of the
-                        Thorium repo (where the # is the number of jobs):
+                        Build Thorium (the "chrome" target), as well as <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/linux/sandboxing.md">chrome_sandbox</a>,
+                        <a href="https://chromedriver.chromium.org/home">chromedriver</a>, and <a href="https://github.com/Alex313031/thorium/tree/main/thorium_shell#readme">thorium_shell</a> (based on
+                        <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/testing/web_tests_in_content_shell.md#as-a-simple-browser">content_shell</a> ), using the <code class="code">build.sh</code> script in the root of
+                        the Thorium repo (where the # is the number of jobs). Assuming you have an 8 Core system:
                     </p>
                     <pre class="code"><span class="pln">$ </span><span class="pun">./</span><span class="pln">build</span><span class="pun">.</span><span class="pln">sh </span><span class="lit">8</span><span class="pln">
 </span></pre>
                     <p>You could also manually issue the command (where -j is the number of jobs):</p>
                     <pre
                         class="code"
-                    ><span class="pln">$ autoninja </span><span class="pun">-</span><span class="pln">C </span><span class="pun">~</span><span class="str">/chromium/</span><span class="pln">src</span><span class="pun">/</span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium chrome chrome_sandbox chromedriver thorium_shell </span><span class="pun">-</span><span class="pln">j8
+                    ><span class="pln">$ autoninja </span><span class="pun">-</span><span class="pln">C </span><span class="pun">~</span><span class="str">/chromium/</span><span class="pln">src</span><span class="pun">/</span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium thorium chrome_sandbox chromedriver thorium_shell </span><span class="pun">-</span><span class="pln">j8
 </span></pre>
                     <p>
                         <code class="code">autoninja</code> is a wrapper that automatically provides optimal values for the arguments passed to <code class="code">ninja</code>. <code class="code">build.sh</code> uses a
-                        <a href="https://github.com/Alex313031/Thorium/blob/main/depot_tools/autoninja">custom autoninja</a> in the <em>depot_tools</em> directory in Thorium.
+                        <a href="https://github.com/Alex313031/thorium/blob/main/depot_tools/autoninja">custom autoninja</a> in the <em>depot_tools</em> directory in Thorium.
                     </p>
                     <p>
-                        You can get a list of all of the other build targets from GN by running <code class="code">gn ls out/thorium</code> from the command line. To compile one, pass the GN label to Ninja with no preceding &quot;//&quot;
-                        (so, for <code class="code">//chrome/test:unit_tests</code> use <code class="code">autoninja -C out/thorium chrome/test:unit_tests</code>).
+                        You can get a list of all of the other build targets from GN by running <code class="code">gn ls out/thorium</code> from the command line. To compile one, pass the GN label to Ninja with no preceding "//" (so, for
+                        <code class="code">//chrome/test:unit_tests</code> use <code class="code">autoninja -C out/thorium chrome/test:unit_tests</code>).
                     </p>
                     <h2>
-                        <a class="h" name="Run-Thorium" href="#Run-Thorium"><span></span></a><a class="h" name="run-thorium" href="#run-thorium"><span></span></a>Run Thorium
+                        <a class="h" name="Run-Thorium" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Run-Thorium"><span></span></a>
+                        <a class="h" name="run-thorium" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#run-thorium"><span></span></a>Run Thorium
                     </h2>
                     <p>Once it is built, you can simply run the browser:</p>
                     <pre class="code"><span class="pln">$ </span><span class="kwd">out</span><span class="pun">/</span><span class="pln">thorium</span><span class="pun">/</span><span class="pln">thorium
 </span></pre>
                     <p>
-                        <strong>RECOMMENDED</strong> <em>- Copy and run <a href="https://github.com/Alex313031/Thorium/blob/main/clean.sh">clean.sh</a> within this dir to clean up build artifacts.</em>
+                        <em>Note - Copy and run <a href="https://github.com/Alex313031/thorium/blob/main/clean.sh">clean.sh</a> within this dir to clean up build artifacts.</em>
                     </p>
                     <h2>
-                        <a class="h" name="Installing-Thorium" href="#Installing-Thorium"><span></span></a><a class="h" name="installing-thorium" href="#installing-thorium"><span></span></a>Installing Thorium
+                        <a class="h" name="Installing-Thorium" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Installing-Thorium"><span></span></a>
+                        <a class="h" name="installing-thorium" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#installing-thorium"><span></span></a>Installing Thorium
                     </h2>
-                    <p>Of course, you will probably want to make an installation package. To make a .deb file run <code class="code">thordeb.sh</code> (where the # is the number of jobs) in the root of the repo:</p>
-                    <pre class="code"><span class="pln">$ </span><span class="pun">./</span><span class="pln">thordeb</span><span class="pun">.</span><span class="pln">sh </span><span class="lit">8</span><span class="pln">
+                    <p>Of course, you will probably want to make installation packages. To make .deb and .rpm packages run <code class="code">package.sh</code> (where the # is the number of jobs) in the root of the repo:</p>
+                    <pre class="code"><span class="pln">$ </span><span class="pun">./</span><span class="kwd">package</span><span class="pun">.</span><span class="pln">sh </span><span class="lit">8</span><span class="pln">
 </span></pre>
                     <p>
                         To make an appimage, copy the .deb to <code class="code">//thorium/infra/APPIMAGE/</code> and follow the
-                        <a href="https://github.com/Alex313031/Thorium/blob/main/infra/APPIMAGE/README.md#instructions">Instructions</a> therein.
+                        <a href="https://github.com/Alex313031/thorium/blob/main/infra/APPIMAGE/README.md#instructions">Instructions</a> therein.
                     </p>
                     <h3>
-                        <a class="h" name="Tests" href="#Tests"><span></span></a><a class="h" name="tests" href="#tests"><span></span></a>Tests
+                        <a class="h" name="Tests" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Tests"><span></span></a>
+                        <a class="h" name="tests" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#tests"><span></span></a>Tests
                     </h3>
-                    <p>See the <a href="#debugging">Debugging</a> section below, as well as <a href="https://github.com/Alex313031/Thorium/blob/main/infra/DEBUG/DEBUG_SHELL_README.md">Thorium UI Debug Shell</a>.</p>
+                    <p>
+                        See the <a href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#debugging">Debugging</a> section below, as well as
+                        <a href="https://github.com/Alex313031/thorium/blob/main/infra/DEBUG/DEBUG_SHELL_README.md">Thorium UI Debug Shell</a>.
+                    </p>
                     <p>Learn about <a href="https://chromedriver.chromium.org/getting-started">how to use Chromedriver</a> and Google Test at its <a href="https://github.com/google/googletest">GitHub page</a>.</p>
                     <h2>
-                        <a class="h" name="updating" href="#updating"><span></span></a>Update your checkout and revert to latest vanilla tip-o-tree Chromium.
+                        <a class="h" name="updating" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#updating"><span></span></a>Update your checkout and revert to latest vanilla tip-o-tree Chromium.
                     </h2>
                     <p>Simply run <code class="code">trunk.sh</code> in the root of the Thorium repo or execute the commands inside.</p>
                     <pre class="code"><span class="pln">$ </span><span class="pun">./</span><span class="pln">trunk</span><span class="pun">.</span><span class="pln">sh
 </span></pre>
                     <h2>
-                        <a class="h" name="Tips_tricks_and-troubleshooting" href="#Tips_tricks_and-troubleshooting"><span></span></a>
-                        <a class="h" name="tips_tricks_and-troubleshooting" href="#tips_tricks_and-troubleshooting"><span></span></a>Tips, tricks, and troubleshooting
+                        <a class="h" name="Running-test-targets" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Running-test-targets"><span></span></a>
+                        <a class="h" name="running-test-targets" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#running-test-targets"><span></span></a>Running test targets
+                    </h2>
+                    <p>
+                        Tests are split into multiple test targets based on their type and where they exist in the directory structure. To see what target a given unit test or browser test file corresponds to, the following command can be
+                        used:
+                    </p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ gn refs </span><span class="kwd">out</span><span class="pun">/</span><span class="typ">Default</span><span class="pln"> </span><span class="pun">--</span><span class="pln">testonly</span><span class="pun">=</span><span class="kwd">true</span><span class="pln"> </span><span class="pun">--</span><span class="pln">type</span><span class="pun">=</span><span class="pln">executable </span><span class="pun">--</span><span class="pln">all chrome</span><span class="pun">/</span><span class="pln">browser</span><span class="pun">/</span><span class="pln">ui</span><span class="pun">/</span><span class="pln">browser_list_unittest</span><span class="pun">.</span><span class="pln">cc
+</span><span class="com">//chrome/test:unit_tests</span><span class="pln">
+</span></pre>
+                    <p>In the example above, the target is unit_tests. The unit_tests binary can be built by running the following command:</p>
+                    <pre
+                        class="code"
+                    ><span class="pln">$ autoninja </span><span class="pun">-</span><span class="pln">C </span><span class="kwd">out</span><span class="pun">/</span><span class="typ">Default</span><span class="pln"> unit_tests
+</span></pre>
+                    <h2>
+                        <a class="h" name="Tips_tricks_and-troubleshooting" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Tips_tricks_and-troubleshooting"><span></span></a>
+                        <a class="h" name="tips_tricks_and-troubleshooting" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#tips_tricks_and-troubleshooting"><span></span></a>Tips, tricks, and troubleshooting
                     </h2>
                     <h3>
-                        <a class="h" name="More-links" href="#More-links"><span></span></a><a class="h" name="more-links" href="#more-links"><span></span></a>More links
+                        <a class="h" name="More-links" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#More-links"><span></span></a>
+                        <a class="h" name="more-links" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#more-links"><span></span></a>More links
                     </h3>
                     <ul>
                         <li>Information about <a href="https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/docs/clang.md">building with Clang</a>.</li>
                         <li>You may want to <a href="https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/docs/linux/using_a_chroot.md">use a chroot</a> to isolate yourself from versioning or packaging conflicts.</li>
                         <li>
-                            Cross-compiling for ARM? (Raspberry Pi) See the <a href="https://github.com/Alex313031/Thorium/tree/main/arm#readme">Thorium ARM</a> dir and
+                            Cross-compiling for ARM? (Raspberry Pi) See the <a href="https://github.com/Alex313031/thorium/tree/main/arm#readme">Thorium ARM</a> dir and
                             <a href="https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/docs/linux/chromium_arm.md">chromium_arm.md</a>.
                         </li>
                         <li><a href="https://atom.io/">Atom</a> and <a href="https://www.geany.org/">Geany</a> are reccomended IDEs for working on Thorium.</li>
                     </ul>
                     <h3>
-                        <a class="h" name="debugging" href="#debugging"><span></span></a>Debugging
+                        <a class="h" name="debugging" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#debugging"><span></span></a>Debugging
                     </h3>
                     <ul>
                         <li>
-                            See the <a href="https://github.com/Alex313031/Thorium/tree/main/infra/DEBUG#readme">Thorium DEBUG</a> dir, including the
-                            <a href="https://github.com/Alex313031/Thorium/blob/main/infra/DEBUG/README.md#more-info-">More Info</a> section, and
-                            <a href="https://github.com/Alex313031/Thorium/blob/main/infra/DEBUG/DEBUGGING.md">DEBUGGING.md</a>.
+                            See the <a href="https://github.com/Alex313031/thorium/tree/main/infra/DEBUG#readme">Thorium DEBUG</a> dir, including the
+                            <a href="https://github.com/Alex313031/thorium/blob/main/infra/DEBUG/README.md#more-info-">More Info</a> section, and
+                            <a href="https://github.com/Alex313031/thorium/blob/main/infra/DEBUG/DEBUGGING.md">DEBUGGING.md</a>.
                         </li>
                     </ul>
+                    <p>If you have problems building, join us in the Thorium IRC Channel at <code class="code">#thorium</code> on <code class="code">irc.libera.chat</code> and ask there.</p>
                     <h2>
-                        <a class="h" name="notes" href="#notes"><span></span></a>Notes for other distros
+                        <a class="h" name="notes" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#notes"><span></span></a>Notes for other distros
                     </h2>
                     <h3>
-                        <a class="h" name="Arch-Linux" href="#Arch-Linux"><span></span></a><a class="h" name="arch-linux" href="#arch-linux"><span></span></a>Arch Linux
+                        <a class="h" name="Arch-Linux" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Arch-Linux"><span></span></a>
+                        <a class="h" name="arch-linux" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#arch-linux"><span></span></a>Arch Linux
                     </h3>
                     <p>Instead of running <code class="code">install-build-deps.sh</code> to install build dependencies, run:</p>
                     <pre
@@ -295,7 +333,7 @@ alias cd=&quot;cd -P&quot;
                     ><span class="pln">$ sudo pacman </span><span class="pun">-</span><span class="pln">S </span><span class="pun">--</span><span class="pln">needed automake autoconf </span><span class="kwd">base</span><span class="pun">-</span><span class="pln">devel curl xz squashfs</span><span class="pun">-</span><span class="pln">tools p7zip \
 git tk python python</span><span class="pun">-</span><span class="pln">pkgconfig python</span><span class="pun">-</span><span class="pln">virtualenv python</span><span class="pun">-</span><span class="pln">oauth2client python</span><span class="pun">-</span><span class="pln">oauthlib \
 perl gcc gcc</span><span class="pun">-</span><span class="pln">libs bison flex gperf pkgconfig dbus icoutils \
-nss alsa</span><span class="pun">-</span><span class="pln">lib glib2 gtk3 nspr freetype2 cairo libgnome</span><span class="pun">-</span><span class="pln">keyring \
+nss alsa</span><span class="pun">-</span><span class="pln">lib glib2 gtk3 nspr freetype2 cairo \
 xorg</span><span class="pun">-</span><span class="pln">server</span><span class="pun">-</span><span class="pln">xvfb xorg</span><span class="pun">-</span><span class="pln">xdpyinfo
 </span></pre>
                     <p>For the optional packages on Arch Linux:</p>
@@ -304,39 +342,42 @@ xorg</span><span class="pun">-</span><span class="pln">server</span><span class=
                         <li><code class="code">wdiff</code> is not in the main repository but <code class="code">dwdiff</code> is. You can get <code class="code">wdiff</code> in AUR/<code class="code">yaourt</code></li>
                     </ul>
                     <h3>
-                        <a class="h" name="Crostini-on-ChromiumOS_ThoriumOS-Debian-based" href="#Crostini-on-ChromiumOS_ThoriumOS-Debian-based"><span></span></a>
-                        <a class="h" name="crostini-on-chromiumos_thoriumos-debian-based" href="#crostini-on-chromiumos_thoriumos-debian-based"><span></span></a>Crostini on ChromiumOS/ThoriumOS (Debian based)
+                        <a class="h" name="Crostini-on-ChromiumOS_ThoriumOS-Debian-based" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Crostini-on-ChromiumOS_ThoriumOS-Debian-based"><span></span></a>
+                        <a class="h" name="crostini-on-chromiumos_thoriumos-debian-based" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#crostini-on-chromiumos_thoriumos-debian-based"><span></span></a>Crostini on
+                        ChromiumOS/ThoriumOS (Debian based)
                     </h3>
                     <p>First install the <code class="code">file</code> and <code class="code">lsb-release</code> commands for the script to run properly:</p>
                     <pre class="code"><span class="pln">$ sudo apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> install file lsb</span><span class="pun">-</span><span class="pln">release
 </span></pre>
-                    <p>Then invoke install-build-deps.sh with the <code class="code">--no-arm</code> argument, because the ARM toolchain doesn&#39;t exist for this configuration:</p>
+                    <p>Then invoke install-build-deps.sh with the <code class="code">--no-arm</code> argument, because the ARM toolchain doesn't exist for this configuration:</p>
                     <pre
                         class="code"
                     ><span class="pln">$ sudo build</span><span class="pun">/</span><span class="pln">install</span><span class="pun">-</span><span class="pln">build</span><span class="pun">-</span><span class="pln">deps</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">--</span><span class="kwd">no</span><span class="pun">-</span><span class="pln">arm
 </span></pre>
                     <h3>
-                        <a class="h" name="Fedora" href="#Fedora"><span></span></a><a class="h" name="fedora" href="#fedora"><span></span></a>Fedora
+                        <a class="h" name="Fedora" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Fedora"><span></span></a>
+                        <a class="h" name="fedora" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#fedora"><span></span></a>Fedora
                     </h3>
                     <p>Instead of running <code class="code">build/install-build-deps.sh</code>, run:</p>
-                    <pre class="code"><span class="pln">su </span><span class="pun">-</span><span class="pln">c </span><span class="str">&#39;yum install git python bzip2 tar pkgconfig atk-devel alsa-lib-devel \
+                    <pre class="code"><span class="pln">su </span><span class="pun">-</span><span class="pln">c </span><span class="str">'yum install git python bzip2 tar pkgconfig atk-devel alsa-lib-devel \
 bison binutils brlapi-devel bluez-libs-devel bzip2-devel cairo-devel \
 cups-devel dbus-devel dbus-glib-devel expat-devel fontconfig-devel \
 freetype-devel gcc-c++ glib2-devel glibc.i686 gperf glib2-devel \
 gtk3-devel java-1.*.0-openjdk-devel libatomic libcap-devel libffi-devel \
-libgcc.i686 libgnome-keyring-devel libjpeg-devel libstdc++.i686 libX11-devel \
+libgcc.i686 libjpeg-devel libstdc++.i686 libX11-devel \
 libXScrnSaver-devel libXtst-devel libxkbcommon-x11-devel ncurses-compat-libs \
 nspr-devel nss-devel pam-devel pango-devel pciutils-devel \
 pulseaudio-libs-devel zlib.i686 httpd mod_ssl php php-cli python-psutil wdiff \
-xorg-x11-server-Xvfb&#39;</span><span class="pln">
+xorg-x11-server-Xvfb'</span><span class="pln">
 </span></pre>
-                    <p>The fonts needed by Blink&#39;s web tests can be obtained by following <a href="https://gist.github.com/pwnall/32a3b11c2b10f6ae5c6a6de66c1e12ae">these instructions</a>. For the optional packages:</p>
+                    <p>The fonts needed by Blink's web tests can be obtained by following <a href="https://gist.github.com/pwnall/32a3b11c2b10f6ae5c6a6de66c1e12ae">these instructions</a>. For the optional packages:</p>
                     <ul>
                         <li><code class="code">php-cgi</code> is provided by the <code class="code">php-cli</code> package.</li>
                         <li><code class="code">sun-java6-fonts</code> is covered by the instructions linked above.</li>
                     </ul>
                     <h3>
-                        <a class="h" name="Gentoo" href="#Gentoo"><span></span></a><a class="h" name="gentoo" href="#gentoo"><span></span></a>Gentoo
+                        <a class="h" name="Gentoo" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#Gentoo"><span></span></a>
+                        <a class="h" name="gentoo" href="http://localhost:8080/docs/+/refs/heads/master/BUILDING.md#gentoo"><span></span></a>Gentoo
                     </h3>
                     <p>You can install the deps by doing a dry run of <code class="code">emerge www-client/chromium</code>.</p>
                     <hr />
