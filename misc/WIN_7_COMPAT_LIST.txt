@@ -32,6 +32,8 @@ Electron :  22.3.27 > https://github.com/electron/electron/releases/tag/v22.3.27
 
 Supermium based Electron : 28.x https://github.com/win32ss/supermium-electron
 
+Etcher-ng (my fork of Balena Etcher) > https://github.com/Alex313031/etcher-ng
+
 VSCode : 1.70.3 > https://code.visualstudio.com/updates/v1_70
 
 VSCodium : 1.81.1.23222 > https://github.com/VSCodium/vscodium/releases/tag/1.81.1.23222
