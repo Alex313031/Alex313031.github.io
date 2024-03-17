@@ -38,7 +38,9 @@ VSCode : 1.70.3 > https://code.visualstudio.com/updates/v1_70
 
 VSCodium : 1.81.1.23222 > https://github.com/VSCodium/vscodium/releases/tag/1.81.1.23222
 
-Codium (my fork of VSCodium) 1.86.0 > https://github.com/Alex313031/codium/releases/tag/1.86.0.24035
+Codium (my fork of VSCodium) 1.87.2 > https://github.com/Alex313031/codium/releases/tag/1.87.2.24075
+
+Caprine-ng (my fork of the Caprine facebook messenger app) > https://github.com/Alex313031/caprine-ng
 
 qBittorrent : 4.5.5 > https://www.fosshub.com/qBittorrent-old.html?dwl=qbittorrent_4.5.5_x64_setup.exe
 
