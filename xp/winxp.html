@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/winxp -->
+<html lang="en-US" style="background-image: url('imgs/xp_bliss_wallpaper.webp'); padding-top: 8px; padding-bottom: 8px;">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/xp.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Windows XP & Thorium</title>
+    <meta name="description" content="Thorium for Windows XP and Vista Webpage.">
+    <meta name="keywords" content="windows xp, windows vista, software compatibility, chromium, thorium">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="../humans.txt">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta itemprop="image" content="./thumb.png">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+      function toggleDarkMode(useDark) {
+        if (useDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+      } else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+      }
+    </script>
+</head>
+<body class="body4">
+	<!-- Main Logo -->
+	<div id="spinner">
+		<img class="logo spin shadow" style="padding-bottom: 22px;" src="imgs/windows_xp_banner.svg" width="900em" max-width="900em" alt="Windows 7 Banner" title="Windows 7 Banner (Click Me!)"><div style="display: flex; justify-content: center; align-items: flex-start;"><button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;&nbsp;<small><a href="../index.html">Back to main page</a></small></div>
+    </div>
+    <a href="https://web.archive.org/web/20210603163609/https://github.com/henrypp/chromium/releases/tag/v49.0.2623.112-r403382-win32">Henrypp Chromium M49</a>
+    <img class="shake shadow" style="margin-top: -12px; margin-right: -64px; float: left;" src="imgs/designed_for_xp_vista.png" width="64px" alt="Designed for Win XP" title="Designed for Windows XP">
+    <div style="text-align: center;"><a name="intro"></a>
+		<h1><b><u><em>Windows XP and Thorium Browser</em></u></b></h1></div>
+		<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: -10px;">
+		<p class="intro" id="intro" style="max-width: 900px; color: #ffffff; text-shadow: 1px 1px 1px #000000; background: #2b2b2b;">
+			&nbsp;&nbsp;&nbsp;<a title="Windows 7 Wikipedia Page" target="_blank" rel="noopener" href="https://retrowindows.miraheze.org/wiki/Windows_7">Windows XP</a> is still a great OS, the original merging of the Windows 9x line for home users, and the Windows NT line for corporate users</p></div>
+		<p style="text-align: center; margin-top: -12px;" title="Download Windows 7"><br> <img src="imgs/iso.png" width="20" title="ISO Icon" alt="iso.png" class="spin2 fav"><b>&nbsp;&nbsp;<em>Download Windows XP Professional SP3</em>&nbsp;:&nbsp;</b><a title="Windows 7 ISO Download" href="https://archive.org/details/7601.24214.180801-1700.win-7sp-1-ldr-escrow-client-ultimate-x-64-fre-en-us_202304" download>Here</a></p>
+		<hr class="line">
+    <a name="stuff"></a><h1 style="text-align: center; margin-left: -32px;"><img class="spin2 shadow" style="margin-bottom: -8px;" src="imgs/xp_flag.png" width="48px" alt="winxp" title="Windows XP Flag">&nbsp;<em><u>Links</u>&nbsp;:&nbsp;</em></h1>
+
+	<div style="display: flex; justify-content: center; align-items: flex-start; margin-top: -10px;">
+	<p style="text-align: center; max-width: 33%;">
+	<ul title="Windows XP Links">
+		Includes AVX, AVX2, SSE3, and 32 Bit SSE2 builds!<br>Note: These releases <em>also</em> work on Server 2008 R2, Windows 8/8.1, and Server 2012/2012 R2!
+		<li><a title="Thorium Win7" target="_blank" href="https://github.com/Alex313031/thorium-win7/releases">Thorium Releases for Windows 7</a>&nbsp;&nbsp;<img src="favicon-48x48.png" width="20" title="Thorium Logo" alt="Thorium Icon" class="spin2 fav">
+		</li>
+		<li><a title="Codium Win7 Repo" target="_blank" rel="noopener" href="https://github.com/Alex313031/codium">Codium for Win7</a> - <a title="VSCodium Repo" target="_blank" rel="noopener" href="https://github.com/VSCodium/vscodium">VSCodium</a> Fork&nbsp;&nbsp;<img src="./imgs/codium.png" width="20" title="Codium Logo" alt="Codium Icon" class="spin2 fav">
+		</li>
+		<li><a title="Caprine for Windows 7" target="_blank" rel="noopener" href="https://github.com/Alex313031/caprine-ng">My Caprine fork with Win7 Support</a>&nbsp;&nbsp;<img src="imgs/caprine.png" width="19" title="Caprine Logo" alt="Caprine Logo" class="spin2 fav">
+		</li>
+		<li><a title="Win7 Compatibility List" href="misc/win7_compat_list.html">Windows 7 Programs Compatibility List</a>&nbsp;&nbsp;<img src="imgs/win7/favicon48.png" width="19" title="Windows 7 Orb" alt="Win7 Favicon" class="spin2 fav">
+		</li>
+		<li><a title="Windows 7 Activator" target="_blank" rel="noopener" href="https://github.com/Alex313031/Snippets/raw/main/Windows_Loader_v2.2.2.zip" download>WinLoader 2.2.2</a>&nbsp;&nbsp;<img src="imgs/win7/cropped-kmspico-32x32.png" width="21" title="KMSPico Favicon" alt="KMSPico Favicon" class="spin2 fav">
+		</li>
+		<li><a title="ESU Bypass" target="_blank" rel="noopener" href="https://github.com/Alex313031/Snippets/raw/main/WIN7/ESU_BYPASS_V3.zip" download>ESU_BYPASS_V3</a> - Made by me. A patcher to get ESU updates until 2023-01 for free!&nbsp;&nbsp;<img src="imgs/win7/favicon48.png" width="19" title="ESU Bypass" alt="Win7 Favicon" class="spin2 fav">
+		</li>
+		<li><a title="Windows ISO Download Tool" target="_blank" rel="noopener" href="https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool">Heidoc Windows ISO Downloader</a>&nbsp;&nbsp;<img style="margin-bottom: -6px;" src="imgs/win7/heidoc.ico" width="25" title="Heidoc Favicon" alt="heidoc.ico" class="spin2 fav">
+		</li>
+		<li><a title="Rufus" target="_blank" rel="noopener" href="https://rufus.ie/">Rufus (ISO Writing Tool)</a>&nbsp;&nbsp;<img src="imgs/win7/rufus.ico" width="22" title="rufus.ie Favicon" alt="rufus.ico" class="spin2 fav">
+		</li>
+		<li><a title="WMF 5.1" target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=54616">Windows Management Framework 5.1</a>&nbsp;&nbsp;<img src="imgs/win7/microsoft.ico" width="16" title="Microsoft Favicon" alt="Microsoft Favicon" class="spin2 fav">
+		</li>
+		<p><b>IMPORTANT: </b>To get updates past 2008, one<br> should manually install Service Pack 3 and Intenet Explorer 8:</p>
+	</ul>
+	</p>
+	</div>
+	<hr class="line">
+
+	<a name="video"></a><p style="text-align: center;"><a title="The History of Windows 7 Development" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=BNCpU4BaquY">The History of Windows XP Development</a> :  </p>
+    <video title="The History of Windows 7 Development" alt="Rhapsody In Blue Fantasia 2000" class="video2 off" width="720px" style="max-width: 100%;" allow="accelerometer; gyroscope; picture-in-picture" controls="true" poster="imgs/maxresdefault.jpg"><source src="media/The_History_of_Windows_7_Development_(1080p).mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.</video>
+  
+	<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+	<script src="../js/Tone.min.js"></script>
+	<script>	
+		var player = new Tone.Player("media/winxpstartup.wav").toMaster();
+		// play as soon as the buffer is loaded
+		player.autostart = true;
+		player.loop = false;
+		player.volume.value = 0;
+		player.start;
+		console.log('Audio is started.');
+	</script>
+	
+    <script defer src="../js/jquery-3.7.0.slim.min.js"></script>
+    <script defer src="../js/spin.js"></script>
+    <script defer src="../js/spin2.js"></script>
+	<script defer src="../js/spun.js"></script>
+    <script defer src="../js/button.js"></script>
+</body>
+</html>

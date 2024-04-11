@@ -1,0 +1,107 @@
+# Windows XP/2003 Product Keys
+These keys have been tested to work. These are a combination of keys from Chinese websites, trial keys inside ISO's, auto-activate keys in OEM ISO's, and directly from Microsoft's website, all aggregated for your convenience.
+
+## Usage
+In order to use these keys, you need the right edition of Windows XP/2003. Not just Home/Pro/Enteprise/etc, whether it's a Retail, OEM or Volume version. There's a clear cut way to check this.
+
+If you see this, you have a Retail copy.
+\
+![image](https://user-images.githubusercontent.com/57580668/241432172-10b8943a-e9ec-4bbd-87c9-f21cc2b3c813.png)
+
+If you see this, you have an OEM copy.
+\
+![image](https://user-images.githubusercontent.com/57580668/241432148-c11c4316-ccfc-4b6d-b513-12a005836600.png)
+
+If you see this, you have a Volume copy.
+\
+![image](https://user-images.githubusercontent.com/57580668/241432102-bd3c4daf-d12a-4471-9d03-ac412066f93f.png)
+
+You can tell the edition usually by the contents of the End User License Agreement.
+
+If your version of Windows doesn't need activation, great! You can move on. If it does, you can use [xp_activate32.exe](https://archive.org/download/xp_activate32_202305/xp_activate32.zip/xp_activate32.exe) to bypass the phone activation (or Endermanch's version at https://github.com/Endermanch/XPConfirmationIDKeygen).
+
+## Keys
+
+| Operating System                     | Edition                  | License    | Key                                                                               | Notes                                                               |
+| ------------------------------------ | ------------------------ | ---------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Windows XP                           | Starter Edition          | OEM        | `JWDWF-8V6YT-R98XR-3YMVQ-HBMPW`                                                   |                                                                     |
+| Windows XP                           | Home Edition (+ N)       | Retail     | `XMCM6-DKYCQ-2BHQH-4PCHR-TBJCR`                                                   |                                                                     |
+| Windows XP                           | Home Edition (+ N/ULCPC) | OEM        | `G7BR9-8QV29-3QFHP-F84WG-X9PYQ`                                                   |                                                                     |
+| Windows XP                           | Home Edition K           | Retail     | `W8F6Q-HM3JB-2XRHD-7Q92J-XKY6W`                                                   |                                                                     |
+| Windows XP                           | Home Edition K           | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows XP                           | Home Edition KN          | Retail     | `M9D9J-2TQV2-FBJQP-2M8G8-DGQ26`                                                   |                                                                     |
+| Windows XP                           | Home Edition KN          | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows XP                           | Professional (+ N)       | Retail     | `CD87T-HFP4C-V7X7H-8VY68-W7D7M`                                                   |                                                                     |
+| Windows XP                           | Professional (+ N)       | OEM        | `XJM6Q-BQ8HW-T6DFB-Y934T-YD4YT`                                                   |                                                                     |
+| Windows XP                           | Professional (+ N)       | Volume     | `M6TF9-8XQ2M-YQK9F-7TBB2-XGG88`                                                   |                                                                     |
+| Windows XP                           | Professional K           | Retail     | `GXYPJ-4W67Q-6273F-QJ7FR-9MW4M`                                                   |                                                                     |
+| Windows XP                           | Professional K           | OEM        | `B4B4Y-4XCXM-C7P82-HMJ6D-9HBFG`                                                   |                                                                     |
+| Windows XP                           | Professional K           | Volume     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows XP                           | Professional KN          | Retail     | `BTJQ7-3VGFD-GMHRJ-MTGQX-RTVXQ`                                                   |                                                                     |
+| Windows XP                           | Professional KN          | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows XP                           | Professional KN          | Volume     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows XP                           | Professional x64         | Retail     | `B2RBK-7KPT9-4JP6X-QQFWM-PJD6G`                                                   |                                                                     |
+| Windows XP                           | Professional x64         | OEM        | Exists, but can't be found. If you have this, please give the key and/or ISO!     |                                                                     |
+| Windows XP                           | Professional x64         | Volume     | `B66VY-4D94T-TPPD4-43F72-8X4FY`                                                   |                                                                     |
+| Windows XP                           | Tablet PC (2002-05)      | OEM        | `KY6GY-YHDPV-RMY9G-PHG6P-2F9Y3`                                                   |                                                                     |
+| Windows XP                           | Tablet PC (2002-05)      | Volume     | `KT3Q2-F3JJK-WGHVH-4TTP2-X3GRD`                                                   |                                                                     |
+| Windows XP                           | Media Center (2002-05)   | OEM        | `C4BH3-P4J7W-9MT6X-PGKC8-J4JTM`                                                   |                                                                     |
+| Windows Embedded POSReady 2009       | [N/A]                    | OEM        | `D4GQ7-HG48K-7YP6R-6JM4C-33FMQ`                                                   |                                                                     |
+| Windows Fundamentals for Legacy PC's | [N/A]                    | Volume     | `JWTG2-3CB49-QKWCW-R9DW9-MCJMQ`                                                   |                                                                     |
+| Windows Server 2003                  | Web                      | Retail     | `D42X8-7MWXD-M4B76-MKYP7-CW9FD`                                                   |                                                                     |
+| Windows Server 2003                  | Web                      | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Web                      | Volume     | `JB88F-WT2Q3-DPXTT-Y8GHG-7YYQY`                                                   |                                                                     |
+| Windows Server 2003                  | Standard                 | Retail     | `M6RJ9-TBJH3-9DDXM-4VX9Q-K8M8M`                                                   |                                                                     |
+| Windows Server 2003                  | Standard                 | OEM        | `KM63V-GW6H6-WY4BP-HMCK4-G7CKJ`                                                   |                                                                     |
+| Windows Server 2003                  | Standard                 | Volume     | `JB88F-WT2Q3-DPXTT-Y8GHG-7YYQY`                                                   | Duplicate of Web, still works.                                      |
+| Windows Server 2003                  | Standard x64             | Retail     | Can't find key. If you have this, please give the key!                            |                                                                     |
+| Windows Server 2003                  | Standard x64             | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Standard x64             | Volume     | `BXD88-QGH3V-XG44M-MDXGW-CBYQY`                                                   |                                                                     |
+| Windows Server 2003                  | Enterprise               | Retail     | `QW32K-48T2T-3D2PJ-DXBWY-C6WRJ`                                                   |                                                                     |
+| Windows Server 2003                  | Enterprise               | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Enterprise               | Volume     | `JB88F-WT2Q3-DPXTT-Y8GHG-7YYQY`                                                   | Duplicate of Web, still works.                                      |
+| Windows Server 2003                  | Enterprise x64           | Retail     | Can't find key. If you have this, please give the key!                           |                                                                     |
+| Windows Server 2003                  | Enterprise x64           | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Enterprise x64           | Volume     | `BXD88-QGH3V-XG44M-MDXGW-CBYQY`                                                   | Duplicate of Standard x64, still works.                             |
+| Windows Server 2003                  | Datacenter               | Retail     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Datacenter               | OEM        | `QW32K-48T2T-3D2PJ-DXBWY-C6WRJ`                                                   | Duplicate of Enteprise Retail, still works.                         |
+| Windows Server 2003                  | Datacenter               | Volume     | `JB88F-WT2Q3-DPXTT-Y8GHG-7YYQY`                                                   | Duplicate of Web, still works.                                      |
+| Windows Server 2003                  | Compute Cluster          | Retail     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Compute Cluster          | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003                  | Compute Cluster          | Volume     | `BXD88-QGH3V-XG44M-MDXGW-CBYQY`                                                   | Duplicate of Standard x64, still works.                             |
+| Windows Server 2003 R2               | Web                      | Retail     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003 R2               | Web                      | OEM        | `GM8KD-GB7JY-QGQYP-XRV74-RT728`                                                   | Untestable as I don't have this version. If you do, please give it! |
+| Windows Server 2003 R2               | Web                      | Volume     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003 R2               | Standard                 | Retail     | `QKDCQ-TP2JM-G4MDG-VR6F2-P9C48`                                                   |                                                                     |
+| Windows Server 2003 R2               | Standard                 | OEM        | `PWBJC-22697-D4CVH-FCJWW-DTF9J`                                                   |                                                                     |
+| Windows Server 2003 R2               | Standard                 | Volume     | `HDXR2-62748-6XG6Y-4BT6T-R6H43`                                                   |                                                                     |
+| Windows Server 2003 R2               | Standard KN              | Retail     | `RHVXX-TB66G-4PMT2-JVWKM-X7XRQ`                                                   |                                                                     |
+| Windows Server 2003 R2               | Standard KN              | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003 R2               | Standard KN              | Volume     | Can't find key. If you have this, please give the key!                            |                                                                     |
+| Windows Server 2003 R2               | Standard x64             | Retail     | `P4WJG-WK3W7-3HM8W-RWHCK-8JTRY`                                                   |                                                                     |
+| Windows Server 2003 R2               | Standard x64             | OEM        | `XCP6P-7WVXP-F8FQ4-JV6CD-6XV28`                                                   | Untestable as I don't have this version. If you do, please give it! |
+| Windows Server 2003 R2               | Standard x64             | Volume     | `B76XF-FCR39-XBGFF-YMBFH-G6PMT`                                                   |                                                                     |
+| Windows Server 2003 R2               | Enterprise               | Retail     | `BMCM6-WYKBH-2CTVY-KKKFM-RTP6G`                                                   |                                                                     |
+| Windows Server 2003 R2               | Enterprise               | OEM        | `XHPV3-PTCWJ-7Y94F-Q6BVH-J849J`                                                   | Untestable as I don't have this version. If you do, please give it! |
+| Windows Server 2003 R2               | Enterprise               | Volume     | `HDXR2-62748-6XG6Y-4BT6T-R6H43`                                                   | Duplicate of Standard, still works.                                 |
+| Windows Server 2003 R2               | Enterprise KN            | Retail     | `TBK82-HCT7F-XKXRC-YWK2F-GHG4Q`                                                   |                                                                     |
+| Windows Server 2003 R2               | Enterprise KN            | OEM        | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003 R2               | Enterprise KN            | Volume     | Can't find key. If you have this, please give the key!                            |                                                                     |
+| Windows Server 2003 R2               | Enterprise x64           | Retail     | `VYTMJ-8K9XR-FK63H-6VBXX-8TJJ6`                                                   |                                                                     |
+| Windows Server 2003 R2               | Enterprise x64           | OEM        | `WQ3GW-Y8GQW-8VJYB-JYM43-D24C8`                                                   | Untestable as I don't have this version. If you do, please give it! |
+| Windows Server 2003 R2               | Enterprise x64           | Volume     | `B76XF-FCR39-XBGFF-YMBFH-G6PMT`                                                   | Duplicate of Standard x64, still works.                             |
+| Windows Server 2003 R2               | Datacenter               | Retail     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003 R2               | Datacenter               | OEM        | `FXYF6-VTXGX-3JPX9-HJ9K4-6TKTW`                                                   | Untestable as I don't have this version. If you do, please give it! |
+| Windows Server 2003 R2               | Datacenter               | Volume     | `HDXR2-62748-6XG6Y-4BT6T-R6H43`                                                   | Duplicate of Standard, still works.                                 |
+| Windows Server 2003 R2               | Datacenter x64           | Retail     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Server 2003 R2               | Datacenter x64           | OEM        | `KDX8X-FYW4T-C6D9J-BKM6M-M89TW`                                                   | Untestable as I don't have this version. If you do, please give it! |
+| Windows Server 2003 R2               | Datacenter x64           | Volume     | `B76XF-FCR39-XBGFF-YMBFH-G6PMT`                                                   | Duplicate of Standard x64, still works.                             |
+| Windows Small Business Server        | [N/A]                    | Retail     | `J8RM2-QD443-PFMJF-V6VPK-6YQ7T`                                                   |                                                                     |
+| Windows Small Business Server        | [N/A]                    | OEM        | `CKY24-Q8QRH-X3KMR-C6BCY-T847Y`                                                   |                                                                     |
+| Windows Small Business Server        | [N/A]                    | Volume     | May or may not exist. If you have this, please give the key and/or ISO!           |                                                                     |
+| Windows Home Server                  | [N/A]                    | Retail/OEM | `P2H7J-VDDX2-KKVFY-TVWKK-F43JD`                                                   |                                                                     |
+
+## Missing Stuff
+So far, only 68.4% of all types of keys have been (theoretically) found.
+
+If you see something missing or broken, **report it!** If you have something that isn't on this list, **put it in the comments,** i'll put it on here and give you credit (if you want credit)! If you see something that doesn't exist, say so in the comments so I can remove it.

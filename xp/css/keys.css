@@ -1,0 +1,14 @@
+/* Prefer border-box */
+* {
+    box-sizing: border-box;
+}
+html {
+  font-family: "Roboto", sans-serif;
+}
+/* General body settings */
+body {
+  margin: 0.5em auto;
+  max-width: 80%;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem;
+}
