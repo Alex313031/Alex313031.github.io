@@ -65,13 +65,13 @@
     box-sizing: border-box;
 }
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
 }
 /* General body settings */
 body {
   margin: 0.5em auto;
   max-width: 38em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
   background-color: var(--bgcolor);
@@ -79,7 +79,7 @@ body {
 .body2 {
   margin: 0.8em 1.5em;
   max-width: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
   background-color: var(--bgcolor);
@@ -87,7 +87,7 @@ body {
 .body3 {
   margin: 0em auto;
   max-width: 38em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
   background-color: var(--bgcolor);
@@ -95,7 +95,7 @@ body {
 .body4 {
   margin: auto auto;
   max-width: 72.5%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
   padding: 1rem;
   color: var(--fontcolor);
   background-color: var(--bgcolor);
@@ -544,17 +544,14 @@ button:active {
   text-decoration: none;
   color: #134d9d;
 }
-/* roboto-regular - latin */
+/* Tahoma-regular - latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Tahoma';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../../fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Roboto'),
-       url('../../fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../../fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../../fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../../fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  src: url('../fonts/Tahoma.eot'); /* IE9 Compat Modes */
+  src: local('Tahoma'),
+       url('../fonts/Tahoma.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Tahoma.ttf') format('truetype'), /* Safari, Android, iOS */
 }

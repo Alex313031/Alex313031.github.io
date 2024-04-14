@@ -3,12 +3,51 @@
     box-sizing: border-box;
 }
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
 }
 /* General body settings */
 body {
   margin: 0.5em auto;
   max-width: 80%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Tahoma", sans-serif;
   padding: 1rem;
+}
+#totop {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.50em;
+  filter: drop-shadow(1px 1px 2px #222);
+}
+#totop a:link {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #551a8b;
+}
+#totop a:visited {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #551a8b;
+}
+#totop a:hover {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #0000ee;
+}
+#totop a:active {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #134d9d;
+}
+/* Tahoma-regular - latin */
+@font-face {
+  font-family: 'Tahoma';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Tahoma.eot'); /* IE9 Compat Modes */
+  src: local('Tahoma'),
+       url('../fonts/Tahoma.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Tahoma.ttf') format('truetype'), /* Safari, Android, iOS */
 }
