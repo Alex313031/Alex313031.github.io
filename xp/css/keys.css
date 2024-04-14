@@ -4,6 +4,7 @@
 }
 html {
   font-family: "Tahoma", sans-serif;
+  overflow-x: scroll;
 }
 /* General body settings */
 body {
@@ -11,6 +12,33 @@ body {
   max-width: 80%;
   font-family: "Tahoma", sans-serif;
   padding: 1rem;
+  color: #000;
+  background-color: #d1d1d1;
+}
+img {
+  width: 400px;
+  height: auto;
+}
+table {
+  width: 100%;
+  border: 1px solid #000;
+}
+th {
+  border: 1px solid #000;
+  font-size: 1em;
+}
+td {
+  padding: 8px;
+  text-align: center;
+  font-size: 0.90em;
+}
+td, tr {
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+code {
+  font-family: monospace;
+  font-weight: bold;
 }
 #totop {
   display: block;
