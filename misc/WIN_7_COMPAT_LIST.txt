@@ -5,7 +5,7 @@ VLC : https://download.videolan.org/pub/videolan/vlc/3.0.20/
 
 OBS : https://github.com/obsproject/obs-studio/releases/tag/27.2.4
 
-Blender : https://download.blender.org/release/Blender2.92/
+Blender : 2.92 > https://download.blender.org/release/Blender2.92/
 Blender 3 has an unofficial build : https://github.com/nalexandru/BlenderCompat/releases
 
 Chromium : 109.0.5414.120 > https://github.com/Hibbiki/chromium-win64/releases/tag/v109.0.5414.120-r1070088
@@ -14,7 +14,7 @@ Chrome : 109.0.5414.168 > https://edgedl.me.gvt1.com/edgedl/release2/10/windows-
 
 Thorium : 109.0.5414.173 > https://github.com/Alex313031/thorium-win7/releases/tag/M109.0.5414.173
 
-Thorium-Win7 : 122.0.6261.132 > https://github.com/Alex313031/thorium-win7/releases/tag/M122.0.6261.132
+Thorium-Win7 : 122.0.6261.168 > https://github.com/Alex313031/thorium-win7/releases/tag/M122.0.6261.168
 
 Supermium (Chromium Fork) : https://github.com/win32ss/supermium/releases
 

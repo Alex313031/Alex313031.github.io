@@ -1,49 +1,20 @@
-## List of program versions that work with Windows 7 ##
+## List of program versions that work with Windows XP ##
 --------------------------------------------------------
 
-VLC : https://download.videolan.org/pub/videolan/vlc/3.0.20/
+VLC : 2.2.8 > https://download.videolan.org/pub/videolan/vlc/2.2.8/
 
-OBS : https://github.com/obsproject/obs-studio/releases/tag/27.2.4
+Blender : 2.76 > https://download.blender.org/release/Blender2.76/
 
-Blender : https://download.blender.org/release/Blender2.92/
-Blender 3 has an unofficial build : https://github.com/nalexandru/BlenderCompat/releases
+Chromium : 49.0.2623.112 > https://chromium.woolyss.com/f/chromium_win32_49.0.2623.112_r403382_sync.exe
 
-Chromium : 109.0.5414.120 > https://github.com/Hibbiki/chromium-win64/releases/tag/v109.0.5414.120-r1070088
+Chrome : 49.0.2623.112 > https://github.com/Alex313031/Windows-XP-Stuffz/blob/main/PROGS/ChromeSetup.exe
 
-Chrome : 109.0.5414.168 > https://edgedl.me.gvt1.com/edgedl/release2/10/windows-8/googlechromestandaloneenterprise64.msi
-
-Thorium : 109.0.5414.173 > https://github.com/Alex313031/thorium-win7/releases/tag/M109.0.5414.173
-
-Thorium-Win7 : 122.0.6261.132 > https://github.com/Alex313031/thorium-win7/releases/tag/M122.0.6261.132
+Thorium : 122.0.6261.168 > https://github.com/Alex313031/thorium-win7/releases/tag/M122.0.6261.168
 
 Supermium (Chromium Fork) : https://github.com/win32ss/supermium/releases
 
-NodeJS : https://nodejs.org/download/release/v14.17.6/
-(You must use the NODE_SKIP_PLATFORM_CHECK=1 environment variable)
+Python : 2.7.18 > https://www.python.org/downloads/release/python-2718/
 
-Python : 3.8.10
-Python 3.9 Hack : https://github.com/nalexandru/api-ms-win-core-path-HACK
+qBittorrent : 4.1.9.1 > https://www.fosshub.com/qBittorrent-old.html?dwl=qbittorrent_4.1.9.1_setup.exe
 
-7+ Taskbar Tweaker : https://rammichael.com/7-taskbar-tweaker
-
-Windscribe : 2.4.11 > https://github.com/Windscribe/Desktop-App/releases/tag/v2.4.11
-
-Electron :  22.3.27 > https://github.com/electron/electron/releases/tag/v22.3.27
-
-Supermium based Electron : 28.x https://github.com/win32ss/supermium-electron
-
-Etcher-ng (my fork of Balena Etcher) > https://github.com/Alex313031/etcher-ng
-
-VSCode : 1.70.3 > https://code.visualstudio.com/updates/v1_70
-
-VSCodium : 1.81.1.23222 > https://github.com/VSCodium/vscodium/releases/tag/1.81.1.23222
-
-Codium (my fork of VSCodium) : 1.87.2 > https://github.com/Alex313031/codium/releases/tag/1.87.2.24075
-
-Caprine-ng (my fork of the Caprine facebook messenger app) > https://github.com/Alex313031/caprine-ng
-
-ArmCord-Win7 (my fork of the ArmCord Discord client) > https://github.com/Alex313031/ArmCord-Win7
-
-qBittorrent : 4.5.5 > https://www.fosshub.com/qBittorrent-old.html?dwl=qbittorrent_4.5.5_x64_setup.exe
-
-Steam : 2024/01/01 Version > https://github.com/Alex313031/Windows-7-Stuffz/releases/tag/Steam_2023-12-31
+Steam : 2019/01/01 Version > 
