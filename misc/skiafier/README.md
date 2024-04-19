@@ -2,7 +2,7 @@
 
 __Purpose:__ This program converts .svg icons to .icon format, used in the native UI of <a href="https://www.chromium.org/">Chromium</a> based browsers. .icon is a vector format that passes instructions directly to <a href="https://skia.org/">Skia</a>. For more information, see > <a href="https://chromium.googlesource.com/chromium/src/+/main/components/vector_icons/README.md">Here</a>.
 
- - Try it [Here](https://thorium.rocks/misc/skiafier/skiafy.html).
+ - Try it [Here](https://thorium.rocks/misc/skiafier/).
 
 __Also:__ If you find yourself manually tinkering with .icon files, including the output from this project, [This](https://github.com/michaelwasserman/vector-icon-app) Web App can be useful, as well as [This](https://chrome.google.com/webstore/detail/chromium-vector-icon-pain/cnlndebkegcfnbiknohgneobakigplhf) Chrome Extension I made.
 

@@ -27,15 +27,15 @@
   ],
   "file_handlers": [
     {
-      "action": "./skiafy.html#user-input",
+      "action": "./index.html#user-input",
       "name": "Scalable Vector Graphics",
       "accept": {
         "image/svg+xml": ".svg"
       }
     }
   ],
-  "start_url": "./skiafy.html",
-  "id": "./skiafy.html",
+  "start_url": "./index.html",
+  "id": "./index.html",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
@@ -45,7 +45,7 @@
       "name": "Skiafier",
       "short_name": "Import to Skiafier",
       "description": "Skiafy your SVG",
-      "url": "./skiafy.html",
+      "url": "./index.html",
       "icons": [{ "src": "favicon-96x96.png", "sizes": "96x96" }]
     }
   ],

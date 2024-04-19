@@ -6,6 +6,7 @@ svg:
 `,
 expected:
 `CANVAS_DIMENSIONS, 24,
+FILL_RULE_NONZERO,
 MOVE_TO, 12, 3,
 LINE_TO, 4, 9,
 R_V_LINE_TO, 12,
@@ -33,6 +34,7 @@ svg:
 expected:
 `CANVAS_DIMENSIONS, 24,
 PATH_COLOR_ARGB, 0xFF, 0xAA, 0xBB, 0xCC,
+FILL_RULE_NONZERO,
 MOVE_TO, 12, 3,
 LINE_TO, 4, 9,
 R_V_LINE_TO, 12,
@@ -59,6 +61,7 @@ svg:
 `,
 expected:
 `CANVAS_DIMENSIONS, 16,
+FILL_RULE_NONZERO,
 MOVE_TO, 1, 2,
 LINE_TO, 3, 4,
 CLOSE`},
@@ -70,8 +73,41 @@ svg:
 `,
 expected:
 `CANVAS_DIMENSIONS, 16,
+FILL_RULE_NONZERO,
 R_MOVE_TO, 1, 2,
 R_LINE_TO, 4, 3,
 R_LINE_TO, 1, 1,
 CLOSE`},
+
+'repeat_r_vh_lineto': {
+svg:
+`
+<svg xmlns="http://www.w3.org/2000/svg" width="16"><path d="h1 2 4V3 1 1Z"/></svg>
+`,
+expected:
+`CANVAS_DIMENSIONS, 16,
+FILL_RULE_NONZERO,
+R_H_LINE_TO, 1,
+R_H_LINE_TO, 2,
+R_H_LINE_TO, 4,
+V_LINE_TO, 3,
+V_LINE_TO, 1,
+V_LINE_TO, 1,
+CLOSE`},
+
+'fill_rule_evenodd': {
+svg:
+`
+<svg xmlns="http://www.w3.org/2000/svg" width="16"><path fill-rule="evenodd" d="h1 2 4V3 1 1Z"/></svg>
+`,
+expected:
+`CANVAS_DIMENSIONS, 16,
+R_H_LINE_TO, 1,
+R_H_LINE_TO, 2,
+R_H_LINE_TO, 4,
+V_LINE_TO, 3,
+V_LINE_TO, 1,
+V_LINE_TO, 1,
+CLOSE`},
+
 };

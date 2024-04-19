@@ -19,7 +19,7 @@ const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  'skiafy.html',
+  'index.html',
   'css/main.css',
   'js/skiafy.js',
   'js/main.js',
