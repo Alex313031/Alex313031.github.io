@@ -235,7 +235,6 @@ img.crbook {
 }
 img.fav {
   margin-bottom: -3px;
-  filter: drop-shadow(1px 1px 1px var(--imgshadow));
 }
 svg.fav {
   margin-bottom: -3px;
