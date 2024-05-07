@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="static/base.css" />
         <link rel="stylesheet" type="text/css" href="static/doc.css" />
         <link rel="stylesheet" type="text/css" href="static/prettify/prettify.css" />
+        <meta name="color-scheme" content="light dark">
         <!-- default customHeadTagPart -->
     </head>
     <body class="Site">
@@ -203,10 +204,7 @@
                         sync'ed portions of your trees will be different - see <a href="https://ccache.dev/manual/latest.html#_troubleshooting">the ccache troubleshooting section</a> for additional information). If you use symbolic links
                         from your home directory to get to the local physical disk directory where you keep those working development directories, consider putting
                     </p>
-                    <pre class="code">
-alias cd="cd -P"
-
-                    </pre>
+                    <pre class="code">alias cd="cd -P"</pre>
                     <p>
                         in your <code class="code">.bashrc</code> so that <code class="code">$PWD</code> or <code class="code">cwd</code> always refers to a physical, not logical directory (and make sure
                         <code class="code">CCACHE_BASEDIR</code> also refers to a physical parent).

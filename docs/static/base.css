@@ -16,8 +16,35 @@
 
 /* Common styles and definitions. */
 
-@import "//fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,cyrillic-ext,greek-ext,cyrillic,greek,vietnamese,latin-ext";
-@import "//fonts.googleapis.com/css?family=Source+Code+Pro";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,cyrillic-ext,greek-ext,cyrillic,greek,vietnamese,latin-ext";
+@import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
+
+:root,
+/* Set colours */
+:root.light {
+  --bgcolor: #ffffff;
+  --invert: #000000;
+  --fontcolor: #000000;
+  --codecolor: #ccc;
+  --precolor: #fafafa;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgcolor: #24292f;
+    --invert: #ffffff;
+    --fontcolor: #ffffff;
+    --codecolor: #ccc;
+    --precolor: #b0c4de;
+  }
+}
+:root.dark {
+  --bgcolor: #24292f;
+  --invert: #ffffff;
+  --fontcolor: #ffffff;
+  --codecolor: #ccc;
+  --precolor: #b0c4de;
+}
+
 *,
 *::after,
 *::before {
@@ -50,7 +77,7 @@ ul, ol {
 
 .u-sha1 {
   background-color: #f1f2f3;
-  color: #000;
+  color: var(--fontcolor);
   font-size: 13px;
 }
 .u-pre {
@@ -77,8 +104,8 @@ ul, ol {
 /* Common.soy */
 
 .Site {
-  background: #fff;
-  color: #000;
+  background: var(--bgcolor);
+  color: var(--fontcolor);
   display: -ms-flexbox;
   display: flex;
   font: 14px/1.54 'Open Sans', sans-serif;
@@ -93,7 +120,7 @@ ul, ol {
   flex: none;
 }
 .Site-header--withNavbar {
-  background: #fff;
+  background: var(--bgcolor);
 }
 .Site-content {
   -ms-flex: 1 0 auto;
@@ -164,7 +191,7 @@ ul, ol {
   color: #00e;
 }
 .Breadcrumbs-crumb:last-child {
-  color: #000;
+  color: var(--fontcolor);
   font-weight: bold;
 }
 .Footer {
@@ -212,7 +239,7 @@ ul, ol {
   margin: 0;
 }
 .RepoList-item--header:hover {
-  background: #fff;
+  background: var(--bgcolor);
 }
 .RepoList-itemName,
 .RepoList-itemDescription {
@@ -227,7 +254,7 @@ ul, ol {
   text-decoration: none;
 }
 .RepoList-itemDescription {
-  color: #000;
+  color: var(--fontcolor);
   -ms-flex: 1;
   flex: 1;
   overflow: hidden;
@@ -382,7 +409,7 @@ ul, ol {
 .MetadataMessage {
   background-color: #fafafa;
   border: 1px solid #ccc;
-  color: #000;
+  color: var(--fontcolor);
   margin: 0;
   padding: 12px;
   white-space: pre-wrap;
@@ -493,7 +520,7 @@ ul, ol {
   margin: 0 auto;
 }
 .Blame-region--bg1 {
-  background: #fff;
+  background: var(--bgcolor);
 }
 .Blame-region--bg2 {
   background: #f1f2f3;

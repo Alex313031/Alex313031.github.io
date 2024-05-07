@@ -164,14 +164,14 @@ iframe.noborder {
 .doc pre {
   padding: 12px;
   font-size: 10pt;
-  background-color: #fafafa;
+  background-color: var(--precolor);
+  color: #000;
   border: 1px solid #ccc;
   overflow-x: auto;
 }
 .doc code {
   padding: 2px 4px;
-  background-color: #F5F5F5;
-  border: transparent;
+  border: 1px solid var(--codecolor);
   border-radius: 4px;
 }
 .doc .code {
@@ -200,8 +200,8 @@ iframe.noborder {
   margin-top: 30px;
 }
 .toc-aux {
-  background: #f9f9f9;
-  border: 1px solid #f2f2f2;
+  background: var(--precolor);
+  border: 1px solid var(--codecolor);
 }
 .toc h2 {
   margin: 0 0 5px 0;
@@ -212,6 +212,7 @@ iframe.noborder {
 .toc ul li {
   margin-left: 0px;
   list-style: disc;
+  color: #000;
 }
 .toc ul ul {
   margin-top: 0;
@@ -219,6 +220,7 @@ iframe.noborder {
 }
 .toc ul ul li {
   list-style: circle;
+  color: #000;
 }
 .note,
 .promo,
