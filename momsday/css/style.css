@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial, sans;
+    margin: 0em auto;
+    max-width: 38em;
+    background-color: #777;
+    color: #ddd;
+    background-image: linear-gradient(#9400D3, #777);
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+.stage {
+    width: 532px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+canvas {
+    border: 1px solid #000;
+}
+
+div#controls {
+
+    padding: 5px;
+    border: 1px solid #000;
+    position: relative;
+}
+
+div#text-container {
+    padding: 10px;
+    position: absolute;
+    left: 520px;
+    top: 10px
+}
+
+div#desc {
+    height: 400px;
+}
+
+
+div#notes {
+    border-top: 3px solid #444;
+
+    height: 400px;
+    overflow-y: scroll;
+}
+
+div#notes a {
+    margin-bottom: 10px;
+    display: block;
+}
