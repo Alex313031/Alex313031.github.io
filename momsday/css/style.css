@@ -1,57 +1,61 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: arial, sans;
-    margin: 0em auto;
-    max-width: 38em;
-    background-color: #777;
-    color: #ddd;
-    background-image: linear-gradient(#9400D3, #777);
+  font-family: arial, sans;
+  color: #ddd;
+  background-image: linear-gradient(#9400D3, #777);
 }
 
 hr {
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
+}
+
+.outer {
+  border: 2px solid yellow;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.content {
+  max-width: 42em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border {
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .stage {
-    width: 532px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
 }
 
 canvas {
-    border: 1px solid #000;
-}
-
-div#controls {
-
-    padding: 5px;
-    border: 1px solid #000;
-    position: relative;
-}
-
-div#text-container {
-    padding: 10px;
-    position: absolute;
-    left: 520px;
-    top: 10px
-}
-
-div#desc {
-    height: 400px;
-}
-
-
-div#notes {
-    border-top: 3px solid #444;
-
-    height: 400px;
-    overflow-y: scroll;
-}
-
-div#notes a {
-    margin-bottom: 10px;
-    display: block;
+  border: 1px solid #333;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90% !important;
+  height: 72% !important;
 }
