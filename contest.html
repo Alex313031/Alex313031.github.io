@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="./fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <title>Thorium Image Contest!</title>
+    <meta name="keywords" content="thorium, browser, chromium, developer, dev, tools">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="./humans.txt">
+    <link rel="stylesheet" href="./css/thorium.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./misc/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="./misc/dev-favicon48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./misc/dev-favicon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./misc/dev-favicon16.png">
+    <meta itemprop="image" content="./misc/thumb.png">
+    <link rel="mask-icon" href="./misc/build.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+		#svg {
+		  margin-top: 8px;
+		}
+	</style>
+    <script>
+      function toggleDarkMode(useDark) {
+        if (useDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+      } else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+      }
+    </script>
+</head>
+<body>
+	<div class="p4">
+	<div class="d-flex2">
+        <img src="./imgs/contest.png">
+
+    </div>
+	<h1><span style="text-align: center;"><u><em>Thorium 2024 Image Contest!</em></u></span></h1>
+    <button id="darkbutton" title="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>&nbsp;&nbsp;&nbsp;<small><a href="https://thorium.rocks">Back to main page</a></small>
+    <hr class="line">
+    <br>
+    <p style="align-content: center; text-align: center;">&lt;Collection Phase&gt;</p>
+
+	</div>
+    <script defer src="./js/jquery-3.7.0.slim.min.js"></script>
+    <script defer src="./js/spin.js"></script>
+    <script defer src="./js/spin2.js"></script>
+	<script defer src="./js/spun.js"></script>
+    <script defer src="./js/button.js"></script>
+</body>
+</html>
