@@ -6,7 +6,6 @@ export NINJA_SUMMARIZE_BUILD=1
 export NINJA_STATUS="[%r processes, %f/%t @ %o/s | %e sec. ] "
 export PATH=/home/alex/depot_tools:$PATH
 export PATH=/home/alex/bin:$PATH
-export PATH=/usr/local/go/bin:$PATH
 
 alias up='sudo apt update'
 alias upgrade='sudo apt full-upgrade && sudo snap refresh'
@@ -16,12 +15,13 @@ alias ..='cd ..'
 alias gksu='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS'
 alias gk='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS'
 alias reb='sudo reboot'
-alias list='cls && sudo apt list --installed | grep '
+alias list='sudo apt list --installed | grep '
 alias listup='sudo apt list --upgradable'
 alias down='cd ~/Downloads'
 alias remove='sudo apt remove'
 alias initramfs='sudo update-initramfs -u -k'
-alias reinstall='sudo apt install --reinstall'
+alias reinst='sudo apt install --reinstall'
+alias reinstall='reinst'
 alias grubconf='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS geany /etc/default/grub'
 alias dp='sudo dpkg -i'
 alias q='exit'
@@ -119,7 +119,8 @@ alias move='mv'
 alias isnt='sudo apt install '
 alias info='info '
 alias crtest='./chrome --user-data-dir=${PWD}/test'
-alias thtest='./thorium --user-data-dir=${PWD}/test'
+alias thtest='cd ~/chromium/src/out/thorium && ./thorium --user-data-dir=${PWD}/test'
+alias thtest2='cd ~/chromium/src/out/thorium && ./thorium --user-data-dir=${PWD}/test2'
 alias restore='git restore '
 alias distclean='npm run distclean'
 alias dist='npm run dist'
