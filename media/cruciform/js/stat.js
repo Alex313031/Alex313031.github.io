@@ -287,9 +287,6 @@
       }
     };
     request = new XMLHttpRequest();
-    request.open('POST', "//thorium.rocks", true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    return request.send(JSON.stringify(data));
   };
 
   loaded = false;
