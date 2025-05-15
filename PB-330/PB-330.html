@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PB-330 Tester Page</title>
+    <meta name="color-scheme" content="light">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="./primo.png">
+    <link rel="preload" href="ms_sans_serif.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="ms_sans_serif.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="ms_sans_serif_bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="ms_sans_serif_bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./98.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-family: "Pixelated MS Sans Serif";
+      }
+      body {
+        max-width: 80%;
+        background-color: #C0C0C0;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+      }
+      .box {
+        border: 1px solid grey;
+        border-radius: 4px;
+        box-shadow: 0px 1px 0px 0px white inset;
+        min-height: 50em;
+        max-height: 100em;
+        margin: auto;
+      }
+      .center {
+        text-align: center;
+        align-content: center;
+      }
+      h1 {
+        text-shadow: 0px 1px 0px white;
+      }
+      h2 {
+        text-shadow: 0px 1px 0px white;
+        font-size: 32px;
+      }
+      p {
+        font-size: 14px;
+      }
+      hr {
+        width: 75%;
+      }
+      small {
+        font-size: 12px;
+      }
+      button {
+        font-size: 12px;
+        text-shadow: 0px 0px #000;
+      }
+      <!-- button {
+        font-family: inherit;
+        background-color: #C0C0C0;
+        border-radius: 1px;
+        border: 1px solid;
+        box-shadow: inset -1px -1px #0A0A0A, inset 1px 1px #FFF;
+      }
+      /* button:hover {
+        background-color: #999999;
+      } */
+      button:active {
+        box-shadow: inset -1px -1px #FFF, inset 1px 1px #0A0A0A;
+      } -->
+    </style>
+    <script>
+      function openNewTabJS() {
+        window.open('https://www.google.com/', '_blank', 'noopener, noreferrer')
+      }
+    </script>
+</head>
+  <div class="box box2">
+    <h2 class="center"><u>PB-330 _blank and window.open() test page</u></h2>
+    <p class="center"><small><em>(Opens to google.com)</em></small></p>
+    <hr class="center">
+    <p class="center">
+      <a title="rel=noopener target=_blank Test Link" rel="noopener" target="_blank" href="https://www.google.com/"><b>rel=noopener target=_blank Link</b></a>
+      <br>
+      <br>
+      <button title="noopener, noreferrer Test Button" onclick="openNewTabJS();"><b>window.open() Test</b></button>
+    </p>
+  </div>
+</body>
+</html>
