@@ -8,57 +8,62 @@
 
 <url>
   <loc>https://thorium.rocks/</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/thoriumos.html</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.95</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/chromiumstory.html</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.92</priority>
 </url>
 <url>
   <loc>https://files.thorium.rocks/</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/dev.html</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.89</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/mercury.html</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.88</priority>
 </url>
 <url>
-  <loc>https://thorium.rocks/games/dino/dino.html</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <loc>https://thorium.rocks/games</loc>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.87</priority>
 </url>
 <url>
+  <loc>https://thorium.rocks/games/dino/dino.html</loc>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
+  <priority>0.86</priority>
+</url>
+<url>
   <loc>https://thorium.rocks/demos</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/about.html</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.82</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/humans.txt</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://thorium.rocks/humans.txt</loc>
-  <lastmod>2024-02-14T04:03:19+00:00</lastmod>
+  <lastmod>2024-06-04T02:43:19+00:00</lastmod>
   <priority>0.75</priority>
 </url>
 
