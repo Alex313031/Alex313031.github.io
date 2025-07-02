@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- https://thorium.rocks/ main index.html -->
+<html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
+<head>
+	<!-- Header -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="hifatYlDqXcTUY8nWdPRAB_1R49s17sa6rGUP844IPY">
+    <link rel="preload" href="fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/thorium.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Personal Links</title>
+    <meta name="description" content="Personal links">
+    <meta name="color-scheme" content="light dark">
+    <link rel="author" href="humans.txt">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta itemprop="image" content="thumb.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#24292f">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+      function toggleDarkMode(useDark) {
+        if (useDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      }
+      let useDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!useDark && localStorage.getItem('dark-mode') === 'true') {
+        useDark = true;
+        toggleDarkMode(useDark);
+      } else if (localStorage.getItem('dark-mode') === 'false') {
+        useDark = false;
+        toggleDarkMode(useDark);
+      }
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">Personal Convenience Links</h2>
+    <hr class="line">
+    <p class="intro">
+      <br>
+      <a href="./linux-bootstrap.tar" target="_blank" rel="noopener" download>linux-bootstrap.tar</a>
+      <br>
+      <a href="./mas.cmd" target="_blank" rel="noopener" download>mas.cmd</a>
+      <br>
+      <a href="./git_bashrc.txt" target="_blank" rel="noopener" download>Git .bashrc</a>
+      <br>
+      <br>
+    </p>
+	
+	<div id="totop"><a href="#top" title="Back to top">▲</a></div>
+	
+    <script defer src="js/jquery-3.7.0.slim.min.js"></script>
+</body>
+</html>
